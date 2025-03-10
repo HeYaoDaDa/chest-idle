@@ -24,9 +24,6 @@ export default {
       description: "Iron Wood.",
     },
   },
-  monstr: {
-    name: "Snake",
-  },
   skillArea: {
     beach: {
       name: "Beach",

@@ -24,10 +24,6 @@ export default {
       description: "铁木。",
     },
   },
-  monstr: {
-    name: "蛇",
-    description: "蛇。",
-  },
   skillArea: {
     beach: {
       name: "沙滩",

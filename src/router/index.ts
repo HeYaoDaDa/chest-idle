@@ -9,6 +9,11 @@ const router = createRouter({
       name: 'load',
       component: LoadPage,
     },
+    {
+      path: '/:catchAll(.*)*',
+      name: '404',
+      component: () => import('@/pages/ErrorNotFoundPage.vue'),
+    },
   ],
 })
 

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoadPage from '@/pages/LoadPage.vue'
+import GamePage from '@/pages/GamePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'load',
       component: LoadPage,
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: GamePage,
     },
     {
       path: '/:catchAll(.*)*',

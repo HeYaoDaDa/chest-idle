@@ -1,25 +1,43 @@
 <script setup lang="ts">
+import ActionQueue from '@/components/misc/ActionQueue.vue';
 import LanguageSelect from '@/components/misc/LanguageSelect.vue';
 import NotificationBar from '@/components/misc/NotificationBar.vue';
-import { useDataStore } from '@/stores/data';
+import { useActionStore } from '@/stores/action';
+import { useCharacterStore } from '@/stores/character';
+import { useInventoryStore } from '@/stores/inventory';
+import { Tooltip } from 'floating-vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n()
-const dataStore = useDataStore();
+const characterStore = useCharacterStore();
+const actionStore = useActionStore();
+const inventoryStore = useInventoryStore();
 </script>
 
 <template>
   <div id="game-page-root">
     <div id="game-page-layout-container">
       <div id="header">
-        <h1>{{ t('gameName') }}</h1>
+        <div>
+          <h1>{{ t('gameName') }}</h1>
+          <ActionQueue v-if="actionStore.isRunning" />
+        </div>
         <NotificationBar />
       </div>
       <div id="sidebar">
-        <router-link v-for="skillData in dataStore.allSkillDatas" :key="skillData.id" :to="`/game/${skillData.id}`"
-          active-class="active-link">
-          {{ skillData.getName() }}
-        </router-link>
+        <Tooltip v-for="characterSkill in characterStore.allSkills" :key="characterSkill.skill.id"
+          theme="skill-tooltip">
+          <router-link :to="`/game/${characterSkill.skill.id}`" active-class="active-link">
+            {{ characterSkill.skill.getName() + ' ' + (characterSkill.level) }}
+          </router-link>
+          <template #popper>
+            <div>{{ characterSkill.skill.getName() }}</div>
+            <div>Lv.{{ characterSkill.level }}</div>
+            <div>{{ characterSkill.xp }}</div>
+            <hr>
+            <div>{{ characterSkill.skill.getDescription() }}</div>
+          </template>
+        </Tooltip>
         <LanguageSelect />
       </div>
       <div id="content">
@@ -27,7 +45,20 @@ const dataStore = useDataStore();
       </div>
       <div id="equipment"></div>
       <div id="abilities"></div>
-      <div id="invertory"></div>
+      <div id="invertory">
+        <Tooltip v-for="inventoryItem in inventoryStore.inventoryItems" :key="inventoryItem.item.id"
+          theme="item-tooltip">
+          <div class="inventory-item">
+            <div>{{ inventoryItem.item.getName() }}</div>
+            <div>{{ inventoryItem.amount }}</div>
+          </div>
+          <template #popper>
+            <div>
+              {{ inventoryItem.item.getDescription() }}
+            </div>
+          </template>
+        </Tooltip>
+      </div>
     </div>
   </div>
 </template>
@@ -106,6 +137,22 @@ const dataStore = useDataStore();
     #invertory {
       grid-column: 3 / 5;
       grid-row: 3 / 4;
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      padding: 4px;
+      gap: 10px;
+      min-width: 256px;
+      height: 100%;
+
+      .inventory-item {
+        min-width: 100px;
+        min-height: 100px;
+        background-color: color.adjust(white, $lightness: -10%);
+      }
     }
   }
 }

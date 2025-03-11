@@ -4,6 +4,9 @@ export default {
   gameName: '@:gameNameFirst@:gameNameLast',
   loading: '加载中。。。',
   loadDataFail: '加载数据失败！',
+  notification: {
+    levelUp: '技能 {skill} 升级到 {level}!'
+  },
   skill: {
     mining: { name: '挖矿', description: '挖矿。' },
     woodcutting: { name: '伐木', description: '伐木。' },

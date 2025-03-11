@@ -4,6 +4,9 @@ export default {
   gameName: '@:gameNameFirst @:gameNameLast',
   loading: 'Loading...',
   loadDataFail: 'Loading data fail!',
+  notification: {
+    levelUp: 'Skill {skill} upgrade to {level}!'
+  },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },
     woodcutting: { name: 'Woodcutting', description: 'Woodcutting.' },

@@ -2,8 +2,8 @@
 import ModalBox from '@/components/misc/ModalBox.vue';
 import { Amount } from '@/model/common/Amount';
 import type { GatheringArea } from '@/model/data/GatheringArea';
+import { useActionStore } from '@/stores/action';
 import { useDataStore } from '@/stores/data';
-import { useNotificationStore } from '@/stores/notification';
 import { computed, ref } from 'vue';
 import { onBeforeRouteUpdate, useRoute } from 'vue-router';
 
@@ -16,7 +16,7 @@ onBeforeRouteUpdate(async (to) => {
 const dataStore = useDataStore();
 const areas = computed(() => dataStore.getGatheringAreasBySkillId(skillId.value));
 
-const notificationStore = useNotificationStore();
+const actionStore = useActionStore();
 const openArea = ref(undefined as GatheringArea | undefined);
 const amount = ref('∞')
 const allowStart = computed(() => Amount.verify(amount.value));
@@ -28,7 +28,7 @@ function closeModal() {
   amount.value = '∞';
 }
 function addAction(area: GatheringArea) {
-  notificationStore.notification('info', area.skill.getName() + ' | ' + area.getName());
+  actionStore.addAction(area, Amount.from(amount.value));
   openArea.value = undefined;
 }
 </script>

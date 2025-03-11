@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 body,
 html {
   margin: 0;
@@ -16,5 +18,19 @@ a {
   &:hover,
   &:active {
     color: inherit;
+  }
+}
+
+//skill-tooltip
+.v-popper--theme-skill-tooltip {
+  .v-popper__inner {
+    background: color.adjust(white, $lightness: -10%);
+    border-radius: 4px;
+    padding: 4px 8px;
+    min-width: 128px;
+  }
+  .v-popper__arrow-outer,
+  .v-popper__arrow-inner {
+    visibility: hidden;
   }
 }

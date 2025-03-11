@@ -1,10 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LanguageSelect from '@/components/misc/LanguageSelect.vue';
+
+</script>
 
 <template>
   <div id="game-page-root">
     <div id="game-page-layout-container">
       <div id="header"></div>
-      <div id="sidebar"></div>
+      <div id="sidebar">
+        <LanguageSelect />
+      </div>
       <div id="content"></div>
       <div id="equipment"></div>
       <div id="abilities"></div>

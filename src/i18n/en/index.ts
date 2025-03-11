@@ -2,6 +2,8 @@ export default {
   gameNameFirst: "Chest",
   gameNameLast: "Idle",
   gameName: '@:gameNameFirst @:gameNameLast',
+  loading: 'Loading...',
+  loadDataFail: 'Loading data fail!',
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },
     woodcutting: { name: 'Woodcutting', description: 'Woodcutting.' },

@@ -2,9 +2,11 @@ export default {
   gameNameFirst: "宝箱",
   gameNameLast: "放置",
   gameName: '@:gameNameFirst@:gameNameLast',
+  loading: '加载中。。。',
+  loadDataFail: '加载数据失败！',
   skill: {
-    mining: { name: '挖矿', description: '挖矿.' },
-    woodcutting: { name: '伐木', description: '伐木.' },
+    mining: { name: '挖矿', description: '挖矿。' },
+    woodcutting: { name: '伐木', description: '伐木。' },
   },
   item: {
     sand: {

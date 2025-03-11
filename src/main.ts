@@ -1,5 +1,5 @@
 import './styles/app.scss'
-import { createApp } from 'vue'
+import { createApp, watch } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
@@ -12,3 +12,11 @@ app.use(router)
 app.use(i18n)
 
 app.mount('#app')
+
+document.title = i18n.global.t('gameName');
+watch(
+  () => i18n.global.locale.value,
+  () => {
+    document.title = i18n.global.t('gameName');
+  }
+);

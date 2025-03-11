@@ -2,9 +2,11 @@
 import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
 import { useDataStore } from '@/stores/data';
+import { useI18n } from 'vue-i18n';
 
 const router = useRouter()
 const dataStore = useDataStore();
+const { t } = useI18n();
 
 const fail = ref(false);
 
@@ -21,8 +23,8 @@ watchEffect(() => {
 
 <template>
   <div id="load-page-root">
-    <h1 id="load-data-fail-text" v-if="fail">Load data fail!</h1>
-    <h1 v-else>Loading...</h1>
+    <h1 id="load-data-fail-text" v-if="fail">{{ t('loadDataFail') }}</h1>
+    <h1 v-else>{{ t('loading') }}</h1>
   </div>
 </template>
 

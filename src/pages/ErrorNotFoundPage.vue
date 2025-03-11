@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #error-page-root {
   height: 100vh;
   display: flex;

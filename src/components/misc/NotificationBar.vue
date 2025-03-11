@@ -12,7 +12,7 @@ const notificationStore = useNotificationStore();
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use 'sass:color';
 
 #notifications {

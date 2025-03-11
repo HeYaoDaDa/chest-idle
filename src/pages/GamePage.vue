@@ -1,16 +1,28 @@
 <script setup lang="ts">
 import LanguageSelect from '@/components/misc/LanguageSelect.vue';
+import { useDataStore } from '@/stores/data';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n()
+const dataStore = useDataStore();
 </script>
 
 <template>
   <div id="game-page-root">
     <div id="game-page-layout-container">
-      <div id="header"></div>
+      <div id="header">
+        <h1>{{ t('gameName') }}</h1>
+      </div>
       <div id="sidebar">
+        <router-link v-for="skillData in dataStore.allSkillDatas" :key="skillData.id" :to="`/game/${skillData.id}`"
+          active-class="active-link">
+          {{ skillData.getName() }}
+        </router-link>
         <LanguageSelect />
       </div>
-      <div id="content"></div>
+      <div id="content">
+        <RouterView />
+      </div>
       <div id="equipment"></div>
       <div id="abilities"></div>
       <div id="invertory"></div>
@@ -19,6 +31,8 @@ import LanguageSelect from '@/components/misc/LanguageSelect.vue';
 </template>
 
 <style lang="scss">
+@use 'sass:color';
+
 #game-page-root {
   height: 100vh;
   padding: 4px;
@@ -44,6 +58,27 @@ import LanguageSelect from '@/components/misc/LanguageSelect.vue';
     #sidebar {
       grid-column: 1 / 2;
       grid-row: 2 / -1;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        padding: 8px;
+        font-weight: 600;
+        user-select: none;
+        cursor: pointer;
+
+        &:hover:not(.active-link) {
+          background-color: color.adjust(white, $lightness: 10%);
+          ;
+        }
+
+        &.active-link {
+          background-color: color.adjust(white, $lightness: -10%);
+          ;
+        }
+      }
     }
 
     #content {

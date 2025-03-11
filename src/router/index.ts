@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoadPage from '@/pages/LoadPage.vue'
 import GamePage from '@/pages/GamePage.vue'
+import { useDataStore } from '@/stores/data';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,6 +14,7 @@ const router = createRouter({
     {
       path: '/game',
       name: 'game',
+      meta: { requireGameData: true },
       component: GamePage,
     },
     {
@@ -22,5 +24,12 @@ const router = createRouter({
     },
   ],
 })
+
+router.beforeEach(async (to) => {
+  const dataStore = useDataStore();
+  if (to.meta.requireGameData && ['none', 'loading'].includes(dataStore.dataStatus)) {
+    return { name: 'load' };
+  }
+});
 
 export default router

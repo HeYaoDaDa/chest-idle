@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LanguageSelect from '@/components/misc/LanguageSelect.vue';
+import NotificationBar from '@/components/misc/NotificationBar.vue';
 import { useDataStore } from '@/stores/data';
 import { useI18n } from 'vue-i18n';
 
@@ -12,6 +13,7 @@ const dataStore = useDataStore();
     <div id="game-page-layout-container">
       <div id="header">
         <h1>{{ t('gameName') }}</h1>
+        <NotificationBar />
       </div>
       <div id="sidebar">
         <router-link v-for="skillData in dataStore.allSkillDatas" :key="skillData.id" :to="`/game/${skillData.id}`"
@@ -53,6 +55,11 @@ const dataStore = useDataStore();
     #header {
       grid-column: 1 / 5;
       grid-row: 1 / 2;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
     #sidebar {

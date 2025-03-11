@@ -17,7 +17,6 @@ const areas = computed(() => dataStore.getGatheringAreasBySkillId(skillId.value)
   <div id="skill-area-root">
     <div v-for="area in areas" :key="area.id">
       <div>{{ area.getName() }}</div>
-      <div>{{ area.getDescription() }}</div>
     </div>
   </div>
 </template>
@@ -37,6 +36,10 @@ const areas = computed(() => dataStore.getGatheringAreasBySkillId(skillId.value)
     min-width: 100px;
     min-height: 100px;
     background-color: color.adjust(white, $lightness: -10%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

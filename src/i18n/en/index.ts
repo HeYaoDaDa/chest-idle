@@ -4,6 +4,9 @@ export default {
   gameName: '@:gameNameFirst @:gameNameLast',
   loading: 'Loading...',
   loadDataFail: 'Loading data fail!',
+  start: 'Start',
+  stop: 'Stop',
+  remove: 'Remove',
   notification: {
     levelUp: 'Skill {skill} upgrade to {level}!'
   },

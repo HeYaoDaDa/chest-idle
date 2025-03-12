@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useActionStore } from '@/stores/action';
 import { ref, onMounted, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const actionStore = useActionStore();
+const { t } = useI18n();
 
 const progress = ref(0);
 
@@ -39,11 +41,11 @@ onMounted(() => {
         <div class="duration-show">{{ runningActionDurationDisplay }}</div>
         <div class="progress-bar" :style="{ width: progress + '%' }"></div>
       </div>
-      <button @click="actionStore.removeAction(0)">Stop</button>
+      <button @click="actionStore.removeAction(0)">{{ t('stop') }}</button>
     </div>
     <div v-if="actionStore.queuedActions.length > 0">
       <div v-for="(action, index) in actionStore.queuedActions" :key="index">
-        <button @click="actionStore.removeAction(index + 1)">Remove {{ action.toShow() }}</button>
+        <button @click="actionStore.removeAction(index + 1)">{{ t('remove') }} {{ action.toShow() }}</button>
       </div>
     </div>
   </div>

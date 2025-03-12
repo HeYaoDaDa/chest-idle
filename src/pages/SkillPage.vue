@@ -4,7 +4,9 @@ import { Amount } from '@/model/common/Amount';
 import type { GatheringArea } from '@/model/data/GatheringArea';
 import { useActionStore } from '@/stores/action';
 import { useDataStore } from '@/stores/data';
+import { Tooltip } from 'floating-vue';
 import { computed, ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { onBeforeRouteUpdate, useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -13,6 +15,7 @@ onBeforeRouteUpdate(async (to) => {
   skillId.value = to.params.id as string;
 });
 
+const { t } = useI18n();
 const dataStore = useDataStore();
 const areas = computed(() => dataStore.getGatheringAreasBySkillId(skillId.value));
 
@@ -35,9 +38,17 @@ function addAction(area: GatheringArea) {
 
 <template>
   <div id="skill-area-root">
-    <div v-for="area in areas" :key="area.id" @click="openModal(area)">
-      <div>{{ area.getName() }}</div>
-    </div>
+
+    <Tooltip v-for="area in areas" :key="area.id" theme="item-tooltip">
+      <div @click="openModal(area)" class="area-item">
+        <div>{{ area.getName() }}</div>
+      </div>
+      <template #popper>
+        <div>
+          {{ area.getDescription() }}
+        </div>
+      </template>
+    </Tooltip>
   </div>
   <ModalBox v-if="openArea" @close="closeModal">
     <div id="area-modal-box">
@@ -52,7 +63,7 @@ function addAction(area: GatheringArea) {
         <input type="text" v-model="amount" />
         <button @click="amount = '∞'">∞</button>
       </div>
-      <button @click="addAction(openArea)" :disabled="!allowStart">Start</button>
+      <button @click="addAction(openArea)" :disabled="!allowStart">{{ t('start') }}</button>
     </div>
   </ModalBox>
 </template>
@@ -68,7 +79,7 @@ function addAction(area: GatheringArea) {
   align-items: flex-start;
   gap: 10px;
 
-  >div {
+  .area-item {
     min-width: 100px;
     min-height: 100px;
     background-color: color.adjust(white, $lightness: -10%);
@@ -76,6 +87,8 @@ function addAction(area: GatheringArea) {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    cursor: pointer;
   }
 }
 

@@ -4,6 +4,9 @@ export default {
   gameName: '@:gameNameFirst@:gameNameLast',
   loading: '加载中。。。',
   loadDataFail: '加载数据失败！',
+  start: '开始',
+  stop: '停止',
+  remove: '删除',
   notification: {
     levelUp: '技能 {skill} 升级到 {level}!'
   },

@@ -13,6 +13,7 @@ export const useCharacterStore = defineStore('character', () => {
     skill: it,
     xp: 0,
     level: computeLevel(0),
+    levelPercentage: computeLevelPercentage(0),
   }])));
 
   const allSkills = Array.from(skillMap.values());
@@ -27,6 +28,7 @@ export const useCharacterStore = defineStore('character', () => {
       const oldLevel = skill.level;
       skill.xp += xp;
       skill.level = computeLevel(skill.xp);
+      skill.levelPercentage = computeLevelPercentage(skill.xp);
       if (skill.level > oldLevel) {
         notificationStore.notification('info', t('notification.levelUp', { skill: skill.skill.getName(), level: skill.level }))
       }
@@ -37,6 +39,10 @@ export const useCharacterStore = defineStore('character', () => {
 
   function computeLevel(xp: number): number {
     return Math.floor(xp / 100);
+  }
+
+  function computeLevelPercentage(xp: number): number {
+    return xp % 100;
   }
 
   return {

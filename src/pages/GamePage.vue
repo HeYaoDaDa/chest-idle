@@ -28,7 +28,13 @@ const inventoryStore = useInventoryStore();
         <Tooltip v-for="characterSkill in characterStore.allSkills" :key="characterSkill.skill.id"
           theme="skill-tooltip">
           <router-link :to="`/game/${characterSkill.skill.id}`" active-class="active-link">
-            {{ characterSkill.skill.getName() + ' ' + (characterSkill.level) }}
+            <div>
+              {{ characterSkill.skill.getName() + ' ' + (characterSkill.level) }}
+            </div>
+            <div style="width: 100%;">
+              <div :style="{ width: characterSkill.levelPercentage + '%', height: '2px', backgroundColor: 'black' }">
+              </div>
+            </div>
           </router-link>
           <template #popper>
             <div>{{ characterSkill.skill.getName() }}</div>
@@ -99,6 +105,7 @@ const inventoryStore = useInventoryStore();
 
       a {
         display: flex;
+        flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         gap: 4px;
@@ -152,6 +159,8 @@ const inventoryStore = useInventoryStore();
         min-width: 100px;
         min-height: 100px;
         background-color: color.adjust(white, $lightness: -10%);
+        user-select: none;
+        cursor: pointer;
       }
     }
   }

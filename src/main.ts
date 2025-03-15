@@ -9,9 +9,9 @@ import 'floating-vue/dist/style.css'
 
 const app = createApp(App)
 
+app.use(i18n)
 app.use(createPinia())
 app.use(router)
-app.use(i18n)
 app.use(FloatingVue, {
   themes: {
     'skill-tooltip': {
@@ -21,17 +21,17 @@ app.use(FloatingVue, {
     },
     'item-tooltip': {
       $extend: 'skill-tooltip',
-      placement: 'bottom'
+      placement: 'bottom',
     },
   },
 })
 
 app.mount('#app')
 
-document.title = i18n.global.t('gameName');
+document.title = i18n.global.t('gameName')
 watch(
   () => i18n.global.locale.value,
   () => {
-    document.title = i18n.global.t('gameName');
-  }
-);
+    document.title = i18n.global.t('gameName')
+  },
+)

@@ -1,6 +1,6 @@
 export default {
-  gameNameFirst: "Chest",
-  gameNameLast: "Idle",
+  gameNameFirst: 'Chest',
+  gameNameLast: 'Idle',
   gameName: '@:gameNameFirst @:gameNameLast',
   loading: 'Loading...',
   loadDataFail: 'Loading data fail!',
@@ -8,7 +8,7 @@ export default {
   stop: 'Stop',
   remove: 'Remove',
   notification: {
-    levelUp: 'Skill {skill} upgrade to {level}!'
+    levelUp: 'Skill {skill} upgrade to {level}!',
   },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },
@@ -16,38 +16,38 @@ export default {
   },
   item: {
     sand: {
-      name: "Sand",
-      description: "Sand.",
+      name: 'Sand',
+      description: 'Sand.',
     },
     mud: {
-      name: "Mud",
-      description: "Mud.",
+      name: 'Mud',
+      description: 'Mud.',
     },
     wood: {
-      name: "Wood",
-      description: "Wood.",
+      name: 'Wood',
+      description: 'Wood.',
     },
     ironWood: {
-      name: "Iron Wood",
-      description: "Iron Wood.",
+      name: 'Iron Wood',
+      description: 'Iron Wood.',
     },
   },
   skillArea: {
     beach: {
-      name: "Beach",
-      description: "Get beach.",
+      name: 'Beach',
+      description: 'Get beach.',
     },
     earth: {
-      name: "Earth",
-      description: "Earth.",
+      name: 'Earth',
+      description: 'Earth.',
     },
     forest: {
-      name: "Forest",
-      description: "Forest.",
+      name: 'Forest',
+      description: 'Forest.',
     },
     ironForest: {
-      name: "Iron Forest",
-      description: "Iron Forest.",
-    }
-  }
-};
+      name: 'Iron Forest',
+      description: 'Iron Forest.',
+    },
+  },
+}

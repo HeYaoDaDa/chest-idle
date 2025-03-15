@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import ActionQueue from '@/components/misc/ActionQueue.vue';
-import LanguageSelect from '@/components/misc/LanguageSelect.vue';
-import NotificationBar from '@/components/misc/NotificationBar.vue';
-import { useActionStore } from '@/stores/action';
-import { useCharacterStore } from '@/stores/character';
-import { useInventoryStore } from '@/stores/inventory';
-import { Tooltip } from 'floating-vue';
-import { useI18n } from 'vue-i18n';
+import ActionQueue from '@/components/misc/ActionQueue.vue'
+import LanguageSelect from '@/components/misc/LanguageSelect.vue'
+import NotificationBar from '@/components/misc/NotificationBar.vue'
+import { global } from '@/global'
+import { useActionStore } from '@/stores/action'
+import { useInventoryStore } from '@/stores/inventory'
+import { Tooltip } from 'floating-vue'
+import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
-const characterStore = useCharacterStore();
-const actionStore = useActionStore();
-const inventoryStore = useInventoryStore();
+const actionStore = useActionStore()
+const inventoryStore = useInventoryStore()
 </script>
 
 <template>
@@ -25,23 +24,26 @@ const inventoryStore = useInventoryStore();
         <NotificationBar />
       </div>
       <div id="sidebar">
-        <Tooltip v-for="characterSkill in characterStore.allSkills" :key="characterSkill.skill.id"
-          theme="skill-tooltip">
-          <router-link :to="`/game/${characterSkill.skill.id}`" active-class="active-link">
+        <Tooltip v-for="characterSkill in global.allSkills" :key="characterSkill.id" theme="skill-tooltip">
+          <router-link :to="`/game/${characterSkill.id}`" active-class="active-link">
             <div>
-              {{ characterSkill.skill.getName() + ' ' + (characterSkill.level) }}
+              {{ characterSkill.name }} {{ characterSkill.level }}
             </div>
-            <div style="width: 100%;">
-              <div :style="{ width: characterSkill.levelPercentage + '%', height: '2px', backgroundColor: 'black' }">
-              </div>
+            <div style="width: 100%">
+              <div :style="{
+                width: characterSkill.progress.value + '%',
+                height: '2px',
+                backgroundColor: 'black',
+              }"></div>
             </div>
           </router-link>
           <template #popper>
-            <div>{{ characterSkill.skill.getName() }}</div>
-            <div>Lv.{{ characterSkill.level }}</div>
-            <div>{{ characterSkill.xp }}</div>
-            <hr>
-            <div>{{ characterSkill.skill.getDescription() }}</div>
+            <div>{{ characterSkill.name.value }}</div>
+            <div>Lv.{{ characterSkill.level.value }}</div>
+            <div>{{ characterSkill.xp.value }}</div>
+            <div>{{ characterSkill.nextLevelNeedXp.value }}</div>
+            <hr />
+            <div>{{ characterSkill.description.value }}</div>
           </template>
         </Tooltip>
         <LanguageSelect />
@@ -116,12 +118,10 @@ const inventoryStore = useInventoryStore();
 
         &:hover:not(.active-link) {
           background-color: color.adjust(white, $lightness: 10%);
-          ;
         }
 
         &.active-link {
           background-color: color.adjust(white, $lightness: -10%);
-          ;
         }
       }
     }

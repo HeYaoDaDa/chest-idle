@@ -1,4 +1,4 @@
 export interface SkillJson {
-  id: string;
-  sort: number;
+  id: string
+  sort: number
 }

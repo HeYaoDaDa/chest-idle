@@ -1,6 +1,6 @@
 export interface LootJson {
-  id: string;
-  percentage: number;
-  min: number;
-  max: number;
+  id: string
+  percentage: number
+  min: number
+  max: number
 }

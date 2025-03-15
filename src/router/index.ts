@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoadPage from '@/pages/LoadPage.vue'
 import GamePage from '@/pages/GamePage.vue'
-import { useDataStore } from '@/stores/data';
-import SkillPage from '@/pages/SkillPage.vue';
+import { useDataStore } from '@/stores/data'
+import SkillPage from '@/pages/SkillPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,9 +22,9 @@ const router = createRouter({
         {
           path: ':id',
           name: 'skill',
-          component: SkillPage
-        }
-      ]
+          component: SkillPage,
+        },
+      ],
     },
     {
       path: '/:catchAll(.*)*',
@@ -35,10 +35,10 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  const dataStore = useDataStore();
+  const dataStore = useDataStore()
   if (to.meta.requireGameData && ['none', 'loading'].includes(dataStore.dataStatus)) {
-    return { name: 'load' };
+    return { name: 'load' }
   }
-});
+})
 
 export default router

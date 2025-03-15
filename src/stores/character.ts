@@ -1,53 +1,19 @@
-import { defineStore } from "pinia";
-import { reactive } from "vue";
-import { useDataStore } from "./data";
-import { useNotificationStore } from "./notification";
-import { useI18n } from "vue-i18n";
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useCharacterStore = defineStore('character', () => {
-  const dataStore = useDataStore();
-  const notificationStore = useNotificationStore();
-  const { t } = useI18n();
-
-  const skillMap = reactive(new Map(dataStore.allSkillDatas.map((it) => [it.id, {
-    skill: it,
-    xp: 0,
-    level: computeLevel(0),
-    levelPercentage: computeLevelPercentage(0),
-  }])));
-
-  const allSkills = Array.from(skillMap.values());
-
-  function getSkillById(id: string) {
-    return skillMap.get(id)
+  const miningXp = ref(0)
+  function addMiningXp(xp: number) {
+    miningXp.value += xp
   }
-
-  function addXp(id: string, xp: number) {
-    const skill = skillMap.get(id);
-    if (skill) {
-      const oldLevel = skill.level;
-      skill.xp += xp;
-      skill.level = computeLevel(skill.xp);
-      skill.levelPercentage = computeLevelPercentage(skill.xp);
-      if (skill.level > oldLevel) {
-        notificationStore.notification('info', t('notification.levelUp', { skill: skill.skill.getName(), level: skill.level }))
-      }
-    } else {
-      console.error(`Skill ${id} not find`)
-    }
+  const woodcuttingXp = ref(0)
+  function addWoodcuttingXp(xp: number) {
+    woodcuttingXp.value += xp
   }
-
-  function computeLevel(xp: number): number {
-    return Math.floor(xp / 100);
-  }
-
-  function computeLevelPercentage(xp: number): number {
-    return xp % 100;
-  }
-
   return {
-    allSkills,
-    getSkillById,
-    addXp
+    miningXp,
+    addMiningXp,
+    woodcuttingXp,
+    addWoodcuttingXp,
   }
-});
+})

@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import { useActionStore } from '@/stores/action';
-import { ref, onMounted, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { useActionStore } from '@/stores/action'
+import { ref, onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const actionStore = useActionStore();
-const { t } = useI18n();
+const actionStore = useActionStore()
+const { t } = useI18n()
 
-const progress = ref(0);
+const progress = ref(0)
 
-const runningActionDisplay = computed(() => actionStore.runningAction?.action.toShow());
+const runningActionDisplay = computed(() => actionStore.runningAction?.action.toShow())
 const runningActionDurationDisplay = computed(() => {
   if (actionStore.runningAction) {
-    return (Math.floor(actionStore.runningAction.duration / 10) / 100) + 's';
+    return Math.floor(actionStore.runningAction.duration / 10) / 100 + 's'
   } else {
-    return 'invalid';
+    return 'invalid'
   }
-});
+})
 
 onMounted(() => {
   const animate = (timestamp: number) => {
     if (actionStore.isRunning) {
       if (actionStore.runningAction) {
-        const elapsed = timestamp - actionStore.runningAction.startTime;
-        progress.value = Math.min((elapsed / actionStore.runningAction.duration) * 100, 100);
+        const elapsed = timestamp - actionStore.runningAction.startTime
+        progress.value = Math.min((elapsed / actionStore.runningAction.duration) * 100, 100)
       } else {
         console.error(`Action running but runningAction:(${actionStore.runningAction})`)
       }
     }
     requestAnimationFrame(animate)
-  };
-  requestAnimationFrame(animate);
-});
+  }
+  requestAnimationFrame(animate)
+})
 </script>
 
 <template>
@@ -45,7 +45,9 @@ onMounted(() => {
     </div>
     <div v-if="actionStore.queuedActions.length > 0">
       <div v-for="(action, index) in actionStore.queuedActions" :key="index">
-        <button @click="actionStore.removeAction(index + 1)">{{ t('remove') }} {{ action.toShow() }}</button>
+        <button @click="actionStore.removeAction(index + 1)">
+          {{ t('remove') }} {{ action.toShow() }}
+        </button>
       </div>
     </div>
   </div>

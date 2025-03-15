@@ -1,8 +1,8 @@
-import type { GatheringAreaJson } from "../json/GatheringAreaJson";
-import type { Item } from "./Item";
-import { Loot } from "./Loot";
-import type { SkillData } from "./SkillData";
-import i18n from "@/i18n";
+import type { GatheringAreaJson } from '../json/GatheringAreaJson'
+import type { Item } from './Item'
+import { Loot } from './Loot'
+import type { SkillData } from './SkillData'
+import i18n from '@/i18n'
 
 export class GatheringArea {
   constructor(
@@ -13,15 +13,19 @@ export class GatheringArea {
     public baseTime: number,
     public xp: number,
 
-    public products: Loot[]
-  ) { }
+    public products: Loot[],
+  ) {}
 
-  static fromJson(gatheringAreaJson: GatheringAreaJson, itemMap: Map<string, Item>, skillDataMap: Map<string, SkillData>): GatheringArea {
-    const skillData = skillDataMap.get(gatheringAreaJson.skill);
+  static fromJson(
+    gatheringAreaJson: GatheringAreaJson,
+    itemMap: Map<string, Item>,
+    skillDataMap: Map<string, SkillData>,
+  ): GatheringArea {
+    const skillData = skillDataMap.get(gatheringAreaJson.skill)
     if (!skillData) {
-      throw `Not exist skill ${gatheringAreaJson.skill}`;
+      throw `Not exist skill ${gatheringAreaJson.skill}`
     }
-    const products = gatheringAreaJson.products.map(it => Loot.fromJson(it, itemMap));
+    const products = gatheringAreaJson.products.map((it) => Loot.fromJson(it, itemMap))
     return new GatheringArea(
       gatheringAreaJson.id,
       skillData,
@@ -30,15 +34,15 @@ export class GatheringArea {
       gatheringAreaJson.baseTime,
       gatheringAreaJson.xp,
 
-      products
-    );
+      products,
+    )
   }
 
   getName(): string {
-    return i18n.global.t(`skillArea.${this.id}.name`);
+    return i18n.global.t(`skillArea.${this.id}.name`)
   }
 
   getDescription(): string {
-    return i18n.global.t(`skillArea.${this.id}.description`);
+    return i18n.global.t(`skillArea.${this.id}.description`)
   }
 }

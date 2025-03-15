@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
-import { useDataStore } from '@/stores/data';
-import { useI18n } from 'vue-i18n';
+import { useDataStore } from '@/stores/data'
+import { useI18n } from 'vue-i18n'
 
 const router = useRouter()
-const dataStore = useDataStore();
-const { t } = useI18n();
+const dataStore = useDataStore()
+const { t } = useI18n()
 
-const fail = ref(false);
+const fail = ref(false)
 
 watchEffect(() => {
   if ('none' === dataStore.dataStatus) {
-    dataStore.loadData();
+    dataStore.loadData()
   } else if ('finish' === dataStore.dataStatus) {
-    router.replace('/game');
+    router.replace('/game')
   } else if ('fail' === dataStore.dataStatus) {
-    fail.value = true;
+    fail.value = true
   }
-});
+})
 </script>
 
 <template>

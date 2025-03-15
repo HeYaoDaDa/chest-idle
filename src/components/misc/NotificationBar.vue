@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { useNotificationStore } from '@/stores/notification';
+import { useNotificationStore } from '@/stores/notification'
 
-const notificationStore = useNotificationStore();
+const notificationStore = useNotificationStore()
 </script>
 
 <template>
   <div id="notifications">
-    <div v-for="notification, index in notificationStore.notifications" :key="index"
-      @click.stop.prevent="notificationStore.closeNotification(index)">{{
-        notification.content }}</div>
+    <div
+      v-for="(notification, index) in notificationStore.notifications"
+      :key="index"
+      @click.stop.prevent="notificationStore.closeNotification(index)"
+    >
+      {{ notification.content }}
+    </div>
   </div>
 </template>
 
@@ -24,7 +28,7 @@ const notificationStore = useNotificationStore();
   overflow: hidden;
   user-select: none;
 
-  >div {
+  > div {
     padding: 8px;
     border-radius: 4px;
     background-color: color.adjust(white, $lightness: -10%);

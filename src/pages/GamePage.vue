@@ -27,7 +27,7 @@ const inventoryStore = useInventoryStore()
         <Tooltip v-for="characterSkill in global.allSkills" :key="characterSkill.id" theme="skill-tooltip">
           <router-link :to="`/game/${characterSkill.id}`" active-class="active-link">
             <div>
-              {{ characterSkill.name }} {{ characterSkill.level }}
+              {{ characterSkill.name() }} {{ characterSkill.level.value }}
             </div>
             <div style="width: 100%">
               <div :style="{
@@ -38,12 +38,12 @@ const inventoryStore = useInventoryStore()
             </div>
           </router-link>
           <template #popper>
-            <div>{{ characterSkill.name.value }}</div>
+            <div>{{ characterSkill.name() }}</div>
             <div>Lv.{{ characterSkill.level.value }}</div>
             <div>{{ characterSkill.xp.value }}</div>
             <div>{{ characterSkill.nextLevelNeedXp.value }}</div>
             <hr />
-            <div>{{ characterSkill.description.value }}</div>
+            <div>{{ characterSkill.description() }}</div>
           </template>
         </Tooltip>
         <LanguageSelect />

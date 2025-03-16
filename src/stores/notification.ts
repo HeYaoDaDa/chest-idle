@@ -4,7 +4,7 @@ import { shallowReactive } from 'vue'
 export const useNotificationStore = defineStore('notification', () => {
   const notifications = shallowReactive([] as Notification[])
 
-  function notification(type: 'info' | 'warn', text: string) {
+  function notification(type: 'info' | 'warn', text: () => string) {
     notifications.unshift(
       new Notification(
         type,
@@ -30,9 +30,9 @@ export const useNotificationStore = defineStore('notification', () => {
 export class Notification {
   constructor(
     public type: 'info' | 'warn',
-    public content: string,
+    public content: () => string,
     public timeoutId: number,
-  ) {}
+  ) { }
 
   cancel() {
     clearTimeout(this.timeoutId)

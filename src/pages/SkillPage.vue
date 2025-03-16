@@ -31,9 +31,13 @@ function closeModal() {
   openArea.value = undefined
   amount.value = '∞'
 }
-function addAction(area: AreaInterface) {
-  actionStore.addAction(area, Amount.from(amount.value))
-  openArea.value = undefined
+function addAction() {
+  if (openArea.value) {
+    actionStore.addAction(openArea.value, Amount.from(amount.value))
+    openArea.value = undefined
+  } else {
+    console.error('openArea is null')
+  }
 }
 </script>
 
@@ -41,20 +45,20 @@ function addAction(area: AreaInterface) {
   <div id="skill-area-root">
     <Tooltip v-for="area in skill.areas" :key="area.id" theme="item-tooltip">
       <div @click="openModal(area)" class="area-item">
-        <div>{{ area.name }}</div>
+        <div>{{ area.name() }}</div>
       </div>
       <template #popper>
         <div>
-          {{ area.description }}
+          {{ area.description() }}
         </div>
       </template>
     </Tooltip>
   </div>
   <ModalBox v-if="openArea" @close="closeModal">
     <div id="area-modal-box">
-      <div>{{ openArea.name }}</div>
-      <div>{{ openArea.skill.name }}</div>
-      <div>{{ openArea.description }}</div>
+      <div>{{ openArea.name() }}</div>
+      <div>{{ openArea.skill.name() }}</div>
+      <div>{{ openArea.description() }}</div>
       <div>{{ openArea.baseTime / 1000 }}s</div>
       <div v-for="(loot, index) in openArea.products" :key="index">
         {{ loot.percentage }}% {{ loot.item.getName() }}: {{ loot.min }}-{{ loot.max }}
@@ -63,7 +67,7 @@ function addAction(area: AreaInterface) {
         <input type="text" v-model="amount" />
         <button @click="amount = '∞'">∞</button>
       </div>
-      <button @click="addAction(openArea)" :disabled="!allowStart">{{ t('start') }}</button>
+      <button @click="addAction()" :disabled="!allowStart">{{ t('start') }}</button>
     </div>
   </ModalBox>
 </template>

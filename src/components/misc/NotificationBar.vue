@@ -6,12 +6,9 @@ const notificationStore = useNotificationStore()
 
 <template>
   <div id="notifications">
-    <div
-      v-for="(notification, index) in notificationStore.notifications"
-      :key="index"
-      @click.stop.prevent="notificationStore.closeNotification(index)"
-    >
-      {{ notification.content }}
+    <div v-for="(notification, index) in notificationStore.notifications" :key="index"
+      @click.stop.prevent="notificationStore.closeNotification(index)">
+      {{ notification.content() }}
     </div>
   </div>
 </template>
@@ -28,7 +25,7 @@ const notificationStore = useNotificationStore()
   overflow: hidden;
   user-select: none;
 
-  > div {
+  >div {
     padding: 8px;
     border-radius: 4px;
     background-color: color.adjust(white, $lightness: -10%);

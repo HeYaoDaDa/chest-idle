@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, ref, shallowReactive } from 'vue'
+import { computed, shallowReactive, shallowRef } from 'vue'
 import { useInventoryStore } from './inventory'
 import type { Amount } from '@/model/common/Amount'
 import type { Item } from '@/model/data/Item'
@@ -10,7 +10,7 @@ export const useActionStore = defineStore('action', () => {
   const inventoryStore = useInventoryStore()
 
   const actionQueue = shallowReactive([] as ActionQueueItem[])
-  const runningAction = ref(undefined as RunningAction | undefined)
+  const runningAction = shallowRef(undefined as RunningAction | undefined)
 
   const isRunning = computed(() => actionQueue.length > 0)
   const queuedActions = computed(() => (actionQueue.length > 1 ? actionQueue.slice(1) : []))
@@ -108,7 +108,7 @@ class ActionQueueItem {
   }
 
   toShow(): string {
-    return `${this.area.skill.name} | ${this.area.name} [${this.amount}]`
+    return `${this.area.skill.name()} | ${this.area.name()} [${this.amount}]`
   }
 }
 

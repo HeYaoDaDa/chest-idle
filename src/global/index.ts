@@ -4,13 +4,13 @@ import { useCharacterStore } from "@/stores/character"
 import { useDataStore } from "@/stores/data"
 import { useNotificationStore } from "@/stores/notification"
 import { storeToRefs } from "pinia"
-import { type Ref, type ComputedRef, computed, watch, shallowReactive } from "vue"
+import { type Ref, type ComputedRef, computed, watch } from "vue"
 
 export interface SkillInterface {
   id: string
   xp: Ref<number>
-  name: ComputedRef<string>
-  description: ComputedRef<string>
+  name: () => string
+  description: () => string
   level: ComputedRef<number>
   progress: ComputedRef<number>
   nextLevelNeedXp: ComputedRef<number>
@@ -20,8 +20,8 @@ export interface SkillInterface {
 
 export interface AreaInterface {
   id: string
-  name: ComputedRef<string>
-  description: ComputedRef<string>
+  name: () => string
+  description: () => string
   sort: number
   baseTime: number
   xp: number
@@ -41,29 +41,29 @@ class Global {
     const characterStore = useCharacterStore()
     const { miningXp, woodcuttingXp } = storeToRefs(characterStore)
 
-    this.miningSkill = shallowReactive({
+    this.miningSkill = {
       id: 'mining',
       xp: miningXp,
-      name: computed(() => t('skill.mining.name')),
-      description: computed(() => t('skill.mining.description')),
+      name: () => t('skill.mining.name'),
+      description: () => t('skill.mining.description'),
       level: computed(() => Math.floor(miningXp.value / 100)),
       progress: computed(() => miningXp.value % 100),
       nextLevelNeedXp: computed(() => 100 - (miningXp.value % 100)),
       areas: [],
       addXp: characterStore.addMiningXp,
-    })
+    }
     watch(this.miningSkill.level, (newLevel) => {
       notificationStore.notification(
         'info',
-        t('notification.levelUp', { skill: this.miningSkill.name.value, level: newLevel }),
+        () => t('notification.levelUp', { skill: this.miningSkill.name(), level: newLevel }),
       )
     })
 
     this.woodcuttingSkill = {
       id: 'woodcutting',
       xp: woodcuttingXp,
-      name: computed(() => t('skill.woodcutting.name')),
-      description: computed(() => t('skill.woodcutting.description')),
+      name: () => t('skill.woodcutting.name'),
+      description: () => t('skill.woodcutting.description'),
       level: computed(() => Math.floor(woodcuttingXp.value / 100)),
       progress: computed(() => woodcuttingXp.value % 100),
       nextLevelNeedXp: computed(() => 100 - (woodcuttingXp.value % 100)),
@@ -73,7 +73,7 @@ class Global {
     watch(this.woodcuttingSkill.level, (newLevel) => {
       notificationStore.notification(
         'info',
-        t('notification.levelUp', { skill: this.woodcuttingSkill.name.value, level: newLevel }),
+        () => t('notification.levelUp', { skill: this.woodcuttingSkill.name(), level: newLevel }),
       )
     })
 
@@ -83,8 +83,8 @@ class Global {
           ...areas.map((it) => {
             return {
               id: it.id,
-              name: computed(() => t(`skillArea.${it.id}.name`)),
-              description: computed(() => t(`skillArea.${it.id}.description`)),
+              name: () => t(`skillArea.${it.id}.name`),
+              description: () => t(`skillArea.${it.id}.description`),
               sort: it.sort,
               baseTime: it.baseTime,
               xp: it.xp,
@@ -98,8 +98,8 @@ class Global {
           ...areas.map((it) => {
             return {
               id: it.id,
-              name: computed(() => t(`skillArea.${it.id}.name`)),
-              description: computed(() => t(`skillArea.${it.id}.description`)),
+              name: () => t(`skillArea.${it.id}.name`),
+              description: () => t(`skillArea.${it.id}.description`),
               sort: it.sort,
               baseTime: it.baseTime,
               xp: it.xp,

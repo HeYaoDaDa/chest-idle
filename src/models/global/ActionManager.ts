@@ -19,7 +19,7 @@ class ActionManager {
 
     let remainedElapsed = elapsed;
     while (actionManager.currentAction.value && remainedElapsed > 0) {
-      remainedElapsed = actionManager.currentAction.value.udpate(elapsed);
+      remainedElapsed = actionManager.currentAction.value.udpate(remainedElapsed);
     }
 
     requestAnimationFrame(actionManager.update);

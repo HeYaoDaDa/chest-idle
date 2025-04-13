@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import LoadPage from '@/pages/LoadPage.vue'
 import GamePage from '@/pages/GamePage.vue'
 import SkillPage from '@/pages/SkillPage.vue'
@@ -12,7 +12,8 @@ export const ROUTE_NAME_GAME = "game"
 export const ROUTE_NAME_404 = "404"
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: ROUTE_PATH_LOAD,

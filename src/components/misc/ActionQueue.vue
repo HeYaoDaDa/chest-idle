@@ -37,7 +37,7 @@ const progress = computed(() => {
     <div v-if="actionManager.queuedActions.length > 0">
       <div v-for="(action, index) in actionManager.queuedActions" :key="index">
         <button @click="actionManager.removeQueueAction(index)">
-          {{ t('remove') }} {{ t(action.skill.name) + ' | ' + action.amount }}
+          {{ t('remove') }} {{ t(action.target.name) + ' | ' + action.amount }}
         </button>
       </div>
     </div>

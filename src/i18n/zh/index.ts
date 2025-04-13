@@ -13,41 +13,30 @@ export default {
   skill: {
     mining: { name: '挖矿', description: '挖矿。' },
     woodcutting: { name: '伐木', description: '伐木。' },
+    smithing: { name: '锻造', description: '锻造。' },
   },
   item: {
     sand: {
       name: '沙子',
       description: '沙子。',
     },
-    mud: {
-      name: '泥土',
-      description: '泥土。',
+    sandChest: {
+      name: '沙子宝箱',
+      description: '沙子宝箱。',
     },
-    wood: {
-      name: '木头',
-      description: '木头。',
-    },
-    ironWood: {
-      name: '铁木',
-      description: '铁木。',
+    sandPickaxe: {
+      name: '沙子矿镐',
+      description: '沙子矿镐。',
     },
   },
-  skillArea: {
+  actionTarget: {
     beach: {
       name: '沙滩',
       description: '沙滩。',
     },
-    earth: {
-      name: '泥地',
-      description: '泥地。',
-    },
-    forest: {
-      name: '森林',
-      description: '森林。',
-    },
-    ironForest: {
-      name: '铁木林',
-      description: '铁木林。',
+    sandPickaxe: {
+      name: '沙子矿镐',
+      description: '沙子矿镐。',
     },
   },
 }

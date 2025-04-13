@@ -16,13 +16,10 @@ app.use(FloatingVue, {
   themes: {
     'skill-tooltip': {
       triggers: ['hover', 'focus', 'touch'],
-      placement: 'right',
+      placement: 'right-start',
       distance: 0,
-    },
-    'item-tooltip': {
-      $extend: 'skill-tooltip',
-      placement: 'bottom',
-    },
+      extends: false,
+    }
   },
 })
 

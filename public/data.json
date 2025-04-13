@@ -1,92 +1,124 @@
-{
-    "skills": [
-        {
-            "id": "mining",
-            "sort": 0
-        },
-        {
-            "id": "woodcutting",
-            "sort": 1
-        }
-    ],
-    "items": [
-        {
-            "id": "sand",
-            "sort": 0
-        },
-        {
-            "id": "mud",
-            "sort": 1
-        },
-        {
-            "id": "wood",
-            "sort": 100
-        },
-        {
-            "id": "ironWood",
-            "sort": 101
-        }
-    ],
-    "gatheringAreas": [
-        {
-            "id": "beach",
-            "skill": "mining",
-            "sort": 0,
-            "baseTime": 3000,
-            "xp": 40,
-            "products": [
+[
+    {
+        "type": "skill",
+        "id": "mining",
+        "sort": 0
+    },
+    {
+        "type": "skill",
+        "id": "smithing",
+        "sort": 1
+    },
+    {
+        "type": "state",
+        "id": "miningSpeed",
+        "base": 0
+    },
+    {
+        "type": "slot",
+        "id": "miningTool",
+        "sort": 0
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "sand",
+        "sort": 0
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "sandChest",
+        "sort": 0,
+        "loots": [
+            {
+                "item": "sand",
+                "chance": 1,
+                "min": 10,
+                "max": 10
+            }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "equipment",
+        "id": "sandPickaxe",
+        "sort": 1,
+        "slot": "miningTool",
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "beach",
+        "skill": "mining",
+        "minLevel": 0,
+        "sort": 0,
+        "duration": {
+            "base": 2000,
+            "boosts": [
                 {
-                    "id": "sand",
-                    "percentage": 100,
-                    "min": 1,
-                    "max": 3
-                }
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
             ]
         },
-        {
-            "id": "earth",
-            "skill": "mining",
-            "sort": 1,
-            "baseTime": 6000,
-            "xp": 5,
-            "products": [
-                {
-                    "id": "mud",
-                    "percentage": 100,
-                    "min": 1,
-                    "max": 3
-                }
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "sandChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "sand",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "sandPickaxe",
+        "skill": "smithing",
+        "minLevel": 0,
+        "sort": 0,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                "overLevelSpeedUp"
             ]
         },
-        {
-            "id": "forest",
-            "skill": "woodcutting",
-            "sort": 100,
-            "baseTime": 3500,
-            "xp": 3,
-            "products": [
-                {
-                    "id": "wood",
-                    "percentage": 100,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
+        "xp": {
+            "base": 5,
+            "boosts": []
         },
-        {
-            "id": "ironForest",
-            "skill": "woodcutting",
-            "sort": 101,
-            "baseTime": 7000,
-            "xp": 5,
-            "products": [
-                {
-                    "id": "ironWood",
-                    "percentage": 100,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    ]
-}
+        "chest": "sandChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "sand",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "sandPickaxe",
+                "count": 1
+            }
+        ]
+    }
+]

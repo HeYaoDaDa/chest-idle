@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
-import { useDataStore } from '@/stores/data'
 import { useI18n } from 'vue-i18n'
+import { ROUTE_PATH_GAME } from '@/router'
+import { global } from '@/models/global'
 
 const router = useRouter()
-const dataStore = useDataStore()
 const { t } = useI18n()
 
 const fail = ref(false)
 
 watchEffect(() => {
-  if ('none' === dataStore.dataStatus) {
-    dataStore.loadData()
-  } else if ('finish' === dataStore.dataStatus) {
-    router.replace('/game')
-  } else if ('fail' === dataStore.dataStatus) {
+  if ('none' === global.status.value) {
+    global.load()
+  } else if ('finish' === global.status.value) {
+    router.replace(ROUTE_PATH_GAME)
+  } else if ('fail' === global.status.value) {
     fail.value = true
   }
 })

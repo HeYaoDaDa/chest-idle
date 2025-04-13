@@ -19,35 +19,15 @@ export default {
       name: 'Sand',
       description: 'Sand.',
     },
-    mud: {
-      name: 'Mud',
-      description: 'Mud.',
-    },
-    wood: {
-      name: 'Wood',
-      description: 'Wood.',
-    },
-    ironWood: {
-      name: 'Iron Wood',
-      description: 'Iron Wood.',
+    sandChest: {
+      name: 'Sand Chest',
+      description: 'Sand Chest.',
     },
   },
-  skillArea: {
+  gatheringZone: {
     beach: {
       name: 'Beach',
       description: 'Get beach.',
-    },
-    earth: {
-      name: 'Earth',
-      description: 'Earth.',
-    },
-    forest: {
-      name: 'Forest',
-      description: 'Forest.',
-    },
-    ironForest: {
-      name: 'Iron Forest',
-      description: 'Iron Forest.',
     },
   },
 }

@@ -1,71 +1,89 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
-import LanguageSelect from '@/components/misc/LanguageSelect.vue'
-import NotificationBar from '@/components/misc/NotificationBar.vue'
-import { global } from '@/global'
-import { useActionStore } from '@/stores/action'
-import { useInventoryStore } from '@/stores/inventory'
-import { Tooltip } from 'floating-vue'
-import { useI18n } from 'vue-i18n'
+import { dataManager } from '@/models/global/DataManager';
+import { inventory } from '@/models/global/InventoryManager';
+import { Tooltip, Menu } from 'floating-vue';
+import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n()
-const actionStore = useActionStore()
-const inventoryStore = useInventoryStore()
 </script>
 
 <template>
   <div id="game-page-root">
     <div id="game-page-layout-container">
       <div id="header">
-        <div>
-          <h1>{{ t('gameName') }}</h1>
-          <ActionQueue v-if="actionStore.isRunning" />
+        <div id="header-title-action">
+          <div>
+            <h1>{{ t('gameName') }}</h1>
+          </div>
+          <ActionQueue />
         </div>
-        <NotificationBar />
       </div>
       <div id="sidebar">
-        <Tooltip v-for="characterSkill in global.allSkills" :key="characterSkill.id" theme="skill-tooltip">
-          <router-link :to="`/game/${characterSkill.id}`" active-class="active-link">
+        <Tooltip v-for="skill in dataManager.allSkill" :key="skill.id" theme="skill-tooltip">
+          <router-link :to="`/game/${skill.id}`" active-class="active-link">
             <div>
-              {{ characterSkill.name() }} {{ characterSkill.level.value }}
+              {{ t(skill.name) }} {{ skill.level.value }}
             </div>
             <div style="width: 100%">
               <div :style="{
-                width: characterSkill.progress.value + '%',
+                width: skill.upgradeProgress.value * 100 + '%',
                 height: '2px',
                 backgroundColor: 'black',
               }"></div>
             </div>
           </router-link>
           <template #popper>
-            <div>{{ characterSkill.name() }}</div>
-            <div>Lv.{{ characterSkill.level.value }}</div>
-            <div>{{ characterSkill.xp.value }}</div>
-            <div>{{ characterSkill.nextLevelNeedXp.value }}</div>
+            <div>{{ t(skill.name) }}</div>
+            <div>Lv.{{ skill.level.value }}</div>
+            <div>{{ skill.xp.value }}</div>
+            <div>{{ skill.remainingXpForUpgrade.value }}</div>
             <hr />
-            <div>{{ characterSkill.description() }}</div>
+            <div>{{ t(skill.description) }}</div>
           </template>
         </Tooltip>
-        <LanguageSelect />
       </div>
       <div id="content">
         <RouterView />
       </div>
-      <div id="equipment"></div>
+      <div id="equipment">
+        <template v-for="slot in dataManager.allSlot" :key="slot.id">
+          <Menu v-if="slot.equipment.value">
+            <Tooltip>
+              <div class="equipment-item">
+                <div>{{ t(slot.equipment.value.name) }}</div>
+              </div>
+              <template #popper>
+                <div>
+                  {{ t(slot.equipment.value.description) }}
+                </div>
+              </template>
+            </Tooltip>
+            <template #popper>
+              <button @click="slot.unEquip()">UnEq</button>
+            </template>
+          </Menu>
+          <div v-else>{{ slot.id }}</div>
+        </template>
+      </div>
       <div id="abilities"></div>
       <div id="invertory">
-        <Tooltip v-for="inventoryItem in inventoryStore.inventoryItems" :key="inventoryItem.item.id"
-          theme="item-tooltip">
-          <div class="inventory-item">
-            <div>{{ inventoryItem.item.getName() }}</div>
-            <div>{{ inventoryItem.amount }}</div>
-          </div>
-          <template #popper>
-            <div>
-              {{ inventoryItem.item.getDescription() }}
+        <Menu v-for="inventoryItem in inventory.inventoryItems.value" :key="inventoryItem.item.id">
+          <Tooltip>
+            <div class="inventory-item">
+              <div>{{ t(inventoryItem.item.name) }}</div>
+              <div>{{ inventoryItem.amount.value }}</div>
             </div>
+            <template #popper>
+              <div>
+                {{ t(inventoryItem.item.description) }}
+              </div>
+            </template>
+          </Tooltip>
+          <template #popper>
+            <button v-if="inventoryItem.item.isEquipment()" @click="inventoryItem.equip()">Eq</button>
           </template>
-        </Tooltip>
+        </Menu>
       </div>
     </div>
   </div>
@@ -76,19 +94,18 @@ const inventoryStore = useInventoryStore()
 
 #game-page-root {
   height: 100vh;
-  padding: 4px;
+  padding: 8px;
 
   #game-page-layout-container {
-    height: 100%;
+    height: calc(100% - 16px);
     display: grid;
     grid-template-columns: 1fr 4fr 1fr 1fr;
     grid-template-rows: 1fr 4fr 8fr;
     gap: 8px;
 
     >div {
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid black;
       padding: 8px;
-      border-radius: 4px;
     }
 
     #header {
@@ -99,6 +116,13 @@ const inventoryStore = useInventoryStore()
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: flex-start;
+
+      #header-title-action {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
     }
 
     #sidebar {
@@ -117,7 +141,7 @@ const inventoryStore = useInventoryStore()
         cursor: pointer;
 
         &:hover:not(.active-link) {
-          background-color: color.adjust(white, $lightness: 10%);
+          background-color: color.adjust(white, $lightness: -5%);
         }
 
         &.active-link {
@@ -134,6 +158,22 @@ const inventoryStore = useInventoryStore()
     #equipment {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      padding: 4px;
+      gap: 10px;
+
+      .equipment-item {
+        min-width: 100px;
+        min-height: 100px;
+        background-color: color.adjust(white, $lightness: -10%);
+        user-select: none;
+        cursor: pointer;
+      }
     }
 
     #abilities {
@@ -152,8 +192,6 @@ const inventoryStore = useInventoryStore()
       align-items: flex-start;
       padding: 4px;
       gap: 10px;
-      min-width: 256px;
-      height: 100%;
 
       .inventory-item {
         min-width: 100px;

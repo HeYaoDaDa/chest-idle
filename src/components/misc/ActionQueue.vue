@@ -1,36 +1,25 @@
 <script setup lang="ts">
-import { useActionStore } from '@/stores/action'
-import { ref, onMounted, computed } from 'vue'
+import { actionManager } from '@/models/global/ActionManager';
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const actionStore = useActionStore()
 const { t } = useI18n()
 
-const progress = ref(0)
-
-const runningActionDisplay = computed(() => actionStore.runningAction?.action.toShow())
+const runningActionDisplay = computed(() => actionManager.currentAction.value ? t(actionManager.currentAction.value.target.name) + ' | ' + actionManager.currentAction.value.amount.value : 'Nothing...');
 const runningActionDurationDisplay = computed(() => {
-  if (actionStore.runningAction) {
-    return Math.floor(actionStore.runningAction.duration / 10) / 100 + 's'
+  if (actionManager.currentAction.value) {
+    return Math.floor(actionManager.currentAction.value.duration.value / 10) / 100 + 's'
   } else {
-    return 'invalid'
+    return ''
   }
 })
-
-onMounted(() => {
-  const animate = (timestamp: number) => {
-    if (actionStore.isRunning) {
-      if (actionStore.runningAction) {
-        const elapsed = timestamp - actionStore.runningAction.startTime
-        progress.value = Math.min((elapsed / actionStore.runningAction.duration) * 100, 100)
-      } else {
-        console.error(`Action running but runningAction:(${actionStore.runningAction})`)
-      }
-    }
-    requestAnimationFrame(animate)
+const progress = computed(() => {
+  if (actionManager.currentAction.value) {
+    return Math.min(actionManager.currentAction.value.elapsed.value / actionManager.currentAction.value.duration.value * 100, 100);
+  } else {
+    return 0;
   }
-  requestAnimationFrame(animate)
-})
+});
 </script>
 
 <template>
@@ -41,12 +30,14 @@ onMounted(() => {
         <div class="duration-show">{{ runningActionDurationDisplay }}</div>
         <div class="progress-bar" :style="{ width: progress + '%' }"></div>
       </div>
-      <button @click="actionStore.removeAction(0)">{{ t('stop') }}</button>
+      <button v-if="actionManager.currentAction.value" @click="actionManager.stopCurrentAction">
+        {{ t('stop') }}
+      </button>
     </div>
-    <div v-if="actionStore.queuedActions.length > 0">
-      <div v-for="(action, index) in actionStore.queuedActions" :key="index">
-        <button @click="actionStore.removeAction(index + 1)">
-          {{ t('remove') }} {{ action.toShow() }}
+    <div v-if="actionManager.queuedActions.length > 0">
+      <div v-for="(action, index) in actionManager.queuedActions" :key="index">
+        <button @click="actionManager.removeQueueAction(index)">
+          {{ t('remove') }} {{ t(action.skill.name) + ' | ' + action.amount }}
         </button>
       </div>
     </div>
@@ -59,6 +50,7 @@ onMounted(() => {
 #action-div {
   display: flex;
   flex-flow: column nowrap;
+  padding: 8px 16px;
 }
 
 .action-bottom {

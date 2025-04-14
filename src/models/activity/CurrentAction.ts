@@ -69,8 +69,13 @@ export class CurrentAction {
       const ingredient = this.calculateIngredient(count);
       if (ingredient) inventory.removes(ingredient);
 
-      inventory.addes(this.calculateRewards(count))
       this.skill.addXp(this.xp.value * count);
+      const chestCount = this.target.chest.addPoint(this.chestPoints.value * count);
+      const rewards = this.calculateRewards(count)
+      if (chestCount > 0) {
+        rewards.push([this.target.chest, chestCount]);
+      }
+      inventory.addes(rewards)
 
       const remainedElapsed = elapsed - (this.remainedDuration.value + this.duration.value * (count - 1));
 

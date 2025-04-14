@@ -5,5 +5,6 @@ export interface ChestDefinition {
   itemType: "chest"
   id: string
   sort: number
+  maxPoints: number
   loots: LootEntryDefinition[]
 }

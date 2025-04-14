@@ -27,6 +27,16 @@ class DataManager {
     for (const definition of definitions) {
       this.handleDefinition(definition);
     }
+    //item ref
+    for (const item of this.itemIdMap.values()) {
+      if (item.isChest()) {
+        item.loots = item._loots.map(it => ({
+          ...it,
+          item: dataManager.getItemById(it.item)
+        }));
+      }
+    }
+    //list
     this.allSkill = Array.from(this.skillIdMap.values()).sort((a, b) => a.sort - b.sort);
     this.allSlot = Array.from(this.slotIdMap.values()).sort((a, b) => a.sort - b.sort);
     this.allChest = Array.from(this.chestIdMap.values()).sort((a, b) => a.sort - b.sort);

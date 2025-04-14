@@ -1,7 +1,6 @@
 import { computed, ref, type ComputedRef, type Ref } from "vue"
 import { Item } from "."
 import type { LootEntryDefinition } from "../definitions/misc/LootEntryDefinition"
-import { dataManager } from "../global/DataManager"
 
 export class Chest extends Item {
   type = "chest" as const
@@ -13,16 +12,12 @@ export class Chest extends Item {
     chance: number,
     min: number,
     max: number
-  }[]
+  }[] = []
 
-  constructor(id: string, sort: number, public maxPoints: number, loots: LootEntryDefinition[]) {
+  constructor(id: string, sort: number, public maxPoints: number, public _loots: LootEntryDefinition[]) {
     super(id, sort);
     this.remainingPointsForNext = computed(() => this.maxPoints - this.points.value);
     this.pointProgress = computed(() => this.points.value / this.maxPoints);
-    this.loots = loots.map(it => ({
-      ...it,
-      item: dataManager.getItemById(it.item)
-    }));
   }
 
   addPoint(point: number): number {

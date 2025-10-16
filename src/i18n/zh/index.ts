@@ -13,7 +13,21 @@ export default {
   skill: {
     mining: { name: '挖矿', description: '挖矿。' },
     woodcutting: { name: '伐木', description: '伐木。' },
+    foraging: { name: '采集', description: '采集。' },
     smithing: { name: '锻造', description: '锻造。' },
+    crafting: { name: '制作', description: '制作。' },
+    tailoring: { name: '裁缝', description: '裁缝。' },
+    cooking: { name: '烹饪', description: '烹饪。' },
+    brewing: { name: '酿造', description: '酿造。' },
+    alchemy: { name: '炼金', description: '炼金。' },
+    enhancing: { name: '强化', description: '强化。' },
+    intelligence: { name: '智力', description: '智力。' },
+    stamina: { name: '耐力', description: '耐力。' },
+    defense: { name: '防御', description: '防御。' },
+    precise: { name: '精准', description: '精准。' },
+    melee: { name: '近战', description: '近战。' },
+    ranged: { name: '远程', description: '远程。' },
+    magic: { name: '魔法', description: '魔法。' },
   },
   item: {
     sand: {

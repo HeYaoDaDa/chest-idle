@@ -29,6 +29,18 @@ export default {
     ranged: { name: 'Ranged', description: 'Ranged.' },
     magic: { name: 'Magic', description: 'Magic.' },
   },
+  slot: {
+    miningTool: 'Mining Tool',
+    woodcuttingTool: 'Woodcutting Tool',
+    foragingTool: 'Foraging Tool',
+    smithingTool: 'Smithing Tool',
+    craftingTool: 'Crafting Tool',
+    tailoringTool: 'Tailoring Tool',
+    cookingTool: 'Cooking Tool',
+    brewingTool: 'Brewing Tool',
+    alchemyTool: 'Alchemy Tool',
+    enhancingTool: 'Enhancing Tool',
+  },
   item: {
     sand: {
       name: 'Sand',

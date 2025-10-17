@@ -65,7 +65,9 @@ const { t } = useI18n()
               <button @click="slot.unEquip()">UnEq</button>
             </template>
           </Menu>
-          <div v-else>{{ slot.id }}</div>
+          <div v-else>
+            <div class="equipment-slot"><span>{{ t(slot.name) }}</span></div>
+          </div>
         </template>
       </div>
       <div id="abilities"></div>
@@ -176,6 +178,18 @@ const { t } = useI18n()
         background-color: color.adjust(white, $lightness: -10%);
         user-select: none;
         cursor: pointer;
+      }
+
+      .equipment-slot {
+        min-width: 100px;
+        min-height: 100px;
+        background-color: color.adjust(white, $lightness: -10%);
+        user-select: none;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
       }
     }
 

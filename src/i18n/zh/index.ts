@@ -29,6 +29,18 @@ export default {
     ranged: { name: '远程', description: '远程。' },
     magic: { name: '魔法', description: '魔法。' },
   },
+  slot:{
+    miningTool: "挖矿工具",
+    woodcuttingTool: "伐木工具",
+    foragingTool: "采集工具",
+    smithingTool: "锻造工具",
+    craftingTool: "制作工具",
+    tailoringTool: "裁缝工具",
+    cookingTool: "烹饪工具",
+    brewingTool: "酿造工具",
+    alchemyTool: "炼金工具",
+    enhancingTool: "强化工具",
+  },
   item: {
     sand: {
       name: '沙子',

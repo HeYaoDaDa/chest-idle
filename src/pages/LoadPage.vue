@@ -24,7 +24,7 @@ watchEffect(() => {
 <template>
   <div id="load-page-root">
     <h1 id="load-data-fail-text" v-if="fail">{{ t('loadDataFail') }}</h1>
-    <h1 v-else>{{ t('loading') }}</h1>
+    <h1 v-else>{{ t('loading') }}...</h1>
   </div>
 </template>
 

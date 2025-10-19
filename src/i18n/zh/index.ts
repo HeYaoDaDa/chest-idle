@@ -2,7 +2,7 @@ export default {
   gameNameFirst: '宝箱',
   gameNameLast: '放置',
   gameName: '@:gameNameFirst@:gameNameLast',
-  loading: '加载中。。。',
+  loading: '加载中',
   loadDataFail: '加载数据失败！',
   start: '开始',
   stop: '停止',

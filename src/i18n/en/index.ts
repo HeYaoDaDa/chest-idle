@@ -2,7 +2,7 @@ export default {
   gameNameFirst: 'Chest',
   gameNameLast: 'Idle',
   gameName: '@:gameNameFirst @:gameNameLast',
-  loading: 'Loading...',
+  loading: 'Loading',
   loadDataFail: 'Loading data fail!',
   start: 'Start',
   stop: 'Stop',

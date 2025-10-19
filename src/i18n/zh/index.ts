@@ -12,7 +12,7 @@ export default {
     levelUp: '技能 {skill} 升级到 {level}!',
   },
   skill: {
-    mining: { name: '挖矿', description: '挖矿。' },
+    mining: { name: '采矿', description: '采矿。' },
     woodcutting: { name: '伐木', description: '伐木。' },
     foraging: { name: '采集', description: '采集。' },
     smithing: { name: '锻造', description: '锻造。' },
@@ -31,7 +31,7 @@ export default {
     magic: { name: '魔法', description: '魔法。' },
   },
   slot:{
-    miningTool: "挖矿工具",
+    miningTool: "采矿工具",
     woodcuttingTool: "伐木工具",
     foragingTool: "采集工具",
     smithingTool: "锻造工具",

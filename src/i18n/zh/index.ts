@@ -7,6 +7,7 @@ export default {
   start: '开始',
   stop: '停止',
   remove: '删除',
+  nothing: '无所事事',
   notification: {
     levelUp: '技能 {skill} 升级到 {level}!',
   },

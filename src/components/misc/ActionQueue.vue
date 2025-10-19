@@ -5,7 +5,7 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const runningActionDisplay = computed(() => actionManager.currentAction.value ? t(actionManager.currentAction.value.target.name) + ' | ' + actionManager.currentAction.value.amount.value : 'Nothing...');
+const runningActionDisplay = computed(() => actionManager.currentAction.value ? t(actionManager.currentAction.value.target.name) + ' | ' + actionManager.currentAction.value.amountDisplay.value : t('nothing') + '...');
 const runningActionDurationDisplay = computed(() => {
   if (actionManager.currentAction.value) {
     return Math.floor(actionManager.currentAction.value.duration.value / 10) / 100 + 's'

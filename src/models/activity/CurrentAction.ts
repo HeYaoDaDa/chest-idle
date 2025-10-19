@@ -5,10 +5,12 @@ import type { Item } from "../item"
 import type { State } from "../state/State"
 import { inventory } from "../global/InventoryManager"
 import { actionManager } from "../global/ActionManager"
+import i18n from "@/i18n"
 
 export class CurrentAction {
   target: ActionTarget
   amount: Ref<number>
+  amountDisplay: ComputedRef<string> = computed(() => this.amount.value.toLocaleString(i18n.global.locale.value))
   finalize: () => void
 
   skill: Skill

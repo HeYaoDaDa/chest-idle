@@ -7,6 +7,7 @@ export default {
   start: 'Start',
   stop: 'Stop',
   remove: 'Remove',
+  nothing: 'Nothing',
   notification: {
     levelUp: 'Skill {skill} upgrade to {level}!',
   },

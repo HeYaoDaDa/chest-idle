@@ -1,12 +1,14 @@
-import { computed, ref, type Ref } from "vue"
+import { computed, ref, type ComputedRef, type Ref } from "vue"
 import type { Item } from "../item"
 import { inventory } from "../global/InventoryManager"
 import { dataManager } from "../global/DataManager"
 import { Effect } from "../state/Effect"
 import MersenneTwister from "mersenne-twister"
+import i18n from "@/i18n"
 
 export class InventoryItem {
   amount: Ref<number>
+  amountDisplay: ComputedRef<string> = computed(() => this.amount.value.toLocaleString(i18n.global.locale.value))
 
   constructor(
     public item: Item,

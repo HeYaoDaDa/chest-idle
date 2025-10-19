@@ -76,7 +76,7 @@ const { t } = useI18n()
           <Tooltip>
             <div class="inventory-item">
               <div>{{ t(inventoryItem.item.name) }}</div>
-              <div>{{ inventoryItem.amount.value }}</div>
+              <div>{{ inventoryItem.amountDisplay.value }}</div>
             </div>
             <template #popper>
               <div>

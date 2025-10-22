@@ -79,7 +79,7 @@
         "id": "magic",
         "sort": 16
     },
-   {
+    {
         "type": "state",
         "id": "miningSpeed",
         "base": 0
@@ -182,36 +182,48 @@
     {
         "type": "item",
         "itemType": "resource",
-        "id": "sand",
+        "id": "copperOre",
         "sort": 0
     },
     {
         "type": "item",
+        "itemType": "resource",
+        "id": "copperIngot",
+        "sort": 1
+    },
+    {
+        "type": "item",
         "itemType": "chest",
-        "id": "sandChest",
+        "id": "copperMineChest",
         "sort": 0,
         "maxPoints": 1000,
         "loots": [
             {
-                "item": "sand",
+                "item": "copperOre",
                 "chance": 1,
                 "min": 10,
                 "max": 50
             },
             {
-                "item": "sand",
+                "item": "copperOre",
                 "chance": 0.5,
                 "min": 50,
                 "max": 100
             },
             {
-                "item": "sandPickaxe",
+                "item": "copperIngot",
+                "chance": 0.5,
+                "min": 1,
+                "max": 2
+            },
+            {
+                "item": "copperPickaxe",
                 "chance": 0.5,
                 "min": 1,
                 "max": 1
             },
             {
-                "item": "sandChest",
+                "item": "copperMineChest",
                 "chance": 0.33,
                 "min": 1,
                 "max": 1
@@ -221,8 +233,8 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "sandPickaxe",
-        "sort": 1,
+        "id": "copperPickaxe",
+        "sort": 2,
         "slot": "miningTool",
         "effects": [
             {
@@ -233,9 +245,23 @@
         ]
     },
     {
+        "type": "item",
+        "itemType": "equipment",
+        "id": "copperSmithingHammer",
+        "sort": 3,
+        "slot": "smithingTool",
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
+        ]
+    },
+    {
         "type": "actionTarget",
         "targetType": "gatheringZone",
-        "id": "beach",
+        "id": "copperMine",
         "skill": "mining",
         "minLevel": 0,
         "sort": 0,
@@ -253,14 +279,14 @@
             "base": 5,
             "boosts": []
         },
-        "chest": "sandChest",
+        "chest": "copperMineChest",
         "chestPoints": {
             "base": 200,
             "boosts": []
         },
         "products": [
             {
-                "item": "sand",
+                "item": "copperOre",
                 "count": 1
             }
         ]
@@ -268,13 +294,56 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "sandPickaxe",
+        "id": "copperIngot",
         "skill": "smithing",
         "minLevel": 0,
         "sort": 0,
         "duration": {
+            "base": 1000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "copperIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperPickaxe",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 1,
+        "duration": {
             "base": 3000,
             "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
                 "overLevelSpeedUp"
             ]
         },
@@ -282,20 +351,59 @@
             "base": 5,
             "boosts": []
         },
-        "chest": "sandChest",
+        "chest": "copperMineChest",
         "chestPoints": {
             "base": 5,
             "boosts": []
         },
         "ingredients": [
             {
-                "item": "sand",
+                "item": "copperIngot",
                 "count": 5
             }
         ],
         "products": [
             {
-                "item": "sandPickaxe",
+                "item": "copperPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 2,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperSmithingHammer",
                 "count": 1
             }
         ]

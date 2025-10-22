@@ -29,7 +29,7 @@ export default {
     ranged: { name: '远程', description: '远程。' },
     magic: { name: '魔法', description: '魔法。' },
   },
-  slot:{
+  slot: {
     miningTool: "采矿工具",
     woodcuttingTool: "伐木工具",
     foragingTool: "采集工具",
@@ -42,27 +42,43 @@ export default {
     enhancingTool: "强化工具",
   },
   item: {
-    sand: {
-      name: '沙子',
-      description: '沙子。',
+    copperMineChest: {
+      name: '铜矿宝箱',
+      description: '铜矿宝箱。',
     },
-    sandChest: {
-      name: '沙子宝箱',
-      description: '沙子宝箱。',
+    copperOre: {
+      name: '铜矿石',
+      description: '铜矿石。',
     },
-    sandPickaxe: {
-      name: '沙子矿镐',
-      description: '沙子矿镐。',
+    copperIngot: {
+      name: '铜锭',
+      description: '铜锭。',
     },
+    copperPickaxe: {
+      name: '铜矿镐',
+      description: '铜矿镐。',
+    },
+    copperSmithingHammer: {
+      name: '铜锻造锤',
+      description: '铜锻造锤。',
+    }
   },
   actionTarget: {
-    beach: {
-      name: '沙滩',
-      description: '沙滩。',
+    copperMine: {
+      name: '铜矿',
+      description: '在铜矿中采集铜矿石。',
     },
-    sandPickaxe: {
-      name: '沙子矿镐',
-      description: '沙子矿镐。',
+    copperIngot: {
+      name: '铜锭',
+      description: '铜锭。',
+    },
+    copperPickaxe: {
+      name: '铜矿镐',
+      description: '铜矿镐。',
+    },
+    copperSmithingHammer: {
+      name: '铜锻造锤',
+      description: '使用铜锻造锤锻造铜锭。',
     },
   },
 }

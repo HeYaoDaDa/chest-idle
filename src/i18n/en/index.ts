@@ -42,19 +42,43 @@ export default {
     enhancingTool: 'Enhancing Tool',
   },
   item: {
-    sand: {
-      name: 'Sand',
-      description: 'Sand.',
+    copperMineChest: {
+      name: 'Copper Mine Chest',
+      description: 'Copper Mine Chest.',
     },
-    sandChest: {
-      name: 'Sand Chest',
-      description: 'Sand Chest.',
+    copperOre: {
+      name: 'Copper Ore',
+      description: 'Copper Ore.',
     },
+    copperIngot: {
+      name: 'Copper Ingot',
+      description: 'Copper Ingot.',
+    },
+    copperPickaxe: {
+      name: 'Copper Pickaxe',
+      description: 'Copper Pickaxe.',
+    },
+    copperSmithingHammer: {
+      name: 'Copper Smithing Hammer',
+      description: 'Copper Smithing Hammer.',
+    }
   },
-  gatheringZone: {
-    beach: {
-      name: 'Beach',
-      description: 'Get beach.',
+  actionTarget: {
+    copperMine: {
+      name: 'Copper Mine',
+      description: 'Mine Copper Ore using Copper Pickaxe.',
     },
-  },
+    copperIngot: {
+      name: 'Copper Ingot',
+      description: 'Copper Ingot.',
+    },
+    copperPickaxe: {
+      name: 'Copper Pickaxe',
+      description: 'Copper Pickaxe.',
+    },
+    copperSmithingHammer: {
+      name: 'Copper Smithing Hammer',
+      description: 'Copper Smithing Hammer.',
+    }
+  }
 }

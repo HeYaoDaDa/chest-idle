@@ -66,11 +66,6 @@
     },
     {
         "type": "skill",
-        "id": "precise",
-        "sort": 13
-    },
-    {
-        "type": "skill",
         "id": "melee",
         "sort": 14
     },

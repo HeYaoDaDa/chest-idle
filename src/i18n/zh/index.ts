@@ -25,7 +25,6 @@ export default {
     intelligence: { name: '智力', description: '智力。' },
     stamina: { name: '耐力', description: '耐力。' },
     defense: { name: '防御', description: '防御。' },
-    precise: { name: '精准', description: '精准。' },
     melee: { name: '近战', description: '近战。' },
     ranged: { name: '远程', description: '远程。' },
     magic: { name: '魔法', description: '魔法。' },

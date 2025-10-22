@@ -25,7 +25,6 @@ export default {
     intelligence: { name: 'Intelligence', description: 'Intelligence.' },
     stamina: { name: 'Stamina', description: 'Stamina.' },
     defense: { name: 'Defense', description: 'Defense.' },
-    precise: { name: 'Precise', description: 'Precise.' },
     melee: { name: 'Melee', description: 'Melee.' },
     ranged: { name: 'Ranged', description: 'Ranged.' },
     magic: { name: 'Magic', description: 'Magic.' },

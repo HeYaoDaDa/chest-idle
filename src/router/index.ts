@@ -3,6 +3,7 @@ import LoadPage from '@/pages/LoadPage.vue'
 import GamePage from '@/pages/GamePage.vue'
 import SkillPage from '@/pages/SkillPage.vue'
 import { global } from '@/models/global'
+import StatesPage from '@/pages/StatesPage.vue'
 
 export const ROUTE_PATH_LOAD = "/"
 export const ROUTE_NAME_LOAD = "load"
@@ -27,6 +28,11 @@ const router = createRouter({
       meta: { requireGameData: true },
       component: GamePage,
       children: [
+        {
+          path: 'states',
+          name: 'states',
+          component: StatesPage,
+        },
         {
           path: ':id',
           name: 'skill',

@@ -22,6 +22,7 @@ class DataManager {
   public allSkill: Skill[] = []
   public allSlot: Slot[] = []
   public allChest: Chest[] = []
+  public allStateMap: Map<string, State> = new Map()
 
   load(definitions: Definition[]) {
     for (const definition of definitions) {
@@ -40,6 +41,7 @@ class DataManager {
     this.allSkill = Array.from(this.skillIdMap.values()).sort((a, b) => a.sort - b.sort);
     this.allSlot = Array.from(this.slotIdMap.values()).sort((a, b) => a.sort - b.sort);
     this.allChest = Array.from(this.chestIdMap.values()).sort((a, b) => a.sort - b.sort);
+    this.allStateMap = this.stateIdMap;
     //reverse link
     for (const skill of this.allSkill) {
       skill.actionTargets = Array.from(this.actionTargetIdMap.values()).filter(it => it.skill.id === skill.id).sort((a, b) => a.sort - b.sort);

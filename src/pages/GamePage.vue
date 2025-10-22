@@ -44,6 +44,15 @@ const { t } = useI18n()
             <div>{{ t(skill.description) }}</div>
           </template>
         </Tooltip>
+        <!--  -->
+        <router-link :to="`/game/states`" active-class="active-link">
+          <div>
+            States
+          </div>
+          <div style="width: 100%">
+            <div></div>
+          </div>
+        </router-link>
       </div>
       <div id="content">
         <RouterView />

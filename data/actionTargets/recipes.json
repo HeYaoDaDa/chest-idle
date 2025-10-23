@@ -1,0 +1,3434 @@
+[
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperIngot",
+        "skill": "smithing",
+        "minLevel": 0,
+        "sort": 0,
+        "duration": {
+            "base": 1000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "copperIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperPickaxe",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 1,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperAxe",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 2,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperForagingKnife",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 3,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 4,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperCraftingTool",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 5,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 6,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 7,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperBrewingKit",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 8,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperAlchemistKit",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 9,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "copperEnhancingTool",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 10,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 5,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "copperIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "copperEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironIngot",
+        "skill": "smithing",
+        "minLevel": 10,
+        "sort": 99,
+        "duration": {
+            "base": 1200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 10,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "ironIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironPickaxe",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 101,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironAxe",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 102,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironForagingKnife",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 103,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 104,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironCraftingTool",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 105,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 106,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 107,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ironBrewingKit",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 108,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverIngot",
+        "skill": "smithing",
+        "minLevel": 20,
+        "sort": 200,
+        "duration": {
+            "base": 1400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 12,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "silverIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverPickaxe",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 201,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverAxe",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 202,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverForagingKnife",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 203,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 204,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverCraftingTool",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 205,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 206,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 207,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "silverBrewingKit",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 208,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldIngot",
+        "skill": "smithing",
+        "minLevel": 30,
+        "sort": 300,
+        "duration": {
+            "base": 1600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 120,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "goldIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldPickaxe",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 301,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldAxe",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 302,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldForagingKnife",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 303,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 304,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldCraftingTool",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 305,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 306,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 307,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "goldBrewingKit",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 308,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumIngot",
+        "skill": "smithing",
+        "minLevel": 40,
+        "sort": 400,
+        "duration": {
+            "base": 1800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 160,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumPickaxe",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 401,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumAxe",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 402,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumForagingKnife",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 403,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 404,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumCraftingTool",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 405,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 406,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 407,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "orichalcumBrewingKit",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 408,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronIngot",
+        "skill": "smithing",
+        "minLevel": 50,
+        "sort": 500,
+        "duration": {
+            "base": 2000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 200,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronPickaxe",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 501,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronAxe",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 502,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronForagingKnife",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 503,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 504,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronCraftingTool",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 505,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 506,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 507,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "darkIronBrewingKit",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 508,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilIngot",
+        "skill": "smithing",
+        "minLevel": 60,
+        "sort": 600,
+        "duration": {
+            "base": 2200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 240,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilPickaxe",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 601,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilPickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilAxe",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 602,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilForagingKnife",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 603,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 604,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilCraftingTool",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 605,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 606,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 607,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mithrilBrewingKit",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 608,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineIngot",
+        "skill": "smithing",
+        "minLevel": 70,
+        "sort": 700,
+        "duration": {
+            "base": 2400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 280,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineOre",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineIngot",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantinePickaxe",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 701,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantinePickaxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineAxe",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 702,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineAxe",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineForagingKnife",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 703,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineForagingKnife",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineSmithingHammer",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 704,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineSmithingHammer",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineCraftingTool",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 705,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineCraftingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineTailoringNeedle",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 706,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineTailoringNeedle",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineCookingUtensil",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 707,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineCookingUtensil",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "adamantineBrewingKit",
+        "skill": "smithing",
+        "minLevel": 80,
+        "sort": 708,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 20,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "id": "ironAlchemistKit",
+        "sort": 80,
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 20,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "id": "ironEnhancingTool",
+        "sort": 110,
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 30,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "id": "silverAlchemistKit",
+        "sort": 209,
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 30,
+        "duration": {
+            "base": 3800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 20,
+            "boosts": []
+        },
+        "id": "silverEnhancingTool",
+        "sort": 210,
+        "ingredients": [
+            {
+                "item": "silverIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "silverEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 40,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "id": "goldAlchemistKit",
+        "sort": 309,
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 40,
+        "duration": {
+            "base": 4000,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 25,
+            "boosts": []
+        },
+        "id": "goldEnhancingTool",
+        "sort": 310,
+        "ingredients": [
+            {
+                "item": "goldIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "goldEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 50,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "id": "orichalcumAlchemistKit",
+        "sort": 409,
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 50,
+        "duration": {
+            "base": 4200,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 30,
+            "boosts": []
+        },
+        "id": "orichalcumEnhancingTool",
+        "sort": 410,
+        "ingredients": [
+            {
+                "item": "orichalcumIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "orichalcumEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 60,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "id": "darkIronAlchemistKit",
+        "sort": 509,
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 60,
+        "duration": {
+            "base": 4400,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 35,
+            "boosts": []
+        },
+        "id": "darkIronEnhancingTool",
+        "sort": 510,
+        "ingredients": [
+            {
+                "item": "darkIronIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "darkIronEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 70,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "id": "mithrilAlchemistKit",
+        "sort": 609,
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 70,
+        "duration": {
+            "base": 4600,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 40,
+            "boosts": []
+        },
+        "id": "mithrilEnhancingTool",
+        "sort": 610,
+        "ingredients": [
+            {
+                "item": "mithrilIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "mithrilEnhancingTool",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 80,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "id": "adamantineAlchemistKit",
+        "sort": 709,
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 80,
+        "duration": {
+            "base": 4800,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "id": "adamantineEnhancingTool",
+        "sort": 710,
+        "ingredients": [
+            {
+                "item": "adamantineIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "adamantineEnhancingTool",
+                "count": 1
+            }
+        ]
+    }
+]

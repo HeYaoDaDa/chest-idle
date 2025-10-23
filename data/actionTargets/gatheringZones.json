@@ -1,0 +1,167 @@
+[
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "copperMine",
+        "skill": "mining",
+        "minLevel": 0,
+        "sort": 0,
+        "duration": {
+            "base": 2000,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "copperMineChest",
+        "chestPoints": {
+            "base": 200,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "copperOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "ironMine",
+        "skill": "mining",
+        "minLevel": 10,
+        "sort": 100,
+        "duration": {
+            "base": 2200,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 10,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 250,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "ironOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "silverMine",
+        "skill": "mining",
+        "minLevel": 20,
+        "sort": 200,
+        "duration": {
+            "base": 2400,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "silverMineChest",
+        "chestPoints": {
+            "base": 300,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "silverOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "goldMine",
+        "skill": "mining",
+        "minLevel": 30,
+        "sort": 300,
+        "duration": {
+            "base": 2600,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "goldMineChest",
+        "chestPoints": {
+            "base": 400,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "goldOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "orichalcumMine",
+        "skill": "mining",
+        "minLevel": 40,
+        "sort": 400,
+        "duration": {
+            "base": 2800,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "orichalcumMineChest",
+        "chestPoints": {
+            "base": 500,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "orichalcumOre",
+                "count": 1
+            }
+        ]
+    }
+]

@@ -38,7 +38,7 @@
         "id": "ironMine",
         "skill": "mining",
         "minLevel": 10,
-        "sort": 100,
+        "sort": 1,
         "duration": {
             "base": 2200,
             "boosts": [
@@ -71,7 +71,7 @@
         "id": "silverMine",
         "skill": "mining",
         "minLevel": 20,
-        "sort": 200,
+        "sort": 2,
         "duration": {
             "base": 2400,
             "boosts": [
@@ -104,7 +104,7 @@
         "id": "goldMine",
         "skill": "mining",
         "minLevel": 30,
-        "sort": 300,
+        "sort": 3,
         "duration": {
             "base": 2600,
             "boosts": [
@@ -137,7 +137,7 @@
         "id": "orichalcumMine",
         "skill": "mining",
         "minLevel": 40,
-        "sort": 400,
+        "sort": 4,
         "duration": {
             "base": 2800,
             "boosts": [
@@ -160,6 +160,105 @@
         "products": [
             {
                 "item": "orichalcumOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "darkIronMine",
+        "skill": "mining",
+        "minLevel": 50,
+        "sort": 5,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "darkIronMineChest",
+        "chestPoints": {
+            "base": 600,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "darkIronOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "mithrilMine",
+        "skill": "mining",
+        "minLevel": 60,
+        "sort": 6,
+        "duration": {
+            "base": 3200,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mithrilMineChest",
+        "chestPoints": {
+            "base": 700,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "mithrilOre",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "adamantineMine",
+        "skill": "mining",
+        "minLevel": 70,
+        "sort": 7,
+        "duration": {
+            "base": 3400,
+            "boosts": [
+                {
+                    "state": "miningSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 70,
+            "boosts": []
+        },
+        "chest": "adamantineMineChest",
+        "chestPoints": {
+            "base": 800,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "adamantineOre",
                 "count": 1
             }
         ]

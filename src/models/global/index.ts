@@ -12,8 +12,17 @@ export class Global {
     this.status.value = 'loading'
     try {
       //definition
-      const response = await axios.get('/data.json')
-      const definitions = response.data as Definition[]
+      const paths = [
+        '/data/skills.json',
+        '/data/states.json',
+        '/data/slots.json',
+        '/data/items.json',
+        '/data/actionTargets/gatheringZones.json',
+        '/data/actionTargets/recipes.json',
+      ];
+      const responses = await Promise.all(paths.map(p => axios.get(p)));
+      const definitions = responses.flatMap(r => r.data as Definition[]);
+
       dataManager.load(definitions);
       actionManager.load();
       inventory.load();

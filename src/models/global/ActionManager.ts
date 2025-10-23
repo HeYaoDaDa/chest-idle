@@ -40,6 +40,10 @@ class ActionManager {
   }
 
   public startCurrentAction(target: ActionTarget, amount: number = Infinity): boolean {
+    if (target.skill.level.value < target.minLevel) {
+      console.warn(`Required level ${target.minLevel} for action ${target.id}, but current level is ${target.skill.level.value}`);
+      return false;
+    }
     if (CurrentAction.computeAmount(target, amount) > 0) {
       this.currentAction.value = new CurrentAction(target, amount);
       return true;

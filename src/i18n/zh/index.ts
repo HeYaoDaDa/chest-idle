@@ -1,4 +1,6 @@
 export default {
+  minLevelRequired: '需要等级',
+  duration: '持续时间',
   gameNameFirst: '宝箱',
   gameNameLast: '放置',
   gameName: '@:gameNameFirst@:gameNameLast',

@@ -57,7 +57,8 @@ function addAction() {
       <div>{{ t(openZone.name) }}</div>
       <div>{{ t(openZone.skill.name) }}</div>
       <div>{{ t(openZone.description) }}</div>
-      <div>{{ openZone.duration.value / 1000 }}s</div>
+      <div>{{ t('minLevelRequired') }}: {{ openZone.minLevel }}</div>
+      <div>{{ t('duration') }}: {{ openZone.duration.value / 1000 }}s</div>
       <div v-for="(ingredient, index) in openZone.ingredients" :key="index">
         {{ t(ingredient.item.name) }}: {{ ingredient.count }}
       </div>

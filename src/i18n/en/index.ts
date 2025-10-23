@@ -1,4 +1,6 @@
 export default {
+  minLevelRequired: 'Required Level',
+  duration: 'Duration',
   gameNameFirst: 'Chest',
   gameNameLast: 'Idle',
   gameName: '@:gameNameFirst @:gameNameLast',

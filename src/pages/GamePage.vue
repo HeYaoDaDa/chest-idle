@@ -90,10 +90,7 @@ const { t } = useI18n()
                 <button
                   type="button"
                   class="popover-action-button"
-                  @click="
-                    slot.unEquip()
-                    close()
-                  "
+                  @click="slot.unEquip(); close()"
                 >
                   UnEq
                 </button>
@@ -140,10 +137,7 @@ const { t } = useI18n()
                   v-if="inventoryItem.item.isEquipment()"
                   type="button"
                   class="popover-action-button"
-                  @click="
-                    inventoryItem.equip()
-                    close()
-                  "
+                  @click="inventoryItem.equip(); close()"
                 >
                   Eq
                 </button>
@@ -151,10 +145,7 @@ const { t } = useI18n()
                   v-if="inventoryItem.item.isChest()"
                   type="button"
                   class="popover-action-button"
-                  @click="
-                    inventoryItem.openChest()
-                    close()
-                  "
+                  @click="inventoryItem.openChest(); close()"
                 >
                   Open
                 </button>

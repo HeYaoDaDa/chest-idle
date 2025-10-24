@@ -18,7 +18,7 @@ function dismiss(id: number) {
       class="notification-card"
       :class="`notification-${entry.type}`"
     >
-      <span class="notification-message">{{ t(entry.key, entry.params) }}</span>
+      <span class="notification-message">{{ t(entry.key, entry.params ?? {}) }}</span>
       <button class="notification-dismiss" type="button" @click="dismiss(entry.id)">×</button>
     </div>
   </TransitionGroup>

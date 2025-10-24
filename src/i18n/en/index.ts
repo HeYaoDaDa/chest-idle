@@ -15,6 +15,16 @@ export default {
     levelTooLow: '{skill} level {level} is too low for {action} (requires {required}).',
     notEnoughMaterials: 'Not enough materials for {action}.',
   },
+  ui: {
+    xpPerCycle: 'XP per action',
+    chestPoints: 'Chest points per action',
+    requiredMaterials: 'Required Materials',
+    rewards: 'Rewards',
+    amount: 'Amount',
+    unlimited: 'Unlimited',
+    cancel: 'Cancel',
+    seconds: '{value}s',
+  },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },
     woodcutting: { name: 'Woodcutting', description: 'Woodcutting.' },

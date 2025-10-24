@@ -15,6 +15,16 @@ export default {
     levelTooLow: '{skill} 等级 {level} 无法执行 {action}（需要 {required} 级）。',
     notEnoughMaterials: '{action} 所需材料不足。',
   },
+  ui: {
+    xpPerCycle: '每次行动经验',
+    chestPoints: '每次行动宝箱点数',
+    requiredMaterials: '所需材料',
+    rewards: '获得奖励',
+    amount: '执行次数',
+    unlimited: '无限',
+    cancel: '取消',
+    seconds: '{value}秒',
+  },
   skill: {
     mining: { name: '采矿', description: '采矿。' },
     woodcutting: { name: '伐木', description: '伐木。' },

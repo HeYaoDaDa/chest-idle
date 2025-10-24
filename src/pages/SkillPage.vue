@@ -10,7 +10,7 @@ import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const route = useRoute()
 const skillId = ref(route.params.id as string)
 onBeforeRouteUpdate(async (to) => {
@@ -22,20 +22,32 @@ const skill = computed(() => dataManager.getSkillById(skillId.value))
 const openZone = shallowRef(undefined as ActionTarget | undefined);
 const amountString = ref(INFINITE_STRING);
 const allowAmount = computed(() => isIntegerOrInfinity(amountString.value));
+const durationSeconds = computed(() => openZone.value ? openZone.value.duration.value / 1000 : 0);
+const xpPerCycle = computed(() => openZone.value?.xp.value ?? 0);
+const chestPointsPerCycle = computed(() => openZone.value?.chestPoints.value ?? 0);
+const hasIngredients = computed(() => (openZone.value?.ingredients.length ?? 0) > 0);
+const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0);
+const formatNumber = (value: number, maximumFractionDigits = 0) =>
+  value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits });
 function openModal(zone: ActionTarget) {
   openZone.value = zone
 }
 function closeModal() {
   openZone.value = undefined
-  amountString.value = '∞'
+  amountString.value = INFINITE_STRING
 }
 function addAction() {
   if (openZone.value) {
     actionManager.addAction(openZone.value, stringToNumber(amountString.value));
-    openZone.value = undefined;
+    closeModal();
   } else {
     console.error('openZone is null')
   }
+}
+
+function handleAmountFocus(event: FocusEvent) {
+  const target = event.target as HTMLInputElement
+  window.requestAnimationFrame(() => target.select())
 }
 </script>
 
@@ -58,23 +70,76 @@ function addAction() {
     </Tooltip>
   </div>
   <ModalBox v-if="openZone" @close="closeModal">
-    <div id="area-modal-box">
-      <div>{{ t(openZone.name) }}</div>
-      <div>{{ t(openZone.skill.name) }}</div>
-      <div>{{ t(openZone.description) }}</div>
-      <div>{{ t('minLevelRequired') }}: {{ openZone.minLevel }}</div>
-      <div>{{ t('duration') }}: {{ openZone.duration.value / 1000 }}s</div>
-      <div v-for="(ingredient, index) in openZone.ingredients" :key="index">
-        {{ t(ingredient.item.name) }}: {{ ingredient.count }}
+    <div class="zone-modal">
+      <header class="zone-header">
+        <div class="zone-header-text">
+          <span class="zone-overline">{{ t(openZone.skill.name) }}</span>
+          <h2 class="zone-title">{{ t(openZone.name) }}</h2>
+          <p class="zone-description">{{ t(openZone.description) }}</p>
+        </div>
+        <button type="button" class="zone-close" @click="closeModal">×</button>
+      </header>
+
+      <div class="zone-stats">
+        <div class="zone-stat">
+          <span class="zone-stat-label">{{ t('minLevelRequired') }}</span>
+          <span class="zone-stat-value">{{ openZone.minLevel }}</span>
+        </div>
+        <div class="zone-stat">
+          <span class="zone-stat-label">{{ t('duration') }}</span>
+          <span class="zone-stat-value">{{ t('ui.seconds', { value: formatNumber(durationSeconds, 1) }) }}</span>
+        </div>
+        <div class="zone-stat">
+          <span class="zone-stat-label">{{ t('ui.xpPerCycle') }}</span>
+          <span class="zone-stat-value">{{ formatNumber(xpPerCycle) }}</span>
+        </div>
+        <div class="zone-stat">
+          <span class="zone-stat-label">{{ t('ui.chestPoints') }}</span>
+          <span class="zone-stat-value">{{ formatNumber(chestPointsPerCycle, 2) }}</span>
+        </div>
       </div>
-      <div v-for="(product, index) in openZone.products" :key="index">
-        {{ t(product.item.name) }}: {{ product.count }}
+
+      <div class="zone-resources">
+        <section class="zone-resource">
+          <h3>{{ t('ui.requiredMaterials') }}</h3>
+          <ul v-if="hasIngredients">
+            <li v-for="ingredient in openZone.ingredients" :key="ingredient.item.id">
+              <span class="resource-name">{{ t(ingredient.item.name) }}</span>
+              <span class="resource-count">×{{ formatNumber(ingredient.count) }}</span>
+            </li>
+          </ul>
+          <p v-else class="zone-resource-empty">{{ t('nothing') }}</p>
+        </section>
+        <section class="zone-resource">
+          <h3>{{ t('ui.rewards') }}</h3>
+          <ul v-if="hasProducts">
+            <li v-for="product in openZone.products" :key="product.item.id">
+              <span class="resource-name">{{ t(product.item.name) }}</span>
+              <span class="resource-count">×{{ formatNumber(product.count) }}</span>
+            </li>
+          </ul>
+          <p v-else class="zone-resource-empty">{{ t('nothing') }}</p>
+        </section>
       </div>
-      <div>
-        <input type="text" v-model="amountString" />
-        <button @click="amountString = '∞'">∞</button>
+
+      <div class="zone-actions">
+        <label class="zone-amount">
+          <span class="zone-amount-label">{{ t('ui.amount') }}</span>
+          <div class="zone-amount-input">
+            <input type="text" v-model="amountString" @focus="handleAmountFocus" />
+            <button
+              type="button"
+              class="zone-amount-infinity"
+              :title="t('ui.unlimited')"
+              @click="amountString = INFINITE_STRING"
+            >{{ INFINITE_STRING }}</button>
+          </div>
+        </label>
+        <div class="zone-action-buttons">
+          <button type="button" class="zone-button ghost" @click="closeModal">{{ t('ui.cancel') }}</button>
+          <button type="button" class="zone-button primary" @click="addAction" :disabled="!allowAmount">{{ t('start') }}</button>
+        </div>
       </div>
-      <button @click="addAction()" :disabled="!allowAmount">{{ t('start') }}</button>
     </div>
   </ModalBox>
 </template>
@@ -119,10 +184,252 @@ function addAction() {
   }
 }
 
-#area-modal-box {
+.zone-modal {
   display: flex;
-  flex-flow: column nowrap;
-  padding: 8px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: min(460px, 100%);
+}
+
+.zone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.zone-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zone-overline {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.zone-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.zone-description {
+  margin: 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.zone-close {
+  border: none;
+  background: rgba(148, 163, 184, 0.16);
+  color: #475569;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.zone-close:hover {
+  background: rgba(71, 85, 105, 0.22);
+  color: #1f2937;
+}
+
+.zone-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.zone-stat {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
   gap: 4px;
+}
+
+.zone-stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.zone-stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.zone-resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.zone-resource {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zone-resource h3 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1f2937;
+}
+
+.zone-resource ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zone-resource li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.resource-name {
+  font-weight: 500;
+}
+
+.resource-count {
+  color: #334155;
+}
+
+.zone-resource-empty {
+  margin: 0;
+  font-style: italic;
+  color: #94a3b8;
+}
+
+.zone-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zone-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zone-amount-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.zone-amount-input {
+  display: flex;
+  gap: 8px;
+}
+
+.zone-amount-input input {
+  flex: 1;
+  border: 1px solid #cbd5f5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.zone-amount-input input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+.zone-amount-infinity {
+  border: none;
+  border-radius: 8px;
+  background: #e2e8f0;
+  color: #0f172a;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.zone-amount-infinity:hover {
+  background: #cbd5f5;
+}
+
+.zone-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.zone-button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.zone-button.primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+}
+
+.zone-button.primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.zone-button.ghost {
+  background: #e2e8f0;
+  color: #1f2937;
+}
+
+.zone-button.ghost:hover {
+  background: #cbd5e1;
+}
+
+@media (max-width: 540px) {
+  .zone-modal {
+    min-width: unset;
+  }
+
+  .zone-stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .zone-resources {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-button {
+    width: 100%;
+  }
+
+  .zone-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 </style>

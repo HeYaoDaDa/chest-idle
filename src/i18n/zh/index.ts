@@ -24,6 +24,8 @@ export default {
     unlimited: '无限',
     cancel: '取消',
     seconds: '{value}秒',
+    currentAction: '当前行动',
+    queue: '行动队列',
   },
   skill: {
     mining: { name: '采矿', description: '采矿。' },

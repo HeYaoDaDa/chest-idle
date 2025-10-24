@@ -5,7 +5,7 @@ import type { ActionTarget } from '@/models/actionTarget'
 import { actionManager } from '@/models/global/ActionManager'
 import { dataManager } from '@/models/global/DataManager'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
-import { Tooltip } from 'floating-vue'
+import FloatingPopover from '@/components/misc/Popover.vue'
 import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
@@ -53,7 +53,13 @@ function handleAmountFocus(event: FocusEvent) {
 
 <template>
   <div id="skill-area-root">
-    <Tooltip v-for="zone in skill.actionTargets" :key="zone.id">
+    <FloatingPopover
+      v-for="zone in skill.actionTargets"
+      :key="zone.id"
+      placement="bottom"
+      align="center"
+      class="area-popover"
+    >
       <div @click="openModal(zone)" class="area-item">
         <div>{{ t(zone.name) }}</div>
         <div class="chest-progress">
@@ -62,12 +68,12 @@ function handleAmountFocus(event: FocusEvent) {
           }"></div>
         </div>
       </div>
-      <template #popper>
-        <div>
+      <template #content>
+        <div class="area-tooltip">
           {{ t(zone.description) }}
         </div>
       </template>
-    </Tooltip>
+    </FloatingPopover>
   </div>
   <ModalBox v-if="openZone" @close="closeModal">
     <div class="zone-modal">
@@ -145,7 +151,6 @@ function handleAmountFocus(event: FocusEvent) {
 </template>
 
 <style lang="scss">
-@use 'sass:color';
 
 #skill-area-root {
   display: flex;
@@ -153,34 +158,57 @@ function handleAmountFocus(event: FocusEvent) {
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
+  gap: 16px;
+
+  .area-popover {
+    display: block;
+  }
 
   .area-item {
-    min-width: 100px;
-    min-height: 100px;
-    background-color: color.adjust(white, $lightness: -10%);
+    min-width: 140px;
+    min-height: 140px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 12px;
+    padding: 16px;
+    text-align: center;
     user-select: none;
     cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.35);
+    }
 
     .chest-progress {
-      width: 80%;
-      height: 4px;
-      background-color: color.adjust(black, $alpha: -0.9);
-      margin-top: 8px;
-      border-radius: 2px;
+      width: 100%;
+      height: 6px;
+      background-color: rgba(226, 232, 240, 0.9);
+      border-radius: 999px;
       overflow: hidden;
 
       .chest-progress-bar {
         height: 100%;
-        background-color: black;
+        background: linear-gradient(135deg, #22d3ee 0%, #2563eb 100%);
         transition: width 0.3s ease;
       }
     }
+  }
+
+  .area-tooltip {
+    max-width: 220px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #0f172a;
   }
 }
 

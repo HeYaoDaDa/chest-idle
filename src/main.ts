@@ -4,24 +4,12 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
-import FloatingVue from 'floating-vue'
-import 'floating-vue/dist/style.css'
 
 const app = createApp(App)
 
 app.use(i18n)
 app.use(createPinia())
 app.use(router)
-app.use(FloatingVue, {
-  themes: {
-    'skill-tooltip': {
-      triggers: ['hover', 'focus', 'touch'],
-      placement: 'right-start',
-      distance: 0,
-      extends: false,
-    }
-  },
-})
 
 app.mount('#app')
 

@@ -24,6 +24,8 @@ export default {
     unlimited: 'Unlimited',
     cancel: 'Cancel',
     seconds: '{value}s',
+    currentAction: 'Current Action',
+    queue: 'Queued Actions',
   },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },

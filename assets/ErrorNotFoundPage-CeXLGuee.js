@@ -1,0 +1,1 @@
+import{_ as o,c as r,o as t,a as n}from"./index-CrB2o2iN.js";const s={},a={id:"error-page-root"};function c(_,e){return t(),r("div",a,e[0]||(e[0]=[n("h1",null,"404",-1)]))}const f=o(s,[["render",c]]);export{f as default};

@@ -59,7 +59,7 @@ export class CurrentAction {
     return Math.min(amount, echaust);
   }
 
-  public udpate(elapsed: number): number {
+  public update(elapsed: number): number {
     if (elapsed < this.remainedDuration.value) {
       this.elapsed.value += elapsed;
       return 0;

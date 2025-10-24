@@ -1,14 +1,16 @@
-import { computed, ref, type ComputedRef, type Ref } from "vue"
-import type { Item } from "../item"
-import { inventory } from "../global/InventoryManager"
-import { dataManager } from "../global/DataManager"
-import { Effect } from "../state/Effect"
-import MersenneTwister from "mersenne-twister"
-import i18n from "@/i18n"
+import { computed, ref, type ComputedRef, type Ref } from 'vue'
+import type { Item } from '../item'
+import { inventory } from '../global/InventoryManager'
+import { dataManager } from '../global/DataManager'
+import { Effect } from '../state/Effect'
+import MersenneTwister from 'mersenne-twister'
+import i18n from '@/i18n'
 
 export class InventoryItem {
   amount: Ref<number>
-  amountDisplay: ComputedRef<string> = computed(() => this.amount.value.toLocaleString(i18n.global.locale.value))
+  amountDisplay: ComputedRef<string> = computed(() =>
+    this.amount.value.toLocaleString(i18n.global.locale.value),
+  )
 
   constructor(
     public item: Item,
@@ -20,28 +22,37 @@ export class InventoryItem {
 
   equip() {
     if (this.item.isEquipment()) {
-      inventory.remove(this, 1);
-      this.item.slot.unEquip();
+      inventory.remove(this, 1)
+      this.item.slot.unEquip()
       for (const effect of this.item.effects) {
-        const state = dataManager.getStateById(effect.state);
-        state.addEffect(this.item.slot.id, new Effect(effect.type, computed(() => effect.value)));
+        const state = dataManager.getStateById(effect.state)
+        state.addEffect(
+          this.item.slot.id,
+          new Effect(
+            effect.type,
+            computed(() => effect.value),
+          ),
+        )
       }
-      this.item.slot.equipment.value = this.item;
+      this.item.slot.equipment.value = this.item
     }
   }
 
   openChest() {
     if (this.item.isChest()) {
-      inventory.remove(this, 1);
-      const products = this.item.loots;
-      const result = [] as [Item, number][];
+      inventory.remove(this, 1)
+      const products = this.item.loots
+      const result = [] as [Item, number][]
       for (const product of products) {
-        const rng = new MersenneTwister();
+        const rng = new MersenneTwister()
         if (product.chance >= rng.random_incl()) {
-          result.push([product.item, Math.floor(product.min + rng.random_incl() * (product.max - product.min + 1))]);
+          result.push([
+            product.item,
+            Math.floor(product.min + rng.random_incl() * (product.max - product.min + 1)),
+          ])
         }
       }
-      inventory.addes(result);
+      inventory.addes(result)
     }
   }
 }

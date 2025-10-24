@@ -1,5 +1,5 @@
 export interface SkillDefinition {
-  type: "skill"
+  type: 'skill'
   id: string
   sort: number
 }

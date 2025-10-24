@@ -5,12 +5,12 @@ import SkillPage from '@/pages/SkillPage.vue'
 import { global } from '@/models/global'
 import StatesPage from '@/pages/StatesPage.vue'
 
-export const ROUTE_PATH_LOAD = "/"
-export const ROUTE_NAME_LOAD = "load"
-export const ROUTE_PATH_GAME = "/game"
-export const ROUTE_PATH_GAME_MINING = "/game/mining"
-export const ROUTE_NAME_GAME = "game"
-export const ROUTE_NAME_404 = "404"
+export const ROUTE_PATH_LOAD = '/'
+export const ROUTE_NAME_LOAD = 'load'
+export const ROUTE_PATH_GAME = '/game'
+export const ROUTE_PATH_GAME_MINING = '/game/mining'
+export const ROUTE_NAME_GAME = 'game'
+export const ROUTE_NAME_404 = '404'
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),

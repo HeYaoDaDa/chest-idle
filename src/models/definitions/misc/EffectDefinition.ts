@@ -1,7 +1,7 @@
-import type { EffectType } from "@/constants";
+import type { EffectType } from '@/constants'
 
 export interface EffectDefinition {
-  state: string,
-  type: EffectType,
-  value: number,
+  state: string
+  type: EffectType
+  value: number
 }

@@ -1,8 +1,8 @@
-import { ActionTarget } from "."
-import type { MutableStateDefinition } from "../definitions/misc/MutableStateDefinition"
+import { ActionTarget } from '.'
+import type { MutableStateDefinition } from '../definitions/misc/MutableStateDefinition'
 
 export class GatheringZone extends ActionTarget {
-  type = "gatheringZone" as const
+  type = 'gatheringZone' as const
 
   constructor(
     public id: string,
@@ -13,8 +13,8 @@ export class GatheringZone extends ActionTarget {
     xp: MutableStateDefinition,
     chestId: string,
     chestPoints: MutableStateDefinition,
-    products: { item: string, count: number }[]
+    products: { item: string; count: number }[],
   ) {
-    super(id, skillId, minLevel, sort, duration, xp, chestId, chestPoints, [], products);
+    super(id, skillId, minLevel, sort, duration, xp, chestId, chestPoints, [], products)
   }
 }

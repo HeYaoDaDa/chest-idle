@@ -1,8 +1,8 @@
-import { ActionTarget } from "."
-import type { MutableStateDefinition } from "../definitions/misc/MutableStateDefinition"
+import { ActionTarget } from '.'
+import type { MutableStateDefinition } from '../definitions/misc/MutableStateDefinition'
 
 export class Recipe extends ActionTarget {
-  type = "recipe" as const
+  type = 'recipe' as const
 
   constructor(
     public id: string,
@@ -13,10 +13,9 @@ export class Recipe extends ActionTarget {
     xp: MutableStateDefinition,
     chestId: string,
     chestPoints: MutableStateDefinition,
-    ingredients: { item: string, count: number }[],
-    products: { item: string, count: number }[]
+    ingredients: { item: string; count: number }[],
+    products: { item: string; count: number }[],
   ) {
-    super(id, skillId, minLevel, sort, duration, xp, chestId, chestPoints, ingredients, products);
+    super(id, skillId, minLevel, sort, duration, xp, chestId, chestPoints, ingredients, products)
   }
 }
-

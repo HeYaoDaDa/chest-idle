@@ -80,7 +80,9 @@ function dismiss(id: number) {
 
 .notification-enter-active,
 .notification-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .notification-enter-from,

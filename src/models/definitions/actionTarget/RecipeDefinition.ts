@@ -1,8 +1,8 @@
-import type { MutableStateDefinition } from "../misc/MutableStateDefinition"
+import type { MutableStateDefinition } from '../misc/MutableStateDefinition'
 
 export interface RecipeDefinition {
-  type: "actionTarget"
-  targetType: "recipe"
+  type: 'actionTarget'
+  targetType: 'recipe'
   id: string
   skill: string
   minLevel: number
@@ -11,6 +11,6 @@ export interface RecipeDefinition {
   xp: MutableStateDefinition
   chest: string
   chestPoints: MutableStateDefinition
-  ingredients: { item: string, count: number }[]
-  products: { item: string, count: number }[]
+  ingredients: { item: string; count: number }[]
+  products: { item: string; count: number }[]
 }

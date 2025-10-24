@@ -1,5 +1,5 @@
 export interface StateDefinition {
-  type: "state"
+  type: 'state'
   id: string
   base: number
 }

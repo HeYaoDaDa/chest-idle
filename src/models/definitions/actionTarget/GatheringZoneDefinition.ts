@@ -1,8 +1,8 @@
-import type { MutableStateDefinition } from "../misc/MutableStateDefinition"
+import type { MutableStateDefinition } from '../misc/MutableStateDefinition'
 
 export interface GatheringZoneDefinition {
-  type: "actionTarget"
-  targetType: "gatheringZone"
+  type: 'actionTarget'
+  targetType: 'gatheringZone'
   id: string
   skill: string
   minLevel: number
@@ -11,5 +11,5 @@ export interface GatheringZoneDefinition {
   xp: MutableStateDefinition
   chest: string
   chestPoints: MutableStateDefinition
-  products: { item: string, count: number }[]
+  products: { item: string; count: number }[]
 }

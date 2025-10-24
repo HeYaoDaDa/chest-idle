@@ -1,16 +1,15 @@
-import { computed, shallowReactive } from 'vue';
-import type { Item } from '../item';
-import { InventoryItem } from '../inventory/InventoryItem';
-import { dataManager } from './DataManager';
+import { computed, shallowReactive } from 'vue'
+import type { Item } from '../item'
+import { InventoryItem } from '../inventory/InventoryItem'
+import { dataManager } from './DataManager'
 
 class InventoryManager {
-
   public inventoryItemMap = shallowReactive(new Map<string, InventoryItem>())
   public inventoryItems = computed(() =>
     Array.from(this.inventoryItemMap.values()).sort((a, b) => a.item.sort - b.item.sort),
   )
 
-  public load() { }
+  public load() {}
 
   public add(itemOrId: Item | string, amount: number) {
     let item
@@ -44,7 +43,7 @@ class InventoryManager {
     } else {
       existItem = itemOrId
     }
-    const id = existItem.item.id;
+    const id = existItem.item.id
     if (existItem) {
       if (existItem.amount.value > amount) {
         existItem.amount.value -= amount
@@ -64,7 +63,6 @@ class InventoryManager {
       this.remove(itemOrId, amount)
     }
   }
-
 }
 
-export const inventory = new InventoryManager();
+export const inventory = new InventoryManager()

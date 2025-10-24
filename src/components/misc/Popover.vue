@@ -247,11 +247,7 @@ const triggerListeners = computed(() => {
 </script>
 
 <template>
-  <span
-    ref="triggerRef"
-    class="popover-root"
-    v-bind="triggerListeners"
-  >
+  <span ref="triggerRef" class="popover-root" v-bind="triggerListeners">
     <slot />
   </span>
   <Teleport to="body">
@@ -291,7 +287,9 @@ const triggerListeners = computed(() => {
 
 .float-fade-enter-active,
 .float-fade-leave-active {
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .float-fade-enter-from,

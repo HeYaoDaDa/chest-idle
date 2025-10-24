@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
 import FloatingPopover from '@/components/misc/Popover.vue'
-import { dataManager } from '@/models/global/DataManager';
-import { inventory } from '@/models/global/InventoryManager';
-import { useI18n } from 'vue-i18n';
+import { dataManager } from '@/models/global/DataManager'
+import { inventory } from '@/models/global/InventoryManager'
+import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 </script>
@@ -28,15 +28,15 @@ const { t } = useI18n()
           class="sidebar-popover"
         >
           <router-link :to="`/game/${skill.id}`" active-class="active-link">
-            <div>
-              {{ t(skill.name) }} {{ skill.level.value }}
-            </div>
+            <div>{{ t(skill.name) }} {{ skill.level.value }}</div>
             <div style="width: 100%">
-              <div :style="{
-                width: skill.upgradeProgress.value * 100 + '%',
-                height: '2px',
-                backgroundColor: 'black',
-              }"></div>
+              <div
+                :style="{
+                  width: skill.upgradeProgress.value * 100 + '%',
+                  height: '2px',
+                  backgroundColor: 'black',
+                }"
+              ></div>
             </div>
           </router-link>
           <template #content>
@@ -52,9 +52,7 @@ const { t } = useI18n()
         </FloatingPopover>
         <!--  -->
         <router-link :to="`/game/states`" active-class="active-link">
-          <div>
-            States
-          </div>
+          <div>States</div>
           <div style="width: 100%">
             <div></div>
           </div>
@@ -64,11 +62,7 @@ const { t } = useI18n()
         <RouterView />
       </div>
       <div id="equipment">
-        <div
-          v-for="slot in dataManager.allSlot"
-          :key="slot.id"
-          class="equipment-cell"
-        >
+        <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
           <FloatingPopover
             v-if="slot.equipment.value"
             trigger="click"
@@ -96,14 +90,19 @@ const { t } = useI18n()
                 <button
                   type="button"
                   class="popover-action-button"
-                  @click="slot.unEquip(); close()"
+                  @click="
+                    slot.unEquip()
+                    close()
+                  "
                 >
                   UnEq
                 </button>
               </div>
             </template>
           </FloatingPopover>
-          <div v-else class="equipment-slot"><span>{{ t(slot.name) }}</span></div>
+          <div v-else class="equipment-slot">
+            <span>{{ t(slot.name) }}</span>
+          </div>
         </div>
       </div>
       <div id="abilities"></div>
@@ -141,7 +140,10 @@ const { t } = useI18n()
                   v-if="inventoryItem.item.isEquipment()"
                   type="button"
                   class="popover-action-button"
-                  @click="inventoryItem.equip(); close()"
+                  @click="
+                    inventoryItem.equip()
+                    close()
+                  "
                 >
                   Eq
                 </button>
@@ -149,7 +151,10 @@ const { t } = useI18n()
                   v-if="inventoryItem.item.isChest()"
                   type="button"
                   class="popover-action-button"
-                  @click="inventoryItem.openChest(); close()"
+                  @click="
+                    inventoryItem.openChest()
+                    close()
+                  "
                 >
                   Open
                 </button>
@@ -175,7 +180,7 @@ const { t } = useI18n()
     grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
     gap: 20px;
 
-    >div {
+    > div {
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.25);
@@ -261,7 +266,10 @@ const { t } = useI18n()
         background: rgba(248, 250, 252, 0.72);
         font-weight: 600;
         color: #1e293b;
-        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          background 0.15s ease;
         cursor: pointer;
         user-select: none;
 
@@ -327,7 +335,10 @@ const { t } = useI18n()
         padding: 12px;
         font-weight: 600;
         color: #1e293b;
-        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          background 0.15s ease;
         cursor: pointer;
       }
 
@@ -394,7 +405,9 @@ const { t } = useI18n()
         font-weight: 600;
         color: #1e293b;
         cursor: pointer;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
 
         &:hover {
           transform: translateY(-3px);
@@ -425,7 +438,9 @@ const { t } = useI18n()
       cursor: pointer;
       background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
       color: #ffffff;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
     .popover-action-button:hover {
@@ -484,7 +499,7 @@ const { t } = useI18n()
       display: flex;
       flex-direction: column;
 
-      >div {
+      > div {
         padding: 16px;
       }
 

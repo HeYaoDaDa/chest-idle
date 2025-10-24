@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { dataManager } from '@/models/global/DataManager';
+import { dataManager } from '@/models/global/DataManager'
 </script>
 
 <template>

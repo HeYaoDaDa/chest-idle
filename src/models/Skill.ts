@@ -1,8 +1,8 @@
-import { XP_TABLE } from "@/constants"
-import i18n from "@/i18n"
-import { type Ref, type ComputedRef, ref, computed } from "vue"
-import type { ActionTarget } from "./actionTarget"
-import { notificationManager } from "./global/NotificationManager"
+import { XP_TABLE } from '@/constants'
+import i18n from '@/i18n'
+import { type Ref, type ComputedRef, ref, computed } from 'vue'
+import type { ActionTarget } from './actionTarget'
+import { notificationManager } from './global/NotificationManager'
 
 export class Skill {
   name: string
@@ -13,12 +13,22 @@ export class Skill {
   upgradeProgress: ComputedRef<number>
   actionTargets: ActionTarget[] = []
 
-  constructor(public id: string, public sort: number) {
-    this.name = `skill.${this.id}.name`;
-    this.description = `skill.${this.id}.description`;
+  constructor(
+    public id: string,
+    public sort: number,
+  ) {
+    this.name = `skill.${this.id}.name`
+    this.description = `skill.${this.id}.description`
     this.level = computed(() => this.getLevel())
-    this.remainingXpForUpgrade = computed(() => (XP_TABLE[this.level.value + 1] ?? Infinity) - this.xp.value)
-    this.upgradeProgress = computed(() => 1 - (this.remainingXpForUpgrade.value / ((XP_TABLE[this.level.value + 1] ?? Infinity) - (XP_TABLE[this.level.value] ?? 0))))
+    this.remainingXpForUpgrade = computed(
+      () => (XP_TABLE[this.level.value + 1] ?? Infinity) - this.xp.value,
+    )
+    this.upgradeProgress = computed(
+      () =>
+        1 -
+        this.remainingXpForUpgrade.value /
+          ((XP_TABLE[this.level.value + 1] ?? Infinity) - (XP_TABLE[this.level.value] ?? 0)),
+    )
   }
 
   addXp(xp: number) {
@@ -39,18 +49,18 @@ export class Skill {
   }
 
   private getLevelFromValue(value: number): number {
-    let left = 0;
-    let right = XP_TABLE.length - 1;
-    let result = 0;
+    let left = 0
+    let right = XP_TABLE.length - 1
+    let result = 0
     while (left <= right) {
-      const mid = Math.floor((left + right) / 2);
+      const mid = Math.floor((left + right) / 2)
       if (XP_TABLE[mid] <= value) {
-        result = mid;
-        left = mid + 1;
+        result = mid
+        left = mid + 1
       } else {
-        right = mid - 1;
+        right = mid - 1
       }
     }
-    return result;
+    return result
   }
 }

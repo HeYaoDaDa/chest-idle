@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Chest } from '@/models/item/Chest';
+import type { Chest } from '@/models/item/Chest'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -10,8 +10,8 @@ const { chest } = defineProps<Props>()
 
 const { t } = useI18n()
 
-const progressInnerText = computed(() => `${chest.points.value}/${chest.maxPoints}`);
-const progress = computed(() => chest.pointProgress.value * 100);
+const progressInnerText = computed(() => `${chest.points.value}/${chest.maxPoints}`)
+const progress = computed(() => chest.pointProgress.value * 100)
 </script>
 
 <template>

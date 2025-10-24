@@ -154,12 +154,21 @@ export default {
     silverOre: { name: 'Silver Ore', description: 'Silver Ore.' },
     silverIngot: { name: 'Silver Ingot', description: 'Silver Ingot.' },
     silverPickaxe: { name: 'Silver Pickaxe', description: 'Silver Pickaxe.' },
-    silverSmithingHammer: { name: 'Silver Smithing Hammer', description: 'Silver Smithing Hammer.' },
+    silverSmithingHammer: {
+      name: 'Silver Smithing Hammer',
+      description: 'Silver Smithing Hammer.',
+    },
     silverAxe: { name: 'Silver Axe', description: 'Silver Axe.' },
     silverForagingKnife: { name: 'Silver Foraging Knife', description: 'Silver Foraging Knife.' },
     silverCraftingTool: { name: 'Silver Crafting Tool', description: 'Silver Crafting Tool.' },
-    silverTailoringNeedle: { name: 'Silver Tailoring Needle', description: 'Silver Tailoring Needle.' },
-    silverCookingUtensil: { name: 'Silver Cooking Utensil', description: 'Silver Cooking Utensil.' },
+    silverTailoringNeedle: {
+      name: 'Silver Tailoring Needle',
+      description: 'Silver Tailoring Needle.',
+    },
+    silverCookingUtensil: {
+      name: 'Silver Cooking Utensil',
+      description: 'Silver Cooking Utensil.',
+    },
     silverBrewingKit: { name: 'Silver Brewing Kit', description: 'Silver Brewing Kit.' },
     silverAlchemistKit: { name: 'Silver Alchemist Kit', description: 'Silver Alchemist Kit.' },
     silverEnhancingTool: { name: 'Silver Enhancing Tool', description: 'Silver Enhancing Tool.' },
@@ -180,54 +189,138 @@ export default {
     orichalcumOre: { name: 'Orichalcum Ore', description: 'Orichalcum Ore.' },
     orichalcumIngot: { name: 'Orichalcum Ingot', description: 'Orichalcum Ingot.' },
     orichalcumPickaxe: { name: 'Orichalcum Pickaxe', description: 'Orichalcum Pickaxe.' },
-    orichalcumSmithingHammer: { name: 'Orichalcum Smithing Hammer', description: 'Orichalcum Smithing Hammer.' },
+    orichalcumSmithingHammer: {
+      name: 'Orichalcum Smithing Hammer',
+      description: 'Orichalcum Smithing Hammer.',
+    },
     orichalcumAxe: { name: 'Orichalcum Axe', description: 'Orichalcum Axe.' },
-    orichalcumForagingKnife: { name: 'Orichalcum Foraging Knife', description: 'Orichalcum Foraging Knife.' },
-    orichalcumCraftingTool: { name: 'Orichalcum Crafting Tool', description: 'Orichalcum Crafting Tool.' },
-    orichalcumTailoringNeedle: { name: 'Orichalcum Tailoring Needle', description: 'Orichalcum Tailoring Needle.' },
-    orichalcumCookingUtensil: { name: 'Orichalcum Cooking Utensil', description: 'Orichalcum Cooking Utensil.' },
-    orichalcumBrewingKit: { name: 'Orichalcum Brewing Kit', description: 'Orichalcum Brewing Kit.' },
-    orichalcumAlchemistKit: { name: 'Orichalcum Alchemist Kit', description: 'Orichalcum Alchemist Kit.' },
-    orichalcumEnhancingTool: { name: 'Orichalcum Enhancing Tool', description: 'Orichalcum Enhancing Tool.' },
+    orichalcumForagingKnife: {
+      name: 'Orichalcum Foraging Knife',
+      description: 'Orichalcum Foraging Knife.',
+    },
+    orichalcumCraftingTool: {
+      name: 'Orichalcum Crafting Tool',
+      description: 'Orichalcum Crafting Tool.',
+    },
+    orichalcumTailoringNeedle: {
+      name: 'Orichalcum Tailoring Needle',
+      description: 'Orichalcum Tailoring Needle.',
+    },
+    orichalcumCookingUtensil: {
+      name: 'Orichalcum Cooking Utensil',
+      description: 'Orichalcum Cooking Utensil.',
+    },
+    orichalcumBrewingKit: {
+      name: 'Orichalcum Brewing Kit',
+      description: 'Orichalcum Brewing Kit.',
+    },
+    orichalcumAlchemistKit: {
+      name: 'Orichalcum Alchemist Kit',
+      description: 'Orichalcum Alchemist Kit.',
+    },
+    orichalcumEnhancingTool: {
+      name: 'Orichalcum Enhancing Tool',
+      description: 'Orichalcum Enhancing Tool.',
+    },
 
     darkIronOre: { name: 'Dark Iron Ore', description: 'Dark Iron Ore.' },
     darkIronIngot: { name: 'Dark Iron Ingot', description: 'Dark Iron Ingot.' },
     darkIronPickaxe: { name: 'Dark Iron Pickaxe', description: 'Dark Iron Pickaxe.' },
-    darkIronSmithingHammer: { name: 'Dark Iron Smithing Hammer', description: 'Dark Iron Smithing Hammer.' },
+    darkIronSmithingHammer: {
+      name: 'Dark Iron Smithing Hammer',
+      description: 'Dark Iron Smithing Hammer.',
+    },
     darkIronAxe: { name: 'Dark Iron Axe', description: 'Dark Iron Axe.' },
-    darkIronForagingKnife: { name: 'Dark Iron Foraging Knife', description: 'Dark Iron Foraging Knife.' },
-    darkIronCraftingTool: { name: 'Dark Iron Crafting Tool', description: 'Dark Iron Crafting Tool.' },
-    darkIronTailoringNeedle: { name: 'Dark Iron Tailoring Needle', description: 'Dark Iron Tailoring Needle.' },
-    darkIronCookingUtensil: { name: 'Dark Iron Cooking Utensil', description: 'Dark Iron Cooking Utensil.' },
+    darkIronForagingKnife: {
+      name: 'Dark Iron Foraging Knife',
+      description: 'Dark Iron Foraging Knife.',
+    },
+    darkIronCraftingTool: {
+      name: 'Dark Iron Crafting Tool',
+      description: 'Dark Iron Crafting Tool.',
+    },
+    darkIronTailoringNeedle: {
+      name: 'Dark Iron Tailoring Needle',
+      description: 'Dark Iron Tailoring Needle.',
+    },
+    darkIronCookingUtensil: {
+      name: 'Dark Iron Cooking Utensil',
+      description: 'Dark Iron Cooking Utensil.',
+    },
     darkIronBrewingKit: { name: 'Dark Iron Brewing Kit', description: 'Dark Iron Brewing Kit.' },
-    darkIronAlchemistKit: { name: 'Dark Iron Alchemist Kit', description: 'Dark Iron Alchemist Kit.' },
-    darkIronEnhancingTool: { name: 'Dark Iron Enhancing Tool', description: 'Dark Iron Enhancing Tool.' },
+    darkIronAlchemistKit: {
+      name: 'Dark Iron Alchemist Kit',
+      description: 'Dark Iron Alchemist Kit.',
+    },
+    darkIronEnhancingTool: {
+      name: 'Dark Iron Enhancing Tool',
+      description: 'Dark Iron Enhancing Tool.',
+    },
 
     mithrilOre: { name: 'Mithril Ore', description: 'Mithril Ore.' },
     mithrilIngot: { name: 'Mithril Ingot', description: 'Mithril Ingot.' },
     mithrilPickaxe: { name: 'Mithril Pickaxe', description: 'Mithril Pickaxe.' },
-    mithrilSmithingHammer: { name: 'Mithril Smithing Hammer', description: 'Mithril Smithing Hammer.' },
+    mithrilSmithingHammer: {
+      name: 'Mithril Smithing Hammer',
+      description: 'Mithril Smithing Hammer.',
+    },
     mithrilAxe: { name: 'Mithril Axe', description: 'Mithril Axe.' },
-    mithrilForagingKnife: { name: 'Mithril Foraging Knife', description: 'Mithril Foraging Knife.' },
+    mithrilForagingKnife: {
+      name: 'Mithril Foraging Knife',
+      description: 'Mithril Foraging Knife.',
+    },
     mithrilCraftingTool: { name: 'Mithril Crafting Tool', description: 'Mithril Crafting Tool.' },
-    mithrilTailoringNeedle: { name: 'Mithril Tailoring Needle', description: 'Mithril Tailoring Needle.' },
-    mithrilCookingUtensil: { name: 'Mithril Cooking Utensil', description: 'Mithril Cooking Utensil.' },
+    mithrilTailoringNeedle: {
+      name: 'Mithril Tailoring Needle',
+      description: 'Mithril Tailoring Needle.',
+    },
+    mithrilCookingUtensil: {
+      name: 'Mithril Cooking Utensil',
+      description: 'Mithril Cooking Utensil.',
+    },
     mithrilBrewingKit: { name: 'Mithril Brewing Kit', description: 'Mithril Brewing Kit.' },
     mithrilAlchemistKit: { name: 'Mithril Alchemist Kit', description: 'Mithril Alchemist Kit.' },
-    mithrilEnhancingTool: { name: 'Mithril Enhancing Tool', description: 'Mithril Enhancing Tool.' },
+    mithrilEnhancingTool: {
+      name: 'Mithril Enhancing Tool',
+      description: 'Mithril Enhancing Tool.',
+    },
 
     adamantineOre: { name: 'Adamantine Ore', description: 'Adamantine Ore.' },
     adamantineIngot: { name: 'Adamantine Ingot', description: 'Adamantine Ingot.' },
     adamantinePickaxe: { name: 'Adamantine Pickaxe', description: 'Adamantine Pickaxe.' },
-    adamantineSmithingHammer: { name: 'Adamantine Smithing Hammer', description: 'Adamantine Smithing Hammer.' },
+    adamantineSmithingHammer: {
+      name: 'Adamantine Smithing Hammer',
+      description: 'Adamantine Smithing Hammer.',
+    },
     adamantineAxe: { name: 'Adamantine Axe', description: 'Adamantine Axe.' },
-    adamantineForagingKnife: { name: 'Adamantine Foraging Knife', description: 'Adamantine Foraging Knife.' },
-    adamantineCraftingTool: { name: 'Adamantine Crafting Tool', description: 'Adamantine Crafting Tool.' },
-    adamantineTailoringNeedle: { name: 'Adamantine Tailoring Needle', description: 'Adamantine Tailoring Needle.' },
-    adamantineCookingUtensil: { name: 'Adamantine Cooking Utensil', description: 'Adamantine Cooking Utensil.' },
-    adamantineBrewingKit: { name: 'Adamantine Brewing Kit', description: 'Adamantine Brewing Kit.' },
-    adamantineAlchemistKit: { name: 'Adamantine Alchemist Kit', description: 'Adamantine Alchemist Kit.' },
-    adamantineEnhancingTool: { name: 'Adamantine Enhancing Tool', description: 'Adamantine Enhancing Tool.' },
+    adamantineForagingKnife: {
+      name: 'Adamantine Foraging Knife',
+      description: 'Adamantine Foraging Knife.',
+    },
+    adamantineCraftingTool: {
+      name: 'Adamantine Crafting Tool',
+      description: 'Adamantine Crafting Tool.',
+    },
+    adamantineTailoringNeedle: {
+      name: 'Adamantine Tailoring Needle',
+      description: 'Adamantine Tailoring Needle.',
+    },
+    adamantineCookingUtensil: {
+      name: 'Adamantine Cooking Utensil',
+      description: 'Adamantine Cooking Utensil.',
+    },
+    adamantineBrewingKit: {
+      name: 'Adamantine Brewing Kit',
+      description: 'Adamantine Brewing Kit.',
+    },
+    adamantineAlchemistKit: {
+      name: 'Adamantine Alchemist Kit',
+      description: 'Adamantine Alchemist Kit.',
+    },
+    adamantineEnhancingTool: {
+      name: 'Adamantine Enhancing Tool',
+      description: 'Adamantine Enhancing Tool.',
+    },
   },
   actionTarget: {
     copperMine: {
@@ -281,92 +374,272 @@ export default {
     ironMine: { name: 'Iron Mine', description: 'Mine Iron Ore in the Iron Mine.' },
     ironIngot: { name: 'Iron Ingot', description: 'Iron Ingot.' },
     ironPickaxe: { name: 'Iron Pickaxe', description: 'Recipe to craft Iron Pickaxe.' },
-    ironSmithingHammer: { name: 'Iron Smithing Hammer', description: 'Use Iron Smithing Hammer to smelt Iron Ingots.' },
+    ironSmithingHammer: {
+      name: 'Iron Smithing Hammer',
+      description: 'Use Iron Smithing Hammer to smelt Iron Ingots.',
+    },
     ironAxe: { name: 'Iron Axe', description: 'Recipe to craft Iron Axe.' },
-    ironForagingKnife: { name: 'Iron Foraging Knife', description: 'Recipe to craft Iron Foraging Knife.' },
-    ironCraftingTool: { name: 'Iron Crafting Tool', description: 'Recipe to craft Iron Crafting Tool.' },
-    ironTailoringNeedle: { name: 'Iron Tailoring Needle', description: 'Recipe to craft Iron Tailoring Needle.' },
-    ironCookingUtensil: { name: 'Iron Cooking Utensil', description: 'Recipe to craft Iron Cooking Utensil.' },
+    ironForagingKnife: {
+      name: 'Iron Foraging Knife',
+      description: 'Recipe to craft Iron Foraging Knife.',
+    },
+    ironCraftingTool: {
+      name: 'Iron Crafting Tool',
+      description: 'Recipe to craft Iron Crafting Tool.',
+    },
+    ironTailoringNeedle: {
+      name: 'Iron Tailoring Needle',
+      description: 'Recipe to craft Iron Tailoring Needle.',
+    },
+    ironCookingUtensil: {
+      name: 'Iron Cooking Utensil',
+      description: 'Recipe to craft Iron Cooking Utensil.',
+    },
     ironBrewingKit: { name: 'Iron Brewing Kit', description: 'Recipe to craft Iron Brewing Kit.' },
-    ironAlchemistKit: { name: 'Iron Alchemist Kit', description: 'Recipe to craft Iron Alchemist Kit.' },
-    ironEnhancingTool: { name: 'Iron Enhancing Tool', description: 'Recipe to craft Iron Enhancing Tool.' },
+    ironAlchemistKit: {
+      name: 'Iron Alchemist Kit',
+      description: 'Recipe to craft Iron Alchemist Kit.',
+    },
+    ironEnhancingTool: {
+      name: 'Iron Enhancing Tool',
+      description: 'Recipe to craft Iron Enhancing Tool.',
+    },
 
     silverMine: { name: 'Silver Mine', description: 'Mine Silver Ore in the Silver Mine.' },
     silverIngot: { name: 'Silver Ingot', description: 'Silver Ingot.' },
     silverPickaxe: { name: 'Silver Pickaxe', description: 'Recipe to craft Silver Pickaxe.' },
-    silverSmithingHammer: { name: 'Silver Smithing Hammer', description: 'Use Silver Smithing Hammer to smelt Silver Ingots.' },
+    silverSmithingHammer: {
+      name: 'Silver Smithing Hammer',
+      description: 'Use Silver Smithing Hammer to smelt Silver Ingots.',
+    },
     silverAxe: { name: 'Silver Axe', description: 'Recipe to craft Silver Axe.' },
-    silverForagingKnife: { name: 'Silver Foraging Knife', description: 'Recipe to craft Silver Foraging Knife.' },
-    silverCraftingTool: { name: 'Silver Crafting Tool', description: 'Recipe to craft Silver Crafting Tool.' },
-    silverTailoringNeedle: { name: 'Silver Tailoring Needle', description: 'Recipe to craft Silver Tailoring Needle.' },
-    silverCookingUtensil: { name: 'Silver Cooking Utensil', description: 'Recipe to craft Silver Cooking Utensil.' },
-    silverBrewingKit: { name: 'Silver Brewing Kit', description: 'Recipe to craft Silver Brewing Kit.' },
-    silverAlchemistKit: { name: 'Silver Alchemist Kit', description: 'Recipe to craft Silver Alchemist Kit.' },
-    silverEnhancingTool: { name: 'Silver Enhancing Tool', description: 'Recipe to craft Silver Enhancing Tool.' },
+    silverForagingKnife: {
+      name: 'Silver Foraging Knife',
+      description: 'Recipe to craft Silver Foraging Knife.',
+    },
+    silverCraftingTool: {
+      name: 'Silver Crafting Tool',
+      description: 'Recipe to craft Silver Crafting Tool.',
+    },
+    silverTailoringNeedle: {
+      name: 'Silver Tailoring Needle',
+      description: 'Recipe to craft Silver Tailoring Needle.',
+    },
+    silverCookingUtensil: {
+      name: 'Silver Cooking Utensil',
+      description: 'Recipe to craft Silver Cooking Utensil.',
+    },
+    silverBrewingKit: {
+      name: 'Silver Brewing Kit',
+      description: 'Recipe to craft Silver Brewing Kit.',
+    },
+    silverAlchemistKit: {
+      name: 'Silver Alchemist Kit',
+      description: 'Recipe to craft Silver Alchemist Kit.',
+    },
+    silverEnhancingTool: {
+      name: 'Silver Enhancing Tool',
+      description: 'Recipe to craft Silver Enhancing Tool.',
+    },
 
     goldMine: { name: 'Gold Mine', description: 'Mine Gold Ore in the Gold Mine.' },
     goldIngot: { name: 'Gold Ingot', description: 'Gold Ingot.' },
     goldPickaxe: { name: 'Gold Pickaxe', description: 'Recipe to craft Gold Pickaxe.' },
-    goldSmithingHammer: { name: 'Gold Smithing Hammer', description: 'Use Gold Smithing Hammer to smelt Gold Ingots.' },
+    goldSmithingHammer: {
+      name: 'Gold Smithing Hammer',
+      description: 'Use Gold Smithing Hammer to smelt Gold Ingots.',
+    },
     goldAxe: { name: 'Gold Axe', description: 'Recipe to craft Gold Axe.' },
-    goldForagingKnife: { name: 'Gold Foraging Knife', description: 'Recipe to craft Gold Foraging Knife.' },
-    goldCraftingTool: { name: 'Gold Crafting Tool', description: 'Recipe to craft Gold Crafting Tool.' },
-    goldTailoringNeedle: { name: 'Gold Tailoring Needle', description: 'Recipe to craft Gold Tailoring Needle.' },
-    goldCookingUtensil: { name: 'Gold Cooking Utensil', description: 'Recipe to craft Gold Cooking Utensil.' },
+    goldForagingKnife: {
+      name: 'Gold Foraging Knife',
+      description: 'Recipe to craft Gold Foraging Knife.',
+    },
+    goldCraftingTool: {
+      name: 'Gold Crafting Tool',
+      description: 'Recipe to craft Gold Crafting Tool.',
+    },
+    goldTailoringNeedle: {
+      name: 'Gold Tailoring Needle',
+      description: 'Recipe to craft Gold Tailoring Needle.',
+    },
+    goldCookingUtensil: {
+      name: 'Gold Cooking Utensil',
+      description: 'Recipe to craft Gold Cooking Utensil.',
+    },
     goldBrewingKit: { name: 'Gold Brewing Kit', description: 'Recipe to craft Gold Brewing Kit.' },
-    goldAlchemistKit: { name: 'Gold Alchemist Kit', description: 'Recipe to craft Gold Alchemist Kit.' },
-    goldEnhancingTool: { name: 'Gold Enhancing Tool', description: 'Recipe to craft Gold Enhancing Tool.' },
+    goldAlchemistKit: {
+      name: 'Gold Alchemist Kit',
+      description: 'Recipe to craft Gold Alchemist Kit.',
+    },
+    goldEnhancingTool: {
+      name: 'Gold Enhancing Tool',
+      description: 'Recipe to craft Gold Enhancing Tool.',
+    },
 
-    orichalcumMine: { name: 'Orichalcum Mine', description: 'Mine Orichalcum Ore in the Orichalcum Mine.' },
+    orichalcumMine: {
+      name: 'Orichalcum Mine',
+      description: 'Mine Orichalcum Ore in the Orichalcum Mine.',
+    },
     orichalcumIngot: { name: 'Orichalcum Ingot', description: 'Orichalcum Ingot.' },
-    orichalcumPickaxe: { name: 'Orichalcum Pickaxe', description: 'Recipe to craft Orichalcum Pickaxe.' },
-    orichalcumSmithingHammer: { name: 'Orichalcum Smithing Hammer', description: 'Use Orichalcum Smithing Hammer to smelt Orichalcum Ingots.' },
+    orichalcumPickaxe: {
+      name: 'Orichalcum Pickaxe',
+      description: 'Recipe to craft Orichalcum Pickaxe.',
+    },
+    orichalcumSmithingHammer: {
+      name: 'Orichalcum Smithing Hammer',
+      description: 'Use Orichalcum Smithing Hammer to smelt Orichalcum Ingots.',
+    },
     orichalcumAxe: { name: 'Orichalcum Axe', description: 'Recipe to craft Orichalcum Axe.' },
-    orichalcumForagingKnife: { name: 'Orichalcum Foraging Knife', description: 'Recipe to craft Orichalcum Foraging Knife.' },
-    orichalcumCraftingTool: { name: 'Orichalcum Crafting Tool', description: 'Recipe to craft Orichalcum Crafting Tool.' },
-    orichalcumTailoringNeedle: { name: 'Orichalcum Tailoring Needle', description: 'Recipe to craft Orichalcum Tailoring Needle.' },
-    orichalcumCookingUtensil: { name: 'Orichalcum Cooking Utensil', description: 'Recipe to craft Orichalcum Cooking Utensil.' },
-    orichalcumBrewingKit: { name: 'Orichalcum Brewing Kit', description: 'Recipe to craft Orichalcum Brewing Kit.' },
-    orichalcumAlchemistKit: { name: 'Orichalcum Alchemist Kit', description: 'Recipe to craft Orichalcum Alchemist Kit.' },
-    orichalcumEnhancingTool: { name: 'Orichalcum Enhancing Tool', description: 'Recipe to craft Orichalcum Enhancing Tool.' },
+    orichalcumForagingKnife: {
+      name: 'Orichalcum Foraging Knife',
+      description: 'Recipe to craft Orichalcum Foraging Knife.',
+    },
+    orichalcumCraftingTool: {
+      name: 'Orichalcum Crafting Tool',
+      description: 'Recipe to craft Orichalcum Crafting Tool.',
+    },
+    orichalcumTailoringNeedle: {
+      name: 'Orichalcum Tailoring Needle',
+      description: 'Recipe to craft Orichalcum Tailoring Needle.',
+    },
+    orichalcumCookingUtensil: {
+      name: 'Orichalcum Cooking Utensil',
+      description: 'Recipe to craft Orichalcum Cooking Utensil.',
+    },
+    orichalcumBrewingKit: {
+      name: 'Orichalcum Brewing Kit',
+      description: 'Recipe to craft Orichalcum Brewing Kit.',
+    },
+    orichalcumAlchemistKit: {
+      name: 'Orichalcum Alchemist Kit',
+      description: 'Recipe to craft Orichalcum Alchemist Kit.',
+    },
+    orichalcumEnhancingTool: {
+      name: 'Orichalcum Enhancing Tool',
+      description: 'Recipe to craft Orichalcum Enhancing Tool.',
+    },
 
-    darkIronMine: { name: 'Dark Iron Mine', description: 'Mine Dark Iron Ore in the Dark Iron Mine.' },
+    darkIronMine: {
+      name: 'Dark Iron Mine',
+      description: 'Mine Dark Iron Ore in the Dark Iron Mine.',
+    },
     darkIronIngot: { name: 'Dark Iron Ingot', description: 'Dark Iron Ingot.' },
-    darkIronPickaxe: { name: 'Dark Iron Pickaxe', description: 'Recipe to craft Dark Iron Pickaxe.' },
-    darkIronSmithingHammer: { name: 'Dark Iron Smithing Hammer', description: 'Use Dark Iron Smithing Hammer to smelt Dark Iron Ingots.' },
+    darkIronPickaxe: {
+      name: 'Dark Iron Pickaxe',
+      description: 'Recipe to craft Dark Iron Pickaxe.',
+    },
+    darkIronSmithingHammer: {
+      name: 'Dark Iron Smithing Hammer',
+      description: 'Use Dark Iron Smithing Hammer to smelt Dark Iron Ingots.',
+    },
     darkIronAxe: { name: 'Dark Iron Axe', description: 'Recipe to craft Dark Iron Axe.' },
-    darkIronForagingKnife: { name: 'Dark Iron Foraging Knife', description: 'Recipe to craft Dark Iron Foraging Knife.' },
-    darkIronCraftingTool: { name: 'Dark Iron Crafting Tool', description: 'Recipe to craft Dark Iron Crafting Tool.' },
-    darkIronTailoringNeedle: { name: 'Dark Iron Tailoring Needle', description: 'Recipe to craft Dark Iron Tailoring Needle.' },
-    darkIronCookingUtensil: { name: 'Dark Iron Cooking Utensil', description: 'Recipe to craft Dark Iron Cooking Utensil.' },
-    darkIronBrewingKit: { name: 'Dark Iron Brewing Kit', description: 'Recipe to craft Dark Iron Brewing Kit.' },
-    darkIronAlchemistKit: { name: 'Dark Iron Alchemist Kit', description: 'Recipe to craft Dark Iron Alchemist Kit.' },
-    darkIronEnhancingTool: { name: 'Dark Iron Enhancing Tool', description: 'Recipe to craft Dark Iron Enhancing Tool.' },
+    darkIronForagingKnife: {
+      name: 'Dark Iron Foraging Knife',
+      description: 'Recipe to craft Dark Iron Foraging Knife.',
+    },
+    darkIronCraftingTool: {
+      name: 'Dark Iron Crafting Tool',
+      description: 'Recipe to craft Dark Iron Crafting Tool.',
+    },
+    darkIronTailoringNeedle: {
+      name: 'Dark Iron Tailoring Needle',
+      description: 'Recipe to craft Dark Iron Tailoring Needle.',
+    },
+    darkIronCookingUtensil: {
+      name: 'Dark Iron Cooking Utensil',
+      description: 'Recipe to craft Dark Iron Cooking Utensil.',
+    },
+    darkIronBrewingKit: {
+      name: 'Dark Iron Brewing Kit',
+      description: 'Recipe to craft Dark Iron Brewing Kit.',
+    },
+    darkIronAlchemistKit: {
+      name: 'Dark Iron Alchemist Kit',
+      description: 'Recipe to craft Dark Iron Alchemist Kit.',
+    },
+    darkIronEnhancingTool: {
+      name: 'Dark Iron Enhancing Tool',
+      description: 'Recipe to craft Dark Iron Enhancing Tool.',
+    },
 
     mithrilMine: { name: 'Mithril Mine', description: 'Mine Mithril Ore in the Mithril Mine.' },
     mithrilIngot: { name: 'Mithril Ingot', description: 'Mithril Ingot.' },
     mithrilPickaxe: { name: 'Mithril Pickaxe', description: 'Recipe to craft Mithril Pickaxe.' },
-    mithrilSmithingHammer: { name: 'Mithril Smithing Hammer', description: 'Use Mithril Smithing Hammer to smelt Mithril Ingots.' },
+    mithrilSmithingHammer: {
+      name: 'Mithril Smithing Hammer',
+      description: 'Use Mithril Smithing Hammer to smelt Mithril Ingots.',
+    },
     mithrilAxe: { name: 'Mithril Axe', description: 'Recipe to craft Mithril Axe.' },
-    mithrilForagingKnife: { name: 'Mithril Foraging Knife', description: 'Recipe to craft Mithril Foraging Knife.' },
-    mithrilCraftingTool: { name: 'Mithril Crafting Tool', description: 'Recipe to craft Mithril Crafting Tool.' },
-    mithrilTailoringNeedle: { name: 'Mithril Tailoring Needle', description: 'Recipe to craft Mithril Tailoring Needle.' },
-    mithrilCookingUtensil: { name: 'Mithril Cooking Utensil', description: 'Recipe to craft Mithril Cooking Utensil.' },
-    mithrilBrewingKit: { name: 'Mithril Brewing Kit', description: 'Recipe to craft Mithril Brewing Kit.' },
-    mithrilAlchemistKit: { name: 'Mithril Alchemist Kit', description: 'Recipe to craft Mithril Alchemist Kit.' },
-    mithrilEnhancingTool: { name: 'Mithril Enhancing Tool', description: 'Recipe to craft Mithril Enhancing Tool.' },
+    mithrilForagingKnife: {
+      name: 'Mithril Foraging Knife',
+      description: 'Recipe to craft Mithril Foraging Knife.',
+    },
+    mithrilCraftingTool: {
+      name: 'Mithril Crafting Tool',
+      description: 'Recipe to craft Mithril Crafting Tool.',
+    },
+    mithrilTailoringNeedle: {
+      name: 'Mithril Tailoring Needle',
+      description: 'Recipe to craft Mithril Tailoring Needle.',
+    },
+    mithrilCookingUtensil: {
+      name: 'Mithril Cooking Utensil',
+      description: 'Recipe to craft Mithril Cooking Utensil.',
+    },
+    mithrilBrewingKit: {
+      name: 'Mithril Brewing Kit',
+      description: 'Recipe to craft Mithril Brewing Kit.',
+    },
+    mithrilAlchemistKit: {
+      name: 'Mithril Alchemist Kit',
+      description: 'Recipe to craft Mithril Alchemist Kit.',
+    },
+    mithrilEnhancingTool: {
+      name: 'Mithril Enhancing Tool',
+      description: 'Recipe to craft Mithril Enhancing Tool.',
+    },
 
-    adamantineMine: { name: 'Adamantine Mine', description: 'Mine Adamantine Ore in the Adamantine Mine.' },
+    adamantineMine: {
+      name: 'Adamantine Mine',
+      description: 'Mine Adamantine Ore in the Adamantine Mine.',
+    },
     adamantineIngot: { name: 'Adamantine Ingot', description: 'Adamantine Ingot.' },
-    adamantinePickaxe: { name: 'Adamantine Pickaxe', description: 'Recipe to craft Adamantine Pickaxe.' },
-    adamantineSmithingHammer: { name: 'Adamantine Smithing Hammer', description: 'Use Adamantine Smithing Hammer to smelt Adamantine Ingots.' },
+    adamantinePickaxe: {
+      name: 'Adamantine Pickaxe',
+      description: 'Recipe to craft Adamantine Pickaxe.',
+    },
+    adamantineSmithingHammer: {
+      name: 'Adamantine Smithing Hammer',
+      description: 'Use Adamantine Smithing Hammer to smelt Adamantine Ingots.',
+    },
     adamantineAxe: { name: 'Adamantine Axe', description: 'Recipe to craft Adamantine Axe.' },
-    adamantineForagingKnife: { name: 'Adamantine Foraging Knife', description: 'Recipe to craft Adamantine Foraging Knife.' },
-    adamantineCraftingTool: { name: 'Adamantine Crafting Tool', description: 'Recipe to craft Adamantine Crafting Tool.' },
-    adamantineTailoringNeedle: { name: 'Adamantine Tailoring Needle', description: 'Recipe to craft Adamantine Tailoring Needle.' },
-    adamantineCookingUtensil: { name: 'Adamantine Cooking Utensil', description: 'Recipe to craft Adamantine Cooking Utensil.' },
-    adamantineBrewingKit: { name: 'Adamantine Brewing Kit', description: 'Recipe to craft Adamantine Brewing Kit.' },
-    adamantineAlchemistKit: { name: 'Adamantine Alchemist Kit', description: 'Recipe to craft Adamantine Alchemist Kit.' },
-    adamantineEnhancingTool: { name: 'Adamantine Enhancing Tool', description: 'Recipe to craft Adamantine Enhancing Tool.' },
-  }
+    adamantineForagingKnife: {
+      name: 'Adamantine Foraging Knife',
+      description: 'Recipe to craft Adamantine Foraging Knife.',
+    },
+    adamantineCraftingTool: {
+      name: 'Adamantine Crafting Tool',
+      description: 'Recipe to craft Adamantine Crafting Tool.',
+    },
+    adamantineTailoringNeedle: {
+      name: 'Adamantine Tailoring Needle',
+      description: 'Recipe to craft Adamantine Tailoring Needle.',
+    },
+    adamantineCookingUtensil: {
+      name: 'Adamantine Cooking Utensil',
+      description: 'Recipe to craft Adamantine Cooking Utensil.',
+    },
+    adamantineBrewingKit: {
+      name: 'Adamantine Brewing Kit',
+      description: 'Recipe to craft Adamantine Brewing Kit.',
+    },
+    adamantineAlchemistKit: {
+      name: 'Adamantine Alchemist Kit',
+      description: 'Recipe to craft Adamantine Alchemist Kit.',
+    },
+    adamantineEnhancingTool: {
+      name: 'Adamantine Enhancing Tool',
+      description: 'Recipe to craft Adamantine Enhancing Tool.',
+    },
+  },
 }

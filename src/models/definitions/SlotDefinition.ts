@@ -1,5 +1,5 @@
 export interface SlotDefinition {
-  type: "slot"
+  type: 'slot'
   id: string
   sort: number
 }

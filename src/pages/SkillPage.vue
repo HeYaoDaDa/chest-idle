@@ -19,16 +19,16 @@ onBeforeRouteUpdate(async (to) => {
 
 const skill = computed(() => dataManager.getSkillById(skillId.value))
 
-const openZone = shallowRef(undefined as ActionTarget | undefined);
-const amountString = ref(INFINITE_STRING);
-const allowAmount = computed(() => isIntegerOrInfinity(amountString.value));
-const durationSeconds = computed(() => openZone.value ? openZone.value.duration.value / 1000 : 0);
-const xpPerCycle = computed(() => openZone.value?.xp.value ?? 0);
-const chestPointsPerCycle = computed(() => openZone.value?.chestPoints.value ?? 0);
-const hasIngredients = computed(() => (openZone.value?.ingredients.length ?? 0) > 0);
-const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0);
+const openZone = shallowRef(undefined as ActionTarget | undefined)
+const amountString = ref(INFINITE_STRING)
+const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
+const durationSeconds = computed(() => (openZone.value ? openZone.value.duration.value / 1000 : 0))
+const xpPerCycle = computed(() => openZone.value?.xp.value ?? 0)
+const chestPointsPerCycle = computed(() => openZone.value?.chestPoints.value ?? 0)
+const hasIngredients = computed(() => (openZone.value?.ingredients.length ?? 0) > 0)
+const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0)
 const formatNumber = (value: number, maximumFractionDigits = 0) =>
-  value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits });
+  value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits })
 function openModal(zone: ActionTarget) {
   openZone.value = zone
 }
@@ -38,8 +38,8 @@ function closeModal() {
 }
 function addAction() {
   if (openZone.value) {
-    actionManager.addAction(openZone.value, stringToNumber(amountString.value));
-    closeModal();
+    actionManager.addAction(openZone.value, stringToNumber(amountString.value))
+    closeModal()
   } else {
     console.error('openZone is null')
   }
@@ -63,9 +63,12 @@ function handleAmountFocus(event: FocusEvent) {
       <div @click="openModal(zone)" class="area-item">
         <div>{{ t(zone.name) }}</div>
         <div class="chest-progress">
-          <div class="chest-progress-bar" :style="{
-            width: (zone.chest.points.value / zone.chest.maxPoints * 100) + '%'
-          }"></div>
+          <div
+            class="chest-progress-bar"
+            :style="{
+              width: (zone.chest.points.value / zone.chest.maxPoints) * 100 + '%',
+            }"
+          ></div>
         </div>
       </div>
       <template #content>
@@ -93,7 +96,9 @@ function handleAmountFocus(event: FocusEvent) {
         </div>
         <div class="zone-stat">
           <span class="zone-stat-label">{{ t('duration') }}</span>
-          <span class="zone-stat-value">{{ t('ui.seconds', { value: formatNumber(durationSeconds, 1) }) }}</span>
+          <span class="zone-stat-value">{{
+            t('ui.seconds', { value: formatNumber(durationSeconds, 1) })
+          }}</span>
         </div>
         <div class="zone-stat">
           <span class="zone-stat-label">{{ t('ui.xpPerCycle') }}</span>
@@ -138,12 +143,23 @@ function handleAmountFocus(event: FocusEvent) {
               class="zone-amount-infinity"
               :title="t('ui.unlimited')"
               @click="amountString = INFINITE_STRING"
-            >{{ INFINITE_STRING }}</button>
+            >
+              {{ INFINITE_STRING }}
+            </button>
           </div>
         </label>
         <div class="zone-action-buttons">
-          <button type="button" class="zone-button ghost" @click="closeModal">{{ t('ui.cancel') }}</button>
-          <button type="button" class="zone-button primary" @click="addAction" :disabled="!allowAmount">{{ t('start') }}</button>
+          <button type="button" class="zone-button ghost" @click="closeModal">
+            {{ t('ui.cancel') }}
+          </button>
+          <button
+            type="button"
+            class="zone-button primary"
+            @click="addAction"
+            :disabled="!allowAmount"
+          >
+            {{ t('start') }}
+          </button>
         </div>
       </div>
     </div>
@@ -151,7 +167,6 @@ function handleAmountFocus(event: FocusEvent) {
 </template>
 
 <style lang="scss">
-
 #skill-area-root {
   display: flex;
   flex-flow: row wrap;
@@ -181,7 +196,10 @@ function handleAmountFocus(event: FocusEvent) {
     text-align: center;
     user-select: none;
     cursor: pointer;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
 
     &:hover {
       transform: translateY(-4px);

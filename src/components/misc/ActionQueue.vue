@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { actionManager } from '@/models/global/ActionManager';
+import { actionManager } from '@/models/global/ActionManager'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -8,7 +8,7 @@ const { t } = useI18n()
 const runningActionDisplay = computed(() =>
   actionManager.currentAction.value
     ? `${t(actionManager.currentAction.value.target.name)} · ${actionManager.currentAction.value.amountDisplay.value}`
-    : `${t('nothing')}...`
+    : `${t('nothing')}...`,
 )
 
 const runningActionDurationDisplay = computed(() => {
@@ -21,12 +21,14 @@ const runningActionDurationDisplay = computed(() => {
 const progress = computed(() => {
   if (actionManager.currentAction.value) {
     return Math.min(
-      (actionManager.currentAction.value.elapsed.value / actionManager.currentAction.value.duration.value) * 100,
+      (actionManager.currentAction.value.elapsed.value /
+        actionManager.currentAction.value.duration.value) *
+        100,
       100,
     )
   }
   return 0
-});
+})
 </script>
 
 <template>
@@ -50,7 +52,9 @@ const progress = computed(() => {
       <div class="progress-track">
         <div class="progress-bar" :style="{ width: progress + '%' }"></div>
       </div>
-      <span class="progress-duration" v-if="runningActionDurationDisplay">{{ runningActionDurationDisplay }}</span>
+      <span class="progress-duration" v-if="runningActionDurationDisplay">{{
+        runningActionDurationDisplay
+      }}</span>
     </div>
 
     <div v-if="actionManager.queuedActions.length > 0" class="queue-list">
@@ -61,7 +65,11 @@ const progress = computed(() => {
             <span class="queue-item-name">{{ t(action.target.name) }}</span>
             <span class="queue-item-amount">×{{ action.amount }}</span>
           </div>
-          <button type="button" class="queue-remove" @click="actionManager.removeQueueAction(index)">
+          <button
+            type="button"
+            class="queue-remove"
+            @click="actionManager.removeQueueAction(index)"
+          >
             {{ t('remove') }}
           </button>
         </li>
@@ -112,7 +120,10 @@ const progress = computed(() => {
   color: #b91c1c;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .action-button:hover {
@@ -209,7 +220,10 @@ const progress = computed(() => {
   padding: 8px 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .queue-remove:hover {

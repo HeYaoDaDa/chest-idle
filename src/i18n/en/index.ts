@@ -12,6 +12,8 @@ export default {
   nothing: 'Nothing',
   notification: {
     levelUp: 'Skill {skill} upgrade to {level}!',
+    levelTooLow: '{skill} level {level} is too low for {action} (requires {required}).',
+    notEnoughMaterials: 'Not enough materials for {action}.',
   },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },

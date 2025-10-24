@@ -2,6 +2,8 @@ import { shallowReactive, shallowRef } from "vue"
 import { Action } from "../activity/Action"
 import { CurrentAction } from "../activity/CurrentAction"
 import type { ActionTarget } from "../actionTarget";
+import { notificationManager } from "./NotificationManager";
+import i18n from "@/i18n";
 
 class ActionManager {
   public queuedActions = shallowReactive([] as Action[])
@@ -42,12 +44,22 @@ class ActionManager {
   public startCurrentAction(target: ActionTarget, amount: number = Infinity): boolean {
     if (target.skill.level.value < target.minLevel) {
       console.warn(`Required level ${target.minLevel} for action ${target.id}, but current level is ${target.skill.level.value}`);
+      notificationManager.warning('notification.levelTooLow', {
+        skill: i18n.global.t(target.skill.name),
+        level: target.skill.level.value,
+        required: target.minLevel,
+        action: i18n.global.t(target.name),
+      });
       return false;
     }
-    if (CurrentAction.computeAmount(target, amount) > 0) {
-      this.currentAction.value = new CurrentAction(target, amount);
+    const actualAmount = CurrentAction.computeAmount(target, amount);
+    if (actualAmount > 0) {
+      this.currentAction.value = new CurrentAction(target, actualAmount);
       return true;
     } else {
+      notificationManager.warning('notification.notEnoughMaterials', {
+        action: i18n.global.t(target.name),
+      });
       return false;
     }
   }

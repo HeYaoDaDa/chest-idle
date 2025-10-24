@@ -1,6 +1,8 @@
 import { XP_TABLE } from "@/constants"
+import i18n from "@/i18n"
 import { type Ref, type ComputedRef, ref, computed } from "vue"
 import type { ActionTarget } from "./actionTarget"
+import { notificationManager } from "./global/NotificationManager"
 
 export class Skill {
   name: string
@@ -20,16 +22,29 @@ export class Skill {
   }
 
   addXp(xp: number) {
-    this.xp.value += xp;
+    const previousLevel = this.getLevelFromValue(this.xp.value)
+    this.xp.value += xp
+    const currentLevel = this.getLevelFromValue(this.xp.value)
+
+    if (currentLevel > previousLevel) {
+      notificationManager.info('notification.levelUp', {
+        skill: i18n.global.t(this.name),
+        level: currentLevel,
+      })
+    }
   }
 
   private getLevel(): number {
+    return this.getLevelFromValue(this.xp.value)
+  }
+
+  private getLevelFromValue(value: number): number {
     let left = 0;
     let right = XP_TABLE.length - 1;
     let result = 0;
     while (left <= right) {
       const mid = Math.floor((left + right) / 2);
-      if (XP_TABLE[mid] <= this.xp.value) {
+      if (XP_TABLE[mid] <= value) {
         result = mid;
         left = mid + 1;
       } else {

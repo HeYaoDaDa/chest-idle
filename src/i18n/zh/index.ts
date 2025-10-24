@@ -12,6 +12,8 @@ export default {
   nothing: '无所事事',
   notification: {
     levelUp: '技能 {skill} 升级到 {level}!',
+    levelTooLow: '{skill} 等级 {level} 无法执行 {action}（需要 {required} 级）。',
+    notEnoughMaterials: '{action} 所需材料不足。',
   },
   skill: {
     mining: { name: '采矿', description: '采矿。' },

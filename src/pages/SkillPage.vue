@@ -44,6 +44,11 @@ function addAction() {
     <Tooltip v-for="zone in skill.actionTargets" :key="zone.id">
       <div @click="openModal(zone)" class="area-item">
         <div>{{ t(zone.name) }}</div>
+        <div class="chest-progress">
+          <div class="chest-progress-bar" :style="{
+            width: (zone.chest.points.value / zone.chest.maxPoints * 100) + '%'
+          }"></div>
+        </div>
       </div>
       <template #popper>
         <div>
@@ -91,10 +96,26 @@ function addAction() {
     background-color: color.adjust(white, $lightness: -10%);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     user-select: none;
     cursor: pointer;
+
+    .chest-progress {
+      width: 80%;
+      height: 4px;
+      background-color: color.adjust(black, $alpha: -0.9);
+      margin-top: 8px;
+      border-radius: 2px;
+      overflow: hidden;
+
+      .chest-progress-bar {
+        height: 100%;
+        background-color: black;
+        transition: width 0.3s ease;
+      }
+    }
   }
 }
 

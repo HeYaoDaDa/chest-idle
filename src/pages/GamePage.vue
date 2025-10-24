@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
-import ChestProgressBar from '@/components/misc/ChestProgressBar.vue';
 import { dataManager } from '@/models/global/DataManager';
 import { inventory } from '@/models/global/InventoryManager';
 import { Tooltip, Menu } from 'floating-vue';
@@ -18,7 +17,6 @@ const { t } = useI18n()
             <h1>{{ t('gameName') }}</h1>
           </div>
           <ActionQueue />
-          <ChestProgressBar v-for="chest in dataManager.allChest" :key="chest.id" :chest="chest" />
         </div>
       </div>
       <div id="sidebar">

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { type PropType, computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { type PropType, computed, nextTick, onBeforeUnmount, onMounted, ref, useAttrs, watch } from 'vue'
 
 defineOptions({
   name: 'FloatingPopover',
+  inheritAttrs: false,
 })
 
 type Placement = 'top' | 'bottom' | 'left' | 'right'
@@ -28,6 +29,8 @@ const props = defineProps({
     default: 12,
   },
 })
+
+const attrs = useAttrs()
 
 const emit = defineEmits<{
   open: []
@@ -247,7 +250,11 @@ const triggerListeners = computed(() => {
 </script>
 
 <template>
-  <span ref="triggerRef" class="popover-root" v-bind="triggerListeners">
+  <span
+    ref="triggerRef"
+    :class="['popover-root', attrs.class]"
+    v-bind="triggerListeners"
+  >
     <slot />
   </span>
   <Teleport to="body">

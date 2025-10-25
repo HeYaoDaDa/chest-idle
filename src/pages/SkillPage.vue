@@ -26,6 +26,8 @@ const xpPerCycle = computed(() => openZone.value?.xp.value ?? 0)
 const chestPointsPerCycle = computed(() => openZone.value?.chestPoints.value ?? 0)
 const hasIngredients = computed(() => (openZone.value?.ingredients.length ?? 0) > 0)
 const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0)
+const hasCurrentAction = computed(() => !!actionManager.currentAction.value)
+const queuePosition = computed(() => actionManager.queuedActions.length + 1)
 const formatNumber = (value: number, maximumFractionDigits = 0) =>
   value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits })
 function openModal(zone: ActionTarget) {
@@ -38,6 +40,20 @@ function closeModal() {
 function addAction() {
   if (openZone.value) {
     actionManager.addAction(openZone.value, stringToNumber(amountString.value))
+    closeModal()
+  } else {
+    console.error('openZone is null')
+  }
+}
+
+function startImmediately() {
+  if (openZone.value) {
+    // 清空队列并立即开始
+    actionManager.clearQueue()
+    if (actionManager.currentAction.value) {
+      actionManager.stopCurrentAction()
+    }
+    actionManager.startCurrentAction(openZone.value, stringToNumber(amountString.value))
     closeModal()
   } else {
     console.error('openZone is null')
@@ -171,12 +187,21 @@ function handleAmountFocus(event: FocusEvent) {
         </label>
         <div class="zone-action-buttons">
           <button
+            v-if="hasCurrentAction"
             type="button"
-            class="zone-button primary"
+            class="zone-button secondary"
             @click="addAction"
             :disabled="!allowAmount"
           >
-            {{ t('start') }}
+            {{ t('ui.addToQueue', { position: queuePosition }) }}
+          </button>
+          <button
+            type="button"
+            class="zone-button primary"
+            @click="hasCurrentAction ? startImmediately() : addAction()"
+            :disabled="!allowAmount"
+          >
+            {{ hasCurrentAction ? t('ui.startImmediately') : t('start') }}
           </button>
         </div>
       </div>
@@ -539,6 +564,22 @@ function handleAmountFocus(event: FocusEvent) {
 }
 
 .zone-button.primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.zone-button.secondary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+}
+
+.zone-button.secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.zone-button.secondary:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }

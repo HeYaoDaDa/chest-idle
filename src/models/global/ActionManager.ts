@@ -41,6 +41,10 @@ class ActionManager {
     }
   }
 
+  public clearQueue() {
+    this.queuedActions.splice(0, this.queuedActions.length)
+  }
+
   public startCurrentAction(target: ActionTarget, amount: number = Infinity): boolean {
     if (target.skill.level.value < target.minLevel) {
       console.warn(

@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import ModalBox from './ModalBox.vue'
 import { actionManager } from '@/models/global/ActionManager'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+const showQueueModal = ref(false)
 
 const runningActionDisplay = computed(() =>
   actionManager.currentAction.value
@@ -29,6 +31,16 @@ const progress = computed(() => {
   }
   return 0
 })
+
+const hasQueuedActions = computed(() => actionManager.queuedActions.length > 0)
+
+function openQueueModal() {
+  showQueueModal.value = true
+}
+
+function closeQueueModal() {
+  showQueueModal.value = false
+}
 </script>
 
 <template>
@@ -38,14 +50,24 @@ const progress = computed(() => {
         <span class="action-label">{{ t('ui.currentAction') }}</span>
         <span class="action-value">{{ runningActionDisplay }}</span>
       </div>
-      <button
-        v-if="actionManager.currentAction.value"
-        class="action-button"
-        type="button"
-        @click="actionManager.stopCurrentAction"
-      >
-        {{ t('stop') }}
-      </button>
+      <div class="action-buttons">
+        <button
+          v-if="actionManager.currentAction.value"
+          class="action-button stop-button"
+          type="button"
+          @click="actionManager.stopCurrentAction"
+        >
+          {{ t('stop') }}
+        </button>
+        <button
+          v-if="hasQueuedActions"
+          class="action-button queue-button"
+          type="button"
+          @click="openQueueModal"
+        >
+          {{ t('ui.queue') }} ({{ actionManager.queuedActions.length }})
+        </button>
+      </div>
     </div>
 
     <div class="progress-wrapper">
@@ -56,26 +78,44 @@ const progress = computed(() => {
         runningActionDurationDisplay
       }}</span>
     </div>
-
-    <div v-if="actionManager.queuedActions.length > 0" class="queue-list">
-      <span class="queue-title">{{ t('ui.queue') }}</span>
-      <ul>
-        <li v-for="(action, index) in actionManager.queuedActions" :key="index" class="queue-item">
-          <div class="queue-item-text">
-            <span class="queue-item-name">{{ t(action.target.name) }}</span>
-            <span class="queue-item-amount">×{{ action.amount }}</span>
-          </div>
-          <button
-            type="button"
-            class="queue-remove"
-            @click="actionManager.removeQueueAction(index)"
-          >
-            {{ t('remove') }}
-          </button>
-        </li>
-      </ul>
-    </div>
   </div>
+
+  <!-- Queue Modal -->
+  <ModalBox v-if="showQueueModal" @close="closeQueueModal">
+    <div class="queue-modal">
+      <div class="queue-modal-header">
+        <h3 class="queue-modal-title">{{ t('ui.queue') }}</h3>
+        <span class="queue-modal-count">{{ actionManager.queuedActions.length }} {{ t('ui.queuedItems') }}</span>
+      </div>
+
+      <div class="queue-modal-content">
+        <ul class="queue-modal-list">
+          <li v-for="(action, index) in actionManager.queuedActions" :key="index" class="queue-modal-item">
+            <div class="queue-modal-item-info">
+              <span class="queue-modal-item-index">{{ index + 1 }}</span>
+              <div class="queue-modal-item-text">
+                <span class="queue-modal-item-name">{{ t(action.target.name) }}</span>
+                <span class="queue-modal-item-amount">×{{ action.amount }}</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="queue-modal-remove"
+              @click="actionManager.removeQueueAction(index)"
+            >
+              {{ t('remove') }}
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="queue-modal-footer">
+        <button type="button" class="queue-modal-close-button" @click="closeQueueModal">
+          {{ t('ui.close') }}
+        </button>
+      </div>
+    </div>
+  </ModalBox>
 </template>
 
 <style lang="scss" scoped>
@@ -97,6 +137,8 @@ const progress = computed(() => {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
 
 .action-label {
@@ -110,23 +152,48 @@ const progress = computed(() => {
   font-size: 16px;
   font-weight: 600;
   color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .action-button {
   border: none;
   border-radius: 999px;
   padding: 8px 14px;
-  background: rgba(248, 113, 113, 0.16);
-  color: #b91c1c;
   font-weight: 600;
+  font-size: 13px;
   cursor: pointer;
   transition:
     background 0.15s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease;
+  white-space: nowrap;
 }
 
-.action-button:hover {
+.queue-button {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+}
+
+.queue-button:hover {
+  background: rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.24);
+}
+
+.stop-button {
+  background: rgba(248, 113, 113, 0.16);
+  color: #b91c1c;
+}
+
+.stop-button:hover {
   background: rgba(248, 113, 113, 0.24);
   transform: translateY(-2px);
   box-shadow: 0 10px 18px rgba(248, 113, 113, 0.24);
@@ -162,73 +229,171 @@ const progress = computed(() => {
   pointer-events: none;
 }
 
-.queue-list {
+/* Queue Modal Styles */
+.queue-modal {
+  min-width: min(480px, 90vw);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
-.queue-title {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #64748b;
+.queue-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.12);
 }
 
-.queue-list ul {
+.queue-modal-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.queue-modal-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.queue-modal-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.queue-modal-list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
-.queue-item {
+.queue-modal-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   background: rgba(248, 250, 252, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.3);
   border-radius: 8px;
-  padding: 8px 10px;
+  padding: 12px;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
-.queue-item-text {
+.queue-modal-item:hover {
+  background: rgba(226, 232, 240, 0.5);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.queue-modal-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.queue-modal-item-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.queue-modal-item-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1;
+  min-width: 0;
 }
 
-.queue-item-name {
-  font-size: 14px;
+.queue-modal-item-name {
+  font-size: 15px;
   font-weight: 600;
   color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.queue-item-amount {
-  font-size: 12px;
+.queue-modal-item-amount {
+  font-size: 13px;
   color: #64748b;
+  font-weight: 500;
 }
 
-.queue-remove {
+.queue-modal-remove {
   border: none;
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.12);
-  color: #2563eb;
+  background: rgba(248, 113, 113, 0.12);
+  color: #b91c1c;
   padding: 6px 12px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition:
     background 0.15s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease;
+  flex-shrink: 0;
 }
 
-.queue-remove:hover {
-  background: rgba(37, 99, 235, 0.2);
+.queue-modal-remove:hover {
+  background: rgba(248, 113, 113, 0.2);
   transform: translateY(-1px);
-  box-shadow: 0 10px 16px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 8px 14px rgba(248, 113, 113, 0.2);
+}
+
+.queue-modal-footer {
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.queue-modal-close-button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.queue-modal-close-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 540px) {
+  .queue-modal {
+    min-width: unset;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
 }
 </style>

@@ -32,20 +32,20 @@ const progress = computed(() => chest.pointProgress.value * 100)
 .chest-progress-bar {
   display: flex;
   flex-flow: column nowrap;
-  padding: 8px 16px;
+  padding: 6px 12px;
 
   .action-bottom {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 
     .progress-container {
       position: relative;
       width: 256px;
       height: 16px;
       background-color: color.adjust(white, $lightness: -10%);
-      border-radius: 5px;
+      border-radius: 3px;
       overflow: hidden;
       user-select: none;
 

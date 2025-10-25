@@ -285,9 +285,9 @@ const triggerListeners = computed(() => {
   min-width: 180px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(148, 163, 184, 0.28);
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
-  padding: 14px 16px;
+  padding: 10px 12px;
   color: #0f172a;
   backdrop-filter: blur(8px) saturate(120%);
 }

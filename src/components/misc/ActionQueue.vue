@@ -82,7 +82,7 @@ const progress = computed(() => {
 .action-queue {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   color: #0f172a;
 }
 
@@ -90,13 +90,13 @@ const progress = computed(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 .action-current-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .action-label {
@@ -115,7 +115,7 @@ const progress = computed(() => {
 .action-button {
   border: none;
   border-radius: 999px;
-  padding: 10px 18px;
+  padding: 8px 14px;
   background: rgba(248, 113, 113, 0.16);
   color: #b91c1c;
   font-weight: 600;
@@ -165,7 +165,7 @@ const progress = computed(() => {
 .queue-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .queue-title {
@@ -181,18 +181,18 @@ const progress = computed(() => {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .queue-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   background: rgba(248, 250, 252, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.3);
-  border-radius: 12px;
-  padding: 10px 14px;
+  border-radius: 8px;
+  padding: 8px 10px;
 }
 
 .queue-item-text {
@@ -217,7 +217,7 @@ const progress = computed(() => {
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.12);
   color: #2563eb;
-  padding: 8px 16px;
+  padding: 6px 12px;
   font-weight: 600;
   cursor: pointer;
   transition:

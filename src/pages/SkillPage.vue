@@ -173,7 +173,7 @@ function handleAmountFocus(event: FocusEvent) {
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  gap: 16px;
+  gap: 10px;
 
   .area-popover {
     display: block;
@@ -182,7 +182,7 @@ function handleAmountFocus(event: FocusEvent) {
   .area-item {
     min-width: 140px;
     min-height: 140px;
-    border-radius: 16px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(148, 163, 184, 0.25);
     box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
@@ -191,8 +191,8 @@ function handleAmountFocus(event: FocusEvent) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 12px;
-    padding: 16px;
+    gap: 8px;
+    padding: 12px;
     text-align: center;
     user-select: none;
     cursor: pointer;
@@ -233,7 +233,7 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-modal {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   min-width: min(460px, 100%);
 }
 
@@ -241,13 +241,13 @@ function handleAmountFocus(event: FocusEvent) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: 8px;
 }
 
 .zone-header-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .zone-overline {
@@ -291,16 +291,16 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
+  gap: 8px;
 }
 
 .zone-stat {
   background: #f8fafc;
-  border-radius: 10px;
-  padding: 12px;
+  border-radius: 6px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .zone-stat-label {
@@ -319,16 +319,16 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-resources {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  gap: 10px;
 }
 
 .zone-resource {
   background: #f9fafb;
-  border-radius: 10px;
-  padding: 16px;
+  border-radius: 6px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .zone-resource h3 {
@@ -345,7 +345,7 @@ function handleAmountFocus(event: FocusEvent) {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .zone-resource li {
@@ -373,13 +373,13 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-actions {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .zone-amount {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .zone-amount-label {
@@ -390,14 +390,14 @@ function handleAmountFocus(event: FocusEvent) {
 
 .zone-amount-input {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .zone-amount-input input {
   flex: 1;
   border: 1px solid #cbd5f5;
-  border-radius: 8px;
-  padding: 10px 12px;
+  border-radius: 6px;
+  padding: 8px 10px;
   font-size: 14px;
   color: #0f172a;
 }
@@ -410,10 +410,10 @@ function handleAmountFocus(event: FocusEvent) {
 
 .zone-amount-infinity {
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   background: #e2e8f0;
   color: #0f172a;
-  padding: 0 16px;
+  padding: 0 12px;
   cursor: pointer;
   font-size: 18px;
 }
@@ -425,13 +425,13 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-action-buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 8px;
 }
 
 .zone-button {
   border: none;
   border-radius: 999px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;

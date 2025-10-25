@@ -161,7 +161,7 @@ const { t } = useI18n()
 <style lang="scss">
 #game-page-root {
   height: 100%;
-  padding: 24px;
+  padding: 16px;
   box-sizing: border-box;
 
   #game-page-layout-container {
@@ -169,14 +169,14 @@ const { t } = useI18n()
     display: grid;
     grid-template-columns: 260px minmax(0, 1fr) 280px 280px;
     grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
-    gap: 20px;
+    gap: 12px;
 
     > div {
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: 16px;
-      padding: 18px;
+      border-radius: 10px;
+      padding: 12px;
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
       overflow: hidden;
     }
@@ -189,7 +189,7 @@ const { t } = useI18n()
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 24px;
+      padding: 14px 16px;
 
       h1 {
         margin: 0;
@@ -202,7 +202,7 @@ const { t } = useI18n()
       #header-title-action {
         display: flex;
         flex-flow: row nowrap;
-        gap: 32px;
+        gap: 20px;
         align-items: center;
       }
     }
@@ -212,8 +212,8 @@ const { t } = useI18n()
       grid-row: 2 / 4;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      padding: 18px;
+      gap: 8px;
+      padding: 12px;
       overflow-y: auto;
 
       .sidebar-popover {
@@ -224,7 +224,7 @@ const { t } = useI18n()
       .sidebar-popover-card {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 4px;
         min-width: 180px;
       }
 
@@ -240,7 +240,7 @@ const { t } = useI18n()
       }
 
       .sidebar-popover-card hr {
-        margin: 8px 0;
+        margin: 6px 0;
         border: none;
         border-top: 1px solid rgba(148, 163, 184, 0.32);
       }
@@ -250,10 +250,10 @@ const { t } = useI18n()
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 6px;
-        padding: 12px 16px;
+        gap: 4px;
+        padding: 8px 12px;
         width: 100%;
-        border-radius: 12px;
+        border-radius: 8px;
         background: rgba(248, 250, 252, 0.72);
         font-weight: 600;
         color: #1e293b;
@@ -290,7 +290,7 @@ const { t } = useI18n()
         flex: 1;
         min-height: 0;
         overflow: auto;
-        padding: 24px;
+        padding: 16px;
       }
     }
 
@@ -299,8 +299,8 @@ const { t } = useI18n()
       grid-row: 2 / 3;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 14px;
-      padding: 18px;
+      gap: 8px;
+      padding: 12px;
       align-content: start;
 
       .equipment-cell {
@@ -316,14 +316,14 @@ const { t } = useI18n()
       .equipment-item,
       .equipment-slot {
         min-height: 110px;
-        border-radius: 12px;
+        border-radius: 8px;
         background: rgba(248, 250, 252, 0.9);
         border: 1px dashed rgba(148, 163, 184, 0.4);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 12px;
+        padding: 8px;
         font-weight: 600;
         color: #1e293b;
         transition:
@@ -357,7 +357,7 @@ const { t } = useI18n()
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 16px;
+      border-radius: 10px;
       background: rgba(248, 250, 252, 0.72);
       color: #94a3b8;
       font-style: italic;
@@ -368,8 +368,8 @@ const { t } = useI18n()
       grid-row: 3 / 4;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 14px;
-      padding: 18px;
+      gap: 8px;
+      padding: 12px;
       align-content: start;
       overflow: auto;
 
@@ -384,7 +384,7 @@ const { t } = useI18n()
       }
 
       .inventory-item {
-        border-radius: 12px;
+        border-radius: 8px;
         background: rgba(248, 250, 252, 0.9);
         border: 1px solid rgba(148, 163, 184, 0.3);
         min-height: 110px;
@@ -392,7 +392,7 @@ const { t } = useI18n()
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 6px;
+        gap: 4px;
         font-weight: 600;
         color: #1e293b;
         cursor: pointer;
@@ -417,13 +417,13 @@ const { t } = useI18n()
     .popover-action-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 6px;
     }
 
     .popover-action-button {
       border: none;
       border-radius: 999px;
-      padding: 8px 16px;
+      padding: 6px 12px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
@@ -443,7 +443,7 @@ const { t } = useI18n()
 
 @media (max-width: 1280px) {
   #game-page-root {
-    padding: 16px;
+    padding: 12px;
 
     #game-page-layout-container {
       grid-template-columns: 220px 1fr;
@@ -484,14 +484,14 @@ const { t } = useI18n()
 
 @media (max-width: 960px) {
   #game-page-root {
-    padding: 12px;
+    padding: 8px;
 
     #game-page-layout-container {
       display: flex;
       flex-direction: column;
 
       > div {
-        padding: 16px;
+        padding: 12px;
       }
 
       #sidebar {
@@ -505,7 +505,7 @@ const { t } = useI18n()
       }
 
       #content > * {
-        padding: 20px;
+        padding: 14px;
       }
 
       #invertory {

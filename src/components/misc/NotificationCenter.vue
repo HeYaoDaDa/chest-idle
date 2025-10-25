@@ -31,7 +31,7 @@ function dismiss(id: number) {
   right: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   z-index: 2000;
   pointer-events: none;
 }
@@ -40,14 +40,14 @@ function dismiss(id: number) {
   pointer-events: auto;
   min-width: 240px;
   max-width: 360px;
-  padding: 12px 16px;
-  border-radius: 4px;
+  padding: 10px 12px;
+  border-radius: 3px;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   border-left: 4px solid #3a7afe;
   color: #1f2933;
 }

@@ -170,9 +170,6 @@ function handleAmountFocus(event: FocusEvent) {
           </div>
         </label>
         <div class="zone-action-buttons">
-          <button type="button" class="zone-button ghost" @click="closeModal">
-            {{ t('ui.cancel') }}
-          </button>
           <button
             type="button"
             class="zone-button primary"

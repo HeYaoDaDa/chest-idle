@@ -4,6 +4,7 @@ import { INFINITE_STRING } from '@/constants'
 import type { ActionTarget } from '@/models/actionTarget'
 import { actionManager } from '@/models/global/ActionManager'
 import { dataManager } from '@/models/global/DataManager'
+import { inventory } from '@/models/global/InventoryManager'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -28,6 +29,44 @@ const hasIngredients = computed(() => (openZone.value?.ingredients.length ?? 0) 
 const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0)
 const hasCurrentAction = computed(() => !!actionManager.currentAction.value)
 const queuePosition = computed(() => actionManager.queuedActions.length + 1)
+
+// 检查是否满足开始条件
+const canStartAction = computed(() => {
+  if (!openZone.value) return { canStart: false, reasons: [] }
+
+  const reasons: string[] = []
+
+  // 检查等级要求
+  if (openZone.value.skill.level.value < openZone.value.minLevel) {
+    reasons.push(t('notification.levelTooLow', {
+      skill: t(openZone.value.skill.name),
+      level: openZone.value.skill.level.value,
+      required: openZone.value.minLevel,
+      action: t(openZone.value.name)
+    }))
+  }
+
+  // 检查材料是否足够
+  if ('ingredients' in openZone.value && openZone.value.ingredients.length > 0) {
+    for (const ingredient of openZone.value.ingredients) {
+      const inventoryItem = inventory.inventoryItemMap.get(ingredient.item.id)
+      const available = inventoryItem?.amount.value ?? 0
+      if (available < ingredient.count) {
+        reasons.push(t('ui.insufficientMaterial', {
+          item: t(ingredient.item.name),
+          required: ingredient.count,
+          available: available
+        }))
+      }
+    }
+  }
+
+  return {
+    canStart: reasons.length === 0,
+    reasons
+  }
+})
+
 const formatNumber = (value: number, maximumFractionDigits = 0) =>
   value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits })
 function openModal(zone: ActionTarget) {
@@ -156,7 +195,7 @@ function handleAmountFocus(event: FocusEvent) {
               <span class="resource-count">×{{ formatNumber(ingredient.count) }}</span>
             </li>
           </ul>
-          <p v-else class="zone-resource-empty">{{ t('nothing') }}</p>
+          <p v-else class="zone-resource-empty">{{ t('ui.noMaterialsRequired') }}</p>
         </section>
         <section class="zone-resource">
           <h3>{{ t('ui.rewards') }}</h3>
@@ -166,8 +205,18 @@ function handleAmountFocus(event: FocusEvent) {
               <span class="resource-count">×{{ formatNumber(product.count) }}</span>
             </li>
           </ul>
-          <p v-else class="zone-resource-empty">{{ t('nothing') }}</p>
+          <p v-else class="zone-resource-empty">{{ t('ui.noRewards') }}</p>
         </section>
+      </div>
+
+      <!-- 显示不满足的条件 -->
+      <div v-if="!canStartAction.canStart" class="zone-warnings">
+        <div class="zone-warning-title">{{ t('ui.cannotStart') }}</div>
+        <ul class="zone-warning-list">
+          <li v-for="(reason, index) in canStartAction.reasons" :key="index" class="zone-warning-item">
+            {{ reason }}
+          </li>
+        </ul>
       </div>
 
       <div class="zone-actions">
@@ -191,7 +240,7 @@ function handleAmountFocus(event: FocusEvent) {
             type="button"
             class="zone-button secondary"
             @click="addAction"
-            :disabled="!allowAmount"
+            :disabled="!allowAmount || !canStartAction.canStart"
           >
             {{ t('ui.addToQueue', { position: queuePosition }) }}
           </button>
@@ -199,7 +248,7 @@ function handleAmountFocus(event: FocusEvent) {
             type="button"
             class="zone-button primary"
             @click="hasCurrentAction ? startImmediately() : addAction()"
-            :disabled="!allowAmount"
+            :disabled="!allowAmount || !canStartAction.canStart"
           >
             {{ hasCurrentAction ? t('ui.startImmediately') : t('start') }}
           </button>
@@ -489,6 +538,47 @@ function handleAmountFocus(event: FocusEvent) {
   margin: 0;
   font-style: italic;
   color: #94a3b8;
+}
+
+.zone-warnings {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(220, 38, 38, 0.05) 100%);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zone-warning-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #b91c1c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.zone-warning-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zone-warning-item {
+  font-size: 14px;
+  color: #dc2626;
+  position: relative;
+  line-height: 1.5;
+}
+
+.zone-warning-item::before {
+  content: '⚠';
+  position: absolute;
+  left: -20px;
+  color: #f59e0b;
 }
 
 .zone-actions {

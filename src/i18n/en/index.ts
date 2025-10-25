@@ -16,6 +16,9 @@ export default {
     notEnoughMaterials: 'Not enough materials for {action}.',
   },
   ui: {
+    level: 'Lv.{level}',
+    xp: 'Experience',
+    nextLevel: 'Next Level',
     xpPerCycle: 'XP per action',
     chestPoints: 'Chest points per action',
     requiredMaterials: 'Required Materials',
@@ -26,6 +29,13 @@ export default {
     seconds: '{value}s',
     currentAction: 'Current Action',
     queue: 'Queued Actions',
+    quantity: 'Quantity',
+    type: 'Type',
+    slot: 'Slot',
+    effects: 'Effects',
+    equip: 'Equip',
+    unequip: 'Unequip',
+    open: 'Open',
   },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },
@@ -56,6 +66,18 @@ export default {
     brewingTool: 'Brewing Tool',
     alchemyTool: 'Alchemy Tool',
     enhancingTool: 'Enhancing Tool',
+  },
+  state: {
+    miningSpeed: { name: 'Mining Speed' },
+    woodcuttingSpeed: { name: 'Woodcutting Speed' },
+    foragingSpeed: { name: 'Foraging Speed' },
+    smithingSpeed: { name: 'Smithing Speed' },
+    craftingSpeed: { name: 'Crafting Speed' },
+    tailoringSpeed: { name: 'Tailoring Speed' },
+    cookingSpeed: { name: 'Cooking Speed' },
+    brewingSpeed: { name: 'Brewing Speed' },
+    alchemySpeed: { name: 'Alchemy Speed' },
+    enhancingSpeed: { name: 'Enhancing Speed' },
   },
   item: {
     copperMineChest: {

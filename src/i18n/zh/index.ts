@@ -16,6 +16,9 @@ export default {
     notEnoughMaterials: '{action} 所需材料不足。',
   },
   ui: {
+    level: 'Lv.{level}',
+    xp: '经验值',
+    nextLevel: '下一级',
     xpPerCycle: '每次行动经验',
     chestPoints: '每次行动宝箱点数',
     requiredMaterials: '所需材料',
@@ -26,6 +29,13 @@ export default {
     seconds: '{value}秒',
     currentAction: '当前行动',
     queue: '行动队列',
+    quantity: '数量',
+    type: '类型',
+    slot: '装备槽',
+    effects: '效果',
+    equip: '装备',
+    unequip: '卸下',
+    open: '打开',
   },
   skill: {
     mining: { name: '采矿', description: '采矿。' },
@@ -56,6 +66,18 @@ export default {
     brewingTool: '酿造工具',
     alchemyTool: '炼金工具',
     enhancingTool: '强化工具',
+  },
+  state: {
+    miningSpeed: { name: '采矿速度' },
+    woodcuttingSpeed: { name: '伐木速度' },
+    foragingSpeed: { name: '采集速度' },
+    smithingSpeed: { name: '锻造速度' },
+    craftingSpeed: { name: '制作速度' },
+    tailoringSpeed: { name: '裁缝速度' },
+    cookingSpeed: { name: '烹饪速度' },
+    brewingSpeed: { name: '酿造速度' },
+    alchemySpeed: { name: '炼金速度' },
+    enhancingSpeed: { name: '强化速度' },
   },
   item: {
     copperMineChest: {

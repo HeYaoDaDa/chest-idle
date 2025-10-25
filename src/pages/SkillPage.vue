@@ -5,7 +5,6 @@ import type { ActionTarget } from '@/models/actionTarget'
 import { actionManager } from '@/models/global/ActionManager'
 import { dataManager } from '@/models/global/DataManager'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
-import FloatingPopover from '@/components/misc/Popover.vue'
 import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
@@ -52,15 +51,40 @@ function handleAmountFocus(event: FocusEvent) {
 </script>
 
 <template>
-  <div id="skill-area-root">
-    <FloatingPopover
-      v-for="zone in skill.actionTargets"
-      :key="zone.id"
-      placement="bottom"
-      align="center"
-      class="area-popover"
-    >
-      <div @click="openModal(zone)" class="area-item">
+  <div id="skill-page-container">
+    <div class="skill-header">
+      <div class="skill-header-main">
+        <h2 class="skill-title">{{ t(skill.name) }}</h2>
+        <div class="skill-level">{{ t('ui.level', { level: skill.level.value }) }}</div>
+      </div>
+      <div class="skill-description">{{ t(skill.description) }}</div>
+      <div class="skill-stats">
+        <div class="skill-stat">
+          <span class="skill-stat-label">{{ t('ui.xp') }}</span>
+          <span class="skill-stat-value">{{ skill.xp.value.toLocaleString(locale) }}</span>
+        </div>
+        <div class="skill-stat">
+          <span class="skill-stat-label">{{ t('ui.nextLevel') }}</span>
+          <span class="skill-stat-value">{{ skill.remainingXpForUpgrade.value.toLocaleString(locale) }}</span>
+        </div>
+      </div>
+      <div class="skill-progress-bar-container">
+        <div
+          class="skill-progress-bar"
+          :style="{
+            width: skill.upgradeProgress.value * 100 + '%',
+          }"
+        ></div>
+      </div>
+    </div>
+
+    <div id="skill-area-root">
+      <div
+        v-for="zone in skill.actionTargets"
+        :key="zone.id"
+        class="area-item"
+        @click="openModal(zone)"
+      >
         <div>{{ t(zone.name) }}</div>
         <div class="chest-progress">
           <div
@@ -71,12 +95,7 @@ function handleAmountFocus(event: FocusEvent) {
           ></div>
         </div>
       </div>
-      <template #content>
-        <div class="area-tooltip">
-          {{ t(zone.description) }}
-        </div>
-      </template>
-    </FloatingPopover>
+    </div>
   </div>
   <ModalBox v-if="openZone" @close="closeModal">
     <div class="zone-modal">
@@ -167,6 +186,92 @@ function handleAmountFocus(event: FocusEvent) {
 </template>
 
 <style lang="scss">
+#skill-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.skill-header {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .skill-header-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .skill-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.01em;
+  }
+
+  .skill-level {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.12);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .skill-description {
+    color: #475569;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .skill-stats {
+    display: flex;
+    gap: 24px;
+  }
+
+  .skill-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .skill-stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .skill-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .skill-progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(226, 232, 240, 0.6);
+    border-radius: 999px;
+    overflow: hidden;
+
+    .skill-progress-bar {
+      height: 100%;
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      transition: width 0.3s ease;
+      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+    }
+  }
+}
+
 #skill-area-root {
   display: flex;
   flex-flow: row wrap;
@@ -174,11 +279,8 @@ function handleAmountFocus(event: FocusEvent) {
   align-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-
-  .area-popover {
-    display: block;
-    flex: 0 0 auto;
-  }
+  flex: 1;
+  overflow-y: auto;
 
   .area-item {
     width: 140px;
@@ -222,13 +324,6 @@ function handleAmountFocus(event: FocusEvent) {
         transition: width 0.3s ease;
       }
     }
-  }
-
-  .area-tooltip {
-    max-width: 220px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #0f172a;
   }
 }
 

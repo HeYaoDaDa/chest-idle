@@ -1,6 +1,6 @@
 import type { EffectType } from '@/constants'
 
-export class InactivelyEffect {
+export class InactiveEffect {
   constructor(
     public state: string,
     public type: EffectType,

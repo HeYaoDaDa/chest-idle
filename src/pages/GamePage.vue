@@ -1,11 +1,55 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
-import FloatingPopover from '@/components/misc/Popover.vue'
+import ModalBox from '@/components/misc/ModalBox.vue'
 import { dataManager } from '@/models/global/DataManager'
 import { inventory } from '@/models/global/InventoryManager'
+import type { Equipment } from '@/models/item/Equipment'
+import type { InventoryItem } from '@/models/inventory/InventoryItem'
+import type { Slot } from '@/models/Slot'
+import { shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+
+const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
+const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
+
+function openEquipmentModal(slot: Slot, equipment: Equipment) {
+  selectedEquipment.value = { slot, equipment }
+}
+
+function closeEquipmentModal() {
+  selectedEquipment.value = null
+}
+
+function unequipAndClose() {
+  if (selectedEquipment.value) {
+    selectedEquipment.value.slot.unEquip()
+    closeEquipmentModal()
+  }
+}
+
+function openInventoryModal(item: InventoryItem) {
+  selectedInventoryItem.value = item
+}
+
+function closeInventoryModal() {
+  selectedInventoryItem.value = null
+}
+
+function equipAndClose() {
+  if (selectedInventoryItem.value) {
+    selectedInventoryItem.value.equip()
+    closeInventoryModal()
+  }
+}
+
+function openChestAndClose() {
+  if (selectedInventoryItem.value) {
+    selectedInventoryItem.value.openChest()
+    closeInventoryModal()
+  }
+}
 </script>
 
 <template>
@@ -20,37 +64,23 @@ const { t } = useI18n()
         </div>
       </div>
       <div id="sidebar">
-        <FloatingPopover
+        <router-link
           v-for="skill in dataManager.allSkill"
           :key="skill.id"
-          placement="right"
-          align="start"
-          class="sidebar-popover"
+          :to="`/game/${skill.id}`"
+          active-class="active-link"
         >
-          <router-link :to="`/game/${skill.id}`" active-class="active-link">
-            <div>{{ t(skill.name) }} {{ skill.level.value }}</div>
-            <div style="width: 100%">
-              <div
-                :style="{
-                  width: skill.upgradeProgress.value * 100 + '%',
-                  height: '2px',
-                  backgroundColor: 'black',
-                }"
-              ></div>
-            </div>
-          </router-link>
-          <template #content>
-            <div class="sidebar-popover-card">
-              <div class="sidebar-popover-title">{{ t(skill.name) }}</div>
-              <div class="sidebar-popover-level">Lv.{{ skill.level.value }}</div>
-              <div>{{ skill.xp.value }}</div>
-              <div>{{ skill.remainingXpForUpgrade.value }}</div>
-              <hr />
-              <div>{{ t(skill.description) }}</div>
-            </div>
-          </template>
-        </FloatingPopover>
-        <!--  -->
+          <div>{{ t(skill.name) }} {{ t('ui.level', { level: skill.level.value }) }}</div>
+          <div style="width: 100%">
+            <div
+              :style="{
+                width: skill.upgradeProgress.value * 100 + '%',
+                height: '2px',
+                backgroundColor: 'black',
+              }"
+            ></div>
+          </div>
+        </router-link>
         <router-link :to="`/game/states`" active-class="active-link">
           <div>States</div>
           <div style="width: 100%">
@@ -63,99 +93,126 @@ const { t } = useI18n()
       </div>
       <div id="equipment">
         <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
-          <FloatingPopover
+          <div
             v-if="slot.equipment.value"
-            trigger="click"
-            placement="bottom"
-            align="center"
-            class="equipment-action-popover"
+            class="equipment-item"
+            @click="openEquipmentModal(slot, slot.equipment.value)"
           >
-            <FloatingPopover
-              trigger="hover"
-              placement="top"
-              align="center"
-              class="equipment-info-popover"
-            >
-              <div class="equipment-item">
-                <div>{{ t(slot.equipment.value.name) }}</div>
-              </div>
-              <template #content>
-                <div class="equipment-tooltip">
-                  {{ t(slot.equipment.value.description) }}
-                </div>
-              </template>
-            </FloatingPopover>
-            <template #content="{ close }">
-              <div class="popover-action-list">
-                <button
-                  type="button"
-                  class="popover-action-button"
-                  @click="slot.unEquip(); close()"
-                >
-                  UnEq
-                </button>
-              </div>
-            </template>
-          </FloatingPopover>
+            <div>{{ t(slot.equipment.value.name) }}</div>
+          </div>
           <div v-else class="equipment-slot">
             <span>{{ t(slot.name) }}</span>
           </div>
         </div>
       </div>
       <div id="abilities"></div>
-      <div id="invertory">
+            <div id="inventory">
         <div
           v-for="inventoryItem in inventory.inventoryItems.value"
           :key="inventoryItem.item.id"
-          class="inventory-cell"
+          class="inventory-item"
+          @click="openInventoryModal(inventoryItem)"
         >
-          <FloatingPopover
-            trigger="click"
-            placement="bottom"
-            align="center"
-            class="inventory-action-popover"
-          >
-            <FloatingPopover
-              trigger="hover"
-              placement="top"
-              align="center"
-              class="inventory-info-popover"
-            >
-              <div class="inventory-item">
-                <div>{{ t(inventoryItem.item.name) }}</div>
-                <div>{{ inventoryItem.amountDisplay.value }}</div>
-              </div>
-              <template #content>
-                <div class="inventory-tooltip">
-                  {{ t(inventoryItem.item.description) }}
-                </div>
-              </template>
-            </FloatingPopover>
-            <template #content="{ close }">
-              <div class="popover-action-list">
-                <button
-                  v-if="inventoryItem.item.isEquipment()"
-                  type="button"
-                  class="popover-action-button"
-                  @click="inventoryItem.equip(); close()"
-                >
-                  Eq
-                </button>
-                <button
-                  v-if="inventoryItem.item.isChest()"
-                  type="button"
-                  class="popover-action-button"
-                  @click="inventoryItem.openChest(); close()"
-                >
-                  Open
-                </button>
-              </div>
-            </template>
-          </FloatingPopover>
+          <div>{{ t(inventoryItem.item.name) }}</div>
+          <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
+            x{{ inventoryItem.amount.value }}
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Equipment Modal -->
+  <ModalBox v-if="selectedEquipment" @close="closeEquipmentModal">
+    <div class="item-modal">
+      <div class="item-modal-header">
+        <h3 class="item-modal-title">{{ t(selectedEquipment.equipment.name) }}</h3>
+        <span class="item-modal-type">{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span>
+      </div>
+
+      <div class="item-modal-content">
+        <p class="item-modal-description">{{ t(selectedEquipment.equipment.description) }}</p>
+
+        <div v-if="selectedEquipment.equipment.effects.length > 0" class="item-modal-section">
+          <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
+          <div class="item-modal-effects">
+            <div
+              v-for="(effect, index) in selectedEquipment.equipment.effects"
+              :key="index"
+              class="item-modal-effect"
+            >
+              <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
+              <span class="effect-value">
+                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{ effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-modal-footer">
+        <button type="button" class="item-modal-button unequip" @click="unequipAndClose">
+          {{ t('ui.unequip') }}
+        </button>
+      </div>
+    </div>
+  </ModalBox>
+
+  <!-- Inventory Modal -->
+  <ModalBox v-if="selectedInventoryItem" @close="closeInventoryModal">
+    <div class="item-modal">
+      <div class="item-modal-header">
+        <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
+        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span>
+      </div>
+
+      <div class="item-modal-content">
+        <p class="item-modal-description">{{ t(selectedInventoryItem.item.description) }}</p>
+
+        <div v-if="selectedInventoryItem.item.isEquipment()" class="item-modal-section">
+          <div class="item-modal-info-row">
+            <span class="info-label">{{ t('ui.slot') }}</span>
+            <span class="info-value">{{ t(selectedInventoryItem.item.slot.name) }}</span>
+          </div>
+        </div>
+
+        <div v-if="selectedInventoryItem.item.isEquipment() && selectedInventoryItem.item.effects.length > 0" class="item-modal-section">
+          <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
+          <div class="item-modal-effects">
+            <div
+              v-for="(effect, index) in selectedInventoryItem.item.effects"
+              :key="index"
+              class="item-modal-effect"
+            >
+              <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
+              <span class="effect-value">
+                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{ effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item-modal-footer">
+        <button
+          v-if="selectedInventoryItem.item.isEquipment()"
+          type="button"
+          class="item-modal-button equip"
+          @click="equipAndClose"
+        >
+          {{ t('ui.equip') }}
+        </button>
+        <button
+          v-if="selectedInventoryItem.item.isChest()"
+          type="button"
+          class="item-modal-button open"
+          @click="openChestAndClose"
+        >
+          {{ t('ui.open') }}
+        </button>
+      </div>
+    </div>
+  </ModalBox>
 </template>
 
 <style lang="scss">
@@ -215,35 +272,6 @@ const { t } = useI18n()
       gap: 8px;
       padding: 12px;
       overflow-y: auto;
-
-      .sidebar-popover {
-        display: block;
-        width: 100%;
-      }
-
-      .sidebar-popover-card {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        min-width: 180px;
-      }
-
-      .sidebar-popover-title {
-        font-weight: 600;
-        color: #1e293b;
-      }
-
-      .sidebar-popover-level {
-        font-size: 13px;
-        font-weight: 500;
-        color: #2563eb;
-      }
-
-      .sidebar-popover-card hr {
-        margin: 6px 0;
-        border: none;
-        border-top: 1px solid rgba(148, 163, 184, 0.32);
-      }
 
       a {
         display: flex;
@@ -310,13 +338,6 @@ const { t } = useI18n()
         height: 120px;
       }
 
-      .equipment-action-popover,
-      .equipment-info-popover {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-
       .equipment-item,
       .equipment-slot {
         width: 100%;
@@ -348,13 +369,6 @@ const { t } = useI18n()
           box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
         }
       }
-
-      .equipment-tooltip {
-        max-width: 240px;
-        font-size: 13px;
-        line-height: 1.4;
-        color: #0f172a;
-      }
     }
 
     #abilities {
@@ -369,7 +383,7 @@ const { t } = useI18n()
       font-style: italic;
     }
 
-    #invertory {
+    #inventory {
       grid-column: 3 / 5;
       grid-row: 3 / 4;
       display: grid;
@@ -379,22 +393,9 @@ const { t } = useI18n()
       align-content: start;
       overflow: auto;
 
-      .inventory-cell {
-        display: flex;
+      .inventory-item {
         width: 120px;
         height: 120px;
-      }
-
-      .inventory-action-popover,
-      .inventory-info-popover {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-
-      .inventory-item {
-        width: 100%;
-        height: 100%;
         border-radius: 8px;
         background: rgba(248, 250, 252, 0.9);
         border: 1px solid rgba(148, 163, 184, 0.3);
@@ -403,6 +404,7 @@ const { t } = useI18n()
         justify-content: center;
         align-items: center;
         gap: 4px;
+        padding: 8px;
         font-weight: 600;
         color: #1e293b;
         cursor: pointer;
@@ -417,37 +419,193 @@ const { t } = useI18n()
         }
       }
 
-      .inventory-tooltip {
-        max-width: 240px;
-        font-size: 13px;
-        line-height: 1.4;
-        color: #0f172a;
+      .inventory-count {
+        font-size: 12px;
+        font-weight: 700;
+        color: #2563eb;
+      }
+    }
+  }
+
+  .item-modal {
+    min-width: min(420px, 90vw);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .item-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(37, 99, 235, 0.12);
+  }
+
+  .item-modal-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+  }
+
+  .item-modal-type,
+  .item-modal-quantity {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.08);
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .item-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .item-modal-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+  }
+
+  .item-modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .item-modal-section-title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+
+  .item-modal-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(248, 250, 252, 0.8);
+    border-radius: 6px;
+  }
+
+  .info-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  .info-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .item-modal-effects {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .item-modal-effect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    border-radius: 6px;
+  }
+
+  .effect-state {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+  }
+
+  .effect-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  .item-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+  }
+
+  .item-modal-button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background 0.15s ease;
+    box-sizing: border-box;
+
+    &.equip {
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
       }
     }
 
-    .popover-action-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    &.unequip {
+      background: rgba(239, 68, 68, 0.1);
+      color: #dc2626;
+      border: 1.5px solid rgba(239, 68, 68, 0.3);
+
+      &:hover {
+        background: rgba(239, 68, 68, 0.15);
+        border-color: rgba(239, 68, 68, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
     }
 
-    .popover-action-button {
-      border: none;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    &.open {
+      background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
       color: #ffffff;
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-    }
+      box-shadow: 0 4px 12px rgba(34, 211, 238, 0.2);
 
-    .popover-action-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 20px rgba(37, 99, 235, 0.24);
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(34, 211, 238, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
     }
   }
 }
@@ -484,7 +642,7 @@ const { t } = useI18n()
         grid-row: 4 / 5;
       }
 
-      #invertory {
+      #inventory {
         grid-column: 1 / 3;
         grid-row: 5 / 6;
         max-height: 280px;
@@ -519,7 +677,7 @@ const { t } = useI18n()
         padding: 14px;
       }
 
-      #invertory {
+      #inventory {
         max-height: none;
       }
     }

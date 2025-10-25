@@ -64,21 +64,15 @@ function openChestAndClose() {
         </div>
       </div>
       <div id="sidebar">
-        <router-link
-          v-for="skill in dataManager.allSkill"
-          :key="skill.id"
-          :to="`/game/${skill.id}`"
-          active-class="active-link"
-        >
+        <router-link v-for="skill in dataManager.allSkill" :key="skill.id" :to="`/game/${skill.id}`"
+          active-class="active-link">
           <div>{{ t(skill.name) }} {{ t('ui.level', { level: skill.level.value }) }}</div>
           <div style="width: 100%">
-            <div
-              :style="{
-                width: skill.upgradeProgress.value * 100 + '%',
-                height: '2px',
-                backgroundColor: 'black',
-              }"
-            ></div>
+            <div :style="{
+              width: skill.upgradeProgress.value * 100 + '%',
+              height: '2px',
+              backgroundColor: 'black',
+            }"></div>
           </div>
         </router-link>
         <router-link :to="`/game/states`" active-class="active-link">
@@ -93,11 +87,8 @@ function openChestAndClose() {
       </div>
       <div id="equipment">
         <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
-          <div
-            v-if="slot.equipment.value"
-            class="equipment-item"
-            @click="openEquipmentModal(slot, slot.equipment.value)"
-          >
+          <div v-if="slot.equipment.value" class="equipment-item"
+            @click="openEquipmentModal(slot, slot.equipment.value)">
             <div>{{ t(slot.equipment.value.name) }}</div>
           </div>
           <div v-else class="equipment-slot">
@@ -106,13 +97,9 @@ function openChestAndClose() {
         </div>
       </div>
       <div id="abilities"></div>
-            <div id="inventory">
-        <div
-          v-for="inventoryItem in inventory.inventoryItems.value"
-          :key="inventoryItem.item.id"
-          class="inventory-item"
-          @click="openInventoryModal(inventoryItem)"
-        >
+      <div id="inventory">
+        <div v-for="inventoryItem in inventory.inventoryItems.value" :key="inventoryItem.item.id" class="inventory-item"
+          @click="openInventoryModal(inventoryItem)">
           <div>{{ t(inventoryItem.item.name) }}</div>
           <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
             x{{ inventoryItem.amount.value }}
@@ -136,24 +123,27 @@ function openChestAndClose() {
         <div v-if="selectedEquipment.equipment.effects.length > 0" class="item-modal-section">
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
-            <div
-              v-for="(effect, index) in selectedEquipment.equipment.effects"
-              :key="index"
-              class="item-modal-effect"
-            >
+            <div v-for="(effect, index) in selectedEquipment.equipment.effects" :key="index" class="item-modal-effect">
               <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
               <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{ effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
+                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{
+                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="item-modal-footer">
-        <button type="button" class="item-modal-button unequip" @click="unequipAndClose">
-          {{ t('ui.unequip') }}
-        </button>
+            <div class="item-modal-footer">
+        <div class="zone-action-buttons">
+          <button
+            type="button"
+            class="zone-button ghost"
+            @click="unequipAndClose"
+          >
+            {{ t('ui.unequip') }}
+          </button>
+        </div>
       </div>
     </div>
   </ModalBox>
@@ -176,17 +166,15 @@ function openChestAndClose() {
           </div>
         </div>
 
-        <div v-if="selectedInventoryItem.item.isEquipment() && selectedInventoryItem.item.effects.length > 0" class="item-modal-section">
+        <div v-if="selectedInventoryItem.item.isEquipment() && selectedInventoryItem.item.effects.length > 0"
+          class="item-modal-section">
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
-            <div
-              v-for="(effect, index) in selectedInventoryItem.item.effects"
-              :key="index"
-              class="item-modal-effect"
-            >
+            <div v-for="(effect, index) in selectedInventoryItem.item.effects" :key="index" class="item-modal-effect">
               <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
               <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{ effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
+                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{
+                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
               </span>
             </div>
           </div>
@@ -194,22 +182,16 @@ function openChestAndClose() {
       </div>
 
       <div class="item-modal-footer">
-        <button
-          v-if="selectedInventoryItem.item.isEquipment()"
-          type="button"
-          class="item-modal-button equip"
-          @click="equipAndClose"
-        >
-          {{ t('ui.equip') }}
-        </button>
-        <button
-          v-if="selectedInventoryItem.item.isChest()"
-          type="button"
-          class="item-modal-button open"
-          @click="openChestAndClose"
-        >
-          {{ t('ui.open') }}
-        </button>
+        <div class="zone-action-buttons">
+          <button v-if="selectedInventoryItem.item.isEquipment()" type="button" class="zone-button primary"
+            @click="equipAndClose">
+            {{ t('ui.equip') }}
+          </button>
+          <button v-if="selectedInventoryItem.item.isChest()" type="button" class="zone-button primary"
+            @click="openChestAndClose">
+            {{ t('ui.open') }}
+          </button>
+        </div>
       </div>
     </div>
   </ModalBox>
@@ -228,7 +210,7 @@ function openChestAndClose() {
     grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
     gap: 12px;
 
-    > div {
+    >div {
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.25);
@@ -314,7 +296,7 @@ function openChestAndClose() {
       flex-direction: column;
       overflow: hidden;
 
-      > * {
+      >* {
         flex: 1;
         min-height: 0;
         overflow: auto;
@@ -540,18 +522,20 @@ function openChestAndClose() {
   }
 
   .item-modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 8px;
     padding-top: 12px;
     border-top: 1px solid rgba(148, 163, 184, 0.18);
   }
 
-  .item-modal-button {
+  .zone-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .zone-button {
     border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border-radius: 999px;
+    padding: 8px 16px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -559,54 +543,26 @@ function openChestAndClose() {
       transform 0.15s ease,
       box-shadow 0.15s ease,
       background 0.15s ease;
-    box-sizing: border-box;
+  }
 
-    &.equip {
-      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  .zone-button.primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+  }
 
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-      }
+  .zone-button.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
 
-      &:active {
-        transform: translateY(0);
-      }
-    }
+  .zone-button.ghost {
+    background: #e2e8f0;
+    color: #1f2937;
+  }
 
-    &.unequip {
-      background: rgba(239, 68, 68, 0.1);
-      color: #dc2626;
-      border: 1.5px solid rgba(239, 68, 68, 0.3);
-
-      &:hover {
-        background: rgba(239, 68, 68, 0.15);
-        border-color: rgba(239, 68, 68, 0.5);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
-    }
-
-    &.open {
-      background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(34, 211, 238, 0.2);
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(34, 211, 238, 0.3);
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
-    }
+  .zone-button.ghost:hover {
+    background: #cbd5e1;
+    transform: translateY(-1px);
   }
 }
 
@@ -659,7 +615,7 @@ function openChestAndClose() {
       display: flex;
       flex-direction: column;
 
-      > div {
+      >div {
         padding: 12px;
       }
 
@@ -673,7 +629,7 @@ function openChestAndClose() {
         }
       }
 
-      #content > * {
+      #content>* {
         padding: 14px;
       }
 

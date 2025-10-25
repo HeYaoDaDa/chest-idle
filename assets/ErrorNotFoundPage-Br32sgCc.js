@@ -1,1 +1,0 @@
-import{_ as o,c as r,a as t,o as n}from"./index-CaF3DfzX.js";const s={},a={id:"error-page-root"};function c(_,e){return n(),r("div",a,[...e[0]||(e[0]=[t("h1",null,"404",-1)])])}const f=o(s,[["render",c]]);export{f as default};

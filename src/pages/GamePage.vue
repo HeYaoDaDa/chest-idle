@@ -6,13 +6,24 @@ import { inventory } from '@/models/global/InventoryManager'
 import type { Equipment } from '@/models/item/Equipment'
 import type { InventoryItem } from '@/models/inventory/InventoryItem'
 import type { Slot } from '@/models/Slot'
-import { shallowRef } from 'vue'
+import { computed, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
 const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
+const chestOpenAmount = shallowRef<number>(1)
+const chestOpenResults = shallowRef<{ itemName: string; amount: number }[] | null>(null)
+
+const maxChestAmount = computed(() => {
+  return selectedInventoryItem.value?.amount.value || 1
+})
+
+const isValidChestAmount = computed(() => {
+  const amount = chestOpenAmount.value
+  return amount >= 1 && amount <= maxChestAmount.value && Number.isInteger(amount)
+})
 
 function openEquipmentModal(slot: Slot, equipment: Equipment) {
   selectedEquipment.value = { slot, equipment }
@@ -31,10 +42,13 @@ function unequipAndClose() {
 
 function openInventoryModal(item: InventoryItem) {
   selectedInventoryItem.value = item
+  chestOpenAmount.value = 1
+  chestOpenResults.value = null // 清空之前的开箱结果
 }
 
 function closeInventoryModal() {
   selectedInventoryItem.value = null
+  // 不要在这里清空开箱结果，让结果模态框单独管理
 }
 
 function equipAndClose() {
@@ -44,11 +58,56 @@ function equipAndClose() {
   }
 }
 
+function setMaxChestAmount() {
+  chestOpenAmount.value = maxChestAmount.value
+}
+
 function openChestAndClose() {
-  if (selectedInventoryItem.value) {
-    selectedInventoryItem.value.openChest()
+  if (selectedInventoryItem.value && isValidChestAmount.value) {
+    const chest = selectedInventoryItem.value
+    const chestId = chest.item.id
+    const results = new Map<string, number>()
+
+    // 记录开箱前的库存
+    const inventoryBefore = new Map<string, number>()
+    inventory.inventoryItems.value.forEach(item => {
+      inventoryBefore.set(item.item.id, item.amount.value)
+    })
+
+    // 批量开箱
+    for (let i = 0; i < chestOpenAmount.value; i++) {
+      chest.openChest()
+    }
+
+    // 计算新增的物品（排除宝箱本身）
+    inventory.inventoryItems.value.forEach(item => {
+      // 跳过宝箱本身
+      if (item.item.id === chestId) return
+
+      const beforeAmount = inventoryBefore.get(item.item.id) || 0
+      const afterAmount = item.amount.value
+      const gained = afterAmount - beforeAmount
+      if (gained > 0) {
+        results.set(item.item.name, gained)
+      }
+    })
+
+    // 转换为显示格式
+    const resultArray = Array.from(results.entries()).map(([itemName, amount]) => ({
+      itemName,
+      amount
+    }))
+
+    // 设置开箱结果（即使是空数组也要显示）
+    chestOpenResults.value = resultArray
+
+    // 关闭库存模态框
     closeInventoryModal()
   }
+}
+
+function closeChestResults() {
+  chestOpenResults.value = null
 }
 </script>
 
@@ -187,9 +246,69 @@ function openChestAndClose() {
             @click="equipAndClose">
             {{ t('ui.equip') }}
           </button>
-          <button v-if="selectedInventoryItem.item.isChest()" type="button" class="zone-button primary"
-            @click="openChestAndClose">
-            {{ t('ui.open') }}
+          <div v-if="selectedInventoryItem.item.isChest()" class="chest-controls">
+            <div v-if="maxChestAmount > 1" class="chest-amount-controls">
+              <input
+                v-model.number="chestOpenAmount"
+                type="number"
+                :min="1"
+                :max="maxChestAmount"
+                class="chest-amount-input"
+                :placeholder="String(maxChestAmount)"
+              />
+              <button
+                type="button"
+                class="zone-button ghost max-button"
+                @click="setMaxChestAmount"
+              >
+                Max
+              </button>
+            </div>
+            <button
+              type="button"
+              class="zone-button primary"
+              @click="openChestAndClose"
+              :disabled="!isValidChestAmount"
+            >
+              {{ t('ui.open') }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ModalBox>
+
+  <!-- Chest Open Results Modal -->
+  <ModalBox v-if="chestOpenResults" @close="closeChestResults">
+    <div class="chest-results-modal">
+      <div class="chest-results-header">
+        <h3 class="chest-results-title">{{ t('ui.chestOpenResults') }}</h3>
+      </div>
+
+      <div class="chest-results-content">
+        <div v-if="chestOpenResults.length > 0" class="chest-results-list">
+          <div
+            v-for="result in chestOpenResults"
+            :key="result.itemName"
+            class="chest-result-item"
+          >
+            <span class="result-item-name">{{ t(result.itemName) }}</span>
+            <span class="result-item-amount">×{{ result.amount }}</span>
+          </div>
+        </div>
+        <div v-else class="chest-results-empty">
+          {{ t('ui.noItemsObtained') }}
+        </div>
+      </div>
+
+      <div class="chest-results-footer">
+        <div class="zone-action-buttons">
+          <button
+            type="button"
+            class="zone-button primary"
+            @click="closeChestResults"
+          >
+            {{ t('ui.confirm') }}
           </button>
         </div>
       </div>
@@ -532,6 +651,40 @@ function openChestAndClose() {
     gap: 8px;
   }
 
+  .chest-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .chest-amount-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .chest-amount-input {
+    width: 60px;
+    padding: 6px 8px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1f2937;
+  }
+
+  .chest-amount-input:focus {
+    outline: none;
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  }
+
+  .max-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
   .zone-button {
     border: none;
     border-radius: 999px;
@@ -563,6 +716,69 @@ function openChestAndClose() {
   .zone-button.ghost:hover {
     background: #cbd5e1;
     transform: translateY(-1px);
+  }
+
+  /* Chest Results Modal Styles */
+  .chest-results-modal {
+    min-width: min(400px, 90vw);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .chest-results-header {
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(37, 99, 235, 0.12);
+  }
+
+  .chest-results-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .chest-results-content {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .chest-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .chest-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(37, 99, 235, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid rgba(37, 99, 235, 0.3);
+  }
+
+  .result-item-name {
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .result-item-amount {
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  .chest-results-empty {
+    text-align: center;
+    padding: 24px;
+    color: #64748b;
+    font-style: italic;
+  }
+
+  .chest-results-footer {
+    padding-top: 12px;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
   }
 }
 

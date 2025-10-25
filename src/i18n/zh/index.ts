@@ -36,6 +36,9 @@ export default {
     equip: '装备',
     unequip: '卸下',
     open: '打开',
+    chestOpenResults: '开箱结果',
+    noItemsObtained: '未获得任何物品',
+    confirm: '确认',
   },
   skill: {
     mining: { name: '采矿', description: '采矿。' },

@@ -177,11 +177,12 @@ function handleAmountFocus(event: FocusEvent) {
 
   .area-popover {
     display: block;
+    flex: 0 0 auto;
   }
 
   .area-item {
-    min-width: 140px;
-    min-height: 140px;
+    width: 140px;
+    height: 140px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(148, 163, 184, 0.25);
@@ -196,6 +197,7 @@ function handleAmountFocus(event: FocusEvent) {
     text-align: center;
     user-select: none;
     cursor: pointer;
+    box-sizing: border-box;
     transition:
       transform 0.18s ease,
       box-shadow 0.18s ease,

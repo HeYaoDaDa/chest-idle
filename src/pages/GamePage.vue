@@ -298,24 +298,29 @@ const { t } = useI18n()
       grid-column: 3 / 4;
       grid-row: 2 / 3;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fill, 120px);
       gap: 8px;
       padding: 12px;
       align-content: start;
+      overflow-y: auto;
 
       .equipment-cell {
         display: flex;
+        width: 120px;
+        height: 120px;
       }
 
       .equipment-action-popover,
       .equipment-info-popover {
         display: block;
         width: 100%;
+        height: 100%;
       }
 
       .equipment-item,
       .equipment-slot {
-        min-height: 110px;
+        width: 100%;
+        height: 100%;
         border-radius: 8px;
         background: rgba(248, 250, 252, 0.9);
         border: 1px dashed rgba(148, 163, 184, 0.4);
@@ -331,6 +336,7 @@ const { t } = useI18n()
           box-shadow 0.15s ease,
           background 0.15s ease;
         cursor: pointer;
+        box-sizing: border-box;
       }
 
       .equipment-item {
@@ -367,7 +373,7 @@ const { t } = useI18n()
       grid-column: 3 / 5;
       grid-row: 3 / 4;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fill, 120px);
       gap: 8px;
       padding: 12px;
       align-content: start;
@@ -375,19 +381,23 @@ const { t } = useI18n()
 
       .inventory-cell {
         display: flex;
+        width: 120px;
+        height: 120px;
       }
 
       .inventory-action-popover,
       .inventory-info-popover {
         display: block;
         width: 100%;
+        height: 100%;
       }
 
       .inventory-item {
+        width: 100%;
+        height: 100%;
         border-radius: 8px;
         background: rgba(248, 250, 252, 0.9);
         border: 1px solid rgba(148, 163, 184, 0.3);
-        min-height: 110px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -399,6 +409,7 @@ const { t } = useI18n()
         transition:
           transform 0.15s ease,
           box-shadow 0.15s ease;
+        box-sizing: border-box;
 
         &:hover {
           transform: translateY(-3px);

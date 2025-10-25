@@ -39,6 +39,9 @@ export default {
     chestOpenResults: 'Chest Opening Results',
     noItemsObtained: 'No items obtained',
     confirm: 'Confirm',
+    inventory: 'Inventory',
+    equipment: 'Equipment',
+    abilities: 'Abilities',
   },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },

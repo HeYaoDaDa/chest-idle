@@ -15,6 +15,7 @@ const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null
 const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
 const chestOpenAmount = shallowRef<number>(1)
 const chestOpenResults = shallowRef<{ itemName: string; amount: number }[] | null>(null)
+const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
 
 const maxChestAmount = computed(() => {
   return selectedInventoryItem.value?.amount.value || 1
@@ -150,31 +151,60 @@ function closeChestResults() {
       <div id="content">
         <RouterView />
       </div>
-      <div id="equipment">
-        <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
-          <div
-            v-if="slot.equipment.value"
-            class="equipment-item"
-            @click="openEquipmentModal(slot, slot.equipment.value)"
+      <div id="tabs-container">
+        <div class="tabs-header">
+          <button
+            class="tab-button"
+            :class="{ active: activeTab === 'inventory' }"
+            @click="activeTab = 'inventory'"
           >
-            <div>{{ t(slot.equipment.value.name) }}</div>
-          </div>
-          <div v-else class="equipment-slot">
-            <span>{{ t(slot.name) }}</span>
-          </div>
+            {{ t('ui.inventory') }}
+          </button>
+          <button
+            class="tab-button"
+            :class="{ active: activeTab === 'equipment' }"
+            @click="activeTab = 'equipment'"
+          >
+            {{ t('ui.equipment') }}
+          </button>
+          <button
+            class="tab-button"
+            :class="{ active: activeTab === 'abilities' }"
+            @click="activeTab = 'abilities'"
+          >
+            {{ t('ui.abilities') }}
+          </button>
         </div>
-      </div>
-      <div id="abilities"></div>
-      <div id="inventory">
-        <div
-          v-for="inventoryItem in inventory.inventoryItems.value"
-          :key="inventoryItem.item.id"
-          class="inventory-item"
-          @click="openInventoryModal(inventoryItem)"
-        >
-          <div>{{ t(inventoryItem.item.name) }}</div>
-          <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
-            x{{ inventoryItem.amount.value }}
+        <div class="tabs-content">
+          <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
+            <div
+              v-for="inventoryItem in inventory.inventoryItems.value"
+              :key="inventoryItem.item.id"
+              class="inventory-item"
+              @click="openInventoryModal(inventoryItem)"
+            >
+              <div>{{ t(inventoryItem.item.name) }}</div>
+              <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
+                x{{ inventoryItem.amount.value }}
+              </div>
+            </div>
+          </div>
+          <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
+            <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
+              <div
+                v-if="slot.equipment.value"
+                class="equipment-item"
+                @click="openEquipmentModal(slot, slot.equipment.value)"
+              >
+                <div>{{ t(slot.equipment.value.name) }}</div>
+              </div>
+              <div v-else class="equipment-slot">
+                <span>{{ t(slot.name) }}</span>
+              </div>
+            </div>
+          </div>
+          <div v-show="activeTab === 'abilities'" id="abilities" class="tab-panel">
+            <!-- Abilities content here -->
           </div>
         </div>
       </div>
@@ -349,8 +379,8 @@ function closeChestResults() {
   #game-page-layout-container {
     height: 100%;
     display: grid;
-    grid-template-columns: 260px minmax(0, 1fr) 280px 280px;
-    grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 260px minmax(0, 1fr) 360px;
+    grid-template-rows: auto minmax(0, 1fr);
     gap: 12px;
 
     > div {
@@ -364,7 +394,7 @@ function closeChestResults() {
     }
 
     #header {
-      grid-column: 1 / 5;
+      grid-column: 1 / 4;
       grid-row: 1 / 2;
 
       display: flex;
@@ -391,7 +421,7 @@ function closeChestResults() {
 
     #sidebar {
       grid-column: 1 / 2;
-      grid-row: 2 / 4;
+      grid-row: 2 / 3;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -433,7 +463,7 @@ function closeChestResults() {
 
     #content {
       grid-column: 2 / 3;
-      grid-row: 2 / 4;
+      grid-row: 2 / 3;
       padding: 0;
       display: flex;
       flex-direction: column;
@@ -447,17 +477,106 @@ function closeChestResults() {
       }
     }
 
-    #equipment {
+    #tabs-container {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .tabs-header {
+      display: flex;
+      gap: 4px;
+      padding: 8px 8px 0 8px;
+      background: rgba(248, 250, 252, 0.5);
+      border-bottom: 2px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 10px 16px;
+      border: none;
+      background: transparent;
+      color: #64748b;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+      user-select: none;
+
+      &:hover:not(.active) {
+        background: rgba(226, 232, 240, 0.5);
+        color: #475569;
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.95);
+        color: #2563eb;
+        box-shadow: 0 -2px 8px rgba(37, 99, 235, 0.1);
+      }
+    }
+
+    .tabs-content {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tab-panel {
+      height: 100%;
+      overflow-y: auto;
+      padding: 12px;
+    }
+
+    #inventory {
       display: grid;
       grid-template-columns: repeat(auto-fill, 120px);
       gap: 8px;
-      padding: 12px;
       align-content: start;
-      overflow-y: auto;
 
-      .equipment-cell {
+      .inventory-item {
+        width: 120px;
+        height: 120px;
+        border-radius: 8px;
+        background: rgba(248, 250, 252, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        padding: 8px;
+        font-weight: 600;
+        color: #1e293b;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+        box-sizing: border-box;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+        }
+      }
+
+      .inventory-count {
+        font-size: 12px;
+        font-weight: 700;
+        color: #2563eb;
+      }
+    }
+
+    #equipment {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 120px);
+      gap: 8px;
+      align-content: start;      .equipment-cell {
         display: flex;
         width: 120px;
         height: 120px;
@@ -497,58 +616,11 @@ function closeChestResults() {
     }
 
     #abilities {
-      grid-column: 4 / 5;
-      grid-row: 2 / 3;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 10px;
-      background: rgba(248, 250, 252, 0.72);
       color: #94a3b8;
       font-style: italic;
-    }
-
-    #inventory {
-      grid-column: 3 / 5;
-      grid-row: 3 / 4;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 120px);
-      gap: 8px;
-      padding: 12px;
-      align-content: start;
-      overflow: auto;
-
-      .inventory-item {
-        width: 120px;
-        height: 120px;
-        border-radius: 8px;
-        background: rgba(248, 250, 252, 0.9);
-        border: 1px solid rgba(148, 163, 184, 0.3);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 4px;
-        padding: 8px;
-        font-weight: 600;
-        color: #1e293b;
-        cursor: pointer;
-        transition:
-          transform 0.15s ease,
-          box-shadow 0.15s ease;
-        box-sizing: border-box;
-
-        &:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
-        }
-      }
-
-      .inventory-count {
-        font-size: 12px;
-        font-weight: 700;
-        color: #2563eb;
-      }
     }
   }
 
@@ -812,7 +884,7 @@ function closeChestResults() {
 
     #game-page-layout-container {
       grid-template-columns: 220px 1fr;
-      grid-template-rows: auto repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
 
       #header {
         grid-column: 1 / -1;
@@ -820,7 +892,7 @@ function closeChestResults() {
 
       #sidebar {
         grid-column: 1 / 2;
-        grid-row: 2 / 5;
+        grid-row: 2 / 4;
       }
 
       #content {
@@ -828,20 +900,9 @@ function closeChestResults() {
         grid-row: 2 / 3;
       }
 
-      #equipment {
+      #tabs-container {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
-      }
-
-      #abilities {
-        grid-column: 2 / 3;
-        grid-row: 4 / 5;
-      }
-
-      #inventory {
-        grid-column: 1 / 3;
-        grid-row: 5 / 6;
-        max-height: 280px;
       }
     }
   }
@@ -873,8 +934,8 @@ function closeChestResults() {
         padding: 14px;
       }
 
-      #inventory {
-        max-height: none;
+      #tabs-container {
+        min-height: 400px;
       }
     }
   }

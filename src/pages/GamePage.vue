@@ -17,6 +17,17 @@ const chestOpenAmount = shallowRef<number>(1)
 const chestOpenResults = shallowRef<{ itemName: string; amount: number }[] | null>(null)
 const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
 
+// 移动端状态管理
+const sidebarExpanded = shallowRef(false)
+
+function toggleSidebar() {
+  sidebarExpanded.value = !sidebarExpanded.value
+}
+
+function closeSidebar() {
+  sidebarExpanded.value = false
+}
+
 const maxChestAmount = computed(() => {
   return selectedInventoryItem.value?.amount.value || 1
 })
@@ -44,12 +55,11 @@ function unequipAndClose() {
 function openInventoryModal(item: InventoryItem) {
   selectedInventoryItem.value = item
   chestOpenAmount.value = 1
-  chestOpenResults.value = null // 清空之前的开箱结果
+  chestOpenResults.value = null
 }
 
 function closeInventoryModal() {
   selectedInventoryItem.value = null
-  // 不要在这里清空开箱结果，让结果模态框单独管理
 }
 
 function equipAndClose() {
@@ -69,20 +79,16 @@ function openChestAndClose() {
     const chestId = chest.item.id
     const results = new Map<string, number>()
 
-    // 记录开箱前的库存
     const inventoryBefore = new Map<string, number>()
     inventory.inventoryItems.value.forEach((item) => {
       inventoryBefore.set(item.item.id, item.amount.value)
     })
 
-    // 批量开箱
     for (let i = 0; i < chestOpenAmount.value; i++) {
       chest.openChest()
     }
 
-    // 计算新增的物品（排除宝箱本身）
     inventory.inventoryItems.value.forEach((item) => {
-      // 跳过宝箱本身
       if (item.item.id === chestId) return
 
       const beforeAmount = inventoryBefore.get(item.item.id) || 0
@@ -93,16 +99,12 @@ function openChestAndClose() {
       }
     })
 
-    // 转换为显示格式
     const resultArray = Array.from(results.entries()).map(([itemName, amount]) => ({
       itemName,
       amount,
     }))
 
-    // 设置开箱结果（即使是空数组也要显示）
     chestOpenResults.value = resultArray
-
-    // 关闭库存模态框
     closeInventoryModal()
   }
 }
@@ -114,32 +116,51 @@ function closeChestResults() {
 
 <template>
   <div id="game-page-root">
-    <div id="game-page-layout-container">
+    <div v-if="sidebarExpanded" class="sidebar-mask" @click="closeSidebar"></div>
+
+    <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }">
       <div id="header">
         <div id="header-title-action">
-          <div>
+          <div class="header-title">
             <h1>{{ t('gameName') }}</h1>
           </div>
           <ActionQueue />
         </div>
       </div>
-      <div id="sidebar">
-        <router-link v-for="skill in dataManager.allSkill" :key="skill.id" :to="`/game/${skill.id}`"
-          active-class="active-link">
-          <div>{{ t(skill.name) }} {{ t('ui.level', { level: skill.level.value }) }}</div>
-          <div style="width: 100%">
-            <div :style="{
-              width: skill.upgradeProgress.value * 100 + '%',
-              height: '2px',
-              backgroundColor: 'black',
-            }"></div>
+      <div id="sidebar" :class="{ expanded: sidebarExpanded }">
+        <div class="mobile-sidebar-controls">
+          <a class="sidebar-control-link" @click="toggleSidebar">
+            <div class="skill-name">
+              <span v-if="!sidebarExpanded">☰</span>
+              <span v-else>✕</span>
+            </div>
+          </a>
+          <router-link class="sidebar-control-link" :to="`/game/mystuff`" active-class="active-link" @click="closeSidebar">
+            <div class="skill-name">{{ t('ui.myStuff') }}</div>
+          </router-link>
+        </div>
+        <router-link
+          v-for="skill in dataManager.allSkill"
+          :key="skill.id"
+          :to="`/game/${skill.id}`"
+          active-class="active-link"
+          @click="closeSidebar"
+        >
+          <div class="skill-name">
+            <span class="name-text">{{ t(skill.name) }}</span>
+            <span class="level-text">{{ t('ui.level', { level: skill.level.value }) }}</span>
+          </div>
+          <div class="skill-progress-wrapper">
+            <div
+              class="skill-progress-bar"
+              :style="{
+                width: skill.upgradeProgress.value * 100 + '%',
+              }"
+            ></div>
           </div>
         </router-link>
-        <router-link :to="`/game/states`" active-class="active-link">
-          <div>States</div>
-          <div style="width: 100%">
-            <div></div>
-          </div>
+        <router-link :to="`/game/states`" active-class="active-link" @click="closeSidebar">
+          <div class="skill-name">States</div>
         </router-link>
       </div>
       <div id="content">
@@ -147,20 +168,36 @@ function closeChestResults() {
       </div>
       <div id="tabs-container">
         <div class="tabs-header">
-          <button class="tab-button" :class="{ active: activeTab === 'inventory' }" @click="activeTab = 'inventory'">
+          <button
+            class="tab-button"
+            :class="{ active: activeTab === 'inventory' }"
+            @click="activeTab = 'inventory'"
+          >
             {{ t('ui.inventory') }}
           </button>
-          <button class="tab-button" :class="{ active: activeTab === 'equipment' }" @click="activeTab = 'equipment'">
+          <button
+            class="tab-button"
+            :class="{ active: activeTab === 'equipment' }"
+            @click="activeTab = 'equipment'"
+          >
             {{ t('ui.equipment') }}
           </button>
-          <button class="tab-button" :class="{ active: activeTab === 'abilities' }" @click="activeTab = 'abilities'">
+          <button
+            class="tab-button"
+            :class="{ active: activeTab === 'abilities' }"
+            @click="activeTab = 'abilities'"
+          >
             {{ t('ui.abilities') }}
           </button>
         </div>
         <div class="tabs-content">
           <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-            <div v-for="inventoryItem in inventory.inventoryItems.value" :key="inventoryItem.item.id"
-              class="inventory-item" @click="openInventoryModal(inventoryItem)">
+            <div
+              v-for="inventoryItem in inventory.inventoryItems.value"
+              :key="inventoryItem.item.id"
+              class="inventory-item"
+              @click="openInventoryModal(inventoryItem)"
+            >
               <div>{{ t(inventoryItem.item.name) }}</div>
               <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
                 x{{ inventoryItem.amount.value }}
@@ -169,8 +206,11 @@ function closeChestResults() {
           </div>
           <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
             <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
-              <div v-if="slot.equipment.value" class="equipment-item"
-                @click="openEquipmentModal(slot, slot.equipment.value)">
+              <div
+                v-if="slot.equipment.value"
+                class="equipment-item"
+                @click="openEquipmentModal(slot, slot.equipment.value)"
+              >
                 <div>{{ t(slot.equipment.value.name) }}</div>
               </div>
               <div v-else class="equipment-slot">
@@ -374,13 +414,18 @@ function closeChestResults() {
       padding: 2px;
       overflow-y: auto;
 
-      a {
+      .mobile-sidebar-controls {
+        display: none;
+      }
+
+      a,
+      .sidebar-control-link {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: 4px;
-        padding: 8px 12px;
+        align-items: stretch;
+        gap: 3px;
+        padding: 8px 10px;
         border-radius: 8px;
         background: rgba(248, 250, 252, 0.72);
         font-weight: 600;
@@ -402,6 +447,39 @@ function closeChestResults() {
           background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
           color: #ffffff;
           box-shadow: 0 12px 22px rgba(37, 99, 235, 0.28);
+        }
+
+        .skill-name {
+          font-size: 13px;
+          line-height: 1.3;
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          gap: 8px;
+
+          .name-text {
+            flex: 0 0 auto;
+          }
+
+          .level-text {
+            flex: 0 0 auto;
+            font-size: 11px;
+            opacity: 0.8;
+          }
+        }
+
+        .skill-progress-wrapper {
+          width: 100%;
+          height: 3px;
+          background: rgba(148, 163, 184, 0.2);
+          border-radius: 2px;
+          overflow: hidden;
+
+          .skill-progress-bar {
+            height: 100%;
+            background: currentColor;
+            transition: width 0.3s ease;
+          }
         }
       }
     }
@@ -761,7 +839,6 @@ function closeChestResults() {
     transform: translateY(-1px);
   }
 
-  /* Chest Results Modal Styles */
   .chest-results-modal {
     min-width: min(400px, 90vw);
     display: flex;
@@ -857,32 +934,139 @@ function closeChestResults() {
 
 @media (max-width: 960px) {
   #game-page-root {
-    padding: 2px;
+    padding: 0;
+    position: relative;
+
+    .sidebar-mask {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+    }
 
     #game-page-layout-container {
       display: flex;
       flex-direction: column;
+      height: 100%;
 
       >div {
         padding: 2px;
       }
 
-      #sidebar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: stretch;
+      #header {
+        .header-title h1 {
+          display: none;
+        }
 
-        a {
-          flex: 1 1 140px;
+        #header-title-action {
+          width: 100%;
+          justify-content: flex-end;
         }
       }
 
-      #content>* {
-        padding: 14px;
+      #tabs-container {
+        display: none;
       }
 
-      #tabs-container {
-        min-height: 400px;
+      #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 64px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        box-shadow: 4px 0 12px rgba(15, 23, 42, 0.1);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        transition: width 0.3s ease, transform 0.3s ease;
+        padding: 4px;
+
+        .mobile-sidebar-controls {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          margin-bottom: 2px;
+
+          .sidebar-control-link {
+            flex: 0 0 auto;
+          }
+        }
+
+        a,
+        .sidebar-control-link {
+          flex: 0 0 auto;
+          padding: 8px 4px;
+
+          .skill-name {
+            font-size: 11px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            .level-text {
+              display: none;
+            }
+          }
+
+          .skill-progress-wrapper {
+            display: none;
+          }
+        }
+
+        &.expanded {
+          width: 240px;
+
+          a,
+          .sidebar-control-link {
+            padding: 8px 10px;
+
+            .skill-name {
+              font-size: 13px;
+              text-align: left;
+              display: flex;
+
+              .level-text {
+                display: inline;
+              }
+            }
+
+            .skill-progress-wrapper {
+              display: block;
+            }
+          }
+        }
+      }
+
+      #content {
+        flex: 1;
+        min-height: 0;
+        margin-left: 64px;
+
+        >* {
+          padding: 12px;
+        }
+      }
+    }
+
+    &.sidebar-expanded #content {
+      margin-left: 240px;
+    }
+  }
+}
+
+@media (min-width: 961px) {
+  #game-page-root {
+    .sidebar-mask {
+      display: none;
+    }
+
+    #game-page-layout-container {
+      #sidebar .mobile-sidebar-controls {
+        display: none;
       }
     }
   }

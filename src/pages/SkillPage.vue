@@ -263,7 +263,6 @@ function handleAmountFocus(event: FocusEvent) {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: 100%;
 }
 
 .skill-header {
@@ -352,8 +351,6 @@ function handleAmountFocus(event: FocusEvent) {
   align-content: flex-start;
   align-items: flex-start;
   gap: 10px;
-  flex: 1;
-  overflow-y: auto;
 
   .area-item {
     width: 140px;

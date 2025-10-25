@@ -50,6 +50,7 @@ export default {
     inventory: 'Inventory',
     equipment: 'Equipment',
     abilities: 'Abilities',
+    myStuff: 'My Stuff',
   },
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },

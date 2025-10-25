@@ -4,6 +4,7 @@ import GamePage from '@/pages/GamePage.vue'
 import SkillPage from '@/pages/SkillPage.vue'
 import { global } from '@/models/global'
 import StatesPage from '@/pages/StatesPage.vue'
+import MyStuffPage from '@/pages/MyStuffPage.vue'
 
 export const ROUTE_PATH_LOAD = '/'
 export const ROUTE_NAME_LOAD = 'load'
@@ -32,6 +33,11 @@ const router = createRouter({
           path: 'states',
           name: 'states',
           component: StatesPage,
+        },
+        {
+          path: 'mystuff',
+          name: 'mystuff',
+          component: MyStuffPage,
         },
         {
           path: ':id',

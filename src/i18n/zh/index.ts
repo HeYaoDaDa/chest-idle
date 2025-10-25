@@ -50,6 +50,7 @@ export default {
     inventory: '背包',
     equipment: '装备',
     abilities: '技能',
+    myStuff: '我的',
   },
   skill: {
     mining: { name: '采矿', description: '采矿。' },

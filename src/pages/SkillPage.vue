@@ -350,40 +350,41 @@ function handleAmountFocus(event: FocusEvent) {
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
 
   .area-item {
-    width: 140px;
-    height: 140px;
-    border-radius: 10px;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(148, 163, 184, 0.25);
-    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    padding: 12px;
+    gap: 4px;
+    padding: 6px;
     text-align: center;
     user-select: none;
     cursor: pointer;
     box-sizing: border-box;
+    font-size: 12px;
     transition:
       transform 0.18s ease,
       box-shadow 0.18s ease,
       border-color 0.18s ease;
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
       border-color: rgba(37, 99, 235, 0.35);
     }
 
     .chest-progress {
       width: 100%;
-      height: 6px;
+      height: 4px;
       background-color: rgba(226, 232, 240, 0.9);
       border-radius: 999px;
       overflow: hidden;

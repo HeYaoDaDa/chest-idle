@@ -357,38 +357,45 @@ function closeChestResults() {
 
 #inventory {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 120px);
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, 64px);
+  gap: 6px;
   align-content: start;
 
   .inventory-item {
-    width: 120px;
-    height: 120px;
+    width: 64px;
+    height: 64px;
     border-radius: 8px;
-    background: rgba(248, 250, 252, 0.9);
-    border: 1px solid rgba(148, 163, 184, 0.3);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 4px;
-    padding: 8px;
+    padding: 6px;
     font-weight: 600;
+    font-size: 12px;
     color: #1e293b;
     cursor: pointer;
     transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease;
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
     box-sizing: border-box;
+    text-align: center;
+    line-height: 1.2;
+    user-select: none;
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.35);
     }
   }
 
   .inventory-count {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
     color: #2563eb;
   }
@@ -396,14 +403,14 @@ function closeChestResults() {
 
 #equipment {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 120px);
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, 64px);
+  gap: 6px;
   align-content: start;
 
   .equipment-cell {
     display: flex;
-    width: 120px;
-    height: 120px;
+    width: 64px;
+    height: 64px;
   }
 
   .equipment-item,
@@ -411,30 +418,40 @@ function closeChestResults() {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    background: rgba(248, 250, 252, 0.9);
-    border: 1px dashed rgba(148, 163, 184, 0.4);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 8px;
+    padding: 6px;
     font-weight: 600;
+    font-size: 12px;
     color: #1e293b;
     transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease,
-      background 0.15s ease;
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease,
+      background 0.18s ease;
     cursor: pointer;
     box-sizing: border-box;
+    line-height: 1.2;
+    user-select: none;
+  }
+
+  .equipment-slot {
+    border-style: dashed;
+    opacity: 0.6;
   }
 
   .equipment-item {
     border-style: solid;
-    background: rgba(226, 232, 240, 0.9);
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.35);
     }
   }
 }

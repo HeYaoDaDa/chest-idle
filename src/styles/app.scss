@@ -38,6 +38,12 @@ a {
   }
 }
 
+/* scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 99, 235, 0.3) rgba(248, 250, 252, 0.5);
+}
+
 .v-popper--theme-skill-tooltip {
   .v-popper__inner {
     background: color.adjust(white, $lightness: -10%);

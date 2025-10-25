@@ -124,21 +124,15 @@ function closeChestResults() {
         </div>
       </div>
       <div id="sidebar">
-        <router-link
-          v-for="skill in dataManager.allSkill"
-          :key="skill.id"
-          :to="`/game/${skill.id}`"
-          active-class="active-link"
-        >
+        <router-link v-for="skill in dataManager.allSkill" :key="skill.id" :to="`/game/${skill.id}`"
+          active-class="active-link">
           <div>{{ t(skill.name) }} {{ t('ui.level', { level: skill.level.value }) }}</div>
           <div style="width: 100%">
-            <div
-              :style="{
-                width: skill.upgradeProgress.value * 100 + '%',
-                height: '2px',
-                backgroundColor: 'black',
-              }"
-            ></div>
+            <div :style="{
+              width: skill.upgradeProgress.value * 100 + '%',
+              height: '2px',
+              backgroundColor: 'black',
+            }"></div>
           </div>
         </router-link>
         <router-link :to="`/game/states`" active-class="active-link">
@@ -153,36 +147,20 @@ function closeChestResults() {
       </div>
       <div id="tabs-container">
         <div class="tabs-header">
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'inventory' }"
-            @click="activeTab = 'inventory'"
-          >
+          <button class="tab-button" :class="{ active: activeTab === 'inventory' }" @click="activeTab = 'inventory'">
             {{ t('ui.inventory') }}
           </button>
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'equipment' }"
-            @click="activeTab = 'equipment'"
-          >
+          <button class="tab-button" :class="{ active: activeTab === 'equipment' }" @click="activeTab = 'equipment'">
             {{ t('ui.equipment') }}
           </button>
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'abilities' }"
-            @click="activeTab = 'abilities'"
-          >
+          <button class="tab-button" :class="{ active: activeTab === 'abilities' }" @click="activeTab = 'abilities'">
             {{ t('ui.abilities') }}
           </button>
         </div>
         <div class="tabs-content">
           <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-            <div
-              v-for="inventoryItem in inventory.inventoryItems.value"
-              :key="inventoryItem.item.id"
-              class="inventory-item"
-              @click="openInventoryModal(inventoryItem)"
-            >
+            <div v-for="inventoryItem in inventory.inventoryItems.value" :key="inventoryItem.item.id"
+              class="inventory-item" @click="openInventoryModal(inventoryItem)">
               <div>{{ t(inventoryItem.item.name) }}</div>
               <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
                 x{{ inventoryItem.amount.value }}
@@ -191,11 +169,8 @@ function closeChestResults() {
           </div>
           <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
             <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
-              <div
-                v-if="slot.equipment.value"
-                class="equipment-item"
-                @click="openEquipmentModal(slot, slot.equipment.value)"
-              >
+              <div v-if="slot.equipment.value" class="equipment-item"
+                @click="openEquipmentModal(slot, slot.equipment.value)">
                 <div>{{ t(slot.equipment.value.name) }}</div>
               </div>
               <div v-else class="equipment-slot">
@@ -216,9 +191,7 @@ function closeChestResults() {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedEquipment.equipment.name) }}</h3>
-        <span class="item-modal-type"
-          >{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span
-        >
+        <span class="item-modal-type">{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span>
       </div>
 
       <div class="item-modal-content">
@@ -227,11 +200,7 @@ function closeChestResults() {
         <div v-if="selectedEquipment.equipment.effects.length > 0" class="item-modal-section">
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
-            <div
-              v-for="(effect, index) in selectedEquipment.equipment.effects"
-              :key="index"
-              class="item-modal-effect"
-            >
+            <div v-for="(effect, index) in selectedEquipment.equipment.effects" :key="index" class="item-modal-effect">
               <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
               <span class="effect-value">
                 {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
@@ -260,9 +229,7 @@ function closeChestResults() {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-        <span class="item-modal-quantity"
-          >{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span
-        >
+        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span>
       </div>
 
       <div class="item-modal-content">
@@ -275,20 +242,13 @@ function closeChestResults() {
           </div>
         </div>
 
-        <div
-          v-if="
-            selectedInventoryItem.item.isEquipment() &&
-            selectedInventoryItem.item.effects.length > 0
-          "
-          class="item-modal-section"
-        >
+        <div v-if="
+          selectedInventoryItem.item.isEquipment() &&
+          selectedInventoryItem.item.effects.length > 0
+        " class="item-modal-section">
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
-            <div
-              v-for="(effect, index) in selectedInventoryItem.item.effects"
-              :key="index"
-              class="item-modal-effect"
-            >
+            <div v-for="(effect, index) in selectedInventoryItem.item.effects" :key="index" class="item-modal-effect">
               <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
               <span class="effect-value">
                 {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
@@ -304,34 +264,20 @@ function closeChestResults() {
 
       <div class="item-modal-footer">
         <div class="zone-action-buttons">
-          <button
-            v-if="selectedInventoryItem.item.isEquipment()"
-            type="button"
-            class="zone-button primary"
-            @click="equipAndClose"
-          >
+          <button v-if="selectedInventoryItem.item.isEquipment()" type="button" class="zone-button primary"
+            @click="equipAndClose">
             {{ t('ui.equip') }}
           </button>
           <div v-if="selectedInventoryItem.item.isChest()" class="chest-controls">
             <div v-if="maxChestAmount > 1" class="chest-amount-controls">
-              <input
-                v-model.number="chestOpenAmount"
-                type="number"
-                :min="1"
-                :max="maxChestAmount"
-                class="chest-amount-input"
-                :placeholder="String(maxChestAmount)"
-              />
+              <input v-model.number="chestOpenAmount" type="number" :min="1" :max="maxChestAmount"
+                class="chest-amount-input" :placeholder="String(maxChestAmount)" />
               <button type="button" class="zone-button ghost max-button" @click="setMaxChestAmount">
                 Max
               </button>
             </div>
-            <button
-              type="button"
-              class="zone-button primary"
-              @click="openChestAndClose"
-              :disabled="!isValidChestAmount"
-            >
+            <button type="button" class="zone-button primary" @click="openChestAndClose"
+              :disabled="!isValidChestAmount">
               {{ t('ui.open') }}
             </button>
           </div>
@@ -373,7 +319,7 @@ function closeChestResults() {
 <style lang="scss">
 #game-page-root {
   height: 100%;
-  padding: 16px;
+  padding: 2px;
   box-sizing: border-box;
 
   #game-page-layout-container {
@@ -381,14 +327,14 @@ function closeChestResults() {
     display: grid;
     grid-template-columns: 260px minmax(0, 1fr) 360px;
     grid-template-rows: auto minmax(0, 1fr);
-    gap: 12px;
+    gap: 2px;
 
-    > div {
+    >div {
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: 10px;
-      padding: 12px;
+      border-radius: 2px;
+      padding: 2px;
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
       overflow: hidden;
     }
@@ -424,8 +370,8 @@ function closeChestResults() {
       grid-row: 2 / 3;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      padding: 12px;
+      gap: 2px;
+      padding: 2px;
       overflow-y: auto;
 
       a {
@@ -435,7 +381,6 @@ function closeChestResults() {
         align-items: center;
         gap: 4px;
         padding: 8px 12px;
-        width: 100%;
         border-radius: 8px;
         background: rgba(248, 250, 252, 0.72);
         font-weight: 600;
@@ -469,7 +414,7 @@ function closeChestResults() {
       flex-direction: column;
       overflow: hidden;
 
-      > * {
+      >* {
         flex: 1;
         min-height: 0;
         overflow: auto;
@@ -488,8 +433,8 @@ function closeChestResults() {
 
     .tabs-header {
       display: flex;
-      gap: 4px;
-      padding: 8px 8px 0 8px;
+      gap: 2px;
+      padding: 2px 2px 0 2px;
       background: rgba(248, 250, 252, 0.5);
       border-bottom: 2px solid rgba(148, 163, 184, 0.2);
     }
@@ -530,13 +475,13 @@ function closeChestResults() {
     .tab-panel {
       height: 100%;
       overflow-y: auto;
-      padding: 12px;
+      padding: 2px;
     }
 
     #inventory {
       display: grid;
       grid-template-columns: repeat(auto-fill, 120px);
-      gap: 8px;
+      gap: 2px;
       align-content: start;
 
       .inventory-item {
@@ -575,8 +520,10 @@ function closeChestResults() {
     #equipment {
       display: grid;
       grid-template-columns: repeat(auto-fill, 120px);
-      gap: 8px;
-      align-content: start;      .equipment-cell {
+      gap: 2px;
+      align-content: start;
+
+      .equipment-cell {
         display: flex;
         width: 120px;
         height: 120px;
@@ -880,7 +827,7 @@ function closeChestResults() {
 
 @media (max-width: 1280px) {
   #game-page-root {
-    padding: 12px;
+    padding: 2px;
 
     #game-page-layout-container {
       grid-template-columns: 220px 1fr;
@@ -910,14 +857,14 @@ function closeChestResults() {
 
 @media (max-width: 960px) {
   #game-page-root {
-    padding: 8px;
+    padding: 2px;
 
     #game-page-layout-container {
       display: flex;
       flex-direction: column;
 
-      > div {
-        padding: 12px;
+      >div {
+        padding: 2px;
       }
 
       #sidebar {
@@ -930,7 +877,7 @@ function closeChestResults() {
         }
       }
 
-      #content > * {
+      #content>* {
         padding: 14px;
       }
 

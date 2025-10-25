@@ -70,7 +70,7 @@ function openChestAndClose() {
 
     // 记录开箱前的库存
     const inventoryBefore = new Map<string, number>()
-    inventory.inventoryItems.value.forEach(item => {
+    inventory.inventoryItems.value.forEach((item) => {
       inventoryBefore.set(item.item.id, item.amount.value)
     })
 
@@ -80,7 +80,7 @@ function openChestAndClose() {
     }
 
     // 计算新增的物品（排除宝箱本身）
-    inventory.inventoryItems.value.forEach(item => {
+    inventory.inventoryItems.value.forEach((item) => {
       // 跳过宝箱本身
       if (item.item.id === chestId) return
 
@@ -95,7 +95,7 @@ function openChestAndClose() {
     // 转换为显示格式
     const resultArray = Array.from(results.entries()).map(([itemName, amount]) => ({
       itemName,
-      amount
+      amount,
     }))
 
     // 设置开箱结果（即使是空数组也要显示）
@@ -123,15 +123,21 @@ function closeChestResults() {
         </div>
       </div>
       <div id="sidebar">
-        <router-link v-for="skill in dataManager.allSkill" :key="skill.id" :to="`/game/${skill.id}`"
-          active-class="active-link">
+        <router-link
+          v-for="skill in dataManager.allSkill"
+          :key="skill.id"
+          :to="`/game/${skill.id}`"
+          active-class="active-link"
+        >
           <div>{{ t(skill.name) }} {{ t('ui.level', { level: skill.level.value }) }}</div>
           <div style="width: 100%">
-            <div :style="{
-              width: skill.upgradeProgress.value * 100 + '%',
-              height: '2px',
-              backgroundColor: 'black',
-            }"></div>
+            <div
+              :style="{
+                width: skill.upgradeProgress.value * 100 + '%',
+                height: '2px',
+                backgroundColor: 'black',
+              }"
+            ></div>
           </div>
         </router-link>
         <router-link :to="`/game/states`" active-class="active-link">
@@ -146,8 +152,11 @@ function closeChestResults() {
       </div>
       <div id="equipment">
         <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
-          <div v-if="slot.equipment.value" class="equipment-item"
-            @click="openEquipmentModal(slot, slot.equipment.value)">
+          <div
+            v-if="slot.equipment.value"
+            class="equipment-item"
+            @click="openEquipmentModal(slot, slot.equipment.value)"
+          >
             <div>{{ t(slot.equipment.value.name) }}</div>
           </div>
           <div v-else class="equipment-slot">
@@ -157,8 +166,12 @@ function closeChestResults() {
       </div>
       <div id="abilities"></div>
       <div id="inventory">
-        <div v-for="inventoryItem in inventory.inventoryItems.value" :key="inventoryItem.item.id" class="inventory-item"
-          @click="openInventoryModal(inventoryItem)">
+        <div
+          v-for="inventoryItem in inventory.inventoryItems.value"
+          :key="inventoryItem.item.id"
+          class="inventory-item"
+          @click="openInventoryModal(inventoryItem)"
+        >
           <div>{{ t(inventoryItem.item.name) }}</div>
           <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
             x{{ inventoryItem.amount.value }}
@@ -173,7 +186,9 @@ function closeChestResults() {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedEquipment.equipment.name) }}</h3>
-        <span class="item-modal-type">{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span>
+        <span class="item-modal-type"
+          >{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span
+        >
       </div>
 
       <div class="item-modal-content">
@@ -182,24 +197,27 @@ function closeChestResults() {
         <div v-if="selectedEquipment.equipment.effects.length > 0" class="item-modal-section">
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
-            <div v-for="(effect, index) in selectedEquipment.equipment.effects" :key="index" class="item-modal-effect">
+            <div
+              v-for="(effect, index) in selectedEquipment.equipment.effects"
+              :key="index"
+              class="item-modal-effect"
+            >
               <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
               <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{
-                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
+                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
+                }}{{ effect.value
+                }}{{
+                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : ''
+                }}
               </span>
             </div>
           </div>
         </div>
       </div>
 
-            <div class="item-modal-footer">
+      <div class="item-modal-footer">
         <div class="zone-action-buttons">
-          <button
-            type="button"
-            class="zone-button ghost"
-            @click="unequipAndClose"
-          >
+          <button type="button" class="zone-button ghost" @click="unequipAndClose">
             {{ t('ui.unequip') }}
           </button>
         </div>
@@ -212,7 +230,9 @@ function closeChestResults() {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span>
+        <span class="item-modal-quantity"
+          >{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span
+        >
       </div>
 
       <div class="item-modal-content">
@@ -225,15 +245,27 @@ function closeChestResults() {
           </div>
         </div>
 
-        <div v-if="selectedInventoryItem.item.isEquipment() && selectedInventoryItem.item.effects.length > 0"
-          class="item-modal-section">
+        <div
+          v-if="
+            selectedInventoryItem.item.isEquipment() &&
+            selectedInventoryItem.item.effects.length > 0
+          "
+          class="item-modal-section"
+        >
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
-            <div v-for="(effect, index) in selectedInventoryItem.item.effects" :key="index" class="item-modal-effect">
+            <div
+              v-for="(effect, index) in selectedInventoryItem.item.effects"
+              :key="index"
+              class="item-modal-effect"
+            >
               <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
               <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-' }}{{ effect.value }}{{
-                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : '' }}
+                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
+                }}{{ effect.value
+                }}{{
+                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : ''
+                }}
               </span>
             </div>
           </div>
@@ -242,8 +274,12 @@ function closeChestResults() {
 
       <div class="item-modal-footer">
         <div class="zone-action-buttons">
-          <button v-if="selectedInventoryItem.item.isEquipment()" type="button" class="zone-button primary"
-            @click="equipAndClose">
+          <button
+            v-if="selectedInventoryItem.item.isEquipment()"
+            type="button"
+            class="zone-button primary"
+            @click="equipAndClose"
+          >
             {{ t('ui.equip') }}
           </button>
           <div v-if="selectedInventoryItem.item.isChest()" class="chest-controls">
@@ -256,11 +292,7 @@ function closeChestResults() {
                 class="chest-amount-input"
                 :placeholder="String(maxChestAmount)"
               />
-              <button
-                type="button"
-                class="zone-button ghost max-button"
-                @click="setMaxChestAmount"
-              >
+              <button type="button" class="zone-button ghost max-button" @click="setMaxChestAmount">
                 Max
               </button>
             </div>
@@ -287,11 +319,7 @@ function closeChestResults() {
 
       <div class="chest-results-content">
         <div v-if="chestOpenResults.length > 0" class="chest-results-list">
-          <div
-            v-for="result in chestOpenResults"
-            :key="result.itemName"
-            class="chest-result-item"
-          >
+          <div v-for="result in chestOpenResults" :key="result.itemName" class="chest-result-item">
             <span class="result-item-name">{{ t(result.itemName) }}</span>
             <span class="result-item-amount">×{{ result.amount }}</span>
           </div>
@@ -303,11 +331,7 @@ function closeChestResults() {
 
       <div class="chest-results-footer">
         <div class="zone-action-buttons">
-          <button
-            type="button"
-            class="zone-button primary"
-            @click="closeChestResults"
-          >
+          <button type="button" class="zone-button primary" @click="closeChestResults">
             {{ t('ui.confirm') }}
           </button>
         </div>
@@ -329,7 +353,7 @@ function closeChestResults() {
     grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
     gap: 12px;
 
-    >div {
+    > div {
       background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.25);
@@ -415,7 +439,7 @@ function closeChestResults() {
       flex-direction: column;
       overflow: hidden;
 
-      >* {
+      > * {
         flex: 1;
         min-height: 0;
         overflow: auto;
@@ -831,7 +855,7 @@ function closeChestResults() {
       display: flex;
       flex-direction: column;
 
-      >div {
+      > div {
         padding: 12px;
       }
 
@@ -845,7 +869,7 @@ function closeChestResults() {
         }
       }
 
-      #content>* {
+      #content > * {
         padding: 14px;
       }
 

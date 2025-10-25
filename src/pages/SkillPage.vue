@@ -65,7 +65,9 @@ function handleAmountFocus(event: FocusEvent) {
         </div>
         <div class="skill-stat">
           <span class="skill-stat-label">{{ t('ui.nextLevel') }}</span>
-          <span class="skill-stat-value">{{ skill.remainingXpForUpgrade.value.toLocaleString(locale) }}</span>
+          <span class="skill-stat-value">{{
+            skill.remainingXpForUpgrade.value.toLocaleString(locale)
+          }}</span>
         </div>
       </div>
       <div class="skill-progress-bar-container">

@@ -1,0 +1,194 @@
+[
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "copperOre",
+        "sort": 0
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "copperIngot",
+        "sort": 1
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "ironOre",
+        "sort": 12
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "ironIngot",
+        "sort": 13
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "silverOre",
+        "sort": 24
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "silverIngot",
+        "sort": 25
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "goldOre",
+        "sort": 36
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "goldIngot",
+        "sort": 37
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "orichalcumOre",
+        "sort": 48
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "orichalcumIngot",
+        "sort": 49
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "darkIronOre",
+        "sort": 60
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "darkIronIngot",
+        "sort": 61
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "mithrilOre",
+        "sort": 72
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "mithrilIngot",
+        "sort": 73
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "adamantineOre",
+        "sort": 84
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "adamantineIngot",
+        "sort": 85
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "willowWood",
+        "sort": 86
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "pineWood",
+        "sort": 87
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "oakWood",
+        "sort": 88
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "mapleWood",
+        "sort": 89
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "elmWood",
+        "sort": 90
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "beechWood",
+        "sort": 91
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "mahoganyWood",
+        "sort": 92
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "ebonyWood",
+        "sort": 93
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "willowPlank",
+        "sort": 94
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "pinePlank",
+        "sort": 95
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "oakPlank",
+        "sort": 96
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "maplePlank",
+        "sort": 97
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "elmPlank",
+        "sort": 98
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "beechPlank",
+        "sort": 99
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "mahoganyPlank",
+        "sort": 100
+    },
+    {
+        "type": "item",
+        "itemType": "resource",
+        "id": "ebonyPlank",
+        "sort": 101
+    }
+]

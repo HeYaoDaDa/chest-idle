@@ -6,7 +6,7 @@ import { inventory } from '@/models/global/InventoryManager'
 import type { Equipment } from '@/models/item/Equipment'
 import type { InventoryItem } from '@/models/inventory/InventoryItem'
 import type { Slot } from '@/models/Slot'
-import { computed, shallowRef } from 'vue'
+import { computed, shallowRef, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -19,6 +19,66 @@ const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory
 
 // 移动端状态管理
 const sidebarExpanded = shallowRef(false)
+
+// ============ 拖拽调整宽度功能 ============
+const tabsWidth = shallowRef(360)
+const isDraggingTabs = shallowRef(false)
+let startX = 0
+let initialWidth = 0
+const parentElement = shallowRef<HTMLElement | undefined>(undefined)
+
+// 宽度约束
+const minTabsWidth = 280
+const maxTabsWidthPercentage = 0.5
+
+onMounted(() => {
+  // 从 localStorage 恢复宽度
+  const savedTabsWidth = localStorage.getItem('tabsWidth')
+  if (savedTabsWidth) {
+    tabsWidth.value = parseInt(savedTabsWidth)
+  }
+
+  // 获取父容器引用
+  const container = document.getElementById('game-page-layout-container')
+  if (container) {
+    parentElement.value = container
+  }
+})
+
+function startDragTabs(e: MouseEvent) {
+  isDraggingTabs.value = true
+  startX = e.clientX
+  initialWidth = tabsWidth.value
+
+  document.addEventListener('mousemove', dragTabs)
+  document.addEventListener('mouseup', stopDragTabs)
+  document.body.classList.add('dragging')
+}
+
+function dragTabs(e: MouseEvent) {
+  if (!isDraggingTabs.value) return
+
+  const deltaX = e.clientX - startX
+  let newWidth = initialWidth - deltaX
+
+  newWidth = Math.max(newWidth, minTabsWidth)
+
+  if (parentElement.value && 'offsetWidth' in parentElement.value) {
+    newWidth = Math.min(newWidth, parentElement.value.offsetWidth * maxTabsWidthPercentage)
+  }
+
+  tabsWidth.value = newWidth
+}
+
+function stopDragTabs() {
+  isDraggingTabs.value = false
+  document.removeEventListener('mousemove', dragTabs)
+  document.removeEventListener('mouseup', stopDragTabs)
+  document.body.classList.remove('dragging')
+
+  // 保存宽度到 localStorage
+  localStorage.setItem('tabsWidth', tabsWidth.value.toString())
+}
 
 function toggleSidebar() {
   sidebarExpanded.value = !sidebarExpanded.value
@@ -118,7 +178,13 @@ function closeChestResults() {
   <div id="game-page-root">
     <div v-if="sidebarExpanded" class="sidebar-mask" @click="closeSidebar"></div>
 
-    <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }">
+        <div
+      id="game-page-layout-container"
+      :class="{ 'sidebar-expanded': sidebarExpanded }"
+      :style="{
+        '--tabs-width': tabsWidth + 'px'
+      }"
+    >
       <div id="header">
         <div id="header-title-action">
           <div class="header-title">
@@ -166,60 +232,65 @@ function closeChestResults() {
       <div id="content">
         <RouterView />
       </div>
-      <div id="tabs-container">
-        <div class="tabs-header">
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'inventory' }"
-            @click="activeTab = 'inventory'"
-          >
-            {{ t('ui.inventory') }}
-          </button>
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'equipment' }"
-            @click="activeTab = 'equipment'"
-          >
-            {{ t('ui.equipment') }}
-          </button>
-          <button
-            class="tab-button"
-            :class="{ active: activeTab === 'abilities' }"
-            @click="activeTab = 'abilities'"
-          >
-            {{ t('ui.abilities') }}
-          </button>
+      <div id="tabs-container" ref="tabs-container" :style="{ width: tabsWidth + 'px' }">
+        <div class="drag-handle drag-handle-left" @mousedown="startDragTabs">
+          <div class="drag-indicator"></div>
         </div>
-        <div class="tabs-content">
-          <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-            <div
-              v-for="inventoryItem in inventory.inventoryItems.value"
-              :key="inventoryItem.item.id"
-              class="inventory-item"
-              @click="openInventoryModal(inventoryItem)"
+        <div class="tabs-wrapper">
+          <div class="tabs-header">
+            <button
+              class="tab-button"
+              :class="{ active: activeTab === 'inventory' }"
+              @click="activeTab = 'inventory'"
             >
-              <div>{{ t(inventoryItem.item.name) }}</div>
-              <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
-                x{{ inventoryItem.amount.value }}
-              </div>
-            </div>
+              {{ t('ui.inventory') }}
+            </button>
+            <button
+              class="tab-button"
+              :class="{ active: activeTab === 'equipment' }"
+              @click="activeTab = 'equipment'"
+            >
+              {{ t('ui.equipment') }}
+            </button>
+            <button
+              class="tab-button"
+              :class="{ active: activeTab === 'abilities' }"
+              @click="activeTab = 'abilities'"
+            >
+              {{ t('ui.abilities') }}
+            </button>
           </div>
-          <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
-            <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
+          <div class="tabs-content">
+            <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
               <div
-                v-if="slot.equipment.value"
-                class="equipment-item"
-                @click="openEquipmentModal(slot, slot.equipment.value)"
+                v-for="inventoryItem in inventory.inventoryItems.value"
+                :key="inventoryItem.item.id"
+                class="inventory-item"
+                @click="openInventoryModal(inventoryItem)"
               >
-                <div>{{ t(slot.equipment.value.name) }}</div>
-              </div>
-              <div v-else class="equipment-slot">
-                <span>{{ t(slot.name) }}</span>
+                <div>{{ t(inventoryItem.item.name) }}</div>
+                <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
+                  x{{ inventoryItem.amount.value }}
+                </div>
               </div>
             </div>
-          </div>
-          <div v-show="activeTab === 'abilities'" id="abilities" class="tab-panel">
-            <!-- Abilities content here -->
+            <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
+              <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
+                <div
+                  v-if="slot.equipment.value"
+                  class="equipment-item"
+                  @click="openEquipmentModal(slot, slot.equipment.value)"
+                >
+                  <div>{{ t(slot.equipment.value.name) }}</div>
+                </div>
+                <div v-else class="equipment-slot">
+                  <span>{{ t(slot.name) }}</span>
+                </div>
+              </div>
+            </div>
+            <div v-show="activeTab === 'abilities'" id="abilities" class="tab-panel">
+              <!-- Abilities content here -->
+            </div>
           </div>
         </div>
       </div>
@@ -365,7 +436,7 @@ function closeChestResults() {
   #game-page-layout-container {
     height: 100%;
     display: grid;
-    grid-template-columns: 260px minmax(0, 1fr) 360px;
+    grid-template-columns: 260px minmax(0, 1fr) var(--tabs-width, 360px);
     grid-template-rows: auto minmax(0, 1fr);
     gap: 2px;
 
@@ -504,9 +575,43 @@ function closeChestResults() {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       padding: 0;
       overflow: hidden;
+
+      .drag-handle-left {
+        width: 8px;
+        cursor: ew-resize;
+        background: rgba(148, 163, 184, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background: rgba(37, 99, 235, 0.15);
+        }
+
+        .drag-indicator {
+          width: 2px;
+          height: 40px;
+          background: rgba(148, 163, 184, 0.4);
+          border-radius: 1px;
+          transition: background 0.2s ease;
+        }
+
+        &:hover .drag-indicator {
+          background: rgba(37, 99, 235, 0.6);
+        }
+      }
+
+      .tabs-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
     }
 
     .tabs-header {
@@ -919,36 +1024,6 @@ function closeChestResults() {
   }
 }
 
-@media (max-width: 1280px) {
-  #game-page-root {
-    padding: 2px;
-
-    #game-page-layout-container {
-      grid-template-columns: 220px 1fr;
-      grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
-
-      #header {
-        grid-column: 1 / -1;
-      }
-
-      #sidebar {
-        grid-column: 1 / 2;
-        grid-row: 2 / 4;
-      }
-
-      #content {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-      }
-
-      #tabs-container {
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
-      }
-    }
-  }
-}
-
 @media (max-width: 960px) {
   #game-page-root {
     padding: 0;
@@ -991,7 +1066,7 @@ function closeChestResults() {
         left: 0;
         top: 0;
         bottom: 0;
-        width: 64px;
+        width: 56px !important;
         z-index: 1000;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(12px);
@@ -1035,7 +1110,7 @@ function closeChestResults() {
         }
 
         &.expanded {
-          width: 240px;
+          width: 200px !important;
 
           a,
           .sidebar-control-link {
@@ -1061,7 +1136,7 @@ function closeChestResults() {
       #content {
         flex: 1;
         min-height: 0;
-        margin-left: 64px;
+        margin-left: 56px;
 
         >* {
           padding: 12px;
@@ -1070,7 +1145,7 @@ function closeChestResults() {
     }
 
     &.sidebar-expanded #content {
-      margin-left: 240px;
+      margin-left: 200px;
     }
   }
 }

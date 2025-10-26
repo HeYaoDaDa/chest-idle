@@ -44,6 +44,15 @@ a {
   scrollbar-color: rgba(37, 99, 235, 0.3) rgba(248, 250, 252, 0.5);
 }
 
+/* dragging state - disable text selection during drag */
+.dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: ew-resize !important;
+}
+
 .v-popper--theme-skill-tooltip {
   .v-popper__inner {
     background: color.adjust(white, $lightness: -10%);

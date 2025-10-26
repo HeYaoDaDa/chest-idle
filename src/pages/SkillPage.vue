@@ -80,8 +80,6 @@ function addAction() {
   if (openZone.value) {
     actionManager.addAction(openZone.value, stringToNumber(amountString.value))
     closeModal()
-  } else {
-    console.error('openZone is null')
   }
 }
 
@@ -94,8 +92,6 @@ function startImmediately() {
     }
     actionManager.startCurrentAction(openZone.value, stringToNumber(amountString.value))
     closeModal()
-  } else {
-    console.error('openZone is null')
   }
 }
 

@@ -1,0 +1,86 @@
+// Global SCSS variables
+// Colors
+$primary-color: #2563eb;
+$primary-light: #3b82f6;
+$primary-dark: #1d4ed8;
+$text-primary: #0f172a;
+$text-secondary: #1e293b;
+$text-tertiary: #475569;
+$text-quaternary: #64748b;
+$text-disabled: #94a3b8;
+$bg-light: #f8fafc;
+$bg-lighter: #f9fafb;
+$bg-input: rgba(255, 255, 255, 0.9);
+$border-color: rgba(148, 163, 184, 0.25);
+$border-color-light: rgba(148, 163, 184, 0.2);
+$border-color-lighter: rgba(148, 163, 184, 0.18);
+
+// Semantic colors
+$color-success: #22c55e;
+$color-warning: #f59e0b;
+$color-error: #ef4444;
+$color-red: #b91c1c;
+
+// Spacing
+$spacing-xs: 2px;
+$spacing-sm: 4px;
+$spacing-md: 6px;
+$spacing-lg: 8px;
+$spacing-xl: 10px;
+$spacing-2xl: 12px;
+$spacing-3xl: 16px;
+$spacing-4xl: 20px;
+$spacing-5xl: 24px;
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 8px;
+$radius-full: 999px;
+
+// Font sizes
+$font-xs: 10px;
+$font-sm: 12px;
+$font-base: 13px;
+$font-md: 14px;
+$font-lg: 16px;
+$font-xl: 18px;
+$font-2xl: 20px;
+$font-3xl: 22px;
+$font-4xl: 24px;
+$font-5xl: 28px;
+$font-6xl: 32px;
+
+// Font weights
+$font-weight-normal: 500;
+$font-weight-medium: 600;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Shadows
+$shadow-xs: 0 2px 4px rgba(15, 23, 42, 0.08);
+$shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.08);
+$shadow-md: 0 4px 8px rgba(37, 99, 235, 0.15);
+$shadow-lg: 0 10px 18px rgba(15, 23, 42, 0.08);
+$shadow-xl: 0 12px 22px rgba(37, 99, 235, 0.28);
+$shadow-focus: 0 4px 12px rgba(37, 99, 235, 0.3);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.2s ease;
+$transition-slow: 0.3s ease;
+
+// Z-index
+$z-dropdown: 1000;
+$z-modal: 2000;
+$z-tooltip: 3000;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+$gradient-primary-dark: linear-gradient(135deg, #2563eb, #1d4ed8);
+$gradient-effect: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);

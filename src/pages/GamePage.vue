@@ -3,21 +3,33 @@ import ActionQueue from '@/components/misc/ActionQueue.vue'
 import ModalBox from '@/components/misc/ModalBox.vue'
 import { dataManager } from '@/models/global/DataManager'
 import { inventory } from '@/models/global/InventoryManager'
-import type { Equipment } from '@/models/item/Equipment'
-import type { InventoryItem } from '@/models/inventory/InventoryItem'
-import type { Slot } from '@/models/Slot'
-import { computed, shallowRef, onMounted } from 'vue'
+import { shallowRef, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
 
 const { t } = useI18n()
 
-const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
-const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
-const chestOpenAmount = shallowRef<number>(1)
-const chestOpenResults = shallowRef<{ itemName: string; amount: number }[] | null>(null)
-const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
+// 使用通用 Composable 获取装备和背包相关功能
+const {
+  selectedEquipment,
+  selectedInventoryItem,
+  chestOpenAmount,
+  chestOpenResults,
+  activeTab,
+  maxChestAmount,
+  isValidChestAmount,
+  openEquipmentModal,
+  closeEquipmentModal,
+  unequipAndClose,
+  openInventoryModal,
+  closeInventoryModal,
+  equipAndClose,
+  setMaxChestAmount,
+  openChestAndClose,
+  closeChestResults,
+} = useEquipmentAndInventory()
 
-// 移动端状态管理
+// GamePage 特定的状态
 const sidebarExpanded = shallowRef(false)
 
 // ============ 拖拽调整宽度功能 ============
@@ -86,91 +98,6 @@ function toggleSidebar() {
 
 function closeSidebar() {
   sidebarExpanded.value = false
-}
-
-const maxChestAmount = computed(() => {
-  return selectedInventoryItem.value?.amount.value || 1
-})
-
-const isValidChestAmount = computed(() => {
-  const amount = chestOpenAmount.value
-  return amount >= 1 && amount <= maxChestAmount.value && Number.isInteger(amount)
-})
-
-function openEquipmentModal(slot: Slot, equipment: Equipment) {
-  selectedEquipment.value = { slot, equipment }
-}
-
-function closeEquipmentModal() {
-  selectedEquipment.value = null
-}
-
-function unequipAndClose() {
-  if (selectedEquipment.value) {
-    selectedEquipment.value.slot.unEquip()
-    closeEquipmentModal()
-  }
-}
-
-function openInventoryModal(item: InventoryItem) {
-  selectedInventoryItem.value = item
-  chestOpenAmount.value = 1
-  chestOpenResults.value = null
-}
-
-function closeInventoryModal() {
-  selectedInventoryItem.value = null
-}
-
-function equipAndClose() {
-  if (selectedInventoryItem.value) {
-    selectedInventoryItem.value.equip()
-    closeInventoryModal()
-  }
-}
-
-function setMaxChestAmount() {
-  chestOpenAmount.value = maxChestAmount.value
-}
-
-function openChestAndClose() {
-  if (selectedInventoryItem.value && isValidChestAmount.value) {
-    const chest = selectedInventoryItem.value
-    const chestId = chest.item.id
-    const results = new Map<string, number>()
-
-    const inventoryBefore = new Map<string, number>()
-    inventory.inventoryItems.value.forEach((item) => {
-      inventoryBefore.set(item.item.id, item.amount.value)
-    })
-
-    for (let i = 0; i < chestOpenAmount.value; i++) {
-      chest.openChest()
-    }
-
-    inventory.inventoryItems.value.forEach((item) => {
-      if (item.item.id === chestId) return
-
-      const beforeAmount = inventoryBefore.get(item.item.id) || 0
-      const afterAmount = item.amount.value
-      const gained = afterAmount - beforeAmount
-      if (gained > 0) {
-        results.set(item.item.name, gained)
-      }
-    })
-
-    const resultArray = Array.from(results.entries()).map(([itemName, amount]) => ({
-      itemName,
-      amount,
-    }))
-
-    chestOpenResults.value = resultArray
-    closeInventoryModal()
-  }
-}
-
-function closeChestResults() {
-  chestOpenResults.value = null
 }
 </script>
 
@@ -428,6 +355,9 @@ function closeChestResults() {
 </template>
 
 <style lang="scss">
+@use '@/styles/variables' as *;
+@use '@/styles/shared-components';
+
 #game-page-root {
   height: 100%;
   padding: 2px;
@@ -769,258 +699,6 @@ function closeChestResults() {
       color: #94a3b8;
       font-style: italic;
     }
-  }
-
-  .item-modal {
-    min-width: min(420px, 90vw);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .item-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(37, 99, 235, 0.12);
-  }
-
-  .item-modal-title {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.3;
-  }
-
-  .item-modal-type,
-  .item-modal-quantity {
-    font-size: 13px;
-    font-weight: 600;
-    color: #2563eb;
-    background: rgba(37, 99, 235, 0.08);
-    padding: 4px 10px;
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-
-  .item-modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .item-modal-description {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #475569;
-  }
-
-  .item-modal-section {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .item-modal-section-title {
-    margin: 0;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #64748b;
-  }
-
-  .item-modal-info-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    background: rgba(248, 250, 252, 0.8);
-    border-radius: 6px;
-  }
-
-  .info-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: #64748b;
-  }
-
-  .info-value {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1e293b;
-  }
-
-  .item-modal-effects {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .item-modal-effect {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
-    border: 1px solid rgba(37, 99, 235, 0.12);
-    border-radius: 6px;
-  }
-
-  .effect-state {
-    font-size: 14px;
-    font-weight: 500;
-    color: #1e293b;
-  }
-
-  .effect-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: #2563eb;
-  }
-
-  .item-modal-footer {
-    padding-top: 12px;
-    border-top: 1px solid rgba(148, 163, 184, 0.18);
-  }
-
-  .zone-action-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-  }
-
-  .chest-controls {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .chest-amount-controls {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .chest-amount-input {
-    width: 60px;
-    padding: 6px 8px;
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    border-radius: 6px;
-    font-size: 14px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    color: #1f2937;
-  }
-
-  .chest-amount-input:focus {
-    outline: none;
-    border-color: rgba(37, 99, 235, 0.5);
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
-  }
-
-  .max-button {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .zone-button {
-    border: none;
-    border-radius: 999px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease,
-      background 0.15s ease;
-  }
-
-  .zone-button.primary {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: #ffffff;
-  }
-
-  .zone-button.primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  }
-
-  .zone-button.ghost {
-    background: #e2e8f0;
-    color: #1f2937;
-  }
-
-  .zone-button.ghost:hover {
-    background: #cbd5e1;
-    transform: translateY(-1px);
-  }
-
-  .chest-results-modal {
-    min-width: min(400px, 90vw);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .chest-results-header {
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(37, 99, 235, 0.12);
-  }
-
-  .chest-results-title {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    color: #0f172a;
-  }
-
-  .chest-results-content {
-    max-height: 300px;
-    overflow-y: auto;
-  }
-
-  .chest-results-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .chest-result-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    background: rgba(37, 99, 235, 0.05);
-    border-radius: 8px;
-    border-left: 3px solid rgba(37, 99, 235, 0.3);
-  }
-
-  .result-item-name {
-    font-weight: 600;
-    color: #1f2937;
-  }
-
-  .result-item-amount {
-    font-weight: 700;
-    color: #2563eb;
-  }
-
-  .chest-results-empty {
-    text-align: center;
-    padding: 24px;
-    color: #64748b;
-    font-style: italic;
-  }
-
-  .chest-results-footer {
-    padding-top: 12px;
-    border-top: 1px solid rgba(148, 163, 184, 0.18);
   }
 }
 

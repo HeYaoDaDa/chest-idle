@@ -434,7 +434,7 @@
         "id": "ironIngot",
         "skill": "smithing",
         "minLevel": 10,
-        "sort": 99,
+        "sort": 100,
         "duration": {
             "base": 1200,
             "boosts": [
@@ -775,6 +775,84 @@
         "products": [
             {
                 "item": "ironBrewingKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 20,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "id": "ironAlchemistKit",
+        "sort": 109,
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironAlchemistKit",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "skill": "smithing",
+        "minLevel": 20,
+        "duration": {
+            "base": 3500,
+            "boosts": [
+                {
+                    "state": "smithingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 15,
+            "boosts": []
+        },
+        "chest": "ironMineChest",
+        "chestPoints": {
+            "base": 15,
+            "boosts": []
+        },
+        "id": "ironEnhancingTool",
+        "sort": 110,
+        "ingredients": [
+            {
+                "item": "ironIngot",
+                "count": 5
+            }
+        ],
+        "products": [
+            {
+                "item": "ironEnhancingTool",
                 "count": 1
             }
         ]
@@ -2881,84 +2959,6 @@
         "products": [
             {
                 "item": "adamantineBrewingKit",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "actionTarget",
-        "targetType": "recipe",
-        "skill": "smithing",
-        "minLevel": 20,
-        "duration": {
-            "base": 3500,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 15,
-            "boosts": []
-        },
-        "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 15,
-            "boosts": []
-        },
-        "id": "ironAlchemistKit",
-        "sort": 80,
-        "ingredients": [
-            {
-                "item": "ironIngot",
-                "count": 5
-            }
-        ],
-        "products": [
-            {
-                "item": "ironAlchemistKit",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "actionTarget",
-        "targetType": "recipe",
-        "skill": "smithing",
-        "minLevel": 20,
-        "duration": {
-            "base": 3500,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 15,
-            "boosts": []
-        },
-        "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 15,
-            "boosts": []
-        },
-        "id": "ironEnhancingTool",
-        "sort": 110,
-        "ingredients": [
-            {
-                "item": "ironIngot",
-                "count": 5
-            }
-        ],
-        "products": [
-            {
-                "item": "ironEnhancingTool",
                 "count": 1
             }
         ]

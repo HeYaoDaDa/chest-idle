@@ -34,6 +34,8 @@ const progress = computed(() => {
 
 const hasQueuedActions = computed(() => actionManager.queuedActions.length > 0)
 
+const unifiedLength = computed(() => (actionManager.currentAction.value ? 1 : 0) + actionManager.queuedActions.length)
+
 function openQueueModal() {
   showQueueModal.value = true
 }
@@ -65,7 +67,7 @@ function closeQueueModal() {
           type="button"
           @click="openQueueModal"
         >
-          {{ t('ui.queue') }} ({{ actionManager.queuedActions.length }})
+          {{ t('ui.queue') }} ({{ unifiedLength }})
         </button>
       </div>
     </div>
@@ -85,18 +87,106 @@ function closeQueueModal() {
     <div class="queue-modal">
       <div class="queue-modal-header">
         <h3 class="queue-modal-title">{{ t('ui.queue') }}</h3>
-        <span class="queue-modal-count">{{ actionManager.queuedActions.length }} {{ t('ui.queuedItems') }}</span>
+  <span class="queue-modal-count">{{ unifiedLength }} {{ t('ui.queuedItems') }}</span>
       </div>
 
       <div class="queue-modal-content">
         <ul class="queue-modal-list">
+          <!-- Running as first item (index 0 in unified list) -->
+          <li v-if="actionManager.currentAction.value" class="queue-modal-item running-item">
+            <div class="queue-modal-item-info">
+              <span class="queue-modal-item-index">0</span>
+              <div class="queue-modal-item-text">
+                <span class="queue-modal-item-name">{{ t(actionManager.currentAction.value.target.name) }}</span>
+                <span class="queue-modal-item-amount">×{{ actionManager.currentAction.value.amountDisplay.value }}</span>
+              </div>
+            </div>
+            <div class="running-progress-wrapper">
+              <div class="running-progress-track">
+                <div class="running-progress-bar" :style="{ width: progress + '%' }"></div>
+              </div>
+            </div>
+            <div class="queue-modal-controls">
+              <button type="button" class="control-btn" title="Top" disabled>
+                ⏫
+              </button>
+              <button type="button" class="control-btn" title="Up" disabled>
+                ▲
+              </button>
+              <button
+                type="button"
+                class="control-btn"
+                title="Down"
+                :disabled="unifiedLength <= 1"
+                @click="actionManager.moveDown(0)"
+              >
+                ▼
+              </button>
+              <button
+                type="button"
+                class="control-btn"
+                title="Bottom"
+                :disabled="unifiedLength <= 1"
+                @click="actionManager.moveBottom(0)"
+              >
+                ⏬
+              </button>
+            </div>
+            <button
+              type="button"
+              class="queue-modal-stop"
+              @click="actionManager.stopCurrentAction"
+            >
+              {{ t('stop') }}
+            </button>
+          </li>
+
           <li v-for="(action, index) in actionManager.queuedActions" :key="index" class="queue-modal-item">
             <div class="queue-modal-item-info">
-              <span class="queue-modal-item-index">{{ index + 1 }}</span>
+              <!-- unified index: current ? index+1 : index -->
+              <span class="queue-modal-item-index">{{ (actionManager.currentAction.value ? index + 1 : index) }}</span>
               <div class="queue-modal-item-text">
                 <span class="queue-modal-item-name">{{ t(action.target.name) }}</span>
-                <span class="queue-modal-item-amount">×{{ action.amount }}</span>
+                <span class="queue-modal-item-amount">×{{ action.amountDisplay }}</span>
               </div>
+            </div>
+            <div class="queue-modal-controls">
+              <button
+                type="button"
+                class="control-btn"
+                title="Top"
+                :disabled="(actionManager.currentAction.value ? index + 1 : index) === 0"
+                @click="actionManager.moveTop(actionManager.currentAction.value ? index + 1 : index)"
+              >
+                ⏫
+              </button>
+              <button
+                type="button"
+                class="control-btn"
+                title="Up"
+                :disabled="(actionManager.currentAction.value ? index + 1 : index) === 0"
+                @click="actionManager.moveUp(actionManager.currentAction.value ? index + 1 : index)"
+              >
+                ▲
+              </button>
+              <button
+                type="button"
+                class="control-btn"
+                title="Down"
+                :disabled="(actionManager.currentAction.value ? index + 1 : index) >= unifiedLength - 1"
+                @click="actionManager.moveDown(actionManager.currentAction.value ? index + 1 : index)"
+              >
+                ▼
+              </button>
+              <button
+                type="button"
+                class="control-btn"
+                title="Bottom"
+                :disabled="(actionManager.currentAction.value ? index + 1 : index) >= unifiedLength - 1"
+                @click="actionManager.moveBottom(actionManager.currentAction.value ? index + 1 : index)"
+              >
+                ⏬
+              </button>
             </div>
             <button
               type="button"
@@ -289,9 +379,19 @@ function closeQueueModal() {
     border-color 0.15s ease;
 }
 
+.queue-modal-item.running-item {
+  flex-wrap: wrap;
+  background: rgba(37, 99, 235, 0.05);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
 .queue-modal-item:hover {
   background: rgba(226, 232, 240, 0.5);
   border-color: rgba(37, 99, 235, 0.3);
+}
+
+.queue-modal-item.running-item:hover {
+  background: rgba(37, 99, 235, 0.08);
 }
 
 .queue-modal-item-info {
@@ -361,11 +461,73 @@ function closeQueueModal() {
   box-shadow: 0 8px 14px rgba(248, 113, 113, 0.2);
 }
 
+.queue-modal-stop {
+  border: none;
+  border-radius: 999px;
+  background: rgba(248, 113, 113, 0.12);
+  color: #b91c1c;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+
+.queue-modal-stop:hover {
+  background: rgba(248, 113, 113, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 14px rgba(248, 113, 113, 0.2);
+}
+
+.running-progress-wrapper {
+  width: 100%;
+  order: 10;
+}
+
+.running-progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.6);
+  overflow: hidden;
+}
+
+.running-progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  transition: width 60ms linear;
+}
+
 .queue-modal-footer {
   padding-top: 12px;
   border-top: 1px solid rgba(148, 163, 184, 0.18);
   display: flex;
   justify-content: flex-end;
+}
+
+.queue-modal-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-btn {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(248, 250, 252, 0.8);
+  color: #1f2937;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .queue-modal-close-button {

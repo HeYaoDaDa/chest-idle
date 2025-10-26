@@ -85,12 +85,8 @@ function addAction() {
 
 function startImmediately() {
   if (openZone.value) {
-    // 清空队列并立即开始
-    actionManager.clearQueue()
-    if (actionManager.currentAction.value) {
-      actionManager.stopCurrentAction()
-    }
-    actionManager.startCurrentAction(openZone.value, stringToNumber(amountString.value))
+    // 立即开始：若有运行中，打断并将原运行项排到队首，然后立即开始新行动
+    actionManager.startImmediately(openZone.value, stringToNumber(amountString.value))
     closeModal()
   }
 }

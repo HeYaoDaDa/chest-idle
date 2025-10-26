@@ -7,7 +7,7 @@
         "minLevel": 0,
         "sort": 0,
         "duration": {
-            "base": 1000,
+            "base": 5000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -17,12 +17,12 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 20,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 50,
             "boosts": []
         },
         "ingredients": [
@@ -46,7 +46,7 @@
         "minLevel": 10,
         "sort": 1,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -56,18 +56,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -85,7 +89,7 @@
         "minLevel": 10,
         "sort": 2,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -95,18 +99,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -124,7 +132,7 @@
         "minLevel": 10,
         "sort": 3,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -134,18 +142,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -163,7 +175,7 @@
         "minLevel": 10,
         "sort": 4,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -173,18 +185,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -202,7 +218,7 @@
         "minLevel": 10,
         "sort": 5,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -212,18 +228,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -241,7 +261,7 @@
         "minLevel": 10,
         "sort": 6,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -251,18 +271,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -280,7 +304,7 @@
         "minLevel": 10,
         "sort": 7,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -290,18 +314,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -319,7 +347,7 @@
         "minLevel": 10,
         "sort": 8,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -329,18 +357,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -358,7 +390,7 @@
         "minLevel": 10,
         "sort": 9,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -368,18 +400,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -397,7 +433,7 @@
         "minLevel": 10,
         "sort": 10,
         "duration": {
-            "base": 3000,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -407,18 +443,22 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 5,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "copperIngot",
                 "count": 5
+            },
+            {
+                "item": "willowPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -436,7 +476,7 @@
         "minLevel": 10,
         "sort": 100,
         "duration": {
-            "base": 1200,
+            "base": 10000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -446,12 +486,12 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 40,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 10,
+            "base": 100,
             "boosts": []
         },
         "ingredients": [
@@ -475,7 +515,7 @@
         "minLevel": 20,
         "sort": 101,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -485,18 +525,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -514,7 +558,7 @@
         "minLevel": 20,
         "sort": 102,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -524,18 +568,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -553,7 +601,7 @@
         "minLevel": 20,
         "sort": 103,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -563,18 +611,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -592,7 +644,7 @@
         "minLevel": 20,
         "sort": 104,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -602,18 +654,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -631,7 +687,7 @@
         "minLevel": 20,
         "sort": 105,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -641,18 +697,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -670,7 +730,7 @@
         "minLevel": 20,
         "sort": 106,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -680,18 +740,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -709,7 +773,7 @@
         "minLevel": 20,
         "sort": 107,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -719,18 +783,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -748,7 +816,7 @@
         "minLevel": 20,
         "sort": 108,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -758,18 +826,22 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -785,7 +857,7 @@
         "skill": "smithing",
         "minLevel": 20,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -795,12 +867,12 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "id": "ironAlchemistKit",
@@ -809,6 +881,10 @@
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -824,7 +900,7 @@
         "skill": "smithing",
         "minLevel": 20,
         "duration": {
-            "base": 3500,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -834,12 +910,12 @@
             ]
         },
         "xp": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 400,
             "boosts": []
         },
         "id": "ironEnhancingTool",
@@ -848,6 +924,10 @@
             {
                 "item": "ironIngot",
                 "count": 5
+            },
+            {
+                "item": "pinePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -865,7 +945,7 @@
         "minLevel": 20,
         "sort": 200,
         "duration": {
-            "base": 1400,
+            "base": 15000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -875,12 +955,12 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 60,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 12,
+            "base": 150,
             "boosts": []
         },
         "ingredients": [
@@ -904,7 +984,7 @@
         "minLevel": 30,
         "sort": 201,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -914,18 +994,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -943,7 +1027,7 @@
         "minLevel": 30,
         "sort": 202,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -953,18 +1037,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -982,7 +1070,7 @@
         "minLevel": 30,
         "sort": 203,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -992,18 +1080,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1021,7 +1113,7 @@
         "minLevel": 30,
         "sort": 204,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1031,18 +1123,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1060,7 +1156,7 @@
         "minLevel": 30,
         "sort": 205,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1070,18 +1166,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1099,7 +1199,7 @@
         "minLevel": 30,
         "sort": 206,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1109,18 +1209,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1138,7 +1242,7 @@
         "minLevel": 30,
         "sort": 207,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1148,18 +1252,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1177,7 +1285,7 @@
         "minLevel": 30,
         "sort": 208,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1187,18 +1295,22 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1216,7 +1328,7 @@
         "minLevel": 30,
         "sort": 300,
         "duration": {
-            "base": 1600,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1226,12 +1338,12 @@
             ]
         },
         "xp": {
-            "base": 120,
+            "base": 80,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 15,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
@@ -1255,7 +1367,7 @@
         "minLevel": 40,
         "sort": 301,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1265,18 +1377,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1294,7 +1410,7 @@
         "minLevel": 40,
         "sort": 302,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1304,18 +1420,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1333,7 +1453,7 @@
         "minLevel": 40,
         "sort": 303,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1343,18 +1463,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1372,7 +1496,7 @@
         "minLevel": 40,
         "sort": 304,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1382,18 +1506,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1411,7 +1539,7 @@
         "minLevel": 40,
         "sort": 305,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1421,18 +1549,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1450,7 +1582,7 @@
         "minLevel": 40,
         "sort": 306,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1460,18 +1592,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1489,7 +1625,7 @@
         "minLevel": 40,
         "sort": 307,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1499,18 +1635,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1528,7 +1668,7 @@
         "minLevel": 40,
         "sort": 308,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1538,18 +1678,22 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1567,7 +1711,7 @@
         "minLevel": 40,
         "sort": 400,
         "duration": {
-            "base": 1800,
+            "base": 25000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1577,12 +1721,12 @@
             ]
         },
         "xp": {
-            "base": 160,
+            "base": 100,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 250,
             "boosts": []
         },
         "ingredients": [
@@ -1606,7 +1750,7 @@
         "minLevel": 50,
         "sort": 401,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1616,18 +1760,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1645,7 +1793,7 @@
         "minLevel": 50,
         "sort": 402,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1655,18 +1803,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1684,7 +1836,7 @@
         "minLevel": 50,
         "sort": 403,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1694,18 +1846,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1723,7 +1879,7 @@
         "minLevel": 50,
         "sort": 404,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1733,18 +1889,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1762,7 +1922,7 @@
         "minLevel": 50,
         "sort": 405,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1772,18 +1932,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1801,7 +1965,7 @@
         "minLevel": 50,
         "sort": 406,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1811,18 +1975,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1840,7 +2008,7 @@
         "minLevel": 50,
         "sort": 407,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1850,18 +2018,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1879,7 +2051,7 @@
         "minLevel": 50,
         "sort": 408,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1889,18 +2061,22 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1918,7 +2094,7 @@
         "minLevel": 50,
         "sort": 500,
         "duration": {
-            "base": 2000,
+            "base": 30000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1928,12 +2104,12 @@
             ]
         },
         "xp": {
-            "base": 200,
+            "base": 120,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 300,
             "boosts": []
         },
         "ingredients": [
@@ -1957,7 +2133,7 @@
         "minLevel": 60,
         "sort": 501,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -1967,18 +2143,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -1996,7 +2176,7 @@
         "minLevel": 60,
         "sort": 502,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2006,18 +2186,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2035,7 +2219,7 @@
         "minLevel": 60,
         "sort": 503,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2045,18 +2229,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2074,7 +2262,7 @@
         "minLevel": 60,
         "sort": 504,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2084,18 +2272,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2113,7 +2305,7 @@
         "minLevel": 60,
         "sort": 505,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2123,18 +2315,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2152,7 +2348,7 @@
         "minLevel": 60,
         "sort": 506,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2162,18 +2358,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2191,7 +2391,7 @@
         "minLevel": 60,
         "sort": 507,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2201,18 +2401,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2230,7 +2434,7 @@
         "minLevel": 60,
         "sort": 508,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2240,18 +2444,22 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2269,7 +2477,7 @@
         "minLevel": 60,
         "sort": 600,
         "duration": {
-            "base": 2200,
+            "base": 35000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2279,12 +2487,12 @@
             ]
         },
         "xp": {
-            "base": 240,
+            "base": 140,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 350,
             "boosts": []
         },
         "ingredients": [
@@ -2308,7 +2516,7 @@
         "minLevel": 70,
         "sort": 601,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2318,18 +2526,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2347,7 +2559,7 @@
         "minLevel": 70,
         "sort": 602,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2357,18 +2569,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2386,7 +2602,7 @@
         "minLevel": 70,
         "sort": 603,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2396,18 +2612,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2425,7 +2645,7 @@
         "minLevel": 70,
         "sort": 604,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2435,18 +2655,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2464,7 +2688,7 @@
         "minLevel": 70,
         "sort": 605,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2474,18 +2698,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2503,7 +2731,7 @@
         "minLevel": 70,
         "sort": 606,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2513,18 +2741,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2542,7 +2774,7 @@
         "minLevel": 70,
         "sort": 607,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2552,18 +2784,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2581,7 +2817,7 @@
         "minLevel": 70,
         "sort": 608,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2591,18 +2827,22 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2620,7 +2860,7 @@
         "minLevel": 70,
         "sort": 700,
         "duration": {
-            "base": 2400,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2630,12 +2870,12 @@
             ]
         },
         "xp": {
-            "base": 280,
+            "base": 160,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [
@@ -2659,7 +2899,7 @@
         "minLevel": 80,
         "sort": 701,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2669,18 +2909,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 640,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2698,7 +2942,7 @@
         "minLevel": 80,
         "sort": 702,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2708,18 +2952,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2737,7 +2985,7 @@
         "minLevel": 80,
         "sort": 703,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2747,18 +2995,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2776,7 +3028,7 @@
         "minLevel": 80,
         "sort": 704,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2786,18 +3038,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2815,7 +3071,7 @@
         "minLevel": 80,
         "sort": 705,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2825,18 +3081,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2854,7 +3114,7 @@
         "minLevel": 80,
         "sort": 706,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2864,18 +3124,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2893,7 +3157,7 @@
         "minLevel": 80,
         "sort": 707,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2903,18 +3167,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2932,7 +3200,7 @@
         "minLevel": 80,
         "sort": 708,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2942,18 +3210,22 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "ingredients": [
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -2969,7 +3241,7 @@
         "skill": "smithing",
         "minLevel": 30,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -2979,12 +3251,12 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "id": "silverAlchemistKit",
@@ -2993,6 +3265,10 @@
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3008,7 +3284,7 @@
         "skill": "smithing",
         "minLevel": 30,
         "duration": {
-            "base": 3800,
+            "base": 60000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3018,12 +3294,12 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 20,
+            "base": 600,
             "boosts": []
         },
         "id": "silverEnhancingTool",
@@ -3032,6 +3308,10 @@
             {
                 "item": "silverIngot",
                 "count": 5
+            },
+            {
+                "item": "oakPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3047,7 +3327,7 @@
         "skill": "smithing",
         "minLevel": 40,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3057,12 +3337,12 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "id": "goldAlchemistKit",
@@ -3071,6 +3351,10 @@
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3086,7 +3370,7 @@
         "skill": "smithing",
         "minLevel": 40,
         "duration": {
-            "base": 4000,
+            "base": 80000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3096,12 +3380,12 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 25,
+            "base": 800,
             "boosts": []
         },
         "id": "goldEnhancingTool",
@@ -3110,6 +3394,10 @@
             {
                 "item": "goldIngot",
                 "count": 5
+            },
+            {
+                "item": "maplePlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3125,7 +3413,7 @@
         "skill": "smithing",
         "minLevel": 50,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3135,12 +3423,12 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "id": "orichalcumAlchemistKit",
@@ -3149,6 +3437,10 @@
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3164,7 +3456,7 @@
         "skill": "smithing",
         "minLevel": 50,
         "duration": {
-            "base": 4200,
+            "base": 100000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3174,12 +3466,12 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 30,
+            "base": 320,
             "boosts": []
         },
         "id": "orichalcumEnhancingTool",
@@ -3188,6 +3480,10 @@
             {
                 "item": "orichalcumIngot",
                 "count": 5
+            },
+            {
+                "item": "elmPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3203,7 +3499,7 @@
         "skill": "smithing",
         "minLevel": 60,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3213,12 +3509,12 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "id": "darkIronAlchemistKit",
@@ -3227,6 +3523,10 @@
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3242,7 +3542,7 @@
         "skill": "smithing",
         "minLevel": 60,
         "duration": {
-            "base": 4400,
+            "base": 120000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3252,12 +3552,12 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 35,
+            "base": 1200,
             "boosts": []
         },
         "id": "darkIronEnhancingTool",
@@ -3266,6 +3566,10 @@
             {
                 "item": "darkIronIngot",
                 "count": 5
+            },
+            {
+                "item": "beechPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3281,7 +3585,7 @@
         "skill": "smithing",
         "minLevel": 70,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3291,12 +3595,12 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "id": "mithrilAlchemistKit",
@@ -3305,6 +3609,10 @@
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3320,7 +3628,7 @@
         "skill": "smithing",
         "minLevel": 70,
         "duration": {
-            "base": 4600,
+            "base": 140000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3330,12 +3638,12 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 560,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 40,
+            "base": 400,
             "boosts": []
         },
         "id": "mithrilEnhancingTool",
@@ -3344,6 +3652,10 @@
             {
                 "item": "mithrilIngot",
                 "count": 5
+            },
+            {
+                "item": "mahoganyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3359,7 +3671,7 @@
         "skill": "smithing",
         "minLevel": 80,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3369,12 +3681,12 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "id": "adamantineAlchemistKit",
@@ -3383,6 +3695,10 @@
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3398,7 +3714,7 @@
         "skill": "smithing",
         "minLevel": 80,
         "duration": {
-            "base": 4800,
+            "base": 160000,
             "boosts": [
                 {
                     "state": "smithingSpeed",
@@ -3408,12 +3724,12 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 200,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 50,
+            "base": 480,
             "boosts": []
         },
         "id": "adamantineEnhancingTool",
@@ -3422,6 +3738,10 @@
             {
                 "item": "adamantineIngot",
                 "count": 5
+            },
+            {
+                "item": "ebonyPlank",
+                "count": 2
             }
         ],
         "products": [
@@ -3439,7 +3759,7 @@
         "minLevel": 0,
         "sort": 800,
         "duration": {
-            "base": 1000,
+            "base": 5000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3449,12 +3769,12 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 20,
             "boosts": []
         },
         "chest": "willowTreeChest",
         "chestPoints": {
-            "base": 5,
+            "base": 50,
             "boosts": []
         },
         "ingredients": [
@@ -3478,7 +3798,7 @@
         "minLevel": 10,
         "sort": 801,
         "duration": {
-            "base": 1100,
+            "base": 10000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3488,12 +3808,12 @@
             ]
         },
         "xp": {
-            "base": 55,
+            "base": 40,
             "boosts": []
         },
         "chest": "pineTreeChest",
         "chestPoints": {
-            "base": 6,
+            "base": 100,
             "boosts": []
         },
         "ingredients": [
@@ -3517,7 +3837,7 @@
         "minLevel": 20,
         "sort": 802,
         "duration": {
-            "base": 1200,
+            "base": 15000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3532,7 +3852,7 @@
         },
         "chest": "oakTreeChest",
         "chestPoints": {
-            "base": 7,
+            "base": 150,
             "boosts": []
         },
         "ingredients": [
@@ -3556,7 +3876,7 @@
         "minLevel": 30,
         "sort": 803,
         "duration": {
-            "base": 1300,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3566,12 +3886,12 @@
             ]
         },
         "xp": {
-            "base": 65,
+            "base": 80,
             "boosts": []
         },
         "chest": "mapleTreeChest",
         "chestPoints": {
-            "base": 8,
+            "base": 200,
             "boosts": []
         },
         "ingredients": [
@@ -3595,7 +3915,7 @@
         "minLevel": 40,
         "sort": 804,
         "duration": {
-            "base": 1400,
+            "base": 25000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3605,12 +3925,12 @@
             ]
         },
         "xp": {
-            "base": 70,
+            "base": 100,
             "boosts": []
         },
         "chest": "elmTreeChest",
         "chestPoints": {
-            "base": 9,
+            "base": 250,
             "boosts": []
         },
         "ingredients": [
@@ -3634,7 +3954,7 @@
         "minLevel": 50,
         "sort": 805,
         "duration": {
-            "base": 1500,
+            "base": 30000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3644,12 +3964,12 @@
             ]
         },
         "xp": {
-            "base": 75,
+            "base": 120,
             "boosts": []
         },
         "chest": "beechTreeChest",
         "chestPoints": {
-            "base": 10,
+            "base": 300,
             "boosts": []
         },
         "ingredients": [
@@ -3673,7 +3993,7 @@
         "minLevel": 60,
         "sort": 806,
         "duration": {
-            "base": 1600,
+            "base": 35000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3683,12 +4003,12 @@
             ]
         },
         "xp": {
-            "base": 80,
+            "base": 140,
             "boosts": []
         },
         "chest": "mahoganyTreeChest",
         "chestPoints": {
-            "base": 11,
+            "base": 350,
             "boosts": []
         },
         "ingredients": [
@@ -3712,7 +4032,7 @@
         "minLevel": 70,
         "sort": 807,
         "duration": {
-            "base": 1700,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "woodworkingSpeed",
@@ -3722,12 +4042,12 @@
             ]
         },
         "xp": {
-            "base": 85,
+            "base": 160,
             "boosts": []
         },
         "chest": "ebonyTreeChest",
         "chestPoints": {
-            "base": 12,
+            "base": 400,
             "boosts": []
         },
         "ingredients": [

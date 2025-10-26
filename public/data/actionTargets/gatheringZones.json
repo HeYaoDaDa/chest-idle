@@ -7,7 +7,7 @@
         "minLevel": 0,
         "sort": 0,
         "duration": {
-            "base": 2000,
+            "base": 5000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -17,12 +17,12 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 10,
             "boosts": []
         },
         "chest": "copperMineChest",
         "chestPoints": {
-            "base": 200,
+            "base": 50,
             "boosts": []
         },
         "products": [
@@ -40,7 +40,7 @@
         "minLevel": 10,
         "sort": 1,
         "duration": {
-            "base": 2200,
+            "base": 10000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -50,12 +50,12 @@
             ]
         },
         "xp": {
-            "base": 10,
+            "base": 20,
             "boosts": []
         },
         "chest": "ironMineChest",
         "chestPoints": {
-            "base": 250,
+            "base": 100,
             "boosts": []
         },
         "products": [
@@ -73,7 +73,7 @@
         "minLevel": 20,
         "sort": 2,
         "duration": {
-            "base": 2400,
+            "base": 15000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -83,12 +83,12 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 30,
             "boosts": []
         },
         "chest": "silverMineChest",
         "chestPoints": {
-            "base": 300,
+            "base": 150,
             "boosts": []
         },
         "products": [
@@ -106,7 +106,7 @@
         "minLevel": 30,
         "sort": 3,
         "duration": {
-            "base": 2600,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -116,12 +116,12 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 40,
             "boosts": []
         },
         "chest": "goldMineChest",
         "chestPoints": {
-            "base": 400,
+            "base": 200,
             "boosts": []
         },
         "products": [
@@ -139,7 +139,7 @@
         "minLevel": 40,
         "sort": 4,
         "duration": {
-            "base": 2800,
+            "base": 25000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -149,12 +149,12 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 50,
             "boosts": []
         },
         "chest": "orichalcumMineChest",
         "chestPoints": {
-            "base": 500,
+            "base": 250,
             "boosts": []
         },
         "products": [
@@ -172,7 +172,7 @@
         "minLevel": 50,
         "sort": 5,
         "duration": {
-            "base": 3000,
+            "base": 30000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -182,12 +182,12 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 60,
             "boosts": []
         },
         "chest": "darkIronMineChest",
         "chestPoints": {
-            "base": 600,
+            "base": 300,
             "boosts": []
         },
         "products": [
@@ -205,7 +205,7 @@
         "minLevel": 60,
         "sort": 6,
         "duration": {
-            "base": 3200,
+            "base": 35000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -215,12 +215,12 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 70,
             "boosts": []
         },
         "chest": "mithrilMineChest",
         "chestPoints": {
-            "base": 700,
+            "base": 350,
             "boosts": []
         },
         "products": [
@@ -238,7 +238,7 @@
         "minLevel": 70,
         "sort": 7,
         "duration": {
-            "base": 3400,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "miningSpeed",
@@ -248,12 +248,12 @@
             ]
         },
         "xp": {
-            "base": 70,
+            "base": 80,
             "boosts": []
         },
         "chest": "adamantineMineChest",
         "chestPoints": {
-            "base": 800,
+            "base": 400,
             "boosts": []
         },
         "products": [
@@ -271,7 +271,7 @@
         "minLevel": 0,
         "sort": 8,
         "duration": {
-            "base": 2000,
+            "base": 5000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -281,12 +281,12 @@
             ]
         },
         "xp": {
-            "base": 5,
+            "base": 10,
             "boosts": []
         },
         "chest": "willowTreeChest",
         "chestPoints": {
-            "base": 200,
+            "base": 50,
             "boosts": []
         },
         "products": [
@@ -304,7 +304,7 @@
         "minLevel": 10,
         "sort": 9,
         "duration": {
-            "base": 2200,
+            "base": 10000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -314,12 +314,12 @@
             ]
         },
         "xp": {
-            "base": 10,
+            "base": 20,
             "boosts": []
         },
         "chest": "pineTreeChest",
         "chestPoints": {
-            "base": 250,
+            "base": 100,
             "boosts": []
         },
         "products": [
@@ -337,7 +337,7 @@
         "minLevel": 20,
         "sort": 10,
         "duration": {
-            "base": 2400,
+            "base": 15000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -347,12 +347,12 @@
             ]
         },
         "xp": {
-            "base": 20,
+            "base": 30,
             "boosts": []
         },
         "chest": "oakTreeChest",
         "chestPoints": {
-            "base": 300,
+            "base": 150,
             "boosts": []
         },
         "products": [
@@ -370,7 +370,7 @@
         "minLevel": 30,
         "sort": 11,
         "duration": {
-            "base": 2600,
+            "base": 20000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -380,12 +380,12 @@
             ]
         },
         "xp": {
-            "base": 30,
+            "base": 40,
             "boosts": []
         },
         "chest": "mapleTreeChest",
         "chestPoints": {
-            "base": 400,
+            "base": 200,
             "boosts": []
         },
         "products": [
@@ -403,7 +403,7 @@
         "minLevel": 40,
         "sort": 12,
         "duration": {
-            "base": 2800,
+            "base": 25000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -413,12 +413,12 @@
             ]
         },
         "xp": {
-            "base": 40,
+            "base": 50,
             "boosts": []
         },
         "chest": "elmTreeChest",
         "chestPoints": {
-            "base": 500,
+            "base": 250,
             "boosts": []
         },
         "products": [
@@ -436,7 +436,7 @@
         "minLevel": 50,
         "sort": 13,
         "duration": {
-            "base": 3000,
+            "base": 30000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -446,12 +446,12 @@
             ]
         },
         "xp": {
-            "base": 50,
+            "base": 60,
             "boosts": []
         },
         "chest": "beechTreeChest",
         "chestPoints": {
-            "base": 600,
+            "base": 300,
             "boosts": []
         },
         "products": [
@@ -469,7 +469,7 @@
         "minLevel": 60,
         "sort": 14,
         "duration": {
-            "base": 3200,
+            "base": 35000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -479,12 +479,12 @@
             ]
         },
         "xp": {
-            "base": 60,
+            "base": 70,
             "boosts": []
         },
         "chest": "mahoganyTreeChest",
         "chestPoints": {
-            "base": 700,
+            "base": 350,
             "boosts": []
         },
         "products": [
@@ -502,7 +502,7 @@
         "minLevel": 70,
         "sort": 15,
         "duration": {
-            "base": 3400,
+            "base": 40000,
             "boosts": [
                 {
                     "state": "woodcuttingSpeed",
@@ -512,12 +512,12 @@
             ]
         },
         "xp": {
-            "base": 70,
+            "base": 80,
             "boosts": []
         },
         "chest": "ebonyTreeChest",
         "chestPoints": {
-            "base": 800,
+            "base": 400,
             "boosts": []
         },
         "products": [

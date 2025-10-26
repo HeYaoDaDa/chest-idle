@@ -16,7 +16,9 @@ export class Global {
         '/data/skills.json',
         '/data/states.json',
         '/data/slots.json',
-        '/data/items.json',
+        '/data/items/resources.json',
+        '/data/items/chests.json',
+        '/data/items/equipment.json',
         '/data/actionTargets/gatheringZones.json',
         '/data/actionTargets/recipes.json',
       ]

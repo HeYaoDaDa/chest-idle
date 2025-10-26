@@ -1,32 +1,6 @@
 [
     {
         "type": "item",
-        "itemType": "resource",
-        "id": "copperOre",
-        "sort": 0
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "copperIngot",
-        "sort": 1
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "copperMineChest",
-        "sort": 0,
-        "maxPoints": 1000,
-        "loots": [
-            { "item": "copperOre", "chance": 1, "min": 10, "max": 50 },
-            { "item": "copperOre", "chance": 0.5, "min": 50, "max": 100 },
-            { "item": "copperIngot", "chance": 0.5, "min": 1, "max": 2 },
-            { "item": "copperPickaxe", "chance": 0.5, "min": 1, "max": 1 },
-            { "item": "copperMineChest", "chance": 0.33, "min": 1, "max": 1 }
-        ]
-    },
-    {
-        "type": "item",
         "itemType": "equipment",
         "id": "copperPickaxe",
         "sort": 2,
@@ -127,30 +101,6 @@
     },
     {
         "type": "item",
-        "itemType": "resource",
-        "id": "ironOre",
-        "sort": 12
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "ironIngot",
-        "sort": 13
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "ironMineChest",
-        "sort": 1,
-        "maxPoints": 1200,
-        "loots": [
-            { "item": "ironOre", "chance": 1, "min": 10, "max": 40 },
-            { "item": "ironIngot", "chance": 0.4, "min": 1, "max": 2 },
-            { "item": "ironPickaxe", "chance": 0.25, "min": 1, "max": 1 }
-        ]
-    },
-    {
-        "type": "item",
         "itemType": "equipment",
         "id": "ironPickaxe",
         "sort": 14,
@@ -229,31 +179,6 @@
         "slot": "enhancingTool",
         "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 1 } ]
     },
-
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "silverOre",
-        "sort": 24
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "silverIngot",
-        "sort": 25
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "silverMineChest",
-        "sort": 2,
-        "maxPoints": 1400,
-        "loots": [
-            { "item": "silverOre", "chance": 1, "min": 6, "max": 30 },
-            { "item": "silverIngot", "chance": 0.4, "min": 1, "max": 1 },
-            { "item": "silverPickaxe", "chance": 0.2, "min": 1, "max": 1 }
-        ]
-    },
     {
         "type": "item",
         "itemType": "equipment",
@@ -292,7 +217,7 @@
         "id": "silverWoodworkingTool",
         "sort": 30,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 1.5 } ]
     },
     {
         "type": "item",
@@ -334,31 +259,6 @@
         "slot": "enhancingTool",
         "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 1.5 } ]
     },
-
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "goldOre",
-        "sort": 36
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "goldIngot",
-        "sort": 37
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "goldMineChest",
-        "sort": 3,
-        "maxPoints": 1600,
-        "loots": [
-            { "item": "goldOre", "chance": 1, "min": 4, "max": 20 },
-            { "item": "goldIngot", "chance": 0.3, "min": 1, "max": 1 },
-            { "item": "goldPickaxe", "chance": 0.15, "min": 1, "max": 1 }
-        ]
-    },
     {
         "type": "item",
         "itemType": "equipment",
@@ -397,7 +297,7 @@
         "id": "goldWoodworkingTool",
         "sort": 42,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 2 } ]
     },
     {
         "type": "item",
@@ -439,31 +339,6 @@
         "slot": "enhancingTool",
         "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 2 } ]
     },
-
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "orichalcumOre",
-        "sort": 48
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "orichalcumIngot",
-        "sort": 49
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "orichalcumMineChest",
-        "sort": 4,
-        "maxPoints": 1800,
-        "loots": [
-            { "item": "orichalcumOre", "chance": 1, "min": 3, "max": 15 },
-            { "item": "orichalcumIngot", "chance": 0.25, "min": 1, "max": 1 },
-            { "item": "orichalcumPickaxe", "chance": 0.12, "min": 1, "max": 1 }
-        ]
-    },
     {
         "type": "item",
         "itemType": "equipment",
@@ -502,7 +377,7 @@
         "id": "orichalcumWoodworkingTool",
         "sort": 54,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 2.5 } ]
     },
     {
         "type": "item",
@@ -544,31 +419,6 @@
         "slot": "enhancingTool",
         "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 2.5 } ]
     },
-
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "darkIronOre",
-        "sort": 60
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "darkIronIngot",
-        "sort": 61
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "darkIronMineChest",
-        "sort": 5,
-        "maxPoints": 2000,
-        "loots": [
-            { "item": "darkIronOre", "chance": 1, "min": 2, "max": 10 },
-            { "item": "darkIronIngot", "chance": 0.2, "min": 1, "max": 1 },
-            { "item": "darkIronPickaxe", "chance": 0.1, "min": 1, "max": 1 }
-        ]
-    },
     {
         "type": "item",
         "itemType": "equipment",
@@ -607,7 +457,7 @@
         "id": "darkIronWoodworkingTool",
         "sort": 66,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 3 } ]
     },
     {
         "type": "item",
@@ -649,31 +499,6 @@
         "slot": "enhancingTool",
         "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 3 } ]
     },
-
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "mithrilOre",
-        "sort": 72
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "mithrilIngot",
-        "sort": 73
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "mithrilMineChest",
-        "sort": 6,
-        "maxPoints": 2200,
-        "loots": [
-            { "item": "mithrilOre", "chance": 1, "min": 1, "max": 6 },
-            { "item": "mithrilIngot", "chance": 0.15, "min": 1, "max": 1 },
-            { "item": "mithrilPickaxe", "chance": 0.08, "min": 1, "max": 1 }
-        ]
-    },
     {
         "type": "item",
         "itemType": "equipment",
@@ -712,7 +537,7 @@
         "id": "mithrilWoodworkingTool",
         "sort": 78,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 3.5 } ]
     },
     {
         "type": "item",
@@ -754,31 +579,6 @@
         "slot": "enhancingTool",
         "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 3.5 } ]
     },
-
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "adamantineOre",
-        "sort": 84
-    },
-    {
-        "type": "item",
-        "itemType": "resource",
-        "id": "adamantineIngot",
-        "sort": 85
-    },
-    {
-        "type": "item",
-        "itemType": "chest",
-        "id": "adamantineMineChest",
-        "sort": 7,
-        "maxPoints": 2400,
-        "loots": [
-            { "item": "adamantineOre", "chance": 1, "min": 1, "max": 4 },
-            { "item": "adamantineIngot", "chance": 0.1, "min": 1, "max": 1 },
-            { "item": "adamantinePickaxe", "chance": 0.05, "min": 1, "max": 1 }
-        ]
-    },
     {
         "type": "item",
         "itemType": "equipment",
@@ -817,7 +617,7 @@
         "id": "adamantineWoodworkingTool",
         "sort": 90,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 4 } ]
     },
     {
         "type": "item",

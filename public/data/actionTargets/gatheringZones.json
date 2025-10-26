@@ -262,5 +262,269 @@
                 "count": 1
             }
         ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "willowTree",
+        "skill": "woodcutting",
+        "minLevel": 0,
+        "sort": 8,
+        "duration": {
+            "base": 2000,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 5,
+            "boosts": []
+        },
+        "chest": "willowTreeChest",
+        "chestPoints": {
+            "base": 200,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "willowWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "pineTree",
+        "skill": "woodcutting",
+        "minLevel": 10,
+        "sort": 9,
+        "duration": {
+            "base": 2200,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 10,
+            "boosts": []
+        },
+        "chest": "pineTreeChest",
+        "chestPoints": {
+            "base": 250,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "pineWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "oakTree",
+        "skill": "woodcutting",
+        "minLevel": 20,
+        "sort": 10,
+        "duration": {
+            "base": 2400,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "oakTreeChest",
+        "chestPoints": {
+            "base": 300,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "oakWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "mapleTree",
+        "skill": "woodcutting",
+        "minLevel": 30,
+        "sort": 11,
+        "duration": {
+            "base": 2600,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 30,
+            "boosts": []
+        },
+        "chest": "mapleTreeChest",
+        "chestPoints": {
+            "base": 400,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "mapleWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "elmTree",
+        "skill": "woodcutting",
+        "minLevel": 40,
+        "sort": 12,
+        "duration": {
+            "base": 2800,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "elmTreeChest",
+        "chestPoints": {
+            "base": 500,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "elmWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "beechTree",
+        "skill": "woodcutting",
+        "minLevel": 50,
+        "sort": 13,
+        "duration": {
+            "base": 3000,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 50,
+            "boosts": []
+        },
+        "chest": "beechTreeChest",
+        "chestPoints": {
+            "base": 600,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "beechWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "mahoganyTree",
+        "skill": "woodcutting",
+        "minLevel": 60,
+        "sort": 14,
+        "duration": {
+            "base": 3200,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "mahoganyTreeChest",
+        "chestPoints": {
+            "base": 700,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "mahoganyWood",
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "gatheringZone",
+        "id": "ebonyTree",
+        "skill": "woodcutting",
+        "minLevel": 70,
+        "sort": 15,
+        "duration": {
+            "base": 3400,
+            "boosts": [
+                {
+                    "state": "woodcuttingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 70,
+            "boosts": []
+        },
+        "chest": "ebonyTreeChest",
+        "chestPoints": {
+            "base": 800,
+            "boosts": []
+        },
+        "products": [
+            {
+                "item": "ebonyWood",
+                "count": 1
+            }
+        ]
     }
 ]

@@ -358,6 +358,86 @@ export default {
       name: 'Adamantine Enhancing Tool',
       description: 'Adamantine Enhancing Tool.',
     },
+    willowWood: { name: 'Willow Wood', description: 'Willow Wood.' },
+    pineWood: { name: 'Pine Wood', description: 'Pine Wood.' },
+    oakWood: { name: 'Oak Wood', description: 'Oak Wood.' },
+    mapleWood: { name: 'Maple Wood', description: 'Maple Wood.' },
+    elmWood: { name: 'Elm Wood', description: 'Elm Wood.' },
+    beechWood: { name: 'Beech Wood', description: 'Beech Wood.' },
+    mahoganyWood: { name: 'Mahogany Wood', description: 'Mahogany Wood.' },
+    ebonyWood: { name: 'Ebony Wood', description: 'Ebony Wood.' },
+    willowPlank: { name: 'Willow Plank', description: 'Willow Plank.' },
+    pinePlank: { name: 'Pine Plank', description: 'Pine Plank.' },
+    oakPlank: { name: 'Oak Plank', description: 'Oak Plank.' },
+    maplePlank: { name: 'Maple Plank', description: 'Maple Plank.' },
+    elmPlank: { name: 'Elm Plank', description: 'Elm Plank.' },
+    beechPlank: { name: 'Beech Plank', description: 'Beech Plank.' },
+    mahoganyPlank: { name: 'Mahogany Plank', description: 'Mahogany Plank.' },
+    ebonyPlank: { name: 'Ebony Plank', description: 'Ebony Plank.' },
+    willowTreeChest: {
+      name: 'Willow Tree Chest',
+      description: 'A chest containing willow wood and related rewards.',
+    },
+    pineTreeChest: {
+      name: 'Pine Tree Chest',
+      description: 'A chest containing pine wood and related rewards.',
+    },
+    oakTreeChest: {
+      name: 'Oak Tree Chest',
+      description: 'A chest containing oak wood and related rewards.',
+    },
+    mapleTreeChest: {
+      name: 'Maple Tree Chest',
+      description: 'A chest containing maple wood and related rewards.',
+    },
+    elmTreeChest: {
+      name: 'Elm Tree Chest',
+      description: 'A chest containing elm wood and related rewards.',
+    },
+    beechTreeChest: {
+      name: 'Beech Tree Chest',
+      description: 'A chest containing beech wood and related rewards.',
+    },
+    mahoganyTreeChest: {
+      name: 'Mahogany Tree Chest',
+      description: 'A chest containing mahogany wood and related rewards.',
+    },
+    ebonyTreeChest: {
+      name: 'Ebony Tree Chest',
+      description: 'A chest containing ebony wood and related rewards.',
+    },
+    willowPlankChest: {
+      name: 'Willow Plank Chest',
+      description: 'A chest containing willow planks and related rewards.',
+    },
+    pinePlankChest: {
+      name: 'Pine Plank Chest',
+      description: 'A chest containing pine planks and related rewards.',
+    },
+    oakPlankChest: {
+      name: 'Oak Plank Chest',
+      description: 'A chest containing oak planks and related rewards.',
+    },
+    maplePlankChest: {
+      name: 'Maple Plank Chest',
+      description: 'A chest containing maple planks and related rewards.',
+    },
+    elmPlankChest: {
+      name: 'Elm Plank Chest',
+      description: 'A chest containing elm planks and related rewards.',
+    },
+    beechPlankChest: {
+      name: 'Beech Plank Chest',
+      description: 'A chest containing beech planks and related rewards.',
+    },
+    mahoganyPlankChest: {
+      name: 'Mahogany Plank Chest',
+      description: 'A chest containing mahogany planks and related rewards.',
+    },
+    ebonyPlankChest: {
+      name: 'Ebony Plank Chest',
+      description: 'A chest containing ebony planks and related rewards.',
+    },
   },
   actionTarget: {
     copperMine: {
@@ -677,6 +757,70 @@ export default {
     adamantineEnhancingTool: {
       name: 'Adamantine Enhancing Tool',
       description: 'Recipe to craft Adamantine Enhancing Tool.',
+    },
+    willowTree: {
+      name: 'Willow Tree',
+      description: 'Cut willow wood using axe.',
+    },
+    pineTree: {
+      name: 'Pine Tree',
+      description: 'Cut pine wood using axe.',
+    },
+    oakTree: {
+      name: 'Oak Tree',
+      description: 'Cut oak wood using axe.',
+    },
+    mapleTree: {
+      name: 'Maple Tree',
+      description: 'Cut maple wood using axe.',
+    },
+    elmTree: {
+      name: 'Elm Tree',
+      description: 'Cut elm wood using axe.',
+    },
+    beechTree: {
+      name: 'Beech Tree',
+      description: 'Cut beech wood using axe.',
+    },
+    mahoganyTree: {
+      name: 'Mahogany Tree',
+      description: 'Cut mahogany wood using axe.',
+    },
+    ebonyTree: {
+      name: 'Ebony Tree',
+      description: 'Cut ebony wood using axe.',
+    },
+    willowPlank: {
+      name: 'Willow Plank',
+      description: 'Recipe to craft willow plank.',
+    },
+    pinePlank: {
+      name: 'Pine Plank',
+      description: 'Recipe to craft pine plank.',
+    },
+    oakPlank: {
+      name: 'Oak Plank',
+      description: 'Recipe to craft oak plank.',
+    },
+    maplePlank: {
+      name: 'Maple Plank',
+      description: 'Recipe to craft maple plank.',
+    },
+    elmPlank: {
+      name: 'Elm Plank',
+      description: 'Recipe to craft elm plank.',
+    },
+    beechPlank: {
+      name: 'Beech Plank',
+      description: 'Recipe to craft beech plank.',
+    },
+    mahoganyPlank: {
+      name: 'Mahogany Plank',
+      description: 'Recipe to craft mahogany plank.',
+    },
+    ebonyPlank: {
+      name: 'Ebony Plank',
+      description: 'Recipe to craft ebony plank.',
     },
   },
 }

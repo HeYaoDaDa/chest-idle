@@ -264,6 +264,86 @@ export default {
     adamantineBrewingKit: { name: '精金酿造套件', description: '精金酿造套件。' },
     adamantineAlchemistKit: { name: '精金炼金套件', description: '精金炼金套件。' },
     adamantineEnhancingTool: { name: '精金强化工具', description: '精金强化工具。' },
+    willowWood: { name: '柳木', description: '柳木。' },
+    pineWood: { name: '松木', description: '松木。' },
+    oakWood: { name: '橡木', description: '橡木。' },
+    mapleWood: { name: '枫木', description: '枫木。' },
+    elmWood: { name: '榆木', description: '榆木。' },
+    beechWood: { name: '山毛榉木', description: '山毛榉木。' },
+    mahoganyWood: { name: '红檀木', description: '红檀木。' },
+    ebonyWood: { name: '黑檀木', description: '黑檀木。' },
+    willowPlank: { name: '柳木板', description: '柳木板。' },
+    pinePlank: { name: '松木板', description: '松木板。' },
+    oakPlank: { name: '橡木板', description: '橡木板。' },
+    maplePlank: { name: '枫木板', description: '枫木板。' },
+    elmPlank: { name: '榆木板', description: '榆木板。' },
+    beechPlank: { name: '山毛榉木板', description: '山毛榉木板。' },
+    mahoganyPlank: { name: '红檀木板', description: '红檀木板。' },
+    ebonyPlank: { name: '黑檀木板', description: '黑檀木板。' },
+    willowTreeChest: {
+      name: '柳树宝箱',
+      description: '装有柳木和相关奖励的宝箱。',
+    },
+    pineTreeChest: {
+      name: '松树宝箱',
+      description: '装有松木和相关奖励的宝箱。',
+    },
+    oakTreeChest: {
+      name: '橡树宝箱',
+      description: '装有橡木和相关奖励的宝箱。',
+    },
+    mapleTreeChest: {
+      name: '枫树宝箱',
+      description: '装有枫木和相关奖励的宝箱。',
+    },
+    elmTreeChest: {
+      name: '榆树宝箱',
+      description: '装有榆木和相关奖励的宝箱。',
+    },
+    beechTreeChest: {
+      name: '山毛榉树宝箱',
+      description: '装有山毛榉木和相关奖励的宝箱。',
+    },
+    mahoganyTreeChest: {
+      name: '红檀树宝箱',
+      description: '装有红檀木和相关奖励的宝箱。',
+    },
+    ebonyTreeChest: {
+      name: '黑檀树宝箱',
+      description: '装有黑檀木和相关奖励的宝箱。',
+    },
+    willowPlankChest: {
+      name: '柳木板宝箱',
+      description: '装有柳木板和相关奖励的宝箱。',
+    },
+    pinePlankChest: {
+      name: '松木板宝箱',
+      description: '装有松木板和相关奖励的宝箱。',
+    },
+    oakPlankChest: {
+      name: '橡木板宝箱',
+      description: '装有橡木板和相关奖励的宝箱。',
+    },
+    maplePlankChest: {
+      name: '枫木板宝箱',
+      description: '装有枫木板和相关奖励的宝箱。',
+    },
+    elmPlankChest: {
+      name: '榆木板宝箱',
+      description: '装有榆木板和相关奖励的宝箱。',
+    },
+    beechPlankChest: {
+      name: '山毛榉木板宝箱',
+      description: '装有山毛榉木板和相关奖励的宝箱。',
+    },
+    mahoganyPlankChest: {
+      name: '红檀木板宝箱',
+      description: '装有红檀木板和相关奖励的宝箱。',
+    },
+    ebonyPlankChest: {
+      name: '黑檀木板宝箱',
+      description: '装有黑檀木板和相关奖励的宝箱。',
+    },
   },
   actionTarget: {
     copperMine: {
@@ -404,5 +484,69 @@ export default {
     adamantineBrewingKit: { name: '精金酿造套件', description: '制作精金酿造套件的配方。' },
     adamantineAlchemistKit: { name: '精金炼金套件', description: '制作精金炼金套件的配方。' },
     adamantineEnhancingTool: { name: '精金强化工具', description: '制作精金强化工具的配方。' },
+    willowTree: {
+      name: '柳树',
+      description: '使用斧头砍伐柳木。',
+    },
+    pineTree: {
+      name: '松树',
+      description: '使用斧头砍伐松木。',
+    },
+    oakTree: {
+      name: '橡树',
+      description: '使用斧头砍伐橡木。',
+    },
+    mapleTree: {
+      name: '枫树',
+      description: '使用斧头砍伐枫木。',
+    },
+    elmTree: {
+      name: '榆树',
+      description: '使用斧头砍伐榆木。',
+    },
+    beechTree: {
+      name: '山毛榉树',
+      description: '使用斧头砍伐山毛榉木。',
+    },
+    mahoganyTree: {
+      name: '红檀树',
+      description: '使用斧头砍伐红檀木。',
+    },
+    ebonyTree: {
+      name: '黑檀树',
+      description: '使用斧头砍伐黑檀木。',
+    },
+    willowPlank: {
+      name: '柳木板',
+      description: '制作柳木板的配方。',
+    },
+    pinePlank: {
+      name: '松木板',
+      description: '制作松木板的配方。',
+    },
+    oakPlank: {
+      name: '橡木板',
+      description: '制作橡木板的配方。',
+    },
+    maplePlank: {
+      name: '枫木板',
+      description: '制作枫木板的配方。',
+    },
+    elmPlank: {
+      name: '榆木板',
+      description: '制作榆木板的配方。',
+    },
+    beechPlank: {
+      name: '山毛榉木板',
+      description: '制作山毛榉木板的配方。',
+    },
+    mahoganyPlank: {
+      name: '红檀木板',
+      description: '制作红檀木板的配方。',
+    },
+    ebonyPlank: {
+      name: '黑檀木板',
+      description: '制作黑檀木板的配方。',
+    },
   },
 }

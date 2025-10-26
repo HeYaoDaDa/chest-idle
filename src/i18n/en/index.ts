@@ -57,7 +57,7 @@ export default {
     woodcutting: { name: 'Woodcutting', description: 'Woodcutting.' },
     foraging: { name: 'Foraging', description: 'Foraging.' },
     smithing: { name: 'Smithing', description: 'Smithing.' },
-    crafting: { name: 'Crafting', description: 'Crafting.' },
+    woodworking: { name: 'Woodworking', description: 'Woodworking.' },
     tailoring: { name: 'Tailoring', description: 'Tailoring.' },
     cooking: { name: 'Cooking', description: 'Cooking.' },
     brewing: { name: 'Brewing', description: 'Brewing.' },
@@ -75,7 +75,7 @@ export default {
     woodcuttingTool: 'Woodcutting Tool',
     foragingTool: 'Foraging Tool',
     smithingTool: 'Smithing Tool',
-    craftingTool: 'Crafting Tool',
+    woodworkingTool: 'Woodworking Tool',
     tailoringTool: 'Tailoring Tool',
     cookingTool: 'Cooking Tool',
     brewingTool: 'Brewing Tool',
@@ -87,7 +87,7 @@ export default {
     woodcuttingSpeed: { name: 'Woodcutting Speed' },
     foragingSpeed: { name: 'Foraging Speed' },
     smithingSpeed: { name: 'Smithing Speed' },
-    craftingSpeed: { name: 'Crafting Speed' },
+    woodworkingSpeed: { name: 'Woodworking Speed' },
     tailoringSpeed: { name: 'Tailoring Speed' },
     cookingSpeed: { name: 'Cooking Speed' },
     brewingSpeed: { name: 'Brewing Speed' },
@@ -151,9 +151,9 @@ export default {
       name: 'Copper Foraging Knife',
       description: 'Copper Foraging Knife.',
     },
-    copperCraftingTool: {
-      name: 'Copper Crafting Tool',
-      description: 'Copper Crafting Tool.',
+    copperWoodworkingTool: {
+      name: 'Copper Woodworking Tool',
+      description: 'Copper Woodworking Tool.',
     },
     copperTailoringNeedle: {
       name: 'Copper Tailoring Needle',
@@ -181,7 +181,7 @@ export default {
     ironSmithingHammer: { name: 'Iron Smithing Hammer', description: 'Iron Smithing Hammer.' },
     ironAxe: { name: 'Iron Axe', description: 'Iron Axe.' },
     ironForagingKnife: { name: 'Iron Foraging Knife', description: 'Iron Foraging Knife.' },
-    ironCraftingTool: { name: 'Iron Crafting Tool', description: 'Iron Crafting Tool.' },
+    ironWoodworkingTool: { name: 'Iron Woodworking Tool', description: 'Iron Woodworking Tool.' },
     ironTailoringNeedle: { name: 'Iron Tailoring Needle', description: 'Iron Tailoring Needle.' },
     ironCookingUtensil: { name: 'Iron Cooking Utensil', description: 'Iron Cooking Utensil.' },
     ironBrewingKit: { name: 'Iron Brewing Kit', description: 'Iron Brewing Kit.' },
@@ -197,7 +197,7 @@ export default {
     },
     silverAxe: { name: 'Silver Axe', description: 'Silver Axe.' },
     silverForagingKnife: { name: 'Silver Foraging Knife', description: 'Silver Foraging Knife.' },
-    silverCraftingTool: { name: 'Silver Crafting Tool', description: 'Silver Crafting Tool.' },
+    silverWoodworkingTool: { name: 'Silver Woodworking Tool', description: 'Silver Woodworking Tool.' },
     silverTailoringNeedle: {
       name: 'Silver Tailoring Needle',
       description: 'Silver Tailoring Needle.',
@@ -216,7 +216,7 @@ export default {
     goldSmithingHammer: { name: 'Gold Smithing Hammer', description: 'Gold Smithing Hammer.' },
     goldAxe: { name: 'Gold Axe', description: 'Gold Axe.' },
     goldForagingKnife: { name: 'Gold Foraging Knife', description: 'Gold Foraging Knife.' },
-    goldCraftingTool: { name: 'Gold Crafting Tool', description: 'Gold Crafting Tool.' },
+    goldWoodworkingTool: { name: 'Gold Woodworking Tool', description: 'Gold Woodworking Tool.' },
     goldTailoringNeedle: { name: 'Gold Tailoring Needle', description: 'Gold Tailoring Needle.' },
     goldCookingUtensil: { name: 'Gold Cooking Utensil', description: 'Gold Cooking Utensil.' },
     goldBrewingKit: { name: 'Gold Brewing Kit', description: 'Gold Brewing Kit.' },
@@ -235,9 +235,9 @@ export default {
       name: 'Orichalcum Foraging Knife',
       description: 'Orichalcum Foraging Knife.',
     },
-    orichalcumCraftingTool: {
-      name: 'Orichalcum Crafting Tool',
-      description: 'Orichalcum Crafting Tool.',
+    orichalcumWoodworkingTool: {
+      name: 'Orichalcum Woodworking Tool',
+      description: 'Orichalcum Woodworking Tool.',
     },
     orichalcumTailoringNeedle: {
       name: 'Orichalcum Tailoring Needle',
@@ -272,9 +272,9 @@ export default {
       name: 'Dark Iron Foraging Knife',
       description: 'Dark Iron Foraging Knife.',
     },
-    darkIronCraftingTool: {
-      name: 'Dark Iron Crafting Tool',
-      description: 'Dark Iron Crafting Tool.',
+    darkIronWoodworkingTool: {
+      name: 'Dark Iron Woodworking Tool',
+      description: 'Dark Iron Woodworking Tool.',
     },
     darkIronTailoringNeedle: {
       name: 'Dark Iron Tailoring Needle',
@@ -306,7 +306,7 @@ export default {
       name: 'Mithril Foraging Knife',
       description: 'Mithril Foraging Knife.',
     },
-    mithrilCraftingTool: { name: 'Mithril Crafting Tool', description: 'Mithril Crafting Tool.' },
+    mithrilWoodworkingTool: { name: 'Mithril Woodworking Tool', description: 'Mithril Woodworking Tool.' },
     mithrilTailoringNeedle: {
       name: 'Mithril Tailoring Needle',
       description: 'Mithril Tailoring Needle.',
@@ -334,9 +334,9 @@ export default {
       name: 'Adamantine Foraging Knife',
       description: 'Adamantine Foraging Knife.',
     },
-    adamantineCraftingTool: {
-      name: 'Adamantine Crafting Tool',
-      description: 'Adamantine Crafting Tool.',
+    adamantineWoodworkingTool: {
+      name: 'Adamantine Woodworking Tool',
+      description: 'Adamantine Woodworking Tool.',
     },
     adamantineTailoringNeedle: {
       name: 'Adamantine Tailoring Needle',
@@ -384,9 +384,9 @@ export default {
       name: 'Copper Foraging Knife',
       description: 'Recipe to craft Copper Foraging Knife.',
     },
-    copperCraftingTool: {
-      name: 'Copper Crafting Tool',
-      description: 'Recipe to craft Copper Crafting Tool.',
+    copperWoodworkingTool: {
+      name: 'Copper Woodworking Tool',
+      description: 'Recipe to craft Copper Woodworking Tool.',
     },
     copperTailoringNeedle: {
       name: 'Copper Tailoring Needle',
@@ -420,9 +420,9 @@ export default {
       name: 'Iron Foraging Knife',
       description: 'Recipe to craft Iron Foraging Knife.',
     },
-    ironCraftingTool: {
-      name: 'Iron Crafting Tool',
-      description: 'Recipe to craft Iron Crafting Tool.',
+    ironWoodworkingTool: {
+      name: 'Iron Woodworking Tool',
+      description: 'Recipe to craft Iron Woodworking Tool.',
     },
     ironTailoringNeedle: {
       name: 'Iron Tailoring Needle',
@@ -454,9 +454,9 @@ export default {
       name: 'Silver Foraging Knife',
       description: 'Recipe to craft Silver Foraging Knife.',
     },
-    silverCraftingTool: {
-      name: 'Silver Crafting Tool',
-      description: 'Recipe to craft Silver Crafting Tool.',
+    silverWoodworkingTool: {
+      name: 'Silver Woodworking Tool',
+      description: 'Recipe to craft Silver Woodworking Tool.',
     },
     silverTailoringNeedle: {
       name: 'Silver Tailoring Needle',
@@ -491,9 +491,9 @@ export default {
       name: 'Gold Foraging Knife',
       description: 'Recipe to craft Gold Foraging Knife.',
     },
-    goldCraftingTool: {
-      name: 'Gold Crafting Tool',
-      description: 'Recipe to craft Gold Crafting Tool.',
+    goldWoodworkingTool: {
+      name: 'Gold Woodworking Tool',
+      description: 'Recipe to craft Gold Woodworking Tool.',
     },
     goldTailoringNeedle: {
       name: 'Gold Tailoring Needle',
@@ -531,9 +531,9 @@ export default {
       name: 'Orichalcum Foraging Knife',
       description: 'Recipe to craft Orichalcum Foraging Knife.',
     },
-    orichalcumCraftingTool: {
-      name: 'Orichalcum Crafting Tool',
-      description: 'Recipe to craft Orichalcum Crafting Tool.',
+    orichalcumWoodworkingTool: {
+      name: 'Orichalcum Woodworking Tool',
+      description: 'Recipe to craft Orichalcum Woodworking Tool.',
     },
     orichalcumTailoringNeedle: {
       name: 'Orichalcum Tailoring Needle',
@@ -574,9 +574,9 @@ export default {
       name: 'Dark Iron Foraging Knife',
       description: 'Recipe to craft Dark Iron Foraging Knife.',
     },
-    darkIronCraftingTool: {
-      name: 'Dark Iron Crafting Tool',
-      description: 'Recipe to craft Dark Iron Crafting Tool.',
+    darkIronWoodworkingTool: {
+      name: 'Dark Iron Woodworking Tool',
+      description: 'Recipe to craft Dark Iron Woodworking Tool.',
     },
     darkIronTailoringNeedle: {
       name: 'Dark Iron Tailoring Needle',
@@ -611,9 +611,9 @@ export default {
       name: 'Mithril Foraging Knife',
       description: 'Recipe to craft Mithril Foraging Knife.',
     },
-    mithrilCraftingTool: {
-      name: 'Mithril Crafting Tool',
-      description: 'Recipe to craft Mithril Crafting Tool.',
+    mithrilWoodworkingTool: {
+      name: 'Mithril Woodworking Tool',
+      description: 'Recipe to craft Mithril Woodworking Tool.',
     },
     mithrilTailoringNeedle: {
       name: 'Mithril Tailoring Needle',
@@ -654,9 +654,9 @@ export default {
       name: 'Adamantine Foraging Knife',
       description: 'Recipe to craft Adamantine Foraging Knife.',
     },
-    adamantineCraftingTool: {
-      name: 'Adamantine Crafting Tool',
-      description: 'Recipe to craft Adamantine Crafting Tool.',
+    adamantineWoodworkingTool: {
+      name: 'Adamantine Woodworking Tool',
+      description: 'Recipe to craft Adamantine Woodworking Tool.',
     },
     adamantineTailoringNeedle: {
       name: 'Adamantine Tailoring Needle',

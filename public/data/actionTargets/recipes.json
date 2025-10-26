@@ -197,7 +197,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "copperCraftingTool",
+        "id": "copperWoodworkingTool",
         "skill": "smithing",
         "minLevel": 10,
         "sort": 5,
@@ -228,7 +228,7 @@
         ],
         "products": [
             {
-                "item": "copperCraftingTool",
+                "item": "copperWoodworkingTool",
                 "count": 1
             }
         ]
@@ -626,7 +626,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "ironCraftingTool",
+        "id": "ironWoodworkingTool",
         "skill": "smithing",
         "minLevel": 20,
         "sort": 105,
@@ -657,7 +657,7 @@
         ],
         "products": [
             {
-                "item": "ironCraftingTool",
+                "item": "ironWoodworkingTool",
                 "count": 1
             }
         ]
@@ -1055,7 +1055,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "silverCraftingTool",
+        "id": "silverWoodworkingTool",
         "skill": "smithing",
         "minLevel": 30,
         "sort": 205,
@@ -1086,7 +1086,7 @@
         ],
         "products": [
             {
-                "item": "silverCraftingTool",
+                "item": "silverWoodworkingTool",
                 "count": 1
             }
         ]
@@ -1406,7 +1406,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "goldCraftingTool",
+        "id": "goldWoodworkingTool",
         "skill": "smithing",
         "minLevel": 40,
         "sort": 305,
@@ -1437,7 +1437,7 @@
         ],
         "products": [
             {
-                "item": "goldCraftingTool",
+                "item": "goldWoodworkingTool",
                 "count": 1
             }
         ]
@@ -1757,7 +1757,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "orichalcumCraftingTool",
+        "id": "orichalcumWoodworkingTool",
         "skill": "smithing",
         "minLevel": 50,
         "sort": 405,
@@ -1788,7 +1788,7 @@
         ],
         "products": [
             {
-                "item": "orichalcumCraftingTool",
+                "item": "orichalcumWoodworkingTool",
                 "count": 1
             }
         ]
@@ -2108,7 +2108,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "darkIronCraftingTool",
+        "id": "darkIronWoodworkingTool",
         "skill": "smithing",
         "minLevel": 60,
         "sort": 505,
@@ -2139,7 +2139,7 @@
         ],
         "products": [
             {
-                "item": "darkIronCraftingTool",
+                "item": "darkIronWoodworkingTool",
                 "count": 1
             }
         ]
@@ -2459,7 +2459,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "mithrilCraftingTool",
+        "id": "mithrilWoodworkingTool",
         "skill": "smithing",
         "minLevel": 70,
         "sort": 605,
@@ -2490,7 +2490,7 @@
         ],
         "products": [
             {
-                "item": "mithrilCraftingTool",
+                "item": "mithrilWoodworkingTool",
                 "count": 1
             }
         ]
@@ -2810,7 +2810,7 @@
     {
         "type": "actionTarget",
         "targetType": "recipe",
-        "id": "adamantineCraftingTool",
+        "id": "adamantineWoodworkingTool",
         "skill": "smithing",
         "minLevel": 80,
         "sort": 705,
@@ -2841,7 +2841,7 @@
         ],
         "products": [
             {
-                "item": "adamantineCraftingTool",
+                "item": "adamantineWoodworkingTool",
                 "count": 1
             }
         ]

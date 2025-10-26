@@ -68,11 +68,11 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "copperCraftingTool",
+        "id": "copperWoodworkingTool",
         "sort": 6,
-        "slot": "craftingTool",
+        "slot": "woodworkingTool",
         "effects": [
-            { "state": "craftingSpeed", "type": "flat", "value": 0.5 }
+            { "state": "woodworkingSpeed", "type": "flat", "value": 0.5 }
         ]
     },
     {
@@ -184,10 +184,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "ironCraftingTool",
+        "id": "ironWoodworkingTool",
         "sort": 18,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 1 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 1 } ]
     },
     {
         "type": "item",
@@ -289,10 +289,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "silverCraftingTool",
+        "id": "silverWoodworkingTool",
         "sort": 30,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 1.5 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 1.5 } ]
     },
     {
         "type": "item",
@@ -394,10 +394,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "goldCraftingTool",
+        "id": "goldWoodworkingTool",
         "sort": 42,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 2 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 2 } ]
     },
     {
         "type": "item",
@@ -499,10 +499,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "orichalcumCraftingTool",
+        "id": "orichalcumWoodworkingTool",
         "sort": 54,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 2.5 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 2.5 } ]
     },
     {
         "type": "item",
@@ -604,10 +604,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "darkIronCraftingTool",
+        "id": "darkIronWoodworkingTool",
         "sort": 66,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 3 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 3 } ]
     },
     {
         "type": "item",
@@ -709,10 +709,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "mithrilCraftingTool",
+        "id": "mithrilWoodworkingTool",
         "sort": 78,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 3.5 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 3.5 } ]
     },
     {
         "type": "item",
@@ -814,10 +814,10 @@
     {
         "type": "item",
         "itemType": "equipment",
-        "id": "adamantineCraftingTool",
+        "id": "adamantineWoodworkingTool",
         "sort": 90,
-        "slot": "craftingTool",
-        "effects": [ { "state": "craftingSpeed", "type": "flat", "value": 4 } ]
+        "slot": "woodworkingTool",
+        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 4 } ]
     },
     {
         "type": "item",

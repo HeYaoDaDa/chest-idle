@@ -3,7 +3,7 @@
     { "type": "skill", "id": "woodcutting", "sort": 1 },
     { "type": "skill", "id": "foraging", "sort": 2 },
     { "type": "skill", "id": "smithing", "sort": 3 },
-    { "type": "skill", "id": "crafting", "sort": 4 },
+    { "type": "skill", "id": "woodworking", "sort": 4 },
     { "type": "skill", "id": "tailoring", "sort": 5 },
     { "type": "skill", "id": "cooking", "sort": 6 },
     { "type": "skill", "id": "brewing", "sort": 7 },

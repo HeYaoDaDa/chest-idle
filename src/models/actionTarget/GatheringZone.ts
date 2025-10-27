@@ -7,6 +7,7 @@ export class GatheringZone extends ActionTarget {
   constructor(
     public id: string,
     skillId: string,
+    public tab: string | undefined,
     public minLevel: number,
     public sort: number,
     duration: MutableStateDefinition,
@@ -15,6 +16,6 @@ export class GatheringZone extends ActionTarget {
     chestPoints: MutableStateDefinition,
     products: { item: string; count: number }[],
   ) {
-    super(id, skillId, minLevel, sort, duration, xp, chestId, chestPoints, [], products)
+    super(id, skillId, tab, minLevel, sort, duration, xp, chestId, chestPoints, [], products)
   }
 }

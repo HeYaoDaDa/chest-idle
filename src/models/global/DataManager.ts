@@ -47,6 +47,16 @@ class DataManager {
       skill.actionTargets = Array.from(this.actionTargetIdMap.values())
         .filter((it) => it.skill.id === skill.id)
         .sort((a, b) => a.sort - b.sort)
+      for (const actionTarget of skill.actionTargets) {
+        if (actionTarget.tab) {
+          const tabMap = skill.actionTargetTabMap.get(actionTarget.tab);
+          if (tabMap) {
+            tabMap.push(actionTarget)
+          } else {
+            skill.actionTargetTabMap.set(actionTarget.tab, [actionTarget])
+          }
+        }
+      }
     }
   }
 
@@ -93,6 +103,7 @@ class DataManager {
               new GatheringZone(
                 definition.id,
                 definition.skill,
+                definition.tab,
                 definition.minLevel,
                 definition.sort,
                 definition.duration,
@@ -108,6 +119,7 @@ class DataManager {
               new Recipe(
                 definition.id,
                 definition.skill,
+                definition.tab,
                 definition.minLevel,
                 definition.sort,
                 definition.duration,

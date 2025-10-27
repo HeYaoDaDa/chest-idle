@@ -19,6 +19,38 @@ onBeforeRouteUpdate(async (to) => {
 
 const skill = computed(() => dataManager.getSkillById(skillId.value))
 
+// 判断是否需要使用 tab 分组
+const hasTabGroups = computed(() => skill.value.actionTargetTabMap.size > 0)
+const currentTab = ref<string>('')
+
+// 获取可用的 tabs
+const availableTabs = computed(() => Array.from(skill.value.actionTargetTabMap.keys()))
+
+// 确保 currentTab 始终有效
+const ensureValidTab = () => {
+  if (hasTabGroups.value && availableTabs.value.length > 0) {
+    if (!currentTab.value || !availableTabs.value.includes(currentTab.value)) {
+      currentTab.value = availableTabs.value[0]
+    }
+  }
+}
+
+// 监听技能变化，重置 tab
+onBeforeRouteUpdate(() => {
+  ensureValidTab()
+})
+
+// 首次加载时初始化
+ensureValidTab()
+
+// 显示的 actionTargets
+const displayedActionTargets = computed(() => {
+  if (!hasTabGroups.value) {
+    return skill.value.actionTargets
+  }
+  return skill.value.actionTargetTabMap.get(currentTab.value) || []
+})
+
 const openZone = shallowRef(undefined as ActionTarget | undefined)
 const amountString = ref(INFINITE_STRING)
 const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
@@ -127,9 +159,22 @@ function handleAmountFocus(event: FocusEvent) {
       </div>
     </div>
 
+    <!-- Tab 切换区域 -->
+    <div v-if="hasTabGroups" class="skill-tabs">
+      <button
+        v-for="tab in availableTabs"
+        :key="tab"
+        class="skill-tab"
+        :class="{ active: currentTab === tab }"
+        @click="currentTab = tab"
+      >
+        {{ t(`actionTarget.${tab}.name`) }}
+      </button>
+    </div>
+
     <div id="skill-area-root">
       <div
-        v-for="zone in skill.actionTargets"
+        v-for="zone in displayedActionTargets"
         :key="zone.id"
         class="area-item"
         @click="openModal(zone)"
@@ -255,6 +300,42 @@ function handleAmountFocus(event: FocusEvent) {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.skill-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 2px 2px 0 2px;
+  background: rgba(248, 250, 252, 0.5);
+  border-bottom: 2px solid rgba(148, 163, 184, 0.2);
+  margin-bottom: 0;
+
+  .skill-tab {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+    user-select: none;
+
+    &:hover:not(.active) {
+      background: rgba(226, 232, 240, 0.5);
+      color: #475569;
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.95);
+      color: #2563eb;
+      box-shadow: 0 -2px 8px rgba(37, 99, 235, 0.1);
+    }
+  }
 }
 
 .skill-header {

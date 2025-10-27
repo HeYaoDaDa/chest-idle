@@ -12,6 +12,7 @@ export class Skill {
   remainingXpForUpgrade: ComputedRef<number>
   upgradeProgress: ComputedRef<number>
   actionTargets: ActionTarget[] = []
+  actionTargetTabMap: Map<string, ActionTarget[]> = new Map()
 
   constructor(
     public id: string,

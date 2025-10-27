@@ -55,7 +55,18 @@ export default {
   skill: {
     mining: { name: 'Mining', description: 'Mining.' },
     woodcutting: { name: 'Woodcutting', description: 'Woodcutting.' },
-    foraging: { name: 'Foraging', description: 'Foraging.' },
+    foraging: {
+      name: 'Foraging', description: 'Foraging.', tab: {
+        farm: 'Farm',
+        plain: 'Plain',
+        forest: 'Forest',
+        mountain: 'Mountain',
+        swamp: 'Swamp',
+        desert: 'Desert',
+        grassland: 'Grassland',
+        volcano: 'Volcano',
+      }
+    },
     smithing: { name: 'Smithing', description: 'Smithing.' },
     woodworking: { name: 'Woodworking', description: 'Woodworking.' },
     tailoring: { name: 'Tailoring', description: 'Tailoring.' },

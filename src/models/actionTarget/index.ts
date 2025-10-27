@@ -25,6 +25,7 @@ export abstract class ActionTarget {
   constructor(
     public id: string,
     skillId: string,
+    public tab: string | undefined,
     public minLevel: number,
     public sort: number,
     duration: MutableStateDefinition,

@@ -5,6 +5,7 @@ export interface GatheringZoneDefinition {
   targetType: 'gatheringZone'
   id: string
   skill: string
+  tab?: string
   minLevel: number
   sort: number
   duration: MutableStateDefinition

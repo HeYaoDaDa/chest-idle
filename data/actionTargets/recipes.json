@@ -36,7 +36,8 @@
                 "item": "copperIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -79,7 +80,8 @@
                 "item": "copperPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -122,7 +124,8 @@
                 "item": "copperAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -165,7 +168,8 @@
                 "item": "copperForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -208,7 +212,8 @@
                 "item": "copperSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -251,7 +256,8 @@
                 "item": "copperWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -294,7 +300,8 @@
                 "item": "copperTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -337,7 +344,8 @@
                 "item": "copperCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -380,7 +388,8 @@
                 "item": "copperBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -423,7 +432,8 @@
                 "item": "copperAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -466,7 +476,8 @@
                 "item": "copperEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -505,7 +516,8 @@
                 "item": "ironIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -548,7 +560,8 @@
                 "item": "ironPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -591,7 +604,8 @@
                 "item": "ironAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -634,7 +648,8 @@
                 "item": "ironForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -677,7 +692,8 @@
                 "item": "ironSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -720,7 +736,8 @@
                 "item": "ironWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -763,7 +780,8 @@
                 "item": "ironTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -806,7 +824,8 @@
                 "item": "ironCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -849,7 +868,8 @@
                 "item": "ironBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -892,7 +912,8 @@
                 "item": "ironAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -935,7 +956,8 @@
                 "item": "ironEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -974,7 +996,8 @@
                 "item": "silverIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -1017,7 +1040,8 @@
                 "item": "silverPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1060,7 +1084,8 @@
                 "item": "silverAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1103,7 +1128,8 @@
                 "item": "silverForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1146,7 +1172,8 @@
                 "item": "silverSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1189,7 +1216,8 @@
                 "item": "silverWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1232,7 +1260,8 @@
                 "item": "silverTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1275,7 +1304,8 @@
                 "item": "silverCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1318,7 +1348,8 @@
                 "item": "silverBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1357,7 +1388,8 @@
                 "item": "goldIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -1400,7 +1432,8 @@
                 "item": "goldPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1443,7 +1476,8 @@
                 "item": "goldAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1486,7 +1520,8 @@
                 "item": "goldForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1529,7 +1564,8 @@
                 "item": "goldSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1572,7 +1608,8 @@
                 "item": "goldWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1615,7 +1652,8 @@
                 "item": "goldTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1658,7 +1696,8 @@
                 "item": "goldCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1701,7 +1740,8 @@
                 "item": "goldBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1740,7 +1780,8 @@
                 "item": "orichalcumIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -1783,7 +1824,8 @@
                 "item": "orichalcumPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1826,7 +1868,8 @@
                 "item": "orichalcumAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1869,7 +1912,8 @@
                 "item": "orichalcumForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1912,7 +1956,8 @@
                 "item": "orichalcumSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1955,7 +2000,8 @@
                 "item": "orichalcumWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -1998,7 +2044,8 @@
                 "item": "orichalcumTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2041,7 +2088,8 @@
                 "item": "orichalcumCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2084,7 +2132,8 @@
                 "item": "orichalcumBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2123,7 +2172,8 @@
                 "item": "darkIronIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -2166,7 +2216,8 @@
                 "item": "darkIronPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2209,7 +2260,8 @@
                 "item": "darkIronAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2252,7 +2304,8 @@
                 "item": "darkIronForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2295,7 +2348,8 @@
                 "item": "darkIronSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2338,7 +2392,8 @@
                 "item": "darkIronWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2381,7 +2436,8 @@
                 "item": "darkIronTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2424,7 +2480,8 @@
                 "item": "darkIronCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2467,7 +2524,8 @@
                 "item": "darkIronBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2506,7 +2564,8 @@
                 "item": "mithrilIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -2549,7 +2608,8 @@
                 "item": "mithrilPickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2592,7 +2652,8 @@
                 "item": "mithrilAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2635,7 +2696,8 @@
                 "item": "mithrilForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2678,7 +2740,8 @@
                 "item": "mithrilSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2721,7 +2784,8 @@
                 "item": "mithrilWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2764,7 +2828,8 @@
                 "item": "mithrilTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2807,7 +2872,8 @@
                 "item": "mithrilCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2850,7 +2916,8 @@
                 "item": "mithrilBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2889,7 +2956,8 @@
                 "item": "adamantineIngot",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -2932,7 +3000,8 @@
                 "item": "adamantinePickaxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -2975,7 +3044,8 @@
                 "item": "adamantineAxe",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3018,7 +3088,8 @@
                 "item": "adamantineForagingKnife",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3061,7 +3132,8 @@
                 "item": "adamantineSmithingHammer",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3104,7 +3176,8 @@
                 "item": "adamantineWoodworkingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3147,7 +3220,8 @@
                 "item": "adamantineTailoringNeedle",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3190,7 +3264,8 @@
                 "item": "adamantineCookingUtensil",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3233,7 +3308,8 @@
                 "item": "adamantineBrewingKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3276,7 +3352,8 @@
                 "item": "silverAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3319,7 +3396,8 @@
                 "item": "silverEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3362,7 +3440,8 @@
                 "item": "goldAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3405,7 +3484,8 @@
                 "item": "goldEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3448,7 +3528,8 @@
                 "item": "orichalcumAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3491,7 +3572,8 @@
                 "item": "orichalcumEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3534,7 +3616,8 @@
                 "item": "darkIronAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3577,7 +3660,8 @@
                 "item": "darkIronEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3620,7 +3704,8 @@
                 "item": "mithrilAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3663,7 +3748,8 @@
                 "item": "mithrilEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3706,7 +3792,8 @@
                 "item": "adamantineAlchemistKit",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3749,7 +3836,8 @@
                 "item": "adamantineEnhancingTool",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "tools"
     },
     {
         "type": "actionTarget",
@@ -3788,7 +3876,8 @@
                 "item": "willowPlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -3827,7 +3916,8 @@
                 "item": "pinePlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -3866,7 +3956,8 @@
                 "item": "oakPlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -3905,7 +3996,8 @@
                 "item": "maplePlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -3944,7 +4036,8 @@
                 "item": "elmPlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -3983,7 +4076,8 @@
                 "item": "beechPlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -4022,7 +4116,8 @@
                 "item": "mahoganyPlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     },
     {
         "type": "actionTarget",
@@ -4061,6 +4156,7 @@
                 "item": "ebonyPlank",
                 "count": 1
             }
-        ]
+        ],
+        "tab": "materials"
     }
 ]

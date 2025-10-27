@@ -280,6 +280,46 @@ export default {
     beechPlank: { name: '山毛榉木板', description: '山毛榉木板。' },
     mahoganyPlank: { name: '红檀木板', description: '红檀木板。' },
     ebonyPlank: { name: '黑檀木板', description: '黑檀木板。' },
+    chicken: { name: '鸡肉', description: '新鲜的鸡肉。' },
+    pork: { name: '猪肉', description: '新鲜的猪肉。' },
+    bear: { name: '熊肉', description: '新鲜的熊肉。' },
+    bison: { name: '野牛肉', description: '新鲜的野牛肉。' },
+    crocodile: { name: '鳄鱼肉', description: '新鲜的鳄鱼肉。' },
+    camel: { name: '骆驼肉', description: '新鲜的骆驼肉。' },
+    venison: { name: '鹿肉', description: '新鲜的鹿肉。' },
+    turkey: { name: '火鸡肉', description: '新鲜的火鸡肉。' },
+    crucianCarp: { name: '鲫鱼肉', description: '新鲜的鲫鱼肉。' },
+    carp: { name: '鲤鱼肉', description: '新鲜的鲤鱼肉。' },
+    salmon: { name: '鲑鱼肉', description: '新鲜的鲑鱼肉。' },
+    trout: { name: '鳟鱼肉', description: '新鲜的鳟鱼肉。' },
+    catfish: { name: '鲶鱼肉', description: '新鲜的鲶鱼肉。' },
+    tuna: { name: '金枪鱼肉', description: '新鲜的金枪鱼肉。' },
+    grassCarp: { name: '草鱼肉', description: '新鲜的草鱼肉。' },
+    grouper: { name: '石斑鱼肉', description: '新鲜的石斑鱼肉。' },
+    cabbage: { name: '白菜', description: '新鲜的白菜。' },
+    carrot: { name: '胡萝卜', description: '新鲜的胡萝卜。' },
+    potato: { name: '土豆', description: '新鲜的土豆。' },
+    onion: { name: '洋葱', description: '新鲜的洋葱。' },
+    sweetPotato: { name: '甘薯', description: '新鲜的甘薯。' },
+    corn: { name: '玉米', description: '新鲜的玉米。' },
+    pepper: { name: '辣椒', description: '新鲜的辣椒。' },
+    konjac: { name: '魔芋', description: '新鲜的魔芋。' },
+    apple: { name: '苹果', description: '新鲜的苹果。' },
+    grape: { name: '葡萄', description: '新鲜的葡萄。' },
+    berry: { name: '浆果', description: '新鲜的浆果。' },
+    cherry: { name: '樱桃', description: '新鲜的樱桃。' },
+    banana: { name: '香蕉', description: '新鲜的香蕉。' },
+    cactusFruit: { name: '仙人掌果', description: '新鲜的仙人掌果。' },
+    peach: { name: '桃子', description: '新鲜的桃子。' },
+    longan: { name: '龙眼', description: '新鲜的龙眼。' },
+    licorice: { name: '甘草', description: '用于炼金和烹饪的草药。' },
+    cotton: { name: '棉花', description: '用于缝纫的纤维。' },
+    artemisia: { name: '艾草', description: '用于炼金和烹饪的草药。' },
+    flax: { name: '亚麻', description: '用于缝纫的纤维。' },
+    ginseng: { name: '人参', description: '珍贵的草药。' },
+    bamboo: { name: '竹子', description: '多用途的植物纤维。' },
+    reishi: { name: '灵芝', description: '珍贵的草药。' },
+    silkworm: { name: '蚕', description: '用于制作丝绸的珍贵材料。' },
     willowTreeChest: {
       name: '柳树宝箱',
       description: '装有柳木和相关奖励的宝箱。',
@@ -343,6 +383,38 @@ export default {
     ebonyPlankChest: {
       name: '黑檀木板宝箱',
       description: '装有黑檀木板和相关奖励的宝箱。',
+    },
+    farmChest: {
+      name: '农场宝箱',
+      description: '装有农产品和相关奖励的宝箱。',
+    },
+    plainChest: {
+      name: '平原宝箱',
+      description: '装有平原产品和相关奖励的宝箱。',
+    },
+    forestChest: {
+      name: '森林宝箱',
+      description: '装有森林产品和相关奖励的宝箱。',
+    },
+    mountainChest: {
+      name: '山地宝箱',
+      description: '装有山地产品和相关奖励的宝箱。',
+    },
+    swampChest: {
+      name: '沼泽宝箱',
+      description: '装有沼泽产品和相关奖励的宝箱。',
+    },
+    desertChest: {
+      name: '沙漠宝箱',
+      description: '装有沙漠产品和相关奖励的宝箱。',
+    },
+    grasslandChest: {
+      name: '草原宝箱',
+      description: '装有草原产品和相关奖励的宝箱。',
+    },
+    volcanoChest: {
+      name: '火山宝箱',
+      description: '装有火山产品和相关奖励的宝箱。',
     },
   },
   actionTarget: {
@@ -547,6 +619,198 @@ export default {
     ebonyPlank: {
       name: '黑檀木板',
       description: '制作黑檀木板的配方。',
+    },
+    farm: {
+      name: '农场',
+      description: '在农场中采集各种农产品。',
+    },
+    chicken: {
+      name: '鸡肉',
+      description: '在农场中采集鸡肉。',
+    },
+    crucianCarp: {
+      name: '鲫鱼肉',
+      description: '在农场中采集鲫鱼肉。',
+    },
+    cabbage: {
+      name: '白菜',
+      description: '在农场中采集白菜。',
+    },
+    apple: {
+      name: '苹果',
+      description: '在农场中采集苹果。',
+    },
+    licorice: {
+      name: '甘草',
+      description: '在农场中采集甘草。',
+    },
+    plain: {
+      name: '平原',
+      description: '在平原中采集各种产品。',
+    },
+    pork: {
+      name: '猪肉',
+      description: '在平原中采集猪肉。',
+    },
+    carp: {
+      name: '鲤鱼肉',
+      description: '在平原中采集鲤鱼肉。',
+    },
+    carrot: {
+      name: '胡萝卜',
+      description: '在平原中采集胡萝卜。',
+    },
+    grape: {
+      name: '葡萄',
+      description: '在平原中采集葡萄。',
+    },
+    cotton: {
+      name: '棉花',
+      description: '在平原中采集棉花。',
+    },
+    forest: {
+      name: '森林',
+      description: '在森林中采集各种产品。',
+    },
+    bear: {
+      name: '熊肉',
+      description: '在森林中采集熊肉。',
+    },
+    salmon: {
+      name: '鲑鱼肉',
+      description: '在森林中采集鲑鱼肉。',
+    },
+    potato: {
+      name: '土豆',
+      description: '在森林中采集土豆。',
+    },
+    berry: {
+      name: '浆果',
+      description: '在森林中采集浆果。',
+    },
+    artemisia: {
+      name: '艾草',
+      description: '在森林中采集艾草。',
+    },
+    mountain: {
+      name: '山地',
+      description: '在山地中采集各种产品。',
+    },
+    bison: {
+      name: '野牛肉',
+      description: '在山地中采集野牛肉。',
+    },
+    trout: {
+      name: '鳟鱼肉',
+      description: '在山地中采集鳟鱼肉。',
+    },
+    onion: {
+      name: '洋葱',
+      description: '在山地中采集洋葱。',
+    },
+    cherry: {
+      name: '樱桃',
+      description: '在山地中采集樱桃。',
+    },
+    flax: {
+      name: '亚麻',
+      description: '在山地中采集亚麻。',
+    },
+    swamp: {
+      name: '沼泽',
+      description: '在沼泽中采集各种产品。',
+    },
+    crocodile: {
+      name: '鳄鱼肉',
+      description: '在沼泽中采集鳄鱼肉。',
+    },
+    catfish: {
+      name: '鲶鱼肉',
+      description: '在沼泽中采集鲶鱼肉。',
+    },
+    sweetPotato: {
+      name: '甘薯',
+      description: '在沼泽中采集甘薯。',
+    },
+    banana: {
+      name: '香蕉',
+      description: '在沼泽中采集香蕉。',
+    },
+    ginseng: {
+      name: '人参',
+      description: '在沼泽中采集人参。',
+    },
+    desert: {
+      name: '沙漠',
+      description: '在沙漠中采集各种产品。',
+    },
+    camel: {
+      name: '骆驼肉',
+      description: '在沙漠中采集骆驼肉。',
+    },
+    tuna: {
+      name: '金枪鱼肉',
+      description: '在沙漠中采集金枪鱼肉。',
+    },
+    corn: {
+      name: '玉米',
+      description: '在沙漠中采集玉米。',
+    },
+    cactusFruit: {
+      name: '仙人掌果',
+      description: '在沙漠中采集仙人掌果。',
+    },
+    bamboo: {
+      name: '竹子',
+      description: '在沙漠中采集竹子。',
+    },
+    grassland: {
+      name: '草原',
+      description: '在草原中采集各种产品。',
+    },
+    venison: {
+      name: '鹿肉',
+      description: '在草原中采集鹿肉。',
+    },
+    grassCarp: {
+      name: '草鱼肉',
+      description: '在草原中采集草鱼肉。',
+    },
+    pepper: {
+      name: '辣椒',
+      description: '在草原中采集辣椒。',
+    },
+    peach: {
+      name: '桃子',
+      description: '在草原中采集桃子。',
+    },
+    reishi: {
+      name: '灵芝',
+      description: '在草原中采集灵芝。',
+    },
+    volcano: {
+      name: '火山',
+      description: '在火山中采集各种产品。',
+    },
+    turkey: {
+      name: '火鸡肉',
+      description: '在火山中采集火鸡肉。',
+    },
+    grouper: {
+      name: '石斑鱼肉',
+      description: '在火山中采集石斑鱼肉。',
+    },
+    konjac: {
+      name: '魔芋',
+      description: '在火山中采集魔芋。',
+    },
+    longan: {
+      name: '龙眼',
+      description: '在火山中采集龙眼。',
+    },
+    silkworm: {
+      name: '蚕',
+      description: '在火山中采集蚕。',
     },
   },
 }

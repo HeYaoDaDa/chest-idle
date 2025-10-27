@@ -274,5 +274,117 @@
         "loots": [
             { "item": "ebonyPlank", "chance": 1, "min": 1, "max": 3 }
         ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "farmChest",
+        "sort": 1000,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "chicken", "chance": 1, "min": 5, "max": 20 },
+            { "item": "crucianCarp", "chance": 1, "min": 5, "max": 20 },
+            { "item": "cabbage", "chance": 1, "min": 5, "max": 20 },
+            { "item": "apple", "chance": 1, "min": 5, "max": 20 },
+            { "item": "licorice", "chance": 1, "min": 5, "max": 20 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "plainChest",
+        "sort": 1001,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "pork", "chance": 1, "min": 4, "max": 16 },
+            { "item": "carp", "chance": 1, "min": 4, "max": 16 },
+            { "item": "carrot", "chance": 1, "min": 4, "max": 16 },
+            { "item": "grape", "chance": 1, "min": 4, "max": 16 },
+            { "item": "cotton", "chance": 1, "min": 4, "max": 16 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "forestChest",
+        "sort": 1002,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "bear", "chance": 1, "min": 3, "max": 12 },
+            { "item": "salmon", "chance": 1, "min": 3, "max": 12 },
+            { "item": "potato", "chance": 1, "min": 3, "max": 12 },
+            { "item": "berry", "chance": 1, "min": 3, "max": 12 },
+            { "item": "artemisia", "chance": 1, "min": 3, "max": 12 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "mountainChest",
+        "sort": 1003,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "bison", "chance": 1, "min": 2, "max": 10 },
+            { "item": "trout", "chance": 1, "min": 2, "max": 10 },
+            { "item": "onion", "chance": 1, "min": 2, "max": 10 },
+            { "item": "cherry", "chance": 1, "min": 2, "max": 10 },
+            { "item": "flax", "chance": 1, "min": 2, "max": 10 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "swampChest",
+        "sort": 1004,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "crocodile", "chance": 1, "min": 2, "max": 8 },
+            { "item": "catfish", "chance": 1, "min": 2, "max": 8 },
+            { "item": "sweetPotato", "chance": 1, "min": 2, "max": 8 },
+            { "item": "banana", "chance": 1, "min": 2, "max": 8 },
+            { "item": "ginseng", "chance": 1, "min": 2, "max": 8 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "desertChest",
+        "sort": 1005,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "camel", "chance": 1, "min": 1, "max": 6 },
+            { "item": "tuna", "chance": 1, "min": 1, "max": 6 },
+            { "item": "corn", "chance": 1, "min": 1, "max": 6 },
+            { "item": "cactusFruit", "chance": 1, "min": 1, "max": 6 },
+            { "item": "bamboo", "chance": 1, "min": 1, "max": 6 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "grasslandChest",
+        "sort": 1006,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "venison", "chance": 1, "min": 1, "max": 5 },
+            { "item": "grassCarp", "chance": 1, "min": 1, "max": 5 },
+            { "item": "pepper", "chance": 1, "min": 1, "max": 5 },
+            { "item": "peach", "chance": 1, "min": 1, "max": 5 },
+            { "item": "reishi", "chance": 1, "min": 1, "max": 5 }
+        ]
+    },
+    {
+        "type": "item",
+        "itemType": "chest",
+        "id": "volcanoChest",
+        "sort": 1007,
+        "maxPoints": 10000,
+        "loots": [
+            { "item": "turkey", "chance": 1, "min": 1, "max": 4 },
+            { "item": "grouper", "chance": 1, "min": 1, "max": 4 },
+            { "item": "konjac", "chance": 1, "min": 1, "max": 4 },
+            { "item": "longan", "chance": 1, "min": 1, "max": 4 },
+            { "item": "silkworm", "chance": 1, "min": 1, "max": 4 }
+        ]
     }
 ]

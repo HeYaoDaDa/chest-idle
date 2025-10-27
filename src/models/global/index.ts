@@ -20,6 +20,7 @@ export class Global {
         '/data/items/chests.json',
         '/data/items/equipment.json',
         '/data/actionTargets/gatheringZones.json',
+        '/data/actionTargets/gatheringZones1.json',
         '/data/actionTargets/recipes.json',
       ]
       const responses = await Promise.all(paths.map((p) => axios.get(p)))

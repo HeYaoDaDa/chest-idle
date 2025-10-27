@@ -374,6 +374,46 @@ export default {
     beechPlank: { name: 'Beech Plank', description: 'Beech Plank.' },
     mahoganyPlank: { name: 'Mahogany Plank', description: 'Mahogany Plank.' },
     ebonyPlank: { name: 'Ebony Plank', description: 'Ebony Plank.' },
+    chicken: { name: 'Chicken', description: 'Fresh chicken meat.' },
+    pork: { name: 'Pork', description: 'Fresh pork.' },
+    bear: { name: 'Bear Meat', description: 'Fresh bear meat.' },
+    bison: { name: 'Bison Meat', description: 'Fresh bison meat.' },
+    crocodile: { name: 'Crocodile Meat', description: 'Fresh crocodile meat.' },
+    camel: { name: 'Camel Meat', description: 'Fresh camel meat.' },
+    venison: { name: 'Venison', description: 'Fresh deer meat.' },
+    turkey: { name: 'Turkey', description: 'Fresh turkey meat.' },
+    crucianCarp: { name: 'Crucian Carp', description: 'Fresh crucian carp meat.' },
+    carp: { name: 'Carp', description: 'Fresh carp meat.' },
+    salmon: { name: 'Salmon', description: 'Fresh salmon meat.' },
+    trout: { name: 'Trout', description: 'Fresh trout meat.' },
+    catfish: { name: 'Catfish', description: 'Fresh catfish meat.' },
+    tuna: { name: 'Tuna', description: 'Fresh tuna meat.' },
+    grassCarp: { name: 'Grass Carp', description: 'Fresh grass carp meat.' },
+    grouper: { name: 'Grouper', description: 'Fresh grouper meat.' },
+    cabbage: { name: 'Cabbage', description: 'Fresh cabbage.' },
+    carrot: { name: 'Carrot', description: 'Fresh carrot.' },
+    potato: { name: 'Potato', description: 'Fresh potato.' },
+    onion: { name: 'Onion', description: 'Fresh onion.' },
+    sweetPotato: { name: 'Sweet Potato', description: 'Fresh sweet potato.' },
+    corn: { name: 'Corn', description: 'Fresh corn.' },
+    pepper: { name: 'Pepper', description: 'Fresh pepper.' },
+    konjac: { name: 'Konjac', description: 'Fresh konjac.' },
+    apple: { name: 'Apple', description: 'Fresh apple.' },
+    grape: { name: 'Grape', description: 'Fresh grape.' },
+    berry: { name: 'Berry', description: 'Fresh berries.' },
+    cherry: { name: 'Cherry', description: 'Fresh cherry.' },
+    banana: { name: 'Banana', description: 'Fresh banana.' },
+    cactusFruit: { name: 'Cactus Fruit', description: 'Fresh cactus fruit.' },
+    peach: { name: 'Peach', description: 'Fresh peach.' },
+    longan: { name: 'Longan', description: 'Fresh longan.' },
+    licorice: { name: 'Licorice', description: 'A herb used for alchemy and cooking.' },
+    cotton: { name: 'Cotton', description: 'Fiber used for tailoring.' },
+    artemisia: { name: 'Artemisia', description: 'A herb used for alchemy and cooking.' },
+    flax: { name: 'Flax', description: 'Fiber used for tailoring.' },
+    ginseng: { name: 'Ginseng', description: 'A precious herb.' },
+    bamboo: { name: 'Bamboo', description: 'A multipurpose plant fiber.' },
+    reishi: { name: 'Reishi', description: 'A precious herb.' },
+    silkworm: { name: 'Silkworm', description: 'A precious material for silk production.' },
     willowTreeChest: {
       name: 'Willow Tree Chest',
       description: 'A chest containing willow wood and related rewards.',
@@ -437,6 +477,38 @@ export default {
     ebonyPlankChest: {
       name: 'Ebony Plank Chest',
       description: 'A chest containing ebony planks and related rewards.',
+    },
+    farmChest: {
+      name: 'Farm Chest',
+      description: 'A chest containing farm produce and related rewards.',
+    },
+    plainChest: {
+      name: 'Plain Chest',
+      description: 'A chest containing plain produce and related rewards.',
+    },
+    forestChest: {
+      name: 'Forest Chest',
+      description: 'A chest containing forest produce and related rewards.',
+    },
+    mountainChest: {
+      name: 'Mountain Chest',
+      description: 'A chest containing mountain produce and related rewards.',
+    },
+    swampChest: {
+      name: 'Swamp Chest',
+      description: 'A chest containing swamp produce and related rewards.',
+    },
+    desertChest: {
+      name: 'Desert Chest',
+      description: 'A chest containing desert produce and related rewards.',
+    },
+    grasslandChest: {
+      name: 'Grassland Chest',
+      description: 'A chest containing grassland produce and related rewards.',
+    },
+    volcanoChest: {
+      name: 'Volcano Chest',
+      description: 'A chest containing volcano produce and related rewards.',
     },
   },
   actionTarget: {
@@ -821,6 +893,198 @@ export default {
     ebonyPlank: {
       name: 'Ebony Plank',
       description: 'Recipe to craft ebony plank.',
+    },
+    farm: {
+      name: 'Farm',
+      description: 'Gather various farm produce.',
+    },
+    chicken: {
+      name: 'Chicken',
+      description: 'Gather chicken at the farm.',
+    },
+    crucianCarp: {
+      name: 'Crucian Carp',
+      description: 'Gather crucian carp at the farm.',
+    },
+    cabbage: {
+      name: 'Cabbage',
+      description: 'Gather cabbage at the farm.',
+    },
+    apple: {
+      name: 'Apple',
+      description: 'Gather apple at the farm.',
+    },
+    licorice: {
+      name: 'Licorice',
+      description: 'Gather licorice at the farm.',
+    },
+    plain: {
+      name: 'Plain',
+      description: 'Gather various plain produce.',
+    },
+    pork: {
+      name: 'Pork',
+      description: 'Gather pork at the plain.',
+    },
+    carp: {
+      name: 'Carp',
+      description: 'Gather carp at the plain.',
+    },
+    carrot: {
+      name: 'Carrot',
+      description: 'Gather carrot at the plain.',
+    },
+    grape: {
+      name: 'Grape',
+      description: 'Gather grape at the plain.',
+    },
+    cotton: {
+      name: 'Cotton',
+      description: 'Gather cotton at the plain.',
+    },
+    forest: {
+      name: 'Forest',
+      description: 'Gather various forest produce.',
+    },
+    bear: {
+      name: 'Bear Meat',
+      description: 'Gather bear meat in the forest.',
+    },
+    salmon: {
+      name: 'Salmon',
+      description: 'Gather salmon in the forest.',
+    },
+    potato: {
+      name: 'Potato',
+      description: 'Gather potato in the forest.',
+    },
+    berry: {
+      name: 'Berry',
+      description: 'Gather berries in the forest.',
+    },
+    artemisia: {
+      name: 'Artemisia',
+      description: 'Gather artemisia in the forest.',
+    },
+    mountain: {
+      name: 'Mountain',
+      description: 'Gather various mountain produce.',
+    },
+    bison: {
+      name: 'Bison Meat',
+      description: 'Gather bison meat in the mountain.',
+    },
+    trout: {
+      name: 'Trout',
+      description: 'Gather trout in the mountain.',
+    },
+    onion: {
+      name: 'Onion',
+      description: 'Gather onion in the mountain.',
+    },
+    cherry: {
+      name: 'Cherry',
+      description: 'Gather cherry in the mountain.',
+    },
+    flax: {
+      name: 'Flax',
+      description: 'Gather flax in the mountain.',
+    },
+    swamp: {
+      name: 'Swamp',
+      description: 'Gather various swamp produce.',
+    },
+    crocodile: {
+      name: 'Crocodile Meat',
+      description: 'Gather crocodile meat in the swamp.',
+    },
+    catfish: {
+      name: 'Catfish',
+      description: 'Gather catfish in the swamp.',
+    },
+    sweetPotato: {
+      name: 'Sweet Potato',
+      description: 'Gather sweet potato in the swamp.',
+    },
+    banana: {
+      name: 'Banana',
+      description: 'Gather banana in the swamp.',
+    },
+    ginseng: {
+      name: 'Ginseng',
+      description: 'Gather ginseng in the swamp.',
+    },
+    desert: {
+      name: 'Desert',
+      description: 'Gather various desert produce.',
+    },
+    camel: {
+      name: 'Camel Meat',
+      description: 'Gather camel meat in the desert.',
+    },
+    tuna: {
+      name: 'Tuna',
+      description: 'Gather tuna in the desert.',
+    },
+    corn: {
+      name: 'Corn',
+      description: 'Gather corn in the desert.',
+    },
+    cactusFruit: {
+      name: 'Cactus Fruit',
+      description: 'Gather cactus fruit in the desert.',
+    },
+    bamboo: {
+      name: 'Bamboo',
+      description: 'Gather bamboo in the desert.',
+    },
+    grassland: {
+      name: 'Grassland',
+      description: 'Gather various grassland produce.',
+    },
+    venison: {
+      name: 'Venison',
+      description: 'Gather venison in the grassland.',
+    },
+    grassCarp: {
+      name: 'Grass Carp',
+      description: 'Gather grass carp in the grassland.',
+    },
+    pepper: {
+      name: 'Pepper',
+      description: 'Gather pepper in the grassland.',
+    },
+    peach: {
+      name: 'Peach',
+      description: 'Gather peach in the grassland.',
+    },
+    reishi: {
+      name: 'Reishi',
+      description: 'Gather reishi in the grassland.',
+    },
+    volcano: {
+      name: 'Volcano',
+      description: 'Gather various volcano produce.',
+    },
+    turkey: {
+      name: 'Turkey',
+      description: 'Gather turkey at the volcano.',
+    },
+    grouper: {
+      name: 'Grouper',
+      description: 'Gather grouper at the volcano.',
+    },
+    konjac: {
+      name: 'Konjac',
+      description: 'Gather konjac at the volcano.',
+    },
+    longan: {
+      name: 'Longan',
+      description: 'Gather longan at the volcano.',
+    },
+    silkworm: {
+      name: 'Silkworm',
+      description: 'Gather silkworm at the volcano.',
     },
   },
 }

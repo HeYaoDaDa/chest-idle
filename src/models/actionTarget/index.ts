@@ -63,7 +63,7 @@ export abstract class ActionTarget {
               'overLevelSpeedUp',
               new Effect(
                 'inversePercentage',
-                computed(() => Math.max(0, 0.01 * this.skill.level.value - this.minLevel)),
+                computed(() => Math.max(0, (this.skill.level.value - this.minLevel) * 0.01)),
               ),
             )
             break

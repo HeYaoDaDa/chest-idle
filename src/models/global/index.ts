@@ -19,8 +19,9 @@ export class Global {
         '/data/items/resources.json',
         '/data/items/chests.json',
         '/data/items/equipment.json',
-        '/data/actionTargets/gatheringZones.json',
-        '/data/actionTargets/gatheringZones1.json',
+        '/data/actionTargets/gatheringZones/mining.json',
+        '/data/actionTargets/gatheringZones/woodcutting.json',
+        '/data/actionTargets/gatheringZones/foraging.json',
         '/data/actionTargets/recipes.json',
       ]
       const responses = await Promise.all(paths.map((p) => axios.get(p)))

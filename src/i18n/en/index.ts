@@ -523,6 +523,14 @@ export default {
     },
   },
   actionTarget: {
+    materials: {
+      name: 'Materials',
+      description: 'Basic materials and intermediates.',
+    },
+    tools: {
+      name: 'Tools',
+      description: 'Tools and utensils for production and gathering.',
+    },
     copperMine: {
       name: 'Copper Mine',
       description: 'Mine Copper Ore using Copper Pickaxe.',

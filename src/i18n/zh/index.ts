@@ -429,6 +429,14 @@ export default {
     },
   },
   actionTarget: {
+    materials: {
+      name: '材料',
+      description: '基础材料与中间产物。',
+    },
+    tools: {
+      name: '工具',
+      description: '用于生产与采集的工具与器具。',
+    },
     copperMine: {
       name: '铜矿',
       description: '在铜矿中采摘铜矿石。',

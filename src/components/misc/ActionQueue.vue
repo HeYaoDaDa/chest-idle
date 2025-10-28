@@ -209,39 +209,41 @@ function closeQueueModal() {
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/variables' as *;
+
 .action-queue {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  color: #0f172a;
+  gap: $spacing-xl;
+  color: $text-primary;
 }
 
 .action-current {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: $spacing-xl;
 }
 
 .action-current-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: $spacing-xs;
   flex: 1;
   min-width: 0;
 }
 
 .action-label {
-  font-size: 12px;
+  font-size: $font-sm;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #64748b;
+  color: $text-quaternary;
 }
 
 .action-value {
-  font-size: 16px;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: $font-lg;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -249,44 +251,44 @@ function closeQueueModal() {
 
 .action-buttons {
   display: flex;
-  gap: 6px;
+  gap: $spacing-md;
   flex-shrink: 0;
 }
 
 .action-button {
   border: none;
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-weight: 600;
-  font-size: 13px;
+  border-radius: $radius-full;
+  padding: $spacing-lg $spacing-xl;
+  font-weight: $font-weight-semibold;
+  font-size: $font-base;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    background $transition-fast,
+    transform $transition-fast,
+    box-shadow $transition-fast;
   white-space: nowrap;
 }
 
 .queue-button {
-  background: rgba(37, 99, 235, 0.12);
-  color: #2563eb;
+  background: $primary-rgba-12;
+  color: $primary-color;
 }
 
 .queue-button:hover {
-  background: rgba(37, 99, 235, 0.2);
+  background: $primary-rgba-20;
   transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.24);
+  box-shadow: 0 10px 18px $primary-rgba-24;
 }
 
 .stop-button {
-  background: rgba(248, 113, 113, 0.16);
-  color: #b91c1c;
+  background: $error-rgba-16;
+  color: $error-color;
 }
 
 .stop-button:hover {
-  background: rgba(248, 113, 113, 0.24);
+  background: $error-rgba-24;
   transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(248, 113, 113, 0.24);
+  box-shadow: 0 10px 18px $error-rgba-24;
 }
 
 .progress-wrapper {
@@ -297,8 +299,8 @@ function closeQueueModal() {
 
 .progress-track {
   width: 100%;
-  height: 12px;
-  border-radius: 999px;
+  height: $progress-bar-large;
+  border-radius: $radius-full;
   background: rgba(226, 232, 240, 0.8);
   overflow: hidden;
 }
@@ -306,7 +308,7 @@ function closeQueueModal() {
 .progress-bar {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: $gradient-primary;
   transition: width 60ms linear;
 }
 
@@ -314,8 +316,8 @@ function closeQueueModal() {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 12px;
-  color: #1e293b;
+  font-size: $font-sm;
+  color: $text-secondary;
   pointer-events: none;
 }
 
@@ -324,31 +326,31 @@ function closeQueueModal() {
   min-width: min(480px, 90vw);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $spacing-3xl;
 }
 
 .queue-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(37, 99, 235, 0.12);
+  padding-bottom: $spacing-2xl;
+  border-bottom: 2px solid $primary-rgba-12;
 }
 
 .queue-modal-title {
   margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  color: #0f172a;
+  font-size: $font-3xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
 }
 
 .queue-modal-count {
-  font-size: 13px;
-  font-weight: 600;
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.08);
-  padding: 4px 10px;
-  border-radius: 999px;
+  font-size: $font-base;
+  font-weight: $font-weight-semibold;
+  color: $primary-color;
+  background: $primary-rgba-08;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-full;
 }
 
 .queue-modal-content {
@@ -362,42 +364,42 @@ function closeQueueModal() {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $spacing-lg;
 }
 
 .queue-modal-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  background: rgba(248, 250, 252, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  border-radius: 8px;
-  padding: 12px;
+  gap: $spacing-2xl;
+  background: $bg-input;
+  border: 1px solid $border-color-light;
+  border-radius: $radius-md;
+  padding: $spacing-2xl;
   transition:
-    background 0.15s ease,
-    border-color 0.15s ease;
+    background $transition-fast,
+    border-color $transition-fast;
 }
 
 .queue-modal-item.running-item {
   flex-wrap: wrap;
-  background: rgba(37, 99, 235, 0.05);
-  border-color: rgba(37, 99, 235, 0.3);
+  background: $primary-rgba-05;
+  border-color: $primary-rgba-30;
 }
 
 .queue-modal-item:hover {
   background: rgba(226, 232, 240, 0.5);
-  border-color: rgba(37, 99, 235, 0.3);
+  border-color: $primary-rgba-30;
 }
 
 .queue-modal-item.running-item:hover {
-  background: rgba(37, 99, 235, 0.08);
+  background: $primary-rgba-08;
 }
 
 .queue-modal-item-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: $spacing-2xl;
   flex: 1;
   min-width: 0;
 }
@@ -408,79 +410,79 @@ function closeQueueModal() {
   justify-content: center;
   width: 28px;
   height: 28px;
-  background: rgba(37, 99, 235, 0.12);
-  color: #2563eb;
+  background: $primary-rgba-12;
+  color: $primary-color;
   border-radius: 50%;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: $font-base;
+  font-weight: $font-weight-bold;
   flex-shrink: 0;
 }
 
 .queue-modal-item-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: $spacing-xs;
   flex: 1;
   min-width: 0;
 }
 
 .queue-modal-item-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: $font-md;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .queue-modal-item-amount {
-  font-size: 13px;
-  color: #64748b;
-  font-weight: 500;
+  font-size: $font-base;
+  color: $text-quaternary;
+  font-weight: $font-weight-normal;
 }
 
 .queue-modal-remove {
   border: none;
-  border-radius: 999px;
-  background: rgba(248, 113, 113, 0.12);
-  color: #b91c1c;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: $radius-full;
+  background: $error-rgba-12;
+  color: $error-color;
+  padding: $spacing-md $spacing-2xl;
+  font-size: $font-base;
+  font-weight: $font-weight-semibold;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    background $transition-fast,
+    transform $transition-fast,
+    box-shadow $transition-fast;
   flex-shrink: 0;
 }
 
 .queue-modal-remove:hover {
-  background: rgba(248, 113, 113, 0.2);
+  background: $error-rgba-20;
   transform: translateY(-1px);
-  box-shadow: 0 8px 14px rgba(248, 113, 113, 0.2);
+  box-shadow: 0 8px 14px $error-rgba-20;
 }
 
 .queue-modal-stop {
   border: none;
-  border-radius: 999px;
-  background: rgba(248, 113, 113, 0.12);
-  color: #b91c1c;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: $radius-full;
+  background: $error-rgba-12;
+  color: $error-color;
+  padding: $spacing-md $spacing-2xl;
+  font-size: $font-base;
+  font-weight: $font-weight-semibold;
   cursor: pointer;
   transition:
-    background 0.15s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    background $transition-fast,
+    transform $transition-fast,
+    box-shadow $transition-fast;
   flex-shrink: 0;
 }
 
 .queue-modal-stop:hover {
-  background: rgba(248, 113, 113, 0.2);
+  background: $error-rgba-20;
   transform: translateY(-1px);
-  box-shadow: 0 8px 14px rgba(248, 113, 113, 0.2);
+  box-shadow: 0 8px 14px $error-rgba-20;
 }
 
 .running-progress-wrapper {
@@ -490,8 +492,8 @@ function closeQueueModal() {
 
 .running-progress-track {
   width: 100%;
-  height: 8px;
-  border-radius: 999px;
+  height: $progress-bar-thick;
+  border-radius: $radius-full;
   background: rgba(226, 232, 240, 0.6);
   overflow: hidden;
 }
@@ -499,29 +501,29 @@ function closeQueueModal() {
 .running-progress-bar {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: $gradient-primary;
   transition: width 60ms linear;
 }
 
 .queue-modal-footer {
-  padding-top: 12px;
-  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding-top: $spacing-2xl;
+  border-top: 1px solid $border-color-lighter;
   display: flex;
   justify-content: flex-end;
 }
 
 .queue-modal-controls {
   display: flex;
-  gap: 6px;
+  gap: $spacing-md;
 }
 
 .control-btn {
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  background: rgba(248, 250, 252, 0.8);
+  border: 1px solid $border-color;
+  background: $bg-input;
   color: #1f2937;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-sm;
+  font-size: $font-sm;
   cursor: pointer;
 }
 
@@ -532,21 +534,21 @@ function closeQueueModal() {
 
 .queue-modal-close-button {
   border: none;
-  border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: $radius-full;
+  padding: $spacing-xl $spacing-4xl;
+  font-size: $font-md;
+  font-weight: $font-weight-semibold;
+  background: $gradient-primary-dark;
   color: #ffffff;
   cursor: pointer;
   transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    transform $transition-fast,
+    box-shadow $transition-fast;
 }
 
 .queue-modal-close-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: $shadow-focus;
 }
 
 @media (max-width: 540px) {
@@ -559,3 +561,4 @@ function closeQueueModal() {
   }
 }
 </style>
+

@@ -28,7 +28,9 @@ watchEffect(() => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@use '@/styles/variables' as *;
+
 #load-page-root {
   height: 100vh;
   display: flex;
@@ -36,7 +38,8 @@ watchEffect(() => {
   align-items: center;
 
   #load-data-fail-text {
-    color: red;
+    color: $error-color;
   }
 }
 </style>
+

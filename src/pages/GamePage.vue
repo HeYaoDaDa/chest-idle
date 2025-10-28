@@ -354,13 +354,13 @@ function closeSidebar() {
   </ModalBox>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '@/styles/variables' as *;
 @use '@/styles/shared-components';
 
 #game-page-root {
   height: 100%;
-  padding: 2px;
+  padding: $spacing-xs;
   box-sizing: border-box;
 
   #game-page-layout-container {
@@ -368,15 +368,15 @@ function closeSidebar() {
     display: grid;
     grid-template-columns: 260px minmax(0, 1fr) var(--tabs-width, 360px);
     grid-template-rows: auto minmax(0, 1fr);
-    gap: 2px;
+    gap: $spacing-xs;
 
     >div {
-      background: rgba(255, 255, 255, 0.78);
+      background: $bg-primary;
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: 2px;
-      padding: 2px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid $border-color;
+      border-radius: $spacing-xs;
+      padding: $spacing-xs;
+      box-shadow: $shadow-lg;
       overflow: hidden;
     }
 
@@ -388,20 +388,20 @@ function closeSidebar() {
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 16px;
+      padding: $spacing-xl $spacing-3xl;
 
       h1 {
         margin: 0;
-        font-size: 32px;
-        font-weight: 700;
+        font-size: $font-6xl;
+        font-weight: $font-weight-bold;
         letter-spacing: 0.02em;
-        color: #0f172a;
+        color: $text-primary;
       }
 
       #header-title-action {
         display: flex;
         flex-flow: row nowrap;
-        gap: 20px;
+        gap: $spacing-4xl;
         align-items: center;
       }
     }
@@ -411,8 +411,8 @@ function closeSidebar() {
       grid-row: 2 / 3;
       display: flex;
       flex-direction: column;
-      gap: 2px;
-      padding: 2px;
+      gap: $spacing-xs;
+      padding: $spacing-xs;
       overflow-y: auto;
 
       .mobile-sidebar-controls {
@@ -426,37 +426,37 @@ function closeSidebar() {
         justify-content: center;
         align-items: stretch;
         gap: 3px;
-        padding: 8px 10px;
-        border-radius: 8px;
+        padding: $spacing-lg $spacing-xl;
+        border-radius: $radius-md;
         background: rgba(248, 250, 252, 0.72);
-        font-weight: 600;
-        color: #1e293b;
+        font-weight: $font-weight-semibold;
+        color: $text-secondary;
         transition:
-          transform 0.15s ease,
-          box-shadow 0.15s ease,
-          background 0.15s ease;
+          transform $transition-fast,
+          box-shadow $transition-fast,
+          background $transition-fast;
         cursor: pointer;
         user-select: none;
 
         &:hover:not(.active-link) {
           background: rgba(226, 232, 240, 0.9);
           transform: translateY(-2px);
-          box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+          box-shadow: $shadow-sm;
         }
 
         &.active-link {
-          background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+          background: $gradient-primary;
           color: #ffffff;
-          box-shadow: 0 12px 22px rgba(37, 99, 235, 0.28);
+          box-shadow: 0 12px 22px $primary-rgba-28;
         }
 
         .skill-name {
-          font-size: 13px;
+          font-size: $font-base;
           line-height: 1.3;
           display: flex;
           justify-content: space-between;
           align-items: baseline;
-          gap: 8px;
+          gap: $spacing-lg;
 
           .name-text {
             flex: 0 0 auto;
@@ -464,7 +464,7 @@ function closeSidebar() {
 
           .level-text {
             flex: 0 0 auto;
-            font-size: 11px;
+            font-size: $font-xs;
             opacity: 0.8;
           }
         }
@@ -473,13 +473,13 @@ function closeSidebar() {
           width: 100%;
           height: 3px;
           background: rgba(148, 163, 184, 0.2);
-          border-radius: 2px;
+          border-radius: $spacing-xs;
           overflow: hidden;
 
           .skill-progress-bar {
             height: 100%;
             background: currentColor;
-            transition: width 0.3s ease;
+            transition: width $transition-slow;
           }
         }
       }
@@ -497,7 +497,7 @@ function closeSidebar() {
         flex: 1;
         min-height: 0;
         overflow: auto;
-        padding: 16px;
+        padding: $spacing-3xl;
       }
     }
 
@@ -510,7 +510,7 @@ function closeSidebar() {
       overflow: hidden;
 
       .drag-handle-left {
-        width: 8px;
+        width: $drag-handle-width;
         cursor: ew-resize;
         background: rgba(148, 163, 184, 0.1);
         display: flex;
@@ -520,11 +520,11 @@ function closeSidebar() {
         transition: background 0.2s ease;
 
         &:hover {
-          background: rgba(37, 99, 235, 0.15);
+          background: $primary-rgba-15;
         }
 
         .drag-indicator {
-          width: 2px;
+          width: $spacing-xs;
           height: 40px;
           background: rgba(148, 163, 184, 0.4);
           border-radius: 1px;
@@ -544,41 +544,6 @@ function closeSidebar() {
       }
     }
 
-    .tabs-header {
-      display: flex;
-      gap: 2px;
-      padding: 2px 2px 0 2px;
-      background: rgba(248, 250, 252, 0.5);
-      border-bottom: 2px solid rgba(148, 163, 184, 0.2);
-    }
-
-    .tab-button {
-      flex: 1;
-      padding: 10px 16px;
-      border: none;
-      background: transparent;
-      color: #64748b;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 8px 8px 0 0;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-      user-select: none;
-
-      &:hover:not(.active) {
-        background: rgba(226, 232, 240, 0.5);
-        color: #475569;
-      }
-
-      &.active {
-        background: rgba(255, 255, 255, 0.95);
-        color: #2563eb;
-        box-shadow: 0 -2px 8px rgba(37, 99, 235, 0.1);
-      }
-    }
-
     .tabs-content {
       flex: 1;
       overflow: hidden;
@@ -588,115 +553,14 @@ function closeSidebar() {
     .tab-panel {
       height: 100%;
       overflow-y: auto;
-      padding: 2px;
-    }
-
-    #inventory {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 64px);
-      gap: 6px;
-      align-content: start;
-
-      .inventory-item {
-        width: 64px;
-        height: 64px;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 4px;
-        padding: 6px;
-        font-weight: 600;
-        font-size: 12px;
-        color: #1e293b;
-        cursor: pointer;
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease,
-          border-color 0.18s ease;
-        box-sizing: border-box;
-        text-align: center;
-        line-height: 1.2;
-        user-select: none;
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
-          border-color: rgba(37, 99, 235, 0.35);
-        }
-      }
-
-      .inventory-count {
-        font-size: 10px;
-        font-weight: 700;
-        color: #2563eb;
-      }
-    }
-
-    #equipment {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 64px);
-      gap: 6px;
-      align-content: start;
-
-      .equipment-cell {
-        display: flex;
-        width: 64px;
-        height: 64px;
-      }
-
-      .equipment-item,
-      .equipment-slot {
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 6px;
-        font-weight: 600;
-        font-size: 12px;
-        color: #1e293b;
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease,
-          border-color 0.18s ease,
-          background 0.18s ease;
-        cursor: pointer;
-        box-sizing: border-box;
-        line-height: 1.2;
-        user-select: none;
-      }
-
-      .equipment-slot {
-        border-style: dashed;
-        opacity: 0.6;
-      }
-
-      .equipment-item {
-        border-style: solid;
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
-          border-color: rgba(37, 99, 235, 0.35);
-        }
-      }
+      padding: $spacing-xs;
     }
 
     #abilities {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #94a3b8;
+      color: $text-quaternary;
       font-style: italic;
     }
   }
@@ -721,7 +585,7 @@ function closeSidebar() {
       height: 100%;
 
       >div {
-        padding: 2px;
+        padding: $spacing-xs;
       }
 
       #header {
@@ -748,17 +612,17 @@ function closeSidebar() {
         z-index: 1000;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(12px);
-        box-shadow: 4px 0 12px rgba(15, 23, 42, 0.1);
+        box-shadow: 4px 0 12px $shadow-color;
         flex-direction: column;
         flex-wrap: nowrap;
-        transition: width 0.3s ease, transform 0.3s ease;
-        padding: 4px;
+        transition: width $transition-slow, transform $transition-slow;
+        padding: $spacing-sm;
 
         .mobile-sidebar-controls {
           display: flex;
           flex-direction: column;
-          gap: 2px;
-          margin-bottom: 2px;
+          gap: $spacing-xs;
+          margin-bottom: $spacing-xs;
 
           .sidebar-control-link {
             flex: 0 0 auto;
@@ -768,10 +632,10 @@ function closeSidebar() {
         a,
         .sidebar-control-link {
           flex: 0 0 auto;
-          padding: 8px 4px;
+          padding: $spacing-lg $spacing-sm;
 
           .skill-name {
-            font-size: 11px;
+            font-size: $font-xs;
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
@@ -792,10 +656,10 @@ function closeSidebar() {
 
           a,
           .sidebar-control-link {
-            padding: 8px 10px;
+            padding: $spacing-lg $spacing-xl;
 
             .skill-name {
-              font-size: 13px;
+              font-size: $font-base;
               text-align: left;
               display: flex;
 
@@ -817,7 +681,7 @@ function closeSidebar() {
         margin-left: 56px;
 
         >* {
-          padding: 12px;
+          padding: $spacing-2xl;
         }
       }
     }
@@ -842,3 +706,4 @@ function closeSidebar() {
   }
 }
 </style>
+

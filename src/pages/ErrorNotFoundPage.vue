@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #error-page-root {
   height: 100vh;
   display: flex;
@@ -14,3 +14,4 @@
   align-items: center;
 }
 </style>
+

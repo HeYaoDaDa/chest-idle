@@ -20,6 +20,13 @@ $color-success: #22c55e;
 $color-warning: #f59e0b;
 $color-error: #ef4444;
 $color-red: #b91c1c;
+$error-color: #b91c1c;
+
+// Background colors
+$bg-primary: rgba(255, 255, 255, 0.78);
+
+// Shadow color
+$shadow-color: rgba(15, 23, 42, 0.24);
 
 // Spacing
 $spacing-xs: 2px;
@@ -31,6 +38,14 @@ $spacing-2xl: 12px;
 $spacing-3xl: 16px;
 $spacing-4xl: 20px;
 $spacing-5xl: 24px;
+
+// Component sizes
+$grid-item-size: 64px;
+$modal-close-button-size: 32px;
+$drag-handle-width: 8px;
+$progress-bar-height: 4px;
+$progress-bar-thick: 8px;
+$progress-bar-large: 12px;
 
 // Border radius
 $radius-sm: 6px;
@@ -81,6 +96,32 @@ $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 
 // Gradients
-$gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-$gradient-primary-dark: linear-gradient(135deg, #2563eb, #1d4ed8);
+$gradient-primary: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+$gradient-primary-dark: linear-gradient(135deg, $primary-color, $primary-dark);
 $gradient-effect: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
+$gradient-header: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+$gradient-secondary: linear-gradient(135deg, $color-success, #059669);
+$gradient-secondary-hover: linear-gradient(135deg, #059669, #047857);
+
+// Common rgba colors
+$primary-rgba-05: rgba(37, 99, 235, 0.05);
+$primary-rgba-08: rgba(37, 99, 235, 0.08);
+$primary-rgba-10: rgba(37, 99, 235, 0.1);
+$primary-rgba-12: rgba(37, 99, 235, 0.12);
+$primary-rgba-15: rgba(37, 99, 235, 0.15);
+$primary-rgba-18: rgba(37, 99, 235, 0.18);
+$primary-rgba-20: rgba(37, 99, 235, 0.2);
+$primary-rgba-24: rgba(37, 99, 235, 0.24);
+$primary-rgba-28: rgba(37, 99, 235, 0.28);
+$primary-rgba-30: rgba(37, 99, 235, 0.3);
+$primary-rgba-35: rgba(37, 99, 235, 0.35);
+$primary-rgba-40: rgba(37, 99, 235, 0.4);
+$primary-rgba-50: rgba(37, 99, 235, 0.5);
+
+// Error rgba colors
+$error-rgba-12: rgba(248, 113, 113, 0.12);
+$error-rgba-16: rgba(248, 113, 113, 0.16);
+$error-rgba-20: rgba(248, 113, 113, 0.2);
+$error-rgba-24: rgba(248, 113, 113, 0.24);
+
+$cyan-gradient: linear-gradient(135deg, #22d3ee 0%, $primary-color 100%);

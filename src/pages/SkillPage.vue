@@ -313,57 +313,24 @@ function handleAmountFocus(event: FocusEvent) {
   </ModalBox>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@use '@/styles/variables' as *;
+@use '@/styles/shared-components';
+
 #skill-page-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-
-.skill-tabs {
-  display: flex;
-  gap: 2px;
-  padding: 2px 2px 0 2px;
-  background: rgba(248, 250, 252, 0.5);
-  border-bottom: 2px solid rgba(148, 163, 184, 0.2);
-  margin-bottom: 0;
-
-  .skill-tab {
-    flex: 1;
-    padding: 10px 16px;
-    border: none;
-    background: transparent;
-    color: #64748b;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 8px 8px 0 0;
-    transition:
-      background 0.2s ease,
-      color 0.2s ease;
-    user-select: none;
-
-    &:hover:not(.active) {
-      background: rgba(226, 232, 240, 0.5);
-      color: #475569;
-    }
-
-    &.active {
-      background: rgba(255, 255, 255, 0.95);
-      color: #2563eb;
-      box-shadow: 0 -2px 8px rgba(37, 99, 235, 0.1);
-    }
-  }
+  gap: $spacing-lg;
 }
 
 .skill-header {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
-  border: 1px solid rgba(37, 99, 235, 0.18);
-  border-radius: 10px;
-  padding: 8px 10px;
+  background: $gradient-header;
+  border: 1px solid $primary-rgba-18;
+  border-radius: $spacing-xl;
+  padding: $spacing-lg $spacing-xl;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: $spacing-md;
   align-items: center;
   text-align: center;
 
@@ -371,28 +338,28 @@ function handleAmountFocus(event: FocusEvent) {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    gap: 6px;
+    gap: $spacing-md;
   }
 
   .skill-title {
     margin: 0;
-    font-size: 18px;
-    font-weight: 700;
-    color: #0f172a;
+    font-size: $font-xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
     letter-spacing: 0.01em;
   }
 
   .skill-level {
     font-size: 11px;
-    font-weight: 600;
-    color: #2563eb;
-    background: rgba(37, 99, 235, 0.12);
-    padding: 1px 6px;
-    border-radius: 999px;
+    font-weight: $font-weight-semibold;
+    color: $primary-color;
+    background: $primary-rgba-12;
+    padding: 1px $spacing-md;
+    border-radius: $radius-full;
   }
 
   .skill-description {
-    color: #475569;
+    color: $text-tertiary;
     line-height: 1.3;
     font-size: 11px;
     margin: 0;
@@ -400,7 +367,7 @@ function handleAmountFocus(event: FocusEvent) {
 
   .skill-stats {
     display: flex;
-    gap: 10px;
+    gap: $spacing-xl;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -413,31 +380,31 @@ function handleAmountFocus(event: FocusEvent) {
   }
 
   .skill-stat-label {
-    font-size: 10px;
+    font-size: $font-xs;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #64748b;
-    font-weight: 500;
+    color: $text-quaternary;
+    font-weight: $font-weight-normal;
   }
 
   .skill-stat-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1e293b;
+    font-size: $font-md;
+    font-weight: $font-weight-bold;
+    color: $text-secondary;
   }
 
   .skill-progress-bar-container {
     width: 100%;
-    height: 4px;
+    height: $progress-bar-height;
     background-color: rgba(226, 232, 240, 0.6);
-    border-radius: 999px;
+    border-radius: $radius-full;
     overflow: hidden;
 
     .skill-progress-bar {
       height: 100%;
-      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-      transition: width 0.3s ease;
-      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+      background: $gradient-primary;
+      transition: width $transition-slow;
+      box-shadow: 0 0 8px $primary-rgba-40;
     }
   }
 }
@@ -448,27 +415,27 @@ function handleAmountFocus(event: FocusEvent) {
   justify-content: flex-start;
   align-content: flex-start;
   align-items: flex-start;
-  gap: 6px;
+  gap: $spacing-md;
 
   .area-item {
-    width: 64px;
-    height: 64px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+    width: $grid-item-size;
+    height: $grid-item-size;
+    border-radius: $radius-md;
+    background: $bg-input;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-xs;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    padding: 6px;
+    gap: $spacing-sm;
+    padding: $spacing-md;
     text-align: center;
     user-select: none;
     cursor: pointer;
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: $font-sm;
     transition:
       transform 0.18s ease,
       box-shadow 0.18s ease,
@@ -476,21 +443,21 @@ function handleAmountFocus(event: FocusEvent) {
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
-      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: $shadow-md;
+      border-color: $primary-rgba-35;
     }
 
     .chest-progress {
       width: 100%;
-      height: 4px;
+      height: $progress-bar-height;
       background-color: rgba(226, 232, 240, 0.9);
-      border-radius: 999px;
+      border-radius: $radius-full;
       overflow: hidden;
 
       .chest-progress-bar {
         height: 100%;
-        background: linear-gradient(135deg, #22d3ee 0%, #2563eb 100%);
-        transition: width 0.3s ease;
+        background: $cyan-gradient;
+        transition: width $transition-slow;
       }
     }
   }
@@ -499,7 +466,7 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-modal {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: $spacing-2xl;
   min-width: min(460px, 100%);
 }
 
@@ -507,310 +474,109 @@ function handleAmountFocus(event: FocusEvent) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 8px;
+  gap: $spacing-lg;
 }
 
 .zone-header-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: $spacing-sm;
 }
 
 .zone-overline {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: $font-sm;
   letter-spacing: 0.08em;
   color: #6b7280;
 }
 
 .zone-title {
   margin: 0;
-  font-size: 24px;
+  font-size: $font-5xl;
   line-height: 1.2;
 }
 
 .zone-description {
   margin: 0;
-  color: #475569;
+  color: $text-tertiary;
   line-height: 1.5;
 }
 
 .zone-close {
   border: none;
   background: rgba(148, 163, 184, 0.16);
-  color: #475569;
-  border-radius: 999px;
-  width: 32px;
-  height: 32px;
+  color: $text-tertiary;
+  border-radius: $radius-full;
+  width: $modal-close-button-size;
+  height: $modal-close-button-size;
   cursor: pointer;
   display: grid;
   place-items: center;
-  font-size: 20px;
+  font-size: $font-4xl;
   line-height: 1;
-}
 
-.zone-close:hover {
-  background: rgba(71, 85, 105, 0.22);
-  color: #1f2937;
+  &:hover {
+    background: rgba(71, 85, 105, 0.22);
+    color: #1f2937;
+  }
 }
 
 .zone-info-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  padding: 2px 0;
-}
-
-.info-label {
-  font-size: 12px;
-  color: #64748b;
-  letter-spacing: 0.02em;
-}
-
-.info-value {
-  font-size: 14px;
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.info-row.error .info-label {
-  color: #dc2626;
-}
-
-.info-row.error .info-value {
-  color: #dc2626;
-}
-
-.zone-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 8px;
-}
-
-.zone-stat {
-  background: #f8fafc;
-  border-radius: 6px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.zone-stat-label {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #64748b;
-}
-
-.zone-stat-value {
-  font-size: 18px;
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.zone-resources {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-}
-
-.zone-resource {
-  background: #f9fafb;
-  border-radius: 6px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.zone-resource h3 {
-  margin: 0;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #1f2937;
-}
-
-.zone-resource ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.zone-resource li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  color: #0f172a;
-}
-
-.resource-name {
-  font-weight: 500;
-}
-
-.resource-count {
-  color: #334155;
-}
-
-.zone-resource-empty {
-  margin: 0;
-  font-style: italic;
-  color: #94a3b8;
-}
-
-.zone-warnings {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(220, 38, 38, 0.05) 100%);
-  border: 2px solid rgba(239, 68, 68, 0.3);
-  border-radius: 8px;
-  padding: 12px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.zone-warning-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #b91c1c;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.zone-warning-list {
-  margin: 0;
-  padding: 0 0 0 20px;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.zone-warning-item {
-  font-size: 14px;
-  color: #dc2626;
-  position: relative;
-  line-height: 1.5;
-}
-
-.zone-warning-item::before {
-  content: '⚠';
-  position: absolute;
-  left: -20px;
-  color: #f59e0b;
+  gap: $spacing-sm;
 }
 
 .zone-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: $spacing-xl;
 }
 
 .zone-amount {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: $spacing-md;
 }
 
 .zone-amount-label {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: $font-base;
+  font-weight: $font-weight-semibold;
   color: #1f2937;
 }
 
 .zone-amount-input {
   display: flex;
-  gap: 6px;
-}
+  gap: $spacing-md;
 
-.zone-amount-input input {
-  flex: 1;
-  border: 1px solid #cbd5f5;
-  border-radius: 6px;
-  padding: 8px 10px;
-  font-size: 14px;
-  color: #0f172a;
-}
+  input {
+    flex: 1;
+    border: 1px solid #cbd5f5;
+    border-radius: $radius-sm;
+    padding: $spacing-lg $spacing-xl;
+    font-size: $font-md;
+    color: $text-primary;
 
-.zone-amount-input input:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+    &:focus {
+      outline: none;
+      border-color: $primary-light;
+      box-shadow: 0 0 0 3px $primary-rgba-18;
+    }
+  }
 }
 
 .zone-amount-infinity {
   border: none;
-  border-radius: 6px;
+  border-radius: $radius-sm;
   background: #e2e8f0;
-  color: #0f172a;
-  padding: 0 12px;
+  color: $text-primary;
+  padding: 0 $spacing-2xl;
   cursor: pointer;
-  font-size: 18px;
-}
+  font-size: $font-xl;
 
-.zone-amount-infinity:hover {
-  background: #cbd5f5;
-}
-
-.zone-action-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-.zone-button {
-  border: none;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.zone-button.primary {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #ffffff;
-}
-
-.zone-button.primary:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.zone-button.secondary {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: #ffffff;
-}
-
-.zone-button.secondary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #059669, #047857);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-
-.zone-button.secondary:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.zone-button.ghost {
-  background: #e2e8f0;
-  color: #1f2937;
-}
-
-.zone-button.ghost:hover {
-  background: #cbd5e1;
+  &:hover {
+    background: #cbd5f5;
+  }
 }
 
 @media (max-width: 540px) {
@@ -819,15 +585,7 @@ function handleAmountFocus(event: FocusEvent) {
   }
 
   .info-row {
-    gap: 6px;
-  }
-
-  .zone-stats {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .zone-resources {
-    grid-template-columns: 1fr;
+    gap: $spacing-md;
   }
 
   .zone-button {
@@ -840,3 +598,5 @@ function handleAmountFocus(event: FocusEvent) {
   }
 }
 </style>
+
+

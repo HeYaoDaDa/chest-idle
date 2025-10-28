@@ -33,14 +33,16 @@ onUnmounted(() => {
   </teleport>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@use '@/styles/variables' as *;
+
 .modal-wrapper {
   position: fixed;
   inset: 0;
   z-index: 2000;
   display: grid;
   place-items: center;
-  padding: 16px;
+  padding: $spacing-3xl;
 }
 
 .modal-backdrop {
@@ -55,10 +57,10 @@ onUnmounted(() => {
   max-height: min(720px, 90vh);
   width: min(520px, 100%);
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.24);
+  border-radius: $radius-md;
+  box-shadow: 0 18px 48px $shadow-color;
   overflow: hidden auto;
-  padding: 16px;
+  padding: $spacing-3xl;
 }
 
 .modal-fade-enter-active,
@@ -76,12 +78,13 @@ onUnmounted(() => {
 
 @media (max-width: 480px) {
   .modal-wrapper {
-    padding: 8px;
+    padding: $spacing-lg;
   }
 
   .modal-panel {
-    padding: 12px;
-    border-radius: 6px;
+    padding: $spacing-2xl;
+    border-radius: $radius-sm;
   }
 }
 </style>
+

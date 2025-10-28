@@ -1,39 +1,43 @@
-// Shared component styles for GamePage and MyStuffPage
-// This file contains all the duplicated styles that were previously defined separately
+// Shared component styles for all components
+// Centralized styles to eliminate duplication across pages and components
+@use './variables' as *;
 
 /* ============ Tabs Styles ============ */
-.tabs-header {
+.tabs-header,
+.skill-tabs {
   display: flex;
-  gap: 2px;
-  padding: 2px 2px 0 2px;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-xs 0 $spacing-xs;
   background: rgba(248, 250, 252, 0.5);
-  border-bottom: 2px solid rgba(148, 163, 184, 0.2);
+  border-bottom: 2px solid $border-color-light;
+  margin-bottom: 0;
 }
 
-.tab-button {
+.tab-button,
+.skill-tab {
   flex: 1;
-  padding: 10px 16px;
+  padding: $spacing-xl $spacing-3xl;
   border: none;
   background: transparent;
-  color: #64748b;
-  font-size: 14px;
-  font-weight: 600;
+  color: $text-quaternary;
+  font-size: $font-md;
+  font-weight: $font-weight-semibold;
   cursor: pointer;
-  border-radius: 8px 8px 0 0;
+  border-radius: $radius-md $radius-md 0 0;
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background $transition-normal,
+    color $transition-normal;
   user-select: none;
 
   &:hover:not(.active) {
     background: rgba(226, 232, 240, 0.5);
-    color: #475569;
+    color: $text-tertiary;
   }
 
   &.active {
     background: rgba(255, 255, 255, 0.95);
-    color: #2563eb;
-    box-shadow: 0 -2px 8px rgba(37, 99, 235, 0.1);
+    color: $primary-color;
+    box-shadow: 0 -2px 8px $primary-rgba-10;
   }
 }
 
@@ -46,32 +50,32 @@
 .tab-panel {
   height: 100%;
   overflow-y: auto;
-  padding: 2px;
+  padding: $spacing-xs;
 }
 
 /* ============ Inventory & Equipment Styles ============ */
 #inventory {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 64px);
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, $grid-item-size);
+  gap: $spacing-md;
   align-content: start;
 
   .inventory-item {
-    width: 64px;
-    height: 64px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+    width: $grid-item-size;
+    height: $grid-item-size;
+    border-radius: $radius-md;
+    background: $bg-input;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-xs;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    padding: 6px;
-    font-weight: 600;
-    font-size: 12px;
-    color: #1e293b;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    font-weight: $font-weight-semibold;
+    font-size: $font-sm;
+    color: $text-secondary;
     cursor: pointer;
     transition:
       transform 0.18s ease,
@@ -84,46 +88,46 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
-      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: $shadow-md;
+      border-color: $primary-rgba-35;
     }
   }
 
   .inventory-count {
-    font-size: 10px;
-    font-weight: 700;
-    color: #2563eb;
+    font-size: $font-xs;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
   }
 }
 
 #equipment {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 64px);
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, $grid-item-size);
+  gap: $spacing-md;
   align-content: start;
 
   .equipment-cell {
     display: flex;
-    width: 64px;
-    height: 64px;
+    width: $grid-item-size;
+    height: $grid-item-size;
   }
 
   .equipment-item,
   .equipment-slot {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+    border-radius: $radius-md;
+    background: $bg-input;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-xs;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 6px;
-    font-weight: 600;
-    font-size: 12px;
-    color: #1e293b;
+    padding: $spacing-md;
+    font-weight: $font-weight-semibold;
+    font-size: $font-sm;
+    color: $text-secondary;
     transition:
       transform 0.18s ease,
       box-shadow 0.18s ease,
@@ -145,8 +149,8 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
-      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: $shadow-md;
+      border-color: $primary-rgba-35;
     }
   }
 }
@@ -155,7 +159,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #94a3b8;
+  color: $text-disabled;
   font-style: italic;
 }
 
@@ -164,179 +168,214 @@
   min-width: min(420px, 90vw);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $spacing-3xl;
 }
 
 .item-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(37, 99, 235, 0.12);
+  gap: $spacing-3xl;
+  padding-bottom: $spacing-2xl;
+  border-bottom: 2px solid $primary-rgba-12;
 }
 
 .item-modal-title {
   margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  color: #0f172a;
+  font-size: $font-3xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
   line-height: 1.3;
 }
 
 .item-modal-type,
 .item-modal-quantity {
-  font-size: 13px;
-  font-weight: 600;
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.08);
-  padding: 4px 10px;
-  border-radius: 999px;
+  font-size: $font-base;
+  font-weight: $font-weight-semibold;
+  color: $primary-color;
+  background: $primary-rgba-08;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-full;
   white-space: nowrap;
 }
 
 .item-modal-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $spacing-3xl;
 }
 
 .item-modal-description {
   margin: 0;
-  font-size: 14px;
+  font-size: $font-md;
   line-height: 1.6;
-  color: #475569;
+  color: $text-tertiary;
 }
 
 .item-modal-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $spacing-lg;
 }
 
 .item-modal-section-title {
   margin: 0;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: $font-base;
+  font-weight: $font-weight-semibold;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #64748b;
+  color: $text-quaternary;
 }
 
-.item-modal-info-row {
+.item-modal-info-row,
+.info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  background: rgba(248, 250, 252, 0.8);
-  border-radius: 6px;
+  padding: $spacing-lg $spacing-2xl;
+  background: $bg-light;
+  border-radius: $radius-sm;
+  gap: $spacing-lg;
+}
+
+.info-row {
+  align-items: baseline;
+  padding: $spacing-xs 0;
+  background: transparent;
 }
 
 .info-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: #64748b;
+  font-size: $font-base;
+  font-weight: $font-weight-normal;
+  color: $text-quaternary;
+  letter-spacing: 0.02em;
 }
 
 .info-value {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1e293b;
+  font-size: $font-md;
+  font-weight: $font-weight-semibold;
+  color: $text-secondary;
+}
+
+.info-row.error .info-label,
+.info-row.error .info-value {
+  color: $color-error;
 }
 
 .item-modal-effects {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: $spacing-md;
 }
 
 .item-modal-effect {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
-  border: 1px solid rgba(37, 99, 235, 0.12);
-  border-radius: 6px;
+  padding: $spacing-lg $spacing-2xl;
+  background: $gradient-effect;
+  border: 1px solid $primary-rgba-12;
+  border-radius: $radius-sm;
 }
 
 .effect-state {
-  font-size: 14px;
-  font-weight: 500;
-  color: #1e293b;
+  font-size: $font-md;
+  font-weight: $font-weight-normal;
+  color: $text-secondary;
 }
 
 .effect-value {
-  font-size: 14px;
-  font-weight: 700;
-  color: #2563eb;
+  font-size: $font-md;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
 }
 
 .item-modal-footer {
-  padding-top: 12px;
-  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding-top: $spacing-2xl;
+  border-top: 1px solid $border-color-lighter;
 }
 
 /* ============ Zone/Chest Action Buttons ============ */
 .zone-action-buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: $spacing-lg;
 }
 
 .chest-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: $spacing-lg;
 }
 
 .chest-amount-controls {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: $spacing-sm;
 }
 
 .chest-amount-input {
   width: 60px;
-  padding: 6px 8px;
+  padding: $spacing-md $spacing-lg;
   border: 1px solid rgba(148, 163, 184, 0.3);
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: $radius-sm;
+  font-size: $font-md;
   text-align: center;
-  background: rgba(255, 255, 255, 0.9);
+  background: $bg-input;
   color: #1f2937;
 
   &:focus {
     outline: none;
-    border-color: rgba(37, 99, 235, 0.5);
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    border-color: $primary-rgba-50;
+    box-shadow: 0 0 0 2px $primary-rgba-10;
   }
 }
 
 .max-button {
-  padding: 6px 12px;
-  font-size: 12px;
+  padding: $spacing-md $spacing-2xl;
+  font-size: $font-sm;
 }
 
 .zone-button {
   border: none;
-  border-radius: 999px;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: $radius-full;
+  padding: $spacing-lg $spacing-3xl;
+  font-size: $font-md;
+  font-weight: $font-weight-semibold;
   cursor: pointer;
   transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease,
-    background 0.15s ease;
+    transform $transition-fast,
+    box-shadow $transition-fast,
+    background $transition-fast;
 
   &.primary {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: $gradient-primary-dark;
     color: #ffffff;
 
-    &:hover {
+    &:hover:not(:disabled) {
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      box-shadow: $shadow-focus;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+  }
+
+  &.secondary {
+    background: $gradient-secondary;
+    color: #ffffff;
+
+    &:hover:not(:disabled) {
+      background: $gradient-secondary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
     }
   }
 
@@ -356,19 +395,19 @@
   min-width: min(400px, 90vw);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $spacing-3xl;
 }
 
 .chest-results-header {
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(37, 99, 235, 0.12);
+  padding-bottom: $spacing-2xl;
+  border-bottom: 2px solid $primary-rgba-12;
 }
 
 .chest-results-title {
   margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  color: #0f172a;
+  font-size: $font-4xl;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
 }
 
 .chest-results-content {
@@ -379,37 +418,37 @@
 .chest-results-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $spacing-lg;
 }
 
 .chest-result-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  background: rgba(37, 99, 235, 0.05);
-  border-radius: 8px;
-  border-left: 3px solid rgba(37, 99, 235, 0.3);
+  padding: $spacing-lg $spacing-2xl;
+  background: $primary-rgba-05;
+  border-radius: $radius-md;
+  border-left: 3px solid $primary-rgba-30;
 }
 
 .result-item-name {
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
   color: #1f2937;
 }
 
 .result-item-amount {
-  font-weight: 700;
-  color: #2563eb;
+  font-weight: $font-weight-bold;
+  color: $primary-color;
 }
 
 .chest-results-empty {
   text-align: center;
-  padding: 24px;
-  color: #64748b;
+  padding: $spacing-5xl;
+  color: $text-quaternary;
   font-style: italic;
 }
 
 .chest-results-footer {
-  padding-top: 12px;
-  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding-top: $spacing-2xl;
+  border-top: 1px solid $border-color-lighter;
 }

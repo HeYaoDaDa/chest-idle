@@ -51,6 +51,7 @@ export default {
     equipment: '装备',
     abilities: '技能',
     myStuff: '我的',
+    chest: '宝箱',
   },
   skill: {
     mining: { name: '采矿', description: '采矿。' },

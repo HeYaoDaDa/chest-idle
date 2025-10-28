@@ -62,6 +62,25 @@ const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0)
 const hasCurrentAction = computed(() => !!actionManager.currentAction.value)
 const queuePosition = computed(() => actionManager.queuedActions.length + 1)
 
+// 不满足条件的标记（用于字段标红）
+const isLevelInsufficient = computed(() => {
+  if (!openZone.value) return false
+  return openZone.value.skill.level.value < openZone.value.minLevel
+})
+
+const insufficientIngredients = computed(() => {
+  if (!openZone.value || !('ingredients' in openZone.value)) return [] as string[]
+  const lack: string[] = []
+  for (const ingredient of openZone.value.ingredients) {
+    const inventoryItem = inventory.inventoryItemMap.get(ingredient.item.id)
+    const available = inventoryItem?.amount.value ?? 0
+    if (available < ingredient.count) lack.push(ingredient.item.id)
+  }
+  return lack
+})
+
+const hasInsufficientIngredients = computed(() => insufficientIngredients.value.length > 0)
+
 // 检查是否满足开始条件
 const canStartAction = computed(() => {
   if (!openZone.value) return { canStart: false, reasons: [] }
@@ -202,59 +221,58 @@ function handleAmountFocus(event: FocusEvent) {
         <button type="button" class="zone-close" @click="closeModal">×</button>
       </header>
 
-      <div class="zone-stats">
-        <div class="zone-stat">
-          <span class="zone-stat-label">{{ t('minLevelRequired') }}</span>
-          <span class="zone-stat-value">{{ openZone.minLevel }}</span>
+      <div class="zone-info-list">
+        <div class="info-row" :class="{ error: isLevelInsufficient }">
+          <span class="info-label">{{ t('minLevelRequired') }}</span>
+          <span class="info-value">{{ openZone.minLevel }}</span>
         </div>
-        <div class="zone-stat">
-          <span class="zone-stat-label">{{ t('duration') }}</span>
-          <span class="zone-stat-value">{{
-            t('ui.seconds', { value: formatNumber(durationSeconds, 1) })
-          }}</span>
+        <div class="info-row">
+          <span class="info-label">{{ t('duration') }}</span>
+          <span class="info-value">{{ t('ui.seconds', { value: formatNumber(durationSeconds, 1) }) }}</span>
         </div>
-        <div class="zone-stat">
-          <span class="zone-stat-label">{{ t('ui.xpPerCycle') }}</span>
-          <span class="zone-stat-value">{{ formatNumber(xpPerCycle) }}</span>
+        <div class="info-row">
+          <span class="info-label">{{ t('ui.xpPerCycle') }}</span>
+          <span class="info-value">{{ formatNumber(xpPerCycle) }}</span>
         </div>
-        <div class="zone-stat">
-          <span class="zone-stat-label">{{ t('ui.chestPoints') }}</span>
-          <span class="zone-stat-value">{{ formatNumber(chestPointsPerCycle, 2) }}</span>
+        <div class="info-row">
+          <span class="info-label">{{ t('ui.chestPoints') }}</span>
+          <span class="info-value">{{ formatNumber(chestPointsPerCycle, 2) }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">{{ t('ui.chest') }}</span>
+          <span class="info-value">{{ t(openZone.chest.name) }}</span>
+        </div>
+
+        <div class="info-row" :class="{ error: hasIngredients && hasInsufficientIngredients }">
+          <span class="info-label">{{ t('ui.requiredMaterials') }}</span>
+          <span class="info-value">
+            <template v-if="hasIngredients">
+              <template v-for="(ingredient, idx) in openZone.ingredients" :key="ingredient.item.id">
+                <span>{{ t(ingredient.item.name) }} ×{{ formatNumber(ingredient.count) }}</span><span v-if="idx < openZone.ingredients.length - 1">，</span>
+              </template>
+            </template>
+            <template v-else>
+              {{ t('ui.noMaterialsRequired') }}
+            </template>
+          </span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">{{ t('ui.rewards') }}</span>
+          <span class="info-value">
+            <template v-if="hasProducts">
+              <template v-for="(product, idx) in openZone.products" :key="product.item.id">
+                <span>{{ t(product.item.name) }} ×{{ formatNumber(product.count) }}</span><span v-if="idx < openZone.products.length - 1">，</span>
+              </template>
+            </template>
+            <template v-else>
+              {{ t('ui.noRewards') }}
+            </template>
+          </span>
         </div>
       </div>
 
-      <div class="zone-resources">
-        <section class="zone-resource">
-          <h3>{{ t('ui.requiredMaterials') }}</h3>
-          <ul v-if="hasIngredients">
-            <li v-for="ingredient in openZone.ingredients" :key="ingredient.item.id">
-              <span class="resource-name">{{ t(ingredient.item.name) }}</span>
-              <span class="resource-count">×{{ formatNumber(ingredient.count) }}</span>
-            </li>
-          </ul>
-          <p v-else class="zone-resource-empty">{{ t('ui.noMaterialsRequired') }}</p>
-        </section>
-        <section class="zone-resource">
-          <h3>{{ t('ui.rewards') }}</h3>
-          <ul v-if="hasProducts">
-            <li v-for="product in openZone.products" :key="product.item.id">
-              <span class="resource-name">{{ t(product.item.name) }}</span>
-              <span class="resource-count">×{{ formatNumber(product.count) }}</span>
-            </li>
-          </ul>
-          <p v-else class="zone-resource-empty">{{ t('ui.noRewards') }}</p>
-        </section>
-      </div>
-
-      <!-- 显示不满足的条件 -->
-      <div v-if="!canStartAction.canStart" class="zone-warnings">
-        <div class="zone-warning-title">{{ t('ui.cannotStart') }}</div>
-        <ul class="zone-warning-list">
-          <li v-for="(reason, index) in canStartAction.reasons" :key="index" class="zone-warning-item">
-            {{ reason }}
-          </li>
-        </ul>
-      </div>
+      <!-- 不再显示整块警告，改为字段级标红提示 -->
 
       <div class="zone-actions">
         <label class="zone-amount">
@@ -299,7 +317,7 @@ function handleAmountFocus(event: FocusEvent) {
 #skill-page-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .skill-tabs {
@@ -342,53 +360,60 @@ function handleAmountFocus(event: FocusEvent) {
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
   border: 1px solid rgba(37, 99, 235, 0.18);
   border-radius: 10px;
-  padding: 16px 20px;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
 
   .skill-header-main {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
   }
 
   .skill-title {
     margin: 0;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 700;
     color: #0f172a;
     letter-spacing: 0.01em;
   }
 
   .skill-level {
-    font-size: 18px;
+    font-size: 11px;
     font-weight: 600;
     color: #2563eb;
     background: rgba(37, 99, 235, 0.12);
-    padding: 4px 12px;
+    padding: 1px 6px;
     border-radius: 999px;
   }
 
   .skill-description {
     color: #475569;
-    line-height: 1.5;
-    font-size: 14px;
+    line-height: 1.3;
+    font-size: 11px;
+    margin: 0;
   }
 
   .skill-stats {
     display: flex;
-    gap: 24px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .skill-stat {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
+    align-items: center;
   }
 
   .skill-stat-label {
-    font-size: 12px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #64748b;
@@ -396,14 +421,14 @@ function handleAmountFocus(event: FocusEvent) {
   }
 
   .skill-stat-value {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 700;
     color: #1e293b;
   }
 
   .skill-progress-bar-container {
     width: 100%;
-    height: 8px;
+    height: 4px;
     background-color: rgba(226, 232, 240, 0.6);
     border-radius: 999px;
     overflow: hidden;
@@ -527,6 +552,40 @@ function handleAmountFocus(event: FocusEvent) {
 .zone-close:hover {
   background: rgba(71, 85, 105, 0.22);
   color: #1f2937;
+}
+
+.zone-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.info-label {
+  font-size: 12px;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.info-row.error .info-label {
+  color: #dc2626;
+}
+
+.info-row.error .info-value {
+  color: #dc2626;
 }
 
 .zone-stats {
@@ -757,6 +816,10 @@ function handleAmountFocus(event: FocusEvent) {
 @media (max-width: 540px) {
   .zone-modal {
     min-width: unset;
+  }
+
+  .info-row {
+    gap: 6px;
   }
 
   .zone-stats {

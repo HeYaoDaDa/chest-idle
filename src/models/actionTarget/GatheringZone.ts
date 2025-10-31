@@ -1,21 +1,26 @@
 import { ActionTarget } from '.'
 import type { MutableStateDefinition } from '../definitions/misc/MutableStateDefinition'
+import type { Skill } from '../Skill'
+import type { Chest } from '../item/Chest'
+import type { Item } from '../item'
+import type { State } from '../state/State'
 
 export class GatheringZone extends ActionTarget {
   type = 'gatheringZone' as const
 
   constructor(
-    public id: string,
-    skillId: string,
-    public tab: string | undefined,
-    public minLevel: number,
-    public sort: number,
+    id: string,
+    skill: Skill,
+    tab: string | undefined,
+    minLevel: number,
+    sort: number,
     duration: MutableStateDefinition,
     xp: MutableStateDefinition,
-    chestId: string,
+    chest: Chest,
     chestPoints: MutableStateDefinition,
-    products: { item: string; count: number }[],
+    products: { item: Item; count: number }[],
+    resolveState: (id: string) => State,
   ) {
-    super(id, skillId, tab, minLevel, sort, duration, xp, chestId, chestPoints, [], products)
+    super(id, skill, tab, minLevel, sort, duration, xp, chest, chestPoints, [], products, resolveState)
   }
 }

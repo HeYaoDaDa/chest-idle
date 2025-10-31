@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import type { Definition } from '../definitions'
-import { dataManager } from './DataManager'
+import { useDataStore } from '@/stores/data'
+import { useInventoryStore } from '@/stores/inventory'
 import { actionManager } from './ActionManager'
-import { inventory } from './InventoryManager'
 
 export class Global {
   public status = ref('none' as 'none' | 'loading' | 'finish' | 'fail')
@@ -24,12 +24,14 @@ export class Global {
         '/data/actionTargets/gatheringZones/foraging.json',
         '/data/actionTargets/recipes.json',
       ]
-      const responses = await Promise.all(paths.map((p) => axios.get(p)))
-      const definitions = responses.flatMap((r) => r.data as Definition[])
+    const responses = await Promise.all(paths.map((p) => axios.get(p)))
+    const definitions = responses.flatMap((r) => r.data as Definition[])
 
-      dataManager.load(definitions)
-      actionManager.load()
-      inventory.load()
+    const dataStore = useDataStore()
+    dataStore.load(definitions)
+    const inventoryStore = useInventoryStore()
+    inventoryStore.clear()
+    actionManager.load()
       this.status.value = 'finish'
     } catch (error) {
       console.error('Failed to load data:', error)

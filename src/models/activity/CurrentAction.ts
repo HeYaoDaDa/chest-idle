@@ -3,7 +3,7 @@ import type { ActionTarget } from '../actionTarget'
 import type { Skill } from '../Skill'
 import type { Item } from '../item'
 import type { State } from '../state/State'
-import { inventory } from '../global/InventoryManager'
+import { useInventoryStore } from '@/stores/inventory'
 import { actionManager } from '../global/ActionManager'
 import i18n from '@/i18n'
 
@@ -35,30 +35,40 @@ export class CurrentAction {
     this.chestPoints = target.chestPoints
     this.remainedDuration = computed(() => this.duration.value - this.elapsed.value)
     this.finalize = watchEffect(() => {
-      let echaust = Infinity
+      const inventoryStore = useInventoryStore()
+      let exhaust = Infinity
       if ('ingredients' in target) {
         const alls: number[] = []
         for (const ingredient of target.ingredients) {
-          const inventoryItem = inventory.inventoryItemMap.get(ingredient.item.id)
-          alls.push(inventoryItem ? Math.floor(inventoryItem.amount.value / ingredient.count) : 0)
+          const inventoryItem = inventoryStore.inventoryItemMap.get(ingredient.item.id)
+          if (inventoryItem) {
+            alls.push(Math.floor(inventoryItem.quantity / ingredient.count))
+          } else {
+            alls.push(0)
+          }
         }
-        echaust = Math.min(...alls, echaust)
+        exhaust = Math.min(...alls, exhaust)
       }
-      this.amount.value = Math.min(this.amount.value, echaust)
+      this.amount.value = Math.min(this.amount.value, exhaust)
     })
   }
 
   static computeAmount(target: ActionTarget, amount: number): number {
-    let echaust = Infinity
+    const inventoryStore = useInventoryStore()
+    let exhaust = Infinity
     if ('ingredients' in target) {
       const alls: number[] = []
       for (const ingredient of target.ingredients) {
-        const inventoryItem = inventory.inventoryItemMap.get(ingredient.item.id)
-        alls.push(inventoryItem ? Math.floor(inventoryItem.amount.value / ingredient.count) : 0)
+        const inventoryItem = inventoryStore.inventoryItemMap.get(ingredient.item.id)
+        if (inventoryItem) {
+          alls.push(Math.floor(inventoryItem.quantity / ingredient.count))
+        } else {
+          alls.push(0)
+        }
       }
-      echaust = Math.min(...alls, echaust)
+      exhaust = Math.min(...alls, exhaust)
     }
-    return Math.min(amount, echaust)
+    return Math.min(amount, exhaust)
   }
 
   public update(elapsed: number): number {
@@ -74,7 +84,10 @@ export class CurrentAction {
       count = Math.min(count, Math.ceil(this.skill.remainingXpForUpgrade.value / this.xp.value))
 
       const ingredient = this.calculateIngredient(count)
-      if (ingredient) inventory.removes(ingredient)
+      if (ingredient) {
+        const inventoryStore = useInventoryStore()
+        inventoryStore.removeMany(ingredient)
+      }
 
       this.skill.addXp(this.xp.value * count)
       const chestCount = this.target.chest.addPoint(this.chestPoints.value * count)
@@ -82,7 +95,8 @@ export class CurrentAction {
       if (chestCount > 0) {
         rewards.push([this.target.chest, chestCount])
       }
-      inventory.addes(rewards)
+      const inventoryStore = useInventoryStore()
+      inventoryStore.addMany(rewards)
 
       const remainedElapsed =
         elapsed - (this.remainedDuration.value + this.duration.value * (count - 1))

@@ -1,13 +1,26 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
 import ModalBox from '@/components/misc/ModalBox.vue'
-import { dataManager } from '@/models/global/DataManager'
-import { inventory } from '@/models/global/InventoryManager'
-import { shallowRef, onMounted } from 'vue'
+import type { Slot } from '@/models/Slot'
+import { useDataStore } from '@/stores/data'
+import { useInventoryStore } from '@/stores/inventory'
+import { shallowRef, onMounted, isRef, type Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
 
 const { t } = useI18n()
+
+const dataStore = useDataStore()
+const inventoryStore = useInventoryStore()
+
+const openSlotEquipment = (slot: Slot) => {
+  const equipment = slot.currentEquipment
+  if (equipment) {
+    openEquipmentModal(slot, equipment)
+  }
+}
+
+const unwrapNumber = (value: number | Ref<number>) => (isRef(value) ? value.value : value)
 
 // 使用通用 Composable 获取装备和背包相关功能
 const {
@@ -133,7 +146,7 @@ function closeSidebar() {
           </router-link>
         </div>
         <router-link
-          v-for="skill in dataManager.allSkill"
+          v-for="skill in dataStore.allSkill"
           :key="skill.id"
           :to="`/game/${skill.id}`"
           active-class="active-link"
@@ -141,13 +154,13 @@ function closeSidebar() {
         >
           <div class="skill-name">
             <span class="name-text">{{ t(skill.name) }}</span>
-            <span class="level-text">{{ t('ui.level', { level: skill.level.value }) }}</span>
+            <span class="level-text">{{ t('ui.level', { level: unwrapNumber(skill.level) }) }}</span>
           </div>
           <div class="skill-progress-wrapper">
             <div
               class="skill-progress-bar"
               :style="{
-                width: skill.upgradeProgress.value * 100 + '%',
+                width: unwrapNumber(skill.upgradeProgress) * 100 + '%',
               }"
             ></div>
           </div>
@@ -190,25 +203,25 @@ function closeSidebar() {
           <div class="tabs-content">
             <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
               <div
-                v-for="inventoryItem in inventory.inventoryItems.value"
+                v-for="inventoryItem in inventoryStore.inventoryItems"
                 :key="inventoryItem.item.id"
                 class="inventory-item"
                 @click="openInventoryModal(inventoryItem)"
               >
                 <div>{{ t(inventoryItem.item.name) }}</div>
-                <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
-                  x{{ inventoryItem.amount.value }}
+                <div v-if="inventoryItem.quantity > 1" class="inventory-count">
+                  x{{ inventoryItem.quantity }}
                 </div>
               </div>
             </div>
             <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
-              <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
+              <div v-for="slot in dataStore.allSlot" :key="slot.id" class="equipment-cell">
                 <div
-                  v-if="slot.equipment.value"
+                  v-if="slot.currentEquipment"
                   class="equipment-item"
-                  @click="openEquipmentModal(slot, slot.equipment.value)"
+                  @click="openSlotEquipment(slot as unknown as Slot)"
                 >
-                  <div>{{ t(slot.equipment.value.name) }}</div>
+                  <div>{{ t(slot.currentEquipment!.name) }}</div>
                 </div>
                 <div v-else class="equipment-slot">
                   <span>{{ t(slot.name) }}</span>
@@ -267,7 +280,7 @@ function closeSidebar() {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span>
+  <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.quantity }}</span>
       </div>
 
       <div class="item-modal-content">

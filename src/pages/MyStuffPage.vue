@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import ModalBox from '@/components/misc/ModalBox.vue'
-import { dataManager } from '@/models/global/DataManager'
-import { inventory } from '@/models/global/InventoryManager'
+import type { Slot } from '@/models/Slot'
+import { useDataStore } from '@/stores/data'
+import { useInventoryStore } from '@/stores/inventory'
 import { useI18n } from 'vue-i18n'
 import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
 
 const { t } = useI18n()
+const dataStore = useDataStore()
+const inventoryStore = useInventoryStore()
 
 // 使用通用 Composable
 const {
@@ -26,6 +29,14 @@ const {
   openChestAndClose,
   closeChestResults,
 } = useEquipmentAndInventory()
+
+const openSlotEquipment = (slot: Slot) => {
+  const equipment = slot.currentEquipment
+  if (equipment) {
+    openEquipmentModal(slot, equipment)
+  }
+}
+
 </script>
 
 <template>
@@ -56,25 +67,25 @@ const {
     <div class="tabs-content">
       <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
         <div
-          v-for="inventoryItem in inventory.inventoryItems.value"
+          v-for="inventoryItem in inventoryStore.inventoryItems"
           :key="inventoryItem.item.id"
           class="inventory-item"
           @click="openInventoryModal(inventoryItem)"
         >
           <div>{{ t(inventoryItem.item.name) }}</div>
-          <div v-if="inventoryItem.amount.value > 1" class="inventory-count">
-            x{{ inventoryItem.amount.value }}
+          <div v-if="inventoryItem.quantity > 1" class="inventory-count">
+            x{{ inventoryItem.quantity }}
           </div>
         </div>
       </div>
       <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
-        <div v-for="slot in dataManager.allSlot" :key="slot.id" class="equipment-cell">
+        <div v-for="slot in dataStore.allSlot" :key="slot.id" class="equipment-cell">
           <div
-            v-if="slot.equipment.value"
+            v-if="slot.currentEquipment"
             class="equipment-item"
-            @click="openEquipmentModal(slot, slot.equipment.value)"
+            @click="openSlotEquipment(slot as unknown as Slot)"
           >
-            <div>{{ t(slot.equipment.value.name) }}</div>
+            <div>{{ t(slot.currentEquipment!.name) }}</div>
           </div>
           <div v-else class="equipment-slot">
             <span>{{ t(slot.name) }}</span>
@@ -130,7 +141,7 @@ const {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.amount.value }}</span>
+  <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.quantity }}</span>
       </div>
 
       <div class="item-modal-content">

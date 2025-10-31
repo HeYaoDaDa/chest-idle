@@ -2,7 +2,7 @@ import { shallowReactive, shallowRef } from 'vue'
 import { Action } from '../activity/Action'
 import { CurrentAction } from '../activity/CurrentAction'
 import type { ActionTarget } from '../actionTarget'
-import { notificationManager } from './NotificationManager'
+import { useNotificationStore } from '@/stores/notification'
 import i18n from '@/i18n'
 
 class ActionManager {
@@ -16,7 +16,7 @@ class ActionManager {
 
   private update() {
     const now = performance.now()
-    const elapsed = now - actionManager.lastUpdateDate
+    const elapsed = (now - actionManager.lastUpdateDate) * 10
     actionManager.lastUpdateDate = now
 
     let remainedElapsed = elapsed
@@ -50,7 +50,8 @@ class ActionManager {
       console.warn(
         `Required level ${target.minLevel} for action ${target.id}, but current level is ${target.skill.level.value}`,
       )
-      notificationManager.warning('notification.levelTooLow', {
+      const notificationStore = useNotificationStore()
+      notificationStore.warning('notification.levelTooLow', {
         skill: i18n.global.t(target.skill.name),
         level: target.skill.level.value,
         required: target.minLevel,
@@ -63,7 +64,8 @@ class ActionManager {
       this.currentAction.value = new CurrentAction(target, actualAmount)
       return true
     } else {
-      notificationManager.warning('notification.notEnoughMaterials', {
+      const notificationStore = useNotificationStore()
+      notificationStore.warning('notification.notEnoughMaterials', {
         action: i18n.global.t(target.name),
       })
       return false

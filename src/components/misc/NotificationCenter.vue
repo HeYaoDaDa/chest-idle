@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { notificationManager } from '@/models/global/NotificationManager'
+import { useNotificationStore } from '@/stores/notification'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
-const notifications = notificationManager.notifications
+const notificationStore = useNotificationStore()
+const notifications = notificationStore.notifications
 
 function dismiss(id: number) {
-  notificationManager.remove(id)
+  notificationStore.remove(id)
 }
 </script>
 

@@ -2,7 +2,7 @@ import { XP_TABLE } from '@/constants'
 import i18n from '@/i18n'
 import { type Ref, type ComputedRef, ref, computed } from 'vue'
 import type { ActionTarget } from './actionTarget'
-import { notificationManager } from './global/NotificationManager'
+import { useNotificationStore } from '@/stores/notification'
 
 export class Skill {
   name: string
@@ -38,7 +38,8 @@ export class Skill {
     const currentLevel = this.getLevelFromValue(this.xp.value)
 
     if (currentLevel > previousLevel) {
-      notificationManager.info('notification.levelUp', {
+      const notificationStore = useNotificationStore()
+      notificationStore.info('notification.levelUp', {
         skill: i18n.global.t(this.name),
         level: currentLevel,
       })

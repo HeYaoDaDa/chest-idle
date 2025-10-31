@@ -2,13 +2,15 @@ import { shallowRef, computed, type ComputedRef } from 'vue'
 import type { Equipment } from '@/models/item/Equipment'
 import type { InventoryItem } from '@/models/inventory/InventoryItem'
 import type { Slot } from '@/models/Slot'
-import { inventory } from '@/models/global/InventoryManager'
+import { useInventoryStore } from '@/stores/inventory'
 
 /**
  * 装备和背包管理的公用 Composable
  * 处理装备选择、背包物品选择和开箱功能
  */
 export function useEquipmentAndInventory() {
+  const inventoryStore = useInventoryStore()
+
   // ============ 状态管理 ============
   const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
   const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
@@ -18,7 +20,7 @@ export function useEquipmentAndInventory() {
 
   // ============ 计算属性 ============
   const maxChestAmount: ComputedRef<number> = computed(() => {
-    return selectedInventoryItem.value?.amount.value || 1
+    return selectedInventoryItem.value?.quantity || 1
   })
 
   const isValidChestAmount: ComputedRef<boolean> = computed(() => {
@@ -98,8 +100,8 @@ export function useEquipmentAndInventory() {
 
       // 记录开箱前的库存
       const inventoryBefore = new Map<string, number>()
-      inventory.inventoryItems.value.forEach((item: InventoryItem) => {
-        inventoryBefore.set(item.item.id, item.amount.value)
+      inventoryStore.inventoryItems.forEach((item: InventoryItem) => {
+        inventoryBefore.set(item.item.id, item.quantity)
       })
 
       // 批量开箱
@@ -108,12 +110,12 @@ export function useEquipmentAndInventory() {
       }
 
       // 计算新增的物品（排除宝箱本身）
-      inventory.inventoryItems.value.forEach((item: InventoryItem) => {
+  inventoryStore.inventoryItems.forEach((item: InventoryItem) => {
         // 跳过宝箱本身
         if (item.item.id === chestId) return
 
         const beforeAmount = inventoryBefore.get(item.item.id) || 0
-        const afterAmount = item.amount.value
+  const afterAmount = item.quantity
         const gained = afterAmount - beforeAmount
         if (gained > 0) {
           results.set(item.item.name, gained)

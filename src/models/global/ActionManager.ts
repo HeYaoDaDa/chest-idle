@@ -16,7 +16,7 @@ class ActionManager {
 
   private update() {
     const now = performance.now()
-    const elapsed = (now - actionManager.lastUpdateDate) * 10
+    const elapsed = (now - actionManager.lastUpdateDate) * 100
     actionManager.lastUpdateDate = now
 
     let remainedElapsed = elapsed

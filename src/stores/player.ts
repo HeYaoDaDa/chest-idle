@@ -17,6 +17,10 @@ export const usePlayerStore = defineStore('player', () => {
   // 所有技能的经验值存储
   const skillsXp = ref<Record<string, number>>({})
 
+  // ============ 装备槽状态管理 ============
+  // 装备槽状态存储 - slotId -> equipmentId
+  const equippedItems = ref<Record<string, string | null>>({})
+
   // ============ 背包状态管理 ============
   // Player inventory
   const inventoryMap = shallowReactive(new Map<string, InventoryItem>())
@@ -30,6 +34,7 @@ export const usePlayerStore = defineStore('player', () => {
     // Clear any existing data
     inventoryMap.clear()
     skillsXp.value = {}
+    equippedItems.value = {}
 
     // Initialize with starting items if needed
     // This could be expanded to load from save data
@@ -144,6 +149,41 @@ export const usePlayerStore = defineStore('player', () => {
     }
   }
 
+  // ============ 装备槽管理功能 ============
+
+  // 获取装备槽中的装备ID
+  function getEquippedItemId(slotId: string): string | null {
+    return equippedItems.value[slotId] ?? null
+  }
+
+  // 获取装备槽中的装备对象
+  function getEquippedItem(slotId: string): Equipment | null {
+    const equipmentId = getEquippedItemId(slotId)
+    if (!equipmentId) return null
+
+    const item = gameConfigStore.getItemById(equipmentId)
+    return item.isEquipment() ? (item as Equipment) : null
+  }
+
+  // 设置装备槽的装备
+  function setEquippedItem(slotId: string, equipmentId: string | null) {
+    equippedItems.value[slotId] = equipmentId
+  }
+
+  // 清空装备槽
+  function clearEquippedItem(slotId: string) {
+    equippedItems.value[slotId] = null
+  }
+
+  // 获取所有装备槽信息
+  const equippedSlots = computed(() => {
+    const result: Record<string, Equipment | null> = {}
+    for (const slotId in equippedItems.value) {
+      result[slotId] = getEquippedItem(slotId)
+    }
+    return result
+  })
+
   // ============ 背包管理功能 ============
 
   function clearInventory() {
@@ -210,39 +250,40 @@ export const usePlayerStore = defineStore('player', () => {
     }
 
     const equipment = inventoryItem.item as Equipment
-    const slot = equipment.slot
+    const slotId = equipment.slot.id
 
     // Unequip current equipment if any
-    unequipSlot(slot.id)
+    unequipSlot(slotId)
 
     // Apply equipment effects
     for (const inactiveEffect of equipment.effects) {
       const state = gameConfigStore.getStateById(inactiveEffect.state)
       const effect = new Effect(inactiveEffect.type, computed(() => inactiveEffect.value))
-      state.addEffect(slot.id, effect)
+      state.addEffect(slotId, effect)
     }
 
     // Set equipment to slot
-    slot.setEquipment(equipment)
+    setEquippedItem(slotId, equipment.id)
 
     // Remove from inventory
     removeItem(inventoryItem, 1)
   }
 
   function unequipSlot(slotId: string) {
-    const slot = gameConfigStore.getSlotById(slotId)
+    const currentEquipment = getEquippedItem(slotId)
 
-    if (slot.currentEquipment) {
+    if (currentEquipment) {
       // Remove equipment effects
-      for (const effect of slot.currentEquipment.effects) {
+      for (const effect of currentEquipment.effects) {
         const state = gameConfigStore.getStateById(effect.state)
-        state.removeEffect(slot.id)
+        state.removeEffect(slotId)
       }
 
+      // Clear equipment from slot
+      clearEquippedItem(slotId)
+
       // Add equipment back to inventory
-      const equipment = slot.currentEquipment
-      slot.clearEquipment()
-      addItem(equipment, 1)
+      addItem(currentEquipment, 1)
     }
   }
 
@@ -301,6 +342,11 @@ export const usePlayerStore = defineStore('player', () => {
     // Methods - Equipment Management
     equipItem,
     unequipSlot,
+    getEquippedItemId,
+    getEquippedItem,
+    setEquippedItem,
+    clearEquippedItem,
+    equippedSlots,
 
     // Methods - Chest Management
     openChest,

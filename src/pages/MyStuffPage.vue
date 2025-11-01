@@ -31,7 +31,7 @@ const {
 } = useEquipmentAndInventory()
 
 const openSlotEquipment = (slot: Slot) => {
-  const equipment = slot.currentEquipment
+  const equipment = playerStore.getEquippedItem(slot.id)
   if (equipment) {
     openEquipmentModal(slot, equipment)
   }
@@ -81,11 +81,11 @@ const openSlotEquipment = (slot: Slot) => {
       <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
         <div v-for="slot in gameConfigStore.allSlots" :key="slot.id" class="equipment-cell">
           <div
-            v-if="slot.currentEquipment"
+            v-if="playerStore.getEquippedItem(slot.id)"
             class="equipment-item"
             @click="openSlotEquipment(slot as unknown as Slot)"
           >
-            <div>{{ t(slot.currentEquipment!.name) }}</div>
+            <div>{{ t(playerStore.getEquippedItem(slot.id)!.name) }}</div>
           </div>
           <div v-else class="equipment-slot">
             <span>{{ t(slot.name) }}</span>

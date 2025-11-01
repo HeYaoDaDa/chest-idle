@@ -1,6 +1,6 @@
 import { Item } from '.'
 import type { EffectDefinition } from '../definitions/misc/EffectDefinition'
-import { Slot } from '../Slot'
+import type { Slot } from '../Slot'
 import { InactiveEffect } from '../state/InactiveEffect'
 
 export class Equipment extends Item {

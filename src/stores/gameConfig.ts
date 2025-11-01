@@ -5,7 +5,7 @@ import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
 import type { RecipeDefinition } from '@/models/definitions/actionTarget/RecipeDefinition'
 import type { SkillConfig } from '@/models/Skill'
 import { State } from '@/models/state/State'
-import { Slot } from '@/models/Slot'
+import type { Slot } from '@/models/Slot'
 import type { Item } from '@/models/item'
 import { Resource } from '@/models/item/Resource'
 import { Chest } from '@/models/item/Chest'
@@ -67,7 +67,11 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
         break
       }
       case 'slot': {
-        const slot = markRaw(new Slot(definition.id, definition.sort))
+        const slot = markRaw({
+          id: definition.id,
+          sort: definition.sort,
+          name: `slot.${definition.id}`
+        })
         slotMap.set(slot.id, slot)
         break
       }

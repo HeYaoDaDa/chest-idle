@@ -5,7 +5,6 @@ import type { ActionTarget } from '@/models/actionTarget'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
-import { useSkillsStore } from '@/stores/skills'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -21,9 +20,8 @@ onBeforeRouteUpdate(async (to) => {
 const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
 const actionQueueStore = useActionQueueStore()
-const skillsStore = useSkillsStore()
 
-const skill = computed(() => skillsStore.getSkill(skillId.value))
+const skill = computed(() => playerStore.getSkill(skillId.value))
 
 // 判断是否需要使用 tab 分组
 const skillActionTargetTabs = computed(() => gameConfigStore.getSkillActionTargetTabs(skillId.value))

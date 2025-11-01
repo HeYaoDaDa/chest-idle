@@ -4,7 +4,6 @@ import ModalBox from '@/components/misc/ModalBox.vue'
 import type { Slot } from '@/models/Slot'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
-import { useSkillsStore } from '@/stores/skills'
 import { shallowRef, onMounted, isRef, type Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
@@ -13,10 +12,9 @@ const { t } = useI18n()
 
 const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
-const skillsStore = useSkillsStore()
 
 const openSlotEquipment = (slot: Slot) => {
-  const equipment = slot.currentEquipment
+  const equipment = playerStore.getEquippedItem(slot.id)
   if (equipment) {
     openEquipmentModal(slot, equipment)
   }
@@ -148,7 +146,7 @@ function closeSidebar() {
           </router-link>
         </div>
         <router-link
-          v-for="skill in skillsStore.skillsList"
+          v-for="skill in playerStore.skillsList"
           :key="skill.id"
           :to="`/game/${skill.id}`"
           active-class="active-link"
@@ -219,11 +217,11 @@ function closeSidebar() {
             <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
               <div v-for="slot in gameConfigStore.allSlots" :key="slot.id" class="equipment-cell">
                 <div
-                  v-if="slot.currentEquipment"
+                  v-if="playerStore.getEquippedItem(slot.id)"
                   class="equipment-item"
                   @click="openSlotEquipment(slot as unknown as Slot)"
                 >
-                  <div>{{ t(slot.currentEquipment!.name) }}</div>
+                  <div>{{ t(playerStore.getEquippedItem(slot.id)!.name) }}</div>
                 </div>
                 <div v-else class="equipment-slot">
                   <span>{{ t(slot.name) }}</span>

@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import LoadPage from '@/pages/LoadPage.vue'
 import GamePage from '@/pages/GamePage.vue'
 import SkillPage from '@/pages/SkillPage.vue'
-import { global } from '@/models/global'
+import { useGlobalStore } from '@/stores/global'
 import StatesPage from '@/pages/StatesPage.vue'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
 
@@ -55,8 +55,11 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  if (to.meta.requireGameData && ['none', 'loading'].includes(global.status.value)) {
-    return ROUTE_PATH_LOAD
+  if (to.meta.requireGameData) {
+    const globalStore = useGlobalStore()
+    if (['none', 'loading'].includes(globalStore.status)) {
+      return ROUTE_PATH_LOAD
+    }
   }
 })
 

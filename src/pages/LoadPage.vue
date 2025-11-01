@@ -3,19 +3,20 @@ import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ROUTE_PATH_GAME } from '@/router'
-import { global } from '@/models/global'
+import { useGlobalStore } from '@/stores/global'
 
 const router = useRouter()
 const { t } = useI18n()
+const globalStore = useGlobalStore()
 
 const fail = ref(false)
 
 watchEffect(() => {
-  if ('none' === global.status.value) {
-    global.load()
-  } else if ('finish' === global.status.value) {
+  if ('none' === globalStore.status) {
+    globalStore.loadGameData()
+  } else if ('finish' === globalStore.status) {
     router.replace(ROUTE_PATH_GAME)
-  } else if ('fail' === global.status.value) {
+  } else if ('fail' === globalStore.status) {
     fail.value = true
   }
 })

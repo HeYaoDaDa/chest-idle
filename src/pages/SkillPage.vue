@@ -2,7 +2,7 @@
 import ModalBox from '@/components/misc/ModalBox.vue'
 import { INFINITE_STRING } from '@/constants'
 import type { ActionTarget } from '@/models/actionTarget'
-import { actionManager } from '@/models/global/ActionManager'
+import { useActionQueueStore } from '@/stores/actionQueue'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
@@ -19,6 +19,7 @@ onBeforeRouteUpdate(async (to) => {
 
 const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
+const actionQueueStore = useActionQueueStore()
 
 const skill = computed(() => gameConfigStore.getSkillById(skillId.value))
 
@@ -62,8 +63,8 @@ const xpPerCycle = computed(() => openZone.value?.xp.value ?? 0)
 const chestPointsPerCycle = computed(() => openZone.value?.chestPoints.value ?? 0)
 const hasIngredients = computed(() => (openZone.value?.ingredients.length ?? 0) > 0)
 const hasProducts = computed(() => (openZone.value?.products.length ?? 0) > 0)
-const hasCurrentAction = computed(() => !!actionManager.currentAction.value)
-const queuePosition = computed(() => actionManager.queuedActions.length + 1)
+const hasCurrentAction = computed(() => !!actionQueueStore.currentAction)
+const queuePosition = computed(() => actionQueueStore.queueLength + 1)
 
 // 不满足条件的标记（用于字段标红）
 const isLevelInsufficient = computed(() => {
@@ -132,7 +133,7 @@ function closeModal() {
 }
 function addAction() {
   if (openZone.value) {
-    actionManager.addAction(openZone.value, stringToNumber(amountString.value))
+    actionQueueStore.addAction(openZone.value, stringToNumber(amountString.value))
     closeModal()
   }
 }
@@ -140,7 +141,7 @@ function addAction() {
 function startImmediately() {
   if (openZone.value) {
     // 立即开始：若有运行中，打断并将原运行项排到队首，然后立即开始新行动
-    actionManager.startImmediately(openZone.value, stringToNumber(amountString.value))
+    actionQueueStore.startImmediately(openZone.value, stringToNumber(amountString.value))
     closeModal()
   }
 }

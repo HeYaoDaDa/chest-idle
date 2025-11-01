@@ -1,40 +1,36 @@
 <script setup lang="ts">
 import ModalBox from './ModalBox.vue'
-import { actionManager } from '@/models/global/ActionManager'
+import { useActionQueueStore } from '@/stores/actionQueue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const showQueueModal = ref(false)
+const actionQueueStore = useActionQueueStore()
 
 const runningActionDisplay = computed(() =>
-  actionManager.currentAction.value
-    ? `${t(actionManager.currentAction.value.target.name)} · ${actionManager.currentAction.value.amountDisplay.value}`
+  actionQueueStore.currentAction
+    ? `${t(actionQueueStore.currentAction.target.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
     : `${t('nothing')}...`,
 )
 
 const runningActionDurationDisplay = computed(() => {
-  if (actionManager.currentAction.value) {
-    return `${(Math.floor(actionManager.currentAction.value.duration.value / 10) / 100).toFixed(2)}s`
+  if (actionQueueStore.currentAction) {
+    return `${(Math.floor(actionQueueStore.currentAction.target.duration.value / 10) / 100).toFixed(2)}s`
   }
   return ''
 })
 
 const progress = computed(() => {
-  if (actionManager.currentAction.value) {
-    return Math.min(
-      (actionManager.currentAction.value.elapsed.value /
-        actionManager.currentAction.value.duration.value) *
-        100,
-      100,
-    )
+  if (actionQueueStore.currentActionDisplay) {
+    return Math.min(actionQueueStore.currentActionDisplay.progress * 100, 100)
   }
   return 0
 })
 
-const hasQueuedActions = computed(() => actionManager.queuedActions.length > 0)
+const hasQueuedActions = computed(() => actionQueueStore.queueingActions.length > 0)
 
-const unifiedLength = computed(() => (actionManager.currentAction.value ? 1 : 0) + actionManager.queuedActions.length)
+const unifiedLength = computed(() => actionQueueStore.queueLength)
 
 function openQueueModal() {
   showQueueModal.value = true
@@ -42,6 +38,33 @@ function openQueueModal() {
 
 function closeQueueModal() {
   showQueueModal.value = false
+}
+
+// 新增方法来处理 ActionQueue 操作
+function stopCurrentAction() {
+  if (actionQueueStore.currentAction) {
+    actionQueueStore.removeAction(0)
+  }
+}
+
+function moveActionUp(index: number) {
+  actionQueueStore.moveUp(index)
+}
+
+function moveActionDown(index: number) {
+  actionQueueStore.moveDown(index)
+}
+
+function moveActionToTop(index: number) {
+  actionQueueStore.moveTop(index)
+}
+
+function moveActionToBottom(index: number) {
+  actionQueueStore.moveBottom(index)
+}
+
+function removeQueuedAction(index: number) {
+  actionQueueStore.removeAction(index + 1) // +1 因为 currentAction 在 index 0
 }
 </script>
 
@@ -54,10 +77,10 @@ function closeQueueModal() {
       </div>
       <div class="action-buttons">
         <button
-          v-if="actionManager.currentAction.value"
+          v-if="actionQueueStore.currentAction"
           class="action-button stop-button"
           type="button"
-          @click="actionManager.stopCurrentAction"
+          @click="stopCurrentAction"
         >
           {{ t('stop') }}
         </button>
@@ -93,12 +116,12 @@ function closeQueueModal() {
       <div class="queue-modal-content">
         <ul class="queue-modal-list">
           <!-- Running as first item (index 0 in unified list) -->
-          <li v-if="actionManager.currentAction.value" class="queue-modal-item running-item">
+          <li v-if="actionQueueStore.currentAction" class="queue-modal-item running-item">
             <div class="queue-modal-item-info">
               <span class="queue-modal-item-index">0</span>
               <div class="queue-modal-item-text">
-                <span class="queue-modal-item-name">{{ t(actionManager.currentAction.value.target.name) }}</span>
-                <span class="queue-modal-item-amount">×{{ actionManager.currentAction.value.amountDisplay.value }}</span>
+                <span class="queue-modal-item-name">{{ t(actionQueueStore.currentAction.target.name) }}</span>
+                <span class="queue-modal-item-amount">×{{ actionQueueStore.currentActionDisplay?.amountDisplay || '∞' }}</span>
               </div>
             </div>
             <div class="running-progress-wrapper">
@@ -118,7 +141,7 @@ function closeQueueModal() {
                 class="control-btn"
                 title="Down"
                 :disabled="unifiedLength <= 1"
-                @click="actionManager.moveDown(0)"
+                @click="moveActionDown(0)"
               >
                 ▼
               </button>
@@ -127,7 +150,7 @@ function closeQueueModal() {
                 class="control-btn"
                 title="Bottom"
                 :disabled="unifiedLength <= 1"
-                @click="actionManager.moveBottom(0)"
+                @click="moveActionToBottom(0)"
               >
                 ⏬
               </button>
@@ -135,19 +158,19 @@ function closeQueueModal() {
             <button
               type="button"
               class="queue-modal-stop"
-              @click="actionManager.stopCurrentAction"
+              @click="stopCurrentAction"
             >
               {{ t('stop') }}
             </button>
           </li>
 
-          <li v-for="(action, index) in actionManager.queuedActions" :key="index" class="queue-modal-item">
+          <li v-for="(action, index) in actionQueueStore.queueingActions" :key="index" class="queue-modal-item">
             <div class="queue-modal-item-info">
               <!-- unified index: current ? index+1 : index -->
-              <span class="queue-modal-item-index">{{ (actionManager.currentAction.value ? index + 1 : index) }}</span>
+              <span class="queue-modal-item-index">{{ (actionQueueStore.currentAction ? index + 1 : index) }}</span>
               <div class="queue-modal-item-text">
                 <span class="queue-modal-item-name">{{ t(action.target.name) }}</span>
-                <span class="queue-modal-item-amount">×{{ action.amountDisplay }}</span>
+                <span class="queue-modal-item-amount">×{{ action.amount === Infinity ? '∞' : action.amount }}</span>
               </div>
             </div>
             <div class="queue-modal-controls">
@@ -155,8 +178,8 @@ function closeQueueModal() {
                 type="button"
                 class="control-btn"
                 title="Top"
-                :disabled="(actionManager.currentAction.value ? index + 1 : index) === 0"
-                @click="actionManager.moveTop(actionManager.currentAction.value ? index + 1 : index)"
+                :disabled="(actionQueueStore.currentAction ? index + 1 : index) === 0"
+                @click="moveActionToTop(actionQueueStore.currentAction ? index + 1 : index)"
               >
                 ⏫
               </button>
@@ -164,8 +187,8 @@ function closeQueueModal() {
                 type="button"
                 class="control-btn"
                 title="Up"
-                :disabled="(actionManager.currentAction.value ? index + 1 : index) === 0"
-                @click="actionManager.moveUp(actionManager.currentAction.value ? index + 1 : index)"
+                :disabled="(actionQueueStore.currentAction ? index + 1 : index) === 0"
+                @click="moveActionUp(actionQueueStore.currentAction ? index + 1 : index)"
               >
                 ▲
               </button>
@@ -173,8 +196,8 @@ function closeQueueModal() {
                 type="button"
                 class="control-btn"
                 title="Down"
-                :disabled="(actionManager.currentAction.value ? index + 1 : index) >= unifiedLength - 1"
-                @click="actionManager.moveDown(actionManager.currentAction.value ? index + 1 : index)"
+                :disabled="(actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1"
+                @click="moveActionDown(actionQueueStore.currentAction ? index + 1 : index)"
               >
                 ▼
               </button>
@@ -182,8 +205,8 @@ function closeQueueModal() {
                 type="button"
                 class="control-btn"
                 title="Bottom"
-                :disabled="(actionManager.currentAction.value ? index + 1 : index) >= unifiedLength - 1"
-                @click="actionManager.moveBottom(actionManager.currentAction.value ? index + 1 : index)"
+                :disabled="(actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1"
+                @click="moveActionToBottom(actionQueueStore.currentAction ? index + 1 : index)"
               >
                 ⏬
               </button>
@@ -191,7 +214,7 @@ function closeQueueModal() {
             <button
               type="button"
               class="queue-modal-remove"
-              @click="actionManager.removeQueueAction(index)"
+              @click="removeQueuedAction(index)"
             >
               {{ t('remove') }}
             </button>

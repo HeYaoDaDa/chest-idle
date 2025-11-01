@@ -1,91 +1,100 @@
 import { defineStore } from 'pinia'
-import { shallowReactive, shallowRef } from 'vue'
-import { Action } from '@/models/activity/Action'
-import { CurrentAction } from '@/models/activity/CurrentAction'
+import { ref } from 'vue'
+import { useActionQueueStore } from './actionQueue'
 import type { ActionTarget } from '@/models/actionTarget'
 
 export const useGameSessionStore = defineStore('gameSession', () => {
   // Current game session state
-  const queuedActions = shallowReactive([] as Action[])
-  const currentAction = shallowRef(undefined as undefined | CurrentAction)
-
-  // Action queue management
-  function addActionToQueue(target: ActionTarget, amount: number = Infinity) {
-    queuedActions.push(new Action(target, amount))
-  }
-
-  function removeQueuedAction(index: number) {
-    if (index >= 0 && index < queuedActions.length) {
-      queuedActions.splice(index, 1)
-    }
-  }
-
-  function clearActionQueue() {
-    queuedActions.splice(0, queuedActions.length)
-  }
-
-  function setCurrentAction(action: CurrentAction | undefined) {
-    currentAction.value = action
-  }
-
-  // Queue manipulation methods
-  function moveActionUp(index: number) {
-    if (index > 0 && index < queuedActions.length) {
-      const temp = queuedActions[index]
-      queuedActions[index] = queuedActions[index - 1]
-      queuedActions[index - 1] = temp
-    }
-  }
-
-  function moveActionDown(index: number) {
-    if (index >= 0 && index < queuedActions.length - 1) {
-      const temp = queuedActions[index]
-      queuedActions[index] = queuedActions[index + 1]
-      queuedActions[index + 1] = temp
-    }
-  }
-
-  function moveActionToTop(index: number) {
-    if (index > 0 && index < queuedActions.length) {
-      const action = queuedActions.splice(index, 1)[0]
-      queuedActions.unshift(action)
-    }
-  }
-
-  function moveActionToBottom(index: number) {
-    if (index >= 0 && index < queuedActions.length - 1) {
-      const action = queuedActions.splice(index, 1)[0]
-      queuedActions.push(action)
-    }
-  }
+  const isSessionActive = ref(false)
+  const sessionStartTime = ref<number | null>(null)
+  const actionQueueStore = useActionQueueStore()
 
   // Session management
   function initializeSession() {
     // Initialize a new game session
-    clearActionQueue()
-    setCurrentAction(undefined)
+    actionQueueStore.clearQueue()
+    actionQueueStore.stop()
+    isSessionActive.value = false
+    sessionStartTime.value = null
+  }
+
+  function startSession() {
+    if (!isSessionActive.value) {
+      isSessionActive.value = true
+      sessionStartTime.value = performance.now()
+      actionQueueStore.load()
+    }
+  }
+
+  function stopSession() {
+    if (isSessionActive.value) {
+      isSessionActive.value = false
+      actionQueueStore.stop()
+    }
   }
 
   function resetSession() {
     // Reset the current session
+    stopSession()
     initializeSession()
+  }
+
+  // 保留一些兼容性方法，但实际上委托给 ActionQueue store
+  function addActionToQueue(target: ActionTarget, amount: number = Infinity) {
+    actionQueueStore.addAction(target, amount)
+    // 如果会话未开始，自动开始
+    if (!isSessionActive.value) {
+      startSession()
+    }
+  }
+
+  function removeQueuedAction(index: number) {
+    actionQueueStore.removeAction(index)
+  }
+
+  function clearActionQueue() {
+    actionQueueStore.clearQueue()
+  }
+
+  // Queue manipulation methods - 委托给 ActionQueue store
+  function moveActionUp(index: number) {
+    actionQueueStore.moveUp(index)
+  }
+
+  function moveActionDown(index: number) {
+    actionQueueStore.moveDown(index)
+  }
+
+  function moveActionToTop(index: number) {
+    actionQueueStore.moveTop(index)
+  }
+
+  function moveActionToBottom(index: number) {
+    actionQueueStore.moveBottom(index)
   }
 
   return {
     // State
-    queuedActions,
-    currentAction,
+    isSessionActive,
+    sessionStartTime,
 
-    // Methods
+    // 暴露 ActionQueue store 的状态供兼容性使用
+    queuedActions: actionQueueStore.queueingActions,
+    currentAction: actionQueueStore.currentAction,
+
+    // Session methods
+    initializeSession,
+    startSession,
+    stopSession,
+    resetSession,
+
+    // Compatibility methods
     addActionToQueue,
     removeQueuedAction,
     clearActionQueue,
-    setCurrentAction,
     moveActionUp,
     moveActionDown,
     moveActionToTop,
     moveActionToBottom,
-    initializeSession,
-    resetSession,
   }
 })

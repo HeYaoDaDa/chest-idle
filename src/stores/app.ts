@@ -4,7 +4,7 @@ import axios from 'axios'
 import type { Definition } from '@/models/definitions'
 import { useGameConfigStore } from './gameConfig'
 import { usePlayerStore } from './player'
-import { actionManager } from '@/models/global/ActionManager'
+import { useActionQueueStore } from './actionQueue'
 
 export const useAppStore = defineStore('app', () => {
   const status = ref('loading' as 'loading' | 'ready' | 'error')
@@ -37,8 +37,9 @@ export const useAppStore = defineStore('app', () => {
       const playerStore = usePlayerStore()
       playerStore.initializePlayer()
 
-      // Initialize action manager
-      actionManager.load()
+      // Initialize action queue
+      const actionQueueStore = useActionQueueStore()
+      actionQueueStore.load()
 
       status.value = 'ready'
     } catch (error) {

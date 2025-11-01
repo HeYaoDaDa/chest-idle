@@ -208,7 +208,7 @@ function handleAmountFocus(event: FocusEvent) {
           <div
             class="chest-progress-bar"
             :style="{
-              width: (zone.chest.points.value / zone.chest.maxPoints) * 100 + '%',
+              width: (playerStore.getChestProgress(zone.chest.id) * 100) + '%',
             }"
           ></div>
         </div>

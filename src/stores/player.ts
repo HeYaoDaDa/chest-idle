@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import { computed, shallowReactive, ref } from 'vue'
 import type { Item } from '@/models/item'
-import { InventoryItem } from '@/models/inventory/InventoryItem'
+import type { InventoryItem } from '@/models/inventory/InventoryItem'
+import { rollLoot } from '@/models/inventory/InventoryItem'
 import { useGameConfigStore } from './gameConfig'
 import { Effect } from '@/models/state/Effect'
 import type { Equipment } from '@/models/item/Equipment'
@@ -21,6 +22,10 @@ export const usePlayerStore = defineStore('player', () => {
   // 装备槽状态存储 - slotId -> equipmentId
   const equippedItems = ref<Record<string, string | null>>({})
 
+  // ============ 宝箱进度状态管理 ============
+  // chest points state - chestId -> current points toward next chest
+  const chestPoints = ref<Record<string, number>>({})
+
   // ============ 背包状态管理 ============
   // Player inventory
   const inventoryMap = shallowReactive(new Map<string, InventoryItem>())
@@ -33,8 +38,9 @@ export const usePlayerStore = defineStore('player', () => {
   function initializePlayer() {
     // Clear any existing data
     inventoryMap.clear()
-    skillsXp.value = {}
+  skillsXp.value = {}
     equippedItems.value = {}
+  chestPoints.value = {}
 
     // Initialize with starting items if needed
     // This could be expanded to load from save data
@@ -195,9 +201,10 @@ export const usePlayerStore = defineStore('player', () => {
     const existingItem = inventoryMap.get(item.id)
 
     if (existingItem) {
-      existingItem.amount.value += amount
+      existingItem.quantity += amount
     } else {
-      inventoryMap.set(item.id, new InventoryItem(item, amount))
+      const entry: InventoryItem = { item, quantity: amount }
+      inventoryMap.set(item.id, entry)
     }
   }
 
@@ -217,11 +224,11 @@ export const usePlayerStore = defineStore('player', () => {
       return
     }
 
-    if (entry.amount.value > amount) {
-      entry.amount.value -= amount
+    if (entry.quantity > amount) {
+      entry.quantity -= amount
     } else {
-      if (entry.amount.value < amount) {
-        console.error(`Insufficient amount for ${entry.item.id}: have ${entry.amount.value}, need ${amount}`)
+      if (entry.quantity < amount) {
+        console.error(`Insufficient amount for ${entry.item.id}: have ${entry.quantity}, need ${amount}`)
       }
       inventoryMap.delete(entry.item.id)
     }
@@ -239,7 +246,45 @@ export const usePlayerStore = defineStore('player', () => {
 
   function hasItem(itemId: string, amount: number = 1): boolean {
     const item = inventoryMap.get(itemId)
-    return item ? item.amount.value >= amount : false
+    return item ? item.quantity >= amount : false
+  }
+
+  // ============ 宝箱进度管理功能 ============
+  function getChestPoints(chestId: string): number {
+    return chestPoints.value[chestId] ?? 0
+  }
+
+  function setChestPoints(chestId: string, points: number) {
+    chestPoints.value[chestId] = Math.max(0, points)
+  }
+
+  // 增加宝箱点数，返回可开箱的数量（整箱数）
+  function addChestPoints(chestId: string, points: number): number {
+    if (points <= 0) return 0
+    const item = gameConfigStore.getItemById(chestId)
+    if (!item.isChest()) return 0
+    const chest = item as Chest
+    const current = getChestPoints(chestId)
+    const total = current + points
+    const count = Math.floor(total / chest.maxPoints)
+    const remainder = total % chest.maxPoints
+    setChestPoints(chestId, remainder)
+    return count
+  }
+
+  function getChestRemaining(chestId: string): number {
+    const item = gameConfigStore.getItemById(chestId)
+    if (!item.isChest()) return 0
+    const chest = item as Chest
+    return Math.max(0, chest.maxPoints - getChestPoints(chestId))
+  }
+
+  function getChestProgress(chestId: string): number {
+    const item = gameConfigStore.getItemById(chestId)
+    if (!item.isChest()) return 0
+    const chest = item as Chest
+    const points = getChestPoints(chestId)
+    return chest.maxPoints > 0 ? points / chest.maxPoints : 0
   }
 
   // Equipment management
@@ -302,7 +347,7 @@ export const usePlayerStore = defineStore('player', () => {
 
     // Roll loot for each chest
     for (let i = 0; i < amount; i++) {
-      const lootResults = InventoryItem.rollLoot(chest)
+  const lootResults = rollLoot(chest)
 
       for (const { itemId, amount: lootAmount } of lootResults) {
         addItem(itemId, lootAmount)
@@ -326,6 +371,7 @@ export const usePlayerStore = defineStore('player', () => {
     inventoryMap,
     skillsList,
     skillsXp,
+    chestPoints,
 
     // Methods - Player Management
     initializePlayer,
@@ -338,6 +384,13 @@ export const usePlayerStore = defineStore('player', () => {
     removeManyItems,
     getInventoryItem,
     hasItem,
+
+  // Methods - Chest Points
+  getChestPoints,
+  setChestPoints,
+  addChestPoints,
+  getChestRemaining,
+  getChestProgress,
 
     // Methods - Equipment Management
     equipItem,

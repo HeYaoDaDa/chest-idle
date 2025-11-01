@@ -25,7 +25,6 @@ interface SimpleActionTarget {
     type: string
     name: string
     description: string
-    addPoint: (points: number) => number
   }
   ingredients?: Array<{ item: { id: string }, count: number }>
   products: Array<{

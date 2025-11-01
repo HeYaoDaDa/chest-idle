@@ -2,6 +2,7 @@
 import type { Chest } from '@/models/item/Chest'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { usePlayerStore } from '@/stores/player'
 
 interface Props {
   chest: Chest
@@ -9,9 +10,10 @@ interface Props {
 const { chest } = defineProps<Props>()
 
 const { t } = useI18n()
+const playerStore = usePlayerStore()
 
-const progressInnerText = computed(() => `${chest.points.value}/${chest.maxPoints}`)
-const progress = computed(() => chest.pointProgress.value * 100)
+const progressInnerText = computed(() => `${playerStore.getChestPoints(chest.id)}/${chest.maxPoints}`)
+const progress = computed(() => playerStore.getChestProgress(chest.id) * 100)
 </script>
 
 <template>

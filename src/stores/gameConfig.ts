@@ -166,7 +166,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     // Build item relationships
     for (const item of itemMap.values()) {
       if (item.isChest()) {
-        item.loots = item._loots.map((it) => ({
+        item.loots = item.lootDefinitions.map((it) => ({
           ...it,
           item: getItemById(it.item),
         }))

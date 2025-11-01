@@ -15,7 +15,7 @@ export class Chest extends Item {
     id: string,
     sort: number,
     public maxPoints: number,
-    public _loots: LootEntryDefinition[],
+    public lootDefinitions: LootEntryDefinition[],
   ) {
     super(id, sort)
   }

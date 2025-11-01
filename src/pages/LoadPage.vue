@@ -2,7 +2,6 @@
 import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { ROUTE_PATH_GAME } from '@/router'
 import { useAppStore } from '@/stores/app'
 
 const router = useRouter()
@@ -15,7 +14,7 @@ watchEffect(() => {
   if ('loading' === appStore.status) {
     appStore.loadApplication()
   } else if ('ready' === appStore.status) {
-    router.replace(ROUTE_PATH_GAME)
+    router.replace('/game')
   } else if ('error' === appStore.status) {
     fail.value = true
   }
@@ -43,4 +42,3 @@ watchEffect(() => {
   }
 }
 </style>
-

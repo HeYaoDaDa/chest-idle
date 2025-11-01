@@ -6,26 +6,19 @@ import { useAppStore } from '@/stores/app'
 import StatesPage from '@/pages/StatesPage.vue'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
 
-export const ROUTE_PATH_LOAD = '/'
-export const ROUTE_NAME_LOAD = 'load'
-export const ROUTE_PATH_GAME = '/game'
-export const ROUTE_PATH_GAME_MINING = '/game/mining'
-export const ROUTE_NAME_GAME = 'game'
-export const ROUTE_NAME_404 = '404'
-
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: ROUTE_PATH_LOAD,
-      name: ROUTE_NAME_LOAD,
+      path: '/',
+      name: 'load',
       component: LoadPage,
     },
     {
-      path: ROUTE_PATH_GAME,
-      name: ROUTE_NAME_GAME,
-      redirect: ROUTE_PATH_GAME_MINING,
+      path: '/game',
+      name: 'game',
+      redirect: '/game/mining',
       meta: { requireGameData: true },
       component: GamePage,
       children: [
@@ -48,7 +41,7 @@ const router = createRouter({
     },
     {
       path: '/:catchAll(.*)*',
-      name: ROUTE_NAME_404,
+      name: '404',
       component: () => import('@/pages/ErrorNotFoundPage.vue'),
     },
   ],
@@ -58,7 +51,7 @@ router.beforeEach(async (to) => {
   if (to.meta.requireGameData) {
     const appStore = useAppStore()
     if (['loading'].includes(appStore.status)) {
-      return ROUTE_PATH_LOAD
+      return '/'
     }
   }
 })

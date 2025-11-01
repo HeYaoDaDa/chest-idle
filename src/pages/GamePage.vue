@@ -4,6 +4,7 @@ import ModalBox from '@/components/misc/ModalBox.vue'
 import type { Slot } from '@/models/Slot'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
+import { useSkillsStore } from '@/stores/skills'
 import { shallowRef, onMounted, isRef, type Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
@@ -12,6 +13,7 @@ const { t } = useI18n()
 
 const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
+const skillsStore = useSkillsStore()
 
 const openSlotEquipment = (slot: Slot) => {
   const equipment = slot.currentEquipment
@@ -146,7 +148,7 @@ function closeSidebar() {
           </router-link>
         </div>
         <router-link
-          v-for="skill in gameConfigStore.allSkills"
+          v-for="skill in skillsStore.skillsList"
           :key="skill.id"
           :to="`/game/${skill.id}`"
           active-class="active-link"

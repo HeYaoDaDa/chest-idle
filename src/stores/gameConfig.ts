@@ -3,7 +3,7 @@ import { markRaw, ref } from 'vue'
 import type { Definition } from '@/models/definitions'
 import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
 import type { RecipeDefinition } from '@/models/definitions/actionTarget/RecipeDefinition'
-import { Skill } from '@/models/Skill'
+import type { SkillConfig } from '@/models/Skill'
 import { State } from '@/models/state/State'
 import { Slot } from '@/models/Slot'
 import type { Item } from '@/models/item'
@@ -13,10 +13,11 @@ import { Equipment } from '@/models/item/Equipment'
 import type { ActionTarget } from '@/models/actionTarget'
 import { GatheringZone } from '@/models/actionTarget/GatheringZone'
 import { Recipe } from '@/models/actionTarget/Recipe'
+import { usePlayerStore } from './player'
 
 export const useGameConfigStore = defineStore('gameConfig', () => {
   // Maps for storing game objects by ID
-  const skillMap = new Map<string, Skill>()
+  const skillConfigMap = new Map<string, SkillConfig>()
   const stateMap = new Map<string, State>()
   const slotMap = new Map<string, Slot>()
   const itemMap = new Map<string, Item>()
@@ -24,18 +25,18 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   const actionTargetMap = new Map<string, ActionTarget>()
 
   // Cached arrays for UI consumption
-  const allSkills = ref<Skill[]>([])
+  const allSkillConfigs = ref<SkillConfig[]>([])
   const allSlots = ref<Slot[]>([])
   const allChests = ref<Chest[]>([])
 
   function clear() {
-    skillMap.clear()
+    skillConfigMap.clear()
     stateMap.clear()
     slotMap.clear()
     itemMap.clear()
     chestMap.clear()
     actionTargetMap.clear()
-    allSkills.value = []
+    allSkillConfigs.value = []
     allSlots.value = []
     allChests.value = []
   }
@@ -51,8 +52,13 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   function handleDefinition(definition: Definition) {
     switch (definition.type) {
       case 'skill': {
-        const skill = markRaw(new Skill(definition.id, definition.sort))
-        skillMap.set(skill.id, skill)
+        const skillConfig: SkillConfig = {
+          id: definition.id,
+          name: `skill.${definition.id}.name`,
+          description: `skill.${definition.id}.description`,
+          sort: definition.sort
+        }
+        skillConfigMap.set(skillConfig.id, skillConfig)
         break
       }
       case 'state': {
@@ -87,7 +93,11 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       }
       case 'actionTarget': {
         const actionTargetDefinition = definition as ActionTargetDefinition
-        const skill = getSkillById(actionTargetDefinition.skill)
+        const playerStore = usePlayerStore()
+        const skill = playerStore.getSkill(actionTargetDefinition.skill)
+        if (!skill) {
+          throw new Error(`Skill ${actionTargetDefinition.skill} not found`)
+        }
         const chest = getChestById(actionTargetDefinition.chest)
 
         const products = actionTargetDefinition.products.map(({ item, count }) => ({
@@ -159,34 +169,8 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       }
     }
 
-    // Build skill relationships
-    for (const skill of skillMap.values()) {
-      skill.actionTargets = []
-      skill.actionTargetTabMap.clear()
-    }
-
-    for (const actionTarget of actionTargetMap.values()) {
-      const skill = actionTarget.skill
-      skill.actionTargets.push(actionTarget)
-      if (actionTarget.tab) {
-        const list = skill.actionTargetTabMap.get(actionTarget.tab) ?? []
-        if (!skill.actionTargetTabMap.has(actionTarget.tab)) {
-          skill.actionTargetTabMap.set(actionTarget.tab, list)
-        }
-        list.push(actionTarget)
-      }
-    }
-
-    // Sort everything
-    for (const skill of skillMap.values()) {
-      skill.actionTargets.sort((a, b) => a.sort - b.sort)
-      for (const list of skill.actionTargetTabMap.values()) {
-        list.sort((a, b) => a.sort - b.sort)
-      }
-    }
-
     // Update cached arrays
-    allSkills.value = Array.from(skillMap.values()).sort((a, b) => a.sort - b.sort)
+    allSkillConfigs.value = Array.from(skillConfigMap.values()).sort((a, b) => a.sort - b.sort)
     allSlots.value = Array.from(slotMap.values()).sort((a, b) => a.sort - b.sort)
     allChests.value = Array.from(chestMap.values()).sort((a, b) => a.sort - b.sort)
   }
@@ -200,12 +184,38 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   }
 
   // Getter functions
-  function getSkillById(id: string): Skill {
-    const skill = skillMap.get(id)
-    if (!skill) {
-      throw new Error(`Skill ${id} not found`)
+    // 获取技能的相关 ActionTargets
+  function getSkillActionTargets(skillId: string): ActionTarget[] {
+    return Array.from(actionTargetMap.values())
+      .filter(actionTarget => actionTarget.skill.id === skillId)
+      .sort((a, b) => a.sort - b.sort)
+  }
+
+  // 获取技能的 ActionTarget 标签页映射
+  function getSkillActionTargetTabs(skillId: string): Map<string, ActionTarget[]> {
+    const tabMap = new Map<string, ActionTarget[]>()
+    const actionTargets = getSkillActionTargets(skillId)
+
+    for (const actionTarget of actionTargets) {
+      if (actionTarget.tab) {
+        const list = tabMap.get(actionTarget.tab) ?? []
+        if (!tabMap.has(actionTarget.tab)) {
+          tabMap.set(actionTarget.tab, list)
+        }
+        list.push(actionTarget)
+      }
     }
-    return skill
+
+    // 排序每个标签页中的 actionTargets
+    for (const list of tabMap.values()) {
+      list.sort((a, b) => a.sort - b.sort)
+    }
+
+    return tabMap
+  }
+
+  function getSkillConfigById(skillId: string): SkillConfig | undefined {
+    return skillConfigMap.get(skillId)
   }
 
   function getStateById(id: string): State {
@@ -250,13 +260,15 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
 
   return {
     // State
-    allSkills,
+    allSkillConfigs,
     allSlots,
     allChests,
 
     // Methods
     loadGameConfig,
-    getSkillById,
+    getSkillConfigById,
+    getSkillActionTargets,
+    getSkillActionTargetTabs,
     getStateById,
     getSlotById,
     getItemById,
@@ -264,7 +276,11 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     getActionTargetById,
 
     // Internal maps (for compatibility)
-    skillMap,
+    skillConfigMap,
     stateMap,
+    slotMap,
+    itemMap,
+    chestMap,
+    actionTargetMap
   }
 })

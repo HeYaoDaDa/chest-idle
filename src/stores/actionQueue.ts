@@ -108,14 +108,14 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     const amount = currentAction.value.amount
 
     // 检查等级要求
-    if (target.skill.level.value < target.minLevel) {
+    if (target.skill.level < target.minLevel) {
       console.warn(
-        `Required level ${target.minLevel} for action ${target.id}, but current level is ${target.skill.level.value}`
+        `Required level ${target.minLevel} for action ${target.id}, but current level is ${target.skill.level}`
       )
       const notificationStore = useNotificationStore()
       notificationStore.warning('notification.levelTooLow', {
         skill: i18n.global.t(target.skill.name),
-        level: target.skill.level.value,
+        level: target.skill.level,
         required: target.minLevel,
         action: i18n.global.t(target.name),
       })
@@ -225,7 +225,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
         count,
         1 + Math.floor((elapsed - remainedDuration) / target.duration.value)
       )
-      count = Math.min(count, Math.ceil(target.skill.remainingXpForUpgrade.value / target.xp.value))
+      count = Math.min(count, Math.ceil(target.skill.remainingXpForUpgrade / target.xp.value))
 
       // 执行动作效果
       executeAction(action, count)

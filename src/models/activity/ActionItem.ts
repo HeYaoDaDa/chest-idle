@@ -10,9 +10,10 @@ interface SimpleActionTarget {
   type: string
   name: string
   skill: {
+    id: string
     name: string
-    level: { value: number }
-    remainingXpForUpgrade: { value: number }
+    level: number
+    remainingXpForUpgrade: number
     addXp: (xp: number) => void
   }
   duration: { value: number }

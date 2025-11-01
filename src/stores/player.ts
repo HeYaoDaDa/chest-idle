@@ -1,15 +1,23 @@
 import { defineStore } from 'pinia'
-import { computed, shallowReactive } from 'vue'
+import { computed, shallowReactive, ref } from 'vue'
 import type { Item } from '@/models/item'
 import { InventoryItem } from '@/models/inventory/InventoryItem'
 import { useGameConfigStore } from './gameConfig'
 import { Effect } from '@/models/state/Effect'
 import type { Equipment } from '@/models/item/Equipment'
 import type { Chest } from '@/models/item/Chest'
+import { XP_TABLE } from '@/constants'
+import i18n from '@/i18n'
+import { useNotificationStore } from './notification'
 
 export const usePlayerStore = defineStore('player', () => {
   const gameConfigStore = useGameConfigStore()
 
+  // ============ 技能状态管理 ============
+  // 所有技能的经验值存储
+  const skillsXp = ref<Record<string, number>>({})
+
+  // ============ 背包状态管理 ============
   // Player inventory
   const inventoryMap = shallowReactive(new Map<string, InventoryItem>())
 
@@ -21,10 +29,122 @@ export const usePlayerStore = defineStore('player', () => {
   function initializePlayer() {
     // Clear any existing data
     inventoryMap.clear()
+    skillsXp.value = {}
 
     // Initialize with starting items if needed
     // This could be expanded to load from save data
   }
+
+  // ============ 技能管理功能 ============
+
+  // 获取技能经验值
+  function getSkillXp(skillId: string): number {
+    return skillsXp.value[skillId] ?? 0
+  }
+
+  // 设置技能经验值
+  function setSkillXp(skillId: string, xp: number) {
+    skillsXp.value[skillId] = xp
+  }
+
+  // 根据经验值计算等级
+  function getLevelFromXp(xp: number): number {
+    let left = 0
+    let right = XP_TABLE.length - 1
+    let result = 0
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2)
+      if (XP_TABLE[mid] <= xp) {
+        result = mid
+        left = mid + 1
+      } else {
+        right = mid - 1
+      }
+    }
+    return result
+  }
+
+  // 获取技能等级
+  function getSkillLevel(skillId: string): number {
+    return getLevelFromXp(getSkillXp(skillId))
+  }
+
+  // 获取升级所需剩余经验值
+  function getRemainingXpForUpgrade(skillId: string): number {
+    const currentXp = getSkillXp(skillId)
+    const currentLevel = getLevelFromXp(currentXp)
+    const nextLevelXp = XP_TABLE[currentLevel + 1] ?? Infinity
+    return Math.max(0, nextLevelXp - currentXp)
+  }
+
+  // 获取升级进度 (0-1)
+  function getUpgradeProgress(skillId: string): number {
+    const currentXp = getSkillXp(skillId)
+    const currentLevel = getLevelFromXp(currentXp)
+    const currentLevelXp = XP_TABLE[currentLevel] ?? 0
+    const nextLevelXp = XP_TABLE[currentLevel + 1] ?? Infinity
+
+    if (nextLevelXp === Infinity) return 1
+
+    return (currentXp - currentLevelXp) / (nextLevelXp - currentLevelXp)
+  }
+
+  // 添加技能经验值
+  function addSkillXp(skillId: string, xp: number) {
+    const previousLevel = getLevelFromXp(getSkillXp(skillId))
+    const newXp = getSkillXp(skillId) + xp
+    setSkillXp(skillId, newXp)
+    const currentLevel = getLevelFromXp(newXp)
+
+    // 升级通知
+    if (currentLevel > previousLevel) {
+      const notificationStore = useNotificationStore()
+      const skillConfig = gameConfigStore.getSkillConfigById(skillId)
+      if (skillConfig) {
+        notificationStore.info('notification.levelUp', {
+          skill: i18n.global.t(skillConfig.name),
+          level: currentLevel,
+        })
+      }
+    }
+  }
+
+  // 获取技能完整信息
+  function getSkill(skillId: string) {
+    const skillConfig = gameConfigStore.getSkillConfigById(skillId)
+    if (!skillConfig) return undefined
+
+    return {
+      ...skillConfig,
+      xp: getSkillXp(skillId),
+      level: getSkillLevel(skillId),
+      remainingXpForUpgrade: getRemainingXpForUpgrade(skillId),
+      upgradeProgress: getUpgradeProgress(skillId),
+      addXp: (xp: number) => addSkillXp(skillId, xp)
+    }
+  }
+
+  // 获取所有技能列表
+  const skillsList = computed(() => {
+    return Array.from(gameConfigStore.allSkillConfigs)
+      .map(config => getSkill(config.id))
+      .filter((skill): skill is NonNullable<typeof skill> => skill !== undefined)
+      .sort((a, b) => a.sort - b.sort)
+  })
+
+  // 重置特定技能
+  function resetSkill(skillId: string) {
+    setSkillXp(skillId, 0)
+  }
+
+  // 重置所有技能
+  function resetAllSkills() {
+    for (const skillId of Object.keys(skillsXp.value)) {
+      resetSkill(skillId)
+    }
+  }
+
+  // ============ 背包管理功能 ============
 
   function clearInventory() {
     inventoryMap.clear()
@@ -163,9 +283,13 @@ export const usePlayerStore = defineStore('player', () => {
     // State
     inventoryItems,
     inventoryMap,
+    skillsList,
+    skillsXp,
 
-    // Methods
+    // Methods - Player Management
     initializePlayer,
+
+    // Methods - Inventory Management
     clearInventory,
     addItem,
     addManyItems,
@@ -173,8 +297,24 @@ export const usePlayerStore = defineStore('player', () => {
     removeManyItems,
     getInventoryItem,
     hasItem,
+
+    // Methods - Equipment Management
     equipItem,
     unequipSlot,
+
+    // Methods - Chest Management
     openChest,
+
+    // Methods - Skills Management
+    getSkillXp,
+    setSkillXp,
+    addSkillXp,
+    getSkillLevel,
+    getRemainingXpForUpgrade,
+    getUpgradeProgress,
+    getSkill,
+    resetSkill,
+    resetAllSkills,
+    getLevelFromXp
   }
 })

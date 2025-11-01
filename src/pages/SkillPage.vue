@@ -5,6 +5,7 @@ import type { ActionTarget } from '@/models/actionTarget'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
+import { useSkillsStore } from '@/stores/skills'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -20,15 +21,17 @@ onBeforeRouteUpdate(async (to) => {
 const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
 const actionQueueStore = useActionQueueStore()
+const skillsStore = useSkillsStore()
 
-const skill = computed(() => gameConfigStore.getSkillById(skillId.value))
+const skill = computed(() => skillsStore.getSkill(skillId.value))
 
 // 判断是否需要使用 tab 分组
-const hasTabGroups = computed(() => skill.value.actionTargetTabMap.size > 0)
+const skillActionTargetTabs = computed(() => gameConfigStore.getSkillActionTargetTabs(skillId.value))
+const hasTabGroups = computed(() => skillActionTargetTabs.value.size > 0)
 const currentTab = ref<string>('')
 
 // 获取可用的 tabs
-const availableTabs = computed(() => Array.from(skill.value.actionTargetTabMap.keys()))
+const availableTabs = computed(() => Array.from(skillActionTargetTabs.value.keys()))
 
 // 确保 currentTab 始终有效
 const ensureValidTab = () => {
@@ -50,9 +53,9 @@ ensureValidTab()
 // 显示的 actionTargets
 const displayedActionTargets = computed(() => {
   if (!hasTabGroups.value) {
-    return skill.value.actionTargets
+    return gameConfigStore.getSkillActionTargets(skillId.value)
   }
-  return skill.value.actionTargetTabMap.get(currentTab.value) || []
+  return skillActionTargetTabs.value.get(currentTab.value) || []
 })
 
 const openZone = shallowRef(undefined as ActionTarget | undefined)
@@ -69,7 +72,7 @@ const queuePosition = computed(() => actionQueueStore.queueLength + 1)
 // 不满足条件的标记（用于字段标红）
 const isLevelInsufficient = computed(() => {
   if (!openZone.value) return false
-  return openZone.value.skill.level.value < openZone.value.minLevel
+  return openZone.value.skill.level < openZone.value.minLevel
 })
 
 const insufficientIngredients = computed(() => {
@@ -92,12 +95,12 @@ const canStartAction = computed(() => {
   const reasons: string[] = []
 
   // 检查等级要求
-  if (openZone.value.skill.level.value < openZone.value.minLevel) {
+  if (openZone.value.skill.level < openZone.value.minLevel) {
     reasons.push(t('notification.levelTooLow', {
       skill: t(openZone.value.skill.name),
-      level: openZone.value.skill.level.value,
+      level: openZone.value.skill.level,
       required: openZone.value.minLevel,
-      action: t(openZone.value.name)
+      action: t(openZone.value.name),
     }))
   }
 
@@ -153,22 +156,22 @@ function handleAmountFocus(event: FocusEvent) {
 </script>
 
 <template>
-  <div id="skill-page-container">
+  <div id="skill-page-container" v-if="skill">
     <div class="skill-header">
       <div class="skill-header-main">
         <h2 class="skill-title">{{ t(skill.name) }}</h2>
-        <div class="skill-level">{{ t('ui.level', { level: skill.level.value }) }}</div>
+        <div class="skill-level">{{ t('ui.level', { level: skill.level }) }}</div>
       </div>
       <div class="skill-description">{{ t(skill.description) }}</div>
       <div class="skill-stats">
         <div class="skill-stat">
           <span class="skill-stat-label">{{ t('ui.xp') }}</span>
-          <span class="skill-stat-value">{{ skill.xp.value.toLocaleString(locale) }}</span>
+          <span class="skill-stat-value">{{ skill.xp.toLocaleString(locale) }}</span>
         </div>
         <div class="skill-stat">
           <span class="skill-stat-label">{{ t('ui.nextLevel') }}</span>
           <span class="skill-stat-value">{{
-            skill.remainingXpForUpgrade.value.toLocaleString(locale)
+            skill.remainingXpForUpgrade.toLocaleString(locale)
           }}</span>
         </div>
       </div>
@@ -176,7 +179,7 @@ function handleAmountFocus(event: FocusEvent) {
         <div
           class="skill-progress-bar"
           :style="{
-            width: skill.upgradeProgress.value * 100 + '%',
+            width: skill.upgradeProgress * 100 + '%',
           }"
         ></div>
       </div>

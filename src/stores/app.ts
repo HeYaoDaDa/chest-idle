@@ -2,17 +2,17 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
 import type { Definition } from '@/models/definitions'
-import { useDataStore } from './data'
-import { useInventoryStore } from './inventory'
+import { useGameConfigStore } from './gameConfig'
+import { usePlayerStore } from './player'
 import { actionManager } from '@/models/global/ActionManager'
 
-export const useGlobalStore = defineStore('global', () => {
-  const status = ref('none' as 'none' | 'loading' | 'finish' | 'fail')
+export const useAppStore = defineStore('app', () => {
+  const status = ref('loading' as 'loading' | 'ready' | 'error')
 
-  async function loadGameData() {
+  async function loadApplication() {
     status.value = 'loading'
     try {
-      //definition
+      // Load game configuration data
       const paths = [
         '/data/skills.json',
         '/data/states.json',
@@ -25,23 +25,30 @@ export const useGlobalStore = defineStore('global', () => {
         '/data/actionTargets/gatheringZones/foraging.json',
         '/data/actionTargets/recipes.json',
       ]
+
       const responses = await Promise.all(paths.map((p) => axios.get(p)))
       const definitions = responses.flatMap((r) => r.data as Definition[])
 
-      const dataStore = useDataStore()
-      dataStore.load(definitions)
-      const inventoryStore = useInventoryStore()
-      inventoryStore.clear()
+      // Initialize game configuration
+      const gameConfigStore = useGameConfigStore()
+      gameConfigStore.loadGameConfig(definitions)
+
+      // Initialize player data
+      const playerStore = usePlayerStore()
+      playerStore.initializePlayer()
+
+      // Initialize action manager
       actionManager.load()
-      status.value = 'finish'
+
+      status.value = 'ready'
     } catch (error) {
-      console.error('Failed to load data:', error)
-      status.value = 'fail'
+      console.error('Failed to load application:', error)
+      status.value = 'error'
     }
   }
 
   return {
     status,
-    loadGameData
+    loadApplication
   }
 })

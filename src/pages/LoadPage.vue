@@ -3,20 +3,20 @@ import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ROUTE_PATH_GAME } from '@/router'
-import { useGlobalStore } from '@/stores/global'
+import { useAppStore } from '@/stores/app'
 
 const router = useRouter()
 const { t } = useI18n()
-const globalStore = useGlobalStore()
+const appStore = useAppStore()
 
 const fail = ref(false)
 
 watchEffect(() => {
-  if ('none' === globalStore.status) {
-    globalStore.loadGameData()
-  } else if ('finish' === globalStore.status) {
+  if ('loading' === appStore.status) {
+    appStore.loadApplication()
+  } else if ('ready' === appStore.status) {
     router.replace(ROUTE_PATH_GAME)
-  } else if ('fail' === globalStore.status) {
+  } else if ('error' === appStore.status) {
     fail.value = true
   }
 })

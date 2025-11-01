@@ -1,7 +1,5 @@
 import { ref, type Ref } from 'vue'
 import type { Equipment } from './item/Equipment'
-import { useDataStore } from '@/stores/data'
-import { useInventoryStore } from '@/stores/inventory'
 
 export class Slot {
   equipment: Ref<Equipment | undefined> = ref(undefined)
@@ -18,17 +16,15 @@ export class Slot {
     return this.equipment.value
   }
 
-  unEquip() {
-    if (this.equipment.value) {
-      const dataStore = useDataStore()
-      const inventoryStore = useInventoryStore()
-      for (const effect of this.equipment.value.effects) {
-        const state = dataStore.getStateById(effect.state)
-        state.removeEffect(this.id)
-      }
-      const equipment = this.equipment.value
-      this.equipment.value = undefined
-      inventoryStore.add(equipment, 1)
-    }
+  // Note: unEquip() method has been moved to the store/composable level
+  // to avoid circular dependencies and follow better separation of concerns
+  // This action is now handled by the PlayerStore and related composables
+
+  clearEquipment() {
+    this.equipment.value = undefined
+  }
+
+  setEquipment(equipment: Equipment) {
+    this.equipment.value = equipment
   }
 }

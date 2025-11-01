@@ -3,8 +3,8 @@ import ModalBox from '@/components/misc/ModalBox.vue'
 import { INFINITE_STRING } from '@/constants'
 import type { ActionTarget } from '@/models/actionTarget'
 import { actionManager } from '@/models/global/ActionManager'
-import { useDataStore } from '@/stores/data'
-import { useInventoryStore } from '@/stores/inventory'
+import { useGameConfigStore } from '@/stores/gameConfig'
+import { usePlayerStore } from '@/stores/player'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 import { computed, ref, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -17,10 +17,10 @@ onBeforeRouteUpdate(async (to) => {
   skillId.value = to.params.id as string
 })
 
-const dataStore = useDataStore()
-const inventoryStore = useInventoryStore()
+const gameConfigStore = useGameConfigStore()
+const playerStore = usePlayerStore()
 
-const skill = computed(() => dataStore.getSkillById(skillId.value))
+const skill = computed(() => gameConfigStore.getSkillById(skillId.value))
 
 // 判断是否需要使用 tab 分组
 const hasTabGroups = computed(() => skill.value.actionTargetTabMap.size > 0)
@@ -75,7 +75,7 @@ const insufficientIngredients = computed(() => {
   if (!openZone.value || !('ingredients' in openZone.value)) return [] as string[]
   const lack: string[] = []
   for (const ingredient of openZone.value.ingredients) {
-  const inventoryItem = inventoryStore.inventoryItemMap.get(ingredient.item.id)
+  const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
   const available = inventoryItem?.quantity ?? 0
     if (available < ingredient.count) lack.push(ingredient.item.id)
   }
@@ -103,7 +103,7 @@ const canStartAction = computed(() => {
   // 检查材料是否足够
   if ('ingredients' in openZone.value && openZone.value.ingredients.length > 0) {
     for (const ingredient of openZone.value.ingredients) {
-  const inventoryItem = inventoryStore.inventoryItemMap.get(ingredient.item.id)
+  const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
   const available = inventoryItem?.quantity ?? 0
       if (available < ingredient.count) {
         reasons.push(t('ui.insufficientMaterial', {

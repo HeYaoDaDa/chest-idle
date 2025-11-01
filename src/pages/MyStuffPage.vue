@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import ModalBox from '@/components/misc/ModalBox.vue'
 import type { Slot } from '@/models/Slot'
-import { useDataStore } from '@/stores/data'
-import { useInventoryStore } from '@/stores/inventory'
+import { useGameConfigStore } from '@/stores/gameConfig'
+import { usePlayerStore } from '@/stores/player'
 import { useI18n } from 'vue-i18n'
 import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
 
 const { t } = useI18n()
-const dataStore = useDataStore()
-const inventoryStore = useInventoryStore()
+const gameConfigStore = useGameConfigStore()
+const playerStore = usePlayerStore()
 
 // 使用通用 Composable
 const {
@@ -67,7 +67,7 @@ const openSlotEquipment = (slot: Slot) => {
     <div class="tabs-content">
       <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
         <div
-          v-for="inventoryItem in inventoryStore.inventoryItems"
+          v-for="inventoryItem in playerStore.inventoryItems"
           :key="inventoryItem.item.id"
           class="inventory-item"
           @click="openInventoryModal(inventoryItem)"
@@ -79,7 +79,7 @@ const openSlotEquipment = (slot: Slot) => {
         </div>
       </div>
       <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
-        <div v-for="slot in dataStore.allSlot" :key="slot.id" class="equipment-cell">
+        <div v-for="slot in gameConfigStore.allSlots" :key="slot.id" class="equipment-cell">
           <div
             v-if="slot.currentEquipment"
             class="equipment-item"

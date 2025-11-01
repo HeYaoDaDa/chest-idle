@@ -14,34 +14,36 @@ import type { ActionTarget } from '@/models/actionTarget'
 import { GatheringZone } from '@/models/actionTarget/GatheringZone'
 import { Recipe } from '@/models/actionTarget/Recipe'
 
-export const useDataStore = defineStore('data', () => {
-  const skillIdMap = new Map<string, Skill>()
-  const stateIdMap = new Map<string, State>()
-  const slotIdMap = new Map<string, Slot>()
-  const itemIdMap = new Map<string, Item>()
-  const chestIdMap = new Map<string, Chest>()
-  const actionTargetIdMap = new Map<string, ActionTarget>()
+export const useGameConfigStore = defineStore('gameConfig', () => {
+  // Maps for storing game objects by ID
+  const skillMap = new Map<string, Skill>()
+  const stateMap = new Map<string, State>()
+  const slotMap = new Map<string, Slot>()
+  const itemMap = new Map<string, Item>()
+  const chestMap = new Map<string, Chest>()
+  const actionTargetMap = new Map<string, ActionTarget>()
 
-  const allSkill = ref<Skill[]>([])
-  const allSlot = ref<Slot[]>([])
-  const allChest = ref<Chest[]>([])
+  // Cached arrays for UI consumption
+  const allSkills = ref<Skill[]>([])
+  const allSlots = ref<Slot[]>([])
+  const allChests = ref<Chest[]>([])
 
   function clear() {
-    skillIdMap.clear()
-    stateIdMap.clear()
-    slotIdMap.clear()
-    itemIdMap.clear()
-    chestIdMap.clear()
-    actionTargetIdMap.clear()
-    allSkill.value = []
-    allSlot.value = []
-    allChest.value = []
+    skillMap.clear()
+    stateMap.clear()
+    slotMap.clear()
+    itemMap.clear()
+    chestMap.clear()
+    actionTargetMap.clear()
+    allSkills.value = []
+    allSlots.value = []
+    allChests.value = []
   }
 
   function resolveState(id: string): State {
-    const state = stateIdMap.get(id)
+    const state = stateMap.get(id)
     if (!state) {
-      throw new Error(`state ${id} not found`)
+      throw new Error(`State ${id} not found`)
     }
     return state
   }
@@ -50,17 +52,17 @@ export const useDataStore = defineStore('data', () => {
     switch (definition.type) {
       case 'skill': {
         const skill = markRaw(new Skill(definition.id, definition.sort))
-        skillIdMap.set(skill.id, skill)
+        skillMap.set(skill.id, skill)
         break
       }
       case 'state': {
         const state = markRaw(new State(definition.base))
-        stateIdMap.set(definition.id, state)
+        stateMap.set(definition.id, state)
         break
       }
       case 'slot': {
         const slot = markRaw(new Slot(definition.id, definition.sort))
-        slotIdMap.set(slot.id, slot)
+        slotMap.set(slot.id, slot)
         break
       }
       case 'item': {
@@ -71,7 +73,7 @@ export const useDataStore = defineStore('data', () => {
           const chest = markRaw(
             new Chest(definition.id, definition.sort, definition.maxPoints, definition.loots),
           )
-          chestIdMap.set(chest.id, chest)
+          chestMap.set(chest.id, chest)
           item = chest
         } else if (definition.itemType === 'equipment') {
           const slot = getSlotById(definition.slot)
@@ -80,7 +82,7 @@ export const useDataStore = defineStore('data', () => {
           const itemType = (definition as { itemType: string }).itemType
           throw new Error(`Unknown item type ${itemType}`)
         }
-        itemIdMap.set(item.id, item)
+        itemMap.set(item.id, item)
         break
       }
       case 'actionTarget': {
@@ -138,7 +140,7 @@ export const useDataStore = defineStore('data', () => {
           throw new Error(`Unknown action target type ${targetType}`)
         }
 
-        actionTargetIdMap.set(actionTarget.id, actionTarget)
+        actionTargetMap.set(actionTarget.id, actionTarget)
         break
       }
       default:
@@ -146,8 +148,9 @@ export const useDataStore = defineStore('data', () => {
     }
   }
 
-  function rebuildCaches() {
-    for (const item of itemIdMap.values()) {
+  function buildCaches() {
+    // Build item relationships
+    for (const item of itemMap.values()) {
       if (item.isChest()) {
         item.loots = item._loots.map((it) => ({
           ...it,
@@ -156,12 +159,13 @@ export const useDataStore = defineStore('data', () => {
       }
     }
 
-    for (const skill of skillIdMap.values()) {
+    // Build skill relationships
+    for (const skill of skillMap.values()) {
       skill.actionTargets = []
       skill.actionTargetTabMap.clear()
     }
 
-    for (const actionTarget of actionTargetIdMap.values()) {
+    for (const actionTarget of actionTargetMap.values()) {
       const skill = actionTarget.skill
       skill.actionTargets.push(actionTarget)
       if (actionTarget.tab) {
@@ -173,86 +177,94 @@ export const useDataStore = defineStore('data', () => {
       }
     }
 
-    for (const skill of skillIdMap.values()) {
+    // Sort everything
+    for (const skill of skillMap.values()) {
       skill.actionTargets.sort((a, b) => a.sort - b.sort)
       for (const list of skill.actionTargetTabMap.values()) {
         list.sort((a, b) => a.sort - b.sort)
       }
     }
 
-    allSkill.value = Array.from(skillIdMap.values()).sort((a, b) => a.sort - b.sort)
-    allSlot.value = Array.from(slotIdMap.values()).sort((a, b) => a.sort - b.sort)
-    allChest.value = Array.from(chestIdMap.values()).sort((a, b) => a.sort - b.sort)
+    // Update cached arrays
+    allSkills.value = Array.from(skillMap.values()).sort((a, b) => a.sort - b.sort)
+    allSlots.value = Array.from(slotMap.values()).sort((a, b) => a.sort - b.sort)
+    allChests.value = Array.from(chestMap.values()).sort((a, b) => a.sort - b.sort)
   }
 
-  function load(definitions: Definition[]) {
+  function loadGameConfig(definitions: Definition[]) {
     clear()
     for (const definition of definitions) {
       handleDefinition(definition)
     }
-    rebuildCaches()
+    buildCaches()
   }
 
+  // Getter functions
   function getSkillById(id: string): Skill {
-    const skill = skillIdMap.get(id)
+    const skill = skillMap.get(id)
     if (!skill) {
-      throw new Error(`skill ${id} not found`)
+      throw new Error(`Skill ${id} not found`)
     }
     return skill
   }
 
   function getStateById(id: string): State {
-    const state = stateIdMap.get(id)
+    const state = stateMap.get(id)
     if (!state) {
-      throw new Error(`state ${id} not found`)
+      throw new Error(`State ${id} not found`)
     }
     return state
   }
 
   function getSlotById(id: string): Slot {
-    const slot = slotIdMap.get(id)
+    const slot = slotMap.get(id)
     if (!slot) {
-      throw new Error(`slot ${id} not found`)
+      throw new Error(`Slot ${id} not found`)
     }
     return slot
   }
 
   function getItemById(id: string): Item {
-    const item = itemIdMap.get(id)
+    const item = itemMap.get(id)
     if (!item) {
-      throw new Error(`item ${id} not found`)
+      throw new Error(`Item ${id} not found`)
     }
     return item
   }
 
   function getChestById(id: string): Chest {
-    const chest = chestIdMap.get(id)
+    const chest = chestMap.get(id)
     if (!chest) {
-      throw new Error(`chest ${id} not found`)
+      throw new Error(`Chest ${id} not found`)
     }
     return chest
   }
 
   function getActionTargetById(id: string): ActionTarget {
-    const action = actionTargetIdMap.get(id)
-    if (!action) {
-      throw new Error(`actionTarget ${id} not found`)
+    const actionTarget = actionTargetMap.get(id)
+    if (!actionTarget) {
+      throw new Error(`ActionTarget ${id} not found`)
     }
-    return action
+    return actionTarget
   }
 
   return {
-    load,
-    allSkill,
-    allSlot,
-    allChest,
+    // State
+    allSkills,
+    allSlots,
+    allChests,
+
+    // Methods
+    loadGameConfig,
     getSkillById,
     getStateById,
     getSlotById,
     getItemById,
     getChestById,
     getActionTargetById,
-    skillIdMap,
-    stateIdMap,
+
+    // Internal maps (for compatibility)
+    skillMap,
+    stateMap,
   }
 })

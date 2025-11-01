@@ -3,7 +3,7 @@ import type { ActionTarget } from '../actionTarget'
 import type { Skill } from '../Skill'
 import type { Item } from '../item'
 import type { State } from '../state/State'
-import { useInventoryStore } from '@/stores/inventory'
+import { usePlayerStore } from '@/stores/player'
 import { actionManager } from '../global/ActionManager'
 import i18n from '@/i18n'
 
@@ -25,6 +25,8 @@ export class CurrentAction {
   chestPoints: State
   remainedDuration: ComputedRef<number>
 
+  private playerStore = usePlayerStore()
+
   constructor(target: ActionTarget, amount: number) {
     this.target = target
     this.amount = ref(amount)
@@ -35,12 +37,11 @@ export class CurrentAction {
     this.chestPoints = target.chestPoints
     this.remainedDuration = computed(() => this.duration.value - this.elapsed.value)
     this.finalize = watchEffect(() => {
-      const inventoryStore = useInventoryStore()
       let exhaust = Infinity
       if ('ingredients' in target) {
         const alls: number[] = []
         for (const ingredient of target.ingredients) {
-          const inventoryItem = inventoryStore.inventoryItemMap.get(ingredient.item.id)
+          const inventoryItem = this.playerStore.inventoryMap.get(ingredient.item.id)
           if (inventoryItem) {
             alls.push(Math.floor(inventoryItem.quantity / ingredient.count))
           } else {
@@ -54,12 +55,12 @@ export class CurrentAction {
   }
 
   static computeAmount(target: ActionTarget, amount: number): number {
-    const inventoryStore = useInventoryStore()
+    const playerStore = usePlayerStore()
     let exhaust = Infinity
     if ('ingredients' in target) {
       const alls: number[] = []
       for (const ingredient of target.ingredients) {
-        const inventoryItem = inventoryStore.inventoryItemMap.get(ingredient.item.id)
+        const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
         if (inventoryItem) {
           alls.push(Math.floor(inventoryItem.quantity / ingredient.count))
         } else {
@@ -85,8 +86,7 @@ export class CurrentAction {
 
       const ingredient = this.calculateIngredient(count)
       if (ingredient) {
-        const inventoryStore = useInventoryStore()
-        inventoryStore.removeMany(ingredient)
+        this.playerStore.removeManyItems(ingredient)
       }
 
       this.skill.addXp(this.xp.value * count)
@@ -95,8 +95,7 @@ export class CurrentAction {
       if (chestCount > 0) {
         rewards.push([this.target.chest, chestCount])
       }
-      const inventoryStore = useInventoryStore()
-      inventoryStore.addMany(rewards)
+      this.playerStore.addManyItems(rewards)
 
       const remainedElapsed =
         elapsed - (this.remainedDuration.value + this.duration.value * (count - 1))
@@ -114,7 +113,7 @@ export class CurrentAction {
     for (const loot of loots) {
       result.push([loot.item.id, loot.count * count])
     }
-    return result
+    return result.length > 0 ? result : undefined
   }
 
   calculateRewards(count: number): [Item, number][] {

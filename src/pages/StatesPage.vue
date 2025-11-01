@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useDataStore } from '@/stores/data'
+import { useGameConfigStore } from '@/stores/gameConfig'
 
-const dataStore = useDataStore()
-const states = computed(() => Array.from(dataStore.stateIdMap.entries()))
+const gameConfigStore = useGameConfigStore()
+const states = computed(() => Array.from(gameConfigStore.stateMap.entries()))
 </script>
 
 <template>

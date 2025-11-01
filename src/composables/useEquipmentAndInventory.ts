@@ -2,14 +2,14 @@ import { shallowRef, computed, type ComputedRef } from 'vue'
 import type { Equipment } from '@/models/item/Equipment'
 import type { InventoryItem } from '@/models/inventory/InventoryItem'
 import type { Slot } from '@/models/Slot'
-import { useInventoryStore } from '@/stores/inventory'
+import { usePlayerStore } from '@/stores/player'
 
 /**
  * 装备和背包管理的公用 Composable
  * 处理装备选择、背包物品选择和开箱功能
  */
 export function useEquipmentAndInventory() {
-  const inventoryStore = useInventoryStore()
+  const playerStore = usePlayerStore()
 
   // ============ 状态管理 ============
   const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
@@ -48,7 +48,7 @@ export function useEquipmentAndInventory() {
    */
   function unequipAndClose(): void {
     if (selectedEquipment.value) {
-      selectedEquipment.value.slot.unEquip()
+      playerStore.unequipSlot(selectedEquipment.value.slot.id)
       closeEquipmentModal()
     }
   }
@@ -76,7 +76,7 @@ export function useEquipmentAndInventory() {
    */
   function equipAndClose(): void {
     if (selectedInventoryItem.value) {
-      selectedInventoryItem.value.equip()
+      playerStore.equipItem(selectedInventoryItem.value)
       closeInventoryModal()
     }
   }
@@ -94,42 +94,10 @@ export function useEquipmentAndInventory() {
    */
   function openChestAndClose(): void {
     if (selectedInventoryItem.value && isValidChestAmount.value) {
-      const chest = selectedInventoryItem.value
-      const chestId = chest.item.id
-      const results = new Map<string, number>()
-
-      // 记录开箱前的库存
-      const inventoryBefore = new Map<string, number>()
-      inventoryStore.inventoryItems.forEach((item: InventoryItem) => {
-        inventoryBefore.set(item.item.id, item.quantity)
-      })
-
-      // 批量开箱
-      for (let i = 0; i < chestOpenAmount.value; i++) {
-        chest.openChest()
-      }
-
-      // 计算新增的物品（排除宝箱本身）
-  inventoryStore.inventoryItems.forEach((item: InventoryItem) => {
-        // 跳过宝箱本身
-        if (item.item.id === chestId) return
-
-        const beforeAmount = inventoryBefore.get(item.item.id) || 0
-  const afterAmount = item.quantity
-        const gained = afterAmount - beforeAmount
-        if (gained > 0) {
-          results.set(item.item.name, gained)
-        }
-      })
-
-      // 转换为显示格式
-      const resultArray = Array.from(results.entries()).map(([itemName, amount]) => ({
-        itemName,
-        amount,
-      }))
+      const results = playerStore.openChest(selectedInventoryItem.value, chestOpenAmount.value)
 
       // 设置开箱结果（即使是空数组也要显示）
-      chestOpenResults.value = resultArray
+      chestOpenResults.value = results
       closeInventoryModal()
     }
   }

@@ -7,7 +7,7 @@ import { usePlayerStore } from './player'
 import { useActionQueueStore } from './actionQueue'
 
 export const useAppStore = defineStore('app', () => {
-  const status = ref('loading' as 'loading' | 'ready' | 'error')
+  const status = ref(undefined as 'loading' | 'ready' | 'error' | undefined)
 
   async function loadApplication() {
     status.value = 'loading'

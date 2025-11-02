@@ -1,7 +1,5 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import axios from 'axios'
-import type { Definition } from '@/models/definitions'
 import { useGameConfigStore } from './gameConfig'
 import { usePlayerStore } from './player'
 import { useActionQueueStore } from './actionQueue'
@@ -12,26 +10,9 @@ export const useAppStore = defineStore('app', () => {
   async function loadApplication() {
     status.value = 'loading'
     try {
-      // Load game configuration data
-      const paths = [
-        '/data/skills.json',
-        '/data/states.json',
-        '/data/slots.json',
-        '/data/items/resources.json',
-        '/data/items/chests.json',
-        '/data/items/equipment.json',
-        '/data/actionTargets/gatheringZones/mining.json',
-        '/data/actionTargets/gatheringZones/woodcutting.json',
-        '/data/actionTargets/gatheringZones/foraging.json',
-        '/data/actionTargets/recipes.json',
-      ]
-
-      const responses = await Promise.all(paths.map((p) => axios.get(p)))
-      const definitions = responses.flatMap((r) => r.data as Definition[])
-
-      // Initialize game configuration
+      // Initialize game configuration (auto-discover definitions via glob)
       const gameConfigStore = useGameConfigStore()
-      gameConfigStore.loadGameConfig(definitions)
+      await gameConfigStore.loadGameConfigFromGlob()
 
       // Initialize player data
       const playerStore = usePlayerStore()

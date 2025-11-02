@@ -1,0 +1,12 @@
+[
+    { "type": "slot", "id": "miningTool", "sort": 0 },
+    { "type": "slot", "id": "woodcuttingTool", "sort": 1 },
+    { "type": "slot", "id": "foragingTool", "sort": 2 },
+    { "type": "slot", "id": "smithingTool", "sort": 3 },
+    { "type": "slot", "id": "woodworkingTool", "sort": 4 },
+    { "type": "slot", "id": "tailoringTool", "sort": 5 },
+    { "type": "slot", "id": "cookingTool", "sort": 6 },
+    { "type": "slot", "id": "brewingTool", "sort": 7 },
+    { "type": "slot", "id": "alchemyTool", "sort": 8 },
+    { "type": "slot", "id": "enhancingTool", "sort": 9 }
+]

@@ -187,8 +187,39 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     buildCaches()
   }
 
+  /**
+   * Load game configuration via Vite glob import from source files.
+   * Auto-discovers all JSON under /src/data/** and loads them.
+   * Ensures definition processing order to satisfy dependencies.
+   */
+  async function loadGameConfigFromGlob() {
+    const modules = import.meta.glob('/src/data/**/*.json', { eager: true, import: 'default' }) as Record<string, unknown>
+
+    const all: Definition[] = []
+    for (const mod of Object.values(modules)) {
+      const data = mod as unknown
+      if (Array.isArray(data)) {
+        all.push(...(data as Definition[]))
+      } else if (data && typeof data === 'object') {
+        all.push(data as Definition)
+      }
+    }
+
+    // Ensure stable order: skills -> states -> slots -> items -> actionTarget
+    const typeOrder: Record<Definition['type'], number> = {
+      skill: 1,
+      state: 2,
+      slot: 3,
+      item: 4,
+      actionTarget: 5,
+    }
+    const sorted = all.slice().sort((a, b) => typeOrder[a.type] - typeOrder[b.type])
+
+    loadGameConfig(sorted)
+  }
+
   // Getter functions
-    // 获取技能的相关 ActionTargets
+  // 获取技能的相关 ActionTargets
   function getSkillActionTargets(skillId: string): ActionTarget[] {
     return Array.from(actionTargetMap.values())
       .filter(actionTarget => actionTarget.skill.id === skillId)
@@ -274,6 +305,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
 
     // Methods
     loadGameConfig,
+    loadGameConfigFromGlob,
     getSkillConfigById,
     getSkillActionTargets,
     getSkillActionTargetTabs,

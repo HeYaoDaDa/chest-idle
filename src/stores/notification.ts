@@ -11,6 +11,7 @@ export interface NotificationEntry {
 }
 
 export const useNotificationStore = defineStore('notification', () => {
+  const MAX_NOTIFICATIONS = 3
   let counter = 0
   const notifications = shallowReactive<NotificationEntry[]>([])
 
@@ -25,6 +26,13 @@ export const useNotificationStore = defineStore('notification', () => {
 
     if (duration > 0 && typeof window !== 'undefined') {
       window.setTimeout(() => remove(id), duration)
+    }
+
+    // Ensure we do not exceed the max allowed notifications.
+    // If exceeded, remove the oldest ones (from the front of the queue).
+    if (notifications.length > MAX_NOTIFICATIONS) {
+      const removeCount = notifications.length - MAX_NOTIFICATIONS
+      notifications.splice(0, removeCount)
     }
 
     return id

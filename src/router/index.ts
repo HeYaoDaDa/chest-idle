@@ -50,7 +50,7 @@ const router = createRouter({
 router.beforeEach(async (to) => {
   if (to.meta.requireGameData) {
     const appStore = useAppStore()
-    if (['loading'].includes(appStore.status)) {
+    if ('ready' !== appStore.status) {
       return '/'
     }
   }

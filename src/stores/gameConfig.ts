@@ -262,6 +262,10 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     return actionTarget
   }
 
+  function getAllStates(): Array<[string, State]> {
+    return Array.from(stateMap.entries())
+  }
+
   return {
     // State
     allSkillConfigs,
@@ -278,13 +282,6 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     getItemById,
     getChestById,
     getActionTargetById,
-
-    // Internal maps (for compatibility)
-    skillConfigMap,
-    stateMap,
-    slotMap,
-    itemMap,
-    chestMap,
-    actionTargetMap
+    getAllStates,
   }
 })

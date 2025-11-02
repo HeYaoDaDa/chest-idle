@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { useGameConfigStore } from '@/stores/gameConfig'
 
 const gameConfigStore = useGameConfigStore()
-const states = computed(() => Array.from(gameConfigStore.stateMap.entries()))
+const states = computed(() => gameConfigStore.getAllStates())
 </script>
 
 <template>

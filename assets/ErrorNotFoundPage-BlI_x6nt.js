@@ -1,1 +1,0 @@
-import{_ as o,c as r,a as t,o as a}from"./index-B20y-z1h.js";const s={},c={id:"error-page-root"};function n(_,e){return a(),r("div",c,[...e[0]||(e[0]=[t("h1",null,"404",-1)])])}const f=o(s,[["render",n],["__scopeId","data-v-a65f7c8a"]]);export{f as default};

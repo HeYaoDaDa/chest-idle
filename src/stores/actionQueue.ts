@@ -12,7 +12,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   // ============ 核心状态 ============
   const actionQueue = ref<ActionItem[]>([])
   const lastUpdateDate = ref(performance.now())
-  const isRunning = ref(false)
 
   // ============ 计算属性 ============
   const currentAction = computed(() => actionQueue.value[0] || null)
@@ -184,17 +183,10 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   // ============ 基础的游戏循环 ============
 
   function load() {
-    isRunning.value = true
     requestAnimationFrame(update)
   }
 
-  function stop() {
-    isRunning.value = false
-  }
-
   function update() {
-    if (!isRunning.value) return
-
     const now = performance.now()
     const elapsed = (now - lastUpdateDate.value) * 100 // 转换为毫秒并加速
     lastUpdateDate.value = now
@@ -359,7 +351,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   return {
     // 状态
     actionQueue,
-    isRunning,
 
     // 计算属性
     currentAction,
@@ -374,7 +365,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     insertFront,
     startImmediately,
     load,
-    stop,
 
     // 排序方法
     moveUp,

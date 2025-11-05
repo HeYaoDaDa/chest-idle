@@ -39,8 +39,6 @@ interface SimpleActionTarget {
 export interface ActionItem {
   target: SimpleActionTarget
   amount: number
-  startTime?: number
-  elapsed: number
 }
 
 export function createActionItem(
@@ -50,7 +48,6 @@ export function createActionItem(
   return {
     target,
     amount,
-    elapsed: 0
   }
 }
 

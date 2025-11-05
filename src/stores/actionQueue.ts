@@ -13,6 +13,9 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const actionQueue = ref<ActionItem[]>([])
   const lastUpdateDate = ref(performance.now())
 
+  const currentActionStartTime = ref(undefined as undefined | number)
+  const currentActionElapsed = ref(0)
+
   // ============ 计算属性 ============
   const currentAction = computed(() => actionQueue.value[0] || null)
   const queueingActions = computed(() => actionQueue.value.slice(1))
@@ -25,9 +28,9 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       amountDisplay: currentAction.value.amount === Infinity
         ? '∞'
         : currentAction.value.amount.toLocaleString(),
-      remainedDuration: Math.max(0, currentAction.value.target.duration.value - currentAction.value.elapsed),
+      remainedDuration: Math.max(0, currentAction.value.target.duration.value - currentActionElapsed.value),
       progress: currentAction.value.target.duration.value > 0
-        ? currentAction.value.elapsed / currentAction.value.target.duration.value
+        ? currentActionElapsed.value / currentAction.value.target.duration.value
         : 0
     }
   })
@@ -84,7 +87,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     if (currentAction.value) {
       // 中断当前动作，将其重新放入队列第二位
       const current = currentAction.value
-      current.elapsed = 0 // 重置进度
+      currentActionElapsed.value = 0 // 重置进度
 
       actionQueue.value.splice(1, 0, current)
       // 将新动作设为第一位
@@ -144,8 +147,8 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 更新动作信息并开始执行
     currentAction.value.amount = actualAmount
-    currentAction.value.startTime = performance.now()
-    currentAction.value.elapsed = 0
+    currentActionStartTime.value = performance.now()
+    currentActionElapsed.value = 0
 
     return true
   }
@@ -201,11 +204,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     const action = currentAction.value
     const target = action.target
-    const remainedDuration = target.duration.value - action.elapsed
+    const remainedDuration = target.duration.value - currentActionElapsed.value
 
     if (elapsed < remainedDuration) {
       // 动作还未完成
-      action.elapsed += elapsed
+      currentActionElapsed.value += elapsed
       return 0
     } else {
       // 动作完成，计算完成次数
@@ -223,7 +226,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       const remainedElapsed = elapsed - (remainedDuration + target.duration.value * (count - 1))
 
       // 重置或移除动作
-      action.elapsed = 0
+      currentActionElapsed.value = 0
       finishCurrentAction(count)
 
       return remainedElapsed
@@ -271,14 +274,14 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     if (currentAction.value.amount === Infinity) {
       // 无限次动作，重置时间继续执行
-      currentAction.value.elapsed = 0
+      currentActionElapsed.value = 0
     } else if (currentAction.value.amount === count) {
       // 动作完全完成，移除并开始下一个
       stopCurrentAction()
     } else if (currentAction.value.amount > count) {
       // 动作部分完成，减少数量并重置时间
       currentAction.value.amount -= count
-      currentAction.value.elapsed = 0
+      currentActionElapsed.value = 0
     }
   }
 
@@ -338,8 +341,8 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   function restartCurrentAction() {
     if (currentAction.value) {
-      currentAction.value.elapsed = 0
-      currentAction.value.startTime = undefined
+      currentActionElapsed.value = 0
+      currentActionStartTime.value = undefined
       startCurrentAction()
     }
   }

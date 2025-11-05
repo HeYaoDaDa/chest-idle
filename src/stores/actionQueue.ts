@@ -258,17 +258,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     // 移动到队列底部
     const item = actionQueue.value.splice(index, 1)[0]
     actionQueue.value.push(item)
-
-    // 如果移动的是当前执行的动作，需要开始下一个
-    if (index === 0) {
-      checkCurrentActionItem()
-    }
   }
 
   function restartCurrentAction() {
     if (currentAction.value) {
       currentActionElapsed.value = 0
-      checkCurrentActionItem()
     }
   }
 

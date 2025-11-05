@@ -182,7 +182,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   // ============ 基础的游戏循环 ============
 
-  function load() {
+  function start() {
     requestAnimationFrame(update)
   }
 
@@ -364,7 +364,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     clearQueue,
     insertFront,
     startImmediately,
-    load,
+    start,
 
     // 排序方法
     moveUp,

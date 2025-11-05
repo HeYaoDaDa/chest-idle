@@ -20,7 +20,7 @@ export const useAppStore = defineStore('app', () => {
 
       // Initialize action queue
       const actionQueueStore = useActionQueueStore()
-      actionQueueStore.load()
+      actionQueueStore.start()
 
       status.value = 'ready'
     } catch (error) {

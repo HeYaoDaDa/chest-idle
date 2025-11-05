@@ -41,7 +41,6 @@ export interface ActionItem {
   amount: number
   startTime?: number
   elapsed: number
-  id: string // 用于唯一标识，便于操作
 }
 
 export function createActionItem(
@@ -51,8 +50,7 @@ export function createActionItem(
   return {
     target,
     amount,
-    elapsed: 0,
-    id: `${target.id}_${Date.now()}_${Math.random().toString(36).substring(2)}`
+    elapsed: 0
   }
 }
 

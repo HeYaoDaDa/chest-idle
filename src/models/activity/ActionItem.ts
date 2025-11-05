@@ -1,5 +1,4 @@
 import type { ActionTarget } from '../actionTarget'
-import { INFINITE_STRING } from '@/constants'
 
 // ActionTarget的简化版本，专用于动作队列管理
 // 保持为纯数据结构，避免Vue响应式类型的复杂性，便于序列化和性能优化
@@ -48,15 +47,5 @@ export function createActionItem(
   return {
     target,
     amount,
-  }
-}
-
-export function getActionItemDisplay(item: ActionItem): {
-  amountDisplay: string
-  skill: ActionItem['target']['skill']
-} {
-  return {
-    amountDisplay: item.amount === Infinity ? INFINITE_STRING : item.amount.toLocaleString(),
-    skill: item.target.skill
   }
 }

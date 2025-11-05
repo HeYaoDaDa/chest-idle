@@ -13,7 +13,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const actionQueue = ref<ActionItem[]>([])
   const lastUpdateDate = ref(performance.now())
 
-  const currentActionStartTime = ref(undefined as undefined | number)
   const currentActionElapsed = ref(0)
 
   // ============ 计算属性 ============
@@ -147,7 +146,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 更新动作信息并开始执行
     currentAction.value.amount = actualAmount
-    currentActionStartTime.value = performance.now()
     currentActionElapsed.value = 0
 
     return true
@@ -227,7 +225,15 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
       // 重置或移除动作
       currentActionElapsed.value = 0
-      finishCurrentAction(count)
+      if (currentAction.value.amount === Infinity) {
+        // 无限次动作，继续执行
+      } else if (currentAction.value.amount === count) {
+        // 动作完全完成，移除并开始下一个
+        stopCurrentAction()
+      } else if (currentAction.value.amount > count) {
+        // 动作部分完成，减少数量并重置时间
+        currentAction.value.amount -= count
+      }
 
       return remainedElapsed
     }
@@ -266,22 +272,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     // 给予奖励
     if (rewards.length > 0) {
       playerStore.addManyItems(rewards as [Item, number][])
-    }
-  }
-
-  function finishCurrentAction(count: number) {
-    if (!currentAction.value) return
-
-    if (currentAction.value.amount === Infinity) {
-      // 无限次动作，重置时间继续执行
-      currentActionElapsed.value = 0
-    } else if (currentAction.value.amount === count) {
-      // 动作完全完成，移除并开始下一个
-      stopCurrentAction()
-    } else if (currentAction.value.amount > count) {
-      // 动作部分完成，减少数量并重置时间
-      currentAction.value.amount -= count
-      currentActionElapsed.value = 0
     }
   }
 
@@ -342,7 +332,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   function restartCurrentAction() {
     if (currentAction.value) {
       currentActionElapsed.value = 0
-      currentActionStartTime.value = undefined
       startCurrentAction()
     }
   }

@@ -36,72 +36,30 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   // ============ 基础功能 ============
 
+  function startImmediately(target: ActionTarget, amount: number = Infinity) {
+    const actionItem = createActionItem(target, amount)
+    actionQueue.value.unshift(actionItem)
+    currentActionElapsed.value = 0
+  }
+
   function addAction(target: ActionTarget, amount: number = Infinity) {
     const actionItem = createActionItem(target, amount)
     actionQueue.value.push(actionItem)
-
-    // 如果没有当前执行的动作，立即开始执行
-    if (actionQueue.value.length === 1) {
-      startCurrentAction()
-    }
+    currentActionElapsed.value = 0
   }
 
   function removeAction(index: number) {
     if (index < 0 || index >= actionQueue.value.length) return
 
+    actionQueue.value.splice(index, 1)
     if (index === 0) {
-      // 移除当前执行的动作
-      stopCurrentAction()
-    } else {
-      // 移除队列中的动作
-      actionQueue.value.splice(index, 1)
-    }
-  }
-
-  function clearQueue() {
-    if (currentAction.value) {
-      // 保留当前执行的动作，清除其他所有
-      actionQueue.value = [actionQueue.value[0]]
-    } else {
-      actionQueue.value = []
-    }
-  }
-
-  function insertFront(target: ActionTarget, amount: number = Infinity) {
-    const actionItem = createActionItem(target, amount)
-
-    if (currentAction.value) {
-      // 插入到队列第二位（当前动作之后）
-      actionQueue.value.splice(1, 0, actionItem)
-    } else {
-      // 没有当前动作，直接添加并开始执行
-      actionQueue.value.unshift(actionItem)
-      startCurrentAction()
-    }
-  }
-
-  function startImmediately(target: ActionTarget, amount: number = Infinity) {
-    const actionItem = createActionItem(target, amount)
-
-    if (currentAction.value) {
-      // 中断当前动作，将其重新放入队列第二位
-      const current = currentAction.value
-      currentActionElapsed.value = 0 // 重置进度
-
-      actionQueue.value.splice(1, 0, current)
-      // 将新动作设为第一位
-      actionQueue.value[0] = actionItem
-      startCurrentAction()
-    } else {
-      // 没有当前动作，直接开始
-      actionQueue.value.unshift(actionItem)
-      startCurrentAction()
+      currentActionElapsed.value = 0
     }
   }
 
   // ============ 内部辅助函数 ============
 
-  function startCurrentAction(): boolean {
+  function checkCurrentActionItem(): boolean {
     if (!currentAction.value) return false
 
     const target = currentAction.value.target
@@ -121,10 +79,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       })
       // 移除无法执行的动作
       actionQueue.value.shift()
-      // 尝试下一个
-      if (actionQueue.value.length > 0) {
-        return startCurrentAction()
-      }
       return false
     }
 
@@ -137,16 +91,9 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       })
       // 移除无法执行的动作
       actionQueue.value.shift()
-      // 尝试下一个
-      if (actionQueue.value.length > 0) {
-        return startCurrentAction()
-      }
       return false
     }
-
-    // 更新动作信息并开始执行
     currentAction.value.amount = actualAmount
-    currentActionElapsed.value = 0
 
     return true
   }
@@ -165,17 +112,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
 
     return Math.min(amount, maxAmount)
-  }
-
-  function stopCurrentAction() {
-    if (currentAction.value) {
-      actionQueue.value.shift()
-
-      // 开始下一个动作
-      if (actionQueue.value.length > 0) {
-        startCurrentAction()
-      }
-    }
   }
 
   // ============ 基础的游戏循环 ============
@@ -198,7 +134,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   }
 
   function updateCurrentAction(elapsed: number): number {
-    if (!currentAction.value) return 0
+    if (!checkCurrentActionItem()) return elapsed
 
     const action = currentAction.value
     const target = action.target
@@ -228,8 +164,8 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       if (currentAction.value.amount === Infinity) {
         // 无限次动作，继续执行
       } else if (currentAction.value.amount === count) {
-        // 动作完全完成，移除并开始下一个
-        stopCurrentAction()
+        actionQueue.value.shift()
+        currentActionElapsed.value = 0
       } else if (currentAction.value.amount > count) {
         // 动作部分完成，减少数量并重置时间
         currentAction.value.amount -= count
@@ -325,14 +261,14 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 如果移动的是当前执行的动作，需要开始下一个
     if (index === 0) {
-      startCurrentAction()
+      checkCurrentActionItem()
     }
   }
 
   function restartCurrentAction() {
     if (currentAction.value) {
       currentActionElapsed.value = 0
-      startCurrentAction()
+      checkCurrentActionItem()
     }
   }
 
@@ -349,8 +285,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     // 方法
     addAction,
     removeAction,
-    clearQueue,
-    insertFront,
     startImmediately,
     start,
 

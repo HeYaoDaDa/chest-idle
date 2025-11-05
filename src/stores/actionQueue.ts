@@ -35,7 +35,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   // ============ 基础功能 ============
 
   function addAction(target: ActionTarget, amount: number = Infinity) {
-    const actionItem = createActionItem(target, amount, 'queued')
+    const actionItem = createActionItem(target, amount)
     actionQueue.value.push(actionItem)
 
     // 如果没有当前执行的动作，立即开始执行
@@ -66,7 +66,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   }
 
   function insertFront(target: ActionTarget, amount: number = Infinity) {
-    const actionItem = createActionItem(target, amount, 'queued')
+    const actionItem = createActionItem(target, amount)
 
     if (currentAction.value) {
       // 插入到队列第二位（当前动作之后）
@@ -79,12 +79,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   }
 
   function startImmediately(target: ActionTarget, amount: number = Infinity) {
-    const actionItem = createActionItem(target, amount, 'queued')
+    const actionItem = createActionItem(target, amount)
 
     if (currentAction.value) {
       // 中断当前动作，将其重新放入队列第二位
       const current = currentAction.value
-      current.status = 'queued'
       current.elapsed = 0 // 重置进度
 
       actionQueue.value.splice(1, 0, current)
@@ -145,7 +144,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 更新动作信息并开始执行
     currentAction.value.amount = actualAmount
-    currentAction.value.status = 'running'
     currentAction.value.startTime = performance.now()
     currentAction.value.elapsed = 0
 
@@ -170,7 +168,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   function stopCurrentAction() {
     if (currentAction.value) {
-      currentAction.value.status = 'paused'
       actionQueue.value.shift()
 
       // 开始下一个动作
@@ -200,7 +197,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   }
 
   function updateCurrentAction(elapsed: number): number {
-    if (!currentAction.value || currentAction.value.status !== 'running') return 0
+    if (!currentAction.value) return 0
 
     const action = currentAction.value
     const target = action.target
@@ -341,7 +338,6 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   function restartCurrentAction() {
     if (currentAction.value) {
-      currentAction.value.status = 'queued'
       currentAction.value.elapsed = 0
       currentAction.value.startTime = undefined
       startCurrentAction()

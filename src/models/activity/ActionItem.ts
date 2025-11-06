@@ -1,5 +1,3 @@
-import type { ActionTarget } from '../actionTarget'
-
 // ActionTarget的简化版本，专用于动作队列管理
 // 保持为纯数据结构，避免Vue响应式类型的复杂性，便于序列化和性能优化
 interface SimpleActionTarget {
@@ -37,14 +35,4 @@ interface SimpleActionTarget {
 export interface ActionItem {
   target: SimpleActionTarget
   amount: number
-}
-
-export function createActionItem(
-  target: ActionTarget,
-  amount: number = Infinity,
-): ActionItem {
-  return {
-    target,
-    amount,
-  }
 }

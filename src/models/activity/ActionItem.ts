@@ -11,7 +11,6 @@ interface SimpleActionTarget {
     name: string
     level: number
     remainingXpForUpgrade: number
-    addXp: (xp: number) => void
   }
   duration: { value: number }
   xp: { value: number }

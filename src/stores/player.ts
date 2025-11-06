@@ -38,9 +38,9 @@ export const usePlayerStore = defineStore('player', () => {
   function initializePlayer() {
     // Clear any existing data
     inventoryMap.clear()
-  skillsXp.value = {}
+    skillsXp.value = {}
     equippedItems.value = {}
-  chestPoints.value = {}
+    chestPoints.value = {}
 
     // Initialize with starting items if needed
     // This could be expanded to load from save data
@@ -130,8 +130,7 @@ export const usePlayerStore = defineStore('player', () => {
       xp: getSkillXp(skillId),
       level: getSkillLevel(skillId),
       remainingXpForUpgrade: getRemainingXpForUpgrade(skillId),
-      upgradeProgress: getUpgradeProgress(skillId),
-      addXp: (xp: number) => addSkillXp(skillId, xp)
+      upgradeProgress: getUpgradeProgress(skillId)
     }
   }
 
@@ -347,7 +346,7 @@ export const usePlayerStore = defineStore('player', () => {
 
     // Roll loot for each chest
     for (let i = 0; i < amount; i++) {
-  const lootResults = rollLoot(chest)
+      const lootResults = rollLoot(chest)
 
       for (const { itemId, amount: lootAmount } of lootResults) {
         addItem(itemId, lootAmount)
@@ -385,12 +384,12 @@ export const usePlayerStore = defineStore('player', () => {
     getInventoryItem,
     hasItem,
 
-  // Methods - Chest Points
-  getChestPoints,
-  setChestPoints,
-  addChestPoints,
-  getChestRemaining,
-  getChestProgress,
+    // Methods - Chest Points
+    getChestPoints,
+    setChestPoints,
+    addChestPoints,
+    getChestRemaining,
+    getChestProgress,
 
     // Methods - Equipment Management
     equipItem,

@@ -189,7 +189,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
 
     // 增加经验
-    target.skill.addXp(target.xp.value * count)
+    playerStore.addSkillXp(target.skill.id, target.xp.value * count)
 
     // 增加箱子点数并获得箱子
     const chestCount = playerStore.addChestPoints(target.chest.id, target.chestPoints.value * count)

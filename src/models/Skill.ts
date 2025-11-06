@@ -8,7 +8,6 @@ export interface Skill {
   level: number
   remainingXpForUpgrade: number
   upgradeProgress: number
-  addXp: (xp: number) => void
 }
 
 // 技能配置定义（用于从定义文件加载）

@@ -1,46 +1,15 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
-import ModalBox from '@/components/misc/ModalBox.vue'
-import type { Slot } from '@/models/Slot'
-import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
 import { shallowRef, onMounted, isRef, type Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
+import MyStuffPage from './MyStuffPage.vue'
 
 const { t } = useI18n()
 
-const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
 
-const openSlotEquipment = (slot: Slot) => {
-  const equipment = playerStore.getEquippedItem(slot.id)
-  if (equipment) {
-    openEquipmentModal(slot, equipment)
-  }
-}
-
 const unwrapNumber = (value: number | Ref<number>) => (isRef(value) ? value.value : value)
-
-// 使用通用 Composable 获取装备和背包相关功能
-const {
-  selectedEquipment,
-  selectedInventoryItem,
-  chestOpenAmount,
-  chestOpenResults,
-  activeTab,
-  maxChestAmount,
-  isValidChestAmount,
-  openEquipmentModal,
-  closeEquipmentModal,
-  unequipAndClose,
-  openInventoryModal,
-  closeInventoryModal,
-  equipAndClose,
-  setMaxChestAmount,
-  openChestAndClose,
-  closeChestResults,
-} = useEquipmentAndInventory()
 
 // GamePage 特定的状态
 const sidebarExpanded = shallowRef(false)
@@ -118,13 +87,9 @@ function closeSidebar() {
   <div id="game-page-root">
     <div v-if="sidebarExpanded" class="sidebar-mask" @click="closeSidebar"></div>
 
-        <div
-      id="game-page-layout-container"
-      :class="{ 'sidebar-expanded': sidebarExpanded }"
-      :style="{
-        '--tabs-width': tabsWidth + 'px'
-      }"
-    >
+    <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }" :style="{
+      '--tabs-width': tabsWidth + 'px'
+    }">
       <div id="header">
         <div id="header-title-action">
           <div class="header-title">
@@ -141,28 +106,21 @@ function closeSidebar() {
               <span v-else>✕</span>
             </div>
           </a>
-          <router-link class="sidebar-control-link" :to="`/game/mystuff`" active-class="active-link" @click="closeSidebar">
+          <router-link class="sidebar-control-link" :to="`/game/mystuff`" active-class="active-link"
+            @click="closeSidebar">
             <div class="skill-name">{{ t('ui.myStuff') }}</div>
           </router-link>
         </div>
-        <router-link
-          v-for="skill in playerStore.skillsList"
-          :key="skill.id"
-          :to="`/game/${skill.id}`"
-          active-class="active-link"
-          @click="closeSidebar"
-        >
+        <router-link v-for="skill in playerStore.skillsList" :key="skill.id" :to="`/game/${skill.id}`"
+          active-class="active-link" @click="closeSidebar">
           <div class="skill-name">
             <span class="name-text">{{ t(skill.name) }}</span>
             <span class="level-text">{{ t('ui.level', { level: unwrapNumber(skill.level) }) }}</span>
           </div>
           <div class="skill-progress-wrapper">
-            <div
-              class="skill-progress-bar"
-              :style="{
-                width: unwrapNumber(skill.upgradeProgress) * 100 + '%',
-              }"
-            ></div>
+            <div class="skill-progress-bar" :style="{
+              width: unwrapNumber(skill.upgradeProgress) * 100 + '%',
+            }"></div>
           </div>
         </router-link>
         <router-link :to="`/game/states`" active-class="active-link" @click="closeSidebar">
@@ -176,195 +134,10 @@ function closeSidebar() {
         <div class="drag-handle drag-handle-left" @mousedown="startDragTabs">
           <div class="drag-indicator"></div>
         </div>
-        <div class="tabs-wrapper">
-          <div class="tabs-header">
-            <button
-              class="tab-button"
-              :class="{ active: activeTab === 'inventory' }"
-              @click="activeTab = 'inventory'"
-            >
-              {{ t('ui.inventory') }}
-            </button>
-            <button
-              class="tab-button"
-              :class="{ active: activeTab === 'equipment' }"
-              @click="activeTab = 'equipment'"
-            >
-              {{ t('ui.equipment') }}
-            </button>
-            <button
-              class="tab-button"
-              :class="{ active: activeTab === 'abilities' }"
-              @click="activeTab = 'abilities'"
-            >
-              {{ t('ui.abilities') }}
-            </button>
-          </div>
-          <div class="tabs-content">
-            <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-              <div
-                v-for="inventoryItem in playerStore.inventoryItems"
-                :key="inventoryItem.item.id"
-                class="inventory-item"
-                @click="openInventoryModal(inventoryItem)"
-              >
-                <div>{{ t(inventoryItem.item.name) }}</div>
-                <div v-if="inventoryItem.quantity > 1" class="inventory-count">
-                  x{{ inventoryItem.quantity }}
-                </div>
-              </div>
-            </div>
-            <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
-              <div v-for="slot in gameConfigStore.allSlots" :key="slot.id" class="equipment-cell">
-                <div
-                  v-if="playerStore.getEquippedItem(slot.id)"
-                  class="equipment-item"
-                  @click="openSlotEquipment(slot as unknown as Slot)"
-                >
-                  <div>{{ t(playerStore.getEquippedItem(slot.id)!.name) }}</div>
-                </div>
-                <div v-else class="equipment-slot">
-                  <span>{{ t(slot.name) }}</span>
-                </div>
-              </div>
-            </div>
-            <div v-show="activeTab === 'abilities'" id="abilities" class="tab-panel">
-              <!-- Abilities content here -->
-            </div>
-          </div>
-        </div>
+        <MyStuffPage />
       </div>
     </div>
   </div>
-
-  <!-- Equipment Modal -->
-  <ModalBox v-if="selectedEquipment" @close="closeEquipmentModal">
-    <div class="item-modal">
-      <div class="item-modal-header">
-        <h3 class="item-modal-title">{{ t(selectedEquipment.equipment.name) }}</h3>
-        <span class="item-modal-type">{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span>
-      </div>
-
-      <div class="item-modal-content">
-        <p class="item-modal-description">{{ t(selectedEquipment.equipment.description) }}</p>
-
-        <div v-if="selectedEquipment.equipment.effects.length > 0" class="item-modal-section">
-          <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
-          <div class="item-modal-effects">
-            <div v-for="(effect, index) in selectedEquipment.equipment.effects" :key="index" class="item-modal-effect">
-              <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
-              <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
-                }}{{ effect.value
-                }}{{
-                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : ''
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item-modal-footer">
-        <div class="zone-action-buttons">
-          <button type="button" class="zone-button ghost" @click="unequipAndClose">
-            {{ t('ui.unequip') }}
-          </button>
-        </div>
-      </div>
-    </div>
-  </ModalBox>
-
-  <!-- Inventory Modal -->
-  <ModalBox v-if="selectedInventoryItem" @close="closeInventoryModal">
-    <div class="item-modal">
-      <div class="item-modal-header">
-        <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-  <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.quantity }}</span>
-      </div>
-
-      <div class="item-modal-content">
-        <p class="item-modal-description">{{ t(selectedInventoryItem.item.description) }}</p>
-
-        <div v-if="selectedInventoryItem.item.isEquipment()" class="item-modal-section">
-          <div class="item-modal-info-row">
-            <span class="info-label">{{ t('ui.slot') }}</span>
-            <span class="info-value">{{ t(selectedInventoryItem.item.slot.name) }}</span>
-          </div>
-        </div>
-
-        <div v-if="
-          selectedInventoryItem.item.isEquipment() &&
-          selectedInventoryItem.item.effects.length > 0
-        " class="item-modal-section">
-          <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
-          <div class="item-modal-effects">
-            <div v-for="(effect, index) in selectedInventoryItem.item.effects" :key="index" class="item-modal-effect">
-              <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
-              <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
-                }}{{ effect.value
-                }}{{
-                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : ''
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item-modal-footer">
-        <div class="zone-action-buttons">
-          <button v-if="selectedInventoryItem.item.isEquipment()" type="button" class="zone-button primary"
-            @click="equipAndClose">
-            {{ t('ui.equip') }}
-          </button>
-          <div v-if="selectedInventoryItem.item.isChest()" class="chest-controls">
-            <div v-if="maxChestAmount > 1" class="chest-amount-controls">
-              <input v-model.number="chestOpenAmount" type="number" :min="1" :max="maxChestAmount"
-                class="chest-amount-input" :placeholder="String(maxChestAmount)" />
-              <button type="button" class="zone-button ghost max-button" @click="setMaxChestAmount">
-                Max
-              </button>
-            </div>
-            <button type="button" class="zone-button primary" @click="openChestAndClose"
-              :disabled="!isValidChestAmount">
-              {{ t('ui.open') }}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ModalBox>
-
-  <!-- Chest Open Results Modal -->
-  <ModalBox v-if="chestOpenResults" @close="closeChestResults">
-    <div class="chest-results-modal">
-      <div class="chest-results-header">
-        <h3 class="chest-results-title">{{ t('ui.chestOpenResults') }}</h3>
-      </div>
-
-      <div class="chest-results-content">
-        <div v-if="chestOpenResults.length > 0" class="chest-results-list">
-          <div v-for="result in chestOpenResults" :key="result.itemName" class="chest-result-item">
-            <span class="result-item-name">{{ t(result.itemName) }}</span>
-            <span class="result-item-amount">×{{ result.amount }}</span>
-          </div>
-        </div>
-        <div v-else class="chest-results-empty">
-          {{ t('ui.noItemsObtained') }}
-        </div>
-      </div>
-
-      <div class="chest-results-footer">
-        <div class="zone-action-buttons">
-          <button type="button" class="zone-button primary" @click="closeChestResults">
-            {{ t('ui.confirm') }}
-          </button>
-        </div>
-      </div>
-    </div>
-  </ModalBox>
 </template>
 
 <style lang="scss" scoped>
@@ -719,4 +492,3 @@ function closeSidebar() {
   }
 }
 </style>
-

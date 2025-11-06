@@ -42,36 +42,20 @@ const openSlotEquipment = (slot: Slot) => {
 <template>
   <div id="mystuff-page">
     <div class="tabs-header">
-      <button
-        class="tab-button"
-        :class="{ active: activeTab === 'inventory' }"
-        @click="activeTab = 'inventory'"
-      >
+      <button class="tab-button" :class="{ active: activeTab === 'inventory' }" @click="activeTab = 'inventory'">
         {{ t('ui.inventory') }}
       </button>
-      <button
-        class="tab-button"
-        :class="{ active: activeTab === 'equipment' }"
-        @click="activeTab = 'equipment'"
-      >
+      <button class="tab-button" :class="{ active: activeTab === 'equipment' }" @click="activeTab = 'equipment'">
         {{ t('ui.equipment') }}
       </button>
-      <button
-        class="tab-button"
-        :class="{ active: activeTab === 'abilities' }"
-        @click="activeTab = 'abilities'"
-      >
+      <button class="tab-button" :class="{ active: activeTab === 'abilities' }" @click="activeTab = 'abilities'">
         {{ t('ui.abilities') }}
       </button>
     </div>
     <div class="tabs-content">
       <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-        <div
-          v-for="inventoryItem in playerStore.inventoryItems"
-          :key="inventoryItem.item.id"
-          class="inventory-item"
-          @click="openInventoryModal(inventoryItem)"
-        >
+        <div v-for="inventoryItem in playerStore.inventoryItems" :key="inventoryItem.item.id" class="inventory-item"
+          @click="openInventoryModal(inventoryItem)">
           <div>{{ t(inventoryItem.item.name) }}</div>
           <div v-if="inventoryItem.quantity > 1" class="inventory-count">
             x{{ inventoryItem.quantity }}
@@ -80,11 +64,8 @@ const openSlotEquipment = (slot: Slot) => {
       </div>
       <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
         <div v-for="slot in gameConfigStore.allSlots" :key="slot.id" class="equipment-cell">
-          <div
-            v-if="playerStore.getEquippedItem(slot.id)"
-            class="equipment-item"
-            @click="openSlotEquipment(slot as unknown as Slot)"
-          >
+          <div v-if="playerStore.getEquippedItem(slot.id)" class="equipment-item"
+            @click="openSlotEquipment(slot as unknown as Slot)">
             <div>{{ t(playerStore.getEquippedItem(slot.id)!.name) }}</div>
           </div>
           <div v-else class="equipment-slot">
@@ -141,7 +122,7 @@ const openSlotEquipment = (slot: Slot) => {
     <div class="item-modal">
       <div class="item-modal-header">
         <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-  <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.quantity }}</span>
+        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.quantity }}</span>
       </div>
 
       <div class="item-modal-content">
@@ -233,6 +214,7 @@ const openSlotEquipment = (slot: Slot) => {
 @use '@/styles/shared-components';
 
 #mystuff-page {
+  flex: 1;
   display: flex;
   flex-direction: column;
   height: 100%;

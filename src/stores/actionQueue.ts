@@ -218,7 +218,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 如果涉及到当前执行的动作（index 0 和 1），需要重新开始
     if (index === 1) {
-      restartCurrentAction()
+      currentActionElapsed.value = 0
     }
   }
 
@@ -232,7 +232,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 如果涉及到当前执行的动作（index 0），需要重新开始
     if (index === 0) {
-      restartCurrentAction()
+      currentActionElapsed.value = 0
     }
   }
 
@@ -244,7 +244,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     actionQueue.value.unshift(item)
 
     // 重新开始当前动作
-    restartCurrentAction()
+    currentActionElapsed.value = 0
   }
 
   function moveBottom(index: number): void {
@@ -253,10 +253,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     // 移动到队列底部
     const item = actionQueue.value.splice(index, 1)[0]
     actionQueue.value.push(item)
-  }
-
-  function restartCurrentAction() {
-    if (currentAction.value) {
+    if (index === 0) {
       currentActionElapsed.value = 0
     }
   }

@@ -20,18 +20,13 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const queueingActions = computed(() => actionQueue.value.slice(1))
   const queueLength = computed(() => actionQueue.value.length)
 
-  // 当前动作的显示信息
-  const currentActionDisplay = computed(() => {
-    if (!currentAction.value) return null
-    return {
-      amountDisplay: currentAction.value.amount === Infinity
-        ? '∞'
-        : currentAction.value.amount.toLocaleString(),
-      remainedDuration: Math.max(0, currentAction.value.target.duration.value - currentActionElapsed.value),
-      progress: currentAction.value.target.duration.value > 0
+  const progress = computed(() => {
+    if (currentAction.value) {
+      return Math.min(currentAction.value.target.duration.value > 0
         ? currentActionElapsed.value / currentAction.value.target.duration.value
-        : 0
+        : 0, 1) * 100
     }
+    return 0
   })
 
   // ============ 基础功能 ============
@@ -274,7 +269,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     currentAction,
     queueingActions,
     queueLength,
-    currentActionDisplay,
+    progress,
 
     // 方法
     addAction,

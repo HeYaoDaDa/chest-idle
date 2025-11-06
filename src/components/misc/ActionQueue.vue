@@ -21,13 +21,6 @@ const runningActionDurationDisplay = computed(() => {
   return ''
 })
 
-const progress = computed(() => {
-  if (actionQueueStore.currentActionDisplay) {
-    return Math.min(actionQueueStore.currentActionDisplay.progress * 100, 100)
-  }
-  return 0
-})
-
 const hasQueuedActions = computed(() => actionQueueStore.queueingActions.length > 0)
 
 const unifiedLength = computed(() => actionQueueStore.queueLength)
@@ -76,20 +69,11 @@ function removeQueuedAction(index: number) {
         <span class="action-value">{{ runningActionDisplay }}</span>
       </div>
       <div class="action-buttons">
-        <button
-          v-if="actionQueueStore.currentAction"
-          class="action-button stop-button"
-          type="button"
-          @click="stopCurrentAction"
-        >
+        <button v-if="actionQueueStore.currentAction" class="action-button stop-button" type="button"
+          @click="stopCurrentAction">
           {{ t('stop') }}
         </button>
-        <button
-          v-if="hasQueuedActions"
-          class="action-button queue-button"
-          type="button"
-          @click="openQueueModal"
-        >
+        <button v-if="hasQueuedActions" class="action-button queue-button" type="button" @click="openQueueModal">
           {{ t('ui.queue') }} ({{ unifiedLength }})
         </button>
       </div>
@@ -97,7 +81,7 @@ function removeQueuedAction(index: number) {
 
     <div class="progress-wrapper">
       <div class="progress-track">
-        <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+        <div class="progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
       </div>
       <span class="progress-duration" v-if="runningActionDurationDisplay">{{
         runningActionDurationDisplay
@@ -110,7 +94,7 @@ function removeQueuedAction(index: number) {
     <div class="queue-modal">
       <div class="queue-modal-header">
         <h3 class="queue-modal-title">{{ t('ui.queue') }}</h3>
-  <span class="queue-modal-count">{{ unifiedLength }} {{ t('ui.queuedItems') }}</span>
+        <span class="queue-modal-count">{{ unifiedLength }} {{ t('ui.queuedItems') }}</span>
       </div>
 
       <div class="queue-modal-content">
@@ -121,12 +105,12 @@ function removeQueuedAction(index: number) {
               <span class="queue-modal-item-index">0</span>
               <div class="queue-modal-item-text">
                 <span class="queue-modal-item-name">{{ t(actionQueueStore.currentAction.target.name) }}</span>
-                <span class="queue-modal-item-amount">×{{ actionQueueStore.currentActionDisplay?.amountDisplay || '∞' }}</span>
+                <span class="queue-modal-item-amount">×{{ runningActionDisplay }}</span>
               </div>
             </div>
             <div class="running-progress-wrapper">
               <div class="running-progress-track">
-                <div class="running-progress-bar" :style="{ width: progress + '%' }"></div>
+                <div class="running-progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
               </div>
             </div>
             <div class="queue-modal-controls">
@@ -136,30 +120,16 @@ function removeQueuedAction(index: number) {
               <button type="button" class="control-btn" title="Up" disabled>
                 ▲
               </button>
-              <button
-                type="button"
-                class="control-btn"
-                title="Down"
-                :disabled="unifiedLength <= 1"
-                @click="moveActionDown(0)"
-              >
+              <button type="button" class="control-btn" title="Down" :disabled="unifiedLength <= 1"
+                @click="moveActionDown(0)">
                 ▼
               </button>
-              <button
-                type="button"
-                class="control-btn"
-                title="Bottom"
-                :disabled="unifiedLength <= 1"
-                @click="moveActionToBottom(0)"
-              >
+              <button type="button" class="control-btn" title="Bottom" :disabled="unifiedLength <= 1"
+                @click="moveActionToBottom(0)">
                 ⏬
               </button>
             </div>
-            <button
-              type="button"
-              class="queue-modal-stop"
-              @click="stopCurrentAction"
-            >
+            <button type="button" class="queue-modal-stop" @click="stopCurrentAction">
               {{ t('stop') }}
             </button>
           </li>
@@ -174,48 +144,28 @@ function removeQueuedAction(index: number) {
               </div>
             </div>
             <div class="queue-modal-controls">
-              <button
-                type="button"
-                class="control-btn"
-                title="Top"
+              <button type="button" class="control-btn" title="Top"
                 :disabled="(actionQueueStore.currentAction ? index + 1 : index) === 0"
-                @click="moveActionToTop(actionQueueStore.currentAction ? index + 1 : index)"
-              >
+                @click="moveActionToTop(actionQueueStore.currentAction ? index + 1 : index)">
                 ⏫
               </button>
-              <button
-                type="button"
-                class="control-btn"
-                title="Up"
+              <button type="button" class="control-btn" title="Up"
                 :disabled="(actionQueueStore.currentAction ? index + 1 : index) === 0"
-                @click="moveActionUp(actionQueueStore.currentAction ? index + 1 : index)"
-              >
+                @click="moveActionUp(actionQueueStore.currentAction ? index + 1 : index)">
                 ▲
               </button>
-              <button
-                type="button"
-                class="control-btn"
-                title="Down"
+              <button type="button" class="control-btn" title="Down"
                 :disabled="(actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1"
-                @click="moveActionDown(actionQueueStore.currentAction ? index + 1 : index)"
-              >
+                @click="moveActionDown(actionQueueStore.currentAction ? index + 1 : index)">
                 ▼
               </button>
-              <button
-                type="button"
-                class="control-btn"
-                title="Bottom"
+              <button type="button" class="control-btn" title="Bottom"
                 :disabled="(actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1"
-                @click="moveActionToBottom(actionQueueStore.currentAction ? index + 1 : index)"
-              >
+                @click="moveActionToBottom(actionQueueStore.currentAction ? index + 1 : index)">
                 ⏬
               </button>
             </div>
-            <button
-              type="button"
-              class="queue-modal-remove"
-              @click="removeQueuedAction(index)"
-            >
+            <button type="button" class="queue-modal-remove" @click="removeQueuedAction(index)">
               {{ t('remove') }}
             </button>
           </li>
@@ -584,4 +534,3 @@ function removeQueuedAction(index: number) {
   }
 }
 </style>
-

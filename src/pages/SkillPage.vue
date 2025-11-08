@@ -3,7 +3,7 @@ import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
 import type { ActionTarget } from '@/models/actionTarget'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
-import { computed, ref, shallowRef } from 'vue'
+import { computed, ref, shallowRef, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
@@ -27,22 +27,14 @@ const currentTab = ref<string>('')
 // 获取可用的 tabs
 const availableTabs = computed(() => Array.from(skillActionTargetTabs.value.keys()))
 
-// 确保 currentTab 始终有效
-const ensureValidTab = () => {
+// 自动确保 currentTab 始终有效
+watchEffect(() => {
   if (hasTabGroups.value && availableTabs.value.length > 0) {
     if (!currentTab.value || !availableTabs.value.includes(currentTab.value)) {
       currentTab.value = availableTabs.value[0]
     }
   }
-}
-
-// 监听技能变化，重置 tab
-onBeforeRouteUpdate(() => {
-  ensureValidTab()
 })
-
-// 首次加载时初始化
-ensureValidTab()
 
 // 显示的 actionTargets
 const displayedActionTargets = computed(() => {

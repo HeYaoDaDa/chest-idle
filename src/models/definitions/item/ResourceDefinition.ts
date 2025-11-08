@@ -1,6 +1,6 @@
 export interface ResourceDefinition {
   type: 'item'
-  itemType: 'resource'
+  category: 'resource'
   id: string
   sort: number
 }

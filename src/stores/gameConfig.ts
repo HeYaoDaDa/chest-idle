@@ -60,9 +60,9 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       }
       case 'item': {
         let item: Item
-        if (definition.itemType === 'resource') {
+        if (definition.category === 'resource') {
           item = markRaw(new Item(definition.id, definition.sort, 'resource'))
-        } else if (definition.itemType === 'chest') {
+        } else if (definition.category === 'chest') {
           item = markRaw(
             new Item(
               definition.id,
@@ -70,17 +70,17 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
               'chest',
               null,
               {
-                maxPoints: definition.maxPoints,
+                maxPoints: definition.chest.maxPoints,
                 loots: [] // Will be populated in buildCaches
               }
             )
           )
           // Store loot definitions temporarily for later resolution
-          ;(item as ItemWithLootDefs)._lootDefs = definition.loots
+          ;(item as ItemWithLootDefs)._lootDefs = definition.chest.loots
           chestMap.set(item.id, item)
-        } else if (definition.itemType === 'equipment') {
-          const slot = getSlotById(definition.slot)
-          const effects = definition.effects.map((it) => ({
+        } else if (definition.category === 'equipment') {
+          const slot = getSlotById(definition.equipment.slot)
+          const effects = definition.equipment.effects.map((it) => ({
             property: it.property,
             type: it.type,
             value: it.value,
@@ -98,8 +98,8 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
             )
           )
         } else {
-          const itemType = (definition as { itemType: string }).itemType
-          throw new Error(`Unknown item type ${itemType}`)
+          const category = (definition as { category: string }).category
+          throw new Error(`Unknown item category ${category}`)
         }
         itemMap.set(item.id, item)
         break

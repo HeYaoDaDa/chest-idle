@@ -1,433 +1,433 @@
 [
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "copperOre",
         "sort": 0
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "copperIngot",
         "sort": 1
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "ironOre",
         "sort": 12
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "ironIngot",
         "sort": 13
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "silverOre",
         "sort": 24
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "silverIngot",
         "sort": 25
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "goldOre",
         "sort": 36
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "goldIngot",
         "sort": 37
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "orichalcumOre",
         "sort": 48
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "orichalcumIngot",
         "sort": 49
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "darkIronOre",
         "sort": 60
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "darkIronIngot",
         "sort": 61
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "mithrilOre",
         "sort": 72
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "mithrilIngot",
         "sort": 73
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "adamantineOre",
         "sort": 84
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "adamantineIngot",
         "sort": 85
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "willowWood",
         "sort": 86
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "pineWood",
         "sort": 87
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "oakWood",
         "sort": 88
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "mapleWood",
         "sort": 89
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "elmWood",
         "sort": 90
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "beechWood",
         "sort": 91
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "mahoganyWood",
         "sort": 92
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "ebonyWood",
         "sort": 93
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "willowPlank",
         "sort": 94
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "pinePlank",
         "sort": 95
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "oakPlank",
         "sort": 96
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "maplePlank",
         "sort": 97
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "elmPlank",
         "sort": 98
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "beechPlank",
         "sort": 99
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "mahoganyPlank",
         "sort": 100
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "ebonyPlank",
         "sort": 101
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "chicken",
         "sort": 1000
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "pork",
         "sort": 1001
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "bear",
         "sort": 1002
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "bison",
         "sort": 1003
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "crocodile",
         "sort": 1004
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "camel",
         "sort": 1005
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "venison",
         "sort": 1006
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "turkey",
         "sort": 1007
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "crucianCarp",
         "sort": 1010
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "carp",
         "sort": 1011
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "salmon",
         "sort": 1012
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "trout",
         "sort": 1013
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "catfish",
         "sort": 1014
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "tuna",
         "sort": 1015
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "grassCarp",
         "sort": 1016
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "grouper",
         "sort": 1017
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "cabbage",
         "sort": 1020
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "carrot",
         "sort": 1021
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "potato",
         "sort": 1022
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "onion",
         "sort": 1023
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "sweetPotato",
         "sort": 1024
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "corn",
         "sort": 1025
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "pepper",
         "sort": 1026
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "konjac",
         "sort": 1027
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "apple",
         "sort": 1030
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "grape",
         "sort": 1031
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "berry",
         "sort": 1032
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "cherry",
         "sort": 1033
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "banana",
         "sort": 1034
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "cactusFruit",
         "sort": 1035
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "peach",
         "sort": 1036
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "longan",
         "sort": 1037
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "licorice",
         "sort": 1040
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "cotton",
         "sort": 1041
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "artemisia",
         "sort": 1042
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "flax",
         "sort": 1043
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "ginseng",
         "sort": 1044
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "bamboo",
         "sort": 1045
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "reishi",
         "sort": 1046
     },
     {
         "type": "item",
-        "itemType": "resource",
+        "category": "resource",
         "id": "silkworm",
         "sort": 1047
     }

@@ -2,9 +2,11 @@ import type { EffectDefinition } from '../misc/EffectDefinition'
 
 export interface EquipmentDefinition {
   type: 'item'
-  itemType: 'equipment'
+  category: 'equipment'
   id: string
   sort: number
-  slot: string
-  effects: EffectDefinition[]
+  equipment: {
+    slot: string
+    effects: EffectDefinition[]
+  }
 }

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, shallowReactive, ref } from 'vue'
+import { computed, reactive, ref, markRaw } from 'vue'
 import type { Item } from '@/models/item'
 import type { InventoryItem } from '@/models/InventoryItem'
 import { useGameConfigStore } from './gameConfig'
@@ -27,7 +27,7 @@ export const usePlayerStore = defineStore('player', () => {
 
   // ============ 背包状态管理 ============
   // Player inventory
-  const inventoryMap = shallowReactive(new Map<string, InventoryItem>())
+  const inventoryMap = reactive(new Map<string, InventoryItem>())
 
   // Computed properties
   const inventoryItems = computed(() =>
@@ -180,7 +180,8 @@ export const usePlayerStore = defineStore('player', () => {
     if (existingItem) {
       existingItem.quantity += amount
     } else {
-      const entry: InventoryItem = { item, quantity: amount }
+      // 使用 markRaw 标记 item 对象为非响应式，避免不必要的性能开销
+      const entry: InventoryItem = { item: markRaw(item), quantity: amount }
       inventoryMap.set(item.id, entry)
     }
   }

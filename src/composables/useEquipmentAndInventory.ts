@@ -1,6 +1,6 @@
 import { shallowRef, computed, type ComputedRef } from 'vue'
 import type { Equipment } from '@/models/item/Equipment'
-import type { InventoryItem } from '@/models/inventory/InventoryItem'
+import type { InventoryItem } from '@/models/InventoryItem'
 import type { Slot } from '@/models/Slot'
 import { usePlayerStore } from '@/stores/player'
 

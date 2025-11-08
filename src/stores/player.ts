@@ -1,8 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, shallowReactive, ref } from 'vue'
 import type { Item } from '@/models/item'
-import type { InventoryItem } from '@/models/inventory/InventoryItem'
-import { rollLoot } from '@/models/inventory/InventoryItem'
+import type { InventoryItem } from '@/models/InventoryItem'
 import { useGameConfigStore } from './gameConfig'
 import { Effect } from '@/models/state/Effect'
 import type { Equipment } from '@/models/item/Equipment'
@@ -390,3 +389,22 @@ export const usePlayerStore = defineStore('player', () => {
     getSkill
   }
 })
+
+function randomIntInclusive(min: number, max: number): number {
+  const lower = Math.ceil(min)
+  const upper = Math.floor(max)
+  return Math.floor(Math.random() * (upper - lower + 1)) + lower
+}
+
+export function rollLoot(chest: Chest): { itemId: string; amount: number }[] {
+  const results: { itemId: string; amount: number }[] = []
+
+  for (const loot of chest.loots) {
+    if (Math.random() <= loot.chance) {
+      const amount = randomIntInclusive(loot.min, loot.max)
+      results.push({ itemId: loot.item.id, amount })
+    }
+  }
+
+  return results
+}

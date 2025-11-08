@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ActionModalBox from '@/components/misc/ActionModalBox.vue'
+import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
 import type { ActionTarget } from '@/models/actionTarget'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
@@ -203,40 +203,6 @@ function openModal(zone: ActionTarget) {
       transition: width $transition-slow;
       box-shadow: 0 0 8px $primary-rgba-40;
     }
-  }
-}
-
-.skill-tabs {
-  display: flex;
-  gap: $spacing-sm;
-  flex-wrap: wrap;
-  padding: $spacing-sm;
-  background: $bg-input;
-  border: 1px solid $border-color;
-  border-radius: $radius-md;
-}
-
-.skill-tab {
-  padding: $spacing-md $spacing-xl;
-  border: 1px solid $border-color;
-  border-radius: $radius-sm;
-  background: rgba(248, 250, 252, 0.72);
-  color: $text-secondary;
-  font-weight: $font-weight-semibold;
-  cursor: pointer;
-  transition:
-    background $transition-fast,
-    color $transition-fast,
-    border-color $transition-fast;
-
-  &:hover:not(.active) {
-    background: rgba(226, 232, 240, 0.9);
-  }
-
-  &.active {
-    background: $gradient-primary;
-    color: #ffffff;
-    border-color: transparent;
   }
 }
 

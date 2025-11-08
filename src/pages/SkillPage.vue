@@ -77,8 +77,8 @@ const insufficientIngredients = computed(() => {
   if (!openZone.value || !('ingredients' in openZone.value)) return [] as string[]
   const lack: string[] = []
   for (const ingredient of openZone.value.ingredients) {
-  const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
-  const available = inventoryItem?.quantity ?? 0
+    const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
+    const available = inventoryItem?.quantity ?? 0
     if (available < ingredient.count) lack.push(ingredient.item.id)
   }
   return lack
@@ -105,8 +105,8 @@ const canStartAction = computed(() => {
   // 检查材料是否足够
   if ('ingredients' in openZone.value && openZone.value.ingredients.length > 0) {
     for (const ingredient of openZone.value.ingredients) {
-  const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
-  const available = inventoryItem?.quantity ?? 0
+      const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
+      const available = inventoryItem?.quantity ?? 0
       if (available < ingredient.count) {
         reasons.push(t('ui.insufficientMaterial', {
           item: t(ingredient.item.name),
@@ -170,47 +170,31 @@ function handleAmountFocus(event: FocusEvent) {
           <span class="skill-stat-label">{{ t('ui.nextLevel') }}</span>
           <span class="skill-stat-value">{{
             skill.remainingXpForUpgrade.toLocaleString(locale)
-          }}</span>
+            }}</span>
         </div>
       </div>
       <div class="skill-progress-bar-container">
-        <div
-          class="skill-progress-bar"
-          :style="{
-            width: skill.upgradeProgress * 100 + '%',
-          }"
-        ></div>
+        <div class="skill-progress-bar" :style="{
+          width: skill.upgradeProgress * 100 + '%',
+        }"></div>
       </div>
     </div>
 
     <!-- Tab 切换区域 -->
     <div v-if="hasTabGroups" class="skill-tabs">
-      <button
-        v-for="tab in availableTabs"
-        :key="tab"
-        class="skill-tab"
-        :class="{ active: currentTab === tab }"
-        @click="currentTab = tab"
-      >
+      <button v-for="tab in availableTabs" :key="tab" class="skill-tab" :class="{ active: currentTab === tab }"
+        @click="currentTab = tab">
         {{ t(`actionTarget.${tab}.name`) }}
       </button>
     </div>
 
     <div id="skill-area-root">
-      <div
-        v-for="zone in displayedActionTargets"
-        :key="zone.id"
-        class="area-item"
-        @click="openModal(zone)"
-      >
+      <div v-for="zone in displayedActionTargets" :key="zone.id" class="area-item" @click="openModal(zone)">
         <div>{{ t(zone.name) }}</div>
         <div class="chest-progress">
-          <div
-            class="chest-progress-bar"
-            :style="{
-              width: (playerStore.getChestProgress(zone.chest.id) * 100) + '%',
-            }"
-          ></div>
+          <div class="chest-progress-bar" :style="{
+            width: (playerStore.getChestProgress(zone.chest.id) * 100) + '%',
+          }"></div>
         </div>
       </div>
     </div>
@@ -253,7 +237,8 @@ function handleAmountFocus(event: FocusEvent) {
           <span class="info-value">
             <template v-if="hasIngredients">
               <template v-for="(ingredient, idx) in openZone.ingredients" :key="ingredient.item.id">
-                <span>{{ t(ingredient.item.name) }} ×{{ formatNumber(ingredient.count) }}</span><span v-if="idx < openZone.ingredients.length - 1">，</span>
+                <span>{{ t(ingredient.item.name) }} ×{{ formatNumber(ingredient.count) }}</span><span
+                  v-if="idx < openZone.ingredients.length - 1">，</span>
               </template>
             </template>
             <template v-else>
@@ -267,7 +252,8 @@ function handleAmountFocus(event: FocusEvent) {
           <span class="info-value">
             <template v-if="hasProducts">
               <template v-for="(product, idx) in openZone.products" :key="product.item.id">
-                <span>{{ t(product.item.name) }} ×{{ formatNumber(product.count) }}</span><span v-if="idx < openZone.products.length - 1">，</span>
+                <span>{{ t(product.item.name) }} ×{{ formatNumber(product.count) }}</span><span
+                  v-if="idx < openZone.products.length - 1">，</span>
               </template>
             </template>
             <template v-else>
@@ -284,32 +270,19 @@ function handleAmountFocus(event: FocusEvent) {
           <span class="zone-amount-label">{{ t('ui.amount') }}</span>
           <div class="zone-amount-input">
             <input type="text" v-model="amountString" @focus="handleAmountFocus" />
-            <button
-              type="button"
-              class="zone-amount-infinity"
-              :title="t('ui.unlimited')"
-              @click="amountString = INFINITE_STRING"
-            >
+            <button type="button" class="zone-amount-infinity" :title="t('ui.unlimited')"
+              @click="amountString = INFINITE_STRING">
               {{ INFINITE_STRING }}
             </button>
           </div>
         </label>
         <div class="zone-action-buttons">
-          <button
-            v-if="hasCurrentAction"
-            type="button"
-            class="zone-button secondary"
-            @click="addAction"
-            :disabled="!allowAmount || !canStartAction.canStart"
-          >
+          <button v-if="hasCurrentAction" type="button" class="zone-button secondary" @click="addAction"
+            :disabled="!allowAmount || !canStartAction.canStart">
             {{ t('ui.addToQueue', { position: queuePosition }) }}
           </button>
-          <button
-            type="button"
-            class="zone-button primary"
-            @click="hasCurrentAction ? startImmediately() : addAction()"
-            :disabled="!allowAmount || !canStartAction.canStart"
-          >
+          <button type="button" class="zone-button primary" @click="hasCurrentAction ? startImmediately() : addAction()"
+            :disabled="!allowAmount || !canStartAction.canStart">
             {{ hasCurrentAction ? t('ui.startImmediately') : t('start') }}
           </button>
         </div>
@@ -603,5 +576,3 @@ function handleAmountFocus(event: FocusEvent) {
   }
 }
 </style>
-
-

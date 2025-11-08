@@ -1,33 +1,80 @@
 <script setup lang="ts">
 import ItemModal from '@/components/modalBox/ItemModal.vue'
 import ChestResultsModal from '@/components/modalBox/ChestResultsModal.vue'
+import type { Equipment } from '@/models/item/Equipment'
+import type { InventoryItem } from '@/models/InventoryItem'
 import type { Slot } from '@/models/Slot'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
+import { computed, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useEquipmentAndInventory } from '@/composables/useEquipmentAndInventory'
 
 const { t } = useI18n()
 const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
 
-// 使用通用 Composable
-const {
-  selectedEquipment,
-  selectedInventoryItem,
-  chestOpenResults,
-  activeTab,
-  openEquipmentModal,
-  closeEquipmentModal,
-  unequipAndClose,
-  openInventoryModal,
-  closeInventoryModal,
-  equipAndClose,
-  openChestAndClose,
-  closeChestResults,
-} = useEquipmentAndInventory()
+// 状态管理
+const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
+const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
+const chestOpenResults = shallowRef<{ itemName: string; amount: number }[] | null>(null)
+const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
 
-const openSlotEquipment = (slot: Slot) => {
+// 计算属性
+const maxChestAmount = computed(() => {
+  return selectedInventoryItem.value?.quantity || 1
+})
+
+// 装备模态框函数
+function openEquipmentModal(slot: Slot, equipment: Equipment): void {
+  selectedEquipment.value = { slot, equipment }
+}
+
+function closeEquipmentModal(): void {
+  selectedEquipment.value = null
+}
+
+function unequipAndClose(): void {
+  if (selectedEquipment.value) {
+    playerStore.unequipSlot(selectedEquipment.value.slot.id)
+    closeEquipmentModal()
+  }
+}
+
+// 背包物品模态框函数
+function openInventoryModal(item: InventoryItem): void {
+  selectedInventoryItem.value = item
+  chestOpenResults.value = null // 清空之前的开箱结果
+}
+
+function closeInventoryModal(): void {
+  selectedInventoryItem.value = null
+}
+
+function equipAndClose(): void {
+  if (selectedInventoryItem.value) {
+    playerStore.equipItem(selectedInventoryItem.value)
+    closeInventoryModal()
+  }
+}
+
+// 开箱函数
+function openChestAndClose(amount?: number): void {
+  if (selectedInventoryItem.value) {
+    const amountToOpen = amount ?? 1
+    if (amountToOpen >= 1 && amountToOpen <= maxChestAmount.value) {
+      const results = playerStore.openChest(selectedInventoryItem.value, amountToOpen)
+      chestOpenResults.value = results
+      closeInventoryModal()
+    }
+  }
+}
+
+function closeChestResults(): void {
+  chestOpenResults.value = null
+}
+
+// 辅助函数
+function openSlotEquipment(slot: Slot): void {
   const equipment = playerStore.getEquippedItem(slot.id)
   if (equipment) {
     openEquipmentModal(slot, equipment)

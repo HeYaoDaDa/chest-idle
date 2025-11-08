@@ -1,16 +1,12 @@
-import type { ActionTargetType } from '@/constants'
 import type { Chest } from '../item/Chest'
 import type { Skill } from '../Skill'
 import { State } from '../state/State'
 import type { Item } from '../item'
 import type { MutableStateDefinition } from '../definitions/misc/MutableStateDefinition'
 import { Effect } from '../state/Effect'
-import type { GatheringZone } from './GatheringZone'
-import type { Recipe } from './Recipe'
 import { computed } from 'vue'
 
-export abstract class ActionTarget {
-  abstract type: ActionTargetType
+export class ActionTarget {
   name: string
   description: string
   skill: Skill
@@ -71,13 +67,5 @@ export abstract class ActionTarget {
       }
     }
     return state
-  }
-
-  isGatheringZone(): this is GatheringZone {
-    return this.type === 'gatheringZone'
-  }
-
-  isRecipe(): this is Recipe {
-    return this.type === 'recipe'
   }
 }

@@ -1,4 +1,16 @@
-import type { GatheringZoneDefinition } from './GatheringZoneDefinition'
-import type { RecipeDefinition } from './RecipeDefinition'
+import type { MutableStateDefinition } from '../misc/MutableStateDefinition'
 
-export type ActionTargetDefinition = GatheringZoneDefinition | RecipeDefinition
+export interface ActionTargetDefinition {
+  type: 'actionTarget'
+  id: string
+  skill: string
+  tab?: string
+  minLevel: number
+  sort: number
+  duration: MutableStateDefinition
+  xp: MutableStateDefinition
+  chest: string
+  chestPoints: MutableStateDefinition
+  ingredients?: { item: string; count: number }[]
+  products: { item: string; count: number }[]
+}

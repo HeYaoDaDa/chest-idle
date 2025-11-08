@@ -2,7 +2,6 @@ import { defineStore } from 'pinia'
 import { markRaw, ref } from 'vue'
 import type { Definition } from '@/models/definitions'
 import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
-import type { RecipeDefinition } from '@/models/definitions/actionTarget/RecipeDefinition'
 import type { SkillConfig } from '@/models/Skill'
 import { State } from '@/models/state/State'
 import type { Slot } from '@/models/Slot'
@@ -10,9 +9,7 @@ import type { Item } from '@/models/item'
 import { Resource } from '@/models/item/Resource'
 import { Chest } from '@/models/item/Chest'
 import { Equipment } from '@/models/item/Equipment'
-import type { ActionTarget } from '@/models/actionTarget'
-import { GatheringZone } from '@/models/actionTarget/GatheringZone'
-import { Recipe } from '@/models/actionTarget/Recipe'
+import { ActionTarget } from '@/models/actionTarget'
 import { usePlayerStore } from './player'
 
 export const useGameConfigStore = defineStore('gameConfig', () => {
@@ -109,50 +106,26 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
           count,
         }))
 
-        let actionTarget: ActionTarget
-
-        if (actionTargetDefinition.targetType === 'gatheringZone') {
-          actionTarget = markRaw(
-            new GatheringZone(
-              actionTargetDefinition.id,
-              skill,
-              actionTargetDefinition.tab,
-              actionTargetDefinition.minLevel,
-              actionTargetDefinition.sort,
-              actionTargetDefinition.duration,
-              actionTargetDefinition.xp,
-              chest,
-              actionTargetDefinition.chestPoints,
-              products,
-              resolveState,
-            ),
-          )
-        } else if (actionTargetDefinition.targetType === 'recipe') {
-          const recipeDefinition = actionTargetDefinition as RecipeDefinition
-          const ingredients = recipeDefinition.ingredients.map(({ item, count }) => ({
-            item: getItemById(item),
-            count,
-          }))
-          actionTarget = markRaw(
-            new Recipe(
-              recipeDefinition.id,
-              skill,
-              recipeDefinition.tab,
-              recipeDefinition.minLevel,
-              recipeDefinition.sort,
-              recipeDefinition.duration,
-              recipeDefinition.xp,
-              chest,
-              recipeDefinition.chestPoints,
-              ingredients,
-              products,
-              resolveState,
-            ),
-          )
-        } else {
-          const targetType = (actionTargetDefinition as { targetType: string }).targetType
-          throw new Error(`Unknown action target type ${targetType}`)
-        }
+        const ingredients = actionTargetDefinition.ingredients?.map(({ item, count }) => ({
+          item: getItemById(item),
+          count,
+        })) ?? []
+        const actionTarget = markRaw(
+          new ActionTarget(
+            actionTargetDefinition.id,
+            skill,
+            actionTargetDefinition.tab,
+            actionTargetDefinition.minLevel,
+            actionTargetDefinition.sort,
+            actionTargetDefinition.duration,
+            actionTargetDefinition.xp,
+            chest,
+            actionTargetDefinition.chestPoints,
+            ingredients,
+            products,
+            resolveState,
+          ),
+        )
 
         actionTargetMap.set(actionTarget.id, actionTarget)
         break

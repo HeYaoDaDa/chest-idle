@@ -91,11 +91,6 @@ function openModal(zone: ActionTarget) {
     <div id="skill-area-root">
       <div v-for="zone in displayedActionTargets" :key="zone.id" class="area-item" @click="openModal(zone)">
         <div>{{ t(zone.name) }}</div>
-        <div class="chest-progress">
-          <div class="chest-progress-bar" :style="{
-            width: (playerStore.getChestProgress(zone.chest.id) * 100) + '%',
-          }"></div>
-        </div>
       </div>
     </div>
   </div>
@@ -234,20 +229,6 @@ function openModal(zone: ActionTarget) {
       transform: translateY(-2px);
       box-shadow: $shadow-md;
       border-color: $primary-rgba-35;
-    }
-
-    .chest-progress {
-      width: 100%;
-      height: $progress-bar-height;
-      background-color: rgba(226, 232, 240, 0.9);
-      border-radius: $radius-full;
-      overflow: hidden;
-
-      .chest-progress-bar {
-        height: 100%;
-        background: $cyan-gradient;
-        transition: width $transition-slow;
-      }
     }
   }
 }

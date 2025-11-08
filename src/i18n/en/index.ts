@@ -51,6 +51,13 @@ export default {
     equipment: 'Equipment',
     abilities: 'Abilities',
     myStuff: 'My Stuff',
+    chests: 'Chests',
+    chestsDescription: 'View all chest progress',
+    currentProgress: 'Current Progress',
+    progressPercentage: 'Progress',
+    remainingPoints: 'Remaining',
+    possibleRewards: 'Possible Rewards',
+    dropChance: 'Drop Chance',
     chest: 'Chest',
   },
   skill: {

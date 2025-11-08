@@ -36,11 +36,13 @@ function handleClose() {
           <span v-else>✕</span>
         </div>
       </a>
-      <router-link class="sidebar-control-link" :to="`/game/mystuff`" active-class="active-link"
-        @click="handleClose">
+      <router-link class="sidebar-control-link" :to="`/game/mystuff`" active-class="active-link" @click="handleClose">
         <div class="skill-name">{{ t('ui.myStuff') }}</div>
       </router-link>
     </div>
+    <router-link class="sidebar-control-link" :to="`/game/chests`" active-class="active-link" @click="handleClose">
+      <div class="skill-name">{{ t('ui.chests') }}</div>
+    </router-link>
     <router-link v-for="skill in playerStore.skillsList" :key="skill.id" :to="`/game/${skill.id}`"
       active-class="active-link" @click="handleClose">
       <div class="skill-name">

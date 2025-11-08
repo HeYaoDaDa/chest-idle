@@ -51,6 +51,13 @@ export default {
     equipment: '装备',
     abilities: '技能',
     myStuff: '我的',
+    chests: '宝箱',
+    chestsDescription: '查看所有宝箱的进度',
+    currentProgress: '当前进度',
+    progressPercentage: '完成度',
+    remainingPoints: '还需点数',
+    possibleRewards: '可能获得的奖励',
+    dropChance: '掉落概率',
     chest: '宝箱',
   },
   skill: {

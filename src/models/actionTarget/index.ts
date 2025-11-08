@@ -60,9 +60,20 @@ export class ActionTarget {
     // 收集所有修改器
     const allModifiers: PropertyCalculation['breakdown'] = []
 
-    // 1. 应用技能速度修改器
-    const skillSpeedCalc = this.propertyManager.calculate(getSkillSpeedProperty(this.skillId), 0)
-    allModifiers.push(...skillSpeedCalc.breakdown)
+    // 1. 获取技能速度属性值（这是一个独立的数值，默认为0）
+    const skillSpeedProperty = getSkillSpeedProperty(this.skillId)
+    const skillSpeedCalc = this.propertyManager.calculate(skillSpeedProperty, 0) // 基础速度为 0
+    const skillSpeed = skillSpeedCalc.finalValue // 例如：装备 +0.5 flat → 速度 = 0.5
+
+    // 将速度属性转换为时间修改器（记录在 breakdown 中）
+    if (skillSpeed !== 0) {
+      allModifiers.push({
+        sourceId: `skill.speed.${this.skillId}`,
+        sourceName: `property.${skillSpeedProperty}.name`,
+        type: 'inversePercentage',
+        value: skillSpeed,
+      })
+    }
 
     // 2. 应用全局速度修改器
     const globalSpeedCalc = this.propertyManager.calculate(PropertyType.GLOBAL_ACTION_SPEED, 0)

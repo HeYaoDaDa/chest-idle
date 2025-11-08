@@ -1,6 +1,6 @@
 import type { ItemType, EffectType } from '@/constants'
-import type { Slot } from '../Slot'
-import type { LootEntryDefinition } from '../definitions/misc/LootEntryDefinition'
+import type { Slot } from './Slot'
+import type { LootEntryDefinition } from './definitions/misc/LootEntryDefinition'
 
 // Equipment specific data
 export interface EquipmentData {

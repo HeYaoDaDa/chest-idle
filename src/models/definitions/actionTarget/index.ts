@@ -1,5 +1,3 @@
-import type { MutableStateDefinition } from '../misc/MutableStateDefinition'
-
 export interface ActionTargetDefinition {
   type: 'actionTarget'
   id: string
@@ -7,10 +5,10 @@ export interface ActionTargetDefinition {
   tab?: string
   minLevel: number
   sort: number
-  duration: MutableStateDefinition
-  xp: MutableStateDefinition
+  duration: number
+  xp: number
   chest: string
-  chestPoints: MutableStateDefinition
+  chestPoints: number
   ingredients?: { item: string; count: number }[]
   products: { item: string; count: number }[]
 }

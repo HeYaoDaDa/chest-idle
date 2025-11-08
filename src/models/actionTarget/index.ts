@@ -1,70 +1,202 @@
 import type { Chest } from '../item/Chest'
-import { State } from '../state/State'
 import type { Item } from '../item'
-import type { MutableStateDefinition } from '../definitions/misc/MutableStateDefinition'
-import { Effect } from '../state/Effect'
+import type { PropertyManager, PropertyCalculation } from '../property'
+import { PropertyType, getSkillSpeedProperty } from '../property'
 
 export class ActionTarget {
   name: string
   description: string
   skillId: string
-  duration: State
-  xp: State
   chest: Chest
-  chestPoints: State
   ingredients: { item: Item; count: number }[] = []
   products: { item: Item; count: number }[] = []
+
+  // 基础值
+  private baseDuration: number
+  private baseXp: number
+  private baseChestPoints: number
+  private propertyManager: PropertyManager
+  public minLevel: number
+  private getSkillLevel: () => number
 
   constructor(
     public id: string,
     skillId: string,
     public tab: string | undefined,
-    public minLevel: number,
+    minLevel: number,
     public sort: number,
-    duration: MutableStateDefinition,
-    xp: MutableStateDefinition,
+    baseDuration: number,
+    baseXp: number,
     chest: Chest,
-    chestPoints: MutableStateDefinition,
+    baseChestPoints: number,
     ingredients: { item: Item; count: number }[],
     product: { item: Item; count: number }[],
-    resolveState: (id: string) => State,
     getSkillLevel: () => number,
+    propertyManager: PropertyManager,
   ) {
     this.name = `actionTarget.${this.id}.name`
     this.description = `actionTarget.${this.id}.description`
     this.skillId = skillId
-    this.duration = this.#newState(duration, resolveState, minLevel, getSkillLevel)
-    this.xp = this.#newState(xp, resolveState, minLevel, getSkillLevel)
+    this.minLevel = minLevel
+    this.getSkillLevel = getSkillLevel
+    this.propertyManager = propertyManager
+
+    // 保存基础值
+    this.baseDuration = baseDuration
+    this.baseXp = baseXp
+    this.baseChestPoints = baseChestPoints
+
     this.chest = chest
-    this.chestPoints = this.#newState(chestPoints, resolveState, minLevel, getSkillLevel)
     this.ingredients.push(...ingredients)
     this.products.push(...product)
   }
-  #newState(
-    definition: MutableStateDefinition,
-    resolveState: (id: string) => State,
-    minLevel: number,
-    getSkillLevel: () => number,
-  ): State {
-    const state = new State(definition.base)
-    for (const boost of definition.boosts) {
-      if (typeof boost === 'object') {
-        const effect = resolveState(boost.state)
-        state.addEffect(boost.state, new Effect(boost.type, () => effect.getValue()))
-      } else {
-        switch (boost) {
-          case 'overLevelSpeedUp':
-            state.addEffect(
-              'overLevelSpeedUp',
-              new Effect(
-                'inversePercentage',
-                () => Math.max(0, (getSkillLevel() - minLevel) * 0.01),
-              ),
-            )
-            break
-        }
+
+  // ========== 属性系统方法 ==========
+
+  /**
+   * 获取持续时间（带详情）
+   */
+  getDurationDetail(): PropertyCalculation {
+    // 收集所有修改器
+    const allModifiers: PropertyCalculation['breakdown'] = []
+
+    // 1. 应用技能速度修改器
+    const skillSpeedCalc = this.propertyManager.calculate(getSkillSpeedProperty(this.skillId), 0)
+    allModifiers.push(...skillSpeedCalc.breakdown)
+
+    // 2. 应用全局速度修改器
+    const globalSpeedCalc = this.propertyManager.calculate(PropertyType.GLOBAL_ACTION_SPEED, 0)
+    allModifiers.push(...globalSpeedCalc.breakdown)
+
+    // 3. 添加超级加速（特殊效果）
+    const overLevelBonus = Math.max(0, (this.getSkillLevel() - this.minLevel) * 0.01)
+    if (overLevelBonus > 0) {
+      allModifiers.push({
+        sourceId: `overLevel.${this.skillId}`,
+        sourceName: 'effect.overLevelSpeedUp',
+        type: 'inversePercentage',
+        value: overLevelBonus,
+      })
+    }
+
+    // 计算最终值
+    let flat = 0
+    let percentage = 0
+    let inversePercentage = 0
+
+    for (const modifier of allModifiers) {
+      switch (modifier.type) {
+        case 'flat':
+          flat += modifier.value
+          break
+        case 'percentage':
+          percentage += modifier.value
+          break
+        case 'inversePercentage':
+          inversePercentage += modifier.value
+          break
       }
     }
-    return state
+
+    const finalValue = ((this.baseDuration + flat) * (1 + percentage)) / (1 + inversePercentage)
+
+    return {
+      finalValue,
+      baseValue: this.baseDuration,
+      breakdown: allModifiers,
+    }
+  }
+
+  /**
+   * 获取经验值（带详情）
+   */
+  getXpDetail(): PropertyCalculation {
+    const allModifiers: PropertyCalculation['breakdown'] = []
+
+    // 应用全局经验加成
+    const globalXpCalc = this.propertyManager.calculate(PropertyType.GLOBAL_XP_GAIN, 0)
+    allModifiers.push(...globalXpCalc.breakdown)
+
+    // 计算最终值
+    let flat = 0
+    let percentage = 0
+    let inversePercentage = 0
+
+    for (const modifier of allModifiers) {
+      switch (modifier.type) {
+        case 'flat':
+          flat += modifier.value
+          break
+        case 'percentage':
+          percentage += modifier.value
+          break
+        case 'inversePercentage':
+          inversePercentage += modifier.value
+          break
+      }
+    }
+
+    const finalValue = ((this.baseXp + flat) * (1 + percentage)) / (1 + inversePercentage)
+
+    return {
+      finalValue,
+      baseValue: this.baseXp,
+      breakdown: allModifiers,
+    }
+  }
+
+  /**
+   * 获取宝箱点数（带详情）
+   */
+  getChestPointsDetail(): PropertyCalculation {
+    const allModifiers: PropertyCalculation['breakdown'] = []
+
+    // 应用全局宝箱点数加成
+    const globalChestPointsCalc = this.propertyManager.calculate(
+      PropertyType.GLOBAL_CHEST_POINTS,
+      0
+    )
+    allModifiers.push(...globalChestPointsCalc.breakdown)
+
+    // 计算最终值
+    let flat = 0
+    let percentage = 0
+    let inversePercentage = 0
+
+    for (const modifier of allModifiers) {
+      switch (modifier.type) {
+        case 'flat':
+          flat += modifier.value
+          break
+        case 'percentage':
+          percentage += modifier.value
+          break
+        case 'inversePercentage':
+          inversePercentage += modifier.value
+          break
+      }
+    }
+
+    const finalValue = ((this.baseChestPoints + flat) * (1 + percentage)) / (1 + inversePercentage)
+
+    return {
+      finalValue,
+      baseValue: this.baseChestPoints,
+      breakdown: allModifiers,
+    }
+  }
+
+  // ========== 便捷方法（仅获取值） ==========
+
+  getDuration(): number {
+    return this.getDurationDetail().finalValue
+  }
+
+  getXp(): number {
+    return this.getXpDetail().finalValue
+  }
+
+  getChestPoints(): number {
+    return this.getChestPointsDetail().finalValue
   }
 }

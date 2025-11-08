@@ -5,25 +5,10 @@
         "skill": "mining",
         "minLevel": 0,
         "sort": 0,
-        "duration": {
-            "base": 5000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 10,
-            "boosts": []
-        },
+        "duration": 5000,
+        "xp": 10,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 50,
-            "boosts": []
-        },
+        "chestPoints": 50,
         "products": [
             {
                 "item": "copperOre",
@@ -37,25 +22,10 @@
         "skill": "mining",
         "minLevel": 10,
         "sort": 1,
-        "duration": {
-            "base": 10000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 20,
-            "boosts": []
-        },
+        "duration": 10000,
+        "xp": 20,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 100,
-            "boosts": []
-        },
+        "chestPoints": 100,
         "products": [
             {
                 "item": "ironOre",
@@ -69,25 +39,10 @@
         "skill": "mining",
         "minLevel": 20,
         "sort": 2,
-        "duration": {
-            "base": 15000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 30,
-            "boosts": []
-        },
+        "duration": 15000,
+        "xp": 30,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 150,
-            "boosts": []
-        },
+        "chestPoints": 150,
         "products": [
             {
                 "item": "silverOre",
@@ -101,25 +56,10 @@
         "skill": "mining",
         "minLevel": 30,
         "sort": 3,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 40,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 40,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "products": [
             {
                 "item": "goldOre",
@@ -133,25 +73,10 @@
         "skill": "mining",
         "minLevel": 40,
         "sort": 4,
-        "duration": {
-            "base": 25000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 25000,
+        "xp": 50,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "orichalcumOre",
@@ -165,25 +90,10 @@
         "skill": "mining",
         "minLevel": 50,
         "sort": 5,
-        "duration": {
-            "base": 30000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 60,
-            "boosts": []
-        },
+        "duration": 30000,
+        "xp": 60,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 300,
-            "boosts": []
-        },
+        "chestPoints": 300,
         "products": [
             {
                 "item": "darkIronOre",
@@ -197,25 +107,10 @@
         "skill": "mining",
         "minLevel": 60,
         "sort": 6,
-        "duration": {
-            "base": 35000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 70,
-            "boosts": []
-        },
+        "duration": 35000,
+        "xp": 70,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 350,
-            "boosts": []
-        },
+        "chestPoints": 350,
         "products": [
             {
                 "item": "mithrilOre",
@@ -229,25 +124,10 @@
         "skill": "mining",
         "minLevel": 70,
         "sort": 7,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "miningSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 80,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 80,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "products": [
             {
                 "item": "adamantineOre",

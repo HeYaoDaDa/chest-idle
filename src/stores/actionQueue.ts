@@ -25,8 +25,8 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   const progress = computed(() => {
     if (currentAction.value) {
-      return Math.min(currentAction.value.target.duration.getValue() > 0
-        ? currentActionElapsed.value / currentAction.value.target.duration.getValue()
+      return Math.min(currentAction.value.target.getDuration() > 0
+        ? currentActionElapsed.value / currentAction.value.target.getDuration()
         : 0, 1) * 100
     }
     return 0
@@ -139,7 +139,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     const target = action.target
     const playerStore = usePlayerStore()
     const skill = playerStore.getSkill(target.skillId)
-    const remainedDuration = target.duration.getValue() - currentActionElapsed.value
+    const remainedDuration = target.getDuration() - currentActionElapsed.value
 
     if (elapsed < remainedDuration) {
       // 动作还未完成
@@ -150,17 +150,17 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       let count = action.amount
       count = Math.min(
         count,
-        1 + Math.floor((elapsed - remainedDuration) / target.duration.getValue())
+        1 + Math.floor((elapsed - remainedDuration) / target.getDuration())
       )
       if (skill) {
-        count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / target.xp.getValue()))
+        count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / target.getXp()))
       }
 
       // 执行动作效果
       executeAction(action, count)
 
       // 计算剩余时间
-      const remainedElapsed = elapsed - (remainedDuration + target.duration.getValue() * (count - 1))
+      const remainedElapsed = elapsed - (remainedDuration + target.getDuration() * (count - 1))
 
       // 重置或移除动作
       currentActionElapsed.value = 0
@@ -192,10 +192,10 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
 
     // 增加经验
-    playerStore.addSkillXp(target.skillId, target.xp.getValue() * count)
+    playerStore.addSkillXp(target.skillId, target.getXp() * count)
 
     // 增加箱子点数并获得箱子
-    const chestCount = playerStore.addChestPoints(target.chest.id, target.chestPoints.getValue() * count)
+    const chestCount = playerStore.addChestPoints(target.chest.id, target.getChestPoints() * count)
 
     // 计算奖励
     const rewards: [unknown, number][] = []

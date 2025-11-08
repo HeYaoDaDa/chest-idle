@@ -16,7 +16,7 @@ const runningActionDisplay = computed(() =>
 
 const runningActionDurationDisplay = computed(() => {
   if (actionQueueStore.currentAction) {
-    return `${(Math.floor(actionQueueStore.currentAction.target.duration.getValue() / 10) / 100).toFixed(2)}s`
+    return `${(Math.floor(actionQueueStore.currentAction.target.getDuration() / 10) / 100).toFixed(2)}s`
   }
   return ''
 })

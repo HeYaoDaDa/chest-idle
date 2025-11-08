@@ -1,7 +1,8 @@
 import type { EffectType } from '@/constants'
+import type { PropertyType } from '@/models/property/PropertyType'
 
 export interface EffectDefinition {
-  state: string
+  property: PropertyType
   type: EffectType
   value: number
 }

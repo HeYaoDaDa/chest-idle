@@ -5,25 +5,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 1,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -48,25 +33,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 2,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -91,25 +61,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 3,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -134,25 +89,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 4,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -177,25 +117,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 5,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -220,25 +145,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 6,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -263,25 +173,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 7,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -306,25 +201,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 8,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -349,25 +229,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 9,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -392,25 +257,10 @@
         "skill": "smithing",
         "minLevel": 10,
         "sort": 10,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 200,
         "chest": "copperMineChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "ingredients": [
             {
                 "item": "copperIngot",
@@ -435,25 +285,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 101,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -478,25 +313,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 102,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -521,25 +341,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 103,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -564,25 +369,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 104,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -607,25 +397,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 105,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -650,25 +425,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 106,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -693,25 +453,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 107,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -736,25 +481,10 @@
         "skill": "smithing",
         "minLevel": 20,
         "sort": 108,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "ironIngot",
@@ -777,25 +507,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 20,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "id": "ironAlchemistKit",
         "sort": 109,
         "ingredients": [
@@ -820,25 +535,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 20,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 400,
         "chest": "ironMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "id": "ironEnhancingTool",
         "sort": 110,
         "ingredients": [
@@ -865,25 +565,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 201,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -908,25 +593,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 202,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -951,25 +621,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 203,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -994,25 +649,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 204,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -1037,25 +677,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 205,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -1080,25 +705,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 206,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -1123,25 +733,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 207,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -1166,25 +761,10 @@
         "skill": "smithing",
         "minLevel": 30,
         "sort": 208,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "ingredients": [
             {
                 "item": "silverIngot",
@@ -1209,25 +789,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 301,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1252,25 +817,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 302,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1295,25 +845,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 303,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1338,25 +873,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 304,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1381,25 +901,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 305,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1424,25 +929,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 306,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1467,25 +957,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 307,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1510,25 +985,10 @@
         "skill": "smithing",
         "minLevel": 40,
         "sort": 308,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "ingredients": [
             {
                 "item": "goldIngot",
@@ -1553,25 +1013,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 401,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1596,25 +1041,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 402,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1639,25 +1069,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 403,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1682,25 +1097,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 404,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1725,25 +1125,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 405,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1768,25 +1153,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 406,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1811,25 +1181,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 407,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1854,25 +1209,10 @@
         "skill": "smithing",
         "minLevel": 50,
         "sort": 408,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "ingredients": [
             {
                 "item": "orichalcumIngot",
@@ -1897,25 +1237,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 501,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -1940,25 +1265,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 502,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -1983,25 +1293,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 503,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -2026,25 +1321,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 504,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -2069,25 +1349,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 505,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -2112,25 +1377,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 506,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -2155,25 +1405,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 507,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -2198,25 +1433,10 @@
         "skill": "smithing",
         "minLevel": 60,
         "sort": 508,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "ingredients": [
             {
                 "item": "darkIronIngot",
@@ -2241,25 +1461,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 601,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2284,25 +1489,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 602,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2327,25 +1517,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 603,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2370,25 +1545,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 604,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2413,25 +1573,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 605,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2456,25 +1601,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 606,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2499,25 +1629,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 607,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2542,25 +1657,10 @@
         "skill": "smithing",
         "minLevel": 70,
         "sort": 608,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "ingredients": [
             {
                 "item": "mithrilIngot",
@@ -2585,25 +1685,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 701,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 640,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 640,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2628,25 +1713,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 702,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2671,25 +1741,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 703,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2714,25 +1769,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 704,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2757,25 +1797,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 705,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2800,25 +1825,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 706,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2843,25 +1853,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 707,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2886,25 +1881,10 @@
         "skill": "smithing",
         "minLevel": 80,
         "sort": 708,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "ingredients": [
             {
                 "item": "adamantineIngot",
@@ -2927,25 +1907,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 30,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "id": "silverAlchemistKit",
         "sort": 209,
         "ingredients": [
@@ -2970,25 +1935,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 30,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 600,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 600,
         "chest": "silverMineChest",
-        "chestPoints": {
-            "base": 600,
-            "boosts": []
-        },
+        "chestPoints": 600,
         "id": "silverEnhancingTool",
         "sort": 210,
         "ingredients": [
@@ -3013,25 +1963,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 40,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "id": "goldAlchemistKit",
         "sort": 309,
         "ingredients": [
@@ -3056,25 +1991,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 40,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 320,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 320,
         "chest": "goldMineChest",
-        "chestPoints": {
-            "base": 800,
-            "boosts": []
-        },
+        "chestPoints": 800,
         "id": "goldEnhancingTool",
         "sort": 310,
         "ingredients": [
@@ -3099,25 +2019,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 50,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "id": "orichalcumAlchemistKit",
         "sort": 409,
         "ingredients": [
@@ -3142,25 +2047,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 50,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 400,
         "chest": "orichalcumMineChest",
-        "chestPoints": {
-            "base": 320,
-            "boosts": []
-        },
+        "chestPoints": 320,
         "id": "orichalcumEnhancingTool",
         "sort": 410,
         "ingredients": [
@@ -3185,25 +2075,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 60,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "id": "darkIronAlchemistKit",
         "sort": 509,
         "ingredients": [
@@ -3228,25 +2103,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 60,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 480,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 480,
         "chest": "darkIronMineChest",
-        "chestPoints": {
-            "base": 1200,
-            "boosts": []
-        },
+        "chestPoints": 1200,
         "id": "darkIronEnhancingTool",
         "sort": 510,
         "ingredients": [
@@ -3271,25 +2131,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 70,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "id": "mithrilAlchemistKit",
         "sort": 609,
         "ingredients": [
@@ -3314,25 +2159,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 70,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 560,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 560,
         "chest": "mithrilMineChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "id": "mithrilEnhancingTool",
         "sort": 610,
         "ingredients": [
@@ -3357,25 +2187,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 80,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "id": "adamantineAlchemistKit",
         "sort": 709,
         "ingredients": [
@@ -3400,25 +2215,10 @@
         "type": "actionTarget",
         "skill": "smithing",
         "minLevel": 80,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "smithingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 200,
         "chest": "adamantineMineChest",
-        "chestPoints": {
-            "base": 480,
-            "boosts": []
-        },
+        "chestPoints": 480,
         "id": "adamantineEnhancingTool",
         "sort": 710,
         "ingredients": [

@@ -5,25 +5,10 @@
         "skill": "foraging",
         "minLevel": 0,
         "sort": 0,
-        "duration": {
-            "base": 5000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 10,
-            "boosts": []
-        },
+        "duration": 5000,
+        "xp": 10,
         "chest": "farmChest",
-        "chestPoints": {
-            "base": 50,
-            "boosts": []
-        },
+        "chestPoints": 50,
         "products": [
             {
                 "item": "chicken",
@@ -38,25 +23,10 @@
         "skill": "foraging",
         "minLevel": 0,
         "sort": 1,
-        "duration": {
-            "base": 5000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 10,
-            "boosts": []
-        },
+        "duration": 5000,
+        "xp": 10,
         "chest": "farmChest",
-        "chestPoints": {
-            "base": 50,
-            "boosts": []
-        },
+        "chestPoints": 50,
         "products": [
             {
                 "item": "crucianCarp",
@@ -71,25 +41,10 @@
         "skill": "foraging",
         "minLevel": 0,
         "sort": 2,
-        "duration": {
-            "base": 5000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 10,
-            "boosts": []
-        },
+        "duration": 5000,
+        "xp": 10,
         "chest": "farmChest",
-        "chestPoints": {
-            "base": 50,
-            "boosts": []
-        },
+        "chestPoints": 50,
         "products": [
             {
                 "item": "cabbage",
@@ -104,25 +59,10 @@
         "skill": "foraging",
         "minLevel": 0,
         "sort": 3,
-        "duration": {
-            "base": 5000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 10,
-            "boosts": []
-        },
+        "duration": 5000,
+        "xp": 10,
         "chest": "farmChest",
-        "chestPoints": {
-            "base": 50,
-            "boosts": []
-        },
+        "chestPoints": 50,
         "products": [
             {
                 "item": "apple",
@@ -137,25 +77,10 @@
         "skill": "foraging",
         "minLevel": 0,
         "sort": 4,
-        "duration": {
-            "base": 5000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 10,
-            "boosts": []
-        },
+        "duration": 5000,
+        "xp": 10,
         "chest": "farmChest",
-        "chestPoints": {
-            "base": 50,
-            "boosts": []
-        },
+        "chestPoints": 50,
         "products": [
             {
                 "item": "licorice",
@@ -171,25 +96,10 @@
         "tab": "farm",
         "minLevel": 0,
         "sort": 9,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 50,
         "chest": "farmChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "chicken",
@@ -219,25 +129,10 @@
         "skill": "foraging",
         "minLevel": 10,
         "sort": 10,
-        "duration": {
-            "base": 10000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 20,
-            "boosts": []
-        },
+        "duration": 10000,
+        "xp": 20,
         "chest": "plainChest",
-        "chestPoints": {
-            "base": 100,
-            "boosts": []
-        },
+        "chestPoints": 100,
         "products": [
             {
                 "item": "pork",
@@ -252,25 +147,10 @@
         "skill": "foraging",
         "minLevel": 10,
         "sort": 11,
-        "duration": {
-            "base": 10000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 20,
-            "boosts": []
-        },
+        "duration": 10000,
+        "xp": 20,
         "chest": "plainChest",
-        "chestPoints": {
-            "base": 100,
-            "boosts": []
-        },
+        "chestPoints": 100,
         "products": [
             {
                 "item": "carp",
@@ -285,25 +165,10 @@
         "skill": "foraging",
         "minLevel": 10,
         "sort": 12,
-        "duration": {
-            "base": 10000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 20,
-            "boosts": []
-        },
+        "duration": 10000,
+        "xp": 20,
         "chest": "plainChest",
-        "chestPoints": {
-            "base": 100,
-            "boosts": []
-        },
+        "chestPoints": 100,
         "products": [
             {
                 "item": "carrot",
@@ -318,25 +183,10 @@
         "skill": "foraging",
         "minLevel": 10,
         "sort": 13,
-        "duration": {
-            "base": 10000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 20,
-            "boosts": []
-        },
+        "duration": 10000,
+        "xp": 20,
         "chest": "plainChest",
-        "chestPoints": {
-            "base": 100,
-            "boosts": []
-        },
+        "chestPoints": 100,
         "products": [
             {
                 "item": "grape",
@@ -351,25 +201,10 @@
         "skill": "foraging",
         "minLevel": 10,
         "sort": 14,
-        "duration": {
-            "base": 10000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 20,
-            "boosts": []
-        },
+        "duration": 10000,
+        "xp": 20,
         "chest": "plainChest",
-        "chestPoints": {
-            "base": 100,
-            "boosts": []
-        },
+        "chestPoints": 100,
         "products": [
             {
                 "item": "cotton",
@@ -385,25 +220,10 @@
         "tab": "plain",
         "minLevel": 10,
         "sort": 19,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 100,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 100,
         "chest": "plainChest",
-        "chestPoints": {
-            "base": 500,
-            "boosts": []
-        },
+        "chestPoints": 500,
         "products": [
             {
                 "item": "pork",
@@ -433,25 +253,10 @@
         "skill": "foraging",
         "minLevel": 20,
         "sort": 20,
-        "duration": {
-            "base": 15000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 30,
-            "boosts": []
-        },
+        "duration": 15000,
+        "xp": 30,
         "chest": "forestChest",
-        "chestPoints": {
-            "base": 150,
-            "boosts": []
-        },
+        "chestPoints": 150,
         "products": [
             {
                 "item": "bear",
@@ -466,25 +271,10 @@
         "skill": "foraging",
         "minLevel": 20,
         "sort": 21,
-        "duration": {
-            "base": 15000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 30,
-            "boosts": []
-        },
+        "duration": 15000,
+        "xp": 30,
         "chest": "forestChest",
-        "chestPoints": {
-            "base": 150,
-            "boosts": []
-        },
+        "chestPoints": 150,
         "products": [
             {
                 "item": "salmon",
@@ -499,25 +289,10 @@
         "skill": "foraging",
         "minLevel": 20,
         "sort": 22,
-        "duration": {
-            "base": 15000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 30,
-            "boosts": []
-        },
+        "duration": 15000,
+        "xp": 30,
         "chest": "forestChest",
-        "chestPoints": {
-            "base": 150,
-            "boosts": []
-        },
+        "chestPoints": 150,
         "products": [
             {
                 "item": "potato",
@@ -532,25 +307,10 @@
         "skill": "foraging",
         "minLevel": 20,
         "sort": 23,
-        "duration": {
-            "base": 15000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 30,
-            "boosts": []
-        },
+        "duration": 15000,
+        "xp": 30,
         "chest": "forestChest",
-        "chestPoints": {
-            "base": 150,
-            "boosts": []
-        },
+        "chestPoints": 150,
         "products": [
             {
                 "item": "berry",
@@ -565,25 +325,10 @@
         "skill": "foraging",
         "minLevel": 20,
         "sort": 24,
-        "duration": {
-            "base": 15000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 30,
-            "boosts": []
-        },
+        "duration": 15000,
+        "xp": 30,
         "chest": "forestChest",
-        "chestPoints": {
-            "base": 150,
-            "boosts": []
-        },
+        "chestPoints": 150,
         "products": [
             {
                 "item": "artemisia",
@@ -599,25 +344,10 @@
         "tab": "forest",
         "minLevel": 20,
         "sort": 29,
-        "duration": {
-            "base": 60000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 150,
-            "boosts": []
-        },
+        "duration": 60000,
+        "xp": 150,
         "chest": "forestChest",
-        "chestPoints": {
-            "base": 750,
-            "boosts": []
-        },
+        "chestPoints": 750,
         "products": [
             {
                 "item": "bear",
@@ -647,25 +377,10 @@
         "skill": "foraging",
         "minLevel": 30,
         "sort": 30,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 40,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 40,
         "chest": "mountainChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "products": [
             {
                 "item": "bison",
@@ -680,25 +395,10 @@
         "skill": "foraging",
         "minLevel": 30,
         "sort": 31,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 40,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 40,
         "chest": "mountainChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "products": [
             {
                 "item": "trout",
@@ -713,25 +413,10 @@
         "skill": "foraging",
         "minLevel": 30,
         "sort": 32,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 40,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 40,
         "chest": "mountainChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "products": [
             {
                 "item": "onion",
@@ -746,25 +431,10 @@
         "skill": "foraging",
         "minLevel": 30,
         "sort": 33,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 40,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 40,
         "chest": "mountainChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "products": [
             {
                 "item": "cherry",
@@ -779,25 +449,10 @@
         "skill": "foraging",
         "minLevel": 30,
         "sort": 34,
-        "duration": {
-            "base": 20000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 40,
-            "boosts": []
-        },
+        "duration": 20000,
+        "xp": 40,
         "chest": "mountainChest",
-        "chestPoints": {
-            "base": 200,
-            "boosts": []
-        },
+        "chestPoints": 200,
         "products": [
             {
                 "item": "flax",
@@ -813,25 +468,10 @@
         "tab": "mountain",
         "minLevel": 30,
         "sort": 39,
-        "duration": {
-            "base": 80000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 200,
-            "boosts": []
-        },
+        "duration": 80000,
+        "xp": 200,
         "chest": "mountainChest",
-        "chestPoints": {
-            "base": 1000,
-            "boosts": []
-        },
+        "chestPoints": 1000,
         "products": [
             {
                 "item": "bison",
@@ -861,25 +501,10 @@
         "skill": "foraging",
         "minLevel": 40,
         "sort": 40,
-        "duration": {
-            "base": 25000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 25000,
+        "xp": 50,
         "chest": "swampChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "crocodile",
@@ -894,25 +519,10 @@
         "skill": "foraging",
         "minLevel": 40,
         "sort": 41,
-        "duration": {
-            "base": 25000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 25000,
+        "xp": 50,
         "chest": "swampChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "catfish",
@@ -927,25 +537,10 @@
         "skill": "foraging",
         "minLevel": 40,
         "sort": 42,
-        "duration": {
-            "base": 25000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 25000,
+        "xp": 50,
         "chest": "swampChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "sweetPotato",
@@ -960,25 +555,10 @@
         "skill": "foraging",
         "minLevel": 40,
         "sort": 43,
-        "duration": {
-            "base": 25000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 25000,
+        "xp": 50,
         "chest": "swampChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "banana",
@@ -993,25 +573,10 @@
         "skill": "foraging",
         "minLevel": 40,
         "sort": 44,
-        "duration": {
-            "base": 25000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 50,
-            "boosts": []
-        },
+        "duration": 25000,
+        "xp": 50,
         "chest": "swampChest",
-        "chestPoints": {
-            "base": 250,
-            "boosts": []
-        },
+        "chestPoints": 250,
         "products": [
             {
                 "item": "ginseng",
@@ -1027,25 +592,10 @@
         "tab": "swamp",
         "minLevel": 40,
         "sort": 49,
-        "duration": {
-            "base": 100000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 250,
-            "boosts": []
-        },
+        "duration": 100000,
+        "xp": 250,
         "chest": "swampChest",
-        "chestPoints": {
-            "base": 1250,
-            "boosts": []
-        },
+        "chestPoints": 1250,
         "products": [
             {
                 "item": "crocodile",
@@ -1075,25 +625,10 @@
         "skill": "foraging",
         "minLevel": 50,
         "sort": 50,
-        "duration": {
-            "base": 30000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 60,
-            "boosts": []
-        },
+        "duration": 30000,
+        "xp": 60,
         "chest": "desertChest",
-        "chestPoints": {
-            "base": 300,
-            "boosts": []
-        },
+        "chestPoints": 300,
         "products": [
             {
                 "item": "camel",
@@ -1108,25 +643,10 @@
         "skill": "foraging",
         "minLevel": 50,
         "sort": 51,
-        "duration": {
-            "base": 30000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 60,
-            "boosts": []
-        },
+        "duration": 30000,
+        "xp": 60,
         "chest": "desertChest",
-        "chestPoints": {
-            "base": 300,
-            "boosts": []
-        },
+        "chestPoints": 300,
         "products": [
             {
                 "item": "tuna",
@@ -1141,25 +661,10 @@
         "skill": "foraging",
         "minLevel": 50,
         "sort": 52,
-        "duration": {
-            "base": 30000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 60,
-            "boosts": []
-        },
+        "duration": 30000,
+        "xp": 60,
         "chest": "desertChest",
-        "chestPoints": {
-            "base": 300,
-            "boosts": []
-        },
+        "chestPoints": 300,
         "products": [
             {
                 "item": "corn",
@@ -1174,25 +679,10 @@
         "skill": "foraging",
         "minLevel": 50,
         "sort": 53,
-        "duration": {
-            "base": 30000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 60,
-            "boosts": []
-        },
+        "duration": 30000,
+        "xp": 60,
         "chest": "desertChest",
-        "chestPoints": {
-            "base": 300,
-            "boosts": []
-        },
+        "chestPoints": 300,
         "products": [
             {
                 "item": "cactusFruit",
@@ -1207,25 +697,10 @@
         "skill": "foraging",
         "minLevel": 50,
         "sort": 54,
-        "duration": {
-            "base": 30000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 60,
-            "boosts": []
-        },
+        "duration": 30000,
+        "xp": 60,
         "chest": "desertChest",
-        "chestPoints": {
-            "base": 300,
-            "boosts": []
-        },
+        "chestPoints": 300,
         "products": [
             {
                 "item": "bamboo",
@@ -1241,25 +716,10 @@
         "tab": "desert",
         "minLevel": 50,
         "sort": 59,
-        "duration": {
-            "base": 120000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 300,
-            "boosts": []
-        },
+        "duration": 120000,
+        "xp": 300,
         "chest": "desertChest",
-        "chestPoints": {
-            "base": 1500,
-            "boosts": []
-        },
+        "chestPoints": 1500,
         "products": [
             {
                 "item": "camel",
@@ -1289,25 +749,10 @@
         "skill": "foraging",
         "minLevel": 60,
         "sort": 60,
-        "duration": {
-            "base": 35000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 70,
-            "boosts": []
-        },
+        "duration": 35000,
+        "xp": 70,
         "chest": "grasslandChest",
-        "chestPoints": {
-            "base": 350,
-            "boosts": []
-        },
+        "chestPoints": 350,
         "products": [
             {
                 "item": "venison",
@@ -1322,25 +767,10 @@
         "skill": "foraging",
         "minLevel": 60,
         "sort": 61,
-        "duration": {
-            "base": 35000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 70,
-            "boosts": []
-        },
+        "duration": 35000,
+        "xp": 70,
         "chest": "grasslandChest",
-        "chestPoints": {
-            "base": 350,
-            "boosts": []
-        },
+        "chestPoints": 350,
         "products": [
             {
                 "item": "grassCarp",
@@ -1355,25 +785,10 @@
         "skill": "foraging",
         "minLevel": 60,
         "sort": 62,
-        "duration": {
-            "base": 35000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 70,
-            "boosts": []
-        },
+        "duration": 35000,
+        "xp": 70,
         "chest": "grasslandChest",
-        "chestPoints": {
-            "base": 350,
-            "boosts": []
-        },
+        "chestPoints": 350,
         "products": [
             {
                 "item": "pepper",
@@ -1388,25 +803,10 @@
         "skill": "foraging",
         "minLevel": 60,
         "sort": 63,
-        "duration": {
-            "base": 35000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 70,
-            "boosts": []
-        },
+        "duration": 35000,
+        "xp": 70,
         "chest": "grasslandChest",
-        "chestPoints": {
-            "base": 350,
-            "boosts": []
-        },
+        "chestPoints": 350,
         "products": [
             {
                 "item": "peach",
@@ -1421,25 +821,10 @@
         "skill": "foraging",
         "minLevel": 60,
         "sort": 64,
-        "duration": {
-            "base": 35000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 70,
-            "boosts": []
-        },
+        "duration": 35000,
+        "xp": 70,
         "chest": "grasslandChest",
-        "chestPoints": {
-            "base": 350,
-            "boosts": []
-        },
+        "chestPoints": 350,
         "products": [
             {
                 "item": "reishi",
@@ -1455,25 +840,10 @@
         "tab": "grassland",
         "minLevel": 60,
         "sort": 69,
-        "duration": {
-            "base": 140000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 350,
-            "boosts": []
-        },
+        "duration": 140000,
+        "xp": 350,
         "chest": "grasslandChest",
-        "chestPoints": {
-            "base": 1750,
-            "boosts": []
-        },
+        "chestPoints": 1750,
         "products": [
             {
                 "item": "venison",
@@ -1503,25 +873,10 @@
         "skill": "foraging",
         "minLevel": 70,
         "sort": 70,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 80,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 80,
         "chest": "volcanoChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "products": [
             {
                 "item": "turkey",
@@ -1536,25 +891,10 @@
         "skill": "foraging",
         "minLevel": 70,
         "sort": 71,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 80,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 80,
         "chest": "volcanoChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "products": [
             {
                 "item": "grouper",
@@ -1569,25 +909,10 @@
         "skill": "foraging",
         "minLevel": 70,
         "sort": 72,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 80,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 80,
         "chest": "volcanoChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "products": [
             {
                 "item": "konjac",
@@ -1602,25 +927,10 @@
         "skill": "foraging",
         "minLevel": 70,
         "sort": 73,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 80,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 80,
         "chest": "volcanoChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "products": [
             {
                 "item": "longan",
@@ -1635,25 +945,10 @@
         "skill": "foraging",
         "minLevel": 70,
         "sort": 74,
-        "duration": {
-            "base": 40000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 80,
-            "boosts": []
-        },
+        "duration": 40000,
+        "xp": 80,
         "chest": "volcanoChest",
-        "chestPoints": {
-            "base": 400,
-            "boosts": []
-        },
+        "chestPoints": 400,
         "products": [
             {
                 "item": "silkworm",
@@ -1669,25 +964,10 @@
         "tab": "volcano",
         "minLevel": 70,
         "sort": 79,
-        "duration": {
-            "base": 160000,
-            "boosts": [
-                {
-                    "state": "foragingSpeed",
-                    "type": "inversePercentage"
-                },
-                "overLevelSpeedUp"
-            ]
-        },
-        "xp": {
-            "base": 400,
-            "boosts": []
-        },
+        "duration": 160000,
+        "xp": 400,
         "chest": "volcanoChest",
-        "chestPoints": {
-            "base": 2000,
-            "boosts": []
-        },
+        "chestPoints": 2000,
         "products": [
             {
                 "item": "turkey",

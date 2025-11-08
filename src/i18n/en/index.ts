@@ -94,17 +94,37 @@ export default {
     alchemyTool: 'Alchemy Tool',
     enhancingTool: 'Enhancing Tool',
   },
-  state: {
-    miningSpeed: { name: 'Mining Speed' },
-    woodcuttingSpeed: { name: 'Woodcutting Speed' },
-    foragingSpeed: { name: 'Foraging Speed' },
-    smithingSpeed: { name: 'Smithing Speed' },
-    woodworkingSpeed: { name: 'Woodworking Speed' },
-    tailoringSpeed: { name: 'Tailoring Speed' },
-    cookingSpeed: { name: 'Cooking Speed' },
-    brewingSpeed: { name: 'Brewing Speed' },
-    alchemySpeed: { name: 'Alchemy Speed' },
-    enhancingSpeed: { name: 'Enhancing Speed' },
+  property: {
+    'mining.speed': {
+      name: 'Mining Speed',
+    },
+    'woodcutting.speed': {
+      name: 'Woodcutting Speed',
+    },
+    'foraging.speed': {
+      name: 'Foraging Speed',
+    },
+    'smithing.speed': {
+      name: 'Smithing Speed',
+    },
+    'woodworking.speed': {
+      name: 'Woodworking Speed',
+    },
+    'tailoring.speed': {
+      name: 'Tailoring Speed',
+    },
+    'cooking.speed': {
+      name: 'Cooking Speed',
+    },
+    'brewing.speed': {
+      name: 'Brewing Speed',
+    },
+    'alchemy.speed': {
+      name: 'Alchemy Speed',
+    },
+    'enhancing.speed': {
+      name: 'Enhancing Speed',
+    },
   },
   item: {
     copperMineChest: {

@@ -34,9 +34,9 @@ const skill = computed(() => {
 
 const amountString = ref(INFINITE_STRING)
 const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
-const durationSeconds = computed(() => (props.actionTarget ? props.actionTarget.duration.getValue() / 1000 : 0))
-const xpPerCycle = computed(() => props.actionTarget?.xp.getValue() ?? 0)
-const chestPointsPerCycle = computed(() => props.actionTarget?.chestPoints.getValue() ?? 0)
+const durationSeconds = computed(() => (props.actionTarget ? props.actionTarget.getDuration() / 1000 : 0))
+const xpPerCycle = computed(() => props.actionTarget?.getXp() ?? 0)
+const chestPointsPerCycle = computed(() => props.actionTarget?.getChestPoints() ?? 0)
 const hasIngredients = computed(() => (props.actionTarget?.ingredients.length ?? 0) > 0)
 const hasProducts = computed(() => (props.actionTarget?.products.length ?? 0) > 0)
 const hasCurrentAction = computed(() => !!actionQueueStore.currentAction)

@@ -94,7 +94,7 @@ const openSlotEquipment = (slot: Slot) => {
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
             <div v-for="(effect, index) in selectedEquipment.equipment.effects" :key="index" class="item-modal-effect">
-              <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
+              <span class="effect-state">{{ t(`property.${effect.property}.name`) }}</span>
               <span class="effect-value">
                 {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
                 }}{{ effect.value
@@ -142,7 +142,7 @@ const openSlotEquipment = (slot: Slot) => {
           <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
           <div class="item-modal-effects">
             <div v-for="(effect, index) in selectedInventoryItem.item.effects" :key="index" class="item-modal-effect">
-              <span class="effect-state">{{ t(`state.${effect.state}.name`) }}</span>
+              <span class="effect-state">{{ t(`property.${effect.property}.name`) }}</span>
               <span class="effect-value">
                 {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
                 }}{{ effect.value

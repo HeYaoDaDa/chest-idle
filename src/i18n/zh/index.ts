@@ -94,17 +94,37 @@ export default {
     alchemyTool: '炼金工具',
     enhancingTool: '强化工具',
   },
-  state: {
-    miningSpeed: { name: '采矿速度' },
-    woodcuttingSpeed: { name: '伐木速度' },
-    foragingSpeed: { name: '采摘速度' },
-    smithingSpeed: { name: '锻造速度' },
-    woodworkingSpeed: { name: '木工速度' },
-    tailoringSpeed: { name: '裁缝速度' },
-    cookingSpeed: { name: '烹饪速度' },
-    brewingSpeed: { name: '酿造速度' },
-    alchemySpeed: { name: '炼金速度' },
-    enhancingSpeed: { name: '强化速度' },
+  property: {
+    'mining.speed': {
+      name: '采矿速度',
+    },
+    'woodcutting.speed': {
+      name: '伐木速度',
+    },
+    'foraging.speed': {
+      name: '采集速度',
+    },
+    'smithing.speed': {
+      name: '锻造速度',
+    },
+    'woodworking.speed': {
+      name: '木工速度',
+    },
+    'tailoring.speed': {
+      name: '裁缝速度',
+    },
+    'cooking.speed': {
+      name: '烹饪速度',
+    },
+    'brewing.speed': {
+      name: '酿造速度',
+    },
+    'alchemy.speed': {
+      name: '炼金速度',
+    },
+    'enhancing.speed': {
+      name: '强化速度',
+    },
   },
   item: {
     copperMineChest: {

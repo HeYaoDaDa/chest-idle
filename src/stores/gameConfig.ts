@@ -3,23 +3,25 @@ import { markRaw, ref } from 'vue'
 import type { Definition } from '@/models/definitions'
 import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
 import type { SkillConfig } from '@/models/Skill'
-import { State } from '@/models/state/State'
 import type { Slot } from '@/models/Slot'
 import type { Item } from '@/models/item'
 import { Resource } from '@/models/item/Resource'
 import { Chest } from '@/models/item/Chest'
 import { Equipment } from '@/models/item/Equipment'
 import { ActionTarget } from '@/models/actionTarget'
+import { PropertyManager } from '@/models/property'
 import { usePlayerStore } from './player'
 
 export const useGameConfigStore = defineStore('gameConfig', () => {
   // Maps for storing game objects by ID
   const skillConfigMap = new Map<string, SkillConfig>()
-  const stateMap = new Map<string, State>()
   const slotMap = new Map<string, Slot>()
   const itemMap = new Map<string, Item>()
   const chestMap = new Map<string, Chest>()
   const actionTargetMap = new Map<string, ActionTarget>()
+
+  // 新的属性管理器
+  const propertyManager = new PropertyManager()
 
   // Cached arrays for UI consumption
   const allSkillConfigs = ref<SkillConfig[]>([])
@@ -28,22 +30,14 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
 
   function clear() {
     skillConfigMap.clear()
-    stateMap.clear()
     slotMap.clear()
     itemMap.clear()
     chestMap.clear()
     actionTargetMap.clear()
+    propertyManager.clear()
     allSkillConfigs.value = []
     allSlots.value = []
     allChests.value = []
-  }
-
-  function resolveState(id: string): State {
-    const state = stateMap.get(id)
-    if (!state) {
-      throw new Error(`State ${id} not found`)
-    }
-    return state
   }
 
   function handleDefinition(definition: Definition) {
@@ -56,11 +50,6 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
           sort: definition.sort
         }
         skillConfigMap.set(skillConfig.id, skillConfig)
-        break
-      }
-      case 'state': {
-        const state = markRaw(new State(definition.base))
-        stateMap.set(definition.id, state)
         break
       }
       case 'slot': {
@@ -120,8 +109,8 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
             actionTargetDefinition.chestPoints,
             ingredients,
             products,
-            resolveState,
             () => playerStore.getSkillLevel(skillId),
+            propertyManager,
           ),
         )
 
@@ -176,13 +165,12 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       }
     }
 
-    // Ensure stable order: skills -> states -> slots -> items -> actionTarget
+    // Ensure stable order: skills -> slots -> items -> actionTarget
     const typeOrder: Record<Definition['type'], number> = {
       skill: 1,
-      state: 2,
-      slot: 3,
-      item: 4,
-      actionTarget: 5,
+      slot: 2,
+      item: 3,
+      actionTarget: 4,
     }
     const sorted = all.slice().sort((a, b) => typeOrder[a.type] - typeOrder[b.type])
 
@@ -224,14 +212,6 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     return skillConfigMap.get(skillId)
   }
 
-  function getStateById(id: string): State {
-    const state = stateMap.get(id)
-    if (!state) {
-      throw new Error(`State ${id} not found`)
-    }
-    return state
-  }
-
   function getSlotById(id: string): Slot {
     const slot = slotMap.get(id)
     if (!slot) {
@@ -264,15 +244,12 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     return actionTarget
   }
 
-  function getAllStates(): Array<[string, State]> {
-    return Array.from(stateMap.entries())
-  }
-
   return {
     // State
     allSkillConfigs,
     allSlots,
     allChests,
+    propertyManager,
 
     // Methods
     loadGameConfig,
@@ -280,11 +257,9 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     getSkillConfigById,
     getSkillActionTargets,
     getSkillActionTargetTabs,
-    getStateById,
     getSlotById,
     getItemById,
     getChestById,
     getActionTargetById,
-    getAllStates,
   }
 })

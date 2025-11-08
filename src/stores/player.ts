@@ -3,7 +3,6 @@ import { computed, reactive, ref, markRaw } from 'vue'
 import type { Item } from '@/models/item'
 import type { InventoryItem } from '@/models/InventoryItem'
 import { useGameConfigStore } from './gameConfig'
-import { Effect } from '@/models/state/Effect'
 import type { Equipment } from '@/models/item/Equipment'
 import type { Chest } from '@/models/item/Chest'
 import { XP_TABLE } from '@/constants'
@@ -278,11 +277,14 @@ export const usePlayerStore = defineStore('player', () => {
     // Unequip current equipment if any
     unequipSlot(slotId)
 
-    // Apply equipment effects
-    for (const inactiveEffect of equipment.effects) {
-      const state = gameConfigStore.getStateById(inactiveEffect.state)
-      const effect = new Effect(inactiveEffect.type, () => inactiveEffect.value)
-      state.addEffect(slotId, effect)
+    // Apply equipment effects to PropertyManager
+    for (const effect of equipment.effects) {
+      gameConfigStore.propertyManager.addModifier(effect.property, {
+        sourceId: `equipment:${slotId}`,
+        sourceName: equipment.name,
+        type: effect.type,
+        value: effect.value,
+      })
     }
 
     // Set equipment to slot
@@ -296,11 +298,8 @@ export const usePlayerStore = defineStore('player', () => {
     const currentEquipment = getEquippedItem(slotId)
 
     if (currentEquipment) {
-      // Remove equipment effects
-      for (const effect of currentEquipment.effects) {
-        const state = gameConfigStore.getStateById(effect.state)
-        state.removeEffect(slotId)
-      }
+      // Remove all modifiers from this equipment
+      gameConfigStore.propertyManager.removeAllModifiersFromSource(`equipment:${slotId}`)
 
       // Clear equipment from slot
       clearEquippedItem(slotId)

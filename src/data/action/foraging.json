@@ -1,7 +1,6 @@
 [
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "chicken",
         "skill": "foraging",
         "minLevel": 0,
@@ -35,7 +34,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "crucianCarp",
         "skill": "foraging",
         "minLevel": 0,
@@ -69,7 +67,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "cabbage",
         "skill": "foraging",
         "minLevel": 0,
@@ -103,7 +100,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "apple",
         "skill": "foraging",
         "minLevel": 0,
@@ -137,7 +133,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "licorice",
         "skill": "foraging",
         "minLevel": 0,
@@ -171,7 +166,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "farm",
         "skill": "foraging",
         "tab": "farm",
@@ -221,7 +215,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "pork",
         "skill": "foraging",
         "minLevel": 10,
@@ -255,7 +248,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "carp",
         "skill": "foraging",
         "minLevel": 10,
@@ -289,7 +281,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "carrot",
         "skill": "foraging",
         "minLevel": 10,
@@ -323,7 +314,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "grape",
         "skill": "foraging",
         "minLevel": 10,
@@ -357,7 +347,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "cotton",
         "skill": "foraging",
         "minLevel": 10,
@@ -391,7 +380,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "plain",
         "skill": "foraging",
         "tab": "plain",
@@ -441,7 +429,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "bear",
         "skill": "foraging",
         "minLevel": 20,
@@ -475,7 +462,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "salmon",
         "skill": "foraging",
         "minLevel": 20,
@@ -509,7 +495,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "potato",
         "skill": "foraging",
         "minLevel": 20,
@@ -543,7 +528,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "berry",
         "skill": "foraging",
         "minLevel": 20,
@@ -577,7 +561,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "artemisia",
         "skill": "foraging",
         "minLevel": 20,
@@ -611,7 +594,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "forest",
         "skill": "foraging",
         "tab": "forest",
@@ -661,7 +643,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "bison",
         "skill": "foraging",
         "minLevel": 30,
@@ -695,7 +676,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "trout",
         "skill": "foraging",
         "minLevel": 30,
@@ -729,7 +709,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "onion",
         "skill": "foraging",
         "minLevel": 30,
@@ -763,7 +742,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "cherry",
         "skill": "foraging",
         "minLevel": 30,
@@ -797,7 +775,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "flax",
         "skill": "foraging",
         "minLevel": 30,
@@ -831,7 +808,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "mountain",
         "skill": "foraging",
         "tab": "mountain",
@@ -881,7 +857,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "crocodile",
         "skill": "foraging",
         "minLevel": 40,
@@ -915,7 +890,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "catfish",
         "skill": "foraging",
         "minLevel": 40,
@@ -949,7 +923,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "sweetPotato",
         "skill": "foraging",
         "minLevel": 40,
@@ -983,7 +956,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "banana",
         "skill": "foraging",
         "minLevel": 40,
@@ -1017,7 +989,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "ginseng",
         "skill": "foraging",
         "minLevel": 40,
@@ -1051,7 +1022,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "swamp",
         "skill": "foraging",
         "tab": "swamp",
@@ -1101,7 +1071,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "camel",
         "skill": "foraging",
         "minLevel": 50,
@@ -1135,7 +1104,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "tuna",
         "skill": "foraging",
         "minLevel": 50,
@@ -1169,7 +1137,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "corn",
         "skill": "foraging",
         "minLevel": 50,
@@ -1203,7 +1170,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "cactusFruit",
         "skill": "foraging",
         "minLevel": 50,
@@ -1237,7 +1203,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "bamboo",
         "skill": "foraging",
         "minLevel": 50,
@@ -1271,7 +1236,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "desert",
         "skill": "foraging",
         "tab": "desert",
@@ -1321,7 +1285,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "venison",
         "skill": "foraging",
         "minLevel": 60,
@@ -1355,7 +1318,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "grassCarp",
         "skill": "foraging",
         "minLevel": 60,
@@ -1389,7 +1351,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "pepper",
         "skill": "foraging",
         "minLevel": 60,
@@ -1423,7 +1384,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "peach",
         "skill": "foraging",
         "minLevel": 60,
@@ -1457,7 +1417,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "reishi",
         "skill": "foraging",
         "minLevel": 60,
@@ -1491,7 +1450,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "grassland",
         "skill": "foraging",
         "tab": "grassland",
@@ -1541,7 +1499,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "turkey",
         "skill": "foraging",
         "minLevel": 70,
@@ -1575,7 +1532,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "grouper",
         "skill": "foraging",
         "minLevel": 70,
@@ -1609,7 +1565,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "konjac",
         "skill": "foraging",
         "minLevel": 70,
@@ -1643,7 +1598,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "longan",
         "skill": "foraging",
         "minLevel": 70,
@@ -1677,7 +1631,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "silkworm",
         "skill": "foraging",
         "minLevel": 70,
@@ -1711,7 +1664,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "volcano",
         "skill": "foraging",
         "tab": "volcano",

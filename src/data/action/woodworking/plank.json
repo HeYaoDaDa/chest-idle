@@ -1,7 +1,6 @@
 [
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "willowPlank",
         "skill": "woodworking",
         "minLevel": 0,
@@ -41,7 +40,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "pinePlank",
         "skill": "woodworking",
         "minLevel": 10,
@@ -81,7 +79,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "oakPlank",
         "skill": "woodworking",
         "minLevel": 20,
@@ -121,7 +118,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "maplePlank",
         "skill": "woodworking",
         "minLevel": 30,
@@ -161,7 +157,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "elmPlank",
         "skill": "woodworking",
         "minLevel": 40,
@@ -201,7 +196,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "beechPlank",
         "skill": "woodworking",
         "minLevel": 50,
@@ -241,7 +235,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mahoganyPlank",
         "skill": "woodworking",
         "minLevel": 60,
@@ -281,7 +274,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ebonyPlank",
         "skill": "woodworking",
         "minLevel": 70,

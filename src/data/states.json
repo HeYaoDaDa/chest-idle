@@ -1,12 +1,52 @@
 [
-    { "type": "state", "id": "miningSpeed", "base": 0 },
-    { "type": "state", "id": "woodcuttingSpeed", "base": 0 },
-    { "type": "state", "id": "foragingSpeed", "base": 0 },
-    { "type": "state", "id": "smithingSpeed", "base": 0 },
-    { "type": "state", "id": "woodworkingSpeed", "base": 0 },
-    { "type": "state", "id": "tailoringSpeed", "base": 0 },
-    { "type": "state", "id": "cookingSpeed", "base": 0 },
-    { "type": "state", "id": "brewingSpeed", "base": 0 },
-    { "type": "state", "id": "alchemySpeed", "base": 0 },
-    { "type": "state", "id": "enhancingSpeed", "base": 0 }
+    {
+        "type": "state",
+        "id": "miningSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "woodcuttingSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "foragingSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "smithingSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "woodworkingSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "tailoringSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "cookingSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "brewingSpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "alchemySpeed",
+        "base": 0
+    },
+    {
+        "type": "state",
+        "id": "enhancingSpeed",
+        "base": 0
+    }
 ]

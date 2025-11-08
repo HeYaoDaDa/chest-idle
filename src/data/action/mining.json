@@ -1,7 +1,6 @@
 [
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "copperMine",
         "skill": "mining",
         "minLevel": 0,
@@ -34,7 +33,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "ironMine",
         "skill": "mining",
         "minLevel": 10,
@@ -67,7 +65,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "silverMine",
         "skill": "mining",
         "minLevel": 20,
@@ -100,7 +97,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "goldMine",
         "skill": "mining",
         "minLevel": 30,
@@ -133,7 +129,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "orichalcumMine",
         "skill": "mining",
         "minLevel": 40,
@@ -166,7 +161,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "darkIronMine",
         "skill": "mining",
         "minLevel": 50,
@@ -199,7 +193,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "mithrilMine",
         "skill": "mining",
         "minLevel": 60,
@@ -232,7 +225,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "adamantineMine",
         "skill": "mining",
         "minLevel": 70,

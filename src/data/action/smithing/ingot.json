@@ -1,7 +1,6 @@
 [
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperIngot",
         "skill": "smithing",
         "minLevel": 0,
@@ -41,7 +40,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironIngot",
         "skill": "smithing",
         "minLevel": 10,
@@ -81,7 +79,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverIngot",
         "skill": "smithing",
         "minLevel": 20,
@@ -121,7 +118,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldIngot",
         "skill": "smithing",
         "minLevel": 30,
@@ -161,7 +157,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumIngot",
         "skill": "smithing",
         "minLevel": 40,
@@ -201,7 +196,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronIngot",
         "skill": "smithing",
         "minLevel": 50,
@@ -241,7 +235,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilIngot",
         "skill": "smithing",
         "minLevel": 60,
@@ -281,7 +274,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineIngot",
         "skill": "smithing",
         "minLevel": 70,

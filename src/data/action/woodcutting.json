@@ -1,7 +1,6 @@
 [
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "willowTree",
         "skill": "woodcutting",
         "minLevel": 0,
@@ -34,7 +33,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "pineTree",
         "skill": "woodcutting",
         "minLevel": 10,
@@ -67,7 +65,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "oakTree",
         "skill": "woodcutting",
         "minLevel": 20,
@@ -100,7 +97,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "mapleTree",
         "skill": "woodcutting",
         "minLevel": 30,
@@ -133,7 +129,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "elmTree",
         "skill": "woodcutting",
         "minLevel": 40,
@@ -166,7 +161,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "beechTree",
         "skill": "woodcutting",
         "minLevel": 50,
@@ -199,7 +193,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "mahoganyTree",
         "skill": "woodcutting",
         "minLevel": 60,
@@ -232,7 +225,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "gatheringZone",
         "id": "ebonyTree",
         "skill": "woodcutting",
         "minLevel": 70,

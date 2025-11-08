@@ -6,7 +6,11 @@
         "sort": 2,
         "slot": "miningTool",
         "effects": [
-            { "state": "miningSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -16,7 +20,11 @@
         "sort": 3,
         "slot": "woodcuttingTool",
         "effects": [
-            { "state": "woodcuttingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -26,7 +34,11 @@
         "sort": 4,
         "slot": "foragingTool",
         "effects": [
-            { "state": "foragingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -36,7 +48,11 @@
         "sort": 5,
         "slot": "smithingTool",
         "effects": [
-            { "state": "smithingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -46,7 +62,11 @@
         "sort": 6,
         "slot": "woodworkingTool",
         "effects": [
-            { "state": "woodworkingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "woodworkingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -56,7 +76,11 @@
         "sort": 7,
         "slot": "tailoringTool",
         "effects": [
-            { "state": "tailoringSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -66,7 +90,11 @@
         "sort": 8,
         "slot": "cookingTool",
         "effects": [
-            { "state": "cookingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -76,7 +104,11 @@
         "sort": 9,
         "slot": "brewingTool",
         "effects": [
-            { "state": "brewingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -86,7 +118,11 @@
         "sort": 10,
         "slot": "alchemyTool",
         "effects": [
-            { "state": "alchemySpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -96,7 +132,11 @@
         "sort": 11,
         "slot": "enhancingTool",
         "effects": [
-            { "state": "enhancingSpeed", "type": "flat", "value": 0.5 }
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 0.5
+            }
         ]
     },
     {
@@ -105,7 +145,13 @@
         "id": "ironPickaxe",
         "sort": 14,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -113,7 +159,13 @@
         "id": "ironAxe",
         "sort": 15,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -121,7 +173,13 @@
         "id": "ironForagingKnife",
         "sort": 16,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -129,7 +187,13 @@
         "id": "ironSmithingHammer",
         "sort": 17,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -137,7 +201,13 @@
         "id": "ironWoodworkingTool",
         "sort": 18,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodworkingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "woodworkingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -145,7 +215,13 @@
         "id": "ironTailoringNeedle",
         "sort": 19,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -153,7 +229,13 @@
         "id": "ironCookingUtensil",
         "sort": 20,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -161,7 +243,13 @@
         "id": "ironBrewingKit",
         "sort": 21,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -169,7 +257,13 @@
         "id": "ironAlchemistKit",
         "sort": 22,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -177,7 +271,13 @@
         "id": "ironEnhancingTool",
         "sort": 23,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 1 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 1
+            }
+        ]
     },
     {
         "type": "item",
@@ -185,7 +285,13 @@
         "id": "silverPickaxe",
         "sort": 26,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -193,7 +299,13 @@
         "id": "silverAxe",
         "sort": 27,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -201,7 +313,13 @@
         "id": "silverForagingKnife",
         "sort": 28,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -209,7 +327,13 @@
         "id": "silverSmithingHammer",
         "sort": 29,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -217,7 +341,13 @@
         "id": "silverWoodworkingTool",
         "sort": 30,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -225,7 +355,13 @@
         "id": "silverTailoringNeedle",
         "sort": 31,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -233,7 +369,13 @@
         "id": "silverCookingUtensil",
         "sort": 32,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -241,7 +383,13 @@
         "id": "silverBrewingKit",
         "sort": 33,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -249,7 +397,13 @@
         "id": "silverAlchemistKit",
         "sort": 34,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -257,7 +411,13 @@
         "id": "silverEnhancingTool",
         "sort": 35,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 1.5 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 1.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -265,7 +425,13 @@
         "id": "goldPickaxe",
         "sort": 38,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -273,7 +439,13 @@
         "id": "goldAxe",
         "sort": 39,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -281,7 +453,13 @@
         "id": "goldForagingKnife",
         "sort": 40,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -289,7 +467,13 @@
         "id": "goldSmithingHammer",
         "sort": 41,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -297,7 +481,13 @@
         "id": "goldWoodworkingTool",
         "sort": 42,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -305,7 +495,13 @@
         "id": "goldTailoringNeedle",
         "sort": 43,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -313,7 +509,13 @@
         "id": "goldCookingUtensil",
         "sort": 44,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -321,7 +523,13 @@
         "id": "goldBrewingKit",
         "sort": 45,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -329,7 +537,13 @@
         "id": "goldAlchemistKit",
         "sort": 46,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -337,7 +551,13 @@
         "id": "goldEnhancingTool",
         "sort": 47,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 2 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 2
+            }
+        ]
     },
     {
         "type": "item",
@@ -345,7 +565,13 @@
         "id": "orichalcumPickaxe",
         "sort": 50,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -353,7 +579,13 @@
         "id": "orichalcumAxe",
         "sort": 51,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -361,7 +593,13 @@
         "id": "orichalcumForagingKnife",
         "sort": 52,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -369,7 +607,13 @@
         "id": "orichalcumSmithingHammer",
         "sort": 53,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -377,7 +621,13 @@
         "id": "orichalcumWoodworkingTool",
         "sort": 54,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -385,7 +635,13 @@
         "id": "orichalcumTailoringNeedle",
         "sort": 55,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -393,7 +649,13 @@
         "id": "orichalcumCookingUtensil",
         "sort": 56,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -401,7 +663,13 @@
         "id": "orichalcumBrewingKit",
         "sort": 57,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -409,7 +677,13 @@
         "id": "orichalcumAlchemistKit",
         "sort": 58,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -417,7 +691,13 @@
         "id": "orichalcumEnhancingTool",
         "sort": 59,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 2.5 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 2.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -425,7 +705,13 @@
         "id": "darkIronPickaxe",
         "sort": 62,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -433,7 +719,13 @@
         "id": "darkIronAxe",
         "sort": 63,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -441,7 +733,13 @@
         "id": "darkIronForagingKnife",
         "sort": 64,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -449,7 +747,13 @@
         "id": "darkIronSmithingHammer",
         "sort": 65,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -457,7 +761,13 @@
         "id": "darkIronWoodworkingTool",
         "sort": 66,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -465,7 +775,13 @@
         "id": "darkIronTailoringNeedle",
         "sort": 67,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -473,7 +789,13 @@
         "id": "darkIronCookingUtensil",
         "sort": 68,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -481,7 +803,13 @@
         "id": "darkIronBrewingKit",
         "sort": 69,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -489,7 +817,13 @@
         "id": "darkIronAlchemistKit",
         "sort": 70,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -497,7 +831,13 @@
         "id": "darkIronEnhancingTool",
         "sort": 71,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 3 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 3
+            }
+        ]
     },
     {
         "type": "item",
@@ -505,7 +845,13 @@
         "id": "mithrilPickaxe",
         "sort": 74,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -513,7 +859,13 @@
         "id": "mithrilAxe",
         "sort": 75,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -521,7 +873,13 @@
         "id": "mithrilForagingKnife",
         "sort": 76,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -529,7 +887,13 @@
         "id": "mithrilSmithingHammer",
         "sort": 77,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -537,7 +901,13 @@
         "id": "mithrilWoodworkingTool",
         "sort": 78,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -545,7 +915,13 @@
         "id": "mithrilTailoringNeedle",
         "sort": 79,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -553,7 +929,13 @@
         "id": "mithrilCookingUtensil",
         "sort": 80,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -561,7 +943,13 @@
         "id": "mithrilBrewingKit",
         "sort": 81,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -569,7 +957,13 @@
         "id": "mithrilAlchemistKit",
         "sort": 82,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -577,7 +971,13 @@
         "id": "mithrilEnhancingTool",
         "sort": 83,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 3.5 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 3.5
+            }
+        ]
     },
     {
         "type": "item",
@@ -585,7 +985,13 @@
         "id": "adamantinePickaxe",
         "sort": 86,
         "slot": "miningTool",
-        "effects": [ { "state": "miningSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "miningSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -593,7 +999,13 @@
         "id": "adamantineAxe",
         "sort": 87,
         "slot": "woodcuttingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -601,7 +1013,13 @@
         "id": "adamantineForagingKnife",
         "sort": 88,
         "slot": "foragingTool",
-        "effects": [ { "state": "foragingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "foragingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -609,7 +1027,13 @@
         "id": "adamantineSmithingHammer",
         "sort": 89,
         "slot": "smithingTool",
-        "effects": [ { "state": "smithingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "smithingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -617,7 +1041,13 @@
         "id": "adamantineWoodworkingTool",
         "sort": 90,
         "slot": "woodworkingTool",
-        "effects": [ { "state": "woodcuttingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "woodcuttingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -625,7 +1055,13 @@
         "id": "adamantineTailoringNeedle",
         "sort": 91,
         "slot": "tailoringTool",
-        "effects": [ { "state": "tailoringSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "tailoringSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -633,7 +1069,13 @@
         "id": "adamantineCookingUtensil",
         "sort": 92,
         "slot": "cookingTool",
-        "effects": [ { "state": "cookingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "cookingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -641,7 +1083,13 @@
         "id": "adamantineBrewingKit",
         "sort": 93,
         "slot": "brewingTool",
-        "effects": [ { "state": "brewingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "brewingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -649,7 +1097,13 @@
         "id": "adamantineAlchemistKit",
         "sort": 94,
         "slot": "alchemyTool",
-        "effects": [ { "state": "alchemySpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "alchemySpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     },
     {
         "type": "item",
@@ -657,6 +1111,12 @@
         "id": "adamantineEnhancingTool",
         "sort": 95,
         "slot": "enhancingTool",
-        "effects": [ { "state": "enhancingSpeed", "type": "flat", "value": 4 } ]
+        "effects": [
+            {
+                "state": "enhancingSpeed",
+                "type": "flat",
+                "value": 4
+            }
+        ]
     }
 ]

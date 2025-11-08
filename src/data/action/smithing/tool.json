@@ -1,7 +1,6 @@
 [
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperPickaxe",
         "skill": "smithing",
         "minLevel": 10,
@@ -45,7 +44,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperAxe",
         "skill": "smithing",
         "minLevel": 10,
@@ -89,7 +87,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperForagingKnife",
         "skill": "smithing",
         "minLevel": 10,
@@ -133,7 +130,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperSmithingHammer",
         "skill": "smithing",
         "minLevel": 10,
@@ -177,7 +173,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperWoodworkingTool",
         "skill": "smithing",
         "minLevel": 10,
@@ -221,7 +216,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperTailoringNeedle",
         "skill": "smithing",
         "minLevel": 10,
@@ -265,7 +259,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperCookingUtensil",
         "skill": "smithing",
         "minLevel": 10,
@@ -309,7 +302,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperBrewingKit",
         "skill": "smithing",
         "minLevel": 10,
@@ -353,7 +345,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperAlchemistKit",
         "skill": "smithing",
         "minLevel": 10,
@@ -397,7 +388,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "copperEnhancingTool",
         "skill": "smithing",
         "minLevel": 10,
@@ -441,7 +431,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironPickaxe",
         "skill": "smithing",
         "minLevel": 20,
@@ -485,7 +474,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironAxe",
         "skill": "smithing",
         "minLevel": 20,
@@ -529,7 +517,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironForagingKnife",
         "skill": "smithing",
         "minLevel": 20,
@@ -573,7 +560,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironSmithingHammer",
         "skill": "smithing",
         "minLevel": 20,
@@ -617,7 +603,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironWoodworkingTool",
         "skill": "smithing",
         "minLevel": 20,
@@ -661,7 +646,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironTailoringNeedle",
         "skill": "smithing",
         "minLevel": 20,
@@ -705,7 +689,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironCookingUtensil",
         "skill": "smithing",
         "minLevel": 20,
@@ -749,7 +732,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "ironBrewingKit",
         "skill": "smithing",
         "minLevel": 20,
@@ -793,7 +775,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 20,
         "duration": {
@@ -837,7 +818,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 20,
         "duration": {
@@ -881,7 +861,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverPickaxe",
         "skill": "smithing",
         "minLevel": 30,
@@ -925,7 +904,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverAxe",
         "skill": "smithing",
         "minLevel": 30,
@@ -969,7 +947,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverForagingKnife",
         "skill": "smithing",
         "minLevel": 30,
@@ -1013,7 +990,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverSmithingHammer",
         "skill": "smithing",
         "minLevel": 30,
@@ -1057,7 +1033,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverWoodworkingTool",
         "skill": "smithing",
         "minLevel": 30,
@@ -1101,7 +1076,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverTailoringNeedle",
         "skill": "smithing",
         "minLevel": 30,
@@ -1145,7 +1119,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverCookingUtensil",
         "skill": "smithing",
         "minLevel": 30,
@@ -1189,7 +1162,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "silverBrewingKit",
         "skill": "smithing",
         "minLevel": 30,
@@ -1233,7 +1205,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldPickaxe",
         "skill": "smithing",
         "minLevel": 40,
@@ -1277,7 +1248,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldAxe",
         "skill": "smithing",
         "minLevel": 40,
@@ -1321,7 +1291,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldForagingKnife",
         "skill": "smithing",
         "minLevel": 40,
@@ -1365,7 +1334,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldSmithingHammer",
         "skill": "smithing",
         "minLevel": 40,
@@ -1409,7 +1377,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldWoodworkingTool",
         "skill": "smithing",
         "minLevel": 40,
@@ -1453,7 +1420,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldTailoringNeedle",
         "skill": "smithing",
         "minLevel": 40,
@@ -1497,7 +1463,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldCookingUtensil",
         "skill": "smithing",
         "minLevel": 40,
@@ -1541,7 +1506,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "goldBrewingKit",
         "skill": "smithing",
         "minLevel": 40,
@@ -1585,7 +1549,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumPickaxe",
         "skill": "smithing",
         "minLevel": 50,
@@ -1629,7 +1592,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumAxe",
         "skill": "smithing",
         "minLevel": 50,
@@ -1673,7 +1635,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumForagingKnife",
         "skill": "smithing",
         "minLevel": 50,
@@ -1717,7 +1678,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumSmithingHammer",
         "skill": "smithing",
         "minLevel": 50,
@@ -1761,7 +1721,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumWoodworkingTool",
         "skill": "smithing",
         "minLevel": 50,
@@ -1805,7 +1764,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumTailoringNeedle",
         "skill": "smithing",
         "minLevel": 50,
@@ -1849,7 +1807,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumCookingUtensil",
         "skill": "smithing",
         "minLevel": 50,
@@ -1893,7 +1850,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "orichalcumBrewingKit",
         "skill": "smithing",
         "minLevel": 50,
@@ -1937,7 +1893,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronPickaxe",
         "skill": "smithing",
         "minLevel": 60,
@@ -1981,7 +1936,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronAxe",
         "skill": "smithing",
         "minLevel": 60,
@@ -2025,7 +1979,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronForagingKnife",
         "skill": "smithing",
         "minLevel": 60,
@@ -2069,7 +2022,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronSmithingHammer",
         "skill": "smithing",
         "minLevel": 60,
@@ -2113,7 +2065,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronWoodworkingTool",
         "skill": "smithing",
         "minLevel": 60,
@@ -2157,7 +2108,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronTailoringNeedle",
         "skill": "smithing",
         "minLevel": 60,
@@ -2201,7 +2151,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronCookingUtensil",
         "skill": "smithing",
         "minLevel": 60,
@@ -2245,7 +2194,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "darkIronBrewingKit",
         "skill": "smithing",
         "minLevel": 60,
@@ -2289,7 +2237,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilPickaxe",
         "skill": "smithing",
         "minLevel": 70,
@@ -2333,7 +2280,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilAxe",
         "skill": "smithing",
         "minLevel": 70,
@@ -2377,7 +2323,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilForagingKnife",
         "skill": "smithing",
         "minLevel": 70,
@@ -2421,7 +2366,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilSmithingHammer",
         "skill": "smithing",
         "minLevel": 70,
@@ -2465,7 +2409,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilWoodworkingTool",
         "skill": "smithing",
         "minLevel": 70,
@@ -2509,7 +2452,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilTailoringNeedle",
         "skill": "smithing",
         "minLevel": 70,
@@ -2553,7 +2495,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilCookingUtensil",
         "skill": "smithing",
         "minLevel": 70,
@@ -2597,7 +2538,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "mithrilBrewingKit",
         "skill": "smithing",
         "minLevel": 70,
@@ -2641,7 +2581,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantinePickaxe",
         "skill": "smithing",
         "minLevel": 80,
@@ -2685,7 +2624,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineAxe",
         "skill": "smithing",
         "minLevel": 80,
@@ -2729,7 +2667,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineForagingKnife",
         "skill": "smithing",
         "minLevel": 80,
@@ -2773,7 +2710,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineSmithingHammer",
         "skill": "smithing",
         "minLevel": 80,
@@ -2817,7 +2753,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineWoodworkingTool",
         "skill": "smithing",
         "minLevel": 80,
@@ -2861,7 +2796,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineTailoringNeedle",
         "skill": "smithing",
         "minLevel": 80,
@@ -2905,7 +2839,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineCookingUtensil",
         "skill": "smithing",
         "minLevel": 80,
@@ -2949,7 +2882,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "id": "adamantineBrewingKit",
         "skill": "smithing",
         "minLevel": 80,
@@ -2993,7 +2925,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 30,
         "duration": {
@@ -3037,7 +2968,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 30,
         "duration": {
@@ -3081,7 +3011,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 40,
         "duration": {
@@ -3125,7 +3054,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 40,
         "duration": {
@@ -3169,7 +3097,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 50,
         "duration": {
@@ -3213,7 +3140,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 50,
         "duration": {
@@ -3257,7 +3183,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 60,
         "duration": {
@@ -3301,7 +3226,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 60,
         "duration": {
@@ -3345,7 +3269,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 70,
         "duration": {
@@ -3389,7 +3312,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 70,
         "duration": {
@@ -3433,7 +3355,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 80,
         "duration": {
@@ -3477,7 +3398,6 @@
     },
     {
         "type": "actionTarget",
-        "targetType": "recipe",
         "skill": "smithing",
         "minLevel": 80,
         "duration": {

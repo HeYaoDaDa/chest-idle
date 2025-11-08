@@ -6,11 +6,36 @@
         "sort": 0,
         "maxPoints": 10000,
         "loots": [
-            { "item": "copperOre", "chance": 1, "min": 10, "max": 50 },
-            { "item": "copperOre", "chance": 0.5, "min": 50, "max": 100 },
-            { "item": "copperIngot", "chance": 0.5, "min": 1, "max": 2 },
-            { "item": "copperPickaxe", "chance": 0.5, "min": 1, "max": 1 },
-            { "item": "copperMineChest", "chance": 0.33, "min": 1, "max": 1 }
+            {
+                "item": "copperOre",
+                "chance": 1,
+                "min": 10,
+                "max": 50
+            },
+            {
+                "item": "copperOre",
+                "chance": 0.5,
+                "min": 50,
+                "max": 100
+            },
+            {
+                "item": "copperIngot",
+                "chance": 0.5,
+                "min": 1,
+                "max": 2
+            },
+            {
+                "item": "copperPickaxe",
+                "chance": 0.5,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "copperMineChest",
+                "chance": 0.33,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -20,9 +45,24 @@
         "sort": 1,
         "maxPoints": 10000,
         "loots": [
-            { "item": "ironOre", "chance": 1, "min": 10, "max": 40 },
-            { "item": "ironIngot", "chance": 0.4, "min": 1, "max": 2 },
-            { "item": "ironPickaxe", "chance": 0.25, "min": 1, "max": 1 }
+            {
+                "item": "ironOre",
+                "chance": 1,
+                "min": 10,
+                "max": 40
+            },
+            {
+                "item": "ironIngot",
+                "chance": 0.4,
+                "min": 1,
+                "max": 2
+            },
+            {
+                "item": "ironPickaxe",
+                "chance": 0.25,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -32,9 +72,24 @@
         "sort": 2,
         "maxPoints": 10000,
         "loots": [
-            { "item": "silverOre", "chance": 1, "min": 6, "max": 30 },
-            { "item": "silverIngot", "chance": 0.4, "min": 1, "max": 1 },
-            { "item": "silverPickaxe", "chance": 0.2, "min": 1, "max": 1 }
+            {
+                "item": "silverOre",
+                "chance": 1,
+                "min": 6,
+                "max": 30
+            },
+            {
+                "item": "silverIngot",
+                "chance": 0.4,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "silverPickaxe",
+                "chance": 0.2,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -44,9 +99,24 @@
         "sort": 3,
         "maxPoints": 10000,
         "loots": [
-            { "item": "goldOre", "chance": 1, "min": 4, "max": 20 },
-            { "item": "goldIngot", "chance": 0.3, "min": 1, "max": 1 },
-            { "item": "goldPickaxe", "chance": 0.15, "min": 1, "max": 1 }
+            {
+                "item": "goldOre",
+                "chance": 1,
+                "min": 4,
+                "max": 20
+            },
+            {
+                "item": "goldIngot",
+                "chance": 0.3,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "goldPickaxe",
+                "chance": 0.15,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -56,9 +126,24 @@
         "sort": 4,
         "maxPoints": 10000,
         "loots": [
-            { "item": "orichalcumOre", "chance": 1, "min": 3, "max": 15 },
-            { "item": "orichalcumIngot", "chance": 0.25, "min": 1, "max": 1 },
-            { "item": "orichalcumPickaxe", "chance": 0.12, "min": 1, "max": 1 }
+            {
+                "item": "orichalcumOre",
+                "chance": 1,
+                "min": 3,
+                "max": 15
+            },
+            {
+                "item": "orichalcumIngot",
+                "chance": 0.25,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "orichalcumPickaxe",
+                "chance": 0.12,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -68,9 +153,24 @@
         "sort": 5,
         "maxPoints": 10000,
         "loots": [
-            { "item": "darkIronOre", "chance": 1, "min": 2, "max": 10 },
-            { "item": "darkIronIngot", "chance": 0.2, "min": 1, "max": 1 },
-            { "item": "darkIronPickaxe", "chance": 0.1, "min": 1, "max": 1 }
+            {
+                "item": "darkIronOre",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            },
+            {
+                "item": "darkIronIngot",
+                "chance": 0.2,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "darkIronPickaxe",
+                "chance": 0.1,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -80,9 +180,24 @@
         "sort": 6,
         "maxPoints": 10000,
         "loots": [
-            { "item": "mithrilOre", "chance": 1, "min": 1, "max": 6 },
-            { "item": "mithrilIngot", "chance": 0.15, "min": 1, "max": 1 },
-            { "item": "mithrilPickaxe", "chance": 0.08, "min": 1, "max": 1 }
+            {
+                "item": "mithrilOre",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            },
+            {
+                "item": "mithrilIngot",
+                "chance": 0.15,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "mithrilPickaxe",
+                "chance": 0.08,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -92,9 +207,24 @@
         "sort": 7,
         "maxPoints": 10000,
         "loots": [
-            { "item": "adamantineOre", "chance": 1, "min": 1, "max": 4 },
-            { "item": "adamantineIngot", "chance": 0.1, "min": 1, "max": 1 },
-            { "item": "adamantinePickaxe", "chance": 0.05, "min": 1, "max": 1 }
+            {
+                "item": "adamantineOre",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            },
+            {
+                "item": "adamantineIngot",
+                "chance": 0.1,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "adamantinePickaxe",
+                "chance": 0.05,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -104,11 +234,36 @@
         "sort": 8,
         "maxPoints": 10000,
         "loots": [
-            { "item": "willowWood", "chance": 1, "min": 10, "max": 50 },
-            { "item": "willowWood", "chance": 0.5, "min": 50, "max": 100 },
-            { "item": "willowPlank", "chance": 0.5, "min": 1, "max": 2 },
-            { "item": "copperAxe", "chance": 0.5, "min": 1, "max": 1 },
-            { "item": "willowTreeChest", "chance": 0.33, "min": 1, "max": 1 }
+            {
+                "item": "willowWood",
+                "chance": 1,
+                "min": 10,
+                "max": 50
+            },
+            {
+                "item": "willowWood",
+                "chance": 0.5,
+                "min": 50,
+                "max": 100
+            },
+            {
+                "item": "willowPlank",
+                "chance": 0.5,
+                "min": 1,
+                "max": 2
+            },
+            {
+                "item": "copperAxe",
+                "chance": 0.5,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "willowTreeChest",
+                "chance": 0.33,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -118,9 +273,24 @@
         "sort": 9,
         "maxPoints": 10000,
         "loots": [
-            { "item": "pineWood", "chance": 1, "min": 10, "max": 40 },
-            { "item": "pinePlank", "chance": 0.4, "min": 1, "max": 2 },
-            { "item": "ironAxe", "chance": 0.25, "min": 1, "max": 1 }
+            {
+                "item": "pineWood",
+                "chance": 1,
+                "min": 10,
+                "max": 40
+            },
+            {
+                "item": "pinePlank",
+                "chance": 0.4,
+                "min": 1,
+                "max": 2
+            },
+            {
+                "item": "ironAxe",
+                "chance": 0.25,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -130,9 +300,24 @@
         "sort": 10,
         "maxPoints": 10000,
         "loots": [
-            { "item": "oakWood", "chance": 1, "min": 6, "max": 30 },
-            { "item": "oakPlank", "chance": 0.4, "min": 1, "max": 1 },
-            { "item": "silverAxe", "chance": 0.2, "min": 1, "max": 1 }
+            {
+                "item": "oakWood",
+                "chance": 1,
+                "min": 6,
+                "max": 30
+            },
+            {
+                "item": "oakPlank",
+                "chance": 0.4,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "silverAxe",
+                "chance": 0.2,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -142,9 +327,24 @@
         "sort": 11,
         "maxPoints": 10000,
         "loots": [
-            { "item": "mapleWood", "chance": 1, "min": 4, "max": 20 },
-            { "item": "maplePlank", "chance": 0.3, "min": 1, "max": 1 },
-            { "item": "goldAxe", "chance": 0.15, "min": 1, "max": 1 }
+            {
+                "item": "mapleWood",
+                "chance": 1,
+                "min": 4,
+                "max": 20
+            },
+            {
+                "item": "maplePlank",
+                "chance": 0.3,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "goldAxe",
+                "chance": 0.15,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -154,9 +354,24 @@
         "sort": 12,
         "maxPoints": 10000,
         "loots": [
-            { "item": "elmWood", "chance": 1, "min": 3, "max": 15 },
-            { "item": "elmPlank", "chance": 0.25, "min": 1, "max": 1 },
-            { "item": "orichalcumAxe", "chance": 0.12, "min": 1, "max": 1 }
+            {
+                "item": "elmWood",
+                "chance": 1,
+                "min": 3,
+                "max": 15
+            },
+            {
+                "item": "elmPlank",
+                "chance": 0.25,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "orichalcumAxe",
+                "chance": 0.12,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -166,9 +381,24 @@
         "sort": 13,
         "maxPoints": 10000,
         "loots": [
-            { "item": "beechWood", "chance": 1, "min": 2, "max": 10 },
-            { "item": "beechPlank", "chance": 0.2, "min": 1, "max": 1 },
-            { "item": "darkIronAxe", "chance": 0.1, "min": 1, "max": 1 }
+            {
+                "item": "beechWood",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            },
+            {
+                "item": "beechPlank",
+                "chance": 0.2,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "darkIronAxe",
+                "chance": 0.1,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -178,9 +408,24 @@
         "sort": 14,
         "maxPoints": 10000,
         "loots": [
-            { "item": "mahoganyWood", "chance": 1, "min": 1, "max": 6 },
-            { "item": "mahoganyPlank", "chance": 0.15, "min": 1, "max": 1 },
-            { "item": "mithrilAxe", "chance": 0.08, "min": 1, "max": 1 }
+            {
+                "item": "mahoganyWood",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            },
+            {
+                "item": "mahoganyPlank",
+                "chance": 0.15,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "mithrilAxe",
+                "chance": 0.08,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -190,9 +435,24 @@
         "sort": 15,
         "maxPoints": 10000,
         "loots": [
-            { "item": "ebonyWood", "chance": 1, "min": 1, "max": 4 },
-            { "item": "ebonyPlank", "chance": 0.1, "min": 1, "max": 1 },
-            { "item": "adamantineAxe", "chance": 0.05, "min": 1, "max": 1 }
+            {
+                "item": "ebonyWood",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            },
+            {
+                "item": "ebonyPlank",
+                "chance": 0.1,
+                "min": 1,
+                "max": 1
+            },
+            {
+                "item": "adamantineAxe",
+                "chance": 0.05,
+                "min": 1,
+                "max": 1
+            }
         ]
     },
     {
@@ -202,7 +462,12 @@
         "sort": 16,
         "maxPoints": 10000,
         "loots": [
-            { "item": "willowPlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "willowPlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -212,7 +477,12 @@
         "sort": 17,
         "maxPoints": 10000,
         "loots": [
-            { "item": "pinePlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "pinePlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -222,7 +492,12 @@
         "sort": 18,
         "maxPoints": 10000,
         "loots": [
-            { "item": "oakPlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "oakPlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -232,7 +507,12 @@
         "sort": 19,
         "maxPoints": 10000,
         "loots": [
-            { "item": "maplePlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "maplePlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -242,7 +522,12 @@
         "sort": 20,
         "maxPoints": 10000,
         "loots": [
-            { "item": "elmPlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "elmPlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -252,7 +537,12 @@
         "sort": 21,
         "maxPoints": 10000,
         "loots": [
-            { "item": "beechPlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "beechPlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -262,7 +552,12 @@
         "sort": 22,
         "maxPoints": 10000,
         "loots": [
-            { "item": "mahoganyPlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "mahoganyPlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -272,7 +567,12 @@
         "sort": 23,
         "maxPoints": 10000,
         "loots": [
-            { "item": "ebonyPlank", "chance": 1, "min": 1, "max": 3 }
+            {
+                "item": "ebonyPlank",
+                "chance": 1,
+                "min": 1,
+                "max": 3
+            }
         ]
     },
     {
@@ -282,11 +582,36 @@
         "sort": 1000,
         "maxPoints": 10000,
         "loots": [
-            { "item": "chicken", "chance": 1, "min": 5, "max": 20 },
-            { "item": "crucianCarp", "chance": 1, "min": 5, "max": 20 },
-            { "item": "cabbage", "chance": 1, "min": 5, "max": 20 },
-            { "item": "apple", "chance": 1, "min": 5, "max": 20 },
-            { "item": "licorice", "chance": 1, "min": 5, "max": 20 }
+            {
+                "item": "chicken",
+                "chance": 1,
+                "min": 5,
+                "max": 20
+            },
+            {
+                "item": "crucianCarp",
+                "chance": 1,
+                "min": 5,
+                "max": 20
+            },
+            {
+                "item": "cabbage",
+                "chance": 1,
+                "min": 5,
+                "max": 20
+            },
+            {
+                "item": "apple",
+                "chance": 1,
+                "min": 5,
+                "max": 20
+            },
+            {
+                "item": "licorice",
+                "chance": 1,
+                "min": 5,
+                "max": 20
+            }
         ]
     },
     {
@@ -296,11 +621,36 @@
         "sort": 1001,
         "maxPoints": 10000,
         "loots": [
-            { "item": "pork", "chance": 1, "min": 4, "max": 16 },
-            { "item": "carp", "chance": 1, "min": 4, "max": 16 },
-            { "item": "carrot", "chance": 1, "min": 4, "max": 16 },
-            { "item": "grape", "chance": 1, "min": 4, "max": 16 },
-            { "item": "cotton", "chance": 1, "min": 4, "max": 16 }
+            {
+                "item": "pork",
+                "chance": 1,
+                "min": 4,
+                "max": 16
+            },
+            {
+                "item": "carp",
+                "chance": 1,
+                "min": 4,
+                "max": 16
+            },
+            {
+                "item": "carrot",
+                "chance": 1,
+                "min": 4,
+                "max": 16
+            },
+            {
+                "item": "grape",
+                "chance": 1,
+                "min": 4,
+                "max": 16
+            },
+            {
+                "item": "cotton",
+                "chance": 1,
+                "min": 4,
+                "max": 16
+            }
         ]
     },
     {
@@ -310,11 +660,36 @@
         "sort": 1002,
         "maxPoints": 10000,
         "loots": [
-            { "item": "bear", "chance": 1, "min": 3, "max": 12 },
-            { "item": "salmon", "chance": 1, "min": 3, "max": 12 },
-            { "item": "potato", "chance": 1, "min": 3, "max": 12 },
-            { "item": "berry", "chance": 1, "min": 3, "max": 12 },
-            { "item": "artemisia", "chance": 1, "min": 3, "max": 12 }
+            {
+                "item": "bear",
+                "chance": 1,
+                "min": 3,
+                "max": 12
+            },
+            {
+                "item": "salmon",
+                "chance": 1,
+                "min": 3,
+                "max": 12
+            },
+            {
+                "item": "potato",
+                "chance": 1,
+                "min": 3,
+                "max": 12
+            },
+            {
+                "item": "berry",
+                "chance": 1,
+                "min": 3,
+                "max": 12
+            },
+            {
+                "item": "artemisia",
+                "chance": 1,
+                "min": 3,
+                "max": 12
+            }
         ]
     },
     {
@@ -324,11 +699,36 @@
         "sort": 1003,
         "maxPoints": 10000,
         "loots": [
-            { "item": "bison", "chance": 1, "min": 2, "max": 10 },
-            { "item": "trout", "chance": 1, "min": 2, "max": 10 },
-            { "item": "onion", "chance": 1, "min": 2, "max": 10 },
-            { "item": "cherry", "chance": 1, "min": 2, "max": 10 },
-            { "item": "flax", "chance": 1, "min": 2, "max": 10 }
+            {
+                "item": "bison",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            },
+            {
+                "item": "trout",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            },
+            {
+                "item": "onion",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            },
+            {
+                "item": "cherry",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            },
+            {
+                "item": "flax",
+                "chance": 1,
+                "min": 2,
+                "max": 10
+            }
         ]
     },
     {
@@ -338,11 +738,36 @@
         "sort": 1004,
         "maxPoints": 10000,
         "loots": [
-            { "item": "crocodile", "chance": 1, "min": 2, "max": 8 },
-            { "item": "catfish", "chance": 1, "min": 2, "max": 8 },
-            { "item": "sweetPotato", "chance": 1, "min": 2, "max": 8 },
-            { "item": "banana", "chance": 1, "min": 2, "max": 8 },
-            { "item": "ginseng", "chance": 1, "min": 2, "max": 8 }
+            {
+                "item": "crocodile",
+                "chance": 1,
+                "min": 2,
+                "max": 8
+            },
+            {
+                "item": "catfish",
+                "chance": 1,
+                "min": 2,
+                "max": 8
+            },
+            {
+                "item": "sweetPotato",
+                "chance": 1,
+                "min": 2,
+                "max": 8
+            },
+            {
+                "item": "banana",
+                "chance": 1,
+                "min": 2,
+                "max": 8
+            },
+            {
+                "item": "ginseng",
+                "chance": 1,
+                "min": 2,
+                "max": 8
+            }
         ]
     },
     {
@@ -352,11 +777,36 @@
         "sort": 1005,
         "maxPoints": 10000,
         "loots": [
-            { "item": "camel", "chance": 1, "min": 1, "max": 6 },
-            { "item": "tuna", "chance": 1, "min": 1, "max": 6 },
-            { "item": "corn", "chance": 1, "min": 1, "max": 6 },
-            { "item": "cactusFruit", "chance": 1, "min": 1, "max": 6 },
-            { "item": "bamboo", "chance": 1, "min": 1, "max": 6 }
+            {
+                "item": "camel",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            },
+            {
+                "item": "tuna",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            },
+            {
+                "item": "corn",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            },
+            {
+                "item": "cactusFruit",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            },
+            {
+                "item": "bamboo",
+                "chance": 1,
+                "min": 1,
+                "max": 6
+            }
         ]
     },
     {
@@ -366,11 +816,36 @@
         "sort": 1006,
         "maxPoints": 10000,
         "loots": [
-            { "item": "venison", "chance": 1, "min": 1, "max": 5 },
-            { "item": "grassCarp", "chance": 1, "min": 1, "max": 5 },
-            { "item": "pepper", "chance": 1, "min": 1, "max": 5 },
-            { "item": "peach", "chance": 1, "min": 1, "max": 5 },
-            { "item": "reishi", "chance": 1, "min": 1, "max": 5 }
+            {
+                "item": "venison",
+                "chance": 1,
+                "min": 1,
+                "max": 5
+            },
+            {
+                "item": "grassCarp",
+                "chance": 1,
+                "min": 1,
+                "max": 5
+            },
+            {
+                "item": "pepper",
+                "chance": 1,
+                "min": 1,
+                "max": 5
+            },
+            {
+                "item": "peach",
+                "chance": 1,
+                "min": 1,
+                "max": 5
+            },
+            {
+                "item": "reishi",
+                "chance": 1,
+                "min": 1,
+                "max": 5
+            }
         ]
     },
     {
@@ -380,11 +855,36 @@
         "sort": 1007,
         "maxPoints": 10000,
         "loots": [
-            { "item": "turkey", "chance": 1, "min": 1, "max": 4 },
-            { "item": "grouper", "chance": 1, "min": 1, "max": 4 },
-            { "item": "konjac", "chance": 1, "min": 1, "max": 4 },
-            { "item": "longan", "chance": 1, "min": 1, "max": 4 },
-            { "item": "silkworm", "chance": 1, "min": 1, "max": 4 }
+            {
+                "item": "turkey",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            },
+            {
+                "item": "grouper",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            },
+            {
+                "item": "konjac",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            },
+            {
+                "item": "longan",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            },
+            {
+                "item": "silkworm",
+                "chance": 1,
+                "min": 1,
+                "max": 4
+            }
         ]
     }
 ]

@@ -2,6 +2,8 @@ import { defineStore } from 'pinia'
 import { markRaw, ref } from 'vue'
 import type { Definition } from '@/models/definitions'
 import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
+import type { ItemDefinition } from '@/models/definitions/item'
+import type { EffectDefinition } from '@/models/definitions/misc/EffectDefinition'
 import type { SkillConfig } from '@/models/Skill'
 import type { Slot } from '@/models/Slot'
 import { Item, type ItemWithLootDefs } from '@/models/item'
@@ -59,48 +61,35 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
         break
       }
       case 'item': {
-        let item: Item
-        if (definition.category === 'resource') {
-          item = markRaw(new Item(definition.id, definition.sort, 'resource'))
-        } else if (definition.category === 'chest') {
-          item = markRaw(
-            new Item(
-              definition.id,
-              definition.sort,
-              'chest',
-              null,
-              {
-                maxPoints: definition.chest.maxPoints,
-                loots: [] // Will be populated in buildCaches
-              }
-            )
-          )
-          // Store loot definitions temporarily for later resolution
-          ;(item as ItemWithLootDefs)._lootDefs = definition.chest.loots
-          chestMap.set(item.id, item)
-        } else if (definition.category === 'equipment') {
-          const slot = getSlotById(definition.equipment.slot)
-          const effects = definition.equipment.effects.map((it) => ({
+        const itemDef = definition as ItemDefinition
+        const equipment = 'equipment' in itemDef && itemDef.equipment ? {
+          slot: getSlotById(itemDef.equipment.slot),
+          effects: itemDef.equipment.effects.map((it: EffectDefinition) => ({
             property: it.property,
             type: it.type,
             value: it.value,
           }))
-          item = markRaw(
-            new Item(
-              definition.id,
-              definition.sort,
-              'equipment',
-              {
-                slot,
-                effects,
-              },
-              null
-            )
-          )
-        } else {
-          const category = (definition as { category: string }).category
-          throw new Error(`Unknown item category ${category}`)
+        } : null
+
+        const chest = 'chest' in itemDef && itemDef.chest ? {
+          maxPoints: itemDef.chest.maxPoints,
+          loots: [] // Will be populated in buildCaches
+        } : null
+
+        const item = markRaw(new Item(
+          definition.id,
+          definition.sort,
+          definition.category,
+          equipment,
+          chest
+        ))
+
+        // Store loot definitions temporarily for later resolution
+        if (chest && itemDef.chest) {
+          ;(item as ItemWithLootDefs)._lootDefs = itemDef.chest.loots
+          chestMap.set(item.id, item)
         }
+
         itemMap.set(item.id, item)
         break
       }

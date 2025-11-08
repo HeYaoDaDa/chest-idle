@@ -1,6 +1,6 @@
-import type { Item } from '../item'
-import type { PropertyManager, PropertyCalculation } from '../property'
-import { PropertyType, getSkillSpeedProperty } from '../property'
+import type { Item } from './item'
+import type { PropertyManager, PropertyCalculation } from './property'
+import { PropertyType, getSkillSpeedProperty } from './property'
 
 export class ActionTarget {
   name: string

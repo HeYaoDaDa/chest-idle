@@ -26,12 +26,6 @@ const minTabsWidth = 280
 const maxTabsWidthPercentage = 0.5
 
 onMounted(() => {
-  // 从 localStorage 恢复宽度
-  const savedTabsWidth = localStorage.getItem('tabsWidth')
-  if (savedTabsWidth) {
-    tabsWidth.value = parseInt(savedTabsWidth)
-  }
-
   // 获取父容器引用
   const container = document.getElementById('game-page-layout-container')
   if (container) {
@@ -69,9 +63,6 @@ function stopDragTabs() {
   document.removeEventListener('mousemove', dragTabs)
   document.removeEventListener('mouseup', stopDragTabs)
   document.body.classList.remove('dragging')
-
-  // 保存宽度到 localStorage
-  localStorage.setItem('tabsWidth', tabsWidth.value.toString())
 }
 
 function toggleSidebar() {

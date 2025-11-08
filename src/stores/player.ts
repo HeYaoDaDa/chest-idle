@@ -3,8 +3,6 @@ import { computed, reactive, ref, markRaw } from 'vue'
 import type { Item } from '@/models/item'
 import type { InventoryItem } from '@/models/InventoryItem'
 import { useGameConfigStore } from './gameConfig'
-import type { Equipment } from '@/models/item/Equipment'
-import type { Chest } from '@/models/item/Chest'
 import { XP_TABLE } from '@/constants'
 import i18n from '@/i18n'
 import { useNotificationStore } from './notification'
@@ -143,12 +141,12 @@ export const usePlayerStore = defineStore('player', () => {
   }
 
   // 获取装备槽中的装备对象
-  function getEquippedItem(slotId: string): Equipment | null {
+  function getEquippedItem(slotId: string): Item | null {
     const equipmentId = getEquippedItemId(slotId)
     if (!equipmentId) return null
 
     const item = gameConfigStore.getItemById(equipmentId)
-    return item.isEquipment() ? (item as Equipment) : null
+    return item.isEquipment() ? item : null
   }
 
   // 设置装备槽的装备
@@ -163,7 +161,7 @@ export const usePlayerStore = defineStore('player', () => {
 
   // 获取所有装备槽信息
   const equippedSlots = computed(() => {
-    const result: Record<string, Equipment | null> = {}
+    const result: Record<string, Item | null> = {}
     for (const slotId in equippedItems.value) {
       result[slotId] = getEquippedItem(slotId)
     }
@@ -239,56 +237,53 @@ export const usePlayerStore = defineStore('player', () => {
   function addChestPoints(chestId: string, points: number): number {
     if (points <= 0) return 0
     const item = gameConfigStore.getItemById(chestId)
-    if (!item.isChest()) return 0
-    const chest = item as Chest
+    if (!item.isChest() || !item.chest) return 0
     const current = getChestPoints(chestId)
     const total = current + points
-    const count = Math.floor(total / chest.maxPoints)
-    const remainder = total % chest.maxPoints
+    const count = Math.floor(total / item.chest.maxPoints)
+    const remainder = total % item.chest.maxPoints
     setChestPoints(chestId, remainder)
     return count
   }
 
   function getChestRemaining(chestId: string): number {
     const item = gameConfigStore.getItemById(chestId)
-    if (!item.isChest()) return 0
-    const chest = item as Chest
-    return Math.max(0, chest.maxPoints - getChestPoints(chestId))
+    if (!item.isChest() || !item.chest) return 0
+    return Math.max(0, item.chest.maxPoints - getChestPoints(chestId))
   }
 
   function getChestProgress(chestId: string): number {
     const item = gameConfigStore.getItemById(chestId)
-    if (!item.isChest()) return 0
-    const chest = item as Chest
+    if (!item.isChest() || !item.chest) return 0
     const points = getChestPoints(chestId)
-    return chest.maxPoints > 0 ? points / chest.maxPoints : 0
+    return item.chest.maxPoints > 0 ? points / item.chest.maxPoints : 0
   }
 
   // Equipment management
   function equipItem(inventoryItem: InventoryItem) {
-    if (!inventoryItem.item.isEquipment()) {
-      console.error(`Item ${inventoryItem.item.id} is not equipment`)
+    const item = inventoryItem.item
+    if (!item.isEquipment() || !item.equipment) {
+      console.error(`Item ${item.id} is not equipment`)
       return
     }
 
-    const equipment = inventoryItem.item as Equipment
-    const slotId = equipment.slot.id
+    const slotId = item.equipment.slot.id
 
     // Unequip current equipment if any
     unequipSlot(slotId)
 
     // Apply equipment effects to PropertyManager
-    for (const effect of equipment.effects) {
+    for (const effect of item.equipment.effects) {
       gameConfigStore.propertyManager.addModifier(effect.property, {
         sourceId: `equipment:${slotId}`,
-        sourceName: equipment.name,
+        sourceName: item.name,
         type: effect.type,
         value: effect.value,
       })
     }
 
     // Set equipment to slot
-    setEquippedItem(slotId, equipment.id)
+    setEquippedItem(slotId, item.id)
 
     // Remove from inventory
     removeItem(inventoryItem, 1)
@@ -311,12 +306,12 @@ export const usePlayerStore = defineStore('player', () => {
 
   // Chest opening
   function openChest(inventoryItem: InventoryItem, amount: number = 1): { itemName: string; amount: number }[] {
-    if (!inventoryItem.item.isChest()) {
-      console.error(`Item ${inventoryItem.item.id} is not a chest`)
+    const item = inventoryItem.item
+    if (!item.isChest() || !item.chest) {
+      console.error(`Item ${item.id} is not a chest`)
       return []
     }
 
-    const chest = inventoryItem.item as Chest
     const results: { itemName: string; amount: number }[] = []
 
     // Remove chests from inventory
@@ -324,7 +319,7 @@ export const usePlayerStore = defineStore('player', () => {
 
     // Roll loot for each chest
     for (let i = 0; i < amount; i++) {
-      const lootResults = rollLoot(chest)
+      const lootResults = rollLoot(item)
 
       for (const { itemId, amount: lootAmount } of lootResults) {
         addItem(itemId, lootAmount)
@@ -396,10 +391,12 @@ function randomIntInclusive(min: number, max: number): number {
   return Math.floor(Math.random() * (upper - lower + 1)) + lower
 }
 
-export function rollLoot(chest: Chest): { itemId: string; amount: number }[] {
+export function rollLoot(chest: Item): { itemId: string; amount: number }[] {
   const results: { itemId: string; amount: number }[] = []
 
-  for (const loot of chest.loots) {
+  if (!chest.chest) return results
+
+  for (const loot of chest.chest.loots) {
     if (Math.random() <= loot.chance) {
       const amount = randomIntInclusive(loot.min, loot.max)
       results.push({ itemId: loot.item.id, amount })

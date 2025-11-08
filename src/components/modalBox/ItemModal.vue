@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ModalBox from '@/components/misc/ModalBox.vue'
 import type { InventoryItem } from '@/models/InventoryItem'
-import type { Equipment } from '@/models/item/Equipment'
+import type { Item } from '@/models/item'
 import type { Slot } from '@/models/Slot'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -11,7 +11,7 @@ const { t } = useI18n()
 interface Props {
   show: boolean
   // Equipment Modal props
-  equipment?: Equipment
+  equipment?: Item
   equipmentSlot?: Slot
   // Inventory Modal props
   inventoryItem?: InventoryItem
@@ -43,17 +43,17 @@ const itemName = computed(() => item.value ? t(item.value.name) : '')
 const itemDescription = computed(() => item.value ? t(item.value.description) : '')
 
 const effects = computed(() => {
-  if (isEquipmentMode.value) return props.equipment!.effects
-  if (isInventoryMode.value && props.inventoryItem!.item.isEquipment()) {
-    return props.inventoryItem!.item.effects
+  if (isEquipmentMode.value && props.equipment?.equipment) return props.equipment.equipment.effects
+  if (isInventoryMode.value && props.inventoryItem!.item.isEquipment() && props.inventoryItem!.item.equipment) {
+    return props.inventoryItem!.item.equipment.effects
   }
   return []
 })
 
 const slotInfo = computed(() => {
   if (isEquipmentMode.value) return props.equipmentSlot
-  if (isInventoryMode.value && props.inventoryItem!.item.isEquipment()) {
-    return props.inventoryItem!.item.slot
+  if (isInventoryMode.value && props.inventoryItem!.item.isEquipment() && props.inventoryItem!.item.equipment) {
+    return props.inventoryItem!.item.equipment.slot
   }
   return null
 })

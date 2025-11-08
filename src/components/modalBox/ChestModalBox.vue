@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ModalBox from '@/components/misc/ModalBox.vue'
-import type { Chest } from '@/models/item/Chest'
+import type { Item } from '@/models/item'
 import { usePlayerStore } from '@/stores/player'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -12,7 +12,7 @@ const playerStore = usePlayerStore()
 // Props
 interface Props {
   modelValue: boolean
-  chest?: Chest | null
+  chest?: Item | null
 }
 
 const props = defineProps<Props>()
@@ -41,9 +41,9 @@ const chestRemaining = computed(() => {
 
 // 计算每个奖励的掉落概率（已经在 loots 中）
 const lootWithProbability = computed(() => {
-  if (!props.chest) return []
+  if (!props.chest || !props.chest.chest) return []
 
-  return props.chest.loots.map(lootEntry => ({
+  return props.chest.chest.loots.map(lootEntry => ({
     item: lootEntry.item,
     minCount: lootEntry.min,
     maxCount: lootEntry.max,
@@ -75,7 +75,7 @@ function closeModal() {
       <div class="chest-info-list">
         <div class="info-row">
           <span class="info-label">{{ t('ui.currentProgress') }}</span>
-          <span class="info-value">{{ formatNumber(chestPoints, 1) }} / {{ formatNumber(chest.maxPoints) }}</span>
+          <span class="info-value">{{ formatNumber(chestPoints, 1) }} / {{ formatNumber(chest.chest?.maxPoints || 0) }}</span>
         </div>
         <div class="info-row">
           <span class="info-label">{{ t('ui.progressPercentage') }}</span>

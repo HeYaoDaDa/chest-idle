@@ -1,4 +1,3 @@
-import type { Chest } from '../item/Chest'
 import type { Item } from '../item'
 import type { PropertyManager, PropertyCalculation } from '../property'
 import { PropertyType, getSkillSpeedProperty } from '../property'
@@ -7,7 +6,7 @@ export class ActionTarget {
   name: string
   description: string
   skillId: string
-  chest: Chest
+  chest: Item
   ingredients: { item: Item; count: number }[] = []
   products: { item: Item; count: number }[] = []
 
@@ -27,7 +26,7 @@ export class ActionTarget {
     public sort: number,
     baseDuration: number,
     baseXp: number,
-    chest: Chest,
+    chest: Item,
     baseChestPoints: number,
     ingredients: { item: Item; count: number }[],
     product: { item: Item; count: number }[],

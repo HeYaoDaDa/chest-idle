@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ItemModal from '@/components/modalBox/ItemModal.vue'
 import ChestResultsModal from '@/components/modalBox/ChestResultsModal.vue'
-import type { Equipment } from '@/models/item/Equipment'
+import type { Item } from '@/models/item'
 import type { InventoryItem } from '@/models/InventoryItem'
 import type { Slot } from '@/models/Slot'
 import { useGameConfigStore } from '@/stores/gameConfig'
@@ -14,7 +14,7 @@ const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
 
 // 状态管理
-const selectedEquipment = shallowRef<{ slot: Slot; equipment: Equipment } | null>(null)
+const selectedEquipment = shallowRef<{ slot: Slot; equipment: Item } | null>(null)
 const selectedInventoryItem = shallowRef<InventoryItem | null>(null)
 const chestOpenResults = shallowRef<{ itemName: string; amount: number }[] | null>(null)
 const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
@@ -25,7 +25,7 @@ const maxChestAmount = computed(() => {
 })
 
 // 装备模态框函数
-function openEquipmentModal(slot: Slot, equipment: Equipment): void {
+function openEquipmentModal(slot: Slot, equipment: Item): void {
   selectedEquipment.value = { slot, equipment }
 }
 

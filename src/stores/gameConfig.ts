@@ -4,10 +4,7 @@ import type { Definition } from '@/models/definitions'
 import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
 import type { SkillConfig } from '@/models/Skill'
 import type { Slot } from '@/models/Slot'
-import type { Item } from '@/models/item'
-import { Resource } from '@/models/item/Resource'
-import { Chest } from '@/models/item/Chest'
-import { Equipment } from '@/models/item/Equipment'
+import { Item, type ItemWithLootDefs } from '@/models/item'
 import { ActionTarget } from '@/models/actionTarget'
 import { PropertyManager } from '@/models/property'
 import { usePlayerStore } from './player'
@@ -17,7 +14,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   const skillConfigMap = new Map<string, SkillConfig>()
   const slotMap = new Map<string, Slot>()
   const itemMap = new Map<string, Item>()
-  const chestMap = new Map<string, Chest>()
+  const chestMap = new Map<string, Item>()
   const actionTargetMap = new Map<string, ActionTarget>()
 
   // 新的属性管理器
@@ -26,7 +23,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   // Cached arrays for UI consumption
   const allSkillConfigs = ref<SkillConfig[]>([])
   const allSlots = ref<Slot[]>([])
-  const allChests = ref<Chest[]>([])
+  const allChests = ref<Item[]>([])
 
   function clear() {
     skillConfigMap.clear()
@@ -64,16 +61,42 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       case 'item': {
         let item: Item
         if (definition.itemType === 'resource') {
-          item = markRaw(new Resource(definition.id, definition.sort))
+          item = markRaw(new Item(definition.id, definition.sort, 'resource'))
         } else if (definition.itemType === 'chest') {
-          const chest = markRaw(
-            new Chest(definition.id, definition.sort, definition.maxPoints, definition.loots),
+          item = markRaw(
+            new Item(
+              definition.id,
+              definition.sort,
+              'chest',
+              null,
+              {
+                maxPoints: definition.maxPoints,
+                loots: [] // Will be populated in buildCaches
+              }
+            )
           )
-          chestMap.set(chest.id, chest)
-          item = chest
+          // Store loot definitions temporarily for later resolution
+          ;(item as ItemWithLootDefs)._lootDefs = definition.loots
+          chestMap.set(item.id, item)
         } else if (definition.itemType === 'equipment') {
           const slot = getSlotById(definition.slot)
-          item = markRaw(new Equipment(definition.id, definition.sort, slot, definition.effects))
+          const effects = definition.effects.map((it) => ({
+            property: it.property,
+            type: it.type,
+            value: it.value,
+          }))
+          item = markRaw(
+            new Item(
+              definition.id,
+              definition.sort,
+              'equipment',
+              {
+                slot,
+                effects,
+              },
+              null
+            )
+          )
         } else {
           const itemType = (definition as { itemType: string }).itemType
           throw new Error(`Unknown item type ${itemType}`)
@@ -123,13 +146,21 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   }
 
   function buildCaches() {
-    // Build item relationships
+    // Build item relationships - resolve chest loot items
     for (const item of itemMap.values()) {
-      if (item.isChest()) {
-        item.loots = item.lootDefinitions.map((it) => ({
-          ...it,
-          item: getItemById(it.item),
-        }))
+      if (item.isChest() && item.chest) {
+        const itemWithDefs = item as ItemWithLootDefs
+        const lootDefs = itemWithDefs._lootDefs
+        if (lootDefs) {
+          item.chest.loots = lootDefs.map((it) => ({
+            item: getItemById(it.item),
+            chance: it.chance,
+            min: it.min,
+            max: it.max,
+          }))
+          // Clean up temporary storage
+          delete itemWithDefs._lootDefs
+        }
       }
     }
 
@@ -228,7 +259,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     return item
   }
 
-  function getChestById(id: string): Chest {
+  function getChestById(id: string): Item {
     const chest = chestMap.get(id)
     if (!chest) {
       throw new Error(`Chest ${id} not found`)

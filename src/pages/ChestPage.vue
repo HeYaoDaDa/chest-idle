@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ChestModalBox from '@/components/modalBox/ChestModalBox.vue'
-import type { Chest } from '@/models/item/Chest'
+import type { Item } from '@/models/item'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
 import { computed, ref } from 'vue'
@@ -11,14 +11,14 @@ const gameConfigStore = useGameConfigStore()
 const playerStore = usePlayerStore()
 
 const chests = computed(() => gameConfigStore.allChests)
-const selectedChest = ref<Chest | null>(null)
+const selectedChest = ref<Item | null>(null)
 const modalVisible = ref(false)
 
 function getChestProgress(chestId: string): number {
   return playerStore.getChestProgress(chestId)
 }
 
-function openModal(chest: Chest) {
+function openModal(chest: Item) {
   selectedChest.value = chest
   modalVisible.value = true
 }

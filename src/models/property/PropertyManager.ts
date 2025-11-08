@@ -1,3 +1,4 @@
+import { reactive } from 'vue'
 import type {
   PropertyModifier,
   PropertyCalculation,
@@ -7,10 +8,12 @@ import type {
 /**
  * 属性管理器 - 中心化管理所有属性修改器
  * 负责添加/移除修改器，并计算最终属性值
+ *
+ * 使用 Vue 的 reactive 包装，使其变化能被 Vue 追踪
  */
 export class PropertyManager {
-  // 存储：属性类型 -> 修改器数组
-  private modifiers = new Map<string, PropertyModifier[]>()
+  // 存储：属性类型 -> 修改器数组（使用响应式 Map）
+  private modifiers = reactive(new Map<string, PropertyModifier[]>())
 
   /**
    * 添加属性修改器

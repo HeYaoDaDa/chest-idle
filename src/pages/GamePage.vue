@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
 import { usePlayerStore } from '@/stores/player'
-import { shallowRef, onMounted, isRef, type Ref } from 'vue'
+import { shallowRef, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import MyStuffPage from './MyStuffPage.vue'
 
 const { t } = useI18n()
 
 const playerStore = usePlayerStore()
-
-const unwrapNumber = (value: number | Ref<number>) => (isRef(value) ? value.value : value)
 
 // GamePage 特定的状态
 const sidebarExpanded = shallowRef(false)
@@ -106,11 +104,11 @@ function closeSidebar() {
           active-class="active-link" @click="closeSidebar">
           <div class="skill-name">
             <span class="name-text">{{ t(skill.name) }}</span>
-            <span class="level-text">{{ t('ui.level', { level: unwrapNumber(skill.level) }) }}</span>
+            <span class="level-text">{{ t('ui.level', { level: skill.level }) }}</span>
           </div>
           <div class="skill-progress-wrapper">
             <div class="skill-progress-bar" :style="{
-              width: unwrapNumber(skill.upgradeProgress) * 100 + '%',
+              width: skill.upgradeProgress * 100 + '%',
             }"></div>
           </div>
         </router-link>

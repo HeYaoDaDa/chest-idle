@@ -5,6 +5,7 @@ import SkillPage from '@/pages/SkillPage.vue'
 import ChestPage from '@/pages/ChestPage.vue'
 import { useAppStore } from '@/stores/app'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
+import { useGameConfigStore } from './stores/gameConfig'
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,7 +19,6 @@ const router = createRouter({
     {
       path: '/game',
       name: 'game',
-      redirect: '/game/mining',
       meta: { requireGameData: true },
       component: GamePage,
       children: [
@@ -53,6 +53,11 @@ router.beforeEach(async (to) => {
     if ('ready' !== appStore.status) {
       return '/'
     }
+  }
+  const skillConfigs = useGameConfigStore().allSkillConfigs
+  if ('/game' === to.path && skillConfigs.length > 0) {
+    const id = skillConfigs[0].id
+    return `/game/${id}`
   }
 })
 

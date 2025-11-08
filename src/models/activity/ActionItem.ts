@@ -2,7 +2,6 @@
 // 保持为纯数据结构，避免Vue响应式类型的复杂性，便于序列化和性能优化
 interface SimpleActionTarget {
   id: string
-  type: string
   name: string
   skill: {
     id: string

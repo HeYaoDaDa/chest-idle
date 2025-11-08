@@ -30,8 +30,6 @@ watchEffect(() => {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
-
 #load-page-root {
   height: 100vh;
   display: flex;

@@ -52,8 +52,6 @@ function closeModal() {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
-
 #chest-page-container {
   display: flex;
   flex-direction: column;

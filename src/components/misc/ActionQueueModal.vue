@@ -150,8 +150,6 @@ function removeQueuedAction(index: number) {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
-
 /* Queue Modal Styles */
 .queue-modal {
   min-width: min(480px, 90vw);

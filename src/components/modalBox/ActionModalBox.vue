@@ -226,7 +226,6 @@ watch(() => props.modelValue, (newValue) => {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
 @use '@/styles/shared-components';
 
 .zone-modal {

@@ -61,8 +61,6 @@ function handleClose() {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
-
 #sidebar {
   display: flex;
   flex-direction: column;
@@ -96,7 +94,7 @@ function handleClose() {
     &:hover:not(.active-link) {
       background: rgba(226, 232, 240, 0.9);
       transform: translateY(-2px);
-      box-shadow: $shadow-sm;
+      box-shadow: $shadow-xs;
     }
 
     &.active-link {

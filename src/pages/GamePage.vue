@@ -92,7 +92,6 @@ function stopDragTabs() {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
 @use '@/styles/shared-components';
 
 #game-page-root {

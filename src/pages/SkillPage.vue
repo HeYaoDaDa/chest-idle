@@ -98,7 +98,6 @@ function openModal(zone: ActionTarget) {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
 @use '@/styles/shared-components';
 
 #skill-page-container {

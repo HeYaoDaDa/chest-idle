@@ -73,8 +73,6 @@ function stopCurrentAction() {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
-
 .action-queue {
   display: flex;
   flex-direction: column;

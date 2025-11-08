@@ -34,8 +34,6 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/variables' as *;
-
 .modal-wrapper {
   position: fixed;
   inset: 0;

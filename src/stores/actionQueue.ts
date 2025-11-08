@@ -1,11 +1,15 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { ActionTarget } from '@/models/actionTarget'
-import type { ActionItem } from '@/models/activity/ActionItem'
 import type { Item } from '@/models/item'
 import { usePlayerStore } from './player'
 import { useNotificationStore } from './notification'
 import i18n from '@/i18n'
+
+interface ActionItem {
+  target: ActionTarget
+  amount: number
+}
 
 export const useActionQueueStore = defineStore('actionQueue', () => {
   // ============ 核心状态 ============
@@ -21,8 +25,8 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   const progress = computed(() => {
     if (currentAction.value) {
-      return Math.min(currentAction.value.target.duration.value > 0
-        ? currentActionElapsed.value / currentAction.value.target.duration.value
+      return Math.min(currentAction.value.target.duration.getValue() > 0
+        ? currentActionElapsed.value / currentAction.value.target.duration.getValue()
         : 0, 1) * 100
     }
     return 0
@@ -56,16 +60,19 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     const target = currentAction.value.target
     const amount = currentAction.value.amount
+    const playerStore = usePlayerStore()
 
     // 检查等级要求
-    if (target.skill.level < target.minLevel) {
+    const currentLevel = playerStore.getSkillLevel(target.skillId)
+    if (currentLevel < target.minLevel) {
       console.warn(
-        `Required level ${target.minLevel} for action ${target.id}, but current level is ${target.skill.level}`
+        `Required level ${target.minLevel} for action ${target.id}, but current level is ${currentLevel}`
       )
       const notificationStore = useNotificationStore()
+      const skillConfig = playerStore.getSkill(target.skillId)
       notificationStore.warning('notification.levelTooLow', {
-        skill: i18n.global.t(target.skill.name),
-        level: target.skill.level,
+        skill: skillConfig ? i18n.global.t(skillConfig.name) : target.skillId,
+        level: currentLevel,
         required: target.minLevel,
         action: i18n.global.t(target.name),
       })
@@ -90,7 +97,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     return true
   }
 
-  function computeAmount(target: ActionItem['target'], amount: number): number {
+  function computeAmount(target: typeof currentAction.value extends { target: infer T } ? T : never, amount: number): number {
     const playerStore = usePlayerStore()
     let maxAmount = Infinity
 
@@ -130,7 +137,9 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     const action = currentAction.value
     const target = action.target
-    const remainedDuration = target.duration.value - currentActionElapsed.value
+    const playerStore = usePlayerStore()
+    const skill = playerStore.getSkill(target.skillId)
+    const remainedDuration = target.duration.getValue() - currentActionElapsed.value
 
     if (elapsed < remainedDuration) {
       // 动作还未完成
@@ -141,15 +150,17 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       let count = action.amount
       count = Math.min(
         count,
-        1 + Math.floor((elapsed - remainedDuration) / target.duration.value)
+        1 + Math.floor((elapsed - remainedDuration) / target.duration.getValue())
       )
-      count = Math.min(count, Math.ceil(target.skill.remainingXpForUpgrade / target.xp.value))
+      if (skill) {
+        count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / target.xp.getValue()))
+      }
 
       // 执行动作效果
       executeAction(action, count)
 
       // 计算剩余时间
-      const remainedElapsed = elapsed - (remainedDuration + target.duration.value * (count - 1))
+      const remainedElapsed = elapsed - (remainedDuration + target.duration.getValue() * (count - 1))
 
       // 重置或移除动作
       currentActionElapsed.value = 0
@@ -167,7 +178,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
   }
 
-  function executeAction(action: ActionItem, count: number) {
+  function executeAction(action: typeof currentAction.value extends infer T ? T : never, count: number) {
     const playerStore = usePlayerStore()
     const target = action.target
 
@@ -181,10 +192,10 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
 
     // 增加经验
-    playerStore.addSkillXp(target.skill.id, target.xp.value * count)
+    playerStore.addSkillXp(target.skillId, target.xp.getValue() * count)
 
     // 增加箱子点数并获得箱子
-    const chestCount = playerStore.addChestPoints(target.chest.id, target.chestPoints.value * count)
+    const chestCount = playerStore.addChestPoints(target.chest.id, target.chestPoints.getValue() * count)
 
     // 计算奖励
     const rewards: [unknown, number][] = []

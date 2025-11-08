@@ -95,10 +95,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       case 'actionTarget': {
         const actionTargetDefinition = definition as ActionTargetDefinition
         const playerStore = usePlayerStore()
-        const skill = playerStore.getSkill(actionTargetDefinition.skill)
-        if (!skill) {
-          throw new Error(`Skill ${actionTargetDefinition.skill} not found`)
-        }
+        const skillId = actionTargetDefinition.skill
         const chest = getChestById(actionTargetDefinition.chest)
 
         const products = actionTargetDefinition.products.map(({ item, count }) => ({
@@ -113,7 +110,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
         const actionTarget = markRaw(
           new ActionTarget(
             actionTargetDefinition.id,
-            skill,
+            skillId,
             actionTargetDefinition.tab,
             actionTargetDefinition.minLevel,
             actionTargetDefinition.sort,
@@ -124,6 +121,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
             ingredients,
             products,
             resolveState,
+            () => playerStore.getSkillLevel(skillId),
           ),
         )
 
@@ -195,7 +193,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   // 获取技能的相关 ActionTargets
   function getSkillActionTargets(skillId: string): ActionTarget[] {
     return Array.from(actionTargetMap.values())
-      .filter(actionTarget => actionTarget.skill.id === skillId)
+      .filter(actionTarget => actionTarget.skillId === skillId)
       .sort((a, b) => a.sort - b.sort)
   }
 

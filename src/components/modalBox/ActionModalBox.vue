@@ -26,11 +26,17 @@ const emit = defineEmits<{
   'update:modelValue': [value: boolean]
 }>()
 
+// 获取技能信息
+const skill = computed(() => {
+  if (!props.actionTarget) return null
+  return playerStore.getSkill(props.actionTarget.skillId)
+})
+
 const amountString = ref(INFINITE_STRING)
 const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
-const durationSeconds = computed(() => (props.actionTarget ? props.actionTarget.duration.value / 1000 : 0))
-const xpPerCycle = computed(() => props.actionTarget?.xp.value ?? 0)
-const chestPointsPerCycle = computed(() => props.actionTarget?.chestPoints.value ?? 0)
+const durationSeconds = computed(() => (props.actionTarget ? props.actionTarget.duration.getValue() / 1000 : 0))
+const xpPerCycle = computed(() => props.actionTarget?.xp.getValue() ?? 0)
+const chestPointsPerCycle = computed(() => props.actionTarget?.chestPoints.getValue() ?? 0)
 const hasIngredients = computed(() => (props.actionTarget?.ingredients.length ?? 0) > 0)
 const hasProducts = computed(() => (props.actionTarget?.products.length ?? 0) > 0)
 const hasCurrentAction = computed(() => !!actionQueueStore.currentAction)
@@ -38,8 +44,8 @@ const queuePosition = computed(() => actionQueueStore.queueLength + 1)
 
 // 不满足条件的标记（用于字段标红）
 const isLevelInsufficient = computed(() => {
-  if (!props.actionTarget) return false
-  return props.actionTarget.skill.level < props.actionTarget.minLevel
+  if (!props.actionTarget || !skill.value) return false
+  return skill.value.level < props.actionTarget.minLevel
 })
 
 const insufficientIngredients = computed(() => {
@@ -62,10 +68,10 @@ const canStartAction = computed(() => {
   const reasons: string[] = []
 
   // 检查等级要求
-  if (props.actionTarget.skill.level < props.actionTarget.minLevel) {
+  if (skill.value && skill.value.level < props.actionTarget.minLevel) {
     reasons.push(t('notification.levelTooLow', {
-      skill: t(props.actionTarget.skill.name),
-      level: props.actionTarget.skill.level,
+      skill: t(skill.value.name),
+      level: skill.value.level,
       required: props.actionTarget.minLevel,
       action: t(props.actionTarget.name),
     }))
@@ -133,7 +139,7 @@ watch(() => props.modelValue, (newValue) => {
     <div class="zone-modal">
       <header class="zone-header">
         <div class="zone-header-text">
-          <span class="zone-overline">{{ t(actionTarget.skill.name) }}</span>
+          <span class="zone-overline">{{ skill ? t(skill.name) : '' }}</span>
           <h2 class="zone-title">{{ t(actionTarget.name) }}</h2>
           <p class="zone-description">{{ t(actionTarget.description) }}</p>
         </div>

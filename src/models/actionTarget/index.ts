@@ -1,15 +1,13 @@
 import type { Chest } from '../item/Chest'
-import type { Skill } from '../Skill'
 import { State } from '../state/State'
 import type { Item } from '../item'
 import type { MutableStateDefinition } from '../definitions/misc/MutableStateDefinition'
 import { Effect } from '../state/Effect'
-import { computed } from 'vue'
 
 export class ActionTarget {
   name: string
   description: string
-  skill: Skill
+  skillId: string
   duration: State
   xp: State
   chest: Chest
@@ -19,7 +17,7 @@ export class ActionTarget {
 
   constructor(
     public id: string,
-    skill: Skill,
+    skillId: string,
     public tab: string | undefined,
     public minLevel: number,
     public sort: number,
@@ -30,28 +28,29 @@ export class ActionTarget {
     ingredients: { item: Item; count: number }[],
     product: { item: Item; count: number }[],
     resolveState: (id: string) => State,
+    getSkillLevel: () => number,
   ) {
     this.name = `actionTarget.${this.id}.name`
     this.description = `actionTarget.${this.id}.description`
-    this.skill = skill
-    this.duration = this.newState(duration, resolveState, minLevel, skill)
-    this.xp = this.newState(xp, resolveState, minLevel, skill)
+    this.skillId = skillId
+    this.duration = this.#newState(duration, resolveState, minLevel, getSkillLevel)
+    this.xp = this.#newState(xp, resolveState, minLevel, getSkillLevel)
     this.chest = chest
-    this.chestPoints = this.newState(chestPoints, resolveState, minLevel, skill)
+    this.chestPoints = this.#newState(chestPoints, resolveState, minLevel, getSkillLevel)
     this.ingredients.push(...ingredients)
     this.products.push(...product)
   }
-  private newState(
+  #newState(
     definition: MutableStateDefinition,
     resolveState: (id: string) => State,
     minLevel: number,
-    skill: Skill,
+    getSkillLevel: () => number,
   ): State {
     const state = new State(definition.base)
     for (const boost of definition.boosts) {
       if (typeof boost === 'object') {
         const effect = resolveState(boost.state)
-        state.addEffect(boost.state, new Effect(boost.type, effect._value))
+        state.addEffect(boost.state, new Effect(boost.type, () => effect.getValue()))
       } else {
         switch (boost) {
           case 'overLevelSpeedUp':
@@ -59,7 +58,7 @@ export class ActionTarget {
               'overLevelSpeedUp',
               new Effect(
                 'inversePercentage',
-                computed(() => Math.max(0, (skill.level - minLevel) * 0.01)),
+                () => Math.max(0, (getSkillLevel() - minLevel) * 0.01),
               ),
             )
             break

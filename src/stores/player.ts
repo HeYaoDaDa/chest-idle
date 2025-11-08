@@ -281,7 +281,7 @@ export const usePlayerStore = defineStore('player', () => {
     // Apply equipment effects
     for (const inactiveEffect of equipment.effects) {
       const state = gameConfigStore.getStateById(inactiveEffect.state)
-      const effect = new Effect(inactiveEffect.type, computed(() => inactiveEffect.value))
+      const effect = new Effect(inactiveEffect.type, () => inactiveEffect.value)
       state.addEffect(slotId, effect)
     }
 

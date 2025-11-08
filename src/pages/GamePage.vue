@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import ActionQueue from '@/components/misc/ActionQueue.vue'
 import LeftSidebar from '@/components/LeftSidebar.vue'
-import { shallowRef, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import MyStuffPage from './MyStuffPage.vue'
 
 const { t } = useI18n()
 
 // left sidebar
-const sidebarExpanded = shallowRef(false)
+const sidebarExpanded = ref(false)
 
 // ============ 拖拽调整宽度功能 ============
-const tabsWidth = shallowRef(360)
-const isDraggingTabs = shallowRef(false)
+const tabsWidth = ref(360)
+const isDraggingTabs = ref(false)
 let startX = 0
 let initialWidth = 0
-const parentElement = shallowRef<HTMLElement | undefined>(undefined)
+const parentElement = ref<HTMLElement | undefined>(undefined)
 
 // 宽度约束
 const minTabsWidth = 280

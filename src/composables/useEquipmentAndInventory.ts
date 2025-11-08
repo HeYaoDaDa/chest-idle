@@ -92,13 +92,16 @@ export function useEquipmentAndInventory() {
   /**
    * 打开宝箱并记录获得的物品
    */
-  function openChestAndClose(): void {
-    if (selectedInventoryItem.value && isValidChestAmount.value) {
-      const results = playerStore.openChest(selectedInventoryItem.value, chestOpenAmount.value)
+  function openChestAndClose(amount?: number): void {
+    if (selectedInventoryItem.value) {
+      const amountToOpen = amount ?? chestOpenAmount.value
+      if (amountToOpen >= 1 && amountToOpen <= maxChestAmount.value) {
+        const results = playerStore.openChest(selectedInventoryItem.value, amountToOpen)
 
-      // 设置开箱结果（即使是空数组也要显示）
-      chestOpenResults.value = results
-      closeInventoryModal()
+        // 设置开箱结果（即使是空数组也要显示）
+        chestOpenResults.value = results
+        closeInventoryModal()
+      }
     }
   }
 

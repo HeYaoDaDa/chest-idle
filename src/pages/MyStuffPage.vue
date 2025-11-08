@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import ModalBox from '@/components/misc/ModalBox.vue'
+import ItemModal from '@/components/modalBox/ItemModal.vue'
+import ChestResultsModal from '@/components/modalBox/ChestResultsModal.vue'
 import type { Slot } from '@/models/Slot'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
@@ -14,18 +15,14 @@ const playerStore = usePlayerStore()
 const {
   selectedEquipment,
   selectedInventoryItem,
-  chestOpenAmount,
   chestOpenResults,
   activeTab,
-  maxChestAmount,
-  isValidChestAmount,
   openEquipmentModal,
   closeEquipmentModal,
   unequipAndClose,
   openInventoryModal,
   closeInventoryModal,
   equipAndClose,
-  setMaxChestAmount,
   openChestAndClose,
   closeChestResults,
 } = useEquipmentAndInventory()
@@ -36,7 +33,6 @@ const openSlotEquipment = (slot: Slot) => {
     openEquipmentModal(slot, equipment)
   }
 }
-
 </script>
 
 <template>
@@ -80,133 +76,15 @@ const openSlotEquipment = (slot: Slot) => {
   </div>
 
   <!-- Equipment Modal -->
-  <ModalBox v-if="selectedEquipment" @close="closeEquipmentModal">
-    <div class="item-modal">
-      <div class="item-modal-header">
-        <h3 class="item-modal-title">{{ t(selectedEquipment.equipment.name) }}</h3>
-        <span class="item-modal-type">{{ t('ui.type') }}: {{ t(selectedEquipment.slot.name) }}</span>
-      </div>
-
-      <div class="item-modal-content">
-        <p class="item-modal-description">{{ t(selectedEquipment.equipment.description) }}</p>
-
-        <div v-if="selectedEquipment.equipment.effects.length > 0" class="item-modal-section">
-          <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
-          <div class="item-modal-effects">
-            <div v-for="(effect, index) in selectedEquipment.equipment.effects" :key="index" class="item-modal-effect">
-              <span class="effect-state">{{ t(`property.${effect.property}.name`) }}</span>
-              <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
-                }}{{ effect.value
-                }}{{
-                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : ''
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item-modal-footer">
-        <div class="zone-action-buttons">
-          <button type="button" class="zone-button ghost" @click="unequipAndClose">
-            {{ t('ui.unequip') }}
-          </button>
-        </div>
-      </div>
-    </div>
-  </ModalBox>
+  <ItemModal :show="!!selectedEquipment" :equipment="selectedEquipment?.equipment"
+    :equipment-slot="selectedEquipment?.slot" @close="closeEquipmentModal" @unequip="unequipAndClose" />
 
   <!-- Inventory Modal -->
-  <ModalBox v-if="selectedInventoryItem" @close="closeInventoryModal">
-    <div class="item-modal">
-      <div class="item-modal-header">
-        <h3 class="item-modal-title">{{ t(selectedInventoryItem.item.name) }}</h3>
-        <span class="item-modal-quantity">{{ t('ui.quantity') }}: {{ selectedInventoryItem.quantity }}</span>
-      </div>
-
-      <div class="item-modal-content">
-        <p class="item-modal-description">{{ t(selectedInventoryItem.item.description) }}</p>
-
-        <div v-if="selectedInventoryItem.item.isEquipment()" class="item-modal-section">
-          <div class="item-modal-info-row">
-            <span class="info-label">{{ t('ui.slot') }}</span>
-            <span class="info-value">{{ t(selectedInventoryItem.item.slot.name) }}</span>
-          </div>
-        </div>
-
-        <div v-if="
-          selectedInventoryItem.item.isEquipment() &&
-          selectedInventoryItem.item.effects.length > 0
-        " class="item-modal-section">
-          <h4 class="item-modal-section-title">{{ t('ui.effects') }}</h4>
-          <div class="item-modal-effects">
-            <div v-for="(effect, index) in selectedInventoryItem.item.effects" :key="index" class="item-modal-effect">
-              <span class="effect-state">{{ t(`property.${effect.property}.name`) }}</span>
-              <span class="effect-value">
-                {{ effect.type === 'flat' ? '+' : effect.type === 'percentage' ? '+' : '-'
-                }}{{ effect.value
-                }}{{
-                  effect.type === 'percentage' || effect.type === 'inversePercentage' ? '%' : ''
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item-modal-footer">
-        <div class="zone-action-buttons">
-          <button v-if="selectedInventoryItem.item.isEquipment()" type="button" class="zone-button primary"
-            @click="equipAndClose">
-            {{ t('ui.equip') }}
-          </button>
-          <div v-if="selectedInventoryItem.item.isChest()" class="chest-controls">
-            <div v-if="maxChestAmount > 1" class="chest-amount-controls">
-              <input v-model.number="chestOpenAmount" type="number" :min="1" :max="maxChestAmount"
-                class="chest-amount-input" :placeholder="String(maxChestAmount)" />
-              <button type="button" class="zone-button ghost max-button" @click="setMaxChestAmount">
-                Max
-              </button>
-            </div>
-            <button type="button" class="zone-button primary" @click="openChestAndClose"
-              :disabled="!isValidChestAmount">
-              {{ t('ui.open') }}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ModalBox>
+  <ItemModal :show="!!selectedInventoryItem" :inventory-item="selectedInventoryItem ?? undefined"
+    @close="closeInventoryModal" @equip="equipAndClose" @open-chest="openChestAndClose" />
 
   <!-- Chest Open Results Modal -->
-  <ModalBox v-if="chestOpenResults" @close="closeChestResults">
-    <div class="chest-results-modal">
-      <div class="chest-results-header">
-        <h3 class="chest-results-title">{{ t('ui.chestOpenResults') }}</h3>
-      </div>
-
-      <div class="chest-results-content">
-        <div v-if="chestOpenResults.length > 0" class="chest-results-list">
-          <div v-for="result in chestOpenResults" :key="result.itemName" class="chest-result-item">
-            <span class="result-item-name">{{ t(result.itemName) }}</span>
-            <span class="result-item-amount">×{{ result.amount }}</span>
-          </div>
-        </div>
-        <div v-else class="chest-results-empty">
-          {{ t('ui.noItemsObtained') }}
-        </div>
-      </div>
-
-      <div class="chest-results-footer">
-        <div class="zone-action-buttons">
-          <button type="button" class="zone-button primary" @click="closeChestResults">
-            {{ t('ui.confirm') }}
-          </button>
-        </div>
-      </div>
-    </div>
-  </ModalBox>
+  <ChestResultsModal :show="!!chestOpenResults" :results="chestOpenResults" @close="closeChestResults" />
 </template>
 
 <style lang="scss" scoped>

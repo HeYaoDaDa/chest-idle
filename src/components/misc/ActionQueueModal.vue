@@ -77,8 +77,8 @@ function removeQueuedAction(index: number) {
               </div>
             </div>
             <div class="running-progress-wrapper">
-              <div class="running-progress-track">
-                <div class="running-progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
               </div>
             </div>
             <div class="queue-modal-controls">
@@ -319,21 +319,6 @@ function removeQueuedAction(index: number) {
 .running-progress-wrapper {
   width: 100%;
   order: 10;
-}
-
-.running-progress-track {
-  width: 100%;
-  height: $progress-bar-thick;
-  border-radius: $radius-full;
-  background: rgba(226, 232, 240, 0.6);
-  overflow: hidden;
-}
-
-.running-progress-bar {
-  height: 100%;
-  border-radius: inherit;
-  background: $gradient-primary;
-  transition: width 60ms linear;
 }
 
 .queue-modal-footer {

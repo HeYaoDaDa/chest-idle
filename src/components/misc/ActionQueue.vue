@@ -59,7 +59,7 @@ function stopCurrentAction() {
     </div>
 
     <div class="progress-wrapper">
-      <div class="progress-track">
+      <div class="progress-bar-container progress-track">
         <div class="progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
       </div>
       <span class="progress-duration" v-if="runningActionDurationDisplay">{{
@@ -161,21 +161,6 @@ function stopCurrentAction() {
   align-items: center;
 }
 
-.progress-track {
-  width: 100%;
-  height: $progress-bar-large;
-  border-radius: $radius-full;
-  background: rgba(226, 232, 240, 0.8);
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 100%;
-  border-radius: inherit;
-  background: $gradient-primary;
-  transition: width 60ms linear;
-}
-
 .progress-duration {
   position: absolute;
   left: 50%;
@@ -183,6 +168,10 @@ function stopCurrentAction() {
   font-size: $font-sm;
   color: $text-secondary;
   pointer-events: none;
+}
+
+.progress-track {
+  height: $progress-bar-large;
 }
 
 @media (max-width: 540px) {

@@ -2,6 +2,23 @@
 // Centralized styles to eliminate duplication across pages and components
 @use './variables' as *;
 
+/* ============ Progress Bar Styles ============ */
+.progress-bar-container {
+  width: 100%;
+  height: $progress-bar-thick;
+  background: rgba(226, 232, 240, 0.9);
+  border-radius: $radius-full;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: $cyan-gradient;
+  border-radius: $radius-full;
+  transition: width 60ms linear;
+}
+
 /* ============ Tabs Styles ============ */
 .tabs-header,
 .skill-tabs {

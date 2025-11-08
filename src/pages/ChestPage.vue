@@ -39,8 +39,8 @@ function closeModal() {
     <div id="chest-area-root">
       <div v-for="chest in chests" :key="chest.id" class="chest-item" @click="openModal(chest)">
         <div class="chest-name">{{ t(chest.name) }}</div>
-        <div class="chest-progress">
-          <div class="chest-progress-bar" :style="{
+        <div class="progress-bar-container">
+          <div class="progress-bar" :style="{
             width: (getChestProgress(chest.id) * 100) + '%',
           }"></div>
         </div>
@@ -128,20 +128,6 @@ function closeModal() {
     .chest-name {
       font-weight: $font-weight-semibold;
       color: $text-primary;
-    }
-
-    .chest-progress {
-      width: 100%;
-      height: $progress-bar-height;
-      background-color: rgba(226, 232, 240, 0.9);
-      border-radius: $radius-full;
-      overflow: hidden;
-
-      .chest-progress-bar {
-        height: 100%;
-        background: $cyan-gradient;
-        transition: width $transition-slow;
-      }
     }
   }
 }

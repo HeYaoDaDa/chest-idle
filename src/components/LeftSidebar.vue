@@ -50,9 +50,11 @@ function handleClose() {
         <span class="level-text">{{ t('ui.level', { level: skill.level }) }}</span>
       </div>
       <div class="skill-progress-wrapper">
-        <div class="skill-progress-bar" :style="{
-          width: skill.upgradeProgress * 100 + '%',
-        }"></div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" :style="{
+            width: skill.upgradeProgress * 100 + '%',
+          }"></div>
+        </div>
       </div>
     </router-link>
   </div>
@@ -124,16 +126,6 @@ function handleClose() {
 
     .skill-progress-wrapper {
       width: 100%;
-      height: 3px;
-      background: rgba(148, 163, 184, 0.2);
-      border-radius: $spacing-xs;
-      overflow: hidden;
-
-      .skill-progress-bar {
-        height: 100%;
-        background: currentColor;
-        transition: width $transition-slow;
-      }
     }
   }
 }

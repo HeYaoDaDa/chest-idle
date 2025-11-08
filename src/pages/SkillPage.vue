@@ -73,8 +73,8 @@ function openModal(zone: ActionTarget) {
             }}</span>
         </div>
       </div>
-      <div class="skill-progress-bar-container">
-        <div class="skill-progress-bar" :style="{
+      <div class="progress-bar-container">
+        <div class="progress-bar" :style="{
           width: skill.upgradeProgress * 100 + '%',
         }"></div>
       </div>
@@ -175,21 +175,6 @@ function openModal(zone: ActionTarget) {
     font-size: $font-md;
     font-weight: $font-weight-bold;
     color: $text-secondary;
-  }
-
-  .skill-progress-bar-container {
-    width: 100%;
-    height: $progress-bar-height;
-    background-color: rgba(226, 232, 240, 0.6);
-    border-radius: $radius-full;
-    overflow: hidden;
-
-    .skill-progress-bar {
-      height: 100%;
-      background: $gradient-primary;
-      transition: width $transition-slow;
-      box-shadow: 0 0 8px $primary-rgba-40;
-    }
   }
 }
 

@@ -53,11 +53,6 @@ export const usePlayerStore = defineStore('player', () => {
     return skillsXp.value[skillId] ?? 0
   }
 
-  // 设置技能经验值
-  function setSkillXp(skillId: string, xp: number) {
-    skillsXp.value[skillId] = xp
-  }
-
   // 根据经验值计算等级
   function getLevelFromXp(xp: number): number {
     let left = 0
@@ -104,7 +99,7 @@ export const usePlayerStore = defineStore('player', () => {
   function addSkillXp(skillId: string, xp: number) {
     const previousLevel = getLevelFromXp(getSkillXp(skillId))
     const newXp = getSkillXp(skillId) + xp
-    setSkillXp(skillId, newXp)
+    skillsXp.value[skillId] = xp
     const currentLevel = getLevelFromXp(newXp)
 
     // 升级通知
@@ -142,18 +137,6 @@ export const usePlayerStore = defineStore('player', () => {
       .sort((a, b) => a.sort - b.sort)
   })
 
-  // 重置特定技能
-  function resetSkill(skillId: string) {
-    setSkillXp(skillId, 0)
-  }
-
-  // 重置所有技能
-  function resetAllSkills() {
-    for (const skillId of Object.keys(skillsXp.value)) {
-      resetSkill(skillId)
-    }
-  }
-
   // ============ 装备槽管理功能 ============
 
   // 获取装备槽中的装备ID
@@ -190,10 +173,6 @@ export const usePlayerStore = defineStore('player', () => {
   })
 
   // ============ 背包管理功能 ============
-
-  function clearInventory() {
-    inventoryMap.clear()
-  }
 
   function addItem(itemOrId: Item | string, amount: number) {
     const item = typeof itemOrId === 'string' ? gameConfigStore.getItemById(itemOrId) : itemOrId
@@ -376,7 +355,6 @@ export const usePlayerStore = defineStore('player', () => {
     initializePlayer,
 
     // Methods - Inventory Management
-    clearInventory,
     addItem,
     addManyItems,
     removeItem,
@@ -405,14 +383,10 @@ export const usePlayerStore = defineStore('player', () => {
 
     // Methods - Skills Management
     getSkillXp,
-    setSkillXp,
     addSkillXp,
     getSkillLevel,
     getRemainingXpForUpgrade,
     getUpgradeProgress,
-    getSkill,
-    resetSkill,
-    resetAllSkills,
-    getLevelFromXp
+    getSkill
   }
 })

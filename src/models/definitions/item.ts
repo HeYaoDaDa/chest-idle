@@ -1,5 +1,5 @@
-import type { LootEntryDefinition } from '../misc/LootEntryDefinition'
-import type { EffectDefinition } from '../misc/EffectDefinition'
+import type { LootEntryDefinition } from './misc/LootEntryDefinition'
+import type { EffectDefinition } from './misc/EffectDefinition'
 
 export interface ItemDefinition {
   type: 'item'

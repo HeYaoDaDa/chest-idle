@@ -1,0 +1,322 @@
+[
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "willowPlank",
+        "skill": "woodworking",
+        "minLevel": 0,
+        "sort": 800,
+        "duration": {
+            "base": 5000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 20,
+            "boosts": []
+        },
+        "chest": "willowTreeChest",
+        "chestPoints": {
+            "base": 50,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "willowWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "willowPlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "pinePlank",
+        "skill": "woodworking",
+        "minLevel": 10,
+        "sort": 801,
+        "duration": {
+            "base": 10000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 40,
+            "boosts": []
+        },
+        "chest": "pineTreeChest",
+        "chestPoints": {
+            "base": 100,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "pineWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "pinePlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "oakPlank",
+        "skill": "woodworking",
+        "minLevel": 20,
+        "sort": 802,
+        "duration": {
+            "base": 15000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 60,
+            "boosts": []
+        },
+        "chest": "oakTreeChest",
+        "chestPoints": {
+            "base": 150,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "oakWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "oakPlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "maplePlank",
+        "skill": "woodworking",
+        "minLevel": 30,
+        "sort": 803,
+        "duration": {
+            "base": 20000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 80,
+            "boosts": []
+        },
+        "chest": "mapleTreeChest",
+        "chestPoints": {
+            "base": 200,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mapleWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "maplePlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "elmPlank",
+        "skill": "woodworking",
+        "minLevel": 40,
+        "sort": 804,
+        "duration": {
+            "base": 25000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 100,
+            "boosts": []
+        },
+        "chest": "elmTreeChest",
+        "chestPoints": {
+            "base": 250,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "elmWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "elmPlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "beechPlank",
+        "skill": "woodworking",
+        "minLevel": 50,
+        "sort": 805,
+        "duration": {
+            "base": 30000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 120,
+            "boosts": []
+        },
+        "chest": "beechTreeChest",
+        "chestPoints": {
+            "base": 300,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "beechWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "beechPlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "mahoganyPlank",
+        "skill": "woodworking",
+        "minLevel": 60,
+        "sort": 806,
+        "duration": {
+            "base": 35000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 140,
+            "boosts": []
+        },
+        "chest": "mahoganyTreeChest",
+        "chestPoints": {
+            "base": 350,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "mahoganyWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "mahoganyPlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    },
+    {
+        "type": "actionTarget",
+        "targetType": "recipe",
+        "id": "ebonyPlank",
+        "skill": "woodworking",
+        "minLevel": 70,
+        "sort": 807,
+        "duration": {
+            "base": 40000,
+            "boosts": [
+                {
+                    "state": "woodworkingSpeed",
+                    "type": "inversePercentage"
+                },
+                "overLevelSpeedUp"
+            ]
+        },
+        "xp": {
+            "base": 160,
+            "boosts": []
+        },
+        "chest": "ebonyTreeChest",
+        "chestPoints": {
+            "base": 400,
+            "boosts": []
+        },
+        "ingredients": [
+            {
+                "item": "ebonyWood",
+                "count": 2
+            }
+        ],
+        "products": [
+            {
+                "item": "ebonyPlank",
+                "count": 1
+            }
+        ],
+        "tab": "materials"
+    }
+]

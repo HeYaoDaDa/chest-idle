@@ -99,7 +99,7 @@ export const usePlayerStore = defineStore('player', () => {
   function addSkillXp(skillId: string, xp: number) {
     const previousLevel = getLevelFromXp(getSkillXp(skillId))
     const newXp = getSkillXp(skillId) + xp
-    skillsXp.value[skillId] = xp
+    skillsXp.value[skillId] = newXp
     const currentLevel = getLevelFromXp(newXp)
 
     // 升级通知

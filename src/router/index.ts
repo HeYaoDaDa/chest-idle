@@ -3,7 +3,6 @@ import LoadPage from '@/pages/LoadPage.vue'
 import GamePage from '@/pages/GamePage.vue'
 import SkillPage from '@/pages/SkillPage.vue'
 import { useAppStore } from '@/stores/app'
-import StatesPage from '@/pages/StatesPage.vue'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
 
 const router = createRouter({
@@ -22,11 +21,6 @@ const router = createRouter({
       meta: { requireGameData: true },
       component: GamePage,
       children: [
-        {
-          path: 'states',
-          name: 'states',
-          component: StatesPage,
-        },
         {
           path: 'mystuff',
           name: 'mystuff',

@@ -53,9 +53,6 @@ function handleClose() {
         }"></div>
       </div>
     </router-link>
-    <router-link :to="`/game/states`" active-class="active-link" @click="handleClose">
-      <div class="skill-name">States</div>
-    </router-link>
   </div>
 </template>
 

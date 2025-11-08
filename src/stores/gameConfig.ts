@@ -86,7 +86,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
 
         // Store loot definitions temporarily for later resolution
         if (chest && itemDef.chest) {
-          ;(item as ItemWithLootDefs)._lootDefs = itemDef.chest.loots
+          (item as ItemWithLootDefs)._lootDefs = itemDef.chest.loots
           chestMap.set(item.id, item)
         }
 

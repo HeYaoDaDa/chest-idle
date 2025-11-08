@@ -7,7 +7,7 @@ import MyStuffPage from './MyStuffPage.vue'
 
 const { t } = useI18n()
 
-// GamePage 特定的状态
+// left sidebar
 const sidebarExpanded = shallowRef(false)
 
 // ============ 拖拽调整宽度功能 ============
@@ -60,19 +60,11 @@ function stopDragTabs() {
   document.removeEventListener('mouseup', stopDragTabs)
   document.body.classList.remove('dragging')
 }
-
-function toggleSidebar() {
-  sidebarExpanded.value = !sidebarExpanded.value
-}
-
-function closeSidebar() {
-  sidebarExpanded.value = false
-}
 </script>
 
 <template>
   <div id="game-page-root">
-    <div v-if="sidebarExpanded" class="sidebar-mask" @click="closeSidebar"></div>
+    <div v-if="sidebarExpanded" class="sidebar-mask" @click="sidebarExpanded = false"></div>
 
     <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }" :style="{
       '--tabs-width': tabsWidth + 'px'
@@ -85,7 +77,7 @@ function closeSidebar() {
           <ActionQueue />
         </div>
       </div>
-      <LeftSidebar :expanded="sidebarExpanded" @toggle="toggleSidebar" @close="closeSidebar" />
+      <LeftSidebar v-model="sidebarExpanded" />
       <div id="content">
         <RouterView />
       </div>

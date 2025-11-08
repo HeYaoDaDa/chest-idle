@@ -8,32 +8,31 @@ const playerStore = usePlayerStore()
 
 // Props
 interface Props {
-  expanded: boolean
+  modelValue: boolean
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 // Emits
 const emit = defineEmits<{
-  toggle: []
-  close: []
+  'update:modelValue': [value: boolean]
 }>()
 
 function handleToggle() {
-  emit('toggle')
+  emit('update:modelValue', !props.modelValue)
 }
 
 function handleClose() {
-  emit('close')
+  emit('update:modelValue', false)
 }
 </script>
 
 <template>
-  <div id="sidebar" :class="{ expanded }">
+  <div id="sidebar" :class="{ expanded: modelValue }">
     <div class="mobile-sidebar-controls">
       <a class="sidebar-control-link" @click="handleToggle">
         <div class="skill-name">
-          <span v-if="!expanded">☰</span>
+          <span v-if="!modelValue">☰</span>
           <span v-else>✕</span>
         </div>
       </a>

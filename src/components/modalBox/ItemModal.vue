@@ -3,7 +3,7 @@ import ModalBox from '@/components/misc/ModalBox.vue'
 import type { InventoryItem } from '@/models/InventoryItem'
 import type { Equipment } from '@/models/item/Equipment'
 import type { Slot } from '@/models/Slot'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -98,6 +98,14 @@ function openChest() {
     emit('openChest', chestOpenAmount.value)
   }
 }
+
+// 监听 Modal 打开/关闭，重置开箱数量
+watch(() => props.show, (newShow) => {
+  if (newShow && isChest.value) {
+    // Modal 打开时，重置为 1 或当前最大值（如果只有 1 个）
+    chestOpenAmount.value = Math.min(1, maxChestAmount.value)
+  }
+})
 </script>
 
 <template>

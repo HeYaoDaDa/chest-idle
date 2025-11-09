@@ -550,7 +550,7 @@ export default {
       description: 'A chest containing volcano produce and related rewards.',
     },
   },
-  actionTarget: {
+  action: {
     materials: {
       name: 'Materials',
       description: 'Basic materials and intermediates.',

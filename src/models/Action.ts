@@ -2,7 +2,7 @@ import type { Item } from './item'
 import type { PropertyManager, PropertyCalculation } from './property'
 import { PropertyType, getSkillSpeedProperty } from './property'
 
-export class ActionTarget {
+export class Action {
   name: string
   description: string
   skillId: string
@@ -33,8 +33,8 @@ export class ActionTarget {
     getSkillLevel: () => number,
     propertyManager: PropertyManager,
   ) {
-    this.name = `actionTarget.${this.id}.name`
-    this.description = `actionTarget.${this.id}.description`
+    this.name = `action.${this.id}.name`
+    this.description = `action.${this.id}.description`
     this.skillId = skillId
     this.minLevel = minLevel
     this.getSkillLevel = getSkillLevel

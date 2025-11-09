@@ -456,7 +456,7 @@ export default {
       description: '装有火山产品和相关奖励的宝箱。',
     },
   },
-  actionTarget: {
+  action: {
     materials: {
       name: '材料',
       description: '基础材料与中间产物。',

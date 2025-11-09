@@ -1,6 +1,6 @@
 [
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "copperIngot",
         "skill": "smithing",
         "minLevel": 0,
@@ -24,7 +24,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "ironIngot",
         "skill": "smithing",
         "minLevel": 10,
@@ -48,7 +48,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "silverIngot",
         "skill": "smithing",
         "minLevel": 20,
@@ -72,7 +72,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "goldIngot",
         "skill": "smithing",
         "minLevel": 30,
@@ -96,7 +96,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "orichalcumIngot",
         "skill": "smithing",
         "minLevel": 40,
@@ -120,7 +120,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "darkIronIngot",
         "skill": "smithing",
         "minLevel": 50,
@@ -144,7 +144,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "mithrilIngot",
         "skill": "smithing",
         "minLevel": 60,
@@ -168,7 +168,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "adamantineIngot",
         "skill": "smithing",
         "minLevel": 70,

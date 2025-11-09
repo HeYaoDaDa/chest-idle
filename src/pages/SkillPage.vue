@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
-import type { ActionTarget } from '@/models/actionTarget'
+import type { Action } from '@/models/Action'
 import { useGameConfigStore } from '@/stores/gameConfig'
 import { usePlayerStore } from '@/stores/player'
 import { computed, ref, shallowRef, watchEffect } from 'vue'
@@ -20,12 +20,12 @@ const playerStore = usePlayerStore()
 const skill = computed(() => playerStore.getSkill(skillId.value))
 
 // 判断是否需要使用 tab 分组
-const skillActionTargetTabs = computed(() => gameConfigStore.getSkillActionTargetTabs(skillId.value))
-const hasTabGroups = computed(() => skillActionTargetTabs.value.size > 0)
+const skillActionTabs = computed(() => gameConfigStore.getSkillActionTabs(skillId.value))
+const hasTabGroups = computed(() => skillActionTabs.value.size > 0)
 const currentTab = ref<string>('')
 
 // 获取可用的 tabs
-const availableTabs = computed(() => Array.from(skillActionTargetTabs.value.keys()))
+const availableTabs = computed(() => Array.from(skillActionTabs.value.keys()))
 
 // 自动确保 currentTab 始终有效
 watchEffect(() => {
@@ -36,19 +36,19 @@ watchEffect(() => {
   }
 })
 
-// 显示的 actionTargets
-const displayedActionTargets = computed(() => {
+// 显示的 actions
+const displayedActions = computed(() => {
   if (!hasTabGroups.value) {
-    return gameConfigStore.getSkillActionTargets(skillId.value)
+    return gameConfigStore.getSkillActions(skillId.value)
   }
-  return skillActionTargetTabs.value.get(currentTab.value) || []
+  return skillActionTabs.value.get(currentTab.value) || []
 })
 
 const modalVisible = ref(false)
-const selectedActionTarget = shallowRef<ActionTarget | undefined>(undefined)
+const selectedAction = shallowRef<Action | undefined>(undefined)
 
-function openModal(zone: ActionTarget) {
-  selectedActionTarget.value = zone
+function openModal(zone: Action) {
+  selectedAction.value = zone
   modalVisible.value = true
 }
 </script>
@@ -84,17 +84,17 @@ function openModal(zone: ActionTarget) {
     <div v-if="hasTabGroups" class="skill-tabs">
       <button v-for="tab in availableTabs" :key="tab" class="skill-tab" :class="{ active: currentTab === tab }"
         @click="currentTab = tab">
-        {{ t(`actionTarget.${tab}.name`) }}
+        {{ t(`action.${tab}.name`) }}
       </button>
     </div>
 
     <div id="skill-area-root">
-      <div v-for="zone in displayedActionTargets" :key="zone.id" class="area-item" @click="openModal(zone)">
+      <div v-for="zone in displayedActions" :key="zone.id" class="area-item" @click="openModal(zone)">
         <div>{{ t(zone.name) }}</div>
       </div>
     </div>
   </div>
-  <ActionModalBox v-model="modalVisible" :action-target="selectedActionTarget" />
+  <ActionModalBox v-model="modalVisible" :action="selectedAction" />
 </template>
 
 <style lang="scss" scoped>

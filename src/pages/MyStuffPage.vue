@@ -137,7 +137,7 @@ function openSlotEquipment(slot: Slot): void {
 <style lang="scss" scoped>
 @use '@/styles/shared-components';
 
-#my-stuff-container {
+#mystuff-page {
   flex: 1;
   display: flex;
   flex-direction: column;

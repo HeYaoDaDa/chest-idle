@@ -1,5 +1,5 @@
 export interface ActionConfig {
-  type: 'actionTarget'
+  type: 'action'
   id: string
   skill: string
   tab?: string

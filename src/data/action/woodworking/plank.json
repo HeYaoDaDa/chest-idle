@@ -1,6 +1,6 @@
 [
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "willowPlank",
         "skill": "woodworking",
         "minLevel": 0,
@@ -24,7 +24,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "pinePlank",
         "skill": "woodworking",
         "minLevel": 10,
@@ -48,7 +48,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "oakPlank",
         "skill": "woodworking",
         "minLevel": 20,
@@ -72,7 +72,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "maplePlank",
         "skill": "woodworking",
         "minLevel": 30,
@@ -96,7 +96,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "elmPlank",
         "skill": "woodworking",
         "minLevel": 40,
@@ -120,7 +120,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "beechPlank",
         "skill": "woodworking",
         "minLevel": 50,
@@ -144,7 +144,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "mahoganyPlank",
         "skill": "woodworking",
         "minLevel": 60,
@@ -168,7 +168,7 @@
         "tab": "materials"
     },
     {
-        "type": "actionTarget",
+        "type": "action",
         "id": "ebonyPlank",
         "skill": "woodworking",
         "minLevel": 70,

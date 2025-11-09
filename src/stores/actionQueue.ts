@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { ActionTarget } from '@/models/actionTarget'
+import type { Action } from '@/models/Action'
 import type { Item } from '@/models/item'
 import { usePlayerStore } from './player'
 import { useNotificationStore } from './notification'
 import i18n from '@/i18n'
 
 interface ActionItem {
-  target: ActionTarget
+  target: Action
   amount: number
 }
 
@@ -34,12 +34,12 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   // ============ 基础功能 ============
 
-  function startImmediately(target: ActionTarget, amount: number = Infinity) {
+  function startImmediately(target: Action, amount: number = Infinity) {
     actionQueue.value.unshift({ target, amount })
     currentActionElapsed.value = 0
   }
 
-  function addAction(target: ActionTarget, amount: number = Infinity) {
+  function addAction(target: Action, amount: number = Infinity) {
     actionQueue.value.push({ target, amount })
     currentActionElapsed.value = 0
   }

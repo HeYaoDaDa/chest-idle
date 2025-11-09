@@ -1,5 +1,5 @@
-import type { ActionConfig } from './actionTarget'
-import type { ItemConfig } from './item'
+import type { ActionConfig } from './ActionConfig'
+import type { ItemConfig } from './ItemConfig'
 import type { SkillConfig } from './SkillConfig'
 import type { SlotConfig } from './SlotConfig'
 

@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 import { markRaw, ref } from 'vue'
 import type { GameConfig } from '@/models/gameConfig'
-import type { ActionConfig } from '@/models/gameConfig/actionTarget'
-import type { ItemConfig } from '@/models/gameConfig/item'
+import type { ActionConfig } from '@/models/gameConfig/ActionConfig'
+import type { ItemConfig } from '@/models/gameConfig/ItemConfig'
 import type { EffectConfig } from '@/models/gameConfig/misc/EffectConfig'
 import type { SkillConfig } from '@/models/Skill'
 import type { Slot } from '@/models/Slot'
 import { Item, type ItemWithLootDefs } from '@/models/item'
-import { ActionTarget } from '@/models/actionTarget'
+import { Action } from '@/models/Action'
 import { PropertyManager } from '@/models/property'
 import { usePlayerStore } from './player'
 
@@ -17,7 +17,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   const slotMap = new Map<string, Slot>()
   const itemMap = new Map<string, Item>()
   const chestMap = new Map<string, Item>()
-  const actionTargetMap = new Map<string, ActionTarget>()
+  const actionMap = new Map<string, Action>()
 
   // 新的属性管理器
   const propertyManager = new PropertyManager()
@@ -32,7 +32,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     slotMap.clear()
     itemMap.clear()
     chestMap.clear()
-    actionTargetMap.clear()
+    actionMap.clear()
     propertyManager.clear()
     allSkillConfigs.value = []
     allSlots.value = []
@@ -93,7 +93,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
         itemMap.set(item.id, item)
         break
       }
-      case 'actionTarget': {
+      case 'action': {
         const actionConfig = gameConfig as ActionConfig
         const playerStore = usePlayerStore()
         const skillId = actionConfig.skill
@@ -108,8 +108,8 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
           item: getItemById(item),
           count,
         })) ?? []
-        const actionTarget = markRaw(
-          new ActionTarget(
+        const action = markRaw(
+          new Action(
             actionConfig.id,
             skillId,
             actionConfig.tab,
@@ -126,7 +126,7 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
           ),
         )
 
-        actionTargetMap.set(actionTarget.id, actionTarget)
+        actionMap.set(action.id, action)
         break
       }
       default:
@@ -185,12 +185,12 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       }
     }
 
-    // Ensure stable order: skills -> slots -> items -> actionTarget
+    // Ensure stable order: skills -> slots -> items -> actions
     const typeOrder: Record<GameConfig['type'], number> = {
       skill: 1,
       slot: 2,
       item: 3,
-      actionTarget: 4,
+      action: 4,
     }
     const sorted = all.slice().sort((a, b) => typeOrder[a.type] - typeOrder[b.type])
 
@@ -198,29 +198,29 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   }
 
   // Getter functions
-  // 获取技能的相关 ActionTargets
-  function getSkillActionTargets(skillId: string): ActionTarget[] {
-    return Array.from(actionTargetMap.values())
-      .filter(actionTarget => actionTarget.skillId === skillId)
+  // 获取技能的相关 Actions
+  function getSkillActions(skillId: string): Action[] {
+    return Array.from(actionMap.values())
+      .filter(action => action.skillId === skillId)
       .sort((a, b) => a.sort - b.sort)
   }
 
-  // 获取技能的 ActionTarget 标签页映射
-  function getSkillActionTargetTabs(skillId: string): Map<string, ActionTarget[]> {
-    const tabMap = new Map<string, ActionTarget[]>()
-    const actionTargets = getSkillActionTargets(skillId)
+  // 获取技能的 Action 标签页映射
+  function getSkillActionTabs(skillId: string): Map<string, Action[]> {
+    const tabMap = new Map<string, Action[]>()
+    const actions = getSkillActions(skillId)
 
-    for (const actionTarget of actionTargets) {
-      if (actionTarget.tab) {
-        const list = tabMap.get(actionTarget.tab) ?? []
-        if (!tabMap.has(actionTarget.tab)) {
-          tabMap.set(actionTarget.tab, list)
+    for (const action of actions) {
+      if (action.tab) {
+        const list = tabMap.get(action.tab) ?? []
+        if (!tabMap.has(action.tab)) {
+          tabMap.set(action.tab, list)
         }
-        list.push(actionTarget)
+        list.push(action)
       }
     }
 
-    // 排序每个标签页中的 actionTargets
+    // 排序每个标签页中的 actions
     for (const list of tabMap.values()) {
       list.sort((a, b) => a.sort - b.sort)
     }
@@ -256,12 +256,12 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     return chest
   }
 
-  function getActionTargetById(id: string): ActionTarget {
-    const actionTarget = actionTargetMap.get(id)
-    if (!actionTarget) {
-      throw new Error(`ActionTarget ${id} not found`)
+  function getActionById(id: string): Action {
+    const action = actionMap.get(id)
+    if (!action) {
+      throw new Error(`Action ${id} not found`)
     }
-    return actionTarget
+    return action
   }
 
   return {
@@ -275,11 +275,11 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     loadGameConfig,
     loadGameConfigFromGlob,
     getSkillConfigById,
-    getSkillActionTargets,
-    getSkillActionTargetTabs,
+    getSkillActions,
+    getSkillActionTabs,
     getSlotById,
     getItemById,
     getChestById,
-    getActionTargetById,
+    getActionById,
   }
 })

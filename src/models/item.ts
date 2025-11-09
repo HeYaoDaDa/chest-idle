@@ -1,6 +1,6 @@
 import type { ItemType, EffectType } from '@/constants'
 import type { Slot } from './Slot'
-import type { LootEntryDefinition } from './definitions/misc/LootEntryDefinition'
+import type { LootEntryConfig } from './gameConfig/misc/LootEntryConfig'
 
 // Equipment specific data
 export interface EquipmentData {
@@ -23,9 +23,9 @@ export interface ChestData {
   }[]
 }
 
-// Extended Item type to temporarily hold loot definitions during initialization
+// Extended Item type to temporarily hold loot config during initialization
 interface ItemWithLootDefs extends Item {
-  _lootDefs?: LootEntryDefinition[]
+  _lootDefs?: LootEntryConfig[]
 }
 
 export class Item {

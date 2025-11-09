@@ -1,4 +1,4 @@
-export interface ActionTargetDefinition {
+export interface ActionConfig {
   type: 'actionTarget'
   id: string
   skill: string

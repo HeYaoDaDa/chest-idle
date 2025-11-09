@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 import { markRaw, ref } from 'vue'
-import type { Definition } from '@/models/definitions'
-import type { ActionTargetDefinition } from '@/models/definitions/actionTarget'
-import type { ItemDefinition } from '@/models/definitions/item'
-import type { EffectDefinition } from '@/models/definitions/misc/EffectDefinition'
+import type { GameConfig } from '@/models/gameConfig'
+import type { ActionConfig } from '@/models/gameConfig/actionTarget'
+import type { ItemConfig } from '@/models/gameConfig/item'
+import type { EffectConfig } from '@/models/gameConfig/misc/EffectConfig'
 import type { SkillConfig } from '@/models/Skill'
 import type { Slot } from '@/models/Slot'
 import { Item, type ItemWithLootDefs } from '@/models/item'
@@ -39,32 +39,32 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     allChests.value = []
   }
 
-  function handleDefinition(definition: Definition) {
-    switch (definition.type) {
+  function handleGameConfig(gameConfig: GameConfig) {
+    switch (gameConfig.type) {
       case 'skill': {
         const skillConfig: SkillConfig = {
-          id: definition.id,
-          name: `skill.${definition.id}.name`,
-          description: `skill.${definition.id}.description`,
-          sort: definition.sort
+          id: gameConfig.id,
+          name: `skill.${gameConfig.id}.name`,
+          description: `skill.${gameConfig.id}.description`,
+          sort: gameConfig.sort
         }
         skillConfigMap.set(skillConfig.id, skillConfig)
         break
       }
       case 'slot': {
         const slot = markRaw({
-          id: definition.id,
-          sort: definition.sort,
-          name: `slot.${definition.id}`
+          id: gameConfig.id,
+          sort: gameConfig.sort,
+          name: `slot.${gameConfig.id}`
         })
         slotMap.set(slot.id, slot)
         break
       }
       case 'item': {
-        const itemDef = definition as ItemDefinition
+        const itemDef = gameConfig as ItemConfig
         const equipment = 'equipment' in itemDef && itemDef.equipment ? {
           slot: getSlotById(itemDef.equipment.slot),
-          effects: itemDef.equipment.effects.map((it: EffectDefinition) => ({
+          effects: itemDef.equipment.effects.map((it: EffectConfig) => ({
             property: it.property,
             type: it.type,
             value: it.value,
@@ -77,14 +77,14 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
         } : null
 
         const item = markRaw(new Item(
-          definition.id,
-          definition.sort,
-          definition.category,
+          gameConfig.id,
+          gameConfig.sort,
+          gameConfig.category,
           equipment,
           chest
         ))
 
-        // Store loot definitions temporarily for later resolution
+        // Store loot config temporarily for later resolution
         if (chest && itemDef.chest) {
           (item as ItemWithLootDefs)._lootDefs = itemDef.chest.loots
           chestMap.set(item.id, item)
@@ -94,31 +94,31 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
         break
       }
       case 'actionTarget': {
-        const actionTargetDefinition = definition as ActionTargetDefinition
+        const actionConfig = gameConfig as ActionConfig
         const playerStore = usePlayerStore()
-        const skillId = actionTargetDefinition.skill
-        const chest = getChestById(actionTargetDefinition.chest)
+        const skillId = actionConfig.skill
+        const chest = getChestById(actionConfig.chest)
 
-        const products = actionTargetDefinition.products.map(({ item, count }) => ({
+        const products = actionConfig.products.map(({ item, count }) => ({
           item: getItemById(item),
           count,
         }))
 
-        const ingredients = actionTargetDefinition.ingredients?.map(({ item, count }) => ({
+        const ingredients = actionConfig.ingredients?.map(({ item, count }) => ({
           item: getItemById(item),
           count,
         })) ?? []
         const actionTarget = markRaw(
           new ActionTarget(
-            actionTargetDefinition.id,
+            actionConfig.id,
             skillId,
-            actionTargetDefinition.tab,
-            actionTargetDefinition.minLevel,
-            actionTargetDefinition.sort,
-            actionTargetDefinition.duration,
-            actionTargetDefinition.xp,
+            actionConfig.tab,
+            actionConfig.minLevel,
+            actionConfig.sort,
+            actionConfig.duration,
+            actionConfig.xp,
             chest,
-            actionTargetDefinition.chestPoints,
+            actionConfig.chestPoints,
             ingredients,
             products,
             () => playerStore.getSkillLevel(skillId),
@@ -159,10 +159,10 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     allChests.value = Array.from(chestMap.values()).sort((a, b) => a.sort - b.sort)
   }
 
-  function loadGameConfig(definitions: Definition[]) {
+  function loadGameConfig(gameConfigs: GameConfig[]) {
     clear()
-    for (const definition of definitions) {
-      handleDefinition(definition)
+    for (const gameConfig of gameConfigs) {
+      handleGameConfig(gameConfig)
     }
     buildCaches()
   }
@@ -170,23 +170,23 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   /**
    * Load game configuration via Vite glob import from source files.
    * Auto-discovers all JSON under /src/data/** and loads them.
-   * Ensures definition processing order to satisfy dependencies.
+   * Ensures config processing order to satisfy dependencies.
    */
   async function loadGameConfigFromGlob() {
     const modules = import.meta.glob('/src/data/**/*.json', { eager: true, import: 'default' }) as Record<string, unknown>
 
-    const all: Definition[] = []
+    const all: GameConfig[] = []
     for (const mod of Object.values(modules)) {
       const data = mod as unknown
       if (Array.isArray(data)) {
-        all.push(...(data as Definition[]))
+        all.push(...(data as GameConfig[]))
       } else if (data && typeof data === 'object') {
-        all.push(data as Definition)
+        all.push(data as GameConfig)
       }
     }
 
     // Ensure stable order: skills -> slots -> items -> actionTarget
-    const typeOrder: Record<Definition['type'], number> = {
+    const typeOrder: Record<GameConfig['type'], number> = {
       skill: 1,
       slot: 2,
       item: 3,

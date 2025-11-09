@@ -1,4 +1,4 @@
-export interface LootEntryDefinition {
+export interface LootEntryConfig {
   item: string
   chance: number
   min: number

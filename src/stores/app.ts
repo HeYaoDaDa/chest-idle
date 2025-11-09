@@ -10,7 +10,7 @@ export const useAppStore = defineStore('app', () => {
   async function loadApplication() {
     status.value = 'loading'
     try {
-      // Initialize game configuration (auto-discover definitions via glob)
+      // Initialize game configuration (auto-discover config via glob)
       const gameConfigStore = useGameConfigStore()
       await gameConfigStore.loadGameConfigFromGlob()
 

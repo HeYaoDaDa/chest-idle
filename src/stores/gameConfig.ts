@@ -9,7 +9,6 @@ import type { Slot } from '@/models/Slot'
 import { Item, type ItemWithLootDefs } from '@/models/item'
 import { Action } from '@/models/Action'
 import { PropertyManager } from '@/models/property'
-import { usePlayerStore } from './player'
 
 export const useGameConfigStore = defineStore('gameConfig', () => {
   // Maps for storing game objects by ID
@@ -103,7 +102,6 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
       }
       case 'action': {
         const actionConfig = gameConfig as ActionConfig
-        const playerStore = usePlayerStore()
         const skillId = actionConfig.skill
         const chest = getChestById(actionConfig.chest)
 
@@ -129,7 +127,6 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
             actionConfig.chestPoints,
             ingredients,
             products,
-            () => playerStore.getSkillLevel(skillId),
             propertyManager,
           ),
         )

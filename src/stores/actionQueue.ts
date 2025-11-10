@@ -5,6 +5,7 @@ import type { Item } from '@/models/item'
 import { usePlayerStore } from './player'
 import { useNotificationStore } from './notification'
 import i18n from '@/i18n'
+import { useSkillStore } from './skill'
 
 interface ActionItem {
   target: Action
@@ -12,6 +13,7 @@ interface ActionItem {
 }
 
 export const useActionQueueStore = defineStore('actionQueue', () => {
+    const skillStore = useSkillStore()
   // ============ 核心状态 ============
   const actionQueue = ref<ActionItem[]>([])
   const actionStartDate = ref<number | null>(null)
@@ -52,16 +54,15 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     const target = currentAction.value.target
     const amount = currentAction.value.amount
-    const playerStore = usePlayerStore()
 
     // 检查等级要求
-    const currentLevel = playerStore.getSkillLevel(target.skillId)
+    const currentLevel = skillStore.getSkillLevel(target.skillId)
     if (currentLevel < target.minLevel) {
       console.warn(
         `Required level ${target.minLevel} for action ${target.id}, but current level is ${currentLevel}`
       )
       const notificationStore = useNotificationStore()
-      const skillConfig = playerStore.getSkill(target.skillId)
+      const skillConfig = skillStore.getSkill(target.skillId)
       notificationStore.warning('notification.levelTooLow', {
         skill: skillConfig ? i18n.global.t(skillConfig.name) : target.skillId,
         level: currentLevel,
@@ -137,8 +138,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     const action = currentAction.value
     const target = action.target
-    const playerStore = usePlayerStore()
-    const skill = playerStore.getSkill(target.skillId)
+    const skill = skillStore.getSkill(target.skillId)
 
     if (elapsed < target.getDuration()) {
       // 动作还未完成
@@ -192,7 +192,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
 
     // 增加经验
-    playerStore.addSkillXp(target.skillId, target.getXp() * count)
+    skillStore.addSkillXp(target.skillId, target.getXp() * count)
 
     // 增加箱子点数并获得箱子
     const chestCount = playerStore.addChestPoints(target.chest.id, target.getChestPoints() * count)

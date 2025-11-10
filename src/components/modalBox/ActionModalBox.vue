@@ -4,6 +4,7 @@ import { INFINITE_STRING } from '@/constants'
 import type { Action } from '@/models/Action'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { usePlayerStore } from '@/stores/player'
+import { useSkillStore } from '@/stores/skill'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -11,6 +12,7 @@ import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
 
 const playerStore = usePlayerStore()
+const skillStore = useSkillStore()
 const actionQueueStore = useActionQueueStore()
 
 // Props
@@ -29,7 +31,7 @@ const emit = defineEmits<{
 // 获取技能信息
 const skill = computed(() => {
   if (!props.action) return null
-  return playerStore.getSkill(props.action.skillId)
+  return skillStore.getSkill(props.action.skillId)
 })
 
 const amountString = ref(INFINITE_STRING)

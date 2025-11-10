@@ -2,7 +2,7 @@
 import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
 import type { Action } from '@/models/Action'
 import { useGameConfigStore } from '@/stores/gameConfig'
-import { usePlayerStore } from '@/stores/player'
+import { useSkillStore } from '@/stores/skill'
 import { computed, ref, shallowRef, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
@@ -15,9 +15,9 @@ onBeforeRouteUpdate(async (to) => {
 })
 
 const gameConfigStore = useGameConfigStore()
-const playerStore = usePlayerStore()
+const skillStore = useSkillStore()
 
-const skill = computed(() => playerStore.getSkill(skillId.value))
+const skill = computed(() => skillStore.getSkill(skillId.value))
 
 // 判断是否需要使用 tab 分组
 const skillActionTabs = computed(() => gameConfigStore.getSkillActionTabs(skillId.value))

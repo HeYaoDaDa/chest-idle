@@ -1,3 +1,4 @@
+import { useSkillStore } from '@/stores/skill'
 import type { Item } from './item'
 import type { PropertyManager, PropertyCalculation } from './property'
 import { PropertyType, getSkillSpeedProperty } from './property'
@@ -16,7 +17,6 @@ export class Action {
   private baseChestPoints: number
   private propertyManager: PropertyManager
   public minLevel: number
-  private getSkillLevel: () => number
 
   constructor(
     public id: string,
@@ -30,14 +30,12 @@ export class Action {
     baseChestPoints: number,
     ingredients: { item: Item; count: number }[],
     product: { item: Item; count: number }[],
-    getSkillLevel: () => number,
     propertyManager: PropertyManager,
   ) {
     this.name = `action.${this.id}.name`
     this.description = `action.${this.id}.description`
     this.skillId = skillId
     this.minLevel = minLevel
-    this.getSkillLevel = getSkillLevel
     this.propertyManager = propertyManager
 
     // 保存基础值
@@ -79,7 +77,7 @@ export class Action {
     allModifiers.push(...globalSpeedCalc.breakdown)
 
     // 3. 添加超级加速（特殊效果）
-    const overLevelBonus = Math.max(0, (this.getSkillLevel() - this.minLevel) * 0.01)
+    const overLevelBonus = Math.max(0, (useSkillStore().getSkillLevel(this.skillId) - this.minLevel) * 0.01)
     if (overLevelBonus > 0) {
       allModifiers.push({
         sourceId: `overLevel.${this.skillId}`,

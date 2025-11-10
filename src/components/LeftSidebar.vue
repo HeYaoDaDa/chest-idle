@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { usePlayerStore } from '@/stores/player'
+import { useSkillStore } from '@/stores/skill';
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-const playerStore = usePlayerStore()
+const skillStore = useSkillStore()
 
 // Props
 interface Props {
@@ -43,7 +43,7 @@ function handleClose() {
     <router-link class="sidebar-control-link" :to="`/game/chests`" active-class="active-link" @click="handleClose">
       <div class="skill-name">{{ t('ui.chests') }}</div>
     </router-link>
-    <router-link v-for="skill in playerStore.skillsList" :key="skill.id" :to="`/game/${skill.id}`"
+    <router-link v-for="skill in skillStore.skillList" :key="skill.id" :to="`/game/${skill.id}`"
       active-class="active-link" @click="handleClose">
       <div class="skill-name">
         <span class="name-text">{{ t(skill.name) }}</span>

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { markRaw, ref } from 'vue'
+import { computed, markRaw, ref } from 'vue'
 import type { GameConfig } from '@/models/gameConfig'
 import type { ActionConfig } from '@/models/gameConfig/ActionConfig'
 import type { ItemConfig } from '@/models/gameConfig/ItemConfig'
@@ -26,6 +26,14 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
   const allSkillConfigs = ref<SkillConfig[]>([])
   const allSlots = ref<Slot[]>([])
   const allChests = ref<Item[]>([])
+
+  const defaultSkillPagePath = computed(() => {
+    if (allSkillConfigs.value.length > 0) {
+      const firstSkillId = allSkillConfigs.value[0].id
+      return `/game/${firstSkillId}`
+    }
+    return undefined
+  })
 
   function clear() {
     skillConfigMap.clear()
@@ -270,6 +278,9 @@ export const useGameConfigStore = defineStore('gameConfig', () => {
     allSlots,
     allChests,
     propertyManager,
+
+    // Computed
+    defaultSkillPagePath,
 
     // Methods
     loadGameConfig,

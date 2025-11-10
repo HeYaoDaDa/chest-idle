@@ -54,10 +54,9 @@ router.beforeEach(async (to) => {
       return '/'
     }
   }
-  const skillConfigs = useGameConfigStore().allSkillConfigs
-  if ('/game' === to.path && skillConfigs.length > 0) {
-    const id = skillConfigs[0].id
-    return `/game/${id}`
+  const defaultSkillPagePath = useGameConfigStore().defaultSkillPagePath
+  if ('/game' === to.path && defaultSkillPagePath) {
+    return defaultSkillPagePath
   }
 })
 

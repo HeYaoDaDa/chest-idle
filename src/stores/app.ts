@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useGameConfigStore } from './gameConfig'
 import { usePlayerStore } from './player'
 import { useActionQueueStore } from './actionQueue'
+import { loadGameConfig } from '@/models/gameConfig'
 
 export const useAppStore = defineStore('app', () => {
   const status = ref(undefined as 'loading' | 'ready' | 'error' | undefined)
@@ -10,6 +11,7 @@ export const useAppStore = defineStore('app', () => {
   async function loadApplication() {
     status.value = 'loading'
     try {
+      loadGameConfig()
       // Initialize game configuration (auto-discover config via glob)
       const gameConfigStore = useGameConfigStore()
       await gameConfigStore.loadGameConfigFromGlob()

@@ -5,7 +5,7 @@ import SkillPage from '@/pages/SkillPage.vue'
 import ChestPage from '@/pages/ChestPage.vue'
 import { useAppStore } from '@/stores/app'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
-import { useGameConfigStore } from './stores/gameConfig'
+import { skillConfigs } from './models/gameConfig'
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,9 +54,8 @@ router.beforeEach(async (to) => {
       return '/'
     }
   }
-  const defaultSkillPagePath = useGameConfigStore().defaultSkillPagePath
-  if ('/game' === to.path && defaultSkillPagePath) {
-    return defaultSkillPagePath
+  if ('/game' === to.path && skillConfigs.length > 0) {
+    return `/game/${skillConfigs[0].id}`
   }
 })
 

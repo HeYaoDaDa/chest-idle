@@ -14,34 +14,26 @@ interface ActionItem {
 export const useActionQueueStore = defineStore('actionQueue', () => {
   // ============ 核心状态 ============
   const actionQueue = ref<ActionItem[]>([])
-  const lastUpdateDate = ref(performance.now())
-
-  const currentActionElapsed = ref(0)
+  const actionStartDate = ref<number | null>(null)
+  const progress = ref(0)
 
   // ============ 计算属性 ============
   const currentAction = computed(() => actionQueue.value[0] || null)
   const queueingActions = computed(() => actionQueue.value.slice(1))
   const queueLength = computed(() => actionQueue.value.length)
 
-  const progress = computed(() => {
-    if (currentAction.value) {
-      return Math.min(currentAction.value.target.getDuration() > 0
-        ? currentActionElapsed.value / currentAction.value.target.getDuration()
-        : 0, 1) * 100
-    }
-    return 0
-  })
-
   // ============ 基础功能 ============
 
   function startImmediately(target: Action, amount: number = Infinity) {
     actionQueue.value.unshift({ target, amount })
-    currentActionElapsed.value = 0
+    actionStartDate.value = performance.now()
   }
 
   function addAction(target: Action, amount: number = Infinity) {
     actionQueue.value.push({ target, amount })
-    currentActionElapsed.value = 0
+    if (actionQueue.value.length === 1) {
+      actionStartDate.value = performance.now()
+    }
   }
 
   function removeAction(index: number) {
@@ -49,7 +41,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     actionQueue.value.splice(index, 1)
     if (index === 0) {
-      currentActionElapsed.value = 0
+      actionStartDate.value = null
     }
   }
 
@@ -120,37 +112,43 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   }
 
   function update() {
-    const now = performance.now()
-    const elapsed = (now - lastUpdateDate.value) * 100 // 转换为毫秒并加速
-    lastUpdateDate.value = now
-
-    let remainedElapsed = elapsed
-    while (currentAction.value && remainedElapsed > 0) {
-      remainedElapsed = updateCurrentAction(remainedElapsed)
+    if (actionStartDate.value) {
+      const now = performance.now()
+      let remainedElapsed = now - actionStartDate.value
+      while (currentAction.value && remainedElapsed > 0) {
+        remainedElapsed = updateCurrentAction(remainedElapsed)
+      }
     }
-
+    // 更新进度条
+    if (actionStartDate.value) {
+      const elapsed = performance.now() - actionStartDate.value;
+      progress.value = Math.min(currentAction.value.target.getDuration() > 0
+        ? elapsed / currentAction.value.target.getDuration()
+        : 0, 1) * 100
+    } else {
+      progress.value = 0
+    }
     requestAnimationFrame(update)
   }
 
   function updateCurrentAction(elapsed: number): number {
+    if (!actionStartDate.value) return 0
     if (!checkCurrentActionItem()) return elapsed
 
     const action = currentAction.value
     const target = action.target
     const playerStore = usePlayerStore()
     const skill = playerStore.getSkill(target.skillId)
-    const remainedDuration = target.getDuration() - currentActionElapsed.value
 
-    if (elapsed < remainedDuration) {
+    if (elapsed < target.getDuration()) {
       // 动作还未完成
-      currentActionElapsed.value += elapsed
       return 0
     } else {
       // 动作完成，计算完成次数
       let count = action.amount
       count = Math.min(
         count,
-        1 + Math.floor((elapsed - remainedDuration) / target.getDuration())
+        Math.floor(elapsed / target.getDuration())
       )
       if (skill) {
         count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / target.getXp()))
@@ -160,18 +158,20 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       executeAction(action, count)
 
       // 计算剩余时间
-      const remainedElapsed = elapsed - (remainedDuration + target.getDuration() * (count - 1))
+      const remainedElapsed = elapsed - (target.getDuration() * count)
 
-      // 重置或移除动作
-      currentActionElapsed.value = 0
-      if (currentAction.value.amount === Infinity) {
-        // 无限次动作，继续执行
-      } else if (currentAction.value.amount === count) {
-        actionQueue.value.shift()
-        currentActionElapsed.value = 0
-      } else if (currentAction.value.amount > count) {
+      if (currentAction.value.amount > count) {
+        actionStartDate.value += target.getDuration() * count
         // 动作部分完成，减少数量并重置时间
         currentAction.value.amount -= count
+      } else {
+        // 动作完全完成，移除动作并重置时间
+        actionQueue.value.shift()
+        if (currentAction.value) {
+          actionStartDate.value += target.getDuration() * count
+        } else {
+          actionStartDate.value = null
+        }
       }
 
       return remainedElapsed
@@ -226,7 +226,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 如果涉及到当前执行的动作（index 0 和 1），需要重新开始
     if (index === 1) {
-      currentActionElapsed.value = 0
+      actionStartDate.value = performance.now()
     }
   }
 
@@ -240,7 +240,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
     // 如果涉及到当前执行的动作（index 0），需要重新开始
     if (index === 0) {
-      currentActionElapsed.value = 0
+      actionStartDate.value = performance.now()
     }
   }
 
@@ -252,7 +252,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     actionQueue.value.unshift(item)
 
     // 重新开始当前动作
-    currentActionElapsed.value = 0
+    actionStartDate.value = performance.now()
   }
 
   function moveBottom(index: number): void {
@@ -262,7 +262,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     const item = actionQueue.value.splice(index, 1)[0]
     actionQueue.value.push(item)
     if (index === 0) {
-      currentActionElapsed.value = 0
+      actionStartDate.value = performance.now()
     }
   }
 

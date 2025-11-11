@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import ActionQueueModal from './ActionQueueModal.vue'
 import { useActionQueueStore } from '@/stores/actionQueue'
+import { useActionRunnerStore } from '@/stores/actionRunner'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const showQueueModal = ref(false)
 const actionQueueStore = useActionQueueStore()
+const actionRunnerStore = useActionRunnerStore()
 
 const runningActionDisplay = computed(() =>
   actionQueueStore.currentAction
@@ -24,6 +26,8 @@ const runningActionDurationDisplay = computed(() => {
 const hasQueuedActions = computed(() => actionQueueStore.queueingActions.length > 0)
 
 const unifiedLength = computed(() => actionQueueStore.queueLength)
+
+const progress = computed(() => actionRunnerStore.progress + '%')
 
 function openQueueModal() {
   showQueueModal.value = true
@@ -60,7 +64,7 @@ function stopCurrentAction() {
 
     <div class="progress-wrapper">
       <div class="progress-bar-container progress-track">
-        <div class="progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
+        <div class="progress-bar" :style="{ width: progress }"></div>
       </div>
       <span class="progress-duration" v-if="runningActionDurationDisplay">{{
         runningActionDurationDisplay

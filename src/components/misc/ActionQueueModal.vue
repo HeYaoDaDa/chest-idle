@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import ModalBox from './ModalBox.vue'
 import { useActionQueueStore } from '@/stores/actionQueue'
+import { useActionRunnerStore } from '@/stores/actionRunner'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const actionQueueStore = useActionQueueStore()
+const actionRunnerStore = useActionRunnerStore()
 
 interface Props {
   show: boolean
@@ -25,6 +27,7 @@ const runningActionDisplay = computed(() =>
     ? `${t(actionQueueStore.currentAction.target.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
     : `${t('nothing')}...`,
 )
+const progress = computed(() => actionRunnerStore.progress + '%')
 
 function closeModal() {
   emit('close')
@@ -78,7 +81,7 @@ function removeQueuedAction(index: number) {
             </div>
             <div class="running-progress-wrapper">
               <div class="progress-bar-container">
-                <div class="progress-bar" :style="{ width: actionQueueStore.progress + '%' }"></div>
+                <div class="progress-bar" :style="{ width: progress }"></div>
               </div>
             </div>
             <div class="queue-modal-controls">

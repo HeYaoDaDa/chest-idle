@@ -2,8 +2,8 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useGameConfigStore } from './gameConfig'
 import { usePlayerStore } from './player'
-import { useActionQueueStore } from './actionQueue'
 import { loadGameConfig } from '@/models/gameConfig'
+import { useActionRunnerStore } from './actionRunner'
 
 export const useAppStore = defineStore('app', () => {
   const status = ref(undefined as 'loading' | 'ready' | 'error' | undefined)
@@ -20,9 +20,9 @@ export const useAppStore = defineStore('app', () => {
       const playerStore = usePlayerStore()
       playerStore.initializePlayer()
 
-      // Initialize action queue
-      const actionQueueStore = useActionQueueStore()
-      actionQueueStore.start()
+      // Initialize action runner
+      const actionRunnerStore = useActionRunnerStore()
+      actionRunnerStore.start()
 
       status.value = 'ready'
     } catch (error) {

@@ -23,8 +23,8 @@ const emit = defineEmits<Emits>()
 const unifiedLength = computed(() => actionQueueStore.queueLength)
 
 const runningActionDisplay = computed(() =>
-  actionQueueStore.currentAction
-    ? `${t(actionQueueStore.currentAction.target.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
+  actionQueueStore.currentAction1
+    ? `${t(actionQueueStore.currentAction1.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
     : `${t('nothing')}...`,
 )
 const progress = computed(() => actionRunnerStore.progress + '%')
@@ -71,11 +71,11 @@ function removeQueuedAction(index: number) {
       <div class="queue-modal-content">
         <ul class="queue-modal-list">
           <!-- Running as first item (index 0 in unified list) -->
-          <li v-if="actionQueueStore.currentAction" class="queue-modal-item running-item">
+          <li v-if="actionQueueStore.currentAction1" class="queue-modal-item running-item">
             <div class="queue-modal-item-info">
               <span class="queue-modal-item-index">0</span>
               <div class="queue-modal-item-text">
-                <span class="queue-modal-item-name">{{ t(actionQueueStore.currentAction.target.name) }}</span>
+                <span class="queue-modal-item-name">{{ t(actionQueueStore.currentAction1.name) }}</span>
                 <span class="queue-modal-item-amount">×{{ runningActionDisplay }}</span>
               </div>
             </div>
@@ -110,7 +110,8 @@ function removeQueuedAction(index: number) {
               <!-- unified index: current ? index+1 : index -->
               <span class="queue-modal-item-index">{{ (actionQueueStore.currentAction ? index + 1 : index) }}</span>
               <div class="queue-modal-item-text">
-                <span class="queue-modal-item-name">{{ t(action.target.name) }}</span>
+                <!-- TODO -->
+                <span class="queue-modal-item-name">{{ t(`action.${action.actionId}.name`) }}</span>
                 <span class="queue-modal-item-amount">×{{ action.amount === Infinity ? '∞' : action.amount }}</span>
               </div>
             </div>

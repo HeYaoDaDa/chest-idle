@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { Action } from '@/models/Action'
+import { useGameConfigStore } from './gameConfig'
 
 export const useActionQueueStore = defineStore('actionQueue', () => {
+  const gameConfigStore = useGameConfigStore()
+
   // ============ 核心状态 ============
   const actionQueue = ref<{
-    target: Action
+    actionId: string
     amount: number
   }[]>([])
   const actionStartDate = ref<number | null>(null)
@@ -15,15 +17,24 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const queueingActions = computed(() => actionQueue.value.slice(1))
   const queueLength = computed(() => actionQueue.value.length)
 
+  const actionQueue1 = computed(() => actionQueue.value.map(actionItem => {
+    return gameConfigStore.getActionById(actionItem.actionId)
+  }))
+  const currentAction1 = computed(() => {
+    const actionItem = actionQueue.value[0]
+    if (!actionItem) return null
+    return gameConfigStore.getActionById(actionItem.actionId)
+  })
+
   // ============ 基础功能 ============
 
-  function startImmediately(target: Action, amount: number = Infinity) {
-    actionQueue.value.unshift({ target, amount })
+  function startImmediately(actionId: string, amount: number = Infinity) {
+    actionQueue.value.unshift({ actionId, amount })
     actionStartDate.value = performance.now()
   }
 
-  function addAction(target: Action, amount: number = Infinity) {
-    actionQueue.value.push({ target, amount })
+  function addAction(actionId: string, amount: number = Infinity) {
+    actionQueue.value.push({ actionId, amount })
     if (actionQueue.value.length === 1) {
       actionStartDate.value = performance.now()
     }
@@ -120,6 +131,9 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     currentAction,
     queueingActions,
     queueLength,
+
+    actionQueue1,
+    currentAction1,
 
     // 方法
     addAction,

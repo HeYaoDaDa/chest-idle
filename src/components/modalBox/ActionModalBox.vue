@@ -110,7 +110,7 @@ function closeModal() {
 
 function addAction() {
   if (props.action) {
-    actionQueueStore.addAction(props.action, stringToNumber(amountString.value))
+    actionQueueStore.addAction(props.action.id, stringToNumber(amountString.value))
     closeModal()
   }
 }
@@ -118,7 +118,7 @@ function addAction() {
 function startImmediately() {
   if (props.action) {
     // 立即开始：若有运行中，打断并将原运行项排到队首，然后立即开始新行动
-    actionQueueStore.startImmediately(props.action, stringToNumber(amountString.value))
+    actionQueueStore.startImmediately(props.action.id, stringToNumber(amountString.value))
     closeModal()
   }
 }

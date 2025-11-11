@@ -2,14 +2,12 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Action } from '@/models/Action'
 
-interface ActionItem {
-  target: Action
-  amount: number
-}
-
 export const useActionQueueStore = defineStore('actionQueue', () => {
   // ============ 核心状态 ============
-  const actionQueue = ref<ActionItem[]>([])
+  const actionQueue = ref<{
+    target: Action
+    amount: number
+  }[]>([])
   const actionStartDate = ref<number | null>(null)
 
   // ============ 计算属性 ============

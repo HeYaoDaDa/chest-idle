@@ -17,10 +17,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const queueingActions = computed(() => actionQueue.value.slice(1))
   const queueLength = computed(() => actionQueue.value.length)
 
-  const actionQueue1 = computed(() => actionQueue.value.map(actionItem => {
+  // 获取包含完整 Action 详情的队列和当前动作
+  const actionQueueDetails = computed(() => actionQueue.value.map(actionItem => {
     return actionStore.getActionById(actionItem.actionId)
   }))
-  const currentAction1 = computed(() => {
+  const currentActionDetail = computed(() => {
     const actionItem = actionQueue.value[0]
     if (!actionItem) return null
     return actionStore.getActionById(actionItem.actionId)
@@ -132,8 +133,8 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     queueingActions,
     queueLength,
 
-    actionQueue1,
-    currentAction1,
+    actionQueueDetails,
+    currentActionDetail,
 
     // 方法
     addAction,

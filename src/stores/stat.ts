@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
 interface Effect {
-  stat: string
+  statId: string
   type: EffectType
   value: number
 }
@@ -50,7 +50,7 @@ export const useStatStore = defineStore('stat', () => {
     const modifiers: Modifier[] = []
     for (const effects of Object.values(sourceIdEffectsMap.value)) {
       for (const effect of effects) {
-        if (effect.stat === statId) {
+        if (effect.statId === statId) {
           modifiers.push({
             type: effect.type,
             value: effect.value,
@@ -99,14 +99,14 @@ export const useStatStore = defineStore('stat', () => {
   }
 
   function getDerivedStatValue(derivedStatConfigs: {
-    stat: string;
+    statId: string;
     type: EffectType
   }[], baseValue: number = 0, ...extendModifiers: Modifier[]): number {
     let sumAdd = 0;
     let sumPercent = 0;
     let sumDivisor = 0;
 
-    for (const { stat: statId, type } of derivedStatConfigs) {
+    for (const { statId, type } of derivedStatConfigs) {
       const statValue = getStatValue(statId);
       switch (type) {
         case 'flat':

@@ -11,14 +11,14 @@ const actionQueueStore = useActionQueueStore()
 const actionRunnerStore = useActionRunnerStore()
 
 const runningActionDisplay = computed(() =>
-  actionQueueStore.currentAction1
-    ? `${t(actionQueueStore.currentAction1.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
+  actionQueueStore.currentActionDetail
+    ? `${t(actionQueueStore.currentActionDetail.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
     : `${t('nothing')}...`,
 )
 
 const runningActionDurationDisplay = computed(() => {
-  if (actionQueueStore.currentAction1) {
-    return `${(Math.floor(actionQueueStore.currentAction1.duration / 10) / 100).toFixed(2)}s`
+  if (actionQueueStore.currentActionDetail) {
+    return `${(Math.floor(actionQueueStore.currentActionDetail.duration / 10) / 100).toFixed(2)}s`
   }
   return ''
 })

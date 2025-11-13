@@ -1,10 +1,12 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useInventoryStore } from './inventory'
+import { useStatStore } from './stat'
 import { itemConfigMap } from '@/gameConfig'
 
 export const useEquippedItemStore = defineStore('equippedItem', () => {
   const inventoryStore = useInventoryStore()
+  const statStore = useStatStore()
   const equippedItems = ref<Record<string, string | null>>(Object.create(null))
 
   // 获取装备槽中的装备ID
@@ -35,15 +37,15 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
     // Unequip current equipment if any
     unequipSlot(slotId)
 
-    // Apply equipment effects to PropertyManager
-    // for (const effect of item.equipment.effects) {
-    // gameConfigStore.propertyManager.addModifier(effect.property, {
-    //   sourceId: `equipment:${slotId}`,
-    //   sourceName: item.name,
-    //   type: effect.type,
-    //   value: effect.value,
-    // })
-    // }
+    // Apply equipment effects to stat store
+    if (itemConfig.equipment.effects && itemConfig.equipment.effects.length > 0) {
+      const effects = itemConfig.equipment.effects.map(effect => ({
+        statId: effect.statId,
+        type: effect.type,
+        value: effect.value,
+      }))
+      statStore.addEffectsFromSource(`equipment:${slotId}`, effects)
+    }
 
     // Set equipment to slot
     setEquippedItem(slotId, itemConfig.id)
@@ -56,8 +58,8 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
     const currentEquipment = getEquippedItem(slotId)
 
     if (currentEquipment) {
-      // Remove all modifiers from this equipment
-      // gameConfigStore.propertyManager.removeAllModifiersFromSource(`equipment:${slotId}`)
+      // Remove all equipment effects from stat store
+      statStore.removeEffectsFromSource(`equipment:${slotId}`)
 
       // Clear equipment from slot
       clearEquippedItem(slotId)

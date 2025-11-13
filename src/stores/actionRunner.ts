@@ -31,10 +31,10 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       }
     }
     // 更新进度条
-    if (actionQueueStore.actionStartDate && actionQueueStore.currentAction1) {
+    if (actionQueueStore.actionStartDate && actionQueueStore.currentActionDetail) {
       const elapsed = performance.now() - actionQueueStore.actionStartDate;
-      progress.value = Math.min(actionQueueStore.currentAction1.duration > 0
-        ? elapsed / actionQueueStore.currentAction1.duration
+      progress.value = Math.min(actionQueueStore.currentActionDetail.duration > 0
+        ? elapsed / actionQueueStore.currentActionDetail.duration
         : 0, 1) * 100
     } else {
       progress.value = 0
@@ -43,11 +43,11 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   }
 
   function updateCurrentAction(elapsed: number): number {
-    if (!actionQueueStore.actionStartDate || !actionQueueStore.currentAction1) return 0
+    if (!actionQueueStore.actionStartDate || !actionQueueStore.currentActionDetail) return 0
     if (!checkCurrentActionItem()) return elapsed
 
     const amount = actionQueueStore.currentAction.amount
-    const action = actionQueueStore.currentAction1
+    const action = actionQueueStore.currentActionDetail
     const skill = skillStore.getSkill(action.skillId)
 
     if (elapsed < action.duration) {
@@ -115,9 +115,9 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   // ============ 内部辅助函数 ============
 
   function checkCurrentActionItem(): boolean {
-    if (!actionQueueStore.currentAction || !actionQueueStore.currentAction1) return false
+    if (!actionQueueStore.currentAction || !actionQueueStore.currentActionDetail) return false
 
-    const action = actionQueueStore.currentAction1
+    const action = actionQueueStore.currentActionDetail
     const amount = actionQueueStore.currentAction.amount
 
     // 检查等级要求

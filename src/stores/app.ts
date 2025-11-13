@@ -6,7 +6,7 @@ import { useActionRunnerStore } from './actionRunner'
 export const useAppStore = defineStore('app', () => {
   const state = ref(undefined as 'loading' | 'ready' | 'error' | undefined)
 
-  async function loadApplication() {
+  async function loadApplication(): Promise<void> {
     state.value = 'loading'
     try {
       loadGameConfig()

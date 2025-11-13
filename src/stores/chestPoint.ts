@@ -10,7 +10,7 @@ export const useChestPointStore = defineStore('chestPoint', () => {
     return chestPoints.value[chestId] ?? 0
   }
 
-  function setChestPoints(chestId: string, points: number) {
+  function setChestPoints(chestId: string, points: number): void {
     chestPoints.value[chestId] = Math.max(0, points)
   }
 

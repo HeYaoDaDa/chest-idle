@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useInventoryStore } from './inventory'
 import { useStatStore } from './stat'
-import { itemConfigMap } from '@/gameConfig'
+import { itemConfigMap, slotConfigs } from '@/gameConfig'
 
 export const useEquippedItemStore = defineStore('equippedItem', () => {
   const inventoryStore = useInventoryStore()
@@ -15,17 +15,26 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
   }
 
   // 设置装备槽的装备
-  function setEquippedItem(slotId: string, equipmentId: string | null) {
+  function setEquippedItem(slotId: string, equipmentId: string | null): void {
     equippedItems.value[slotId] = equipmentId
   }
 
   // 清空装备槽
-  function clearEquippedItem(slotId: string) {
+  function clearEquippedItem(slotId: string): void {
     equippedItems.value[slotId] = null
   }
 
+  // 获取所有槽位的装备映射（用于UI展示）
+  const equippedBySlot = computed<Record<string, string | null>>(() => {
+    const map: Record<string, string | null> = {}
+    for (const slot of slotConfigs) {
+      map[slot.id] = getEquippedItem(slot.id)
+    }
+    return map
+  })
+
   // Equipment management
-  function equipItem(itemId: string) {
+  function equipItem(itemId: string): void {
     const itemConfig = itemConfigMap[itemId]
     if (itemConfig.category !== 'equipment' || !itemConfig.equipment) {
       console.error(`Item ${itemConfig.id} is not equipment`)
@@ -54,7 +63,7 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
     inventoryStore.removeItem(itemConfig.id, 1)
   }
 
-  function unequipSlot(slotId: string) {
+  function unequipSlot(slotId: string): void {
     const currentEquipment = getEquippedItem(slotId)
 
     if (currentEquipment) {
@@ -72,6 +81,7 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
 
   return {
     equippedItems,
+    equippedBySlot,
     getEquippedItem,
     setEquippedItem,
     clearEquippedItem,

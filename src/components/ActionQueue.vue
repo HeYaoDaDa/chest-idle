@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import ActionQueueModal from './modalBox/ActionQueueModal.vue'
 import { useActionQueueStore } from '@/stores/actionQueue'
-import { useActionRunnerStore } from '@/stores/actionRunner'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const showQueueModal = ref(false)
 const actionQueueStore = useActionQueueStore()
-const actionRunnerStore = useActionRunnerStore()
 
 const runningActionDisplay = computed(() =>
   actionQueueStore.currentActionDetail
@@ -23,11 +21,11 @@ const runningActionDurationDisplay = computed(() => {
   return ''
 })
 
-const hasQueuedActions = computed(() => actionQueueStore.queueingActions.length > 0)
+const hasQueuedActions = computed(() => actionQueueStore.pendingActions.length > 0)
 
 const unifiedLength = computed(() => actionQueueStore.queueLength)
 
-const progress = computed(() => actionRunnerStore.progress + '%')
+const progress = computed(() => actionQueueStore.progress + '%')
 
 function openQueueModal() {
   showQueueModal.value = true

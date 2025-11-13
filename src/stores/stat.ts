@@ -38,11 +38,11 @@ export const useStatStore = defineStore('stat', () => {
     return stats
   })
 
-  function addEffectsFromSource(sourceId: string, effects: Effect[]) {
+  function addEffectsFromSource(sourceId: string, effects: Effect[]): void {
     sourceIdEffectsMap.value[sourceId] = effects
   }
 
-  function removeEffectsFromSource(sourceId: string) {
+  function removeEffectsFromSource(sourceId: string): void {
     delete sourceIdEffectsMap.value[sourceId]
   }
 

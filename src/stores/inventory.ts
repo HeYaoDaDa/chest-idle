@@ -18,7 +18,7 @@ export const useInventoryStore = defineStore('inventory', () => {
       .sort((a, b) => a.item.sort - b.item.sort) : []
   )
 
-  function addItem(itemId: string, amount: number) {
+  function addItem(itemId: string, amount: number): void {
     const existingItem = inventoryMap.value[itemId]
     if (existingItem) {
       inventoryMap.value[itemId] += amount
@@ -27,13 +27,13 @@ export const useInventoryStore = defineStore('inventory', () => {
     }
   }
 
-  function addManyItems(items: [string, number][]) {
+  function addManyItems(items: [string, number][]): void {
     for (const [itemId, amount] of items) {
       addItem(itemId, amount)
     }
   }
 
-  function removeItem(itemId: string, amount: number) {
+  function removeItem(itemId: string, amount: number): void {
     const existingItem = inventoryMap.value[itemId]
     if (existingItem) {
       inventoryMap.value[itemId] = Math.max(0, existingItem - amount)
@@ -43,7 +43,7 @@ export const useInventoryStore = defineStore('inventory', () => {
     }
   }
 
-  function removeManyItems(items: [string, number][]) {
+  function removeManyItems(items: [string, number][]): void {
     for (const [itemId, amount] of items) {
       removeItem(itemId, amount)
     }

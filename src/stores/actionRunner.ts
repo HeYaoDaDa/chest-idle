@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
 import { useInventoryStore } from './inventory'
 import { useNotificationStore } from './notification'
 import type { Action } from './action'
@@ -14,8 +13,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   const actionQueueStore = useActionQueueStore()
   const notificationStore = useNotificationStore()
   const chestPointStore = useChestPointStore()
-
-  const progress = ref(0)
 
   // ============ 基础的游戏循环 ============
   function start(): void {
@@ -33,11 +30,11 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     // 更新进度条
     if (actionQueueStore.actionStartDate && actionQueueStore.currentActionDetail) {
       const elapsed = performance.now() - actionQueueStore.actionStartDate;
-      progress.value = Math.min(actionQueueStore.currentActionDetail.duration > 0
+      actionQueueStore.progress = Math.min(actionQueueStore.currentActionDetail.duration > 0
         ? elapsed / actionQueueStore.currentActionDetail.duration
         : 0, 1) * 100
     } else {
-      progress.value = 0
+      actionQueueStore.progress = 0
     }
     requestAnimationFrame(update)
   }
@@ -169,7 +166,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   }
 
   return {
-    progress,
     start,
   }
 })

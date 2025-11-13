@@ -11,10 +11,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     amount: number
   }[]>([])
   const actionStartDate = ref<number | null>(null)
+  const progress = ref<number>(0)
 
   // ============ 计算属性 ============
   const currentAction = computed(() => actionQueue.value[0] || null)
-  const queueingActions = computed(() => actionQueue.value.slice(1))
+  const pendingActions = computed(() => actionQueue.value.slice(1))
   const queueLength = computed(() => actionQueue.value.length)
 
   // 获取包含完整 Action 详情的队列和当前动作
@@ -127,10 +128,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     // 状态
     actionQueue,
     actionStartDate,
+    progress,
 
     // 计算属性
     currentAction,
-    queueingActions,
+    pendingActions,
     queueLength,
 
     actionQueueDetails,

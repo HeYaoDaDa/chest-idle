@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ModalBox from '@/components/ModalBox.vue'
-import { slotConfigMap } from '@/gameConfig'
+import { slotConfigMap, itemConfigMap } from '@/gameConfig'
 import { useInventoryStore } from '@/stores/inventory'
 import { useEquippedItemStore } from '@/stores/equippedItem'
 import { computed, ref, watch } from 'vue'
@@ -31,19 +31,18 @@ const inventoryItem = computed(() => {
 // Computed properties
 const equippedItemStore = useEquippedItemStore()
 
-// 判断该物品当前是否处于"已装备"状态（被任一槽位引用）
-const isEquipped = computed(() => {
-  for (const slotId in equippedItemStore.equippedItems) {
-    if (equippedItemStore.equippedItems[slotId] === props.itemId) return true
-  }
-  return false
-})
+// 判断该物品当前是否处于"已装备"状态（使用 store 的 equippedBySlot 避免遍历）
+const isEquipped = computed(() =>
+  Object.values(equippedItemStore.equippedBySlot).includes(props.itemId)
+)
+
 
 // 处于装备槽时展示卸下；处于库存时展示数量/装备/开箱等
 const isEquipmentMode = computed(() => isEquipped.value)
 const isInventoryMode = computed(() => !isEquipped.value)
 
-const item = computed(() => inventoryItem.value?.item)
+// 无论是否在库存中，都可以通过 itemId 获取配置，避免已装备物品不显示详情
+const item = computed(() => inventoryItem.value?.item ?? itemConfigMap[props.itemId])
 
 const itemName = computed(() => item.value ? t(item.value.name) : '')
 const itemDescription = computed(() => item.value ? t(item.value.description) : '')

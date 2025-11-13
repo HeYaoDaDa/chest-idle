@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import ModalBox from '@/components/ModalBox.vue'
 import { useActionQueueStore } from '@/stores/actionQueue'
-import { useActionRunnerStore } from '@/stores/actionRunner'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const actionQueueStore = useActionQueueStore()
-const actionRunnerStore = useActionRunnerStore()
 
 interface Props {
   show: boolean
@@ -27,7 +25,7 @@ const runningActionDisplay = computed(() =>
     ? `${t(actionQueueStore.currentActionDetail.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
     : `${t('nothing')}...`,
 )
-const progress = computed(() => actionRunnerStore.progress + '%')
+const progress = computed(() => actionQueueStore.progress + '%')
 
 function closeModal() {
   emit('close')
@@ -105,7 +103,7 @@ function removeQueuedAction(index: number) {
             </button>
           </li>
 
-          <li v-for="(action, index) in actionQueueStore.queueingActions" :key="index" class="queue-modal-item">
+          <li v-for="(action, index) in actionQueueStore.pendingActions" :key="index" class="queue-modal-item">
             <div class="queue-modal-item-info">
               <!-- unified index: current ? index+1 : index -->
               <span class="queue-modal-item-index">{{ (actionQueueStore.currentAction ? index + 1 : index) }}</span>

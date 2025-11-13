@@ -54,7 +54,7 @@ export const useSkillStore = defineStore('skill', () => {
   }
 
   // 添加技能经验值
-  function addSkillXp(skillId: string, xp: number) {
+  function addSkillXp(skillId: string, xp: number): void {
     const previousLevel = getLevelFromXp(getSkillXp(skillId))
     const newXp = getSkillXp(skillId) + xp
     skillXpMap.value[skillId] = newXp

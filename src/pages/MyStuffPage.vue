@@ -4,7 +4,7 @@ import ChestResultsModal from '@/components/modalBox/ChestResultsModal.vue'
 import { useInventoryStore, type InventoryItem } from '@/stores/inventory'
 import { computed, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { slotConfigs } from '@/gameConfig'
+import { slotConfigs, itemConfigMap } from '@/gameConfig'
 import { useEquippedItemStore } from '@/stores/equippedItem'
 
 const { t } = useI18n()
@@ -20,14 +20,20 @@ const selectedInventoryItem = computed(() =>
     ? playerStore.getInventoryItem(selectedItemId.value) ?? null
     : null
 )
-// 推导当前所选是否已装备以及所在槽位
-const equippedBySlot = computed<Record<string, string | null>>(() => {
-  const map: Record<string, string | null> = {}
+
+// 使用 store 提供的 equippedBySlot，避免重复计算
+const equippedBySlot = computed(() => equippedItemStore.equippedBySlot)
+
+// 为模板提供无空值的名称映射，避免索引 null 导致类型错误
+const equippedItemNameBySlot = computed<Record<string, string>>(() => {
+  const map: Record<string, string> = {}
   for (const slot of slotConfigs) {
-    map[slot.id] = equippedItemStore.getEquippedItem(slot.id) ?? null
+    const id = equippedBySlot.value[slot.id]
+    map[slot.id] = id ? itemConfigMap[id].name : slot.name
   }
   return map
 })
+
 const selectedSlotId = computed(() => {
   if (selectedContext.value !== 'equipped' || !selectedItemId.value) return null
   for (const slotId in equippedBySlot.value) {
@@ -136,7 +142,7 @@ function openSlotEquipment(slotId: string): void {
         <div v-for="slot in slotList" :key="slot.id" class="equipment-cell">
           <div v-if="equippedBySlot[slot.id]" class="equipment-item"
             @click="openSlotEquipment(slot.id)">
-            <div>{{ t(slot.name) }}</div>
+            <div>{{ t(equippedItemNameBySlot[slot.id]) }}</div>
           </div>
           <div v-else class="equipment-slot">
             <span>{{ t(slot.name) }}</span>

@@ -38,7 +38,7 @@ watchEffect(() => {
   align-items: center;
 
   #load-data-fail-text {
-    color: $error-color;
+    color: $color-error-dark;
   }
 }
 </style>

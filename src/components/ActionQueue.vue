@@ -157,7 +157,7 @@ function stopCurrentAction() {
 
 .stop-button {
   background: $error-rgba-16;
-  color: $error-color;
+  color: $color-error-dark;
 }
 
 .stop-button:hover {

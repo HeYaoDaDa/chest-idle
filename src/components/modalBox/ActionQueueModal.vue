@@ -317,7 +317,7 @@ function removeQueuedAction(index: number) {
   border: none;
   border-radius: $radius-full;
   background: $error-rgba-12;
-  color: $error-color;
+  color: $color-error-dark;
   padding: $spacing-md $spacing-2xl;
   font-size: $font-base;
   font-weight: $font-weight-semibold;
@@ -339,7 +339,7 @@ function removeQueuedAction(index: number) {
   border: none;
   border-radius: $radius-full;
   background: $error-rgba-12;
-  color: $error-color;
+  color: $color-error-dark;
   padding: $spacing-md $spacing-2xl;
   font-size: $font-base;
   font-weight: $font-weight-semibold;

@@ -218,26 +218,6 @@ const tabsWidthStyle = computed(() => ({
         overflow: hidden;
       }
     }
-
-    .tabs-content {
-      flex: 1;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .tab-panel {
-      height: 100%;
-      overflow-y: auto;
-      padding: $spacing-xs;
-    }
-
-    #abilities {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $text-quaternary;
-      font-style: italic;
-    }
   }
 }
 

@@ -1,20 +1,15 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useInventoryStore } from './inventory'
 import { itemConfigMap } from '@/gameConfig'
 
 export const useEquippedItemStore = defineStore('equippedItem', () => {
-  const playerStore = useInventoryStore()
+  const inventoryStore = useInventoryStore()
   const equippedItems = ref<Record<string, string | null>>(Object.create(null))
 
   // 获取装备槽中的装备ID
-  function getEquippedItemId(slotId: string): string | null {
-    return equippedItems.value[slotId] ?? null
-  }
-
-  // 获取装备槽中的装备对象
   function getEquippedItem(slotId: string): string | null {
-    return getEquippedItemId(slotId)
+    return equippedItems.value[slotId] ?? null
   }
 
   // 设置装备槽的装备
@@ -26,15 +21,6 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
   function clearEquippedItem(slotId: string) {
     equippedItems.value[slotId] = null
   }
-
-  // 获取所有装备槽信息
-  const equippedSlots = computed(() => {
-    const result: Record<string, string | null> = Object.create(null)
-    for (const slotId in equippedItems.value) {
-      result[slotId] = getEquippedItem(slotId)
-    }
-    return result
-  })
 
   // Equipment management
   function equipItem(itemId: string) {
@@ -63,7 +49,7 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
     setEquippedItem(slotId, itemConfig.id)
 
     // Remove from inventory
-    playerStore.removeItem(itemConfig.id, 1)
+    inventoryStore.removeItem(itemConfig.id, 1)
   }
 
   function unequipSlot(slotId: string) {
@@ -77,17 +63,16 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
       clearEquippedItem(slotId)
 
       // Add equipment back to inventory
-      playerStore.addItem(currentEquipment, 1)
+      inventoryStore.addItem(currentEquipment, 1)
     }
   }
 
 
   return {
-    getEquippedItemId,
+    equippedItems,
     getEquippedItem,
     setEquippedItem,
     clearEquippedItem,
-    equippedSlots,
     equipItem,
     unequipSlot,
   }

@@ -31,10 +31,10 @@ const inventoryItem = computed(() => {
 // Computed properties
 const equippedItemStore = useEquippedItemStore()
 
-// 判断该物品当前是否处于“已装备”状态（被任一槽位引用）
+// 判断该物品当前是否处于"已装备"状态（被任一槽位引用）
 const isEquipped = computed(() => {
-  for (const slotId in equippedItemStore.equippedSlots) {
-    if (equippedItemStore.equippedSlots[slotId] === props.itemId) return true
+  for (const slotId in equippedItemStore.equippedItems) {
+    if (equippedItemStore.equippedItems[slotId] === props.itemId) return true
   }
   return false
 })

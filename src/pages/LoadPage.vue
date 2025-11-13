@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
 import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+
 import { useAppStore } from '@/stores/app'
 
 const router = useRouter()
@@ -24,7 +25,7 @@ watchEffect(() => {
 
 <template>
   <div id="load-page-root">
-    <h1 id="load-data-fail-text" v-if="fail">{{ t('loadDataFail') }}</h1>
+    <h1 v-if="fail" id="load-data-fail-text">{{ t('loadDataFail') }}</h1>
     <h1 v-else>{{ t('loading') }}...</h1>
   </div>
 </template>

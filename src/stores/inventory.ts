@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
+
 import { itemConfigMap, type ItemConfig } from '@/gameConfig'
 
 export interface InventoryItem {
@@ -8,14 +9,15 @@ export interface InventoryItem {
 }
 
 export const useInventoryStore = defineStore('inventory', () => {
-
   const inventoryMap = ref<Record<string, number>>(Object.create(null))
 
   const inventoryItems = computed(() =>
-    inventoryMap.value ? Object.entries(inventoryMap.value)
-      .map(([itemId, count]) => ({ item: itemConfigMap[itemId], count }))
-      .filter(item => item.item !== undefined)
-      .sort((a, b) => a.item.sort - b.item.sort) : []
+    inventoryMap.value
+      ? Object.entries(inventoryMap.value)
+          .map(([itemId, count]) => ({ item: itemConfigMap[itemId], count }))
+          .filter((item) => item.item !== undefined)
+          .sort((a, b) => a.item.sort - b.item.sort)
+      : [],
   )
 
   function addItem(itemId: string, amount: number): void {
@@ -63,7 +65,10 @@ export const useInventoryStore = defineStore('inventory', () => {
   }
 
   // Chest opening
-  function openChest(inventoryItem: InventoryItem, amount: number = 1): { itemId: string; amount: number }[] {
+  function openChest(
+    inventoryItem: InventoryItem,
+    amount: number = 1,
+  ): { itemId: string; amount: number }[] {
     const item = inventoryItem.item
     if (!item.chest) {
       console.error(`Item ${item.id} is not a chest`)
@@ -83,7 +88,7 @@ export const useInventoryStore = defineStore('inventory', () => {
         addItem(itemId, lootAmount)
 
         // Track results aggregation by itemId
-        const existingResult = results.find(r => r.itemId === itemId)
+        const existingResult = results.find((r) => r.itemId === itemId)
         if (existingResult) {
           existingResult.amount += lootAmount
         } else {

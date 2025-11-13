@@ -1,6 +1,7 @@
-import { statConfigMap, type EffectType } from "@/gameConfig";
-import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { defineStore } from 'pinia'
+import { computed, ref } from 'vue'
+
+import { statConfigMap, type EffectType } from '@/gameConfig'
 
 interface Effect {
   statId: string
@@ -62,10 +63,10 @@ export const useStatStore = defineStore('stat', () => {
   }
 
   function getStat(statId: string): Stat | undefined {
-    const statConfig = statConfigMap[statId];
-    if (!statConfig) return undefined;
+    const statConfig = statConfigMap[statId]
+    if (!statConfig) return undefined
     const modifiers = getModifiersByStatId(statId)
-    const value = getStatValue(statId);
+    const value = getStatValue(statId)
     return {
       ...statConfig,
       base: statConfig.base ?? 0,
@@ -75,67 +76,71 @@ export const useStatStore = defineStore('stat', () => {
   }
 
   function getStatValue(statId: string): number {
-    const statConfig = statConfigMap[statId];
-    if (!statConfig) return 0;
+    const statConfig = statConfigMap[statId]
+    if (!statConfig) return 0
     const modifiers = getModifiersByStatId(statId)
-    let sumAdd = 0;
-    let sumPercent = 0;
-    let sumDivisor = 0;
+    let sumAdd = 0
+    let sumPercent = 0
+    let sumDivisor = 0
 
     for (const { type, value } of modifiers) {
       switch (type) {
         case 'flat':
-          sumAdd += value;
-          break;
+          sumAdd += value
+          break
         case 'percentage':
-          sumPercent += value;
-          break;
+          sumPercent += value
+          break
         case 'inversePercentage':
-          sumDivisor += value;
-          break;
+          sumDivisor += value
+          break
       }
     }
-  return ((statConfig.base ?? 0) + sumAdd) * (1 + sumPercent) / (1 + sumDivisor);
+    return (((statConfig.base ?? 0) + sumAdd) * (1 + sumPercent)) / (1 + sumDivisor)
   }
 
-  function getDerivedStatValue(derivedStatConfigs: {
-    statId: string;
-    type: EffectType
-  }[], baseValue: number = 0, ...extendModifiers: Modifier[]): number {
-    let sumAdd = 0;
-    let sumPercent = 0;
-    let sumDivisor = 0;
+  function getDerivedStatValue(
+    derivedStatConfigs: {
+      statId: string
+      type: EffectType
+    }[],
+    baseValue: number = 0,
+    ...extendModifiers: Modifier[]
+  ): number {
+    let sumAdd = 0
+    let sumPercent = 0
+    let sumDivisor = 0
 
     for (const { statId, type } of derivedStatConfigs) {
-      const statValue = getStatValue(statId);
+      const statValue = getStatValue(statId)
       switch (type) {
         case 'flat':
-          sumAdd += statValue;
-          break;
+          sumAdd += statValue
+          break
         case 'percentage':
-          sumPercent += statValue;
-          break;
+          sumPercent += statValue
+          break
         case 'inversePercentage':
-          sumDivisor += statValue;
-          break;
+          sumDivisor += statValue
+          break
       }
     }
 
     for (const { type, value } of extendModifiers) {
       switch (type) {
         case 'flat':
-          sumAdd += value;
-          break;
+          sumAdd += value
+          break
         case 'percentage':
-          sumPercent += value;
-          break;
+          sumPercent += value
+          break
         case 'inversePercentage':
-          sumDivisor += value;
-          break;
+          sumDivisor += value
+          break
       }
     }
 
-    return (baseValue + sumAdd) * (1 + sumPercent) / (1 + sumDivisor);
+    return ((baseValue + sumAdd) * (1 + sumPercent)) / (1 + sumDivisor)
   }
 
   return {

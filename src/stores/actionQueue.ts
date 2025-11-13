@@ -1,15 +1,18 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+
 import { useActionStore } from './action'
 
 export const useActionQueueStore = defineStore('actionQueue', () => {
   const actionStore = useActionStore()
 
   // ============ 核心状态 ============
-  const actionQueue = ref<{
-    actionId: string
-    amount: number
-  }[]>([])
+  const actionQueue = ref<
+    {
+      actionId: string
+      amount: number
+    }[]
+  >([])
   const actionStartDate = ref<number | null>(null)
   const progress = ref<number>(0)
 
@@ -19,9 +22,11 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const queueLength = computed(() => actionQueue.value.length)
 
   // 获取包含完整 Action 详情的队列和当前动作
-  const actionQueueDetails = computed(() => actionQueue.value.map(actionItem => {
-    return actionStore.getActionById(actionItem.actionId)
-  }))
+  const actionQueueDetails = computed(() =>
+    actionQueue.value.map((actionItem) => {
+      return actionStore.getActionById(actionItem.actionId)
+    }),
+  )
   const currentActionDetail = computed(() => {
     const actionItem = actionQueue.value[0]
     if (!actionItem) return null

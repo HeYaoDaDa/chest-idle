@@ -1,1282 +1,1282 @@
 [
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperPickaxe",
-        "sort": 2,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperAxe",
-        "sort": 3,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperForagingKnife",
-        "sort": 4,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperSmithingHammer",
-        "sort": 5,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperWoodworkingTool",
-        "sort": 6,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodworking.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperTailoringNeedle",
-        "sort": 7,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperCookingUtensil",
-        "sort": 8,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperBrewingKit",
-        "sort": 9,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperAlchemistKit",
-        "sort": 10,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "copperEnhancingTool",
-        "sort": 11,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 0.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironPickaxe",
-        "sort": 14,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironAxe",
-        "sort": 15,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironForagingKnife",
-        "sort": 16,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironSmithingHammer",
-        "sort": 17,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironWoodworkingTool",
-        "sort": 18,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodworking.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironTailoringNeedle",
-        "sort": 19,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironCookingUtensil",
-        "sort": 20,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironBrewingKit",
-        "sort": 21,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironAlchemistKit",
-        "sort": 22,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "ironEnhancingTool",
-        "sort": 23,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverPickaxe",
-        "sort": 26,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverAxe",
-        "sort": 27,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverForagingKnife",
-        "sort": 28,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverSmithingHammer",
-        "sort": 29,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverWoodworkingTool",
-        "sort": 30,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverTailoringNeedle",
-        "sort": 31,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverCookingUtensil",
-        "sort": 32,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverBrewingKit",
-        "sort": 33,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverAlchemistKit",
-        "sort": 34,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "silverEnhancingTool",
-        "sort": 35,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 1.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldPickaxe",
-        "sort": 38,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldAxe",
-        "sort": 39,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldForagingKnife",
-        "sort": 40,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldSmithingHammer",
-        "sort": 41,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldWoodworkingTool",
-        "sort": 42,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldTailoringNeedle",
-        "sort": 43,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldCookingUtensil",
-        "sort": 44,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldBrewingKit",
-        "sort": 45,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldAlchemistKit",
-        "sort": 46,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "goldEnhancingTool",
-        "sort": 47,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 2
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumPickaxe",
-        "sort": 50,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumAxe",
-        "sort": 51,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumForagingKnife",
-        "sort": 52,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumSmithingHammer",
-        "sort": 53,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumWoodworkingTool",
-        "sort": 54,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumTailoringNeedle",
-        "sort": 55,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumCookingUtensil",
-        "sort": 56,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumBrewingKit",
-        "sort": 57,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumAlchemistKit",
-        "sort": 58,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "orichalcumEnhancingTool",
-        "sort": 59,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 2.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronPickaxe",
-        "sort": 62,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronAxe",
-        "sort": 63,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronForagingKnife",
-        "sort": 64,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronSmithingHammer",
-        "sort": 65,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronWoodworkingTool",
-        "sort": 66,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronTailoringNeedle",
-        "sort": 67,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronCookingUtensil",
-        "sort": 68,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronBrewingKit",
-        "sort": 69,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronAlchemistKit",
-        "sort": 70,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "darkIronEnhancingTool",
-        "sort": 71,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilPickaxe",
-        "sort": 74,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilAxe",
-        "sort": 75,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilForagingKnife",
-        "sort": 76,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilSmithingHammer",
-        "sort": 77,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilWoodworkingTool",
-        "sort": 78,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilTailoringNeedle",
-        "sort": 79,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilCookingUtensil",
-        "sort": 80,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilBrewingKit",
-        "sort": 81,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilAlchemistKit",
-        "sort": 82,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "mithrilEnhancingTool",
-        "sort": 83,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 3.5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantinePickaxe",
-        "sort": 86,
-        "equipment": {
-            "slotId": "miningTool",
-            "effects": [
-                {
-                    "statId": "mining.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineAxe",
-        "sort": 87,
-        "equipment": {
-            "slotId": "woodcuttingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineForagingKnife",
-        "sort": 88,
-        "equipment": {
-            "slotId": "foragingTool",
-            "effects": [
-                {
-                    "statId": "foraging.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineSmithingHammer",
-        "sort": 89,
-        "equipment": {
-            "slotId": "smithingTool",
-            "effects": [
-                {
-                    "statId": "smithing.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineWoodworkingTool",
-        "sort": 90,
-        "equipment": {
-            "slotId": "woodworkingTool",
-            "effects": [
-                {
-                    "statId": "woodcutting.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineTailoringNeedle",
-        "sort": 91,
-        "equipment": {
-            "slotId": "tailoringTool",
-            "effects": [
-                {
-                    "statId": "tailoring.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineCookingUtensil",
-        "sort": 92,
-        "equipment": {
-            "slotId": "cookingTool",
-            "effects": [
-                {
-                    "statId": "cooking.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineBrewingKit",
-        "sort": 93,
-        "equipment": {
-            "slotId": "brewingTool",
-            "effects": [
-                {
-                    "statId": "brewing.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineAlchemistKit",
-        "sort": 94,
-        "equipment": {
-            "slotId": "alchemyTool",
-            "effects": [
-                {
-                    "statId": "alchemy.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "equipment",
-        "id": "adamantineEnhancingTool",
-        "sort": 95,
-        "equipment": {
-            "slotId": "enhancingTool",
-            "effects": [
-                {
-                    "statId": "enhancing.speed",
-                    "type": "flat",
-                    "value": 4
-                }
-            ]
-        }
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperPickaxe",
+    "sort": 2,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
     }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperAxe",
+    "sort": 3,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperForagingKnife",
+    "sort": 4,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperSmithingHammer",
+    "sort": 5,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperWoodworkingTool",
+    "sort": 6,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodworking.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperTailoringNeedle",
+    "sort": 7,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperCookingUtensil",
+    "sort": 8,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperBrewingKit",
+    "sort": 9,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperAlchemistKit",
+    "sort": 10,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "copperEnhancingTool",
+    "sort": 11,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironPickaxe",
+    "sort": 14,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironAxe",
+    "sort": 15,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironForagingKnife",
+    "sort": 16,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironSmithingHammer",
+    "sort": 17,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironWoodworkingTool",
+    "sort": 18,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodworking.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironTailoringNeedle",
+    "sort": 19,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironCookingUtensil",
+    "sort": 20,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironBrewingKit",
+    "sort": 21,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironAlchemistKit",
+    "sort": 22,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "ironEnhancingTool",
+    "sort": 23,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverPickaxe",
+    "sort": 26,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverAxe",
+    "sort": 27,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverForagingKnife",
+    "sort": 28,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverSmithingHammer",
+    "sort": 29,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverWoodworkingTool",
+    "sort": 30,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverTailoringNeedle",
+    "sort": 31,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverCookingUtensil",
+    "sort": 32,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverBrewingKit",
+    "sort": 33,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverAlchemistKit",
+    "sort": 34,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "silverEnhancingTool",
+    "sort": 35,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 1.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldPickaxe",
+    "sort": 38,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldAxe",
+    "sort": 39,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldForagingKnife",
+    "sort": 40,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldSmithingHammer",
+    "sort": 41,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldWoodworkingTool",
+    "sort": 42,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldTailoringNeedle",
+    "sort": 43,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldCookingUtensil",
+    "sort": 44,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldBrewingKit",
+    "sort": 45,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldAlchemistKit",
+    "sort": 46,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "goldEnhancingTool",
+    "sort": 47,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 2
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumPickaxe",
+    "sort": 50,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumAxe",
+    "sort": 51,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumForagingKnife",
+    "sort": 52,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumSmithingHammer",
+    "sort": 53,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumWoodworkingTool",
+    "sort": 54,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumTailoringNeedle",
+    "sort": 55,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumCookingUtensil",
+    "sort": 56,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumBrewingKit",
+    "sort": 57,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumAlchemistKit",
+    "sort": 58,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "orichalcumEnhancingTool",
+    "sort": 59,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronPickaxe",
+    "sort": 62,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronAxe",
+    "sort": 63,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronForagingKnife",
+    "sort": 64,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronSmithingHammer",
+    "sort": 65,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronWoodworkingTool",
+    "sort": 66,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronTailoringNeedle",
+    "sort": 67,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronCookingUtensil",
+    "sort": 68,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronBrewingKit",
+    "sort": 69,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronAlchemistKit",
+    "sort": 70,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "darkIronEnhancingTool",
+    "sort": 71,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilPickaxe",
+    "sort": 74,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilAxe",
+    "sort": 75,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilForagingKnife",
+    "sort": 76,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilSmithingHammer",
+    "sort": 77,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilWoodworkingTool",
+    "sort": 78,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilTailoringNeedle",
+    "sort": 79,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilCookingUtensil",
+    "sort": 80,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilBrewingKit",
+    "sort": 81,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilAlchemistKit",
+    "sort": 82,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "mithrilEnhancingTool",
+    "sort": 83,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 3.5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantinePickaxe",
+    "sort": 86,
+    "equipment": {
+      "slotId": "miningTool",
+      "effects": [
+        {
+          "statId": "mining.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineAxe",
+    "sort": 87,
+    "equipment": {
+      "slotId": "woodcuttingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineForagingKnife",
+    "sort": 88,
+    "equipment": {
+      "slotId": "foragingTool",
+      "effects": [
+        {
+          "statId": "foraging.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineSmithingHammer",
+    "sort": 89,
+    "equipment": {
+      "slotId": "smithingTool",
+      "effects": [
+        {
+          "statId": "smithing.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineWoodworkingTool",
+    "sort": 90,
+    "equipment": {
+      "slotId": "woodworkingTool",
+      "effects": [
+        {
+          "statId": "woodcutting.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineTailoringNeedle",
+    "sort": 91,
+    "equipment": {
+      "slotId": "tailoringTool",
+      "effects": [
+        {
+          "statId": "tailoring.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineCookingUtensil",
+    "sort": 92,
+    "equipment": {
+      "slotId": "cookingTool",
+      "effects": [
+        {
+          "statId": "cooking.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineBrewingKit",
+    "sort": 93,
+    "equipment": {
+      "slotId": "brewingTool",
+      "effects": [
+        {
+          "statId": "brewing.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineAlchemistKit",
+    "sort": 94,
+    "equipment": {
+      "slotId": "alchemyTool",
+      "effects": [
+        {
+          "statId": "alchemy.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "equipment",
+    "id": "adamantineEnhancingTool",
+    "sort": 95,
+    "equipment": {
+      "slotId": "enhancingTool",
+      "effects": [
+        {
+          "statId": "enhancing.speed",
+          "type": "flat",
+          "value": 4
+        }
+      ]
+    }
+  }
 ]

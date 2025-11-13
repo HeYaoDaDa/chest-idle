@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import ModalBox from '@/components/ModalBox.vue'
-import { useActionQueueStore } from '@/stores/actionQueue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+
+import ModalBox from '@/components/ModalBox.vue'
+import { useActionQueueStore } from '@/stores/actionQueue'
 
 const { t } = useI18n()
 const actionQueueStore = useActionQueueStore()
@@ -26,8 +27,10 @@ const progress = computed(() => actionQueueStore.progress + '%')
 // 在 Modal 中，名称已单独展示，这里只需显示数量（或 ∞）
 const runningActionAmountDisplay = computed(() =>
   actionQueueStore.currentAction
-    ? (actionQueueStore.currentAction.amount === Infinity ? '∞' : String(actionQueueStore.currentAction.amount))
-    : ''
+    ? actionQueueStore.currentAction.amount === Infinity
+      ? '∞'
+      : String(actionQueueStore.currentAction.amount)
+    : '',
 )
 
 function closeModal() {
@@ -76,7 +79,9 @@ function removeQueuedAction(index: number) {
             <div class="queue-modal-item-info">
               <span class="queue-modal-item-index">0</span>
               <div class="queue-modal-item-text">
-                <span class="queue-modal-item-name">{{ t(actionQueueStore.currentActionDetail.name) }}</span>
+                <span class="queue-modal-item-name">{{
+                  t(actionQueueStore.currentActionDetail.name)
+                }}</span>
                 <span class="queue-modal-item-amount">×{{ runningActionAmountDisplay }}</span>
               </div>
             </div>
@@ -86,18 +91,24 @@ function removeQueuedAction(index: number) {
               </div>
             </div>
             <div class="queue-modal-controls">
-              <button type="button" class="control-btn" title="Top" disabled>
-                ⏫
-              </button>
-              <button type="button" class="control-btn" title="Up" disabled>
-                ▲
-              </button>
-              <button type="button" class="control-btn" title="Down" :disabled="unifiedLength <= 1"
-                @click="moveActionDown(0)">
+              <button type="button" class="control-btn" title="Top" disabled>⏫</button>
+              <button type="button" class="control-btn" title="Up" disabled>▲</button>
+              <button
+                type="button"
+                class="control-btn"
+                title="Down"
+                :disabled="unifiedLength <= 1"
+                @click="moveActionDown(0)"
+              >
                 ▼
               </button>
-              <button type="button" class="control-btn" title="Bottom" :disabled="unifiedLength <= 1"
-                @click="moveActionToBottom(0)">
+              <button
+                type="button"
+                class="control-btn"
+                title="Bottom"
+                :disabled="unifiedLength <= 1"
+                @click="moveActionToBottom(0)"
+              >
                 ⏬
               </button>
             </div>
@@ -106,34 +117,62 @@ function removeQueuedAction(index: number) {
             </button>
           </li>
 
-          <li v-for="(action, index) in actionQueueStore.pendingActions" :key="index" class="queue-modal-item">
+          <li
+            v-for="(action, index) in actionQueueStore.pendingActions"
+            :key="index"
+            class="queue-modal-item"
+          >
             <div class="queue-modal-item-info">
               <!-- unified index: current ? index+1 : index -->
-              <span class="queue-modal-item-index">{{ (actionQueueStore.currentAction ? index + 1 : index) }}</span>
+              <span class="queue-modal-item-index">{{
+                actionQueueStore.currentAction ? index + 1 : index
+              }}</span>
               <div class="queue-modal-item-text">
                 <span class="queue-modal-item-name">{{ t(`action.${action.actionId}.name`) }}</span>
-                <span class="queue-modal-item-amount">×{{ action.amount === Infinity ? '∞' : action.amount }}</span>
+                <span class="queue-modal-item-amount"
+                  >×{{ action.amount === Infinity ? '∞' : action.amount }}</span
+                >
               </div>
             </div>
             <div class="queue-modal-controls">
-              <button type="button" class="control-btn" title="Top"
+              <button
+                type="button"
+                class="control-btn"
+                title="Top"
                 :disabled="(actionQueueStore.currentAction ? index + 1 : index) === 0"
-                @click="moveActionToTop(actionQueueStore.currentAction ? index + 1 : index)">
+                @click="moveActionToTop(actionQueueStore.currentAction ? index + 1 : index)"
+              >
                 ⏫
               </button>
-              <button type="button" class="control-btn" title="Up"
+              <button
+                type="button"
+                class="control-btn"
+                title="Up"
                 :disabled="(actionQueueStore.currentAction ? index + 1 : index) === 0"
-                @click="moveActionUp(actionQueueStore.currentAction ? index + 1 : index)">
+                @click="moveActionUp(actionQueueStore.currentAction ? index + 1 : index)"
+              >
                 ▲
               </button>
-              <button type="button" class="control-btn" title="Down"
-                :disabled="(actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1"
-                @click="moveActionDown(actionQueueStore.currentAction ? index + 1 : index)">
+              <button
+                type="button"
+                class="control-btn"
+                title="Down"
+                :disabled="
+                  (actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1
+                "
+                @click="moveActionDown(actionQueueStore.currentAction ? index + 1 : index)"
+              >
                 ▼
               </button>
-              <button type="button" class="control-btn" title="Bottom"
-                :disabled="(actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1"
-                @click="moveActionToBottom(actionQueueStore.currentAction ? index + 1 : index)">
+              <button
+                type="button"
+                class="control-btn"
+                title="Bottom"
+                :disabled="
+                  (actionQueueStore.currentAction ? index + 1 : index) >= unifiedLength - 1
+                "
+                @click="moveActionToBottom(actionQueueStore.currentAction ? index + 1 : index)"
+              >
                 ⏬
               </button>
             </div>

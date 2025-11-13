@@ -1,10 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import LoadPage from '@/pages/LoadPage.vue'
-import GamePage from '@/pages/GamePage.vue'
-import SkillPage from '@/pages/SkillPage.vue'
+
 import ChestPage from '@/pages/ChestPage.vue'
-import { useAppStore } from '@/stores/app'
+import GamePage from '@/pages/GamePage.vue'
+import LoadPage from '@/pages/LoadPage.vue'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
+import SkillPage from '@/pages/SkillPage.vue'
+import { useAppStore } from '@/stores/app'
+
 import { skillConfigs } from './gameConfig'
 
 const router = createRouter({

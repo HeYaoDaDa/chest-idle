@@ -1,11 +1,16 @@
-export type { SkillConfig, SlotConfig, StatConfig, ItemConfig, ActionConfig, GameConfig, EffectType, EffectConfig, LootEntryConfig };
+export type {
+  SkillConfig,
+  SlotConfig,
+  StatConfig,
+  ItemConfig,
+  ActionConfig,
+  GameConfig,
+  EffectType,
+  EffectConfig,
+  LootEntryConfig,
+}
 
-type GameConfig =
-  | SkillConfig
-  | SlotConfig
-  | StatConfig
-  | ItemConfig
-  | ActionConfig
+type GameConfig = SkillConfig | SlotConfig | StatConfig | ItemConfig | ActionConfig
 
 interface SkillConfig {
   type: 'skill'
@@ -69,7 +74,7 @@ interface ActionConfig {
 type EffectType = 'flat' | 'percentage' | 'inversePercentage'
 
 interface EffectConfig {
-  statId: string;
+  statId: string
   type: EffectType
   value: number
 }

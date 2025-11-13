@@ -1,7 +1,9 @@
-import { actionConfigMap } from "@/gameConfig";
-import { defineStore } from "pinia";
-import { useStatStore } from "./stat";
-import { useSkillStore } from "./skill";
+import { defineStore } from 'pinia'
+
+import { actionConfigMap } from '@/gameConfig'
+
+import { useSkillStore } from './skill'
+import { useStatStore } from './stat'
 
 export interface Action {
   id: string
@@ -34,14 +36,17 @@ export const useActionStore = defineStore('action', () => {
       ...actionConfig,
       ingredients: actionConfig.ingredients ?? [],
       products: actionConfig.products ?? [],
-      duration: statStore.getDerivedStatValue([], actionConfig.duration, { type: 'inversePercentage', value: (skillStore.getSkillLevel(actionConfig.skillId) - actionConfig.minLevel) * 0.01 }) * 0.01,
+      duration:
+        statStore.getDerivedStatValue([], actionConfig.duration, {
+          type: 'inversePercentage',
+          value: (skillStore.getSkillLevel(actionConfig.skillId) - actionConfig.minLevel) * 0.01,
+        }) * 0.01,
       xp: statStore.getDerivedStatValue([], actionConfig.xp),
       chestPoints: statStore.getDerivedStatValue([], actionConfig.chestPoints),
     }
   }
 
-
   return {
-    getActionById
+    getActionById,
   }
 })

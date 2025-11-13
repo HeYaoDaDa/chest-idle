@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import ActionQueue from '@/components/ActionQueue.vue'
-import LeftSidebar from '@/components/LeftSidebar.vue'
 import { ref, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+
+import ActionQueue from '@/components/ActionQueue.vue'
+import LeftSidebar from '@/components/LeftSidebar.vue'
+
 import MyStuffPage from './MyStuffPage.vue'
 
 const { t } = useI18n()
@@ -63,11 +65,11 @@ function stopDragTabs() {
 
 // 样式对象抽离到脚本层
 const containerStyle = computed(() => ({
-  '--tabs-width': tabsWidth.value + 'px'
+  '--tabs-width': tabsWidth.value + 'px',
 }))
 
 const tabsWidthStyle = computed(() => ({
-  width: tabsWidth.value + 'px'
+  width: tabsWidth.value + 'px',
 }))
 </script>
 
@@ -75,7 +77,11 @@ const tabsWidthStyle = computed(() => ({
   <div id="game-page-root">
     <div v-if="sidebarExpanded" class="sidebar-mask" @click="sidebarExpanded = false"></div>
 
-    <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }" :style="containerStyle">
+    <div
+      id="game-page-layout-container"
+      :class="{ 'sidebar-expanded': sidebarExpanded }"
+      :style="containerStyle"
+    >
       <div id="header">
         <div id="header-title-action">
           <div class="header-title">
@@ -88,7 +94,7 @@ const tabsWidthStyle = computed(() => ({
       <div id="content">
         <RouterView />
       </div>
-  <div id="tabs-container" ref="tabs-container" :style="tabsWidthStyle">
+      <div id="tabs-container" ref="tabs-container" :style="tabsWidthStyle">
         <div class="drag-handle drag-handle-left" @mousedown="startDragTabs">
           <div class="drag-indicator"></div>
         </div>
@@ -113,7 +119,7 @@ const tabsWidthStyle = computed(() => ({
     grid-template-rows: auto minmax(0, 1fr);
     gap: $spacing-xs;
 
-    >div {
+    > div {
       background: $bg-primary;
       backdrop-filter: blur(12px);
       border: 1px solid $border-color;
@@ -162,7 +168,7 @@ const tabsWidthStyle = computed(() => ({
       flex-direction: column;
       overflow: hidden;
 
-      >* {
+      > * {
         flex: 1;
         min-height: 0;
         overflow: auto;
@@ -253,7 +259,7 @@ const tabsWidthStyle = computed(() => ({
       flex-direction: column;
       height: 100%;
 
-      >div {
+      > div {
         padding: $spacing-xs;
       }
 
@@ -277,7 +283,7 @@ const tabsWidthStyle = computed(() => ({
         min-height: 0;
         margin-left: 56px;
 
-        >* {
+        > * {
           padding: $spacing-2xl;
         }
       }

@@ -1,954 +1,954 @@
 [
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "copperMineChest",
-        "sort": 0,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "copperOre",
-                    "chance": 1,
-                    "min": 10,
-                    "max": 50
-                },
-                {
-                    "itemId": "copperOre",
-                    "chance": 0.5,
-                    "min": 50,
-                    "max": 100
-                },
-                {
-                    "itemId": "copperIngot",
-                    "chance": 0.5,
-                    "min": 1,
-                    "max": 2
-                },
-                {
-                    "itemId": "copperPickaxe",
-                    "chance": 0.5,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "copperMineChest",
-                    "chance": 0.33,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "copperMineChest",
+    "sort": 0,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "copperOre",
+          "chance": 1,
+          "min": 10,
+          "max": 50
+        },
+        {
+          "itemId": "copperOre",
+          "chance": 0.5,
+          "min": 50,
+          "max": 100
+        },
+        {
+          "itemId": "copperIngot",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "copperPickaxe",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "copperMineChest",
+          "chance": 0.33,
+          "min": 1,
+          "max": 1
         }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "ironMineChest",
-        "sort": 1,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "ironOre",
-                    "chance": 1,
-                    "min": 10,
-                    "max": 40
-                },
-                {
-                    "itemId": "ironIngot",
-                    "chance": 0.4,
-                    "min": 1,
-                    "max": 2
-                },
-                {
-                    "itemId": "ironPickaxe",
-                    "chance": 0.25,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "silverMineChest",
-        "sort": 2,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "silverOre",
-                    "chance": 1,
-                    "min": 6,
-                    "max": 30
-                },
-                {
-                    "itemId": "silverIngot",
-                    "chance": 0.4,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "silverPickaxe",
-                    "chance": 0.2,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "goldMineChest",
-        "sort": 3,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "goldOre",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 20
-                },
-                {
-                    "itemId": "goldIngot",
-                    "chance": 0.3,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "goldPickaxe",
-                    "chance": 0.15,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "orichalcumMineChest",
-        "sort": 4,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "orichalcumOre",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 15
-                },
-                {
-                    "itemId": "orichalcumIngot",
-                    "chance": 0.25,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "orichalcumPickaxe",
-                    "chance": 0.12,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "darkIronMineChest",
-        "sort": 5,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "darkIronOre",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                },
-                {
-                    "itemId": "darkIronIngot",
-                    "chance": 0.2,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "darkIronPickaxe",
-                    "chance": 0.1,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "mithrilMineChest",
-        "sort": 6,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "mithrilOre",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                },
-                {
-                    "itemId": "mithrilIngot",
-                    "chance": 0.15,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "mithrilPickaxe",
-                    "chance": 0.08,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "adamantineMineChest",
-        "sort": 7,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "adamantineOre",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                },
-                {
-                    "itemId": "adamantineIngot",
-                    "chance": 0.1,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "adamantinePickaxe",
-                    "chance": 0.05,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "willowTreeChest",
-        "sort": 8,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "willowWood",
-                    "chance": 1,
-                    "min": 10,
-                    "max": 50
-                },
-                {
-                    "itemId": "willowWood",
-                    "chance": 0.5,
-                    "min": 50,
-                    "max": 100
-                },
-                {
-                    "itemId": "willowPlank",
-                    "chance": 0.5,
-                    "min": 1,
-                    "max": 2
-                },
-                {
-                    "itemId": "copperAxe",
-                    "chance": 0.5,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "willowTreeChest",
-                    "chance": 0.33,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "pineTreeChest",
-        "sort": 9,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "pineWood",
-                    "chance": 1,
-                    "min": 10,
-                    "max": 40
-                },
-                {
-                    "itemId": "pinePlank",
-                    "chance": 0.4,
-                    "min": 1,
-                    "max": 2
-                },
-                {
-                    "itemId": "ironAxe",
-                    "chance": 0.25,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "oakTreeChest",
-        "sort": 10,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "oakWood",
-                    "chance": 1,
-                    "min": 6,
-                    "max": 30
-                },
-                {
-                    "itemId": "oakPlank",
-                    "chance": 0.4,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "silverAxe",
-                    "chance": 0.2,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "mapleTreeChest",
-        "sort": 11,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "mapleWood",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 20
-                },
-                {
-                    "itemId": "maplePlank",
-                    "chance": 0.3,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "goldAxe",
-                    "chance": 0.15,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "elmTreeChest",
-        "sort": 12,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "elmWood",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 15
-                },
-                {
-                    "itemId": "elmPlank",
-                    "chance": 0.25,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "orichalcumAxe",
-                    "chance": 0.12,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "beechTreeChest",
-        "sort": 13,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "beechWood",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                },
-                {
-                    "itemId": "beechPlank",
-                    "chance": 0.2,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "darkIronAxe",
-                    "chance": 0.1,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "mahoganyTreeChest",
-        "sort": 14,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "mahoganyWood",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                },
-                {
-                    "itemId": "mahoganyPlank",
-                    "chance": 0.15,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "mithrilAxe",
-                    "chance": 0.08,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "ebonyTreeChest",
-        "sort": 15,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "ebonyWood",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                },
-                {
-                    "itemId": "ebonyPlank",
-                    "chance": 0.1,
-                    "min": 1,
-                    "max": 1
-                },
-                {
-                    "itemId": "adamantineAxe",
-                    "chance": 0.05,
-                    "min": 1,
-                    "max": 1
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "willowPlankChest",
-        "sort": 16,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "willowPlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "pinePlankChest",
-        "sort": 17,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "pinePlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "oakPlankChest",
-        "sort": 18,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "oakPlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "maplePlankChest",
-        "sort": 19,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "maplePlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "elmPlankChest",
-        "sort": 20,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "elmPlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "beechPlankChest",
-        "sort": 21,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "beechPlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "mahoganyPlankChest",
-        "sort": 22,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "mahoganyPlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "ebonyPlankChest",
-        "sort": 23,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "ebonyPlank",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 3
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "farmChest",
-        "sort": 1000,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "chicken",
-                    "chance": 1,
-                    "min": 5,
-                    "max": 20
-                },
-                {
-                    "itemId": "crucianCarp",
-                    "chance": 1,
-                    "min": 5,
-                    "max": 20
-                },
-                {
-                    "itemId": "cabbage",
-                    "chance": 1,
-                    "min": 5,
-                    "max": 20
-                },
-                {
-                    "itemId": "apple",
-                    "chance": 1,
-                    "min": 5,
-                    "max": 20
-                },
-                {
-                    "itemId": "licorice",
-                    "chance": 1,
-                    "min": 5,
-                    "max": 20
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "plainChest",
-        "sort": 1001,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "pork",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 16
-                },
-                {
-                    "itemId": "carp",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 16
-                },
-                {
-                    "itemId": "carrot",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 16
-                },
-                {
-                    "itemId": "grape",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 16
-                },
-                {
-                    "itemId": "cotton",
-                    "chance": 1,
-                    "min": 4,
-                    "max": 16
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "forestChest",
-        "sort": 1002,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "bear",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 12
-                },
-                {
-                    "itemId": "salmon",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 12
-                },
-                {
-                    "itemId": "potato",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 12
-                },
-                {
-                    "itemId": "berry",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 12
-                },
-                {
-                    "itemId": "artemisia",
-                    "chance": 1,
-                    "min": 3,
-                    "max": 12
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "mountainChest",
-        "sort": 1003,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "bison",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                },
-                {
-                    "itemId": "trout",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                },
-                {
-                    "itemId": "onion",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                },
-                {
-                    "itemId": "cherry",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                },
-                {
-                    "itemId": "flax",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 10
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "swampChest",
-        "sort": 1004,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "crocodile",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 8
-                },
-                {
-                    "itemId": "catfish",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 8
-                },
-                {
-                    "itemId": "sweetPotato",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 8
-                },
-                {
-                    "itemId": "banana",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 8
-                },
-                {
-                    "itemId": "ginseng",
-                    "chance": 1,
-                    "min": 2,
-                    "max": 8
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "desertChest",
-        "sort": 1005,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "camel",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                },
-                {
-                    "itemId": "tuna",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                },
-                {
-                    "itemId": "corn",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                },
-                {
-                    "itemId": "cactusFruit",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                },
-                {
-                    "itemId": "bamboo",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 6
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "grasslandChest",
-        "sort": 1006,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "venison",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 5
-                },
-                {
-                    "itemId": "grassCarp",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 5
-                },
-                {
-                    "itemId": "pepper",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 5
-                },
-                {
-                    "itemId": "peach",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 5
-                },
-                {
-                    "itemId": "reishi",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 5
-                }
-            ]
-        }
-    },
-    {
-        "type": "item",
-        "category": "chest",
-        "id": "volcanoChest",
-        "sort": 1007,
-        "chest": {
-            "maxPoints": 10000,
-            "loots": [
-                {
-                    "itemId": "turkey",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                },
-                {
-                    "itemId": "grouper",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                },
-                {
-                    "itemId": "konjac",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                },
-                {
-                    "itemId": "longan",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                },
-                {
-                    "itemId": "silkworm",
-                    "chance": 1,
-                    "min": 1,
-                    "max": 4
-                }
-            ]
-        }
+      ]
     }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "ironMineChest",
+    "sort": 1,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "ironOre",
+          "chance": 1,
+          "min": 10,
+          "max": 40
+        },
+        {
+          "itemId": "ironIngot",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ironPickaxe",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "silverMineChest",
+    "sort": 2,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "silverOre",
+          "chance": 1,
+          "min": 6,
+          "max": 30
+        },
+        {
+          "itemId": "silverIngot",
+          "chance": 0.4,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "silverPickaxe",
+          "chance": 0.2,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "goldMineChest",
+    "sort": 3,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "goldOre",
+          "chance": 1,
+          "min": 4,
+          "max": 20
+        },
+        {
+          "itemId": "goldIngot",
+          "chance": 0.3,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "goldPickaxe",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "orichalcumMineChest",
+    "sort": 4,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "orichalcumOre",
+          "chance": 1,
+          "min": 3,
+          "max": 15
+        },
+        {
+          "itemId": "orichalcumIngot",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "orichalcumPickaxe",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "darkIronMineChest",
+    "sort": 5,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "darkIronOre",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        },
+        {
+          "itemId": "darkIronIngot",
+          "chance": 0.2,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "darkIronPickaxe",
+          "chance": 0.1,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "mithrilMineChest",
+    "sort": 6,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "mithrilOre",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "itemId": "mithrilIngot",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "mithrilPickaxe",
+          "chance": 0.08,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "adamantineMineChest",
+    "sort": 7,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "adamantineOre",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "itemId": "adamantineIngot",
+          "chance": 0.1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "adamantinePickaxe",
+          "chance": 0.05,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "willowTreeChest",
+    "sort": 8,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "willowWood",
+          "chance": 1,
+          "min": 10,
+          "max": 50
+        },
+        {
+          "itemId": "willowWood",
+          "chance": 0.5,
+          "min": 50,
+          "max": 100
+        },
+        {
+          "itemId": "willowPlank",
+          "chance": 0.5,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "copperAxe",
+          "chance": 0.5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "willowTreeChest",
+          "chance": 0.33,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "pineTreeChest",
+    "sort": 9,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "pineWood",
+          "chance": 1,
+          "min": 10,
+          "max": 40
+        },
+        {
+          "itemId": "pinePlank",
+          "chance": 0.4,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "itemId": "ironAxe",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "oakTreeChest",
+    "sort": 10,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "oakWood",
+          "chance": 1,
+          "min": 6,
+          "max": 30
+        },
+        {
+          "itemId": "oakPlank",
+          "chance": 0.4,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "silverAxe",
+          "chance": 0.2,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "mapleTreeChest",
+    "sort": 11,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "mapleWood",
+          "chance": 1,
+          "min": 4,
+          "max": 20
+        },
+        {
+          "itemId": "maplePlank",
+          "chance": 0.3,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "goldAxe",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "elmTreeChest",
+    "sort": 12,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "elmWood",
+          "chance": 1,
+          "min": 3,
+          "max": 15
+        },
+        {
+          "itemId": "elmPlank",
+          "chance": 0.25,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "orichalcumAxe",
+          "chance": 0.12,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "beechTreeChest",
+    "sort": 13,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "beechWood",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        },
+        {
+          "itemId": "beechPlank",
+          "chance": 0.2,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "darkIronAxe",
+          "chance": 0.1,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "mahoganyTreeChest",
+    "sort": 14,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "mahoganyWood",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "itemId": "mahoganyPlank",
+          "chance": 0.15,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "mithrilAxe",
+          "chance": 0.08,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "ebonyTreeChest",
+    "sort": 15,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "ebonyWood",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "itemId": "ebonyPlank",
+          "chance": 0.1,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "itemId": "adamantineAxe",
+          "chance": 0.05,
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "willowPlankChest",
+    "sort": 16,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "willowPlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "pinePlankChest",
+    "sort": 17,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "pinePlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "oakPlankChest",
+    "sort": 18,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "oakPlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "maplePlankChest",
+    "sort": 19,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "maplePlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "elmPlankChest",
+    "sort": 20,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "elmPlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "beechPlankChest",
+    "sort": 21,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "beechPlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "mahoganyPlankChest",
+    "sort": 22,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "mahoganyPlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "ebonyPlankChest",
+    "sort": 23,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "ebonyPlank",
+          "chance": 1,
+          "min": 1,
+          "max": 3
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "farmChest",
+    "sort": 1000,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "chicken",
+          "chance": 1,
+          "min": 5,
+          "max": 20
+        },
+        {
+          "itemId": "crucianCarp",
+          "chance": 1,
+          "min": 5,
+          "max": 20
+        },
+        {
+          "itemId": "cabbage",
+          "chance": 1,
+          "min": 5,
+          "max": 20
+        },
+        {
+          "itemId": "apple",
+          "chance": 1,
+          "min": 5,
+          "max": 20
+        },
+        {
+          "itemId": "licorice",
+          "chance": 1,
+          "min": 5,
+          "max": 20
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "plainChest",
+    "sort": 1001,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "pork",
+          "chance": 1,
+          "min": 4,
+          "max": 16
+        },
+        {
+          "itemId": "carp",
+          "chance": 1,
+          "min": 4,
+          "max": 16
+        },
+        {
+          "itemId": "carrot",
+          "chance": 1,
+          "min": 4,
+          "max": 16
+        },
+        {
+          "itemId": "grape",
+          "chance": 1,
+          "min": 4,
+          "max": 16
+        },
+        {
+          "itemId": "cotton",
+          "chance": 1,
+          "min": 4,
+          "max": 16
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "forestChest",
+    "sort": 1002,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "bear",
+          "chance": 1,
+          "min": 3,
+          "max": 12
+        },
+        {
+          "itemId": "salmon",
+          "chance": 1,
+          "min": 3,
+          "max": 12
+        },
+        {
+          "itemId": "potato",
+          "chance": 1,
+          "min": 3,
+          "max": 12
+        },
+        {
+          "itemId": "berry",
+          "chance": 1,
+          "min": 3,
+          "max": 12
+        },
+        {
+          "itemId": "artemisia",
+          "chance": 1,
+          "min": 3,
+          "max": 12
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "mountainChest",
+    "sort": 1003,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "bison",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        },
+        {
+          "itemId": "trout",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        },
+        {
+          "itemId": "onion",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        },
+        {
+          "itemId": "cherry",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        },
+        {
+          "itemId": "flax",
+          "chance": 1,
+          "min": 2,
+          "max": 10
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "swampChest",
+    "sort": 1004,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "crocodile",
+          "chance": 1,
+          "min": 2,
+          "max": 8
+        },
+        {
+          "itemId": "catfish",
+          "chance": 1,
+          "min": 2,
+          "max": 8
+        },
+        {
+          "itemId": "sweetPotato",
+          "chance": 1,
+          "min": 2,
+          "max": 8
+        },
+        {
+          "itemId": "banana",
+          "chance": 1,
+          "min": 2,
+          "max": 8
+        },
+        {
+          "itemId": "ginseng",
+          "chance": 1,
+          "min": 2,
+          "max": 8
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "desertChest",
+    "sort": 1005,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "camel",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "itemId": "tuna",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "itemId": "corn",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "itemId": "cactusFruit",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "itemId": "bamboo",
+          "chance": 1,
+          "min": 1,
+          "max": 6
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "grasslandChest",
+    "sort": 1006,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "venison",
+          "chance": 1,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "itemId": "grassCarp",
+          "chance": 1,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "itemId": "pepper",
+          "chance": 1,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "itemId": "peach",
+          "chance": 1,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "itemId": "reishi",
+          "chance": 1,
+          "min": 1,
+          "max": 5
+        }
+      ]
+    }
+  },
+  {
+    "type": "item",
+    "category": "chest",
+    "id": "volcanoChest",
+    "sort": 1007,
+    "chest": {
+      "maxPoints": 10000,
+      "loots": [
+        {
+          "itemId": "turkey",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "itemId": "grouper",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "itemId": "konjac",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "itemId": "longan",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "itemId": "silkworm",
+          "chance": 1,
+          "min": 1,
+          "max": 4
+        }
+      ]
+    }
+  }
 ]

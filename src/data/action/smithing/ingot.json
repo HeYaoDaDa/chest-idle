@@ -1,194 +1,194 @@
 [
-    {
-        "type": "action",
-        "id": "copperIngot",
-        "skillId": "smithing",
-        "minLevel": 0,
-        "sort": 0,
-        "duration": 5000,
-        "xp": 20,
-        "chestId": "copperMineChest",
-        "chestPoints": 50,
-        "ingredients": [
-            {
-                "itemId": "copperOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "copperIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "ironIngot",
-        "skillId": "smithing",
-        "minLevel": 10,
-        "sort": 100,
-        "duration": 10000,
-        "xp": 40,
-        "chestId": "ironMineChest",
-        "chestPoints": 100,
-        "ingredients": [
-            {
-                "itemId": "ironOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "ironIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "silverIngot",
-        "skillId": "smithing",
-        "minLevel": 20,
-        "sort": 200,
-        "duration": 15000,
-        "xp": 60,
-        "chestId": "silverMineChest",
-        "chestPoints": 150,
-        "ingredients": [
-            {
-                "itemId": "silverOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "silverIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "goldIngot",
-        "skillId": "smithing",
-        "minLevel": 30,
-        "sort": 300,
-        "duration": 20000,
-        "xp": 80,
-        "chestId": "goldMineChest",
-        "chestPoints": 200,
-        "ingredients": [
-            {
-                "itemId": "goldOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "goldIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "orichalcumIngot",
-        "skillId": "smithing",
-        "minLevel": 40,
-        "sort": 400,
-        "duration": 25000,
-        "xp": 100,
-        "chestId": "orichalcumMineChest",
-        "chestPoints": 250,
-        "ingredients": [
-            {
-                "itemId": "orichalcumOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "orichalcumIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "darkIronIngot",
-        "skillId": "smithing",
-        "minLevel": 50,
-        "sort": 500,
-        "duration": 30000,
-        "xp": 120,
-        "chestId": "darkIronMineChest",
-        "chestPoints": 300,
-        "ingredients": [
-            {
-                "itemId": "darkIronOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "darkIronIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "mithrilIngot",
-        "skillId": "smithing",
-        "minLevel": 60,
-        "sort": 600,
-        "duration": 35000,
-        "xp": 140,
-        "chestId": "mithrilMineChest",
-        "chestPoints": 350,
-        "ingredients": [
-            {
-                "itemId": "mithrilOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "mithrilIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    },
-    {
-        "type": "action",
-        "id": "adamantineIngot",
-        "skillId": "smithing",
-        "minLevel": 70,
-        "sort": 700,
-        "duration": 40000,
-        "xp": 160,
-        "chestId": "adamantineMineChest",
-        "chestPoints": 400,
-        "ingredients": [
-            {
-                "itemId": "adamantineOre",
-                "count": 2
-            }
-        ],
-        "products": [
-            {
-                "itemId": "adamantineIngot",
-                "count": 1
-            }
-        ],
-        "tab": "materials"
-    }
+  {
+    "type": "action",
+    "id": "copperIngot",
+    "skillId": "smithing",
+    "minLevel": 0,
+    "sort": 0,
+    "duration": 5000,
+    "xp": 20,
+    "chestId": "copperMineChest",
+    "chestPoints": 50,
+    "ingredients": [
+      {
+        "itemId": "copperOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "copperIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "ironIngot",
+    "skillId": "smithing",
+    "minLevel": 10,
+    "sort": 100,
+    "duration": 10000,
+    "xp": 40,
+    "chestId": "ironMineChest",
+    "chestPoints": 100,
+    "ingredients": [
+      {
+        "itemId": "ironOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "ironIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "silverIngot",
+    "skillId": "smithing",
+    "minLevel": 20,
+    "sort": 200,
+    "duration": 15000,
+    "xp": 60,
+    "chestId": "silverMineChest",
+    "chestPoints": 150,
+    "ingredients": [
+      {
+        "itemId": "silverOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "silverIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "goldIngot",
+    "skillId": "smithing",
+    "minLevel": 30,
+    "sort": 300,
+    "duration": 20000,
+    "xp": 80,
+    "chestId": "goldMineChest",
+    "chestPoints": 200,
+    "ingredients": [
+      {
+        "itemId": "goldOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "goldIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "orichalcumIngot",
+    "skillId": "smithing",
+    "minLevel": 40,
+    "sort": 400,
+    "duration": 25000,
+    "xp": 100,
+    "chestId": "orichalcumMineChest",
+    "chestPoints": 250,
+    "ingredients": [
+      {
+        "itemId": "orichalcumOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "orichalcumIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "darkIronIngot",
+    "skillId": "smithing",
+    "minLevel": 50,
+    "sort": 500,
+    "duration": 30000,
+    "xp": 120,
+    "chestId": "darkIronMineChest",
+    "chestPoints": 300,
+    "ingredients": [
+      {
+        "itemId": "darkIronOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "darkIronIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "mithrilIngot",
+    "skillId": "smithing",
+    "minLevel": 60,
+    "sort": 600,
+    "duration": 35000,
+    "xp": 140,
+    "chestId": "mithrilMineChest",
+    "chestPoints": 350,
+    "ingredients": [
+      {
+        "itemId": "mithrilOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "mithrilIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  },
+  {
+    "type": "action",
+    "id": "adamantineIngot",
+    "skillId": "smithing",
+    "minLevel": 70,
+    "sort": 700,
+    "duration": 40000,
+    "xp": 160,
+    "chestId": "adamantineMineChest",
+    "chestPoints": 400,
+    "ingredients": [
+      {
+        "itemId": "adamantineOre",
+        "count": 2
+      }
+    ],
+    "products": [
+      {
+        "itemId": "adamantineIngot",
+        "count": 1
+      }
+    ],
+    "tab": "materials"
+  }
 ]

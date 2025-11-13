@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import ModalBox from '@/components/ModalBox.vue'
 import { itemConfigMap } from '@/gameConfig'
 import { useChestPointStore } from '@/stores/chestPoint'
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 
@@ -48,11 +49,11 @@ const chestRemaining = computed(() => {
 const lootWithProbability = computed(() => {
   if (!chest.value || !chest.value.chest) return []
 
-  return chest.value.chest.loots.map(lootEntry => ({
+  return chest.value.chest.loots.map((lootEntry) => ({
     itemId: lootEntry.itemId,
     minCount: lootEntry.min,
     maxCount: lootEntry.max,
-    probability: lootEntry.chance * 100 // chance 是 0-1 的值，转换为百分比
+    probability: lootEntry.chance * 100, // chance 是 0-1 的值，转换为百分比
   }))
 })
 
@@ -80,8 +81,10 @@ function closeModal() {
       <div class="chest-info-list">
         <div class="info-row">
           <span class="info-label">{{ t('ui.currentProgress') }}</span>
-          <span class="info-value">{{ formatNumber(chestPoints, 1) }} / {{ formatNumber(chest.chest?.maxPoints || 0)
-          }}</span>
+          <span class="info-value"
+            >{{ formatNumber(chestPoints, 1) }} /
+            {{ formatNumber(chest.chest?.maxPoints || 0) }}</span
+          >
         </div>
         <div class="info-row">
           <span class="info-label">{{ t('ui.progressPercentage') }}</span>
@@ -102,8 +105,13 @@ function closeModal() {
           <div v-for="(loot, index) in lootWithProbability" :key="index" class="loot-item">
             <div class="loot-item-main">
               <span class="loot-item-name">{{ t(`item.${loot.itemId}.name`) }}</span>
-              <span class="loot-item-amount">×{{ loot.minCount === loot.maxCount ? formatNumber(loot.minCount) :
-                `${formatNumber(loot.minCount)}-${formatNumber(loot.maxCount)}` }}</span>
+              <span class="loot-item-amount"
+                >×{{
+                  loot.minCount === loot.maxCount
+                    ? formatNumber(loot.minCount)
+                    : `${formatNumber(loot.minCount)}-${formatNumber(loot.maxCount)}`
+                }}</span
+              >
             </div>
             <div class="loot-item-probability">
               <span class="probability-label">{{ t('ui.dropChance') }}:</span>

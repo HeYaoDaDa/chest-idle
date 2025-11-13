@@ -88,8 +88,16 @@ $breakpoint-xl: 1280px;
 // Gradients
 $gradient-primary: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
 $gradient-primary-dark: linear-gradient(135deg, $primary-color, $primary-dark);
-$gradient-effect: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.02) 100%);
-$gradient-header: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+$gradient-effect: linear-gradient(
+  135deg,
+  rgba(37, 99, 235, 0.04) 0%,
+  rgba(59, 130, 246, 0.02) 100%
+);
+$gradient-header: linear-gradient(
+  135deg,
+  rgba(37, 99, 235, 0.08) 0%,
+  rgba(59, 130, 246, 0.05) 100%
+);
 $gradient-secondary: linear-gradient(135deg, $color-success, #059669);
 $gradient-secondary-hover: linear-gradient(135deg, #059669, #047857);
 

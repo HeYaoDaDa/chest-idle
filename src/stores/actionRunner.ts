@@ -1,11 +1,14 @@
 import { defineStore } from 'pinia'
-import { useInventoryStore } from './inventory'
-import { useNotificationStore } from './notification'
-import type { Action } from './action'
+
 import i18n from '@/i18n'
-import { useSkillStore } from './skill'
+
 import { useActionQueueStore } from './actionQueue'
 import { useChestPointStore } from './chestPoint'
+import { useInventoryStore } from './inventory'
+import { useNotificationStore } from './notification'
+import { useSkillStore } from './skill'
+
+import type { Action } from './action'
 
 export const useActionRunnerStore = defineStore('actionRunner', () => {
   const skillStore = useSkillStore()
@@ -29,10 +32,14 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     }
     // 更新进度条
     if (actionQueueStore.actionStartDate && actionQueueStore.currentActionDetail) {
-      const elapsed = performance.now() - actionQueueStore.actionStartDate;
-      actionQueueStore.progress = Math.min(actionQueueStore.currentActionDetail.duration > 0
-        ? elapsed / actionQueueStore.currentActionDetail.duration
-        : 0, 1) * 100
+      const elapsed = performance.now() - actionQueueStore.actionStartDate
+      actionQueueStore.progress =
+        Math.min(
+          actionQueueStore.currentActionDetail.duration > 0
+            ? elapsed / actionQueueStore.currentActionDetail.duration
+            : 0,
+          1,
+        ) * 100
     } else {
       actionQueueStore.progress = 0
     }
@@ -53,10 +60,7 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     } else {
       // 动作完成，计算完成次数
       let count = amount
-      count = Math.min(
-        count,
-        Math.floor(elapsed / action.duration)
-      )
+      count = Math.min(count, Math.floor(elapsed / action.duration))
       if (skill) {
         count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / action.xp))
       }
@@ -76,7 +80,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   }
 
   function executeAction(action: Action, count: number): void {
-
     // 消耗材料
     if (action.ingredients) {
       const ingredients: [string, number][] = []
@@ -121,7 +124,7 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     const currentLevel = skillStore.getSkillLevel(action.skillId)
     if (currentLevel < action.minLevel) {
       console.warn(
-        `Required level ${action.minLevel} for action ${action.id}, but current level is ${currentLevel}`
+        `Required level ${action.minLevel} for action ${action.id}, but current level is ${currentLevel}`,
       )
       const skillConfig = skillStore.getSkill(action.skillId)
       notificationStore.warning('notification.levelTooLow', {

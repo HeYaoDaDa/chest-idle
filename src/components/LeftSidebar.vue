@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useSkillStore } from '@/stores/skill';
 import { useI18n } from 'vue-i18n'
+
+import { useSkillStore } from '@/stores/skill'
 
 const { t } = useI18n()
 
@@ -36,24 +37,42 @@ function handleClose() {
           <span v-else>✕</span>
         </div>
       </a>
-      <router-link class="sidebar-control-link" :to="`/game/mystuff`" active-class="active-link" @click="handleClose">
+      <router-link
+        class="sidebar-control-link"
+        :to="`/game/mystuff`"
+        active-class="active-link"
+        @click="handleClose"
+      >
         <div class="skill-name">{{ t('ui.myStuff') }}</div>
       </router-link>
     </div>
-    <router-link class="sidebar-control-link" :to="`/game/chests`" active-class="active-link" @click="handleClose">
+    <router-link
+      class="sidebar-control-link"
+      :to="`/game/chests`"
+      active-class="active-link"
+      @click="handleClose"
+    >
       <div class="skill-name">{{ t('ui.chests') }}</div>
     </router-link>
-    <router-link v-for="skill in skillStore.skillList" :key="skill.id" :to="`/game/${skill.id}`"
-      active-class="active-link" @click="handleClose">
+    <router-link
+      v-for="skill in skillStore.skillList"
+      :key="skill.id"
+      :to="`/game/${skill.id}`"
+      active-class="active-link"
+      @click="handleClose"
+    >
       <div class="skill-name">
         <span class="name-text">{{ t(skill.name) }}</span>
         <span class="level-text">{{ t('ui.level', { level: skill.level }) }}</span>
       </div>
       <div class="skill-progress-wrapper">
         <div class="progress-bar-container">
-          <div class="progress-bar" :style="{
-            width: skill.upgradeProgress * 100 + '%',
-          }"></div>
+          <div
+            class="progress-bar"
+            :style="{
+              width: skill.upgradeProgress * 100 + '%',
+            }"
+          ></div>
         </div>
       </div>
     </router-link>
@@ -141,7 +160,9 @@ function handleClose() {
     box-shadow: 4px 0 12px $shadow-color;
     flex-direction: column;
     flex-wrap: nowrap;
-    transition: width $transition-slow, transform $transition-slow;
+    transition:
+      width $transition-slow,
+      transform $transition-slow;
     padding: $spacing-sm;
 
     .mobile-sidebar-controls {

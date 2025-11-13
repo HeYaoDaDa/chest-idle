@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import ItemModal from '@/components/modalBox/ItemModal.vue'
-import ChestResultsModal from '@/components/modalBox/ChestResultsModal.vue'
-import { useInventoryStore, type InventoryItem } from '@/stores/inventory'
 import { computed, shallowRef } from 'vue'
 import { useI18n } from 'vue-i18n'
+
+import ChestResultsModal from '@/components/modalBox/ChestResultsModal.vue'
+import ItemModal from '@/components/modalBox/ItemModal.vue'
 import { slotConfigs, itemConfigMap } from '@/gameConfig'
 import { useEquippedItemStore } from '@/stores/equippedItem'
+import { useInventoryStore, type InventoryItem } from '@/stores/inventory'
 
 const { t } = useI18n()
 const inventoryStore = useInventoryStore()
@@ -17,8 +18,8 @@ const selectedContext = shallowRef<'inventory' | 'equipped' | null>(null)
 // 通过来源推导：若来自库存则获取 InventoryItem
 const selectedInventoryItem = computed(() =>
   selectedContext.value === 'inventory' && selectedItemId.value
-    ? inventoryStore.getInventoryItem(selectedItemId.value) ?? null
-    : null
+    ? (inventoryStore.getInventoryItem(selectedItemId.value) ?? null)
+    : null,
 )
 
 // 使用 store 提供的 equippedBySlot，避免重复计算
@@ -95,7 +96,7 @@ function openChestAndClose(amount?: number): void {
   if (selectedInventoryItem.value) {
     const amountToOpen = amount ?? 1
     if (amountToOpen >= 1 && amountToOpen <= maxChestAmount.value) {
-  const results = inventoryStore.openChest(selectedInventoryItem.value, amountToOpen)
+      const results = inventoryStore.openChest(selectedInventoryItem.value, amountToOpen)
       chestOpenResults.value = results
       closeItemModal()
     }
@@ -118,20 +119,36 @@ function openSlotEquipment(slotId: string): void {
 <template>
   <div id="mystuff-page">
     <div class="tabs-header">
-      <button class="tab-button" :class="{ active: activeTab === 'inventory' }" @click="activeTab = 'inventory'">
+      <button
+        class="tab-button"
+        :class="{ active: activeTab === 'inventory' }"
+        @click="activeTab = 'inventory'"
+      >
         {{ t('ui.inventory') }}
       </button>
-      <button class="tab-button" :class="{ active: activeTab === 'equipment' }" @click="activeTab = 'equipment'">
+      <button
+        class="tab-button"
+        :class="{ active: activeTab === 'equipment' }"
+        @click="activeTab = 'equipment'"
+      >
         {{ t('ui.equipment') }}
       </button>
-      <button class="tab-button" :class="{ active: activeTab === 'abilities' }" @click="activeTab = 'abilities'">
+      <button
+        class="tab-button"
+        :class="{ active: activeTab === 'abilities' }"
+        @click="activeTab = 'abilities'"
+      >
         {{ t('ui.abilities') }}
       </button>
     </div>
     <div class="tabs-content">
       <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-        <div v-for="inventoryItem in inventoryStore.inventoryItems" :key="inventoryItem.item.id" class="inventory-item"
-          @click="openInventoryModal(inventoryItem)">
+        <div
+          v-for="inventoryItem in inventoryStore.inventoryItems"
+          :key="inventoryItem.item.id"
+          class="inventory-item"
+          @click="openInventoryModal(inventoryItem)"
+        >
           <div>{{ t(inventoryItem.item.name) }}</div>
           <div v-if="inventoryItem.count > 1" class="inventory-count">
             x{{ inventoryItem.count }}
@@ -140,8 +157,11 @@ function openSlotEquipment(slotId: string): void {
       </div>
       <div v-show="activeTab === 'equipment'" id="equipment" class="tab-panel">
         <div v-for="slot in slotList" :key="slot.id" class="equipment-cell">
-          <div v-if="equippedBySlot[slot.id]" class="equipment-item"
-            @click="openSlotEquipment(slot.id)">
+          <div
+            v-if="equippedBySlot[slot.id]"
+            class="equipment-item"
+            @click="openSlotEquipment(slot.id)"
+          >
             <div>{{ t(equippedItemNameBySlot[slot.id]) }}</div>
           </div>
           <div v-else class="equipment-slot">
@@ -156,11 +176,21 @@ function openSlotEquipment(slotId: string): void {
   </div>
 
   <!-- Unified Item Modal -->
-  <ItemModal :show="!!currentItemId" :itemId="currentItemId ?? ''" @close="closeItemModal"
-    @unequip="unequipAndClose" @equip="equipAndClose" @open-chest="openChestAndClose" />
+  <ItemModal
+    :show="!!currentItemId"
+    :item-id="currentItemId ?? ''"
+    @close="closeItemModal"
+    @unequip="unequipAndClose"
+    @equip="equipAndClose"
+    @open-chest="openChestAndClose"
+  />
 
   <!-- Chest Open Results Modal -->
-  <ChestResultsModal :show="!!chestOpenResults" :results="chestOpenResults" @close="closeChestResults" />
+  <ChestResultsModal
+    :show="!!chestOpenResults"
+    :results="chestOpenResults"
+    @close="closeChestResults"
+  />
 </template>
 
 <style lang="scss" scoped>

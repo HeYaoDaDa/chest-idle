@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { useNotificationStore } from '@/stores/notification'
 import { useI18n } from 'vue-i18n'
+
+import { useNotificationStore } from '@/stores/notification'
 
 const { t } = useI18n()
 const notificationStore = useNotificationStore()

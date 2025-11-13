@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import ChestModalBox from '@/components/modalBox/ChestModalBox.vue'
 import { chestConfigs } from '@/gameConfig'
 import { useChestPointStore } from '@/stores/chestPoint'
-import { computed, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const chestPointStore = useChestPointStore()
@@ -16,9 +17,9 @@ const chests = computed(() =>
       id: config.id,
       name: config.name,
       progress,
-      progressStyle: { width: (progress * 100) + '%' },
+      progressStyle: { width: progress * 100 + '%' },
     }
-  })
+  }),
 )
 const selectedChestId = ref<string | null>(null)
 const modalVisible = ref(false)
@@ -53,7 +54,7 @@ function closeModal() {
     </div>
   </div>
 
-  <ChestModalBox v-model="modalVisible" :chestId="selectedChestId" @close="closeModal" />
+  <ChestModalBox v-model="modalVisible" :chest-id="selectedChestId" @close="closeModal" />
 </template>
 
 <style lang="scss" scoped>

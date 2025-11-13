@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
+
+import { itemConfigMap, slotConfigs } from '@/gameConfig'
+
 import { useInventoryStore } from './inventory'
 import { useStatStore } from './stat'
-import { itemConfigMap, slotConfigs } from '@/gameConfig'
 
 export const useEquippedItemStore = defineStore('equippedItem', () => {
   const inventoryStore = useInventoryStore()
@@ -48,7 +50,7 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
 
     // Apply equipment effects to stat store
     if (itemConfig.equipment.effects && itemConfig.equipment.effects.length > 0) {
-      const effects = itemConfig.equipment.effects.map(effect => ({
+      const effects = itemConfig.equipment.effects.map((effect) => ({
         statId: effect.statId,
         type: effect.type,
         value: effect.value,
@@ -77,7 +79,6 @@ export const useEquippedItemStore = defineStore('equippedItem', () => {
       inventoryStore.addItem(currentEquipment, 1)
     }
   }
-
 
   return {
     equippedItems,

@@ -1,6 +1,7 @@
-import { itemConfigMap } from '@/gameConfig'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+
+import { itemConfigMap } from '@/gameConfig'
 
 export const useChestPointStore = defineStore('chestPoint', () => {
   const chestPoints = ref<Record<string, number>>(Object.create(null))

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
-import { actionConfigListBySkill, getSkillTabActionConfigsMapBySkillId } from '@/gameConfig'
-import { useSkillStore } from '@/stores/skill'
 import { computed, ref, shallowRef, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
+
+import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
+import { actionConfigListBySkill, getSkillTabActionConfigsMapBySkillId } from '@/gameConfig'
+import { useSkillStore } from '@/stores/skill'
 
 const { t, locale } = useI18n()
 const route = useRoute()
@@ -44,10 +45,10 @@ const displayedActions = computed(() => {
 
 // 预生成用于渲染的 tab 列表（方式 3）
 const tabEntries = computed(() =>
-  availableTabs.value.map(tab => ({
+  availableTabs.value.map((tab) => ({
     id: tab,
     label: t(`action.${tab}.name`),
-  }))
+  })),
 )
 
 const modalVisible = ref(false)
@@ -60,7 +61,7 @@ function openModal(actionId: string) {
 </script>
 
 <template>
-  <div id="skill-page-container" v-if="skill">
+  <div v-if="skill" id="skill-page-container">
     <div class="skill-header">
       <div class="skill-header-main">
         <h2 class="skill-title">{{ t(skill.name) }}</h2>
@@ -76,13 +77,16 @@ function openModal(actionId: string) {
           <span class="skill-stat-label">{{ t('ui.nextLevel') }}</span>
           <span class="skill-stat-value">{{
             skill.remainingXpForUpgrade.toLocaleString(locale)
-            }}</span>
+          }}</span>
         </div>
       </div>
       <div class="progress-bar-container">
-        <div class="progress-bar" :style="{
-          width: skill.upgradeProgress * 100 + '%',
-        }"></div>
+        <div
+          class="progress-bar"
+          :style="{
+            width: skill.upgradeProgress * 100 + '%',
+          }"
+        ></div>
       </div>
     </div>
 
@@ -100,12 +104,17 @@ function openModal(actionId: string) {
     </div>
 
     <div id="skill-area-root">
-      <div v-for="action in displayedActions" :key="action.id" class="area-item" @click="openModal(action.id)">
+      <div
+        v-for="action in displayedActions"
+        :key="action.id"
+        class="area-item"
+        @click="openModal(action.id)"
+      >
         <div>{{ t(action.name) }}</div>
       </div>
     </div>
   </div>
-  <ActionModalBox v-model="modalVisible" :actionId="selectedActionId" />
+  <ActionModalBox v-model="modalVisible" :action-id="selectedActionId" />
 </template>
 
 <style lang="scss" scoped>

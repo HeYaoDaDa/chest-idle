@@ -1,9 +1,11 @@
-import { XP_TABLE } from "@/constants";
-import { defineStore } from "pinia";
-import { computed, ref } from "vue";
-import { useNotificationStore } from "./notification";
-import { skillConfigMap, skillConfigs } from "@/gameConfig";
-import i18n from "@/i18n";
+import { defineStore } from 'pinia'
+import { computed, ref } from 'vue'
+
+import { XP_TABLE } from '@/constants'
+import { skillConfigMap, skillConfigs } from '@/gameConfig'
+import i18n from '@/i18n'
+
+import { useNotificationStore } from './notification'
 
 export interface Skill {
   id: string
@@ -82,14 +84,14 @@ export const useSkillStore = defineStore('skill', () => {
       xp: getSkillXp(skillId),
       level: getSkillLevel(skillId),
       remainingXpForUpgrade: getRemainingXpForUpgrade(skillId),
-      upgradeProgress: getUpgradeProgress(skillId)
+      upgradeProgress: getUpgradeProgress(skillId),
     }
   }
 
   // 获取所有技能列表
   const skillList = computed(() => {
     return Array.from(skillConfigs)
-      .map(config => getSkill(config.id))
+      .map((config) => getSkill(config.id))
       .filter((skill): skill is NonNullable<typeof skill> => skill !== undefined)
       .sort((a, b) => a.sort - b.sort)
   })
@@ -104,7 +106,7 @@ export const useSkillStore = defineStore('skill', () => {
     // Methods
     getSkill,
     getSkillLevel,
-    addSkillXp
+    addSkillXp,
   }
 })
 

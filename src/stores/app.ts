@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+
 import { loadGameConfig } from '@/gameConfig'
+
 import { useActionRunnerStore } from './actionRunner'
 
 export const useAppStore = defineStore('app', () => {
@@ -21,6 +23,6 @@ export const useAppStore = defineStore('app', () => {
 
   return {
     state,
-    loadApplication
+    loadApplication,
   }
 })

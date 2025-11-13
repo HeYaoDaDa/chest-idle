@@ -1,994 +1,994 @@
 [
-    {
-        "type": "action",
-        "id": "chicken",
-        "skillId": "foraging",
-        "minLevel": 0,
-        "sort": 0,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "farmChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "chicken",
-                "count": 1
-            }
-        ],
-        "tab": "farm"
-    },
-    {
-        "type": "action",
-        "id": "crucianCarp",
-        "skillId": "foraging",
-        "minLevel": 0,
-        "sort": 1,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "farmChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "crucianCarp",
-                "count": 1
-            }
-        ],
-        "tab": "farm"
-    },
-    {
-        "type": "action",
-        "id": "cabbage",
-        "skillId": "foraging",
-        "minLevel": 0,
-        "sort": 2,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "farmChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "cabbage",
-                "count": 1
-            }
-        ],
-        "tab": "farm"
-    },
-    {
-        "type": "action",
-        "id": "apple",
-        "skillId": "foraging",
-        "minLevel": 0,
-        "sort": 3,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "farmChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "apple",
-                "count": 1
-            }
-        ],
-        "tab": "farm"
-    },
-    {
-        "type": "action",
-        "id": "licorice",
-        "skillId": "foraging",
-        "minLevel": 0,
-        "sort": 4,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "farmChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "licorice",
-                "count": 1
-            }
-        ],
-        "tab": "farm"
-    },
-    {
-        "type": "action",
-        "id": "farm",
-        "skillId": "foraging",
-        "tab": "farm",
-        "minLevel": 0,
-        "sort": 9,
-        "duration": 20000,
-        "xp": 50,
-        "chestId": "farmChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "chicken",
-                "count": 1
-            },
-            {
-                "itemId": "crucianCarp",
-                "count": 1
-            },
-            {
-                "itemId": "cabbage",
-                "count": 1
-            },
-            {
-                "itemId": "apple",
-                "count": 1
-            },
-            {
-                "itemId": "licorice",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "pork",
-        "skillId": "foraging",
-        "minLevel": 10,
-        "sort": 10,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "plainChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "pork",
-                "count": 1
-            }
-        ],
-        "tab": "plain"
-    },
-    {
-        "type": "action",
-        "id": "carp",
-        "skillId": "foraging",
-        "minLevel": 10,
-        "sort": 11,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "plainChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "carp",
-                "count": 1
-            }
-        ],
-        "tab": "plain"
-    },
-    {
-        "type": "action",
-        "id": "carrot",
-        "skillId": "foraging",
-        "minLevel": 10,
-        "sort": 12,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "plainChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "carrot",
-                "count": 1
-            }
-        ],
-        "tab": "plain"
-    },
-    {
-        "type": "action",
-        "id": "grape",
-        "skillId": "foraging",
-        "minLevel": 10,
-        "sort": 13,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "plainChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "grape",
-                "count": 1
-            }
-        ],
-        "tab": "plain"
-    },
-    {
-        "type": "action",
-        "id": "cotton",
-        "skillId": "foraging",
-        "minLevel": 10,
-        "sort": 14,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "plainChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "cotton",
-                "count": 1
-            }
-        ],
-        "tab": "plain"
-    },
-    {
-        "type": "action",
-        "id": "plain",
-        "skillId": "foraging",
-        "tab": "plain",
-        "minLevel": 10,
-        "sort": 19,
-        "duration": 40000,
-        "xp": 100,
-        "chestId": "plainChest",
-        "chestPoints": 500,
-        "products": [
-            {
-                "itemId": "pork",
-                "count": 1
-            },
-            {
-                "itemId": "carp",
-                "count": 1
-            },
-            {
-                "itemId": "carrot",
-                "count": 1
-            },
-            {
-                "itemId": "grape",
-                "count": 1
-            },
-            {
-                "itemId": "cotton",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "bear",
-        "skillId": "foraging",
-        "minLevel": 20,
-        "sort": 20,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "forestChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "bear",
-                "count": 1
-            }
-        ],
-        "tab": "forest"
-    },
-    {
-        "type": "action",
-        "id": "salmon",
-        "skillId": "foraging",
-        "minLevel": 20,
-        "sort": 21,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "forestChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "salmon",
-                "count": 1
-            }
-        ],
-        "tab": "forest"
-    },
-    {
-        "type": "action",
-        "id": "potato",
-        "skillId": "foraging",
-        "minLevel": 20,
-        "sort": 22,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "forestChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "potato",
-                "count": 1
-            }
-        ],
-        "tab": "forest"
-    },
-    {
-        "type": "action",
-        "id": "berry",
-        "skillId": "foraging",
-        "minLevel": 20,
-        "sort": 23,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "forestChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "berry",
-                "count": 1
-            }
-        ],
-        "tab": "forest"
-    },
-    {
-        "type": "action",
-        "id": "artemisia",
-        "skillId": "foraging",
-        "minLevel": 20,
-        "sort": 24,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "forestChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "artemisia",
-                "count": 1
-            }
-        ],
-        "tab": "forest"
-    },
-    {
-        "type": "action",
-        "id": "forest",
-        "skillId": "foraging",
-        "tab": "forest",
-        "minLevel": 20,
-        "sort": 29,
-        "duration": 60000,
-        "xp": 150,
-        "chestId": "forestChest",
-        "chestPoints": 750,
-        "products": [
-            {
-                "itemId": "bear",
-                "count": 1
-            },
-            {
-                "itemId": "salmon",
-                "count": 1
-            },
-            {
-                "itemId": "potato",
-                "count": 1
-            },
-            {
-                "itemId": "berry",
-                "count": 1
-            },
-            {
-                "itemId": "artemisia",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "bison",
-        "skillId": "foraging",
-        "minLevel": 30,
-        "sort": 30,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "mountainChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "bison",
-                "count": 1
-            }
-        ],
-        "tab": "mountain"
-    },
-    {
-        "type": "action",
-        "id": "trout",
-        "skillId": "foraging",
-        "minLevel": 30,
-        "sort": 31,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "mountainChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "trout",
-                "count": 1
-            }
-        ],
-        "tab": "mountain"
-    },
-    {
-        "type": "action",
-        "id": "onion",
-        "skillId": "foraging",
-        "minLevel": 30,
-        "sort": 32,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "mountainChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "onion",
-                "count": 1
-            }
-        ],
-        "tab": "mountain"
-    },
-    {
-        "type": "action",
-        "id": "cherry",
-        "skillId": "foraging",
-        "minLevel": 30,
-        "sort": 33,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "mountainChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "cherry",
-                "count": 1
-            }
-        ],
-        "tab": "mountain"
-    },
-    {
-        "type": "action",
-        "id": "flax",
-        "skillId": "foraging",
-        "minLevel": 30,
-        "sort": 34,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "mountainChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "flax",
-                "count": 1
-            }
-        ],
-        "tab": "mountain"
-    },
-    {
-        "type": "action",
-        "id": "mountain",
-        "skillId": "foraging",
-        "tab": "mountain",
-        "minLevel": 30,
-        "sort": 39,
-        "duration": 80000,
-        "xp": 200,
-        "chestId": "mountainChest",
-        "chestPoints": 1000,
-        "products": [
-            {
-                "itemId": "bison",
-                "count": 1
-            },
-            {
-                "itemId": "trout",
-                "count": 1
-            },
-            {
-                "itemId": "onion",
-                "count": 1
-            },
-            {
-                "itemId": "cherry",
-                "count": 1
-            },
-            {
-                "itemId": "flax",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "crocodile",
-        "skillId": "foraging",
-        "minLevel": 40,
-        "sort": 40,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "swampChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "crocodile",
-                "count": 1
-            }
-        ],
-        "tab": "swamp"
-    },
-    {
-        "type": "action",
-        "id": "catfish",
-        "skillId": "foraging",
-        "minLevel": 40,
-        "sort": 41,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "swampChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "catfish",
-                "count": 1
-            }
-        ],
-        "tab": "swamp"
-    },
-    {
-        "type": "action",
-        "id": "sweetPotato",
-        "skillId": "foraging",
-        "minLevel": 40,
-        "sort": 42,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "swampChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "sweetPotato",
-                "count": 1
-            }
-        ],
-        "tab": "swamp"
-    },
-    {
-        "type": "action",
-        "id": "banana",
-        "skillId": "foraging",
-        "minLevel": 40,
-        "sort": 43,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "swampChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "banana",
-                "count": 1
-            }
-        ],
-        "tab": "swamp"
-    },
-    {
-        "type": "action",
-        "id": "ginseng",
-        "skillId": "foraging",
-        "minLevel": 40,
-        "sort": 44,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "swampChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "ginseng",
-                "count": 1
-            }
-        ],
-        "tab": "swamp"
-    },
-    {
-        "type": "action",
-        "id": "swamp",
-        "skillId": "foraging",
-        "tab": "swamp",
-        "minLevel": 40,
-        "sort": 49,
-        "duration": 100000,
-        "xp": 250,
-        "chestId": "swampChest",
-        "chestPoints": 1250,
-        "products": [
-            {
-                "itemId": "crocodile",
-                "count": 1
-            },
-            {
-                "itemId": "catfish",
-                "count": 1
-            },
-            {
-                "itemId": "sweetPotato",
-                "count": 1
-            },
-            {
-                "itemId": "banana",
-                "count": 1
-            },
-            {
-                "itemId": "ginseng",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "camel",
-        "skillId": "foraging",
-        "minLevel": 50,
-        "sort": 50,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "desertChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "camel",
-                "count": 1
-            }
-        ],
-        "tab": "desert"
-    },
-    {
-        "type": "action",
-        "id": "tuna",
-        "skillId": "foraging",
-        "minLevel": 50,
-        "sort": 51,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "desertChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "tuna",
-                "count": 1
-            }
-        ],
-        "tab": "desert"
-    },
-    {
-        "type": "action",
-        "id": "corn",
-        "skillId": "foraging",
-        "minLevel": 50,
-        "sort": 52,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "desertChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "corn",
-                "count": 1
-            }
-        ],
-        "tab": "desert"
-    },
-    {
-        "type": "action",
-        "id": "cactusFruit",
-        "skillId": "foraging",
-        "minLevel": 50,
-        "sort": 53,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "desertChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "cactusFruit",
-                "count": 1
-            }
-        ],
-        "tab": "desert"
-    },
-    {
-        "type": "action",
-        "id": "bamboo",
-        "skillId": "foraging",
-        "minLevel": 50,
-        "sort": 54,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "desertChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "bamboo",
-                "count": 1
-            }
-        ],
-        "tab": "desert"
-    },
-    {
-        "type": "action",
-        "id": "desert",
-        "skillId": "foraging",
-        "tab": "desert",
-        "minLevel": 50,
-        "sort": 59,
-        "duration": 120000,
-        "xp": 300,
-        "chestId": "desertChest",
-        "chestPoints": 1500,
-        "products": [
-            {
-                "itemId": "camel",
-                "count": 1
-            },
-            {
-                "itemId": "tuna",
-                "count": 1
-            },
-            {
-                "itemId": "corn",
-                "count": 1
-            },
-            {
-                "itemId": "cactusFruit",
-                "count": 1
-            },
-            {
-                "itemId": "bamboo",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "venison",
-        "skillId": "foraging",
-        "minLevel": 60,
-        "sort": 60,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "grasslandChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "venison",
-                "count": 1
-            }
-        ],
-        "tab": "grassland"
-    },
-    {
-        "type": "action",
-        "id": "grassCarp",
-        "skillId": "foraging",
-        "minLevel": 60,
-        "sort": 61,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "grasslandChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "grassCarp",
-                "count": 1
-            }
-        ],
-        "tab": "grassland"
-    },
-    {
-        "type": "action",
-        "id": "pepper",
-        "skillId": "foraging",
-        "minLevel": 60,
-        "sort": 62,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "grasslandChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "pepper",
-                "count": 1
-            }
-        ],
-        "tab": "grassland"
-    },
-    {
-        "type": "action",
-        "id": "peach",
-        "skillId": "foraging",
-        "minLevel": 60,
-        "sort": 63,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "grasslandChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "peach",
-                "count": 1
-            }
-        ],
-        "tab": "grassland"
-    },
-    {
-        "type": "action",
-        "id": "reishi",
-        "skillId": "foraging",
-        "minLevel": 60,
-        "sort": 64,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "grasslandChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "reishi",
-                "count": 1
-            }
-        ],
-        "tab": "grassland"
-    },
-    {
-        "type": "action",
-        "id": "grassland",
-        "skillId": "foraging",
-        "tab": "grassland",
-        "minLevel": 60,
-        "sort": 69,
-        "duration": 140000,
-        "xp": 350,
-        "chestId": "grasslandChest",
-        "chestPoints": 1750,
-        "products": [
-            {
-                "itemId": "venison",
-                "count": 1
-            },
-            {
-                "itemId": "grassCarp",
-                "count": 1
-            },
-            {
-                "itemId": "pepper",
-                "count": 1
-            },
-            {
-                "itemId": "peach",
-                "count": 1
-            },
-            {
-                "itemId": "reishi",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "turkey",
-        "skillId": "foraging",
-        "minLevel": 70,
-        "sort": 70,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "volcanoChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "turkey",
-                "count": 1
-            }
-        ],
-        "tab": "volcano"
-    },
-    {
-        "type": "action",
-        "id": "grouper",
-        "skillId": "foraging",
-        "minLevel": 70,
-        "sort": 71,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "volcanoChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "grouper",
-                "count": 1
-            }
-        ],
-        "tab": "volcano"
-    },
-    {
-        "type": "action",
-        "id": "konjac",
-        "skillId": "foraging",
-        "minLevel": 70,
-        "sort": 72,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "volcanoChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "konjac",
-                "count": 1
-            }
-        ],
-        "tab": "volcano"
-    },
-    {
-        "type": "action",
-        "id": "longan",
-        "skillId": "foraging",
-        "minLevel": 70,
-        "sort": 73,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "volcanoChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "longan",
-                "count": 1
-            }
-        ],
-        "tab": "volcano"
-    },
-    {
-        "type": "action",
-        "id": "silkworm",
-        "skillId": "foraging",
-        "minLevel": 70,
-        "sort": 74,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "volcanoChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "silkworm",
-                "count": 1
-            }
-        ],
-        "tab": "volcano"
-    },
-    {
-        "type": "action",
-        "id": "volcano",
-        "skillId": "foraging",
-        "tab": "volcano",
-        "minLevel": 70,
-        "sort": 79,
-        "duration": 160000,
-        "xp": 400,
-        "chestId": "volcanoChest",
-        "chestPoints": 2000,
-        "products": [
-            {
-                "itemId": "turkey",
-                "count": 1
-            },
-            {
-                "itemId": "grouper",
-                "count": 1
-            },
-            {
-                "itemId": "konjac",
-                "count": 1
-            },
-            {
-                "itemId": "longan",
-                "count": 1
-            },
-            {
-                "itemId": "silkworm",
-                "count": 1
-            }
-        ]
-    }
+  {
+    "type": "action",
+    "id": "chicken",
+    "skillId": "foraging",
+    "minLevel": 0,
+    "sort": 0,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "farmChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "chicken",
+        "count": 1
+      }
+    ],
+    "tab": "farm"
+  },
+  {
+    "type": "action",
+    "id": "crucianCarp",
+    "skillId": "foraging",
+    "minLevel": 0,
+    "sort": 1,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "farmChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "crucianCarp",
+        "count": 1
+      }
+    ],
+    "tab": "farm"
+  },
+  {
+    "type": "action",
+    "id": "cabbage",
+    "skillId": "foraging",
+    "minLevel": 0,
+    "sort": 2,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "farmChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "cabbage",
+        "count": 1
+      }
+    ],
+    "tab": "farm"
+  },
+  {
+    "type": "action",
+    "id": "apple",
+    "skillId": "foraging",
+    "minLevel": 0,
+    "sort": 3,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "farmChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "apple",
+        "count": 1
+      }
+    ],
+    "tab": "farm"
+  },
+  {
+    "type": "action",
+    "id": "licorice",
+    "skillId": "foraging",
+    "minLevel": 0,
+    "sort": 4,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "farmChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "licorice",
+        "count": 1
+      }
+    ],
+    "tab": "farm"
+  },
+  {
+    "type": "action",
+    "id": "farm",
+    "skillId": "foraging",
+    "tab": "farm",
+    "minLevel": 0,
+    "sort": 9,
+    "duration": 20000,
+    "xp": 50,
+    "chestId": "farmChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "chicken",
+        "count": 1
+      },
+      {
+        "itemId": "crucianCarp",
+        "count": 1
+      },
+      {
+        "itemId": "cabbage",
+        "count": 1
+      },
+      {
+        "itemId": "apple",
+        "count": 1
+      },
+      {
+        "itemId": "licorice",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "pork",
+    "skillId": "foraging",
+    "minLevel": 10,
+    "sort": 10,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "plainChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "pork",
+        "count": 1
+      }
+    ],
+    "tab": "plain"
+  },
+  {
+    "type": "action",
+    "id": "carp",
+    "skillId": "foraging",
+    "minLevel": 10,
+    "sort": 11,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "plainChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "carp",
+        "count": 1
+      }
+    ],
+    "tab": "plain"
+  },
+  {
+    "type": "action",
+    "id": "carrot",
+    "skillId": "foraging",
+    "minLevel": 10,
+    "sort": 12,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "plainChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "carrot",
+        "count": 1
+      }
+    ],
+    "tab": "plain"
+  },
+  {
+    "type": "action",
+    "id": "grape",
+    "skillId": "foraging",
+    "minLevel": 10,
+    "sort": 13,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "plainChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "grape",
+        "count": 1
+      }
+    ],
+    "tab": "plain"
+  },
+  {
+    "type": "action",
+    "id": "cotton",
+    "skillId": "foraging",
+    "minLevel": 10,
+    "sort": 14,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "plainChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "cotton",
+        "count": 1
+      }
+    ],
+    "tab": "plain"
+  },
+  {
+    "type": "action",
+    "id": "plain",
+    "skillId": "foraging",
+    "tab": "plain",
+    "minLevel": 10,
+    "sort": 19,
+    "duration": 40000,
+    "xp": 100,
+    "chestId": "plainChest",
+    "chestPoints": 500,
+    "products": [
+      {
+        "itemId": "pork",
+        "count": 1
+      },
+      {
+        "itemId": "carp",
+        "count": 1
+      },
+      {
+        "itemId": "carrot",
+        "count": 1
+      },
+      {
+        "itemId": "grape",
+        "count": 1
+      },
+      {
+        "itemId": "cotton",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "bear",
+    "skillId": "foraging",
+    "minLevel": 20,
+    "sort": 20,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "forestChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "bear",
+        "count": 1
+      }
+    ],
+    "tab": "forest"
+  },
+  {
+    "type": "action",
+    "id": "salmon",
+    "skillId": "foraging",
+    "minLevel": 20,
+    "sort": 21,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "forestChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "salmon",
+        "count": 1
+      }
+    ],
+    "tab": "forest"
+  },
+  {
+    "type": "action",
+    "id": "potato",
+    "skillId": "foraging",
+    "minLevel": 20,
+    "sort": 22,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "forestChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "potato",
+        "count": 1
+      }
+    ],
+    "tab": "forest"
+  },
+  {
+    "type": "action",
+    "id": "berry",
+    "skillId": "foraging",
+    "minLevel": 20,
+    "sort": 23,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "forestChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "berry",
+        "count": 1
+      }
+    ],
+    "tab": "forest"
+  },
+  {
+    "type": "action",
+    "id": "artemisia",
+    "skillId": "foraging",
+    "minLevel": 20,
+    "sort": 24,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "forestChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "artemisia",
+        "count": 1
+      }
+    ],
+    "tab": "forest"
+  },
+  {
+    "type": "action",
+    "id": "forest",
+    "skillId": "foraging",
+    "tab": "forest",
+    "minLevel": 20,
+    "sort": 29,
+    "duration": 60000,
+    "xp": 150,
+    "chestId": "forestChest",
+    "chestPoints": 750,
+    "products": [
+      {
+        "itemId": "bear",
+        "count": 1
+      },
+      {
+        "itemId": "salmon",
+        "count": 1
+      },
+      {
+        "itemId": "potato",
+        "count": 1
+      },
+      {
+        "itemId": "berry",
+        "count": 1
+      },
+      {
+        "itemId": "artemisia",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "bison",
+    "skillId": "foraging",
+    "minLevel": 30,
+    "sort": 30,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "mountainChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "bison",
+        "count": 1
+      }
+    ],
+    "tab": "mountain"
+  },
+  {
+    "type": "action",
+    "id": "trout",
+    "skillId": "foraging",
+    "minLevel": 30,
+    "sort": 31,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "mountainChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "trout",
+        "count": 1
+      }
+    ],
+    "tab": "mountain"
+  },
+  {
+    "type": "action",
+    "id": "onion",
+    "skillId": "foraging",
+    "minLevel": 30,
+    "sort": 32,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "mountainChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "onion",
+        "count": 1
+      }
+    ],
+    "tab": "mountain"
+  },
+  {
+    "type": "action",
+    "id": "cherry",
+    "skillId": "foraging",
+    "minLevel": 30,
+    "sort": 33,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "mountainChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "cherry",
+        "count": 1
+      }
+    ],
+    "tab": "mountain"
+  },
+  {
+    "type": "action",
+    "id": "flax",
+    "skillId": "foraging",
+    "minLevel": 30,
+    "sort": 34,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "mountainChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "flax",
+        "count": 1
+      }
+    ],
+    "tab": "mountain"
+  },
+  {
+    "type": "action",
+    "id": "mountain",
+    "skillId": "foraging",
+    "tab": "mountain",
+    "minLevel": 30,
+    "sort": 39,
+    "duration": 80000,
+    "xp": 200,
+    "chestId": "mountainChest",
+    "chestPoints": 1000,
+    "products": [
+      {
+        "itemId": "bison",
+        "count": 1
+      },
+      {
+        "itemId": "trout",
+        "count": 1
+      },
+      {
+        "itemId": "onion",
+        "count": 1
+      },
+      {
+        "itemId": "cherry",
+        "count": 1
+      },
+      {
+        "itemId": "flax",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "crocodile",
+    "skillId": "foraging",
+    "minLevel": 40,
+    "sort": 40,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "swampChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "crocodile",
+        "count": 1
+      }
+    ],
+    "tab": "swamp"
+  },
+  {
+    "type": "action",
+    "id": "catfish",
+    "skillId": "foraging",
+    "minLevel": 40,
+    "sort": 41,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "swampChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "catfish",
+        "count": 1
+      }
+    ],
+    "tab": "swamp"
+  },
+  {
+    "type": "action",
+    "id": "sweetPotato",
+    "skillId": "foraging",
+    "minLevel": 40,
+    "sort": 42,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "swampChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "sweetPotato",
+        "count": 1
+      }
+    ],
+    "tab": "swamp"
+  },
+  {
+    "type": "action",
+    "id": "banana",
+    "skillId": "foraging",
+    "minLevel": 40,
+    "sort": 43,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "swampChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "banana",
+        "count": 1
+      }
+    ],
+    "tab": "swamp"
+  },
+  {
+    "type": "action",
+    "id": "ginseng",
+    "skillId": "foraging",
+    "minLevel": 40,
+    "sort": 44,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "swampChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "ginseng",
+        "count": 1
+      }
+    ],
+    "tab": "swamp"
+  },
+  {
+    "type": "action",
+    "id": "swamp",
+    "skillId": "foraging",
+    "tab": "swamp",
+    "minLevel": 40,
+    "sort": 49,
+    "duration": 100000,
+    "xp": 250,
+    "chestId": "swampChest",
+    "chestPoints": 1250,
+    "products": [
+      {
+        "itemId": "crocodile",
+        "count": 1
+      },
+      {
+        "itemId": "catfish",
+        "count": 1
+      },
+      {
+        "itemId": "sweetPotato",
+        "count": 1
+      },
+      {
+        "itemId": "banana",
+        "count": 1
+      },
+      {
+        "itemId": "ginseng",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "camel",
+    "skillId": "foraging",
+    "minLevel": 50,
+    "sort": 50,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "desertChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "camel",
+        "count": 1
+      }
+    ],
+    "tab": "desert"
+  },
+  {
+    "type": "action",
+    "id": "tuna",
+    "skillId": "foraging",
+    "minLevel": 50,
+    "sort": 51,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "desertChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "tuna",
+        "count": 1
+      }
+    ],
+    "tab": "desert"
+  },
+  {
+    "type": "action",
+    "id": "corn",
+    "skillId": "foraging",
+    "minLevel": 50,
+    "sort": 52,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "desertChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "corn",
+        "count": 1
+      }
+    ],
+    "tab": "desert"
+  },
+  {
+    "type": "action",
+    "id": "cactusFruit",
+    "skillId": "foraging",
+    "minLevel": 50,
+    "sort": 53,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "desertChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "cactusFruit",
+        "count": 1
+      }
+    ],
+    "tab": "desert"
+  },
+  {
+    "type": "action",
+    "id": "bamboo",
+    "skillId": "foraging",
+    "minLevel": 50,
+    "sort": 54,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "desertChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "bamboo",
+        "count": 1
+      }
+    ],
+    "tab": "desert"
+  },
+  {
+    "type": "action",
+    "id": "desert",
+    "skillId": "foraging",
+    "tab": "desert",
+    "minLevel": 50,
+    "sort": 59,
+    "duration": 120000,
+    "xp": 300,
+    "chestId": "desertChest",
+    "chestPoints": 1500,
+    "products": [
+      {
+        "itemId": "camel",
+        "count": 1
+      },
+      {
+        "itemId": "tuna",
+        "count": 1
+      },
+      {
+        "itemId": "corn",
+        "count": 1
+      },
+      {
+        "itemId": "cactusFruit",
+        "count": 1
+      },
+      {
+        "itemId": "bamboo",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "venison",
+    "skillId": "foraging",
+    "minLevel": 60,
+    "sort": 60,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "grasslandChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "venison",
+        "count": 1
+      }
+    ],
+    "tab": "grassland"
+  },
+  {
+    "type": "action",
+    "id": "grassCarp",
+    "skillId": "foraging",
+    "minLevel": 60,
+    "sort": 61,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "grasslandChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "grassCarp",
+        "count": 1
+      }
+    ],
+    "tab": "grassland"
+  },
+  {
+    "type": "action",
+    "id": "pepper",
+    "skillId": "foraging",
+    "minLevel": 60,
+    "sort": 62,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "grasslandChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "pepper",
+        "count": 1
+      }
+    ],
+    "tab": "grassland"
+  },
+  {
+    "type": "action",
+    "id": "peach",
+    "skillId": "foraging",
+    "minLevel": 60,
+    "sort": 63,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "grasslandChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "peach",
+        "count": 1
+      }
+    ],
+    "tab": "grassland"
+  },
+  {
+    "type": "action",
+    "id": "reishi",
+    "skillId": "foraging",
+    "minLevel": 60,
+    "sort": 64,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "grasslandChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "reishi",
+        "count": 1
+      }
+    ],
+    "tab": "grassland"
+  },
+  {
+    "type": "action",
+    "id": "grassland",
+    "skillId": "foraging",
+    "tab": "grassland",
+    "minLevel": 60,
+    "sort": 69,
+    "duration": 140000,
+    "xp": 350,
+    "chestId": "grasslandChest",
+    "chestPoints": 1750,
+    "products": [
+      {
+        "itemId": "venison",
+        "count": 1
+      },
+      {
+        "itemId": "grassCarp",
+        "count": 1
+      },
+      {
+        "itemId": "pepper",
+        "count": 1
+      },
+      {
+        "itemId": "peach",
+        "count": 1
+      },
+      {
+        "itemId": "reishi",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "turkey",
+    "skillId": "foraging",
+    "minLevel": 70,
+    "sort": 70,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "volcanoChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "turkey",
+        "count": 1
+      }
+    ],
+    "tab": "volcano"
+  },
+  {
+    "type": "action",
+    "id": "grouper",
+    "skillId": "foraging",
+    "minLevel": 70,
+    "sort": 71,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "volcanoChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "grouper",
+        "count": 1
+      }
+    ],
+    "tab": "volcano"
+  },
+  {
+    "type": "action",
+    "id": "konjac",
+    "skillId": "foraging",
+    "minLevel": 70,
+    "sort": 72,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "volcanoChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "konjac",
+        "count": 1
+      }
+    ],
+    "tab": "volcano"
+  },
+  {
+    "type": "action",
+    "id": "longan",
+    "skillId": "foraging",
+    "minLevel": 70,
+    "sort": 73,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "volcanoChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "longan",
+        "count": 1
+      }
+    ],
+    "tab": "volcano"
+  },
+  {
+    "type": "action",
+    "id": "silkworm",
+    "skillId": "foraging",
+    "minLevel": 70,
+    "sort": 74,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "volcanoChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "silkworm",
+        "count": 1
+      }
+    ],
+    "tab": "volcano"
+  },
+  {
+    "type": "action",
+    "id": "volcano",
+    "skillId": "foraging",
+    "tab": "volcano",
+    "minLevel": 70,
+    "sort": 79,
+    "duration": 160000,
+    "xp": 400,
+    "chestId": "volcanoChest",
+    "chestPoints": 2000,
+    "products": [
+      {
+        "itemId": "turkey",
+        "count": 1
+      },
+      {
+        "itemId": "grouper",
+        "count": 1
+      },
+      {
+        "itemId": "konjac",
+        "count": 1
+      },
+      {
+        "itemId": "longan",
+        "count": 1
+      },
+      {
+        "itemId": "silkworm",
+        "count": 1
+      }
+    ]
+  }
 ]

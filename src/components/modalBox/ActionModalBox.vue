@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed, ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import ModalBox from '@/components/ModalBox.vue'
 import { INFINITE_STRING } from '@/constants'
 import { itemConfigMap } from '@/gameConfig'
@@ -7,8 +10,6 @@ import { useActionQueueStore } from '@/stores/actionQueue'
 import { useInventoryStore } from '@/stores/inventory'
 import { useSkillStore } from '@/stores/skill'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
-import { computed, ref, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 
@@ -28,7 +29,6 @@ const action = computed(() => {
   if (!props.actionId) return null
   return actionStore.getActionById(props.actionId)
 })
-
 
 // Emits
 const emit = defineEmits<{
@@ -77,12 +77,14 @@ const canStartAction = computed(() => {
 
   // 检查等级要求
   if (skill.value && skill.value.level < action.value.minLevel) {
-    reasons.push(t('notification.levelTooLow', {
-      skill: t(skill.value.name),
-      level: skill.value.level,
-      required: action.value.minLevel,
-      action: t(action.value.name),
-    }))
+    reasons.push(
+      t('notification.levelTooLow', {
+        skill: t(skill.value.name),
+        level: skill.value.level,
+        required: action.value.minLevel,
+        action: t(action.value.name),
+      }),
+    )
   }
 
   // 检查材料是否足够
@@ -91,18 +93,20 @@ const canStartAction = computed(() => {
       const available = inventoryStore.inventoryMap[ingredient.itemId] ?? 0
       const itemConfig = itemConfigMap[ingredient.itemId]
       if (available < ingredient.count) {
-        reasons.push(t('ui.insufficientMaterial', {
-          item: t(itemConfig.name),
-          required: ingredient.count,
-          available: available
-        }))
+        reasons.push(
+          t('ui.insufficientMaterial', {
+            item: t(itemConfig.name),
+            required: ingredient.count,
+            available: available,
+          }),
+        )
       }
     }
   }
 
   return {
     canStart: reasons.length === 0,
-    reasons
+    reasons,
   }
 })
 
@@ -135,11 +139,14 @@ function handleAmountFocus(event: FocusEvent) {
 }
 
 // 当模态框关闭时重置 amountString
-watch(() => props.modelValue, (newValue) => {
-  if (!newValue) {
-    amountString.value = INFINITE_STRING
-  }
-})
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    if (!newValue) {
+      amountString.value = INFINITE_STRING
+    }
+  },
+)
 </script>
 
 <template>
@@ -161,7 +168,9 @@ watch(() => props.modelValue, (newValue) => {
         </div>
         <div class="info-row">
           <span class="info-label">{{ t('duration') }}</span>
-          <span class="info-value">{{ t('ui.seconds', { value: formatNumber(durationSeconds, 1) }) }}</span>
+          <span class="info-value">{{
+            t('ui.seconds', { value: formatNumber(durationSeconds, 1) })
+          }}</span>
         </div>
         <div class="info-row">
           <span class="info-label">{{ t('ui.xpPerCycle') }}</span>
@@ -181,8 +190,11 @@ watch(() => props.modelValue, (newValue) => {
           <span class="info-value">
             <template v-if="hasIngredients">
               <template v-for="(ingredient, idx) in action.ingredients" :key="ingredient.itemId">
-                <span>{{ t(itemConfigMap[ingredient.itemId].name) }} ×{{ formatNumber(ingredient.count) }}</span><span
-                  v-if="idx < action.ingredients.length - 1">，</span>
+                <span
+                  >{{ t(itemConfigMap[ingredient.itemId].name) }} ×{{
+                    formatNumber(ingredient.count)
+                  }}</span
+                ><span v-if="idx < action.ingredients.length - 1">，</span>
               </template>
             </template>
             <template v-else>
@@ -196,8 +208,11 @@ watch(() => props.modelValue, (newValue) => {
           <span class="info-value">
             <template v-if="hasProducts">
               <template v-for="(product, idx) in action.products" :key="product.itemId">
-                <span>{{ t(itemConfigMap[product.itemId].name) }} ×{{ formatNumber(product.count) }}</span><span
-                  v-if="idx < action.products.length - 1">，</span>
+                <span
+                  >{{ t(itemConfigMap[product.itemId].name) }} ×{{
+                    formatNumber(product.count)
+                  }}</span
+                ><span v-if="idx < action.products.length - 1">，</span>
               </template>
             </template>
             <template v-else>
@@ -211,20 +226,33 @@ watch(() => props.modelValue, (newValue) => {
         <label class="zone-amount">
           <span class="zone-amount-label">{{ t('ui.amount') }}</span>
           <div class="zone-amount-input">
-            <input type="text" v-model="amountString" @focus="handleAmountFocus" />
-            <button type="button" class="zone-amount-infinity" :title="t('ui.unlimited')"
-              @click="amountString = INFINITE_STRING">
+            <input v-model="amountString" type="text" @focus="handleAmountFocus" />
+            <button
+              type="button"
+              class="zone-amount-infinity"
+              :title="t('ui.unlimited')"
+              @click="amountString = INFINITE_STRING"
+            >
               {{ INFINITE_STRING }}
             </button>
           </div>
         </label>
         <div class="zone-action-buttons">
-          <button v-if="hasCurrentAction" type="button" class="zone-button secondary" @click="addAction"
-            :disabled="!allowAmount || !canStartAction.canStart">
+          <button
+            v-if="hasCurrentAction"
+            type="button"
+            class="zone-button secondary"
+            :disabled="!allowAmount || !canStartAction.canStart"
+            @click="addAction"
+          >
             {{ t('ui.addToQueue', { position: queuePosition }) }}
           </button>
-          <button type="button" class="zone-button primary" @click="hasCurrentAction ? startImmediately() : addAction()"
-            :disabled="!allowAmount || !canStartAction.canStart">
+          <button
+            type="button"
+            class="zone-button primary"
+            :disabled="!allowAmount || !canStartAction.canStart"
+            @click="hasCurrentAction ? startImmediately() : addAction()"
+          >
             {{ hasCurrentAction ? t('ui.startImmediately') : t('start') }}
           </button>
         </div>

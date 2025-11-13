@@ -64,7 +64,9 @@ export default {
     mining: { name: 'Mining', description: 'Mining.' },
     woodcutting: { name: 'Woodcutting', description: 'Woodcutting.' },
     foraging: {
-      name: 'Foraging', description: 'Foraging.', tab: {
+      name: 'Foraging',
+      description: 'Foraging.',
+      tab: {
         farm: 'Farm',
         plain: 'Plain',
         forest: 'Forest',
@@ -73,7 +75,7 @@ export default {
         desert: 'Desert',
         grassland: 'Grassland',
         volcano: 'Volcano',
-      }
+      },
     },
     smithing: { name: 'Smithing', description: 'Smithing.' },
     woodworking: { name: 'Woodworking', description: 'Woodworking.' },
@@ -236,7 +238,10 @@ export default {
     },
     silverAxe: { name: 'Silver Axe', description: 'Silver Axe.' },
     silverForagingKnife: { name: 'Silver Foraging Knife', description: 'Silver Foraging Knife.' },
-    silverWoodworkingTool: { name: 'Silver Woodworking Tool', description: 'Silver Woodworking Tool.' },
+    silverWoodworkingTool: {
+      name: 'Silver Woodworking Tool',
+      description: 'Silver Woodworking Tool.',
+    },
     silverTailoringNeedle: {
       name: 'Silver Tailoring Needle',
       description: 'Silver Tailoring Needle.',
@@ -345,7 +350,10 @@ export default {
       name: 'Mithril Foraging Knife',
       description: 'Mithril Foraging Knife.',
     },
-    mithrilWoodworkingTool: { name: 'Mithril Woodworking Tool', description: 'Mithril Woodworking Tool.' },
+    mithrilWoodworkingTool: {
+      name: 'Mithril Woodworking Tool',
+      description: 'Mithril Woodworking Tool.',
+    },
     mithrilTailoringNeedle: {
       name: 'Mithril Tailoring Needle',
       description: 'Mithril Tailoring Needle.',

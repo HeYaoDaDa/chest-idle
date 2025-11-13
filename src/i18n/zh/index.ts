@@ -64,16 +64,18 @@ export default {
     mining: { name: '采矿', description: '采矿。' },
     woodcutting: { name: '伐木', description: '伐木。' },
     foraging: {
-      name: '采摘', description: '采摘。', tab: {
-        'farm': '农场',
-        'plain': '平原',
-        'forest': '森林',
-        'mountain': '山地',
-        'swamp': '沼泽',
-        'desert': '沙漠',
-        'grassland': '草原',
-        'volcano': '火山',
-      }
+      name: '采摘',
+      description: '采摘。',
+      tab: {
+        farm: '农场',
+        plain: '平原',
+        forest: '森林',
+        mountain: '山地',
+        swamp: '沼泽',
+        desert: '沙漠',
+        grassland: '草原',
+        volcano: '火山',
+      },
     },
     smithing: { name: '锻造', description: '锻造。' },
     woodworking: { name: '木工', description: '木工。' },

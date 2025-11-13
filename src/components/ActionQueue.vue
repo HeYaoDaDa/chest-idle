@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import ActionQueueModal from './modalBox/ActionQueueModal.vue'
-import { useActionQueueStore } from '@/stores/actionQueue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+
+import { useActionQueueStore } from '@/stores/actionQueue'
+
+import ActionQueueModal from './modalBox/ActionQueueModal.vue'
 
 const { t } = useI18n()
 const showQueueModal = ref(false)
@@ -50,11 +52,20 @@ function stopCurrentAction() {
         <span class="action-value">{{ runningActionDisplay }}</span>
       </div>
       <div class="action-buttons">
-        <button v-if="actionQueueStore.currentAction" class="action-button stop-button" type="button"
-          @click="stopCurrentAction">
+        <button
+          v-if="actionQueueStore.currentAction"
+          class="action-button stop-button"
+          type="button"
+          @click="stopCurrentAction"
+        >
           {{ t('stop') }}
         </button>
-        <button v-if="hasQueuedActions" class="action-button queue-button" type="button" @click="openQueueModal">
+        <button
+          v-if="hasQueuedActions"
+          class="action-button queue-button"
+          type="button"
+          @click="openQueueModal"
+        >
           {{ t('ui.queue') }} ({{ unifiedLength }})
         </button>
       </div>
@@ -64,9 +75,9 @@ function stopCurrentAction() {
       <div class="progress-bar-container progress-track">
         <div class="progress-bar" :style="{ width: progress }"></div>
       </div>
-      <span class="progress-duration" v-if="runningActionDurationDisplay">{{
+      <span v-if="runningActionDurationDisplay" class="progress-duration">{{
         runningActionDurationDisplay
-        }}</span>
+      }}</span>
     </div>
   </div>
 

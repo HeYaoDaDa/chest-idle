@@ -1,138 +1,138 @@
 [
-    {
-        "type": "action",
-        "id": "copperMine",
-        "skillId": "mining",
-        "minLevel": 0,
-        "sort": 0,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "copperMineChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "copperOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "ironMine",
-        "skillId": "mining",
-        "minLevel": 10,
-        "sort": 1,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "ironMineChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "ironOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "silverMine",
-        "skillId": "mining",
-        "minLevel": 20,
-        "sort": 2,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "silverMineChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "silverOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "goldMine",
-        "skillId": "mining",
-        "minLevel": 30,
-        "sort": 3,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "goldMineChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "goldOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "orichalcumMine",
-        "skillId": "mining",
-        "minLevel": 40,
-        "sort": 4,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "orichalcumMineChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "orichalcumOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "darkIronMine",
-        "skillId": "mining",
-        "minLevel": 50,
-        "sort": 5,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "darkIronMineChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "darkIronOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "mithrilMine",
-        "skillId": "mining",
-        "minLevel": 60,
-        "sort": 6,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "mithrilMineChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "mithrilOre",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "adamantineMine",
-        "skillId": "mining",
-        "minLevel": 70,
-        "sort": 7,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "adamantineMineChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "adamantineOre",
-                "count": 1
-            }
-        ]
-    }
+  {
+    "type": "action",
+    "id": "copperMine",
+    "skillId": "mining",
+    "minLevel": 0,
+    "sort": 0,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "copperMineChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "copperOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "ironMine",
+    "skillId": "mining",
+    "minLevel": 10,
+    "sort": 1,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "ironMineChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "ironOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "silverMine",
+    "skillId": "mining",
+    "minLevel": 20,
+    "sort": 2,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "silverMineChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "silverOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "goldMine",
+    "skillId": "mining",
+    "minLevel": 30,
+    "sort": 3,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "goldMineChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "goldOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "orichalcumMine",
+    "skillId": "mining",
+    "minLevel": 40,
+    "sort": 4,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "orichalcumMineChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "orichalcumOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "darkIronMine",
+    "skillId": "mining",
+    "minLevel": 50,
+    "sort": 5,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "darkIronMineChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "darkIronOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "mithrilMine",
+    "skillId": "mining",
+    "minLevel": 60,
+    "sort": 6,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "mithrilMineChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "mithrilOre",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "adamantineMine",
+    "skillId": "mining",
+    "minLevel": 70,
+    "sort": 7,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "adamantineMineChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "adamantineOre",
+        "count": 1
+      }
+    ]
+  }
 ]

@@ -1,138 +1,138 @@
 [
-    {
-        "type": "action",
-        "id": "willowTree",
-        "skillId": "woodcutting",
-        "minLevel": 0,
-        "sort": 8,
-        "duration": 5000,
-        "xp": 10,
-        "chestId": "willowTreeChest",
-        "chestPoints": 50,
-        "products": [
-            {
-                "itemId": "willowWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "pineTree",
-        "skillId": "woodcutting",
-        "minLevel": 10,
-        "sort": 9,
-        "duration": 10000,
-        "xp": 20,
-        "chestId": "pineTreeChest",
-        "chestPoints": 100,
-        "products": [
-            {
-                "itemId": "pineWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "oakTree",
-        "skillId": "woodcutting",
-        "minLevel": 20,
-        "sort": 10,
-        "duration": 15000,
-        "xp": 30,
-        "chestId": "oakTreeChest",
-        "chestPoints": 150,
-        "products": [
-            {
-                "itemId": "oakWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "mapleTree",
-        "skillId": "woodcutting",
-        "minLevel": 30,
-        "sort": 11,
-        "duration": 20000,
-        "xp": 40,
-        "chestId": "mapleTreeChest",
-        "chestPoints": 200,
-        "products": [
-            {
-                "itemId": "mapleWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "elmTree",
-        "skillId": "woodcutting",
-        "minLevel": 40,
-        "sort": 12,
-        "duration": 25000,
-        "xp": 50,
-        "chestId": "elmTreeChest",
-        "chestPoints": 250,
-        "products": [
-            {
-                "itemId": "elmWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "beechTree",
-        "skillId": "woodcutting",
-        "minLevel": 50,
-        "sort": 13,
-        "duration": 30000,
-        "xp": 60,
-        "chestId": "beechTreeChest",
-        "chestPoints": 300,
-        "products": [
-            {
-                "itemId": "beechWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "mahoganyTree",
-        "skillId": "woodcutting",
-        "minLevel": 60,
-        "sort": 14,
-        "duration": 35000,
-        "xp": 70,
-        "chestId": "mahoganyTreeChest",
-        "chestPoints": 350,
-        "products": [
-            {
-                "itemId": "mahoganyWood",
-                "count": 1
-            }
-        ]
-    },
-    {
-        "type": "action",
-        "id": "ebonyTree",
-        "skillId": "woodcutting",
-        "minLevel": 70,
-        "sort": 15,
-        "duration": 40000,
-        "xp": 80,
-        "chestId": "ebonyTreeChest",
-        "chestPoints": 400,
-        "products": [
-            {
-                "itemId": "ebonyWood",
-                "count": 1
-            }
-        ]
-    }
+  {
+    "type": "action",
+    "id": "willowTree",
+    "skillId": "woodcutting",
+    "minLevel": 0,
+    "sort": 8,
+    "duration": 5000,
+    "xp": 10,
+    "chestId": "willowTreeChest",
+    "chestPoints": 50,
+    "products": [
+      {
+        "itemId": "willowWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "pineTree",
+    "skillId": "woodcutting",
+    "minLevel": 10,
+    "sort": 9,
+    "duration": 10000,
+    "xp": 20,
+    "chestId": "pineTreeChest",
+    "chestPoints": 100,
+    "products": [
+      {
+        "itemId": "pineWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "oakTree",
+    "skillId": "woodcutting",
+    "minLevel": 20,
+    "sort": 10,
+    "duration": 15000,
+    "xp": 30,
+    "chestId": "oakTreeChest",
+    "chestPoints": 150,
+    "products": [
+      {
+        "itemId": "oakWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "mapleTree",
+    "skillId": "woodcutting",
+    "minLevel": 30,
+    "sort": 11,
+    "duration": 20000,
+    "xp": 40,
+    "chestId": "mapleTreeChest",
+    "chestPoints": 200,
+    "products": [
+      {
+        "itemId": "mapleWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "elmTree",
+    "skillId": "woodcutting",
+    "minLevel": 40,
+    "sort": 12,
+    "duration": 25000,
+    "xp": 50,
+    "chestId": "elmTreeChest",
+    "chestPoints": 250,
+    "products": [
+      {
+        "itemId": "elmWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "beechTree",
+    "skillId": "woodcutting",
+    "minLevel": 50,
+    "sort": 13,
+    "duration": 30000,
+    "xp": 60,
+    "chestId": "beechTreeChest",
+    "chestPoints": 300,
+    "products": [
+      {
+        "itemId": "beechWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "mahoganyTree",
+    "skillId": "woodcutting",
+    "minLevel": 60,
+    "sort": 14,
+    "duration": 35000,
+    "xp": 70,
+    "chestId": "mahoganyTreeChest",
+    "chestPoints": 350,
+    "products": [
+      {
+        "itemId": "mahoganyWood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "type": "action",
+    "id": "ebonyTree",
+    "skillId": "woodcutting",
+    "minLevel": 70,
+    "sort": 15,
+    "duration": 40000,
+    "xp": 80,
+    "chestId": "ebonyTreeChest",
+    "chestPoints": 400,
+    "products": [
+      {
+        "itemId": "ebonyWood",
+        "count": 1
+      }
+    ]
+  }
 ]

@@ -392,7 +392,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcuttingSpeed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -552,7 +552,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcuttingSpeed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -712,7 +712,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcuttingSpeed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -872,7 +872,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcuttingSpeed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -1032,7 +1032,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcuttingSpeed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1192,7 +1192,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcuttingSpeed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 4
         }

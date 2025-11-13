@@ -1,8 +1,13 @@
 {
   "recommendations": [
     "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "lokalise.i18n-ally",
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag"
   ]
 }

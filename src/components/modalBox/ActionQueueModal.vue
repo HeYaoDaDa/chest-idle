@@ -20,12 +20,15 @@ const emit = defineEmits<Emits>()
 
 const unifiedLength = computed(() => actionQueueStore.queueLength)
 
-const runningActionDisplay = computed(() =>
-  actionQueueStore.currentActionDetail
-    ? `${t(actionQueueStore.currentActionDetail.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
-    : `${t('nothing')}...`,
-)
+// ActionQueue 页面使用完整显示，这里不需要该组合文案
 const progress = computed(() => actionQueueStore.progress + '%')
+
+// 在 Modal 中，名称已单独展示，这里只需显示数量（或 ∞）
+const runningActionAmountDisplay = computed(() =>
+  actionQueueStore.currentAction
+    ? (actionQueueStore.currentAction.amount === Infinity ? '∞' : String(actionQueueStore.currentAction.amount))
+    : ''
+)
 
 function closeModal() {
   emit('close')
@@ -74,7 +77,7 @@ function removeQueuedAction(index: number) {
               <span class="queue-modal-item-index">0</span>
               <div class="queue-modal-item-text">
                 <span class="queue-modal-item-name">{{ t(actionQueueStore.currentActionDetail.name) }}</span>
-                <span class="queue-modal-item-amount">×{{ runningActionDisplay }}</span>
+                <span class="queue-modal-item-amount">×{{ runningActionAmountDisplay }}</span>
               </div>
             </div>
             <div class="running-progress-wrapper">

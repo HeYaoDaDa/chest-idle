@@ -10,7 +10,8 @@ export const useAppStore = defineStore('app', () => {
     state.value = 'loading'
     try {
       loadGameConfig()
-      useActionRunnerStore().start()
+      const actionRunnerStore = useActionRunnerStore()
+      actionRunnerStore.start()
       state.value = 'ready'
     } catch (error) {
       console.error('Failed to load application:', error)

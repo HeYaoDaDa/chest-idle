@@ -24,9 +24,9 @@ const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
 const chestOpenAmount = ref(1)
-const inventoryItem = computed(() => {
-  return useInventoryStore().getInventoryItem(props.itemId)
-})
+// 统一命名：使用 inventoryStore 本地变量
+const inventoryStore = useInventoryStore()
+const inventoryItem = computed(() => inventoryStore.getInventoryItem(props.itemId))
 
 // Computed properties
 const equippedItemStore = useEquippedItemStore()

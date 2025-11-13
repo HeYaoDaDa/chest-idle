@@ -8,7 +8,7 @@ import { slotConfigs, itemConfigMap } from '@/gameConfig'
 import { useEquippedItemStore } from '@/stores/equippedItem'
 
 const { t } = useI18n()
-const playerStore = useInventoryStore()
+const inventoryStore = useInventoryStore()
 const equippedItemStore = useEquippedItemStore()
 
 // 统一选择状态：被选中的物品及其来源（inventory / equipped）
@@ -17,7 +17,7 @@ const selectedContext = shallowRef<'inventory' | 'equipped' | null>(null)
 // 通过来源推导：若来自库存则获取 InventoryItem
 const selectedInventoryItem = computed(() =>
   selectedContext.value === 'inventory' && selectedItemId.value
-    ? playerStore.getInventoryItem(selectedItemId.value) ?? null
+    ? inventoryStore.getInventoryItem(selectedItemId.value) ?? null
     : null
 )
 
@@ -95,7 +95,7 @@ function openChestAndClose(amount?: number): void {
   if (selectedInventoryItem.value) {
     const amountToOpen = amount ?? 1
     if (amountToOpen >= 1 && amountToOpen <= maxChestAmount.value) {
-      const results = playerStore.openChest(selectedInventoryItem.value, amountToOpen)
+  const results = inventoryStore.openChest(selectedInventoryItem.value, amountToOpen)
       chestOpenResults.value = results
       closeItemModal()
     }
@@ -130,7 +130,7 @@ function openSlotEquipment(slotId: string): void {
     </div>
     <div class="tabs-content">
       <div v-show="activeTab === 'inventory'" id="inventory" class="tab-panel">
-        <div v-for="inventoryItem in playerStore.inventoryItems" :key="inventoryItem.item.id" class="inventory-item"
+        <div v-for="inventoryItem in inventoryStore.inventoryItems" :key="inventoryItem.item.id" class="inventory-item"
           @click="openInventoryModal(inventoryItem)">
           <div>{{ t(inventoryItem.item.name) }}</div>
           <div v-if="inventoryItem.count > 1" class="inventory-count">

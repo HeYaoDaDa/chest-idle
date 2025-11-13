@@ -95,7 +95,7 @@ export const useStatStore = defineStore('stat', () => {
           break;
       }
     }
-    return (statConfig.base ?? 0 + sumAdd) * (1 + sumPercent) / (1 + sumDivisor);
+  return ((statConfig.base ?? 0) + sumAdd) * (1 + sumPercent) / (1 + sumDivisor);
   }
 
   function getDerivedStatValue(derivedStatConfigs: {

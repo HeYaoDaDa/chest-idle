@@ -37,12 +37,37 @@ export const useActionStore = defineStore('action', () => {
       ingredients: actionConfig.ingredients ?? [],
       products: actionConfig.products ?? [],
       duration:
-        statStore.getDerivedStatValue([], actionConfig.duration, {
-          type: 'inversePercentage',
-          value: (skillStore.getSkillLevel(actionConfig.skillId) - actionConfig.minLevel) * 0.01,
-        }) * 0.01,
-      xp: statStore.getDerivedStatValue([], actionConfig.xp),
-      chestPoints: statStore.getDerivedStatValue([], actionConfig.chestPoints),
+        statStore.getDerivedStatValue(
+          [
+            {
+              statId: `${actionConfig.skillId}Speed`,
+              type: 'inversePercentage',
+            },
+          ],
+          actionConfig.duration,
+          {
+            type: 'inversePercentage',
+            value: (skillStore.getSkillLevel(actionConfig.skillId) - actionConfig.minLevel) * 0.01,
+          },
+        ) * 0.01,
+      xp: statStore.getDerivedStatValue(
+        [
+          {
+            statId: `${actionConfig.skillId}XpGain`,
+            type: 'percentage',
+          },
+        ],
+        actionConfig.xp,
+      ),
+      chestPoints: statStore.getDerivedStatValue(
+        [
+          {
+            statId: `${actionConfig.skillId}ChestPointsGain`,
+            type: 'percentage',
+          },
+        ],
+        actionConfig.chestPoints,
+      ),
     }
   }
 

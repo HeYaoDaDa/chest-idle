@@ -1,0 +1,52 @@
+[
+  {
+    "type": "stat",
+    "id": "miningSpeed",
+    "sort": 0
+  },
+  {
+    "type": "stat",
+    "id": "woodcuttingSpeed",
+    "sort": 1
+  },
+  {
+    "type": "stat",
+    "id": "foragingSpeed",
+    "sort": 2
+  },
+  {
+    "type": "stat",
+    "id": "smithingSpeed",
+    "sort": 3
+  },
+  {
+    "type": "stat",
+    "id": "woodworkingSpeed",
+    "sort": 4
+  },
+  {
+    "type": "stat",
+    "id": "tailoringSpeed",
+    "sort": 5
+  },
+  {
+    "type": "stat",
+    "id": "cookingSpeed",
+    "sort": 6
+  },
+  {
+    "type": "stat",
+    "id": "brewingSpeed",
+    "sort": 7
+  },
+  {
+    "type": "stat",
+    "id": "alchemySpeed",
+    "sort": 8
+  },
+  {
+    "type": "stat",
+    "id": "enhancingSpeed",
+    "sort": 9
+  }
+]

@@ -8,7 +8,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -24,7 +24,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -40,7 +40,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -56,7 +56,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -72,7 +72,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodworking.speed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -88,7 +88,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -104,7 +104,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -120,7 +120,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -136,7 +136,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -152,7 +152,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 0.5
         }
@@ -168,7 +168,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 1
         }
@@ -184,7 +184,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -200,7 +200,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -216,7 +216,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -232,7 +232,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodworking.speed",
+          "statId": "woodworkingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -248,7 +248,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 1
         }
@@ -264,7 +264,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -280,7 +280,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -296,7 +296,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 1
         }
@@ -312,7 +312,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 1
         }
@@ -328,7 +328,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -344,7 +344,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -360,7 +360,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -376,7 +376,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -392,7 +392,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -408,7 +408,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -424,7 +424,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -440,7 +440,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -456,7 +456,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -472,7 +472,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 1.5
         }
@@ -488,7 +488,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 2
         }
@@ -504,7 +504,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -520,7 +520,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -536,7 +536,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -552,7 +552,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -568,7 +568,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 2
         }
@@ -584,7 +584,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -600,7 +600,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -616,7 +616,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 2
         }
@@ -632,7 +632,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 2
         }
@@ -648,7 +648,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -664,7 +664,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -680,7 +680,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -696,7 +696,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -712,7 +712,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -728,7 +728,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -744,7 +744,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -760,7 +760,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -776,7 +776,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -792,7 +792,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 2.5
         }
@@ -808,7 +808,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 3
         }
@@ -824,7 +824,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -840,7 +840,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -856,7 +856,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -872,7 +872,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -888,7 +888,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 3
         }
@@ -904,7 +904,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -920,7 +920,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -936,7 +936,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 3
         }
@@ -952,7 +952,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 3
         }
@@ -968,7 +968,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -984,7 +984,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1000,7 +1000,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1016,7 +1016,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1032,7 +1032,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1048,7 +1048,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1064,7 +1064,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1080,7 +1080,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1096,7 +1096,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1112,7 +1112,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 3.5
         }
@@ -1128,7 +1128,7 @@
       "slotId": "miningTool",
       "effects": [
         {
-          "statId": "mining.speed",
+          "statId": "miningSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1144,7 +1144,7 @@
       "slotId": "woodcuttingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1160,7 +1160,7 @@
       "slotId": "foragingTool",
       "effects": [
         {
-          "statId": "foraging.speed",
+          "statId": "foragingSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1176,7 +1176,7 @@
       "slotId": "smithingTool",
       "effects": [
         {
-          "statId": "smithing.speed",
+          "statId": "smithingSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1192,7 +1192,7 @@
       "slotId": "woodworkingTool",
       "effects": [
         {
-          "statId": "woodcutting.speed",
+          "statId": "woodcuttingSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1208,7 +1208,7 @@
       "slotId": "tailoringTool",
       "effects": [
         {
-          "statId": "tailoring.speed",
+          "statId": "tailoringSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1224,7 +1224,7 @@
       "slotId": "cookingTool",
       "effects": [
         {
-          "statId": "cooking.speed",
+          "statId": "cookingSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1240,7 +1240,7 @@
       "slotId": "brewingTool",
       "effects": [
         {
-          "statId": "brewing.speed",
+          "statId": "brewingSpeed",
           "type": "flat",
           "value": 4
         }
@@ -1256,7 +1256,7 @@
       "slotId": "alchemyTool",
       "effects": [
         {
-          "statId": "alchemy.speed",
+          "statId": "alchemySpeed",
           "type": "flat",
           "value": 4
         }
@@ -1272,7 +1272,7 @@
       "slotId": "enhancingTool",
       "effects": [
         {
-          "statId": "enhancing.speed",
+          "statId": "enhancingSpeed",
           "type": "flat",
           "value": 4
         }

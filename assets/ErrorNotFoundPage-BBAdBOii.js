@@ -1,1 +1,0 @@
-import{_ as o,c as r,a as t,o as a}from"./index-DxvVMaWC.js";const s={},n={id:"error-page-root"};function c(d,e){return a(),r("div",n,[...e[0]||(e[0]=[t("h1",null,"404",-1)])])}const f=o(s,[["render",c],["__scopeId","data-v-4e846d2a"]]);export{f as default};

@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import ModalBox from '@/components/misc/ModalBox.vue'
+import ModalBox from '@/components/ModalBox.vue'
 import { INFINITE_STRING } from '@/constants'
-import type { Action } from '@/models/Action'
+import { itemConfigMap } from '@/gameConfig'
+import { useActionStore } from '@/stores/action'
 import { useActionQueueStore } from '@/stores/actionQueue'
-import { usePlayerStore } from '@/stores/player'
+import { useInventoryStore } from '@/stores/inventory'
 import { useSkillStore } from '@/stores/skill'
 import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 import { computed, ref, watch } from 'vue'
@@ -11,17 +12,23 @@ import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 
-const playerStore = usePlayerStore()
+const inventoryStore = useInventoryStore()
 const skillStore = useSkillStore()
+const actionStore = useActionStore()
 const actionQueueStore = useActionQueueStore()
 
 // Props
 interface Props {
   modelValue: boolean
-  action?: Action
+  actionId?: string
 }
 
 const props = defineProps<Props>()
+const action = computed(() => {
+  if (!props.actionId) return null
+  return actionStore.getActionById(props.actionId)
+})
+
 
 // Emits
 const emit = defineEmits<{
@@ -30,33 +37,32 @@ const emit = defineEmits<{
 
 // 获取技能信息
 const skill = computed(() => {
-  if (!props.action) return null
-  return skillStore.getSkill(props.action.skillId)
+  if (!action.value) return null
+  return skillStore.getSkill(action.value.skillId)
 })
 
 const amountString = ref(INFINITE_STRING)
 const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
-const durationSeconds = computed(() => (props.action ? props.action.getDuration() / 1000 : 0))
-const xpPerCycle = computed(() => props.action?.getXp() ?? 0)
-const chestPointsPerCycle = computed(() => props.action?.getChestPoints() ?? 0)
-const hasIngredients = computed(() => (props.action?.ingredients.length ?? 0) > 0)
-const hasProducts = computed(() => (props.action?.products.length ?? 0) > 0)
+const durationSeconds = computed(() => (action.value ? action.value.duration / 1000 : 0))
+const xpPerCycle = computed(() => action.value?.xp ?? 0)
+const chestPointsPerCycle = computed(() => action.value?.chestPoints ?? 0)
+const hasIngredients = computed(() => (action.value?.ingredients.length ?? 0) > 0)
+const hasProducts = computed(() => (action.value?.products.length ?? 0) > 0)
 const hasCurrentAction = computed(() => !!actionQueueStore.currentAction)
 const queuePosition = computed(() => actionQueueStore.queueLength + 1)
 
 // 不满足条件的标记（用于字段标红）
 const isLevelInsufficient = computed(() => {
-  if (!props.action || !skill.value) return false
-  return skill.value.level < props.action.minLevel
+  if (!action.value || !skill.value) return false
+  return skill.value.level < action.value.minLevel
 })
 
 const insufficientIngredients = computed(() => {
-  if (!props.action || !('ingredients' in props.action)) return [] as string[]
+  if (!action.value || !('ingredients' in action.value)) return [] as string[]
   const lack: string[] = []
-  for (const ingredient of props.action.ingredients) {
-    const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
-    const available = inventoryItem?.quantity ?? 0
-    if (available < ingredient.count) lack.push(ingredient.item.id)
+  for (const ingredient of action.value.ingredients) {
+    const available = inventoryStore.inventoryMap[ingredient.itemId] ?? 0
+    if (available < ingredient.count) lack.push(ingredient.itemId)
   }
   return lack
 })
@@ -65,28 +71,28 @@ const hasInsufficientIngredients = computed(() => insufficientIngredients.value.
 
 // 检查是否满足开始条件
 const canStartAction = computed(() => {
-  if (!props.action) return { canStart: false, reasons: [] }
+  if (!action.value) return { canStart: false, reasons: [] }
 
   const reasons: string[] = []
 
   // 检查等级要求
-  if (skill.value && skill.value.level < props.action.minLevel) {
+  if (skill.value && skill.value.level < action.value.minLevel) {
     reasons.push(t('notification.levelTooLow', {
       skill: t(skill.value.name),
       level: skill.value.level,
-      required: props.action.minLevel,
-      action: t(props.action.name),
+      required: action.value.minLevel,
+      action: t(action.value.name),
     }))
   }
 
   // 检查材料是否足够
-  if ('ingredients' in props.action && props.action.ingredients.length > 0) {
-    for (const ingredient of props.action.ingredients) {
-      const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
-      const available = inventoryItem?.quantity ?? 0
+  if ('ingredients' in action.value && action.value.ingredients.length > 0) {
+    for (const ingredient of action.value.ingredients) {
+      const available = inventoryStore.inventoryMap[ingredient.itemId] ?? 0
+      const itemConfig = itemConfigMap[ingredient.itemId]
       if (available < ingredient.count) {
         reasons.push(t('ui.insufficientMaterial', {
-          item: t(ingredient.item.name),
+          item: t(itemConfig.name),
           required: ingredient.count,
           available: available
         }))
@@ -109,16 +115,16 @@ function closeModal() {
 }
 
 function addAction() {
-  if (props.action) {
-    actionQueueStore.addAction(props.action.id, stringToNumber(amountString.value))
+  if (action.value) {
+    actionQueueStore.addAction(action.value.id, stringToNumber(amountString.value))
     closeModal()
   }
 }
 
 function startImmediately() {
-  if (props.action) {
+  if (action.value) {
     // 立即开始：若有运行中，打断并将原运行项排到队首，然后立即开始新行动
-    actionQueueStore.startImmediately(props.action.id, stringToNumber(amountString.value))
+    actionQueueStore.startImmediately(action.value.id, stringToNumber(amountString.value))
     closeModal()
   }
 }
@@ -167,15 +173,15 @@ watch(() => props.modelValue, (newValue) => {
         </div>
         <div class="info-row">
           <span class="info-label">{{ t('ui.chest') }}</span>
-          <span class="info-value">{{ t(action.chest.name) }}</span>
+          <span class="info-value">{{ t(itemConfigMap[action.chestId].name) }}</span>
         </div>
 
         <div class="info-row" :class="{ error: hasIngredients && hasInsufficientIngredients }">
           <span class="info-label">{{ t('ui.requiredMaterials') }}</span>
           <span class="info-value">
             <template v-if="hasIngredients">
-              <template v-for="(ingredient, idx) in action.ingredients" :key="ingredient.item.id">
-                <span>{{ t(ingredient.item.name) }} ×{{ formatNumber(ingredient.count) }}</span><span
+              <template v-for="(ingredient, idx) in action.ingredients" :key="ingredient.itemId">
+                <span>{{ t(itemConfigMap[ingredient.itemId].name) }} ×{{ formatNumber(ingredient.count) }}</span><span
                   v-if="idx < action.ingredients.length - 1">，</span>
               </template>
             </template>
@@ -189,8 +195,8 @@ watch(() => props.modelValue, (newValue) => {
           <span class="info-label">{{ t('ui.rewards') }}</span>
           <span class="info-value">
             <template v-if="hasProducts">
-              <template v-for="(product, idx) in action.products" :key="product.item.id">
-                <span>{{ t(product.item.name) }} ×{{ formatNumber(product.count) }}</span><span
+              <template v-for="(product, idx) in action.products" :key="product.itemId">
+                <span>{{ t(itemConfigMap[product.itemId].name) }} ×{{ formatNumber(product.count) }}</span><span
                   v-if="idx < action.products.length - 1">，</span>
               </template>
             </template>

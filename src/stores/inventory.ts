@@ -1,0 +1,136 @@
+import { defineStore } from 'pinia'
+import { computed, ref } from 'vue'
+import { itemConfigMap, type ItemConfig } from '@/gameConfig'
+
+export interface InventoryItem {
+  item: ItemConfig
+  count: number
+}
+
+export const useInventoryStore = defineStore('inventory', () => {
+
+  const inventoryMap = ref<Record<string, number>>(Object.create(null))
+
+  const inventoryItems = computed(() =>
+    inventoryMap.value ? Object.entries(inventoryMap.value)
+      .map(([itemId, count]) => ({ item: itemConfigMap[itemId], count }))
+      .filter(item => item.item !== undefined)
+      .sort((a, b) => a.item.sort - b.item.sort) : []
+  )
+
+  function addItem(itemId: string, amount: number) {
+    const existingItem = inventoryMap.value[itemId]
+    if (existingItem) {
+      inventoryMap.value[itemId] += amount
+    } else {
+      inventoryMap.value[itemId] = amount
+    }
+  }
+
+  function addManyItems(items: [string, number][]) {
+    for (const [itemId, amount] of items) {
+      addItem(itemId, amount)
+    }
+  }
+
+  function removeItem(itemId: string, amount: number) {
+    const existingItem = inventoryMap.value[itemId]
+    if (existingItem) {
+      inventoryMap.value[itemId] = Math.max(0, existingItem - amount)
+      if (inventoryMap.value[itemId] === 0) {
+        delete inventoryMap.value[itemId]
+      }
+    }
+  }
+
+  function removeManyItems(items: [string, number][]) {
+    for (const [itemId, amount] of items) {
+      removeItem(itemId, amount)
+    }
+  }
+
+  function getInventoryItem(itemId: string): InventoryItem | undefined {
+    const count = inventoryMap.value[itemId]
+    if (count !== undefined) {
+      return { item: itemConfigMap[itemId], count }
+    }
+    return undefined
+  }
+
+  function hasItem(itemId: string, amount: number = 1): boolean {
+    const inventoryCount = inventoryMap.value[itemId]
+    return inventoryCount ? inventoryCount >= amount : false
+  }
+
+  // Chest opening
+  function openChest(inventoryItem: InventoryItem, amount: number = 1): { itemId: string; amount: number }[] {
+    const item = inventoryItem.item
+    if (!item.chest) {
+      console.error(`Item ${item.id} is not a chest`)
+      return []
+    }
+
+    const results: { itemId: string; amount: number }[] = []
+
+    // Remove chests from inventory
+    removeItem(inventoryItem.item.id, amount)
+
+    // Roll loot for each chest
+    for (let i = 0; i < amount; i++) {
+      const lootResults = rollLoot(item.id)
+
+      for (const { itemId, amount: lootAmount } of lootResults) {
+        addItem(itemId, lootAmount)
+
+        // Track results aggregation by itemId
+        const existingResult = results.find(r => r.itemId === itemId)
+        if (existingResult) {
+          existingResult.amount += lootAmount
+        } else {
+          results.push({ itemId, amount: lootAmount })
+        }
+      }
+    }
+
+    return results
+  }
+
+  return {
+    // State
+    inventoryItems,
+    inventoryMap,
+
+    // Methods - Inventory Management
+    addItem,
+    addManyItems,
+    removeItem,
+    removeManyItems,
+    getInventoryItem,
+    hasItem,
+
+    // Methods - Chest Management
+    openChest,
+  }
+})
+
+function randomIntInclusive(min: number, max: number): number {
+  const lower = Math.ceil(min)
+  const upper = Math.floor(max)
+  return Math.floor(Math.random() * (upper - lower + 1)) + lower
+}
+
+export function rollLoot(chestId: string): { itemId: string; amount: number }[] {
+  const results: { itemId: string; amount: number }[] = []
+  const chestConfig = itemConfigMap[chestId]
+
+  if (!chestConfig || !chestConfig.chest) return results
+
+  for (const loot of chestConfig.chest.loots) {
+    if (Math.random() <= loot.chance) {
+      const amount = randomIntInclusive(loot.min, loot.max)
+      results.push({ itemId: loot.itemId, amount })
+    }
+  }
+
+  return results
+}

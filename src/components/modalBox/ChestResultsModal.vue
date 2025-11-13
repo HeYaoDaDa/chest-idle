@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import ModalBox from '@/components/misc/ModalBox.vue'
+import ModalBox from '@/components/ModalBox.vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 interface ChestResult {
-  itemName: string
+  itemId: string
   amount: number
 }
 
@@ -35,8 +35,8 @@ function close() {
 
       <div class="chest-results-content">
         <div v-if="results.length > 0" class="chest-results-list">
-          <div v-for="result in results" :key="result.itemName" class="chest-result-item">
-            <span class="result-item-name">{{ t(result.itemName) }}</span>
+          <div v-for="result in results" :key="result.itemId" class="chest-result-item">
+            <span class="result-item-name">{{ t(`item.${result.itemId}.name`) }}</span>
             <span class="result-item-amount">×{{ result.amount }}</span>
           </div>
         </div>

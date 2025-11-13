@@ -11,10 +11,10 @@ const appStore = useAppStore()
 const fail = ref(false)
 
 watchEffect(() => {
-  if ('loading' === appStore.status) {
-  } else if ('ready' === appStore.status) {
+  if ('loading' === appStore.state) {
+  } else if ('ready' === appStore.state) {
     router.replace('/game')
-  } else if ('error' === appStore.status) {
+  } else if ('error' === appStore.state) {
     fail.value = true
   } else {
     appStore.loadApplication()

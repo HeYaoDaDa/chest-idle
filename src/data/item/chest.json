@@ -8,31 +8,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "copperOre",
+                    "itemId": "copperOre",
                     "chance": 1,
                     "min": 10,
                     "max": 50
                 },
                 {
-                    "item": "copperOre",
+                    "itemId": "copperOre",
                     "chance": 0.5,
                     "min": 50,
                     "max": 100
                 },
                 {
-                    "item": "copperIngot",
+                    "itemId": "copperIngot",
                     "chance": 0.5,
                     "min": 1,
                     "max": 2
                 },
                 {
-                    "item": "copperPickaxe",
+                    "itemId": "copperPickaxe",
                     "chance": 0.5,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "copperMineChest",
+                    "itemId": "copperMineChest",
                     "chance": 0.33,
                     "min": 1,
                     "max": 1
@@ -49,19 +49,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "ironOre",
+                    "itemId": "ironOre",
                     "chance": 1,
                     "min": 10,
                     "max": 40
                 },
                 {
-                    "item": "ironIngot",
+                    "itemId": "ironIngot",
                     "chance": 0.4,
                     "min": 1,
                     "max": 2
                 },
                 {
-                    "item": "ironPickaxe",
+                    "itemId": "ironPickaxe",
                     "chance": 0.25,
                     "min": 1,
                     "max": 1
@@ -78,19 +78,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "silverOre",
+                    "itemId": "silverOre",
                     "chance": 1,
                     "min": 6,
                     "max": 30
                 },
                 {
-                    "item": "silverIngot",
+                    "itemId": "silverIngot",
                     "chance": 0.4,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "silverPickaxe",
+                    "itemId": "silverPickaxe",
                     "chance": 0.2,
                     "min": 1,
                     "max": 1
@@ -107,19 +107,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "goldOre",
+                    "itemId": "goldOre",
                     "chance": 1,
                     "min": 4,
                     "max": 20
                 },
                 {
-                    "item": "goldIngot",
+                    "itemId": "goldIngot",
                     "chance": 0.3,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "goldPickaxe",
+                    "itemId": "goldPickaxe",
                     "chance": 0.15,
                     "min": 1,
                     "max": 1
@@ -136,19 +136,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "orichalcumOre",
+                    "itemId": "orichalcumOre",
                     "chance": 1,
                     "min": 3,
                     "max": 15
                 },
                 {
-                    "item": "orichalcumIngot",
+                    "itemId": "orichalcumIngot",
                     "chance": 0.25,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "orichalcumPickaxe",
+                    "itemId": "orichalcumPickaxe",
                     "chance": 0.12,
                     "min": 1,
                     "max": 1
@@ -165,19 +165,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "darkIronOre",
+                    "itemId": "darkIronOre",
                     "chance": 1,
                     "min": 2,
                     "max": 10
                 },
                 {
-                    "item": "darkIronIngot",
+                    "itemId": "darkIronIngot",
                     "chance": 0.2,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "darkIronPickaxe",
+                    "itemId": "darkIronPickaxe",
                     "chance": 0.1,
                     "min": 1,
                     "max": 1
@@ -194,19 +194,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "mithrilOre",
+                    "itemId": "mithrilOre",
                     "chance": 1,
                     "min": 1,
                     "max": 6
                 },
                 {
-                    "item": "mithrilIngot",
+                    "itemId": "mithrilIngot",
                     "chance": 0.15,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "mithrilPickaxe",
+                    "itemId": "mithrilPickaxe",
                     "chance": 0.08,
                     "min": 1,
                     "max": 1
@@ -223,19 +223,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "adamantineOre",
+                    "itemId": "adamantineOre",
                     "chance": 1,
                     "min": 1,
                     "max": 4
                 },
                 {
-                    "item": "adamantineIngot",
+                    "itemId": "adamantineIngot",
                     "chance": 0.1,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "adamantinePickaxe",
+                    "itemId": "adamantinePickaxe",
                     "chance": 0.05,
                     "min": 1,
                     "max": 1
@@ -252,31 +252,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "willowWood",
+                    "itemId": "willowWood",
                     "chance": 1,
                     "min": 10,
                     "max": 50
                 },
                 {
-                    "item": "willowWood",
+                    "itemId": "willowWood",
                     "chance": 0.5,
                     "min": 50,
                     "max": 100
                 },
                 {
-                    "item": "willowPlank",
+                    "itemId": "willowPlank",
                     "chance": 0.5,
                     "min": 1,
                     "max": 2
                 },
                 {
-                    "item": "copperAxe",
+                    "itemId": "copperAxe",
                     "chance": 0.5,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "willowTreeChest",
+                    "itemId": "willowTreeChest",
                     "chance": 0.33,
                     "min": 1,
                     "max": 1
@@ -293,19 +293,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "pineWood",
+                    "itemId": "pineWood",
                     "chance": 1,
                     "min": 10,
                     "max": 40
                 },
                 {
-                    "item": "pinePlank",
+                    "itemId": "pinePlank",
                     "chance": 0.4,
                     "min": 1,
                     "max": 2
                 },
                 {
-                    "item": "ironAxe",
+                    "itemId": "ironAxe",
                     "chance": 0.25,
                     "min": 1,
                     "max": 1
@@ -322,19 +322,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "oakWood",
+                    "itemId": "oakWood",
                     "chance": 1,
                     "min": 6,
                     "max": 30
                 },
                 {
-                    "item": "oakPlank",
+                    "itemId": "oakPlank",
                     "chance": 0.4,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "silverAxe",
+                    "itemId": "silverAxe",
                     "chance": 0.2,
                     "min": 1,
                     "max": 1
@@ -351,19 +351,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "mapleWood",
+                    "itemId": "mapleWood",
                     "chance": 1,
                     "min": 4,
                     "max": 20
                 },
                 {
-                    "item": "maplePlank",
+                    "itemId": "maplePlank",
                     "chance": 0.3,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "goldAxe",
+                    "itemId": "goldAxe",
                     "chance": 0.15,
                     "min": 1,
                     "max": 1
@@ -380,19 +380,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "elmWood",
+                    "itemId": "elmWood",
                     "chance": 1,
                     "min": 3,
                     "max": 15
                 },
                 {
-                    "item": "elmPlank",
+                    "itemId": "elmPlank",
                     "chance": 0.25,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "orichalcumAxe",
+                    "itemId": "orichalcumAxe",
                     "chance": 0.12,
                     "min": 1,
                     "max": 1
@@ -409,19 +409,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "beechWood",
+                    "itemId": "beechWood",
                     "chance": 1,
                     "min": 2,
                     "max": 10
                 },
                 {
-                    "item": "beechPlank",
+                    "itemId": "beechPlank",
                     "chance": 0.2,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "darkIronAxe",
+                    "itemId": "darkIronAxe",
                     "chance": 0.1,
                     "min": 1,
                     "max": 1
@@ -438,19 +438,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "mahoganyWood",
+                    "itemId": "mahoganyWood",
                     "chance": 1,
                     "min": 1,
                     "max": 6
                 },
                 {
-                    "item": "mahoganyPlank",
+                    "itemId": "mahoganyPlank",
                     "chance": 0.15,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "mithrilAxe",
+                    "itemId": "mithrilAxe",
                     "chance": 0.08,
                     "min": 1,
                     "max": 1
@@ -467,19 +467,19 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "ebonyWood",
+                    "itemId": "ebonyWood",
                     "chance": 1,
                     "min": 1,
                     "max": 4
                 },
                 {
-                    "item": "ebonyPlank",
+                    "itemId": "ebonyPlank",
                     "chance": 0.1,
                     "min": 1,
                     "max": 1
                 },
                 {
-                    "item": "adamantineAxe",
+                    "itemId": "adamantineAxe",
                     "chance": 0.05,
                     "min": 1,
                     "max": 1
@@ -496,7 +496,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "willowPlank",
+                    "itemId": "willowPlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -513,7 +513,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "pinePlank",
+                    "itemId": "pinePlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -530,7 +530,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "oakPlank",
+                    "itemId": "oakPlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -547,7 +547,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "maplePlank",
+                    "itemId": "maplePlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -564,7 +564,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "elmPlank",
+                    "itemId": "elmPlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -581,7 +581,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "beechPlank",
+                    "itemId": "beechPlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -598,7 +598,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "mahoganyPlank",
+                    "itemId": "mahoganyPlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -615,7 +615,7 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "ebonyPlank",
+                    "itemId": "ebonyPlank",
                     "chance": 1,
                     "min": 1,
                     "max": 3
@@ -632,31 +632,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "chicken",
+                    "itemId": "chicken",
                     "chance": 1,
                     "min": 5,
                     "max": 20
                 },
                 {
-                    "item": "crucianCarp",
+                    "itemId": "crucianCarp",
                     "chance": 1,
                     "min": 5,
                     "max": 20
                 },
                 {
-                    "item": "cabbage",
+                    "itemId": "cabbage",
                     "chance": 1,
                     "min": 5,
                     "max": 20
                 },
                 {
-                    "item": "apple",
+                    "itemId": "apple",
                     "chance": 1,
                     "min": 5,
                     "max": 20
                 },
                 {
-                    "item": "licorice",
+                    "itemId": "licorice",
                     "chance": 1,
                     "min": 5,
                     "max": 20
@@ -673,31 +673,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "pork",
+                    "itemId": "pork",
                     "chance": 1,
                     "min": 4,
                     "max": 16
                 },
                 {
-                    "item": "carp",
+                    "itemId": "carp",
                     "chance": 1,
                     "min": 4,
                     "max": 16
                 },
                 {
-                    "item": "carrot",
+                    "itemId": "carrot",
                     "chance": 1,
                     "min": 4,
                     "max": 16
                 },
                 {
-                    "item": "grape",
+                    "itemId": "grape",
                     "chance": 1,
                     "min": 4,
                     "max": 16
                 },
                 {
-                    "item": "cotton",
+                    "itemId": "cotton",
                     "chance": 1,
                     "min": 4,
                     "max": 16
@@ -714,31 +714,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "bear",
+                    "itemId": "bear",
                     "chance": 1,
                     "min": 3,
                     "max": 12
                 },
                 {
-                    "item": "salmon",
+                    "itemId": "salmon",
                     "chance": 1,
                     "min": 3,
                     "max": 12
                 },
                 {
-                    "item": "potato",
+                    "itemId": "potato",
                     "chance": 1,
                     "min": 3,
                     "max": 12
                 },
                 {
-                    "item": "berry",
+                    "itemId": "berry",
                     "chance": 1,
                     "min": 3,
                     "max": 12
                 },
                 {
-                    "item": "artemisia",
+                    "itemId": "artemisia",
                     "chance": 1,
                     "min": 3,
                     "max": 12
@@ -755,31 +755,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "bison",
+                    "itemId": "bison",
                     "chance": 1,
                     "min": 2,
                     "max": 10
                 },
                 {
-                    "item": "trout",
+                    "itemId": "trout",
                     "chance": 1,
                     "min": 2,
                     "max": 10
                 },
                 {
-                    "item": "onion",
+                    "itemId": "onion",
                     "chance": 1,
                     "min": 2,
                     "max": 10
                 },
                 {
-                    "item": "cherry",
+                    "itemId": "cherry",
                     "chance": 1,
                     "min": 2,
                     "max": 10
                 },
                 {
-                    "item": "flax",
+                    "itemId": "flax",
                     "chance": 1,
                     "min": 2,
                     "max": 10
@@ -796,31 +796,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "crocodile",
+                    "itemId": "crocodile",
                     "chance": 1,
                     "min": 2,
                     "max": 8
                 },
                 {
-                    "item": "catfish",
+                    "itemId": "catfish",
                     "chance": 1,
                     "min": 2,
                     "max": 8
                 },
                 {
-                    "item": "sweetPotato",
+                    "itemId": "sweetPotato",
                     "chance": 1,
                     "min": 2,
                     "max": 8
                 },
                 {
-                    "item": "banana",
+                    "itemId": "banana",
                     "chance": 1,
                     "min": 2,
                     "max": 8
                 },
                 {
-                    "item": "ginseng",
+                    "itemId": "ginseng",
                     "chance": 1,
                     "min": 2,
                     "max": 8
@@ -837,31 +837,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "camel",
+                    "itemId": "camel",
                     "chance": 1,
                     "min": 1,
                     "max": 6
                 },
                 {
-                    "item": "tuna",
+                    "itemId": "tuna",
                     "chance": 1,
                     "min": 1,
                     "max": 6
                 },
                 {
-                    "item": "corn",
+                    "itemId": "corn",
                     "chance": 1,
                     "min": 1,
                     "max": 6
                 },
                 {
-                    "item": "cactusFruit",
+                    "itemId": "cactusFruit",
                     "chance": 1,
                     "min": 1,
                     "max": 6
                 },
                 {
-                    "item": "bamboo",
+                    "itemId": "bamboo",
                     "chance": 1,
                     "min": 1,
                     "max": 6
@@ -878,31 +878,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "venison",
+                    "itemId": "venison",
                     "chance": 1,
                     "min": 1,
                     "max": 5
                 },
                 {
-                    "item": "grassCarp",
+                    "itemId": "grassCarp",
                     "chance": 1,
                     "min": 1,
                     "max": 5
                 },
                 {
-                    "item": "pepper",
+                    "itemId": "pepper",
                     "chance": 1,
                     "min": 1,
                     "max": 5
                 },
                 {
-                    "item": "peach",
+                    "itemId": "peach",
                     "chance": 1,
                     "min": 1,
                     "max": 5
                 },
                 {
-                    "item": "reishi",
+                    "itemId": "reishi",
                     "chance": 1,
                     "min": 1,
                     "max": 5
@@ -919,31 +919,31 @@
             "maxPoints": 10000,
             "loots": [
                 {
-                    "item": "turkey",
+                    "itemId": "turkey",
                     "chance": 1,
                     "min": 1,
                     "max": 4
                 },
                 {
-                    "item": "grouper",
+                    "itemId": "grouper",
                     "chance": 1,
                     "min": 1,
                     "max": 4
                 },
                 {
-                    "item": "konjac",
+                    "itemId": "konjac",
                     "chance": 1,
                     "min": 1,
                     "max": 4
                 },
                 {
-                    "item": "longan",
+                    "itemId": "longan",
                     "chance": 1,
                     "min": 1,
                     "max": 4
                 },
                 {
-                    "item": "silkworm",
+                    "itemId": "silkworm",
                     "chance": 1,
                     "min": 1,
                     "max": 4

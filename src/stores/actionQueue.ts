@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { useGameConfigStore } from './gameConfig'
+import { useActionStore } from './action'
 
 export const useActionQueueStore = defineStore('actionQueue', () => {
-  const gameConfigStore = useGameConfigStore()
+  const actionStore = useActionStore()
 
   // ============ 核心状态 ============
   const actionQueue = ref<{
@@ -18,29 +18,29 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
   const queueLength = computed(() => actionQueue.value.length)
 
   const actionQueue1 = computed(() => actionQueue.value.map(actionItem => {
-    return gameConfigStore.getActionById(actionItem.actionId)
+    return actionStore.getActionById(actionItem.actionId)
   }))
   const currentAction1 = computed(() => {
     const actionItem = actionQueue.value[0]
     if (!actionItem) return null
-    return gameConfigStore.getActionById(actionItem.actionId)
+    return actionStore.getActionById(actionItem.actionId)
   })
 
   // ============ 基础功能 ============
 
-  function startImmediately(actionId: string, amount: number = Infinity) {
+  function startImmediately(actionId: string, amount: number = Infinity): void {
     actionQueue.value.unshift({ actionId, amount })
     actionStartDate.value = performance.now()
   }
 
-  function addAction(actionId: string, amount: number = Infinity) {
+  function addAction(actionId: string, amount: number = Infinity): void {
     actionQueue.value.push({ actionId, amount })
     if (actionQueue.value.length === 1) {
       actionStartDate.value = performance.now()
     }
   }
 
-  function removeAction(index: number) {
+  function removeAction(index: number): void {
     if (index < 0 || index >= actionQueue.value.length) return
 
     actionQueue.value.splice(index, 1)
@@ -105,7 +105,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
   }
 
-  function completeCurrentAction(elapsed: number, count: number) {
+  function completeCurrentAction(elapsed: number, count: number): void {
     if (!actionStartDate.value) return
     if (currentAction.value.amount > count) {
       actionStartDate.value += elapsed

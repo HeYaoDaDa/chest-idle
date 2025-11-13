@@ -2,14 +2,24 @@ import { XP_TABLE } from "@/constants";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { useNotificationStore } from "./notification";
-import { skillConfigMap, skillConfigs } from "@/models/gameConfig";
+import { skillConfigMap, skillConfigs } from "@/gameConfig";
 import i18n from "@/i18n";
-import type { Skill } from "@/models/Skill";
+
+export interface Skill {
+  id: string
+  name: string
+  description: string
+  sort: number
+  xp: number
+  level: number
+  remainingXpForUpgrade: number
+  upgradeProgress: number
+}
 
 export const useSkillStore = defineStore('skill', () => {
   const notificationStore = useNotificationStore()
 
-  const skillXpMap = ref<Record<string, number>>({})
+  const skillXpMap = ref<Record<string, number>>(Object.create(null))
 
   // ============ 技能管理功能 ============
 
@@ -55,7 +65,7 @@ export const useSkillStore = defineStore('skill', () => {
       const skillConfig = skillConfigMap[skillId]
       if (skillConfig) {
         notificationStore.info('notification.levelUp', {
-          skill: i18n.global.t(`skill.${skillConfig.id}.name`),
+          skill: i18n.global.t(skillConfig.name),
           level: currentLevel,
         })
       }
@@ -69,8 +79,6 @@ export const useSkillStore = defineStore('skill', () => {
 
     return {
       ...skillConfig,
-      name: `skill.${skillConfig.id}.name`,
-      description: `skill.${skillConfig.id}.description`,
       xp: getSkillXp(skillId),
       level: getSkillLevel(skillId),
       remainingXpForUpgrade: getRemainingXpForUpgrade(skillId),

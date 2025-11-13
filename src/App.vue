@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NotificationCenter from '@/components/misc/NotificationCenter.vue'
+import NotificationCenter from '@/components/NotificationCenter.vue'
 </script>
 
 <template>

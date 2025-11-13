@@ -5,7 +5,7 @@ import SkillPage from '@/pages/SkillPage.vue'
 import ChestPage from '@/pages/ChestPage.vue'
 import { useAppStore } from '@/stores/app'
 import MyStuffPage from '@/pages/MyStuffPage.vue'
-import { skillConfigs } from './models/gameConfig'
+import { skillConfigs } from './gameConfig'
 
 const router = createRouter({
   // history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,7 +50,7 @@ const router = createRouter({
 router.beforeEach(async (to) => {
   if (to.meta.requireGameData) {
     const appStore = useAppStore()
-    if ('ready' !== appStore.status) {
+    if ('ready' !== appStore.state) {
       return '/'
     }
   }

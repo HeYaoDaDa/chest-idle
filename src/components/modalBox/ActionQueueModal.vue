@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ModalBox from './ModalBox.vue'
+import ModalBox from '@/components/ModalBox.vue'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useActionRunnerStore } from '@/stores/actionRunner'
 import { computed } from 'vue'
@@ -110,7 +110,6 @@ function removeQueuedAction(index: number) {
               <!-- unified index: current ? index+1 : index -->
               <span class="queue-modal-item-index">{{ (actionQueueStore.currentAction ? index + 1 : index) }}</span>
               <div class="queue-modal-item-text">
-                <!-- TODO -->
                 <span class="queue-modal-item-name">{{ t(`action.${action.actionId}.name`) }}</span>
                 <span class="queue-modal-item-amount">×{{ action.amount === Infinity ? '∞' : action.amount }}</span>
               </div>

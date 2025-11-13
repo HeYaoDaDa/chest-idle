@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ActionQueueModal from './ActionQueueModal.vue'
+import ActionQueueModal from './modalBox/ActionQueueModal.vue'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useActionRunnerStore } from '@/stores/actionRunner'
 import { computed, ref } from 'vue'
@@ -18,7 +18,7 @@ const runningActionDisplay = computed(() =>
 
 const runningActionDurationDisplay = computed(() => {
   if (actionQueueStore.currentAction1) {
-    return `${(Math.floor(actionQueueStore.currentAction1.getDuration() / 10) / 100).toFixed(2)}s`
+    return `${(Math.floor(actionQueueStore.currentAction1.duration / 10) / 100).toFixed(2)}s`
   }
   return ''
 })
@@ -68,7 +68,7 @@ function stopCurrentAction() {
       </div>
       <span class="progress-duration" v-if="runningActionDurationDisplay">{{
         runningActionDurationDisplay
-      }}</span>
+        }}</span>
     </div>
   </div>
 

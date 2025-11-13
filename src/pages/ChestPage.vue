@@ -1,31 +1,38 @@
 <script setup lang="ts">
 import ChestModalBox from '@/components/modalBox/ChestModalBox.vue'
-import type { Item } from '@/models/item'
-import { useGameConfigStore } from '@/stores/gameConfig'
-import { usePlayerStore } from '@/stores/player'
+import { chestConfigs } from '@/gameConfig'
+import { useChestPointStore } from '@/stores/chestPoint'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
-const gameConfigStore = useGameConfigStore()
-const playerStore = usePlayerStore()
+const chestPointStore = useChestPointStore()
 
-const chests = computed(() => gameConfigStore.allChests)
-const selectedChest = ref<Item | null>(null)
+// 预生成渲染所需的 chest 列表（包含进度与样式）
+const chests = computed(() =>
+  chestConfigs.map((config) => {
+    const progress = chestPointStore.getChestProgress(config.id)
+    return {
+      id: config.id,
+      name: config.name,
+      progress,
+      progressStyle: { width: (progress * 100) + '%' },
+    }
+  })
+)
+const selectedChestId = ref<string | null>(null)
 const modalVisible = ref(false)
 
-function getChestProgress(chestId: string): number {
-  return playerStore.getChestProgress(chestId)
-}
+// 进度获取逻辑已上移到 chests 计算属性中
 
-function openModal(chest: Item) {
-  selectedChest.value = chest
+function openModal(chestId: string) {
+  selectedChestId.value = chestId
   modalVisible.value = true
 }
 
 function closeModal() {
   modalVisible.value = false
-  selectedChest.value = null
+  selectedChestId.value = null
 }
 </script>
 
@@ -37,18 +44,16 @@ function closeModal() {
     </div>
 
     <div id="chest-area-root">
-      <div v-for="chest in chests" :key="chest.id" class="chest-item" @click="openModal(chest)">
+      <div v-for="chest in chests" :key="chest.id" class="chest-item" @click="openModal(chest.id)">
         <div class="chest-name">{{ t(chest.name) }}</div>
         <div class="progress-bar-container">
-          <div class="progress-bar" :style="{
-            width: (getChestProgress(chest.id) * 100) + '%',
-          }"></div>
+          <div class="progress-bar" :style="chest.progressStyle"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <ChestModalBox v-model="modalVisible" :chest="selectedChest" @close="closeModal" />
+  <ChestModalBox v-model="modalVisible" :chestId="selectedChestId" @close="closeModal" />
 </template>
 
 <style lang="scss" scoped>

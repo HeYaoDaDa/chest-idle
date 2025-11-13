@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ActionModalBox from '@/components/modalBox/ActionModalBox.vue'
-import type { Action } from '@/models/Action'
-import { useGameConfigStore } from '@/stores/gameConfig'
+import { actionConfigListBySkill, getSkillTabActionConfigsMapBySkillId } from '@/gameConfig'
 import { useSkillStore } from '@/stores/skill'
 import { computed, ref, shallowRef, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -14,18 +13,17 @@ onBeforeRouteUpdate(async (to) => {
   skillId.value = to.params.id as string
 })
 
-const gameConfigStore = useGameConfigStore()
 const skillStore = useSkillStore()
 
 const skill = computed(() => skillStore.getSkill(skillId.value))
 
 // 判断是否需要使用 tab 分组
-const skillActionTabs = computed(() => gameConfigStore.getSkillActionTabs(skillId.value))
-const hasTabGroups = computed(() => skillActionTabs.value.size > 0)
+const skillActionTabs = computed(() => getSkillTabActionConfigsMapBySkillId(skillId.value))
+const hasTabGroups = computed(() => Object.keys(skillActionTabs.value).length > 0)
 const currentTab = ref<string>('')
 
 // 获取可用的 tabs
-const availableTabs = computed(() => Array.from(skillActionTabs.value.keys()))
+const availableTabs = computed(() => Array.from(Object.keys(skillActionTabs.value)))
 
 // 自动确保 currentTab 始终有效
 watchEffect(() => {
@@ -39,16 +37,24 @@ watchEffect(() => {
 // 显示的 actions
 const displayedActions = computed(() => {
   if (!hasTabGroups.value) {
-    return gameConfigStore.getSkillActions(skillId.value)
+    return actionConfigListBySkill[skillId.value]
   }
-  return skillActionTabs.value.get(currentTab.value) || []
+  return skillActionTabs.value[currentTab.value] || []
 })
 
-const modalVisible = ref(false)
-const selectedAction = shallowRef<Action | undefined>(undefined)
+// 预生成用于渲染的 tab 列表（方式 3）
+const tabEntries = computed(() =>
+  availableTabs.value.map(tab => ({
+    id: tab,
+    label: t(`action.${tab}.name`),
+  }))
+)
 
-function openModal(zone: Action) {
-  selectedAction.value = zone
+const modalVisible = ref(false)
+const selectedActionId = shallowRef<string | undefined>(undefined)
+
+function openModal(actionId: string) {
+  selectedActionId.value = actionId
   modalVisible.value = true
 }
 </script>
@@ -82,19 +88,24 @@ function openModal(zone: Action) {
 
     <!-- Tab 切换区域 -->
     <div v-if="hasTabGroups" class="skill-tabs">
-      <button v-for="tab in availableTabs" :key="tab" class="skill-tab" :class="{ active: currentTab === tab }"
-        @click="currentTab = tab">
-        {{ t(`action.${tab}.name`) }}
+      <button
+        v-for="tab in tabEntries"
+        :key="tab.id"
+        class="skill-tab"
+        :class="{ active: currentTab === tab.id }"
+        @click="currentTab = tab.id"
+      >
+        {{ tab.label }}
       </button>
     </div>
 
     <div id="skill-area-root">
-      <div v-for="zone in displayedActions" :key="zone.id" class="area-item" @click="openModal(zone)">
-        <div>{{ t(zone.name) }}</div>
+      <div v-for="action in displayedActions" :key="action.id" class="area-item" @click="openModal(action.id)">
+        <div>{{ t(action.name) }}</div>
       </div>
     </div>
   </div>
-  <ActionModalBox v-model="modalVisible" :action="selectedAction" />
+  <ActionModalBox v-model="modalVisible" :actionId="selectedActionId" />
 </template>
 
 <style lang="scss" scoped>

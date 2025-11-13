@@ -1,24 +1,28 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { Item } from '@/models/item'
-import { usePlayerStore } from './player'
+import { useInventoryStore } from './inventory'
 import { useNotificationStore } from './notification'
+import type { Action } from './action'
 import i18n from '@/i18n'
 import { useSkillStore } from './skill'
 import { useActionQueueStore } from './actionQueue'
-import type { Action } from '@/models/Action'
+import { useChestPointStore } from './chestPoint'
 
 export const useActionRunnerStore = defineStore('actionRunner', () => {
   const skillStore = useSkillStore()
+  const inventoryStore = useInventoryStore()
   const actionQueueStore = useActionQueueStore()
+  const notificationStore = useNotificationStore()
+  const chestPointStore = useChestPointStore()
+
   const progress = ref(0)
 
   // ============ 基础的游戏循环 ============
-  function start() {
+  function start(): void {
     requestAnimationFrame(update)
   }
 
-  function update() {
+  function update(): void {
     if (actionQueueStore.actionStartDate) {
       const now = performance.now()
       let remainedElapsed = now - actionQueueStore.actionStartDate
@@ -29,8 +33,8 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     // 更新进度条
     if (actionQueueStore.actionStartDate && actionQueueStore.currentAction1) {
       const elapsed = performance.now() - actionQueueStore.actionStartDate;
-      progress.value = Math.min(actionQueueStore.currentAction1.getDuration() > 0
-        ? elapsed / actionQueueStore.currentAction1.getDuration()
+      progress.value = Math.min(actionQueueStore.currentAction1.duration > 0
+        ? elapsed / actionQueueStore.currentAction1.duration
         : 0, 1) * 100
     } else {
       progress.value = 0
@@ -46,7 +50,7 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     const action = actionQueueStore.currentAction1
     const skill = skillStore.getSkill(action.skillId)
 
-    if (elapsed < action.getDuration()) {
+    if (elapsed < action.duration) {
       // 动作还未完成
       return 0
     } else {
@@ -54,16 +58,16 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       let count = amount
       count = Math.min(
         count,
-        Math.floor(elapsed / action.getDuration())
+        Math.floor(elapsed / action.duration)
       )
       if (skill) {
-        count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / action.getXp()))
+        count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / action.xp))
       }
 
       // 执行动作效果
       executeAction(action, count)
 
-      const computedElapsedTime = action.getDuration() * count
+      const computedElapsedTime = action.duration * count
 
       // 计算剩余时间
       const remainedElapsed = elapsed - computedElapsedTime
@@ -74,38 +78,37 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     }
   }
 
-  function executeAction(action: Action, count: number) {
-    const playerStore = usePlayerStore()
+  function executeAction(action: Action, count: number): void {
 
     // 消耗材料
     if (action.ingredients) {
       const ingredients: [string, number][] = []
       for (const ingredient of action.ingredients) {
-        ingredients.push([ingredient.item.id, ingredient.count * count])
+        ingredients.push([ingredient.itemId, ingredient.count * count])
       }
-      playerStore.removeManyItems(ingredients)
+      inventoryStore.removeManyItems(ingredients)
     }
 
     // 增加经验
-    skillStore.addSkillXp(action.skillId, action.getXp() * count)
+    skillStore.addSkillXp(action.skillId, action.xp * count)
 
     // 增加箱子点数并获得箱子
-    const chestCount = playerStore.addChestPoints(action.chest.id, action.getChestPoints() * count)
+    const chestCount = chestPointStore.addChestPoints(action.chestId, action.chestPoints * count)
 
     // 计算奖励
-    const rewards: [unknown, number][] = []
+    const rewards: [string, number][] = []
     for (const product of action.products) {
-      rewards.push([product.item, product.count * count])
+      rewards.push([product.itemId, product.count * count])
     }
 
     // 添加箱子奖励
     if (chestCount > 0) {
-      rewards.push([action.chest, chestCount])
+      rewards.push([action.chestId, chestCount])
     }
 
     // 给予奖励
     if (rewards.length > 0) {
-      playerStore.addManyItems(rewards as [Item, number][])
+      inventoryStore.addManyItems(rewards)
     }
   }
 
@@ -123,7 +126,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       console.warn(
         `Required level ${action.minLevel} for action ${action.id}, but current level is ${currentLevel}`
       )
-      const notificationStore = useNotificationStore()
       const skillConfig = skillStore.getSkill(action.skillId)
       notificationStore.warning('notification.levelTooLow', {
         skill: skillConfig ? i18n.global.t(skillConfig.name) : action.skillId,
@@ -139,7 +141,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     // 检查材料是否足够
     const actualAmount = computeAmount(action, amount)
     if (actualAmount <= 0) {
-      const notificationStore = useNotificationStore()
       notificationStore.warning('notification.notEnoughMaterials', {
         action: i18n.global.t(action.name),
       })
@@ -153,13 +154,12 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   }
 
   function computeAmount(action: Action, amount: number): number {
-    const playerStore = usePlayerStore()
     let maxAmount = Infinity
 
     if (action.ingredients) {
       for (const ingredient of action.ingredients) {
-        const inventoryItem = playerStore.inventoryMap.get(ingredient.item.id)
-        const availableCount = inventoryItem ? inventoryItem.quantity : 0
+        const inventoryItemCount = inventoryStore.inventoryMap[ingredient.itemId]
+        const availableCount = inventoryItemCount ? inventoryItemCount : 0
         const maxForThisIngredient = Math.floor(availableCount / ingredient.count)
         maxAmount = Math.min(maxAmount, maxForThisIngredient)
       }

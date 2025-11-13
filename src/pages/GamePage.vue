@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ActionQueue from '@/components/misc/ActionQueue.vue'
+import ActionQueue from '@/components/ActionQueue.vue'
 import LeftSidebar from '@/components/LeftSidebar.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import MyStuffPage from './MyStuffPage.vue'
 
@@ -60,15 +60,22 @@ function stopDragTabs() {
   document.removeEventListener('mouseup', stopDragTabs)
   document.body.classList.remove('dragging')
 }
+
+// 样式对象抽离到脚本层
+const containerStyle = computed(() => ({
+  '--tabs-width': tabsWidth.value + 'px'
+}))
+
+const tabsWidthStyle = computed(() => ({
+  width: tabsWidth.value + 'px'
+}))
 </script>
 
 <template>
   <div id="game-page-root">
     <div v-if="sidebarExpanded" class="sidebar-mask" @click="sidebarExpanded = false"></div>
 
-    <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }" :style="{
-      '--tabs-width': tabsWidth + 'px'
-    }">
+    <div id="game-page-layout-container" :class="{ 'sidebar-expanded': sidebarExpanded }" :style="containerStyle">
       <div id="header">
         <div id="header-title-action">
           <div class="header-title">
@@ -81,7 +88,7 @@ function stopDragTabs() {
       <div id="content">
         <RouterView />
       </div>
-      <div id="tabs-container" ref="tabs-container" :style="{ width: tabsWidth + 'px' }">
+  <div id="tabs-container" ref="tabs-container" :style="tabsWidthStyle">
         <div class="drag-handle drag-handle-left" @mousedown="startDragTabs">
           <div class="drag-indicator"></div>
         </div>

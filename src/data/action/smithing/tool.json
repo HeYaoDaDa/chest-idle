@@ -2,26 +2,26 @@
     {
         "type": "action",
         "id": "copperPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 1,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperPickaxe",
+                "itemId": "copperPickaxe",
                 "count": 1
             }
         ],
@@ -30,26 +30,26 @@
     {
         "type": "action",
         "id": "copperAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 2,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperAxe",
+                "itemId": "copperAxe",
                 "count": 1
             }
         ],
@@ -58,26 +58,26 @@
     {
         "type": "action",
         "id": "copperForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 3,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperForagingKnife",
+                "itemId": "copperForagingKnife",
                 "count": 1
             }
         ],
@@ -86,26 +86,26 @@
     {
         "type": "action",
         "id": "copperSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 4,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperSmithingHammer",
+                "itemId": "copperSmithingHammer",
                 "count": 1
             }
         ],
@@ -114,26 +114,26 @@
     {
         "type": "action",
         "id": "copperWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 5,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperWoodworkingTool",
+                "itemId": "copperWoodworkingTool",
                 "count": 1
             }
         ],
@@ -142,26 +142,26 @@
     {
         "type": "action",
         "id": "copperTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 6,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperTailoringNeedle",
+                "itemId": "copperTailoringNeedle",
                 "count": 1
             }
         ],
@@ -170,26 +170,26 @@
     {
         "type": "action",
         "id": "copperCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 7,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperCookingUtensil",
+                "itemId": "copperCookingUtensil",
                 "count": 1
             }
         ],
@@ -198,26 +198,26 @@
     {
         "type": "action",
         "id": "copperBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 8,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperBrewingKit",
+                "itemId": "copperBrewingKit",
                 "count": 1
             }
         ],
@@ -226,26 +226,26 @@
     {
         "type": "action",
         "id": "copperAlchemistKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 9,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperAlchemistKit",
+                "itemId": "copperAlchemistKit",
                 "count": 1
             }
         ],
@@ -254,26 +254,26 @@
     {
         "type": "action",
         "id": "copperEnhancingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 10,
         "sort": 10,
         "duration": 20000,
         "xp": 200,
-        "chest": "copperMineChest",
+        "chestId": "copperMineChest",
         "chestPoints": 200,
         "ingredients": [
             {
-                "item": "copperIngot",
+                "itemId": "copperIngot",
                 "count": 5
             },
             {
-                "item": "willowPlank",
+                "itemId": "willowPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "copperEnhancingTool",
+                "itemId": "copperEnhancingTool",
                 "count": 1
             }
         ],
@@ -282,26 +282,26 @@
     {
         "type": "action",
         "id": "ironPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 101,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironPickaxe",
+                "itemId": "ironPickaxe",
                 "count": 1
             }
         ],
@@ -310,26 +310,26 @@
     {
         "type": "action",
         "id": "ironAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 102,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironAxe",
+                "itemId": "ironAxe",
                 "count": 1
             }
         ],
@@ -338,26 +338,26 @@
     {
         "type": "action",
         "id": "ironForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 103,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironForagingKnife",
+                "itemId": "ironForagingKnife",
                 "count": 1
             }
         ],
@@ -366,26 +366,26 @@
     {
         "type": "action",
         "id": "ironSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 104,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironSmithingHammer",
+                "itemId": "ironSmithingHammer",
                 "count": 1
             }
         ],
@@ -394,26 +394,26 @@
     {
         "type": "action",
         "id": "ironWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 105,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironWoodworkingTool",
+                "itemId": "ironWoodworkingTool",
                 "count": 1
             }
         ],
@@ -422,26 +422,26 @@
     {
         "type": "action",
         "id": "ironTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 106,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironTailoringNeedle",
+                "itemId": "ironTailoringNeedle",
                 "count": 1
             }
         ],
@@ -450,26 +450,26 @@
     {
         "type": "action",
         "id": "ironCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 107,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironCookingUtensil",
+                "itemId": "ironCookingUtensil",
                 "count": 1
             }
         ],
@@ -478,26 +478,26 @@
     {
         "type": "action",
         "id": "ironBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "sort": 108,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironBrewingKit",
+                "itemId": "ironBrewingKit",
                 "count": 1
             }
         ],
@@ -505,27 +505,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "id": "ironAlchemistKit",
         "sort": 109,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironAlchemistKit",
+                "itemId": "ironAlchemistKit",
                 "count": 1
             }
         ],
@@ -533,27 +533,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 20,
         "duration": 40000,
         "xp": 400,
-        "chest": "ironMineChest",
+        "chestId": "ironMineChest",
         "chestPoints": 400,
         "id": "ironEnhancingTool",
         "sort": 110,
         "ingredients": [
             {
-                "item": "ironIngot",
+                "itemId": "ironIngot",
                 "count": 5
             },
             {
-                "item": "pinePlank",
+                "itemId": "pinePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "ironEnhancingTool",
+                "itemId": "ironEnhancingTool",
                 "count": 1
             }
         ],
@@ -562,26 +562,26 @@
     {
         "type": "action",
         "id": "silverPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 201,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverPickaxe",
+                "itemId": "silverPickaxe",
                 "count": 1
             }
         ],
@@ -590,26 +590,26 @@
     {
         "type": "action",
         "id": "silverAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 202,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverAxe",
+                "itemId": "silverAxe",
                 "count": 1
             }
         ],
@@ -618,26 +618,26 @@
     {
         "type": "action",
         "id": "silverForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 203,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverForagingKnife",
+                "itemId": "silverForagingKnife",
                 "count": 1
             }
         ],
@@ -646,26 +646,26 @@
     {
         "type": "action",
         "id": "silverSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 204,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverSmithingHammer",
+                "itemId": "silverSmithingHammer",
                 "count": 1
             }
         ],
@@ -674,26 +674,26 @@
     {
         "type": "action",
         "id": "silverWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 205,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverWoodworkingTool",
+                "itemId": "silverWoodworkingTool",
                 "count": 1
             }
         ],
@@ -702,26 +702,26 @@
     {
         "type": "action",
         "id": "silverTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 206,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverTailoringNeedle",
+                "itemId": "silverTailoringNeedle",
                 "count": 1
             }
         ],
@@ -730,26 +730,26 @@
     {
         "type": "action",
         "id": "silverCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 207,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverCookingUtensil",
+                "itemId": "silverCookingUtensil",
                 "count": 1
             }
         ],
@@ -758,26 +758,26 @@
     {
         "type": "action",
         "id": "silverBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "sort": 208,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverBrewingKit",
+                "itemId": "silverBrewingKit",
                 "count": 1
             }
         ],
@@ -786,26 +786,26 @@
     {
         "type": "action",
         "id": "goldPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 301,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldPickaxe",
+                "itemId": "goldPickaxe",
                 "count": 1
             }
         ],
@@ -814,26 +814,26 @@
     {
         "type": "action",
         "id": "goldAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 302,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldAxe",
+                "itemId": "goldAxe",
                 "count": 1
             }
         ],
@@ -842,26 +842,26 @@
     {
         "type": "action",
         "id": "goldForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 303,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldForagingKnife",
+                "itemId": "goldForagingKnife",
                 "count": 1
             }
         ],
@@ -870,26 +870,26 @@
     {
         "type": "action",
         "id": "goldSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 304,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldSmithingHammer",
+                "itemId": "goldSmithingHammer",
                 "count": 1
             }
         ],
@@ -898,26 +898,26 @@
     {
         "type": "action",
         "id": "goldWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 305,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldWoodworkingTool",
+                "itemId": "goldWoodworkingTool",
                 "count": 1
             }
         ],
@@ -926,26 +926,26 @@
     {
         "type": "action",
         "id": "goldTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 306,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldTailoringNeedle",
+                "itemId": "goldTailoringNeedle",
                 "count": 1
             }
         ],
@@ -954,26 +954,26 @@
     {
         "type": "action",
         "id": "goldCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 307,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldCookingUtensil",
+                "itemId": "goldCookingUtensil",
                 "count": 1
             }
         ],
@@ -982,26 +982,26 @@
     {
         "type": "action",
         "id": "goldBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "sort": 308,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldBrewingKit",
+                "itemId": "goldBrewingKit",
                 "count": 1
             }
         ],
@@ -1010,26 +1010,26 @@
     {
         "type": "action",
         "id": "orichalcumPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 401,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumPickaxe",
+                "itemId": "orichalcumPickaxe",
                 "count": 1
             }
         ],
@@ -1038,26 +1038,26 @@
     {
         "type": "action",
         "id": "orichalcumAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 402,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumAxe",
+                "itemId": "orichalcumAxe",
                 "count": 1
             }
         ],
@@ -1066,26 +1066,26 @@
     {
         "type": "action",
         "id": "orichalcumForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 403,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumForagingKnife",
+                "itemId": "orichalcumForagingKnife",
                 "count": 1
             }
         ],
@@ -1094,26 +1094,26 @@
     {
         "type": "action",
         "id": "orichalcumSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 404,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumSmithingHammer",
+                "itemId": "orichalcumSmithingHammer",
                 "count": 1
             }
         ],
@@ -1122,26 +1122,26 @@
     {
         "type": "action",
         "id": "orichalcumWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 405,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumWoodworkingTool",
+                "itemId": "orichalcumWoodworkingTool",
                 "count": 1
             }
         ],
@@ -1150,26 +1150,26 @@
     {
         "type": "action",
         "id": "orichalcumTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 406,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumTailoringNeedle",
+                "itemId": "orichalcumTailoringNeedle",
                 "count": 1
             }
         ],
@@ -1178,26 +1178,26 @@
     {
         "type": "action",
         "id": "orichalcumCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 407,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumCookingUtensil",
+                "itemId": "orichalcumCookingUtensil",
                 "count": 1
             }
         ],
@@ -1206,26 +1206,26 @@
     {
         "type": "action",
         "id": "orichalcumBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "sort": 408,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumBrewingKit",
+                "itemId": "orichalcumBrewingKit",
                 "count": 1
             }
         ],
@@ -1234,26 +1234,26 @@
     {
         "type": "action",
         "id": "darkIronPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 501,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronPickaxe",
+                "itemId": "darkIronPickaxe",
                 "count": 1
             }
         ],
@@ -1262,26 +1262,26 @@
     {
         "type": "action",
         "id": "darkIronAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 502,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronAxe",
+                "itemId": "darkIronAxe",
                 "count": 1
             }
         ],
@@ -1290,26 +1290,26 @@
     {
         "type": "action",
         "id": "darkIronForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 503,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronForagingKnife",
+                "itemId": "darkIronForagingKnife",
                 "count": 1
             }
         ],
@@ -1318,26 +1318,26 @@
     {
         "type": "action",
         "id": "darkIronSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 504,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronSmithingHammer",
+                "itemId": "darkIronSmithingHammer",
                 "count": 1
             }
         ],
@@ -1346,26 +1346,26 @@
     {
         "type": "action",
         "id": "darkIronWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 505,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronWoodworkingTool",
+                "itemId": "darkIronWoodworkingTool",
                 "count": 1
             }
         ],
@@ -1374,26 +1374,26 @@
     {
         "type": "action",
         "id": "darkIronTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 506,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronTailoringNeedle",
+                "itemId": "darkIronTailoringNeedle",
                 "count": 1
             }
         ],
@@ -1402,26 +1402,26 @@
     {
         "type": "action",
         "id": "darkIronCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 507,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronCookingUtensil",
+                "itemId": "darkIronCookingUtensil",
                 "count": 1
             }
         ],
@@ -1430,26 +1430,26 @@
     {
         "type": "action",
         "id": "darkIronBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "sort": 508,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronBrewingKit",
+                "itemId": "darkIronBrewingKit",
                 "count": 1
             }
         ],
@@ -1458,26 +1458,26 @@
     {
         "type": "action",
         "id": "mithrilPickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 601,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilPickaxe",
+                "itemId": "mithrilPickaxe",
                 "count": 1
             }
         ],
@@ -1486,26 +1486,26 @@
     {
         "type": "action",
         "id": "mithrilAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 602,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilAxe",
+                "itemId": "mithrilAxe",
                 "count": 1
             }
         ],
@@ -1514,26 +1514,26 @@
     {
         "type": "action",
         "id": "mithrilForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 603,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilForagingKnife",
+                "itemId": "mithrilForagingKnife",
                 "count": 1
             }
         ],
@@ -1542,26 +1542,26 @@
     {
         "type": "action",
         "id": "mithrilSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 604,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilSmithingHammer",
+                "itemId": "mithrilSmithingHammer",
                 "count": 1
             }
         ],
@@ -1570,26 +1570,26 @@
     {
         "type": "action",
         "id": "mithrilWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 605,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilWoodworkingTool",
+                "itemId": "mithrilWoodworkingTool",
                 "count": 1
             }
         ],
@@ -1598,26 +1598,26 @@
     {
         "type": "action",
         "id": "mithrilTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 606,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilTailoringNeedle",
+                "itemId": "mithrilTailoringNeedle",
                 "count": 1
             }
         ],
@@ -1626,26 +1626,26 @@
     {
         "type": "action",
         "id": "mithrilCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 607,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilCookingUtensil",
+                "itemId": "mithrilCookingUtensil",
                 "count": 1
             }
         ],
@@ -1654,26 +1654,26 @@
     {
         "type": "action",
         "id": "mithrilBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "sort": 608,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilBrewingKit",
+                "itemId": "mithrilBrewingKit",
                 "count": 1
             }
         ],
@@ -1682,26 +1682,26 @@
     {
         "type": "action",
         "id": "adamantinePickaxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 701,
         "duration": 160000,
         "xp": 640,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantinePickaxe",
+                "itemId": "adamantinePickaxe",
                 "count": 1
             }
         ],
@@ -1710,26 +1710,26 @@
     {
         "type": "action",
         "id": "adamantineAxe",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 702,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineAxe",
+                "itemId": "adamantineAxe",
                 "count": 1
             }
         ],
@@ -1738,26 +1738,26 @@
     {
         "type": "action",
         "id": "adamantineForagingKnife",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 703,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineForagingKnife",
+                "itemId": "adamantineForagingKnife",
                 "count": 1
             }
         ],
@@ -1766,26 +1766,26 @@
     {
         "type": "action",
         "id": "adamantineSmithingHammer",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 704,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineSmithingHammer",
+                "itemId": "adamantineSmithingHammer",
                 "count": 1
             }
         ],
@@ -1794,26 +1794,26 @@
     {
         "type": "action",
         "id": "adamantineWoodworkingTool",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 705,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineWoodworkingTool",
+                "itemId": "adamantineWoodworkingTool",
                 "count": 1
             }
         ],
@@ -1822,26 +1822,26 @@
     {
         "type": "action",
         "id": "adamantineTailoringNeedle",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 706,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineTailoringNeedle",
+                "itemId": "adamantineTailoringNeedle",
                 "count": 1
             }
         ],
@@ -1850,26 +1850,26 @@
     {
         "type": "action",
         "id": "adamantineCookingUtensil",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 707,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineCookingUtensil",
+                "itemId": "adamantineCookingUtensil",
                 "count": 1
             }
         ],
@@ -1878,26 +1878,26 @@
     {
         "type": "action",
         "id": "adamantineBrewingKit",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "sort": 708,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineBrewingKit",
+                "itemId": "adamantineBrewingKit",
                 "count": 1
             }
         ],
@@ -1905,27 +1905,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "id": "silverAlchemistKit",
         "sort": 209,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverAlchemistKit",
+                "itemId": "silverAlchemistKit",
                 "count": 1
             }
         ],
@@ -1933,27 +1933,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 30,
         "duration": 60000,
         "xp": 600,
-        "chest": "silverMineChest",
+        "chestId": "silverMineChest",
         "chestPoints": 600,
         "id": "silverEnhancingTool",
         "sort": 210,
         "ingredients": [
             {
-                "item": "silverIngot",
+                "itemId": "silverIngot",
                 "count": 5
             },
             {
-                "item": "oakPlank",
+                "itemId": "oakPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "silverEnhancingTool",
+                "itemId": "silverEnhancingTool",
                 "count": 1
             }
         ],
@@ -1961,27 +1961,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "id": "goldAlchemistKit",
         "sort": 309,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldAlchemistKit",
+                "itemId": "goldAlchemistKit",
                 "count": 1
             }
         ],
@@ -1989,27 +1989,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 40,
         "duration": 80000,
         "xp": 320,
-        "chest": "goldMineChest",
+        "chestId": "goldMineChest",
         "chestPoints": 800,
         "id": "goldEnhancingTool",
         "sort": 310,
         "ingredients": [
             {
-                "item": "goldIngot",
+                "itemId": "goldIngot",
                 "count": 5
             },
             {
-                "item": "maplePlank",
+                "itemId": "maplePlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "goldEnhancingTool",
+                "itemId": "goldEnhancingTool",
                 "count": 1
             }
         ],
@@ -2017,27 +2017,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "id": "orichalcumAlchemistKit",
         "sort": 409,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumAlchemistKit",
+                "itemId": "orichalcumAlchemistKit",
                 "count": 1
             }
         ],
@@ -2045,27 +2045,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 50,
         "duration": 100000,
         "xp": 400,
-        "chest": "orichalcumMineChest",
+        "chestId": "orichalcumMineChest",
         "chestPoints": 320,
         "id": "orichalcumEnhancingTool",
         "sort": 410,
         "ingredients": [
             {
-                "item": "orichalcumIngot",
+                "itemId": "orichalcumIngot",
                 "count": 5
             },
             {
-                "item": "elmPlank",
+                "itemId": "elmPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "orichalcumEnhancingTool",
+                "itemId": "orichalcumEnhancingTool",
                 "count": 1
             }
         ],
@@ -2073,27 +2073,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "id": "darkIronAlchemistKit",
         "sort": 509,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronAlchemistKit",
+                "itemId": "darkIronAlchemistKit",
                 "count": 1
             }
         ],
@@ -2101,27 +2101,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 60,
         "duration": 120000,
         "xp": 480,
-        "chest": "darkIronMineChest",
+        "chestId": "darkIronMineChest",
         "chestPoints": 1200,
         "id": "darkIronEnhancingTool",
         "sort": 510,
         "ingredients": [
             {
-                "item": "darkIronIngot",
+                "itemId": "darkIronIngot",
                 "count": 5
             },
             {
-                "item": "beechPlank",
+                "itemId": "beechPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "darkIronEnhancingTool",
+                "itemId": "darkIronEnhancingTool",
                 "count": 1
             }
         ],
@@ -2129,27 +2129,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "id": "mithrilAlchemistKit",
         "sort": 609,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilAlchemistKit",
+                "itemId": "mithrilAlchemistKit",
                 "count": 1
             }
         ],
@@ -2157,27 +2157,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 70,
         "duration": 140000,
         "xp": 560,
-        "chest": "mithrilMineChest",
+        "chestId": "mithrilMineChest",
         "chestPoints": 400,
         "id": "mithrilEnhancingTool",
         "sort": 610,
         "ingredients": [
             {
-                "item": "mithrilIngot",
+                "itemId": "mithrilIngot",
                 "count": 5
             },
             {
-                "item": "mahoganyPlank",
+                "itemId": "mahoganyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "mithrilEnhancingTool",
+                "itemId": "mithrilEnhancingTool",
                 "count": 1
             }
         ],
@@ -2185,27 +2185,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "id": "adamantineAlchemistKit",
         "sort": 709,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineAlchemistKit",
+                "itemId": "adamantineAlchemistKit",
                 "count": 1
             }
         ],
@@ -2213,27 +2213,27 @@
     },
     {
         "type": "action",
-        "skill": "smithing",
+        "skillId": "smithing",
         "minLevel": 80,
         "duration": 160000,
         "xp": 200,
-        "chest": "adamantineMineChest",
+        "chestId": "adamantineMineChest",
         "chestPoints": 480,
         "id": "adamantineEnhancingTool",
         "sort": 710,
         "ingredients": [
             {
-                "item": "adamantineIngot",
+                "itemId": "adamantineIngot",
                 "count": 5
             },
             {
-                "item": "ebonyPlank",
+                "itemId": "ebonyPlank",
                 "count": 2
             }
         ],
         "products": [
             {
-                "item": "adamantineEnhancingTool",
+                "itemId": "adamantineEnhancingTool",
                 "count": 1
             }
         ],

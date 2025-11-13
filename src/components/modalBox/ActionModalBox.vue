@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import ModalBox from '@/components/ModalBox.vue'
-import { INFINITE_STRING } from '@/constants'
+import { INFINITE_STRING } from '@/constant'
 import { itemConfigMap } from '@/gameConfig'
 import { useActionStore } from '@/stores/action'
 import { useActionQueueStore } from '@/stores/actionQueue'

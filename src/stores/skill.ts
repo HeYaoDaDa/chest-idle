@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-import { XP_TABLE } from '@/constants'
+import { XP_TABLE } from '@/constant'
 import { skillConfigMap, skillConfigs } from '@/gameConfig'
 import i18n from '@/i18n'
 

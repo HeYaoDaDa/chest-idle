@@ -170,6 +170,7 @@ function stopCurrentAction() {
   position: relative;
   display: flex;
   align-items: center;
+  min-width: 256px;
 }
 
 .progress-duration {

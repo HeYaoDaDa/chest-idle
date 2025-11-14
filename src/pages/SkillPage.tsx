@@ -1,4 +1,5 @@
 import { defineComponent, computed, ref, shallowRef, watchEffect } from 'vue'
+import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
@@ -36,7 +37,7 @@ export default defineComponent({
 
     const displayedActions = computed(() => {
       if (!hasTabGroups.value) {
-        return actionConfigListBySkill[skillId.value]
+        return actionConfigListBySkill[skillId.value] || []
       }
       return skillActionTabs.value[currentTab.value] || []
     })
@@ -55,6 +56,15 @@ export default defineComponent({
       selectedActionId.value = actionId
       modalVisible.value = true
     }
+
+    watch(
+      () => skillId.value,
+      () => {
+        if (!hasTabGroups.value) {
+          currentTab.value = ''
+        }
+      },
+    )
 
     return () => {
       if (!skill.value) return null

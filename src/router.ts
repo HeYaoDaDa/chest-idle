@@ -10,7 +10,6 @@ import { useAppStore } from '@/stores/app'
 import { skillConfigs } from './gameConfig'
 
 const router = createRouter({
-  // history: createWebHistory(import.meta.env.BASE_URL),
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {

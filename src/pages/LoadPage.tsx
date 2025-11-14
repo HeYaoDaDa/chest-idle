@@ -1,4 +1,4 @@
-import { defineComponent, ref, watchEffect } from 'vue'
+import { computed, defineComponent, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
@@ -10,18 +10,20 @@ export default defineComponent({
     const router = useRouter()
     const { t } = useI18n()
     const appStore = useAppStore()
-    const fail = ref(false)
+    const state = computed(() => appStore.state)
+    const fail = computed(() => appStore.state === 'error')
 
-    watchEffect(() => {
-      if ('loading' === appStore.state) {
-      } else if ('ready' === appStore.state) {
-        router.replace('/game')
-      } else if ('error' === appStore.state) {
-        fail.value = true
-      } else {
-        appStore.loadApplication()
-      }
-    })
+    appStore.loadApplication()
+
+    watch(
+      () => state.value,
+      (newState) => {
+        if (newState === 'ready') {
+          router.push('/game')
+        }
+      },
+      { immediate: true },
+    )
 
     return () => (
       <div class="h-screen flex justify-center items-center">

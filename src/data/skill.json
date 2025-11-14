@@ -2,81 +2,113 @@
   {
     "type": "skill",
     "id": "mining",
-    "sort": 0
+    "sort": 0,
+    "name": "skill.mining.name",
+    "description": "skill.mining.description"
   },
   {
     "type": "skill",
     "id": "woodcutting",
-    "sort": 1
+    "sort": 1,
+    "name": "skill.woodcutting.name",
+    "description": "skill.woodcutting.description"
   },
   {
     "type": "skill",
     "id": "foraging",
-    "sort": 2
+    "sort": 2,
+    "name": "skill.foraging.name",
+    "description": "skill.foraging.description"
   },
   {
     "type": "skill",
     "id": "smithing",
-    "sort": 3
+    "sort": 3,
+    "name": "skill.smithing.name",
+    "description": "skill.smithing.description"
   },
   {
     "type": "skill",
     "id": "woodworking",
-    "sort": 4
+    "sort": 4,
+    "name": "skill.woodworking.name",
+    "description": "skill.woodworking.description"
   },
   {
     "type": "skill",
     "id": "tailoring",
-    "sort": 5
+    "sort": 5,
+    "name": "skill.tailoring.name",
+    "description": "skill.tailoring.description"
   },
   {
     "type": "skill",
     "id": "cooking",
-    "sort": 6
+    "sort": 6,
+    "name": "skill.cooking.name",
+    "description": "skill.cooking.description"
   },
   {
     "type": "skill",
     "id": "brewing",
-    "sort": 7
+    "sort": 7,
+    "name": "skill.brewing.name",
+    "description": "skill.brewing.description"
   },
   {
     "type": "skill",
     "id": "alchemy",
-    "sort": 8
+    "sort": 8,
+    "name": "skill.alchemy.name",
+    "description": "skill.alchemy.description"
   },
   {
     "type": "skill",
     "id": "enhancing",
-    "sort": 9
+    "sort": 9,
+    "name": "skill.enhancing.name",
+    "description": "skill.enhancing.description"
   },
   {
     "type": "skill",
     "id": "intelligence",
-    "sort": 10
+    "sort": 10,
+    "name": "skill.intelligence.name",
+    "description": "skill.intelligence.description"
   },
   {
     "type": "skill",
     "id": "stamina",
-    "sort": 11
+    "sort": 11,
+    "name": "skill.stamina.name",
+    "description": "skill.stamina.description"
   },
   {
     "type": "skill",
     "id": "defense",
-    "sort": 12
+    "sort": 12,
+    "name": "skill.defense.name",
+    "description": "skill.defense.description"
   },
   {
     "type": "skill",
     "id": "melee",
-    "sort": 14
+    "sort": 14,
+    "name": "skill.melee.name",
+    "description": "skill.melee.description"
   },
   {
     "type": "skill",
     "id": "ranged",
-    "sort": 15
+    "sort": 15,
+    "name": "skill.ranged.name",
+    "description": "skill.ranged.description"
   },
   {
     "type": "skill",
     "id": "magic",
-    "sort": 16
+    "sort": 16,
+    "name": "skill.magic.name",
+    "description": "skill.magic.description"
   }
 ]

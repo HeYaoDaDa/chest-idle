@@ -25,7 +25,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperPickaxe.name",
+    "description": "action.copperPickaxe.description"
   },
   {
     "type": "action",
@@ -53,7 +55,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperAxe.name",
+    "description": "action.copperAxe.description"
   },
   {
     "type": "action",
@@ -81,7 +85,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperForagingKnife.name",
+    "description": "action.copperForagingKnife.description"
   },
   {
     "type": "action",
@@ -109,7 +115,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperSmithingHammer.name",
+    "description": "action.copperSmithingHammer.description"
   },
   {
     "type": "action",
@@ -137,7 +145,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperWoodworkingTool.name",
+    "description": "action.copperWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -165,7 +175,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperTailoringNeedle.name",
+    "description": "action.copperTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -193,7 +205,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperCookingUtensil.name",
+    "description": "action.copperCookingUtensil.description"
   },
   {
     "type": "action",
@@ -221,7 +235,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperBrewingKit.name",
+    "description": "action.copperBrewingKit.description"
   },
   {
     "type": "action",
@@ -249,7 +265,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperAlchemistKit.name",
+    "description": "action.copperAlchemistKit.description"
   },
   {
     "type": "action",
@@ -277,7 +295,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.copperEnhancingTool.name",
+    "description": "action.copperEnhancingTool.description"
   },
   {
     "type": "action",
@@ -305,7 +325,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironPickaxe.name",
+    "description": "action.ironPickaxe.description"
   },
   {
     "type": "action",
@@ -333,7 +355,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironAxe.name",
+    "description": "action.ironAxe.description"
   },
   {
     "type": "action",
@@ -361,7 +385,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironForagingKnife.name",
+    "description": "action.ironForagingKnife.description"
   },
   {
     "type": "action",
@@ -389,7 +415,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironSmithingHammer.name",
+    "description": "action.ironSmithingHammer.description"
   },
   {
     "type": "action",
@@ -417,7 +445,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironWoodworkingTool.name",
+    "description": "action.ironWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -445,7 +475,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironTailoringNeedle.name",
+    "description": "action.ironTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -473,7 +505,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironCookingUtensil.name",
+    "description": "action.ironCookingUtensil.description"
   },
   {
     "type": "action",
@@ -501,7 +535,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironBrewingKit.name",
+    "description": "action.ironBrewingKit.description"
   },
   {
     "type": "action",
@@ -529,7 +565,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironAlchemistKit.name",
+    "description": "action.ironAlchemistKit.description"
   },
   {
     "type": "action",
@@ -557,7 +595,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.ironEnhancingTool.name",
+    "description": "action.ironEnhancingTool.description"
   },
   {
     "type": "action",
@@ -585,7 +625,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverPickaxe.name",
+    "description": "action.silverPickaxe.description"
   },
   {
     "type": "action",
@@ -613,7 +655,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverAxe.name",
+    "description": "action.silverAxe.description"
   },
   {
     "type": "action",
@@ -641,7 +685,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverForagingKnife.name",
+    "description": "action.silverForagingKnife.description"
   },
   {
     "type": "action",
@@ -669,7 +715,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverSmithingHammer.name",
+    "description": "action.silverSmithingHammer.description"
   },
   {
     "type": "action",
@@ -697,7 +745,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverWoodworkingTool.name",
+    "description": "action.silverWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -725,7 +775,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverTailoringNeedle.name",
+    "description": "action.silverTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -753,7 +805,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverCookingUtensil.name",
+    "description": "action.silverCookingUtensil.description"
   },
   {
     "type": "action",
@@ -781,7 +835,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverBrewingKit.name",
+    "description": "action.silverBrewingKit.description"
   },
   {
     "type": "action",
@@ -809,7 +865,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldPickaxe.name",
+    "description": "action.goldPickaxe.description"
   },
   {
     "type": "action",
@@ -837,7 +895,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldAxe.name",
+    "description": "action.goldAxe.description"
   },
   {
     "type": "action",
@@ -865,7 +925,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldForagingKnife.name",
+    "description": "action.goldForagingKnife.description"
   },
   {
     "type": "action",
@@ -893,7 +955,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldSmithingHammer.name",
+    "description": "action.goldSmithingHammer.description"
   },
   {
     "type": "action",
@@ -921,7 +985,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldWoodworkingTool.name",
+    "description": "action.goldWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -949,7 +1015,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldTailoringNeedle.name",
+    "description": "action.goldTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -977,7 +1045,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldCookingUtensil.name",
+    "description": "action.goldCookingUtensil.description"
   },
   {
     "type": "action",
@@ -1005,7 +1075,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldBrewingKit.name",
+    "description": "action.goldBrewingKit.description"
   },
   {
     "type": "action",
@@ -1033,7 +1105,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumPickaxe.name",
+    "description": "action.orichalcumPickaxe.description"
   },
   {
     "type": "action",
@@ -1061,7 +1135,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumAxe.name",
+    "description": "action.orichalcumAxe.description"
   },
   {
     "type": "action",
@@ -1089,7 +1165,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumForagingKnife.name",
+    "description": "action.orichalcumForagingKnife.description"
   },
   {
     "type": "action",
@@ -1117,7 +1195,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumSmithingHammer.name",
+    "description": "action.orichalcumSmithingHammer.description"
   },
   {
     "type": "action",
@@ -1145,7 +1225,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumWoodworkingTool.name",
+    "description": "action.orichalcumWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -1173,7 +1255,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumTailoringNeedle.name",
+    "description": "action.orichalcumTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -1201,7 +1285,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumCookingUtensil.name",
+    "description": "action.orichalcumCookingUtensil.description"
   },
   {
     "type": "action",
@@ -1229,7 +1315,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumBrewingKit.name",
+    "description": "action.orichalcumBrewingKit.description"
   },
   {
     "type": "action",
@@ -1257,7 +1345,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronPickaxe.name",
+    "description": "action.darkIronPickaxe.description"
   },
   {
     "type": "action",
@@ -1285,7 +1375,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronAxe.name",
+    "description": "action.darkIronAxe.description"
   },
   {
     "type": "action",
@@ -1313,7 +1405,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronForagingKnife.name",
+    "description": "action.darkIronForagingKnife.description"
   },
   {
     "type": "action",
@@ -1341,7 +1435,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronSmithingHammer.name",
+    "description": "action.darkIronSmithingHammer.description"
   },
   {
     "type": "action",
@@ -1369,7 +1465,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronWoodworkingTool.name",
+    "description": "action.darkIronWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -1397,7 +1495,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronTailoringNeedle.name",
+    "description": "action.darkIronTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -1425,7 +1525,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronCookingUtensil.name",
+    "description": "action.darkIronCookingUtensil.description"
   },
   {
     "type": "action",
@@ -1453,7 +1555,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronBrewingKit.name",
+    "description": "action.darkIronBrewingKit.description"
   },
   {
     "type": "action",
@@ -1481,7 +1585,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilPickaxe.name",
+    "description": "action.mithrilPickaxe.description"
   },
   {
     "type": "action",
@@ -1509,7 +1615,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilAxe.name",
+    "description": "action.mithrilAxe.description"
   },
   {
     "type": "action",
@@ -1537,7 +1645,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilForagingKnife.name",
+    "description": "action.mithrilForagingKnife.description"
   },
   {
     "type": "action",
@@ -1565,7 +1675,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilSmithingHammer.name",
+    "description": "action.mithrilSmithingHammer.description"
   },
   {
     "type": "action",
@@ -1593,7 +1705,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilWoodworkingTool.name",
+    "description": "action.mithrilWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -1621,7 +1735,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilTailoringNeedle.name",
+    "description": "action.mithrilTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -1649,7 +1765,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilCookingUtensil.name",
+    "description": "action.mithrilCookingUtensil.description"
   },
   {
     "type": "action",
@@ -1677,7 +1795,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilBrewingKit.name",
+    "description": "action.mithrilBrewingKit.description"
   },
   {
     "type": "action",
@@ -1705,7 +1825,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantinePickaxe.name",
+    "description": "action.adamantinePickaxe.description"
   },
   {
     "type": "action",
@@ -1733,7 +1855,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineAxe.name",
+    "description": "action.adamantineAxe.description"
   },
   {
     "type": "action",
@@ -1761,7 +1885,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineForagingKnife.name",
+    "description": "action.adamantineForagingKnife.description"
   },
   {
     "type": "action",
@@ -1789,7 +1915,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineSmithingHammer.name",
+    "description": "action.adamantineSmithingHammer.description"
   },
   {
     "type": "action",
@@ -1817,7 +1945,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineWoodworkingTool.name",
+    "description": "action.adamantineWoodworkingTool.description"
   },
   {
     "type": "action",
@@ -1845,7 +1975,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineTailoringNeedle.name",
+    "description": "action.adamantineTailoringNeedle.description"
   },
   {
     "type": "action",
@@ -1873,7 +2005,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineCookingUtensil.name",
+    "description": "action.adamantineCookingUtensil.description"
   },
   {
     "type": "action",
@@ -1901,7 +2035,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineBrewingKit.name",
+    "description": "action.adamantineBrewingKit.description"
   },
   {
     "type": "action",
@@ -1929,7 +2065,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverAlchemistKit.name",
+    "description": "action.silverAlchemistKit.description"
   },
   {
     "type": "action",
@@ -1957,7 +2095,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.silverEnhancingTool.name",
+    "description": "action.silverEnhancingTool.description"
   },
   {
     "type": "action",
@@ -1985,7 +2125,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldAlchemistKit.name",
+    "description": "action.goldAlchemistKit.description"
   },
   {
     "type": "action",
@@ -2013,7 +2155,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.goldEnhancingTool.name",
+    "description": "action.goldEnhancingTool.description"
   },
   {
     "type": "action",
@@ -2041,7 +2185,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumAlchemistKit.name",
+    "description": "action.orichalcumAlchemistKit.description"
   },
   {
     "type": "action",
@@ -2069,7 +2215,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.orichalcumEnhancingTool.name",
+    "description": "action.orichalcumEnhancingTool.description"
   },
   {
     "type": "action",
@@ -2097,7 +2245,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronAlchemistKit.name",
+    "description": "action.darkIronAlchemistKit.description"
   },
   {
     "type": "action",
@@ -2125,7 +2275,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.darkIronEnhancingTool.name",
+    "description": "action.darkIronEnhancingTool.description"
   },
   {
     "type": "action",
@@ -2153,7 +2305,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilAlchemistKit.name",
+    "description": "action.mithrilAlchemistKit.description"
   },
   {
     "type": "action",
@@ -2181,7 +2335,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.mithrilEnhancingTool.name",
+    "description": "action.mithrilEnhancingTool.description"
   },
   {
     "type": "action",
@@ -2209,7 +2365,9 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineAlchemistKit.name",
+    "description": "action.adamantineAlchemistKit.description"
   },
   {
     "type": "action",
@@ -2237,6 +2395,8 @@
         "count": 1
       }
     ],
-    "tab": "tools"
+    "tab": "tools",
+    "name": "action.adamantineEnhancingTool.name",
+    "description": "action.adamantineEnhancingTool.description"
   }
 ]

@@ -14,7 +14,9 @@
         "itemId": "willowWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.willowTree.name",
+    "description": "action.willowTree.description"
   },
   {
     "type": "action",
@@ -31,7 +33,9 @@
         "itemId": "pineWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.pineTree.name",
+    "description": "action.pineTree.description"
   },
   {
     "type": "action",
@@ -48,7 +52,9 @@
         "itemId": "oakWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.oakTree.name",
+    "description": "action.oakTree.description"
   },
   {
     "type": "action",
@@ -65,7 +71,9 @@
         "itemId": "mapleWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.mapleTree.name",
+    "description": "action.mapleTree.description"
   },
   {
     "type": "action",
@@ -82,7 +90,9 @@
         "itemId": "elmWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.elmTree.name",
+    "description": "action.elmTree.description"
   },
   {
     "type": "action",
@@ -99,7 +109,9 @@
         "itemId": "beechWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.beechTree.name",
+    "description": "action.beechTree.description"
   },
   {
     "type": "action",
@@ -116,7 +128,9 @@
         "itemId": "mahoganyWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.mahoganyTree.name",
+    "description": "action.mahoganyTree.description"
   },
   {
     "type": "action",
@@ -133,6 +147,8 @@
         "itemId": "ebonyWood",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.ebonyTree.name",
+    "description": "action.ebonyTree.description"
   }
 ]

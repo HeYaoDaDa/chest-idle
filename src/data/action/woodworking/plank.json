@@ -21,7 +21,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.willowPlank.name",
+    "description": "action.willowPlank.description"
   },
   {
     "type": "action",
@@ -45,7 +47,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.pinePlank.name",
+    "description": "action.pinePlank.description"
   },
   {
     "type": "action",
@@ -69,7 +73,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.oakPlank.name",
+    "description": "action.oakPlank.description"
   },
   {
     "type": "action",
@@ -93,7 +99,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.maplePlank.name",
+    "description": "action.maplePlank.description"
   },
   {
     "type": "action",
@@ -117,7 +125,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.elmPlank.name",
+    "description": "action.elmPlank.description"
   },
   {
     "type": "action",
@@ -141,7 +151,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.beechPlank.name",
+    "description": "action.beechPlank.description"
   },
   {
     "type": "action",
@@ -165,7 +177,9 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.mahoganyPlank.name",
+    "description": "action.mahoganyPlank.description"
   },
   {
     "type": "action",
@@ -189,6 +203,8 @@
         "count": 1
       }
     ],
-    "tab": "materials"
+    "tab": "materials",
+    "name": "action.ebonyPlank.name",
+    "description": "action.ebonyPlank.description"
   }
 ]

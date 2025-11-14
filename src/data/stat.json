@@ -2,51 +2,71 @@
   {
     "type": "stat",
     "id": "miningSpeed",
-    "sort": 0
+    "sort": 0,
+    "name": "stat.miningSpeed.name",
+    "description": "stat.miningSpeed.description"
   },
   {
     "type": "stat",
     "id": "woodcuttingSpeed",
-    "sort": 1
+    "sort": 1,
+    "name": "stat.woodcuttingSpeed.name",
+    "description": "stat.woodcuttingSpeed.description"
   },
   {
     "type": "stat",
     "id": "foragingSpeed",
-    "sort": 2
+    "sort": 2,
+    "name": "stat.foragingSpeed.name",
+    "description": "stat.foragingSpeed.description"
   },
   {
     "type": "stat",
     "id": "smithingSpeed",
-    "sort": 3
+    "sort": 3,
+    "name": "stat.smithingSpeed.name",
+    "description": "stat.smithingSpeed.description"
   },
   {
     "type": "stat",
     "id": "woodworkingSpeed",
-    "sort": 4
+    "sort": 4,
+    "name": "stat.woodworkingSpeed.name",
+    "description": "stat.woodworkingSpeed.description"
   },
   {
     "type": "stat",
     "id": "tailoringSpeed",
-    "sort": 5
+    "sort": 5,
+    "name": "stat.tailoringSpeed.name",
+    "description": "stat.tailoringSpeed.description"
   },
   {
     "type": "stat",
     "id": "cookingSpeed",
-    "sort": 6
+    "sort": 6,
+    "name": "stat.cookingSpeed.name",
+    "description": "stat.cookingSpeed.description"
   },
   {
     "type": "stat",
     "id": "brewingSpeed",
-    "sort": 7
+    "sort": 7,
+    "name": "stat.brewingSpeed.name",
+    "description": "stat.brewingSpeed.description"
   },
   {
     "type": "stat",
     "id": "alchemySpeed",
-    "sort": 8
+    "sort": 8,
+    "name": "stat.alchemySpeed.name",
+    "description": "stat.alchemySpeed.description"
   },
   {
     "type": "stat",
     "id": "enhancingSpeed",
-    "sort": 9
+    "sort": 9,
+    "name": "stat.enhancingSpeed.name",
+    "description": "stat.enhancingSpeed.description"
   }
 ]

@@ -38,7 +38,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.copperMineChest.name",
+    "description": "item.copperMineChest.description"
   },
   {
     "type": "item",
@@ -67,7 +69,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.ironMineChest.name",
+    "description": "item.ironMineChest.description"
   },
   {
     "type": "item",
@@ -96,7 +100,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.silverMineChest.name",
+    "description": "item.silverMineChest.description"
   },
   {
     "type": "item",
@@ -125,7 +131,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.goldMineChest.name",
+    "description": "item.goldMineChest.description"
   },
   {
     "type": "item",
@@ -154,7 +162,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.orichalcumMineChest.name",
+    "description": "item.orichalcumMineChest.description"
   },
   {
     "type": "item",
@@ -183,7 +193,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.darkIronMineChest.name",
+    "description": "item.darkIronMineChest.description"
   },
   {
     "type": "item",
@@ -212,7 +224,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.mithrilMineChest.name",
+    "description": "item.mithrilMineChest.description"
   },
   {
     "type": "item",
@@ -241,7 +255,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.adamantineMineChest.name",
+    "description": "item.adamantineMineChest.description"
   },
   {
     "type": "item",
@@ -282,7 +298,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.willowTreeChest.name",
+    "description": "item.willowTreeChest.description"
   },
   {
     "type": "item",
@@ -311,7 +329,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.pineTreeChest.name",
+    "description": "item.pineTreeChest.description"
   },
   {
     "type": "item",
@@ -340,7 +360,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.oakTreeChest.name",
+    "description": "item.oakTreeChest.description"
   },
   {
     "type": "item",
@@ -369,7 +391,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.mapleTreeChest.name",
+    "description": "item.mapleTreeChest.description"
   },
   {
     "type": "item",
@@ -398,7 +422,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.elmTreeChest.name",
+    "description": "item.elmTreeChest.description"
   },
   {
     "type": "item",
@@ -427,7 +453,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.beechTreeChest.name",
+    "description": "item.beechTreeChest.description"
   },
   {
     "type": "item",
@@ -456,7 +484,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.mahoganyTreeChest.name",
+    "description": "item.mahoganyTreeChest.description"
   },
   {
     "type": "item",
@@ -485,7 +515,9 @@
           "max": 1
         }
       ]
-    }
+    },
+    "name": "item.ebonyTreeChest.name",
+    "description": "item.ebonyTreeChest.description"
   },
   {
     "type": "item",
@@ -502,7 +534,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.willowPlankChest.name",
+    "description": "item.willowPlankChest.description"
   },
   {
     "type": "item",
@@ -519,7 +553,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.pinePlankChest.name",
+    "description": "item.pinePlankChest.description"
   },
   {
     "type": "item",
@@ -536,7 +572,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.oakPlankChest.name",
+    "description": "item.oakPlankChest.description"
   },
   {
     "type": "item",
@@ -553,7 +591,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.maplePlankChest.name",
+    "description": "item.maplePlankChest.description"
   },
   {
     "type": "item",
@@ -570,7 +610,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.elmPlankChest.name",
+    "description": "item.elmPlankChest.description"
   },
   {
     "type": "item",
@@ -587,7 +629,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.beechPlankChest.name",
+    "description": "item.beechPlankChest.description"
   },
   {
     "type": "item",
@@ -604,7 +648,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.mahoganyPlankChest.name",
+    "description": "item.mahoganyPlankChest.description"
   },
   {
     "type": "item",
@@ -621,7 +667,9 @@
           "max": 3
         }
       ]
-    }
+    },
+    "name": "item.ebonyPlankChest.name",
+    "description": "item.ebonyPlankChest.description"
   },
   {
     "type": "item",
@@ -662,7 +710,9 @@
           "max": 20
         }
       ]
-    }
+    },
+    "name": "item.farmChest.name",
+    "description": "item.farmChest.description"
   },
   {
     "type": "item",
@@ -703,7 +753,9 @@
           "max": 16
         }
       ]
-    }
+    },
+    "name": "item.plainChest.name",
+    "description": "item.plainChest.description"
   },
   {
     "type": "item",
@@ -744,7 +796,9 @@
           "max": 12
         }
       ]
-    }
+    },
+    "name": "item.forestChest.name",
+    "description": "item.forestChest.description"
   },
   {
     "type": "item",
@@ -785,7 +839,9 @@
           "max": 10
         }
       ]
-    }
+    },
+    "name": "item.mountainChest.name",
+    "description": "item.mountainChest.description"
   },
   {
     "type": "item",
@@ -826,7 +882,9 @@
           "max": 8
         }
       ]
-    }
+    },
+    "name": "item.swampChest.name",
+    "description": "item.swampChest.description"
   },
   {
     "type": "item",
@@ -867,7 +925,9 @@
           "max": 6
         }
       ]
-    }
+    },
+    "name": "item.desertChest.name",
+    "description": "item.desertChest.description"
   },
   {
     "type": "item",
@@ -908,7 +968,9 @@
           "max": 5
         }
       ]
-    }
+    },
+    "name": "item.grasslandChest.name",
+    "description": "item.grasslandChest.description"
   },
   {
     "type": "item",
@@ -949,6 +1011,8 @@
           "max": 4
         }
       ]
-    }
+    },
+    "name": "item.volcanoChest.name",
+    "description": "item.volcanoChest.description"
   }
 ]

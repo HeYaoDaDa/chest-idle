@@ -14,7 +14,9 @@
         "itemId": "copperOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.copperMine.name",
+    "description": "action.copperMine.description"
   },
   {
     "type": "action",
@@ -31,7 +33,9 @@
         "itemId": "ironOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.ironMine.name",
+    "description": "action.ironMine.description"
   },
   {
     "type": "action",
@@ -48,7 +52,9 @@
         "itemId": "silverOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.silverMine.name",
+    "description": "action.silverMine.description"
   },
   {
     "type": "action",
@@ -65,7 +71,9 @@
         "itemId": "goldOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.goldMine.name",
+    "description": "action.goldMine.description"
   },
   {
     "type": "action",
@@ -82,7 +90,9 @@
         "itemId": "orichalcumOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.orichalcumMine.name",
+    "description": "action.orichalcumMine.description"
   },
   {
     "type": "action",
@@ -99,7 +109,9 @@
         "itemId": "darkIronOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.darkIronMine.name",
+    "description": "action.darkIronMine.description"
   },
   {
     "type": "action",
@@ -116,7 +128,9 @@
         "itemId": "mithrilOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.mithrilMine.name",
+    "description": "action.mithrilMine.description"
   },
   {
     "type": "action",
@@ -133,6 +147,8 @@
         "itemId": "adamantineOre",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.adamantineMine.name",
+    "description": "action.adamantineMine.description"
   }
 ]

@@ -40,12 +40,6 @@ export function loadGameConfig() {
   }) as Record<string, GameConfig[]>
   const gameConfigs = Object.values(modules).flat()
   for (const config of gameConfigs) {
-    if (config.name == undefined) {
-      config.name = `${config.type}.${config.id}.name`
-    }
-    if (config.description == undefined) {
-      config.description = `${config.type}.${config.id}.description`
-    }
     switch (config.type) {
       case 'skill':
         skillConfigMap[config.id] = config as SkillConfig

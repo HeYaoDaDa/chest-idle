@@ -13,7 +13,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperPickaxe.name",
+    "description": "item.copperPickaxe.description"
   },
   {
     "type": "item",
@@ -29,7 +31,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperAxe.name",
+    "description": "item.copperAxe.description"
   },
   {
     "type": "item",
@@ -45,7 +49,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperForagingKnife.name",
+    "description": "item.copperForagingKnife.description"
   },
   {
     "type": "item",
@@ -61,7 +67,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperSmithingHammer.name",
+    "description": "item.copperSmithingHammer.description"
   },
   {
     "type": "item",
@@ -77,7 +85,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperWoodworkingTool.name",
+    "description": "item.copperWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -93,7 +103,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperTailoringNeedle.name",
+    "description": "item.copperTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -109,7 +121,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperCookingUtensil.name",
+    "description": "item.copperCookingUtensil.description"
   },
   {
     "type": "item",
@@ -125,7 +139,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperBrewingKit.name",
+    "description": "item.copperBrewingKit.description"
   },
   {
     "type": "item",
@@ -141,7 +157,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperAlchemistKit.name",
+    "description": "item.copperAlchemistKit.description"
   },
   {
     "type": "item",
@@ -157,7 +175,9 @@
           "value": 0.5
         }
       ]
-    }
+    },
+    "name": "item.copperEnhancingTool.name",
+    "description": "item.copperEnhancingTool.description"
   },
   {
     "type": "item",
@@ -173,7 +193,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironPickaxe.name",
+    "description": "item.ironPickaxe.description"
   },
   {
     "type": "item",
@@ -189,7 +211,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironAxe.name",
+    "description": "item.ironAxe.description"
   },
   {
     "type": "item",
@@ -205,7 +229,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironForagingKnife.name",
+    "description": "item.ironForagingKnife.description"
   },
   {
     "type": "item",
@@ -221,7 +247,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironSmithingHammer.name",
+    "description": "item.ironSmithingHammer.description"
   },
   {
     "type": "item",
@@ -237,7 +265,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironWoodworkingTool.name",
+    "description": "item.ironWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -253,7 +283,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironTailoringNeedle.name",
+    "description": "item.ironTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -269,7 +301,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironCookingUtensil.name",
+    "description": "item.ironCookingUtensil.description"
   },
   {
     "type": "item",
@@ -285,7 +319,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironBrewingKit.name",
+    "description": "item.ironBrewingKit.description"
   },
   {
     "type": "item",
@@ -301,7 +337,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironAlchemistKit.name",
+    "description": "item.ironAlchemistKit.description"
   },
   {
     "type": "item",
@@ -317,7 +355,9 @@
           "value": 1
         }
       ]
-    }
+    },
+    "name": "item.ironEnhancingTool.name",
+    "description": "item.ironEnhancingTool.description"
   },
   {
     "type": "item",
@@ -333,7 +373,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverPickaxe.name",
+    "description": "item.silverPickaxe.description"
   },
   {
     "type": "item",
@@ -349,7 +391,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverAxe.name",
+    "description": "item.silverAxe.description"
   },
   {
     "type": "item",
@@ -365,7 +409,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverForagingKnife.name",
+    "description": "item.silverForagingKnife.description"
   },
   {
     "type": "item",
@@ -381,7 +427,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverSmithingHammer.name",
+    "description": "item.silverSmithingHammer.description"
   },
   {
     "type": "item",
@@ -397,7 +445,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverWoodworkingTool.name",
+    "description": "item.silverWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -413,7 +463,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverTailoringNeedle.name",
+    "description": "item.silverTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -429,7 +481,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverCookingUtensil.name",
+    "description": "item.silverCookingUtensil.description"
   },
   {
     "type": "item",
@@ -445,7 +499,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverBrewingKit.name",
+    "description": "item.silverBrewingKit.description"
   },
   {
     "type": "item",
@@ -461,7 +517,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverAlchemistKit.name",
+    "description": "item.silverAlchemistKit.description"
   },
   {
     "type": "item",
@@ -477,7 +535,9 @@
           "value": 1.5
         }
       ]
-    }
+    },
+    "name": "item.silverEnhancingTool.name",
+    "description": "item.silverEnhancingTool.description"
   },
   {
     "type": "item",
@@ -493,7 +553,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldPickaxe.name",
+    "description": "item.goldPickaxe.description"
   },
   {
     "type": "item",
@@ -509,7 +571,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldAxe.name",
+    "description": "item.goldAxe.description"
   },
   {
     "type": "item",
@@ -525,7 +589,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldForagingKnife.name",
+    "description": "item.goldForagingKnife.description"
   },
   {
     "type": "item",
@@ -541,7 +607,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldSmithingHammer.name",
+    "description": "item.goldSmithingHammer.description"
   },
   {
     "type": "item",
@@ -557,7 +625,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldWoodworkingTool.name",
+    "description": "item.goldWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -573,7 +643,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldTailoringNeedle.name",
+    "description": "item.goldTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -589,7 +661,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldCookingUtensil.name",
+    "description": "item.goldCookingUtensil.description"
   },
   {
     "type": "item",
@@ -605,7 +679,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldBrewingKit.name",
+    "description": "item.goldBrewingKit.description"
   },
   {
     "type": "item",
@@ -621,7 +697,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldAlchemistKit.name",
+    "description": "item.goldAlchemistKit.description"
   },
   {
     "type": "item",
@@ -637,7 +715,9 @@
           "value": 2
         }
       ]
-    }
+    },
+    "name": "item.goldEnhancingTool.name",
+    "description": "item.goldEnhancingTool.description"
   },
   {
     "type": "item",
@@ -653,7 +733,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumPickaxe.name",
+    "description": "item.orichalcumPickaxe.description"
   },
   {
     "type": "item",
@@ -669,7 +751,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumAxe.name",
+    "description": "item.orichalcumAxe.description"
   },
   {
     "type": "item",
@@ -685,7 +769,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumForagingKnife.name",
+    "description": "item.orichalcumForagingKnife.description"
   },
   {
     "type": "item",
@@ -701,7 +787,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumSmithingHammer.name",
+    "description": "item.orichalcumSmithingHammer.description"
   },
   {
     "type": "item",
@@ -717,7 +805,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumWoodworkingTool.name",
+    "description": "item.orichalcumWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -733,7 +823,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumTailoringNeedle.name",
+    "description": "item.orichalcumTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -749,7 +841,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumCookingUtensil.name",
+    "description": "item.orichalcumCookingUtensil.description"
   },
   {
     "type": "item",
@@ -765,7 +859,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumBrewingKit.name",
+    "description": "item.orichalcumBrewingKit.description"
   },
   {
     "type": "item",
@@ -781,7 +877,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumAlchemistKit.name",
+    "description": "item.orichalcumAlchemistKit.description"
   },
   {
     "type": "item",
@@ -797,7 +895,9 @@
           "value": 2.5
         }
       ]
-    }
+    },
+    "name": "item.orichalcumEnhancingTool.name",
+    "description": "item.orichalcumEnhancingTool.description"
   },
   {
     "type": "item",
@@ -813,7 +913,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronPickaxe.name",
+    "description": "item.darkIronPickaxe.description"
   },
   {
     "type": "item",
@@ -829,7 +931,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronAxe.name",
+    "description": "item.darkIronAxe.description"
   },
   {
     "type": "item",
@@ -845,7 +949,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronForagingKnife.name",
+    "description": "item.darkIronForagingKnife.description"
   },
   {
     "type": "item",
@@ -861,7 +967,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronSmithingHammer.name",
+    "description": "item.darkIronSmithingHammer.description"
   },
   {
     "type": "item",
@@ -877,7 +985,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronWoodworkingTool.name",
+    "description": "item.darkIronWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -893,7 +1003,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronTailoringNeedle.name",
+    "description": "item.darkIronTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -909,7 +1021,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronCookingUtensil.name",
+    "description": "item.darkIronCookingUtensil.description"
   },
   {
     "type": "item",
@@ -925,7 +1039,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronBrewingKit.name",
+    "description": "item.darkIronBrewingKit.description"
   },
   {
     "type": "item",
@@ -941,7 +1057,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronAlchemistKit.name",
+    "description": "item.darkIronAlchemistKit.description"
   },
   {
     "type": "item",
@@ -957,7 +1075,9 @@
           "value": 3
         }
       ]
-    }
+    },
+    "name": "item.darkIronEnhancingTool.name",
+    "description": "item.darkIronEnhancingTool.description"
   },
   {
     "type": "item",
@@ -973,7 +1093,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilPickaxe.name",
+    "description": "item.mithrilPickaxe.description"
   },
   {
     "type": "item",
@@ -989,7 +1111,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilAxe.name",
+    "description": "item.mithrilAxe.description"
   },
   {
     "type": "item",
@@ -1005,7 +1129,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilForagingKnife.name",
+    "description": "item.mithrilForagingKnife.description"
   },
   {
     "type": "item",
@@ -1021,7 +1147,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilSmithingHammer.name",
+    "description": "item.mithrilSmithingHammer.description"
   },
   {
     "type": "item",
@@ -1037,7 +1165,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilWoodworkingTool.name",
+    "description": "item.mithrilWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -1053,7 +1183,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilTailoringNeedle.name",
+    "description": "item.mithrilTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -1069,7 +1201,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilCookingUtensil.name",
+    "description": "item.mithrilCookingUtensil.description"
   },
   {
     "type": "item",
@@ -1085,7 +1219,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilBrewingKit.name",
+    "description": "item.mithrilBrewingKit.description"
   },
   {
     "type": "item",
@@ -1101,7 +1237,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilAlchemistKit.name",
+    "description": "item.mithrilAlchemistKit.description"
   },
   {
     "type": "item",
@@ -1117,7 +1255,9 @@
           "value": 3.5
         }
       ]
-    }
+    },
+    "name": "item.mithrilEnhancingTool.name",
+    "description": "item.mithrilEnhancingTool.description"
   },
   {
     "type": "item",
@@ -1133,7 +1273,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantinePickaxe.name",
+    "description": "item.adamantinePickaxe.description"
   },
   {
     "type": "item",
@@ -1149,7 +1291,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineAxe.name",
+    "description": "item.adamantineAxe.description"
   },
   {
     "type": "item",
@@ -1165,7 +1309,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineForagingKnife.name",
+    "description": "item.adamantineForagingKnife.description"
   },
   {
     "type": "item",
@@ -1181,7 +1327,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineSmithingHammer.name",
+    "description": "item.adamantineSmithingHammer.description"
   },
   {
     "type": "item",
@@ -1197,7 +1345,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineWoodworkingTool.name",
+    "description": "item.adamantineWoodworkingTool.description"
   },
   {
     "type": "item",
@@ -1213,7 +1363,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineTailoringNeedle.name",
+    "description": "item.adamantineTailoringNeedle.description"
   },
   {
     "type": "item",
@@ -1229,7 +1381,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineCookingUtensil.name",
+    "description": "item.adamantineCookingUtensil.description"
   },
   {
     "type": "item",
@@ -1245,7 +1399,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineBrewingKit.name",
+    "description": "item.adamantineBrewingKit.description"
   },
   {
     "type": "item",
@@ -1261,7 +1417,9 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineAlchemistKit.name",
+    "description": "item.adamantineAlchemistKit.description"
   },
   {
     "type": "item",
@@ -1277,6 +1435,8 @@
           "value": 4
         }
       ]
-    }
+    },
+    "name": "item.adamantineEnhancingTool.name",
+    "description": "item.adamantineEnhancingTool.description"
   }
 ]

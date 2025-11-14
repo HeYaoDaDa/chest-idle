@@ -2,51 +2,71 @@
   {
     "type": "slot",
     "id": "miningTool",
-    "sort": 0
+    "sort": 0,
+    "name": "slot.miningTool.name",
+    "description": "slot.miningTool.description"
   },
   {
     "type": "slot",
     "id": "woodcuttingTool",
-    "sort": 1
+    "sort": 1,
+    "name": "slot.woodcuttingTool.name",
+    "description": "slot.woodcuttingTool.description"
   },
   {
     "type": "slot",
     "id": "foragingTool",
-    "sort": 2
+    "sort": 2,
+    "name": "slot.foragingTool.name",
+    "description": "slot.foragingTool.description"
   },
   {
     "type": "slot",
     "id": "smithingTool",
-    "sort": 3
+    "sort": 3,
+    "name": "slot.smithingTool.name",
+    "description": "slot.smithingTool.description"
   },
   {
     "type": "slot",
     "id": "woodworkingTool",
-    "sort": 4
+    "sort": 4,
+    "name": "slot.woodworkingTool.name",
+    "description": "slot.woodworkingTool.description"
   },
   {
     "type": "slot",
     "id": "tailoringTool",
-    "sort": 5
+    "sort": 5,
+    "name": "slot.tailoringTool.name",
+    "description": "slot.tailoringTool.description"
   },
   {
     "type": "slot",
     "id": "cookingTool",
-    "sort": 6
+    "sort": 6,
+    "name": "slot.cookingTool.name",
+    "description": "slot.cookingTool.description"
   },
   {
     "type": "slot",
     "id": "brewingTool",
-    "sort": 7
+    "sort": 7,
+    "name": "slot.brewingTool.name",
+    "description": "slot.brewingTool.description"
   },
   {
     "type": "slot",
     "id": "alchemyTool",
-    "sort": 8
+    "sort": 8,
+    "name": "slot.alchemyTool.name",
+    "description": "slot.alchemyTool.description"
   },
   {
     "type": "slot",
     "id": "enhancingTool",
-    "sort": 9
+    "sort": 9,
+    "name": "slot.enhancingTool.name",
+    "description": "slot.enhancingTool.description"
   }
 ]

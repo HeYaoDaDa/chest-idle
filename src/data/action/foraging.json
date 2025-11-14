@@ -15,7 +15,9 @@
         "count": 1
       }
     ],
-    "tab": "farm"
+    "tab": "farm",
+    "name": "action.chicken.name",
+    "description": "action.chicken.description"
   },
   {
     "type": "action",
@@ -33,7 +35,9 @@
         "count": 1
       }
     ],
-    "tab": "farm"
+    "tab": "farm",
+    "name": "action.crucianCarp.name",
+    "description": "action.crucianCarp.description"
   },
   {
     "type": "action",
@@ -51,7 +55,9 @@
         "count": 1
       }
     ],
-    "tab": "farm"
+    "tab": "farm",
+    "name": "action.cabbage.name",
+    "description": "action.cabbage.description"
   },
   {
     "type": "action",
@@ -69,7 +75,9 @@
         "count": 1
       }
     ],
-    "tab": "farm"
+    "tab": "farm",
+    "name": "action.apple.name",
+    "description": "action.apple.description"
   },
   {
     "type": "action",
@@ -87,7 +95,9 @@
         "count": 1
       }
     ],
-    "tab": "farm"
+    "tab": "farm",
+    "name": "action.licorice.name",
+    "description": "action.licorice.description"
   },
   {
     "type": "action",
@@ -121,7 +131,9 @@
         "itemId": "licorice",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.farm.name",
+    "description": "action.farm.description"
   },
   {
     "type": "action",
@@ -139,7 +151,9 @@
         "count": 1
       }
     ],
-    "tab": "plain"
+    "tab": "plain",
+    "name": "action.pork.name",
+    "description": "action.pork.description"
   },
   {
     "type": "action",
@@ -157,7 +171,9 @@
         "count": 1
       }
     ],
-    "tab": "plain"
+    "tab": "plain",
+    "name": "action.carp.name",
+    "description": "action.carp.description"
   },
   {
     "type": "action",
@@ -175,7 +191,9 @@
         "count": 1
       }
     ],
-    "tab": "plain"
+    "tab": "plain",
+    "name": "action.carrot.name",
+    "description": "action.carrot.description"
   },
   {
     "type": "action",
@@ -193,7 +211,9 @@
         "count": 1
       }
     ],
-    "tab": "plain"
+    "tab": "plain",
+    "name": "action.grape.name",
+    "description": "action.grape.description"
   },
   {
     "type": "action",
@@ -211,7 +231,9 @@
         "count": 1
       }
     ],
-    "tab": "plain"
+    "tab": "plain",
+    "name": "action.cotton.name",
+    "description": "action.cotton.description"
   },
   {
     "type": "action",
@@ -245,7 +267,9 @@
         "itemId": "cotton",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.plain.name",
+    "description": "action.plain.description"
   },
   {
     "type": "action",
@@ -263,7 +287,9 @@
         "count": 1
       }
     ],
-    "tab": "forest"
+    "tab": "forest",
+    "name": "action.bear.name",
+    "description": "action.bear.description"
   },
   {
     "type": "action",
@@ -281,7 +307,9 @@
         "count": 1
       }
     ],
-    "tab": "forest"
+    "tab": "forest",
+    "name": "action.salmon.name",
+    "description": "action.salmon.description"
   },
   {
     "type": "action",
@@ -299,7 +327,9 @@
         "count": 1
       }
     ],
-    "tab": "forest"
+    "tab": "forest",
+    "name": "action.potato.name",
+    "description": "action.potato.description"
   },
   {
     "type": "action",
@@ -317,7 +347,9 @@
         "count": 1
       }
     ],
-    "tab": "forest"
+    "tab": "forest",
+    "name": "action.berry.name",
+    "description": "action.berry.description"
   },
   {
     "type": "action",
@@ -335,7 +367,9 @@
         "count": 1
       }
     ],
-    "tab": "forest"
+    "tab": "forest",
+    "name": "action.artemisia.name",
+    "description": "action.artemisia.description"
   },
   {
     "type": "action",
@@ -369,7 +403,9 @@
         "itemId": "artemisia",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.forest.name",
+    "description": "action.forest.description"
   },
   {
     "type": "action",
@@ -387,7 +423,9 @@
         "count": 1
       }
     ],
-    "tab": "mountain"
+    "tab": "mountain",
+    "name": "action.bison.name",
+    "description": "action.bison.description"
   },
   {
     "type": "action",
@@ -405,7 +443,9 @@
         "count": 1
       }
     ],
-    "tab": "mountain"
+    "tab": "mountain",
+    "name": "action.trout.name",
+    "description": "action.trout.description"
   },
   {
     "type": "action",
@@ -423,7 +463,9 @@
         "count": 1
       }
     ],
-    "tab": "mountain"
+    "tab": "mountain",
+    "name": "action.onion.name",
+    "description": "action.onion.description"
   },
   {
     "type": "action",
@@ -441,7 +483,9 @@
         "count": 1
       }
     ],
-    "tab": "mountain"
+    "tab": "mountain",
+    "name": "action.cherry.name",
+    "description": "action.cherry.description"
   },
   {
     "type": "action",
@@ -459,7 +503,9 @@
         "count": 1
       }
     ],
-    "tab": "mountain"
+    "tab": "mountain",
+    "name": "action.flax.name",
+    "description": "action.flax.description"
   },
   {
     "type": "action",
@@ -493,7 +539,9 @@
         "itemId": "flax",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.mountain.name",
+    "description": "action.mountain.description"
   },
   {
     "type": "action",
@@ -511,7 +559,9 @@
         "count": 1
       }
     ],
-    "tab": "swamp"
+    "tab": "swamp",
+    "name": "action.crocodile.name",
+    "description": "action.crocodile.description"
   },
   {
     "type": "action",
@@ -529,7 +579,9 @@
         "count": 1
       }
     ],
-    "tab": "swamp"
+    "tab": "swamp",
+    "name": "action.catfish.name",
+    "description": "action.catfish.description"
   },
   {
     "type": "action",
@@ -547,7 +599,9 @@
         "count": 1
       }
     ],
-    "tab": "swamp"
+    "tab": "swamp",
+    "name": "action.sweetPotato.name",
+    "description": "action.sweetPotato.description"
   },
   {
     "type": "action",
@@ -565,7 +619,9 @@
         "count": 1
       }
     ],
-    "tab": "swamp"
+    "tab": "swamp",
+    "name": "action.banana.name",
+    "description": "action.banana.description"
   },
   {
     "type": "action",
@@ -583,7 +639,9 @@
         "count": 1
       }
     ],
-    "tab": "swamp"
+    "tab": "swamp",
+    "name": "action.ginseng.name",
+    "description": "action.ginseng.description"
   },
   {
     "type": "action",
@@ -617,7 +675,9 @@
         "itemId": "ginseng",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.swamp.name",
+    "description": "action.swamp.description"
   },
   {
     "type": "action",
@@ -635,7 +695,9 @@
         "count": 1
       }
     ],
-    "tab": "desert"
+    "tab": "desert",
+    "name": "action.camel.name",
+    "description": "action.camel.description"
   },
   {
     "type": "action",
@@ -653,7 +715,9 @@
         "count": 1
       }
     ],
-    "tab": "desert"
+    "tab": "desert",
+    "name": "action.tuna.name",
+    "description": "action.tuna.description"
   },
   {
     "type": "action",
@@ -671,7 +735,9 @@
         "count": 1
       }
     ],
-    "tab": "desert"
+    "tab": "desert",
+    "name": "action.corn.name",
+    "description": "action.corn.description"
   },
   {
     "type": "action",
@@ -689,7 +755,9 @@
         "count": 1
       }
     ],
-    "tab": "desert"
+    "tab": "desert",
+    "name": "action.cactusFruit.name",
+    "description": "action.cactusFruit.description"
   },
   {
     "type": "action",
@@ -707,7 +775,9 @@
         "count": 1
       }
     ],
-    "tab": "desert"
+    "tab": "desert",
+    "name": "action.bamboo.name",
+    "description": "action.bamboo.description"
   },
   {
     "type": "action",
@@ -741,7 +811,9 @@
         "itemId": "bamboo",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.desert.name",
+    "description": "action.desert.description"
   },
   {
     "type": "action",
@@ -759,7 +831,9 @@
         "count": 1
       }
     ],
-    "tab": "grassland"
+    "tab": "grassland",
+    "name": "action.venison.name",
+    "description": "action.venison.description"
   },
   {
     "type": "action",
@@ -777,7 +851,9 @@
         "count": 1
       }
     ],
-    "tab": "grassland"
+    "tab": "grassland",
+    "name": "action.grassCarp.name",
+    "description": "action.grassCarp.description"
   },
   {
     "type": "action",
@@ -795,7 +871,9 @@
         "count": 1
       }
     ],
-    "tab": "grassland"
+    "tab": "grassland",
+    "name": "action.pepper.name",
+    "description": "action.pepper.description"
   },
   {
     "type": "action",
@@ -813,7 +891,9 @@
         "count": 1
       }
     ],
-    "tab": "grassland"
+    "tab": "grassland",
+    "name": "action.peach.name",
+    "description": "action.peach.description"
   },
   {
     "type": "action",
@@ -831,7 +911,9 @@
         "count": 1
       }
     ],
-    "tab": "grassland"
+    "tab": "grassland",
+    "name": "action.reishi.name",
+    "description": "action.reishi.description"
   },
   {
     "type": "action",
@@ -865,7 +947,9 @@
         "itemId": "reishi",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.grassland.name",
+    "description": "action.grassland.description"
   },
   {
     "type": "action",
@@ -883,7 +967,9 @@
         "count": 1
       }
     ],
-    "tab": "volcano"
+    "tab": "volcano",
+    "name": "action.turkey.name",
+    "description": "action.turkey.description"
   },
   {
     "type": "action",
@@ -901,7 +987,9 @@
         "count": 1
       }
     ],
-    "tab": "volcano"
+    "tab": "volcano",
+    "name": "action.grouper.name",
+    "description": "action.grouper.description"
   },
   {
     "type": "action",
@@ -919,7 +1007,9 @@
         "count": 1
       }
     ],
-    "tab": "volcano"
+    "tab": "volcano",
+    "name": "action.konjac.name",
+    "description": "action.konjac.description"
   },
   {
     "type": "action",
@@ -937,7 +1027,9 @@
         "count": 1
       }
     ],
-    "tab": "volcano"
+    "tab": "volcano",
+    "name": "action.longan.name",
+    "description": "action.longan.description"
   },
   {
     "type": "action",
@@ -955,7 +1047,9 @@
         "count": 1
       }
     ],
-    "tab": "volcano"
+    "tab": "volcano",
+    "name": "action.silkworm.name",
+    "description": "action.silkworm.description"
   },
   {
     "type": "action",
@@ -989,6 +1083,8 @@
         "itemId": "silkworm",
         "count": 1
       }
-    ]
+    ],
+    "name": "action.volcano.name",
+    "description": "action.volcano.description"
   }
 ]

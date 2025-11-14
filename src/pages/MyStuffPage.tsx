@@ -17,11 +17,10 @@ export default defineComponent({
     const selectedItemId = shallowRef<string | null>(null)
     const selectedContext = shallowRef<'inventory' | 'equipped' | null>(null)
 
-    const selectedInventoryItem = computed(() =>
-      selectedContext.value === 'inventory' && selectedItemId.value
-        ? (inventoryStore.getInventoryItem(selectedItemId.value) ?? null)
-        : null,
-    )
+    const selectedInventoryItem = computed(() => {
+      if (selectedContext.value !== 'inventory' || !selectedItemId.value) return null
+      return inventoryStore.getInventoryItem(selectedItemId.value) ?? null
+    })
 
     const equippedBySlot = computed(() => equippedItemStore.equippedBySlot)
 
@@ -98,9 +97,7 @@ export default defineComponent({
 
     const openSlotEquipment = (slotId: string): void => {
       const equipmentId = equippedBySlot.value[slotId]
-      if (equipmentId) {
-        openEquipmentModal(slotId, equipmentId)
-      }
+      if (equipmentId) openEquipmentModal(slotId, equipmentId)
     }
 
     return () => (

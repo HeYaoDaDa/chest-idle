@@ -193,6 +193,7 @@ export default defineComponent({
         <ItemModal
           show={!!currentItemId.value}
           itemId={currentItemId.value ?? ''}
+          mode={selectedContext.value ?? undefined}
           onClose={closeItemModal}
           onUnequip={unequipAndClose}
           onEquip={equipAndClose}

@@ -1,4 +1,4 @@
-import { computed, defineComponent, ref, watch } from 'vue'
+import { computed, defineComponent, ref, watch, type PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import ModalBox from '@/components/ModalBox'
@@ -11,6 +11,7 @@ export default defineComponent({
   props: {
     show: { type: Boolean, required: true },
     itemId: { type: String, required: true },
+    mode: { type: String as PropType<'inventory' | 'equipped'>, required: false },
   },
   emits: ['close', 'unequip', 'equip', 'openChest'],
   setup(props, { emit }) {
@@ -25,8 +26,17 @@ export default defineComponent({
       Object.values(equippedItemStore.equippedBySlot).includes(props.itemId),
     )
 
-    const isEquipmentMode = computed(() => isEquipped.value)
-    const isInventoryMode = computed(() => !isEquipped.value)
+    const explicitMode = computed(() => props.mode as 'inventory' | 'equipped' | undefined)
+
+    // If caller provides explicit mode, prefer it. Otherwise infer from inventory presence.
+    const isInventoryMode = computed(() =>
+      explicitMode.value ? explicitMode.value === 'inventory' : !!inventoryItem.value,
+    )
+    const isEquipmentMode = computed(() =>
+      explicitMode.value
+        ? explicitMode.value === 'equipped'
+        : !inventoryItem.value && isEquipped.value,
+    )
 
     const item = computed(() => inventoryItem.value?.item ?? itemConfigMap[props.itemId])
 

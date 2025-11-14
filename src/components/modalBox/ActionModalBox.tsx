@@ -7,6 +7,7 @@ import { useActionStore } from '@/stores/action'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useInventoryStore } from '@/stores/inventory'
 import { useSkillStore } from '@/stores/skill'
+import { formatDurationMs, formatNumber } from '@/utils/format'
 
 export default defineComponent({
   name: 'ActionModalBox',
@@ -35,7 +36,9 @@ export default defineComponent({
     })
 
     const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
-    const durationSeconds = computed(() => (action.value ? action.value.duration / 1000 : 0))
+    const durationDisplay = computed(() =>
+      formatDurationMs(action.value?.duration ?? 0, locale.value, { maxFractionDigits: 3 }),
+    )
     const xpPerCycle = computed(() => action.value?.xp ?? 0)
     const chestPointsPerCycle = computed(() => action.value?.chestPoints ?? 0)
     const hasIngredients = computed(() => (action.value?.ingredients.length ?? 0) > 0)
@@ -97,9 +100,6 @@ export default defineComponent({
         reasons,
       }
     })
-
-    const formatNumber = (value: number, maximumFractionDigits = 0) =>
-      value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits })
 
     const closeModal = () => {
       emit('update:modelValue', false)
@@ -187,18 +187,18 @@ export default defineComponent({
               </div>
               <div class="flex justify-between items-center py-2">
                 <span class="text-sm font-medium text-gray-700">{t('duration')}</span>
-                <span class="text-sm text-gray-900">
-                  {t('ui.seconds', { value: formatNumber(durationSeconds.value, 1) })}
-                </span>
+                <span class="text-sm text-gray-900">{durationDisplay.value}</span>
               </div>
               <div class="flex justify-between items-center py-2">
                 <span class="text-sm font-medium text-gray-700">{t('ui.xpPerCycle')}</span>
-                <span class="text-sm text-gray-900">{formatNumber(xpPerCycle.value)}</span>
+                <span class="text-sm text-gray-900">
+                  {formatNumber(xpPerCycle.value, locale.value)}
+                </span>
               </div>
               <div class="flex justify-between items-center py-2">
                 <span class="text-sm font-medium text-gray-700">{t('ui.chestPoints')}</span>
                 <span class="text-sm text-gray-900">
-                  {formatNumber(chestPointsPerCycle.value, 2)}
+                  {formatNumber(chestPointsPerCycle.value, locale.value, 3)}
                 </span>
               </div>
               <div class="flex justify-between items-center py-2">
@@ -219,7 +219,8 @@ export default defineComponent({
                   {hasIngredients.value && action.value ? (
                     action.value.ingredients.map((ingredient, idx) => (
                       <span key={ingredient.itemId}>
-                        {t(itemConfigMap[ingredient.itemId].name)} ×{formatNumber(ingredient.count)}
+                        {t(itemConfigMap[ingredient.itemId].name)} ×
+                        {formatNumber(ingredient.count, locale.value)}
                         {idx < action.value!.ingredients.length - 1 && '，'}
                       </span>
                     ))
@@ -235,7 +236,8 @@ export default defineComponent({
                   {hasProducts.value && action.value ? (
                     action.value.products.map((product, idx) => (
                       <span key={product.itemId}>
-                        {t(itemConfigMap[product.itemId].name)} ×{formatNumber(product.count)}
+                        {t(itemConfigMap[product.itemId].name)} ×
+                        {formatNumber(product.count, locale.value)}
                         {idx < action.value!.products.length - 1 && '，'}
                       </span>
                     ))

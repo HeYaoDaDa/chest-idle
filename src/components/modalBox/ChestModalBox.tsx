@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import ModalBox from '@/components/ModalBox'
 import { itemConfigMap } from '@/gameConfig'
 import { useChestPointStore } from '@/stores/chestPoint'
+import { formatNumber, formatPercent } from '@/utils/format'
 
 export default defineComponent({
   name: 'ChestModalBox',
@@ -47,9 +48,6 @@ export default defineComponent({
       }))
     })
 
-    const formatNumber = (value: number, maximumFractionDigits = 0) =>
-      value.toLocaleString(locale.value, { minimumFractionDigits: 0, maximumFractionDigits })
-
     const closeModal = () => {
       emit('update:modelValue', false)
       emit('close')
@@ -84,19 +82,21 @@ export default defineComponent({
               <div class="flex justify-between items-center py-2">
                 <span class="text-sm font-medium text-gray-700">{t('ui.currentProgress')}</span>
                 <span class="text-sm text-gray-900">
-                  {formatNumber(chestPoints.value, 1)} /{' '}
-                  {formatNumber(chest.value.chest?.maxPoints || 0)}
+                  {formatNumber(chestPoints.value, locale.value, 3)} /{' '}
+                  {formatNumber(chest.value.chest?.maxPoints || 0, locale.value, 3)}
                 </span>
               </div>
               <div class="flex justify-between items-center py-2">
                 <span class="text-sm font-medium text-gray-700">{t('ui.progressPercentage')}</span>
                 <span class="text-sm text-gray-900">
-                  {formatNumber(chestProgress.value * 100, 1)}%
+                  {formatPercent(chestProgress.value * 100, locale.value, 3)}
                 </span>
               </div>
               <div class="flex justify-between items-center py-2">
                 <span class="text-sm font-medium text-gray-700">{t('ui.remainingPoints')}</span>
-                <span class="text-sm text-gray-900">{formatNumber(chestRemaining.value, 1)}</span>
+                <span class="text-sm text-gray-900">
+                  {formatNumber(chestRemaining.value, locale.value, 3)}
+                </span>
               </div>
 
               <div class="h-px bg-gray-200 my-2"></div>
@@ -119,14 +119,18 @@ export default defineComponent({
                       <span class="text-xs text-gray-600 font-medium">
                         ×
                         {loot.minCount === loot.maxCount
-                          ? formatNumber(loot.minCount)
-                          : `${formatNumber(loot.minCount)}-${formatNumber(loot.maxCount)}`}
+                          ? formatNumber(loot.minCount, locale.value, 3)
+                          : `${formatNumber(loot.minCount, locale.value, 3)}-${formatNumber(
+                              loot.maxCount,
+                              locale.value,
+                              3,
+                            )}`}
                       </span>
                     </div>
                     <div class="flex items-center gap-2 text-xs">
                       <span class="text-gray-500">{t('ui.dropChance')}:</span>
                       <span class="text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded">
-                        {formatNumber(loot.probability, 2)}%
+                        {formatPercent(loot.probability, locale.value, 3)}
                       </span>
                     </div>
                   </div>

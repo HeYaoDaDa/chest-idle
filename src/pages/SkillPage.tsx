@@ -5,6 +5,7 @@ import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 import ActionModalBox from '@/components/modalBox/ActionModalBox'
 import { actionConfigListBySkill, getSkillTabActionConfigsMapBySkillId } from '@/gameConfig'
 import { useSkillStore } from '@/stores/skill'
+import { formatNumber } from '@/utils/format'
 
 export default defineComponent({
   name: 'SkillPage',
@@ -72,13 +73,13 @@ export default defineComponent({
               <div class="flex flex-col">
                 <span class="text-xs text-gray-500 uppercase">{t('ui.xp')}</span>
                 <span class="text-base font-semibold text-gray-900">
-                  {skill.value.xp.toLocaleString(locale.value)}
+                  {formatNumber(skill.value.xp, locale.value)}
                 </span>
               </div>
               <div class="flex flex-col">
                 <span class="text-xs text-gray-500 uppercase">{t('ui.nextLevel')}</span>
                 <span class="text-base font-semibold text-gray-900">
-                  {skill.value.remainingXpForUpgrade.toLocaleString(locale.value)}
+                  {formatNumber(skill.value.remainingXpForUpgrade, locale.value)}
                 </span>
               </div>
             </div>

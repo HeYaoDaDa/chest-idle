@@ -2,13 +2,14 @@ import { defineComponent, computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useActionQueueStore } from '@/stores/actionQueue'
+import { formatDurationMs } from '@/utils/format'
 
 import ActionQueueModal from './modalBox/ActionQueueModal'
 
 export default defineComponent({
   name: 'ActionQueue',
   setup() {
-    const { t } = useI18n()
+    const { t, locale } = useI18n()
     const showQueueModal = ref(false)
     const actionQueueStore = useActionQueueStore()
 
@@ -19,10 +20,10 @@ export default defineComponent({
     )
 
     const runningActionDurationDisplay = computed(() => {
-      if (actionQueueStore.currentActionDetail) {
-        return `${(Math.floor(actionQueueStore.currentActionDetail.duration / 10) / 100).toFixed(2)}s`
-      }
-      return ''
+      if (!actionQueueStore.currentActionDetail) return ''
+      return formatDurationMs(actionQueueStore.currentActionDetail.duration, locale.value, {
+        maxFractionDigits: 3,
+      })
     })
 
     const hasQueuedActions = computed(() => actionQueueStore.pendingActions.length > 0)

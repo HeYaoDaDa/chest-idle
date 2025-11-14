@@ -16,6 +16,8 @@ export default defineComponent({
 
     const selectedItemId = shallowRef<string | null>(null)
     const selectedContext = shallowRef<'inventory' | 'equipped' | null>(null)
+    const chestOpenResults = shallowRef<{ itemId: string; amount: number }[] | null>(null)
+    const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
 
     const selectedInventoryItem = computed(() => {
       if (selectedContext.value !== 'inventory' || !selectedItemId.value) return null
@@ -42,8 +44,6 @@ export default defineComponent({
     })
 
     const currentItemId = computed(() => selectedItemId.value)
-    const chestOpenResults = shallowRef<{ itemId: string; amount: number }[] | null>(null)
-    const activeTab = shallowRef<'inventory' | 'equipment' | 'abilities'>('inventory')
     const maxChestAmount = computed(() => selectedInventoryItem.value?.count || 1)
 
     const slotList = computed(() => {

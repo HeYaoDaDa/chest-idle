@@ -10,8 +10,8 @@ export default defineComponent({
   name: 'ActionQueue',
   setup() {
     const { t, locale } = useI18n()
-    const showQueueModal = ref(false)
     const actionQueueStore = useActionQueueStore()
+    const showQueueModal = ref(false)
 
     const runningActionDisplay = computed(() =>
       actionQueueStore.currentActionDetail

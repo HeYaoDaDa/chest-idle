@@ -15,16 +15,17 @@ export default defineComponent({
     const route = useRoute()
     const skillId = ref(route.params.id as string)
 
-    onBeforeRouteUpdate(async (to) => {
-      skillId.value = to.params.id as string
-    })
-
     const skillStore = useSkillStore()
-    const skill = computed(() => skillStore.getSkill(skillId.value))
 
+    // refs
+    const currentTab = ref<string>('')
+    const modalVisible = ref(false)
+    const selectedActionId = shallowRef<string | undefined>(undefined)
+
+    // computed
+    const skill = computed(() => skillStore.getSkill(skillId.value))
     const skillActionTabs = computed(() => getSkillTabActionConfigsMapBySkillId(skillId.value))
     const hasTabGroups = computed(() => Object.keys(skillActionTabs.value).length > 0)
-    const currentTab = ref<string>('')
     const availableTabs = computed(() => Array.from(Object.keys(skillActionTabs.value)))
 
     watchEffect(() => {
@@ -49,9 +50,7 @@ export default defineComponent({
       })),
     )
 
-    const modalVisible = ref(false)
-    const selectedActionId = shallowRef<string | undefined>(undefined)
-
+    // handlers
     const openModal = (actionId: string) => {
       selectedActionId.value = actionId
       modalVisible.value = true
@@ -65,6 +64,10 @@ export default defineComponent({
         }
       },
     )
+
+    onBeforeRouteUpdate(async (to) => {
+      skillId.value = to.params.id as string
+    })
 
     return () => {
       if (!skill.value) return null

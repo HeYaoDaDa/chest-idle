@@ -16,9 +16,9 @@ export default defineComponent({
   emits: ['close', 'unequip', 'equip', 'openChest'],
   setup(props, { emit }) {
     const { t } = useI18n()
-    const chestOpenAmount = ref(1)
     const inventoryStore = useInventoryStore()
     const equippedItemStore = useEquippedItemStore()
+    const chestOpenAmount = ref(1)
 
     const inventoryItem = computed(() => inventoryStore.getInventoryItem(props.itemId))
 

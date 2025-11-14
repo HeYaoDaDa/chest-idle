@@ -30,6 +30,21 @@ export default defineComponent({
       return actionStore.getActionById(props.actionId)
     })
 
+    // helpers (moved up so computed that rely on them read clearly)
+    function isIntegerOrInfinity(str: string): boolean {
+      const pattern = /^-?\d+$|^∞$/
+      return pattern.test(str)
+    }
+
+    function stringToNumber(str: string): number {
+      if (str === '∞') return Infinity
+      const num = Number(str)
+      if (!isNaN(num) && Number.isInteger(num)) {
+        return num
+      }
+      return Infinity
+    }
+
     const skill = computed(() => {
       if (!action.value) return null
       return skillStore.getSkill(action.value.skillId)
@@ -133,20 +148,6 @@ export default defineComponent({
         }
       },
     )
-
-    function isIntegerOrInfinity(str: string): boolean {
-      const pattern = /^-?\d+$|^∞$/
-      return pattern.test(str)
-    }
-
-    function stringToNumber(str: string): number {
-      if (str === '∞') return Infinity
-      const num = Number(str)
-      if (!isNaN(num) && Number.isInteger(num)) {
-        return num
-      }
-      return Infinity
-    }
 
     return () => {
       if (!props.modelValue || !action.value) return null

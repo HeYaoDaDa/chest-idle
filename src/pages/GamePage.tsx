@@ -19,6 +19,10 @@ export default defineComponent({
     const minTabsWidth = 280
     const maxTabsWidthPercentage = 0.5
 
+    const containerStyle = computed(() => ({
+      '--tabs-width': tabsWidth.value + 'px',
+    }))
+
     onMounted(() => {
       const container = document.getElementById('game-page-layout-container')
       if (container) {
@@ -57,10 +61,6 @@ export default defineComponent({
       document.addEventListener('mouseup', stopDragTabs)
       document.body.classList.add('dragging')
     }
-
-    const containerStyle = computed(() => ({
-      '--tabs-width': tabsWidth.value + 'px',
-    }))
 
     return () => (
       <div class="h-full p-0.5 box-border relative">

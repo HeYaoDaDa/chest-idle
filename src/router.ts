@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import ChestPage from '@/pages/ChestPage.vue'
-import GamePage from '@/pages/GamePage.vue'
-import LoadPage from '@/pages/LoadPage.vue'
-import MyStuffPage from '@/pages/MyStuffPage.vue'
-import SkillPage from '@/pages/SkillPage.vue'
+import ChestPage from '@/pages/ChestPage'
+import GamePage from '@/pages/GamePage'
+import LoadPage from '@/pages/LoadPage'
+import MyStuffPage from '@/pages/MyStuffPage'
+import SkillPage from '@/pages/SkillPage'
 import { useAppStore } from '@/stores/app'
 
 import { skillConfigs } from './gameConfig'
@@ -43,7 +43,7 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)*',
       name: '404',
-      component: () => import('@/pages/ErrorNotFoundPage.vue'),
+      component: () => import('@/pages/ErrorNotFoundPage'),
     },
   ],
 })

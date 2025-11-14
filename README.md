@@ -1,18 +1,26 @@
 # chest-idle
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue 3 idle game built with **TypeScript + TSX** and **UnoCSS**.
+
+## Tech Stack
+
+- **Vue 3.5** - Progressive JavaScript framework
+- **TypeScript** - Type safety
+- **TSX** - JSX syntax for Vue (no `.vue` SFC files)
+- **UnoCSS** - Instant on-demand atomic CSS engine
+- **Vite** - Next generation frontend tooling
+- **Pinia** - State management
+- **Vue Router** - Client-side routing
+- **Vue I18n** - Internationalization
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[VSCode](https://code.visualstudio.com/) with these extensions:
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - UnoCSS intellisense
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Code linting
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatting
+- [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - i18n management
 
 ## Project Setup
 
@@ -32,8 +40,18 @@ npm run dev
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint with ESLint
 
 ```sh
 npm run lint
 ```
+
+### Format with Prettier
+
+```sh
+npm run format
+```
+
+## UnoCSS Inspector
+
+Open `http://localhost:5173/__unocss/` while dev server is running to inspect UnoCSS classes.

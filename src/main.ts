@@ -1,8 +1,8 @@
-import './styles/app.scss'
+import 'virtual:uno.css'
 import { createPinia } from 'pinia'
 import { createApp, watch } from 'vue'
 
-import App from './App.vue'
+import App from './App'
 import i18n from './i18n'
 import router from './router'
 

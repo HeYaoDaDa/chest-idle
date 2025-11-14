@@ -1,0 +1,125 @@
+import { defineComponent, ref, onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { RouterView } from 'vue-router'
+
+import ActionQueue from '@/components/ActionQueue'
+import LeftSidebar from '@/components/LeftSidebar'
+
+import MyStuffPage from './MyStuffPage'
+
+export default defineComponent({
+  name: 'GamePage',
+  setup() {
+    const { t } = useI18n()
+
+    // 拖拽相关
+    const tabsWidth = ref(360)
+    const isDraggingTabs = ref(false)
+    const parentElement = ref<HTMLElement | undefined>(undefined)
+    const minTabsWidth = 280
+    const maxTabsWidthPercentage = 0.5
+
+    onMounted(() => {
+      const container = document.getElementById('game-page-layout-container')
+      if (container) {
+        parentElement.value = container
+      }
+    })
+
+    const startDragTabs = (e: MouseEvent) => {
+      isDraggingTabs.value = true
+      const startX = e.clientX
+      const initialWidth = tabsWidth.value
+
+      const dragTabs = (e: MouseEvent) => {
+        if (!isDraggingTabs.value) return
+
+        const deltaX = e.clientX - startX
+        let newWidth = initialWidth - deltaX
+
+        newWidth = Math.max(newWidth, minTabsWidth)
+
+        if (parentElement.value && 'offsetWidth' in parentElement.value) {
+          newWidth = Math.min(newWidth, parentElement.value.offsetWidth * maxTabsWidthPercentage)
+        }
+
+        tabsWidth.value = newWidth
+      }
+
+      const stopDragTabs = () => {
+        isDraggingTabs.value = false
+        document.removeEventListener('mousemove', dragTabs)
+        document.removeEventListener('mouseup', stopDragTabs)
+        document.body.classList.remove('dragging')
+      }
+
+      document.addEventListener('mousemove', dragTabs)
+      document.addEventListener('mouseup', stopDragTabs)
+      document.body.classList.add('dragging')
+    }
+
+    const containerStyle = computed(() => ({
+      '--tabs-width': tabsWidth.value + 'px',
+    }))
+
+    return () => (
+      <div class="h-full p-0.5 box-border relative">
+        <div
+          id="game-page-layout-container"
+          class="h-full grid grid-cols-[56px_minmax(0,1fr)] lg:grid-cols-[260px_minmax(0,1fr)_var(--tabs-width)] grid-rows-[auto_minmax(0,1fr)] gap-0.5"
+          style={containerStyle.value}
+        >
+          {/* Header */}
+          <header class="col-span-full row-start-1 panel flex justify-between items-center px-8 py-4 lg:px-12">
+            <div class="flex items-center gap-10">
+              <h1 class="m-0 text-4xl font-bold tracking-wide text-gray-900 hidden lg:block">
+                {t('gameName')}
+              </h1>
+              <ActionQueue />
+            </div>
+          </header>
+
+          {/* Sidebar */}
+          <div class="col-start-1 row-start-2 panel p-0.5">
+            <LeftSidebar />
+          </div>
+
+          {/* Content */}
+          <div class="col-start-2 row-start-2 panel p-0 flex flex-col">
+            <div class="flex-1 min-h-0 overflow-auto">
+              <RouterView />
+            </div>
+          </div>
+
+          {/* Tabs container (hidden on mobile) */}
+          <aside
+            class="hidden lg:flex lg:col-start-3 lg:row-start-2 panel p-0 flex-row"
+            style={{ width: `${tabsWidth.value}px` }}
+          >
+            <div
+              class="w-2 cursor-ew-resize bg-gray-200 hover:bg-blue-200 flex items-center justify-center flex-shrink-0 transition"
+              onMousedown={startDragTabs}
+            >
+              <div class="w-0.5 h-10 bg-gray-400 rounded transition" />
+            </div>
+            <div class="flex-1 flex flex-col overflow-hidden">
+              <MyStuffPage />
+            </div>
+          </aside>
+        </div>
+
+        <style>
+          {`
+            body.dragging {
+              cursor: ew-resize !important;
+              user-select: none !important;
+            }
+            body.dragging * {
+              cursor: ew-resize !important;
+            }
+          `}
+        </style>
+      </div>
+    )
+  },
+})

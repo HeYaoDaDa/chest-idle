@@ -16,6 +16,10 @@ export type {
   EffectType,
   EffectConfig,
   LootEntryConfig,
+  StatModifierConfig,
+  SkillLevelModifierConfig,
+  ModifierConfig,
+  DerivedValueConfig,
 } from './type'
 
 // Config maps

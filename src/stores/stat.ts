@@ -1,7 +1,12 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-import { statConfigMap, type EffectType } from '@/gameConfig'
+import {
+  statConfigMap,
+  type DerivedValueConfig,
+  type EffectType,
+  type ModifierConfig,
+} from '@/gameConfig'
 
 interface Effect {
   statId: string
@@ -143,6 +148,51 @@ export const useStatStore = defineStore('stat', () => {
     return ((baseValue + sumAdd) * (1 + sumPercent)) / (1 + sumDivisor)
   }
 
+  function calculateDerivedValue(
+    config: DerivedValueConfig,
+    resolveModifierValue?: (modifier: ModifierConfig) => number | undefined,
+  ): number {
+    const modifiers = config.modifiers ?? []
+
+    if (modifiers.length === 0) {
+      return config.baseValue
+    }
+
+    let sumAdd = 0
+    let sumPercent = 0
+    let sumDivisor = 0
+
+    const applyModifier = (type: EffectType, value: number) => {
+      switch (type) {
+        case 'flat':
+          sumAdd += value
+          break
+        case 'percentage':
+          sumPercent += value
+          break
+        case 'inversePercentage':
+          sumDivisor += value
+          break
+      }
+    }
+
+    for (const modifier of modifiers) {
+      // Ask the caller if they can handle this modifier
+      const customValue = resolveModifierValue?.(modifier)
+
+      if (customValue !== undefined) {
+        // Caller provided a value
+        applyModifier(modifier.type, customValue)
+      } else if (modifier.modifierType === 'stat') {
+        // Default handling for stat modifiers
+        const statValue = getStatValue(modifier.statId)
+        applyModifier(modifier.type, statValue)
+      }
+    }
+
+    return ((config.baseValue + sumAdd) * (1 + sumPercent)) / (1 + sumDivisor)
+  }
+
   return {
     sourceIdEffectsMap,
 
@@ -155,5 +205,6 @@ export const useStatStore = defineStore('stat', () => {
     getStat,
     getStatValue,
     getDerivedStatValue,
+    calculateDerivedValue,
   }
 })

@@ -8,6 +8,10 @@ export type {
   EffectType,
   EffectConfig,
   LootEntryConfig,
+  StatModifierConfig,
+  SkillLevelModifierConfig,
+  ModifierConfig,
+  DerivedValueConfig,
 }
 
 type GameConfig = SkillConfig | SlotConfig | StatConfig | ItemConfig | ActionConfig
@@ -61,10 +65,10 @@ interface ActionConfig {
   tab?: string
   minLevel: number
   sort: number
-  duration: number
-  xp: number
+  duration: DerivedValueConfig
+  xp: DerivedValueConfig
   chestId: string
-  chestPoints: number
+  chestPoints: DerivedValueConfig
   ingredients?: { itemId: string; count: number }[]
   products: { itemId: string; count: number }[]
   name: string
@@ -72,6 +76,25 @@ interface ActionConfig {
 }
 
 type EffectType = 'flat' | 'percentage' | 'inversePercentage'
+
+interface StatModifierConfig {
+  modifierType: 'stat'
+  statId: string
+  type: EffectType
+}
+
+interface SkillLevelModifierConfig {
+  modifierType: 'skillLevel'
+  type: EffectType
+  perLevelValue: number
+}
+
+type ModifierConfig = StatModifierConfig | SkillLevelModifierConfig
+
+interface DerivedValueConfig {
+  baseValue: number
+  modifiers?: ModifierConfig[]
+}
 
 interface EffectConfig {
   statId: string

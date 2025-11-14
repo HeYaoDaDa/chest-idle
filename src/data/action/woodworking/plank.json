@@ -5,10 +5,42 @@
     "skillId": "woodworking",
     "minLevel": 0,
     "sort": 800,
-    "duration": 5000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "willowTreeChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "willowWood",
@@ -31,10 +63,42 @@
     "skillId": "woodworking",
     "minLevel": 10,
     "sort": 801,
-    "duration": 10000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "pineTreeChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "pineWood",
@@ -57,10 +121,42 @@
     "skillId": "woodworking",
     "minLevel": 20,
     "sort": 802,
-    "duration": 15000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "oakTreeChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "oakWood",
@@ -83,10 +179,42 @@
     "skillId": "woodworking",
     "minLevel": 30,
     "sort": 803,
-    "duration": 20000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mapleTreeChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "mapleWood",
@@ -109,10 +237,42 @@
     "skillId": "woodworking",
     "minLevel": 40,
     "sort": 804,
-    "duration": 25000,
-    "xp": 100,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "elmTreeChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "elmWood",
@@ -135,10 +295,42 @@
     "skillId": "woodworking",
     "minLevel": 50,
     "sort": 805,
-    "duration": 30000,
-    "xp": 120,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 120,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "beechTreeChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "beechWood",
@@ -161,10 +353,42 @@
     "skillId": "woodworking",
     "minLevel": 60,
     "sort": 806,
-    "duration": 35000,
-    "xp": 140,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 140,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mahoganyTreeChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "mahoganyWood",
@@ -187,10 +411,42 @@
     "skillId": "woodworking",
     "minLevel": 70,
     "sort": 807,
-    "duration": 40000,
-    "xp": 160,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 160,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "ebonyTreeChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "woodworkingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "ebonyWood",

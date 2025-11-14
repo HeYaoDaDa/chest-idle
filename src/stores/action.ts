@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import { actionConfigMap } from '@/gameConfig'
+import { actionConfigMap, type ModifierConfig } from '@/gameConfig'
 
 import { useSkillStore } from './skill'
 import { useStatStore } from './stat'
@@ -32,42 +32,22 @@ export const useActionStore = defineStore('action', () => {
       throw new Error(`Action with id ${actionId} not found`)
     }
 
+    // Resolver function to handle skillLevel modifiers
+    const resolveModifier = (modifier: ModifierConfig) => {
+      if (modifier.modifierType === 'skillLevel') {
+        const currentLevel = skillStore.getSkillLevel(actionConfig.skillId)
+        return (currentLevel - actionConfig.minLevel) * modifier.perLevelValue
+      }
+      return undefined // Let stat.ts handle stat modifiers
+    }
+
     return {
       ...actionConfig,
       ingredients: actionConfig.ingredients ?? [],
       products: actionConfig.products ?? [],
-      duration:
-        statStore.getDerivedStatValue(
-          [
-            {
-              statId: `${actionConfig.skillId}Speed`,
-              type: 'inversePercentage',
-            },
-          ],
-          actionConfig.duration,
-          {
-            type: 'inversePercentage',
-            value: (skillStore.getSkillLevel(actionConfig.skillId) - actionConfig.minLevel) * 0.01,
-          },
-        ) * 0.01,
-      xp: statStore.getDerivedStatValue(
-        [
-          {
-            statId: `${actionConfig.skillId}XpGain`,
-            type: 'percentage',
-          },
-        ],
-        actionConfig.xp,
-      ),
-      chestPoints: statStore.getDerivedStatValue(
-        [
-          {
-            statId: `${actionConfig.skillId}ChestPointsGain`,
-            type: 'percentage',
-          },
-        ],
-        actionConfig.chestPoints,
-      ),
+      duration: statStore.calculateDerivedValue(actionConfig.duration, resolveModifier) * 0.01,
+      xp: statStore.calculateDerivedValue(actionConfig.xp, resolveModifier),
+      chestPoints: statStore.calculateDerivedValue(actionConfig.chestPoints, resolveModifier),
     }
   }
 

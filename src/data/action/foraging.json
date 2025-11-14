@@ -5,10 +5,42 @@
     "skillId": "foraging",
     "minLevel": 0,
     "sort": 0,
-    "duration": 5000,
-    "xp": 10,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 10,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "farmChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "chicken",
@@ -25,10 +57,42 @@
     "skillId": "foraging",
     "minLevel": 0,
     "sort": 1,
-    "duration": 5000,
-    "xp": 10,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 10,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "farmChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "crucianCarp",
@@ -45,10 +109,42 @@
     "skillId": "foraging",
     "minLevel": 0,
     "sort": 2,
-    "duration": 5000,
-    "xp": 10,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 10,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "farmChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "cabbage",
@@ -65,10 +161,42 @@
     "skillId": "foraging",
     "minLevel": 0,
     "sort": 3,
-    "duration": 5000,
-    "xp": 10,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 10,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "farmChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "apple",
@@ -85,10 +213,42 @@
     "skillId": "foraging",
     "minLevel": 0,
     "sort": 4,
-    "duration": 5000,
-    "xp": 10,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 10,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "farmChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "licorice",
@@ -106,10 +266,42 @@
     "tab": "farm",
     "minLevel": 0,
     "sort": 9,
-    "duration": 20000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "farmChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "chicken",
@@ -141,10 +333,42 @@
     "skillId": "foraging",
     "minLevel": 10,
     "sort": 10,
-    "duration": 10000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "plainChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "pork",
@@ -161,10 +385,42 @@
     "skillId": "foraging",
     "minLevel": 10,
     "sort": 11,
-    "duration": 10000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "plainChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "carp",
@@ -181,10 +437,42 @@
     "skillId": "foraging",
     "minLevel": 10,
     "sort": 12,
-    "duration": 10000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "plainChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "carrot",
@@ -201,10 +489,42 @@
     "skillId": "foraging",
     "minLevel": 10,
     "sort": 13,
-    "duration": 10000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "plainChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "grape",
@@ -221,10 +541,42 @@
     "skillId": "foraging",
     "minLevel": 10,
     "sort": 14,
-    "duration": 10000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "plainChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "cotton",
@@ -242,10 +594,42 @@
     "tab": "plain",
     "minLevel": 10,
     "sort": 19,
-    "duration": 40000,
-    "xp": 100,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "plainChest",
-    "chestPoints": 500,
+    "chestPoints": {
+      "baseValue": 500,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "pork",
@@ -277,10 +661,42 @@
     "skillId": "foraging",
     "minLevel": 20,
     "sort": 20,
-    "duration": 15000,
-    "xp": 30,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 30,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "forestChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "bear",
@@ -297,10 +713,42 @@
     "skillId": "foraging",
     "minLevel": 20,
     "sort": 21,
-    "duration": 15000,
-    "xp": 30,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 30,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "forestChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "salmon",
@@ -317,10 +765,42 @@
     "skillId": "foraging",
     "minLevel": 20,
     "sort": 22,
-    "duration": 15000,
-    "xp": 30,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 30,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "forestChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "potato",
@@ -337,10 +817,42 @@
     "skillId": "foraging",
     "minLevel": 20,
     "sort": 23,
-    "duration": 15000,
-    "xp": 30,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 30,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "forestChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "berry",
@@ -357,10 +869,42 @@
     "skillId": "foraging",
     "minLevel": 20,
     "sort": 24,
-    "duration": 15000,
-    "xp": 30,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 30,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "forestChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "artemisia",
@@ -378,10 +922,42 @@
     "tab": "forest",
     "minLevel": 20,
     "sort": 29,
-    "duration": 60000,
-    "xp": 150,
+    "duration": {
+      "baseValue": 60000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "forestChest",
-    "chestPoints": 750,
+    "chestPoints": {
+      "baseValue": 750,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "bear",
@@ -413,10 +989,42 @@
     "skillId": "foraging",
     "minLevel": 30,
     "sort": 30,
-    "duration": 20000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mountainChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "bison",
@@ -433,10 +1041,42 @@
     "skillId": "foraging",
     "minLevel": 30,
     "sort": 31,
-    "duration": 20000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mountainChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "trout",
@@ -453,10 +1093,42 @@
     "skillId": "foraging",
     "minLevel": 30,
     "sort": 32,
-    "duration": 20000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mountainChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "onion",
@@ -473,10 +1145,42 @@
     "skillId": "foraging",
     "minLevel": 30,
     "sort": 33,
-    "duration": 20000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mountainChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "cherry",
@@ -493,10 +1197,42 @@
     "skillId": "foraging",
     "minLevel": 30,
     "sort": 34,
-    "duration": 20000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mountainChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "flax",
@@ -514,10 +1250,42 @@
     "tab": "mountain",
     "minLevel": 30,
     "sort": 39,
-    "duration": 80000,
-    "xp": 200,
+    "duration": {
+      "baseValue": 80000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mountainChest",
-    "chestPoints": 1000,
+    "chestPoints": {
+      "baseValue": 1000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "bison",
@@ -549,10 +1317,42 @@
     "skillId": "foraging",
     "minLevel": 40,
     "sort": 40,
-    "duration": 25000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "swampChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "crocodile",
@@ -569,10 +1369,42 @@
     "skillId": "foraging",
     "minLevel": 40,
     "sort": 41,
-    "duration": 25000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "swampChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "catfish",
@@ -589,10 +1421,42 @@
     "skillId": "foraging",
     "minLevel": 40,
     "sort": 42,
-    "duration": 25000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "swampChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "sweetPotato",
@@ -609,10 +1473,42 @@
     "skillId": "foraging",
     "minLevel": 40,
     "sort": 43,
-    "duration": 25000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "swampChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "banana",
@@ -629,10 +1525,42 @@
     "skillId": "foraging",
     "minLevel": 40,
     "sort": 44,
-    "duration": 25000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "swampChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "ginseng",
@@ -650,10 +1578,42 @@
     "tab": "swamp",
     "minLevel": 40,
     "sort": 49,
-    "duration": 100000,
-    "xp": 250,
+    "duration": {
+      "baseValue": 100000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "swampChest",
-    "chestPoints": 1250,
+    "chestPoints": {
+      "baseValue": 1250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "crocodile",
@@ -685,10 +1645,42 @@
     "skillId": "foraging",
     "minLevel": 50,
     "sort": 50,
-    "duration": 30000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "desertChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "camel",
@@ -705,10 +1697,42 @@
     "skillId": "foraging",
     "minLevel": 50,
     "sort": 51,
-    "duration": 30000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "desertChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "tuna",
@@ -725,10 +1749,42 @@
     "skillId": "foraging",
     "minLevel": 50,
     "sort": 52,
-    "duration": 30000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "desertChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "corn",
@@ -745,10 +1801,42 @@
     "skillId": "foraging",
     "minLevel": 50,
     "sort": 53,
-    "duration": 30000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "desertChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "cactusFruit",
@@ -765,10 +1853,42 @@
     "skillId": "foraging",
     "minLevel": 50,
     "sort": 54,
-    "duration": 30000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "desertChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "bamboo",
@@ -786,10 +1906,42 @@
     "tab": "desert",
     "minLevel": 50,
     "sort": 59,
-    "duration": 120000,
-    "xp": 300,
+    "duration": {
+      "baseValue": 120000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "desertChest",
-    "chestPoints": 1500,
+    "chestPoints": {
+      "baseValue": 1500,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "camel",
@@ -821,10 +1973,42 @@
     "skillId": "foraging",
     "minLevel": 60,
     "sort": 60,
-    "duration": 35000,
-    "xp": 70,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 70,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "grasslandChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "venison",
@@ -841,10 +2025,42 @@
     "skillId": "foraging",
     "minLevel": 60,
     "sort": 61,
-    "duration": 35000,
-    "xp": 70,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 70,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "grasslandChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "grassCarp",
@@ -861,10 +2077,42 @@
     "skillId": "foraging",
     "minLevel": 60,
     "sort": 62,
-    "duration": 35000,
-    "xp": 70,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 70,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "grasslandChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "pepper",
@@ -881,10 +2129,42 @@
     "skillId": "foraging",
     "minLevel": 60,
     "sort": 63,
-    "duration": 35000,
-    "xp": 70,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 70,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "grasslandChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "peach",
@@ -901,10 +2181,42 @@
     "skillId": "foraging",
     "minLevel": 60,
     "sort": 64,
-    "duration": 35000,
-    "xp": 70,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 70,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "grasslandChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "reishi",
@@ -922,10 +2234,42 @@
     "tab": "grassland",
     "minLevel": 60,
     "sort": 69,
-    "duration": 140000,
-    "xp": 350,
+    "duration": {
+      "baseValue": 140000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "grasslandChest",
-    "chestPoints": 1750,
+    "chestPoints": {
+      "baseValue": 1750,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "venison",
@@ -957,10 +2301,42 @@
     "skillId": "foraging",
     "minLevel": 70,
     "sort": 70,
-    "duration": 40000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "volcanoChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "turkey",
@@ -977,10 +2353,42 @@
     "skillId": "foraging",
     "minLevel": 70,
     "sort": 71,
-    "duration": 40000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "volcanoChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "grouper",
@@ -997,10 +2405,42 @@
     "skillId": "foraging",
     "minLevel": 70,
     "sort": 72,
-    "duration": 40000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "volcanoChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "konjac",
@@ -1017,10 +2457,42 @@
     "skillId": "foraging",
     "minLevel": 70,
     "sort": 73,
-    "duration": 40000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "volcanoChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "longan",
@@ -1037,10 +2509,42 @@
     "skillId": "foraging",
     "minLevel": 70,
     "sort": 74,
-    "duration": 40000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "volcanoChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "silkworm",
@@ -1058,10 +2562,42 @@
     "tab": "volcano",
     "minLevel": 70,
     "sort": 79,
-    "duration": 160000,
-    "xp": 400,
+    "duration": {
+      "baseValue": 160000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "volcanoChest",
-    "chestPoints": 2000,
+    "chestPoints": {
+      "baseValue": 2000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "foragingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "turkey",

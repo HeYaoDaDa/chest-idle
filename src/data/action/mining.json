@@ -5,10 +5,42 @@
     "skillId": "mining",
     "minLevel": 0,
     "sort": 0,
-    "duration": 5000,
-    "xp": 10,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 10,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "copperMineChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "copperOre",
@@ -24,10 +56,42 @@
     "skillId": "mining",
     "minLevel": 10,
     "sort": 1,
-    "duration": 10000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "ironMineChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "ironOre",
@@ -43,10 +107,42 @@
     "skillId": "mining",
     "minLevel": 20,
     "sort": 2,
-    "duration": 15000,
-    "xp": 30,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 30,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "silverMineChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "silverOre",
@@ -62,10 +158,42 @@
     "skillId": "mining",
     "minLevel": 30,
     "sort": 3,
-    "duration": 20000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "goldMineChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "goldOre",
@@ -81,10 +209,42 @@
     "skillId": "mining",
     "minLevel": 40,
     "sort": 4,
-    "duration": 25000,
-    "xp": 50,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "orichalcumMineChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "orichalcumOre",
@@ -100,10 +260,42 @@
     "skillId": "mining",
     "minLevel": 50,
     "sort": 5,
-    "duration": 30000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "darkIronMineChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "darkIronOre",
@@ -119,10 +311,42 @@
     "skillId": "mining",
     "minLevel": 60,
     "sort": 6,
-    "duration": 35000,
-    "xp": 70,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 70,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mithrilMineChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "mithrilOre",
@@ -138,10 +362,42 @@
     "skillId": "mining",
     "minLevel": 70,
     "sort": 7,
-    "duration": 40000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "adamantineMineChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "miningChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "products": [
       {
         "itemId": "adamantineOre",

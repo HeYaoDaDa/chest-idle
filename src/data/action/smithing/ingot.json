@@ -5,10 +5,42 @@
     "skillId": "smithing",
     "minLevel": 0,
     "sort": 0,
-    "duration": 5000,
-    "xp": 20,
+    "duration": {
+      "baseValue": 5000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 20,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "copperMineChest",
-    "chestPoints": 50,
+    "chestPoints": {
+      "baseValue": 50,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "copperOre",
@@ -31,10 +63,42 @@
     "skillId": "smithing",
     "minLevel": 10,
     "sort": 100,
-    "duration": 10000,
-    "xp": 40,
+    "duration": {
+      "baseValue": 10000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 40,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "ironMineChest",
-    "chestPoints": 100,
+    "chestPoints": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "ironOre",
@@ -57,10 +121,42 @@
     "skillId": "smithing",
     "minLevel": 20,
     "sort": 200,
-    "duration": 15000,
-    "xp": 60,
+    "duration": {
+      "baseValue": 15000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 60,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "silverMineChest",
-    "chestPoints": 150,
+    "chestPoints": {
+      "baseValue": 150,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "silverOre",
@@ -83,10 +179,42 @@
     "skillId": "smithing",
     "minLevel": 30,
     "sort": 300,
-    "duration": 20000,
-    "xp": 80,
+    "duration": {
+      "baseValue": 20000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 80,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "goldMineChest",
-    "chestPoints": 200,
+    "chestPoints": {
+      "baseValue": 200,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "goldOre",
@@ -109,10 +237,42 @@
     "skillId": "smithing",
     "minLevel": 40,
     "sort": 400,
-    "duration": 25000,
-    "xp": 100,
+    "duration": {
+      "baseValue": 25000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 100,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "orichalcumMineChest",
-    "chestPoints": 250,
+    "chestPoints": {
+      "baseValue": 250,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "orichalcumOre",
@@ -135,10 +295,42 @@
     "skillId": "smithing",
     "minLevel": 50,
     "sort": 500,
-    "duration": 30000,
-    "xp": 120,
+    "duration": {
+      "baseValue": 30000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 120,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "darkIronMineChest",
-    "chestPoints": 300,
+    "chestPoints": {
+      "baseValue": 300,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "darkIronOre",
@@ -161,10 +353,42 @@
     "skillId": "smithing",
     "minLevel": 60,
     "sort": 600,
-    "duration": 35000,
-    "xp": 140,
+    "duration": {
+      "baseValue": 35000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 140,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "mithrilMineChest",
-    "chestPoints": 350,
+    "chestPoints": {
+      "baseValue": 350,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "mithrilOre",
@@ -187,10 +411,42 @@
     "skillId": "smithing",
     "minLevel": 70,
     "sort": 700,
-    "duration": 40000,
-    "xp": 160,
+    "duration": {
+      "baseValue": 40000,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingSpeed",
+          "type": "inversePercentage"
+        },
+        {
+          "modifierType": "skillLevel",
+          "type": "inversePercentage",
+          "perLevelValue": 0.01
+        }
+      ]
+    },
+    "xp": {
+      "baseValue": 160,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingXpGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "chestId": "adamantineMineChest",
-    "chestPoints": 400,
+    "chestPoints": {
+      "baseValue": 400,
+      "modifiers": [
+        {
+          "modifierType": "stat",
+          "statId": "smithingChestPointsGain",
+          "type": "percentage"
+        }
+      ]
+    },
     "ingredients": [
       {
         "itemId": "adamantineOre",

@@ -8,7 +8,6 @@ import { useActionStore } from '@/stores/action'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useInventoryStore } from '@/stores/inventory'
 import { useSkillStore } from '@/stores/skill'
-import { isIntegerOrInfinity, stringToNumber } from '@/utils'
 
 const { t, locale } = useI18n()
 
@@ -146,6 +145,26 @@ watch(
     }
   },
 )
+
+function isIntegerOrInfinity(str: string): boolean {
+  const pattern = /^-?\d+$|^∞$/
+  return pattern.test(str)
+}
+
+function stringToNumber(str: string): number {
+  // 如果是 ∞，返回 Infinity
+  if (str === '∞') return Infinity
+
+  // 尝试转换为数字
+  const num = Number(str)
+
+  // 检查是否为有效整数
+  if (!isNaN(num) && Number.isInteger(num)) {
+    return num
+  }
+
+  return Infinity
+}
 </script>
 
 <template>

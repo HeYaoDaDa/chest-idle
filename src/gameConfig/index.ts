@@ -38,6 +38,7 @@ export const equipmentConfigs: ItemConfig[] = []
 export const actionConfigListBySkill: Record<string, ActionConfig[]> = Object.create(null)
 
 export function loadGameConfig() {
+  console.time('[game-config] load')
   // 使用相对路径而不是以 / 开头的绝对路径，避免在构建后因 base/root 变化导致匹配为空
   // 从当前文件所在目录 (src/gameConfig) 相对跳转到 src/data
   const modules = import.meta.glob('../data/**/*.json', {
@@ -90,6 +91,7 @@ export function loadGameConfig() {
   for (const actionConfigs of Object.values(actionConfigListBySkill)) {
     actionConfigs.sort((a, b) => a.sort - b.sort)
   }
+  console.timeEnd('[game-config] load')
 }
 
 export function getSkillTabActionConfigsMapBySkillId(

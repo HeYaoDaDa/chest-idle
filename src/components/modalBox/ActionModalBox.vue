@@ -3,7 +3,6 @@ import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import ModalBox from '@/components/ModalBox.vue'
-import { INFINITE_STRING } from '@/constant'
 import { itemConfigMap } from '@/gameConfig'
 import { useActionStore } from '@/stores/action'
 import { useActionQueueStore } from '@/stores/actionQueue'
@@ -41,7 +40,7 @@ const skill = computed(() => {
   return skillStore.getSkill(action.value.skillId)
 })
 
-const amountString = ref(INFINITE_STRING)
+const amountString = ref('∞')
 const allowAmount = computed(() => isIntegerOrInfinity(amountString.value))
 const durationSeconds = computed(() => (action.value ? action.value.duration / 1000 : 0))
 const xpPerCycle = computed(() => action.value?.xp ?? 0)
@@ -115,7 +114,7 @@ const formatNumber = (value: number, maximumFractionDigits = 0) =>
 
 function closeModal() {
   emit('update:modelValue', false)
-  amountString.value = INFINITE_STRING
+  amountString.value = '∞'
 }
 
 function addAction() {
@@ -143,7 +142,7 @@ watch(
   () => props.modelValue,
   (newValue) => {
     if (!newValue) {
-      amountString.value = INFINITE_STRING
+      amountString.value = '∞'
     }
   },
 )
@@ -231,9 +230,9 @@ watch(
               type="button"
               class="zone-amount-infinity"
               :title="t('ui.unlimited')"
-              @click="amountString = INFINITE_STRING"
+              @click="amountString = '∞'"
             >
-              {{ INFINITE_STRING }}
+              {{ '∞' }}
             </button>
           </div>
         </label>

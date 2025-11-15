@@ -31,7 +31,6 @@ export default defineComponent({
       return actionStore.getActionById(props.actionId)
     })
 
-    // helpers (moved up so computed that rely on them read clearly)
     function isIntegerOrInfinity(str: string): boolean {
       const pattern = /^-?\d+$|^∞$/
       return pattern.test(str)
@@ -156,7 +155,6 @@ export default defineComponent({
       return (
         <ModalBox onClose={closeModal}>
           <div class="flex flex-col gap-3 min-w-[min(420px,100%)]">
-            {/* Header */}
             <div class="flex justify-between items-start gap-4">
               <div class="flex flex-col gap-2">
                 <span class="text-xs uppercase tracking-wider text-gray-500">
@@ -166,12 +164,9 @@ export default defineComponent({
                   {t(action.value.name)}
                 </h2>
                 <p class="text-gray-600 text-sm leading-normal">{t(action.value.description)}</p>
-                {/* top close removed: use ESC or backdrop to close */}
               </div>
-
-              {/* header rewards removed: show rewards only in the info list below */}
             </div>
-            {/* Info List */}
+
             <div class="flex flex-col gap-1">
               <div
                 class={[
@@ -244,7 +239,7 @@ export default defineComponent({
                 </span>
               </div>
             </div>
-            {/* Actions */}
+
             <div class="flex flex-col gap-3">
               <label class="flex flex-col gap-2">
                 <span class="text-sm font-semibold text-gray-900">{t('ui.amount')}</span>

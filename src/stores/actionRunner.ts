@@ -18,7 +18,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   const notificationStore = useNotificationStore()
   const chestPointStore = useChestPointStore()
 
-  // ============ 基础的游戏循环 ============
   function start(): void {
     requestAnimationFrame(update)
   }
@@ -31,7 +30,7 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
         remainedElapsed = updateCurrentAction(remainedElapsed)
       }
     }
-    // 更新进度条
+
     if (actionQueueStore.actionStartDate && actionQueueStore.currentActionDetail) {
       const elapsed = performance.now() - actionQueueStore.actionStartDate
       actionQueueStore.progress =
@@ -56,10 +55,8 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     const skill = skillStore.getSkill(action.skillId)
 
     if (elapsed < action.duration) {
-      // 动作还未完成
       return 0
     } else {
-      // 动作完成，计算完成次数
       let computedAmount = toFiniteForCompute(amount)
       computedAmount = Math.min(computedAmount, Math.floor(elapsed / action.duration))
       if (skill) {
@@ -69,12 +66,10 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
         )
       }
 
-      // 执行动作效果
       computeAction(action, computedAmount)
 
       const computedElapsedTime = action.duration * computedAmount
 
-      // 计算剩余时间
       const remainedElapsed = elapsed - computedElapsedTime
 
       actionQueueStore.completeCurrentAction(computedElapsedTime, computedAmount)
@@ -84,7 +79,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
   }
 
   function computeAction(action: Action, computedAmount: number): void {
-    // 消耗材料
     if (action.ingredients) {
       const ingredients: [string, number][] = []
       for (const ingredient of action.ingredients) {
@@ -93,33 +87,26 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       inventoryStore.removeManyItems(ingredients)
     }
 
-    // 增加经验
     skillStore.addSkillXp(action.skillId, action.xp * computedAmount)
 
-    // 增加箱子点数并获得箱子
     const chestCount = chestPointStore.addChestPoints(
       action.chestId,
       action.chestPoints * computedAmount,
     )
 
-    // 计算奖励
     const rewards: [string, number][] = []
     for (const product of action.products) {
       rewards.push([product.itemId, product.count * computedAmount])
     }
 
-    // 添加箱子奖励
     if (chestCount > 0) {
       rewards.push([action.chestId, chestCount])
     }
 
-    // 给予奖励
     if (rewards.length > 0) {
       inventoryStore.addManyItems(rewards)
     }
   }
-
-  // ============ 内部辅助函数 ============
 
   function checkCurrentActionItem(): boolean {
     if (!actionQueueStore.currentAction || !actionQueueStore.currentActionDetail) return false
@@ -127,7 +114,6 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
     const action = actionQueueStore.currentActionDetail
     const amount = actionQueueStore.currentAction.amount
 
-    // 检查等级要求
     const currentLevel = skillStore.getSkillLevel(action.skillId)
     if (currentLevel < action.minLevel) {
       console.warn(
@@ -140,18 +126,17 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
         required: action.minLevel,
         action: i18n.global.t(action.name),
       })
-      // 移除无法执行的动作
+
       actionQueueStore.removeAction(0)
       return false
     }
 
-    // 检查材料是否足够
     const actualAmount = computeAmount(action, amount)
     if (!isInfiniteAmount(actualAmount) && actualAmount <= 0) {
       notificationStore.warning('notification.notEnoughMaterials', {
         action: i18n.global.t(action.name),
       })
-      // 移除无法执行的动作
+
       actionQueueStore.removeAction(0)
       return false
     }

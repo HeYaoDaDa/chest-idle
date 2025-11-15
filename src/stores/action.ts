@@ -41,7 +41,6 @@ export const useActionStore = defineStore('action', () => {
       return undefined // Let stat.ts handle stat modifiers
     }
 
-    // Dev speed multiplier: 0.01 in dev mode, 1 in production
     const speedMultiplier = import.meta.env.DEV ? 0.01 : 1
 
     return {

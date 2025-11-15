@@ -17,12 +17,10 @@ export default defineComponent({
 
     const skillStore = useSkillStore()
 
-    // refs
     const currentTab = ref<string>('')
     const modalVisible = ref(false)
     const selectedActionId = shallowRef<string | undefined>(undefined)
 
-    // computed
     const skill = computed(() => skillStore.getSkill(skillId.value))
     const skillActionTabs = computed(() => getSkillTabActionConfigsMapBySkillId(skillId.value))
     const hasTabGroups = computed(() => Object.keys(skillActionTabs.value).length > 0)
@@ -50,7 +48,6 @@ export default defineComponent({
       })),
     )
 
-    // handlers
     const openModal = (actionId: string) => {
       selectedActionId.value = actionId
       modalVisible.value = true

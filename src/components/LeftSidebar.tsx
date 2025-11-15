@@ -12,7 +12,6 @@ export default defineComponent({
 
     return () => (
       <div class="flex flex-col gap-0.5 p-0.5 overflow-y-auto h-full">
-        {/* MyStuff link - 仅移动端显示 */}
         <RouterLink
           to="/game/inventory"
           activeClass="!bg-gradient-to-br !from-primary !to-blue-500 !text-white !shadow-lg"
@@ -21,7 +20,6 @@ export default defineComponent({
           <div class="text-xs text-center">{t('ui.inventory').substring(0, 2)}</div>
         </RouterLink>
 
-        {/* Chests link */}
         <RouterLink
           to="/game/chests"
           activeClass="!bg-gradient-to-br !from-primary !to-blue-500 !text-white !shadow-lg"
@@ -32,7 +30,6 @@ export default defineComponent({
           </div>
         </RouterLink>
 
-        {/* Skills list */}
         {skillStore.skillList.map((skill) => (
           <RouterLink
             key={skill.id}
@@ -40,9 +37,8 @@ export default defineComponent({
             activeClass="!bg-gradient-to-br !from-primary !to-blue-500 !text-white !shadow-lg"
             class="nav-link"
           >
-            {/* 移动端：只显示技能名首字母 */}
             <div class="lg:hidden text-xs text-center">{t(skill.name).substring(0, 2)}</div>
-            {/* 桌面端：显示完整信息 */}
+
             <div class="hidden lg:flex lg:justify-between lg:items-baseline gap-2 text-base">
               <span class="flex-shrink-0">{t(skill.name)}</span>
               <span class="text-[10px] opacity-80">{t('ui.level', { level: skill.level })}</span>

@@ -51,8 +51,6 @@ export default defineComponent({
                 <div class="text-center text-gray-500 py-8">{t('ui.noItemsObtained')}</div>
               )}
             </div>
-
-            {/* confirm/close removed: use ESC or backdrop to close */}
           </div>
         </ModalBox>
       )

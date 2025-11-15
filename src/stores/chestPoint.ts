@@ -6,7 +6,6 @@ import { itemConfigMap } from '@/gameConfig'
 export const useChestPointStore = defineStore('chestPoint', () => {
   const chestPoints = ref<Record<string, number>>(Object.create(null))
 
-  // ============ 宝箱进度管理功能 ============
   function getChestPoints(chestId: string): number {
     return chestPoints.value[chestId] ?? 0
   }
@@ -15,7 +14,6 @@ export const useChestPointStore = defineStore('chestPoint', () => {
     chestPoints.value[chestId] = Math.max(0, points)
   }
 
-  // 增加宝箱点数，返回可开箱的数量（整箱数）
   function addChestPoints(chestId: string, points: number): number {
     if (points <= 0) return 0
     const itemConfig = itemConfigMap[chestId]
@@ -44,7 +42,6 @@ export const useChestPointStore = defineStore('chestPoint', () => {
   return {
     chestPoints,
 
-    // Methods - Chest Points
     getChestPoints,
     setChestPoints,
     addChestPoints,

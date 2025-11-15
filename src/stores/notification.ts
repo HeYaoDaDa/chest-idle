@@ -28,8 +28,7 @@ export const useNotificationStore = defineStore('notification', () => {
       window.setTimeout(() => remove(id), duration)
     }
 
-    // Ensure we do not exceed the max allowed notifications.
-    // If exceeded, remove the oldest ones (from the front of the queue).
+    // Trim to MAX_NOTIFICATIONS if exceeded
     if (notifications.length > MAX_NOTIFICATIONS) {
       const removeCount = notifications.length - MAX_NOTIFICATIONS
       notifications.splice(0, removeCount)

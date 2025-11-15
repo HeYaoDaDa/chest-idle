@@ -86,7 +86,6 @@ export default defineComponent({
       return (
         <ModalBox onClose={close}>
           <div class="flex flex-col gap-3">
-            {/* Header */}
             <div class="flex flex-col gap-2">
               <h3 class="text-2xl font-bold text-gray-900">{itemName.value}</h3>
               {isEquipmentMode.value && slotInfo.value && (
@@ -101,7 +100,6 @@ export default defineComponent({
               )}
             </div>
 
-            {/* Content */}
             <div class="flex flex-col gap-3">
               <p class="text-gray-700 text-sm leading-normal">{itemDescription.value}</p>
 
@@ -113,7 +111,6 @@ export default defineComponent({
               )}
             </div>
 
-            {/* Footer */}
             <div class="flex flex-col gap-3">
               {/* Equipment mode: Unequip button */}
               {isEquipmentMode.value && (

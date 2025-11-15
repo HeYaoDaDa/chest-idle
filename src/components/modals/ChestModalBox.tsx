@@ -1,9 +1,8 @@
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import ModalBox from '@/components/ModalBox'
 import { itemConfigMap } from '@/gameConfig'
-import { chestConfigs } from '@/gameConfig'
 import { useChestPointStore } from '@/stores/chestPoint'
 import { formatNumber, formatPercent } from '@/utils/format'
 
@@ -17,15 +16,6 @@ export default defineComponent({
   setup(props, { emit }) {
     const { t, locale } = useI18n()
     const chestPointStore = useChestPointStore()
-    const selectedChestId = ref<string | null>(props.chestId ?? null)
-
-    const chests = computed(() =>
-      chestConfigs.map((config) => ({
-        id: config.id,
-        name: config.name,
-        progress: chestPointStore.getChestProgress(config.id),
-      })),
-    )
 
     const chest = computed(() => {
       if (!props.chestId) return null
@@ -62,16 +52,6 @@ export default defineComponent({
       emit('close')
     }
 
-    const openModal = (chestId: string) => {
-      selectedChestId.value = chestId
-    }
-
-    const openChest = () => {
-      if (selectedChestId.value) {
-        // some chest open logic
-      }
-    }
-
     return () =>
       props.show ? (
         <ModalBox onClose={closeModal}>
@@ -86,10 +66,8 @@ export default defineComponent({
                   {t(chest.value?.description ?? '')}
                 </p>
               </div>
-              {/* top close removed: use ESC or backdrop to close */}
             </div>
 
-            {/* Info List */}
             <div class="flex flex-col gap-1">
               <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.currentProgress')}</span>
@@ -117,7 +95,6 @@ export default defineComponent({
                 <span class="text-sm text-gray-700">{t('ui.possibleRewards')}</span>
               </div>
 
-              {/* Loot List */}
               <div class="flex flex-col gap-3 mt-2">
                 {lootWithProbability.value.map((loot, index) => (
                   <div
@@ -149,7 +126,6 @@ export default defineComponent({
                 ))}
               </div>
             </div>
-            {/* footer close removed: use ESC/backdrop */}
           </div>
         </ModalBox>
       ) : null

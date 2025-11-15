@@ -64,7 +64,6 @@ export const useInventoryStore = defineStore('inventory', () => {
     return inventoryCount ? inventoryCount >= amount : false
   }
 
-  // Chest opening
   function openChest(
     inventoryItem: InventoryItem,
     amount: number = 1,
@@ -77,17 +76,14 @@ export const useInventoryStore = defineStore('inventory', () => {
 
     const results: { itemId: string; amount: number }[] = []
 
-    // Remove chests from inventory
     removeItem(inventoryItem.item.id, amount)
 
-    // Roll loot for each chest
     for (let i = 0; i < amount; i++) {
       const lootResults = rollLoot(item.id)
 
       for (const { itemId, amount: lootAmount } of lootResults) {
         addItem(itemId, lootAmount)
 
-        // Track results aggregation by itemId
         const existingResult = results.find((r) => r.itemId === itemId)
         if (existingResult) {
           existingResult.amount += lootAmount
@@ -101,11 +97,9 @@ export const useInventoryStore = defineStore('inventory', () => {
   }
 
   return {
-    // State
     inventoryItems,
     inventoryMap,
 
-    // Methods - Inventory Management
     addItem,
     addManyItems,
     removeItem,
@@ -113,7 +107,6 @@ export const useInventoryStore = defineStore('inventory', () => {
     getInventoryItem,
     hasItem,
 
-    // Methods - Chest Management
     openChest,
   }
 })

@@ -39,7 +39,7 @@ export const useStatStore = defineStore('stat', () => {
         stats.push(stat)
       }
     }
-    // Sort by sort order
+
     stats.sort((a, b) => a.sort - b.sort)
     return stats
   })

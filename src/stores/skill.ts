@@ -22,19 +22,14 @@ export const useSkillStore = defineStore('skill', () => {
 
   const skillXpMap = ref<Record<string, number>>(Object.create(null))
 
-  // ============ 技能管理功能 ============
-
-  // 获取技能经验值
   function getSkillXp(skillId: string): number {
     return skillXpMap.value[skillId] ?? 0
   }
 
-  // 获取技能等级
   function getSkillLevel(skillId: string): number {
     return getLevelFromXp(getSkillXp(skillId))
   }
 
-  // 获取升级所需剩余经验值
   function getRemainingXpForUpgrade(skillId: string): number {
     const currentXp = getSkillXp(skillId)
     const currentLevel = getLevelFromXp(currentXp)
@@ -42,7 +37,6 @@ export const useSkillStore = defineStore('skill', () => {
     return Math.max(0, nextLevelXp - currentXp)
   }
 
-  // 获取升级进度 (0-1)
   function getUpgradeProgress(skillId: string): number {
     const currentXp = getSkillXp(skillId)
     const currentLevel = getLevelFromXp(currentXp)
@@ -54,14 +48,12 @@ export const useSkillStore = defineStore('skill', () => {
     return (currentXp - currentLevelXp) / (nextLevelXp - currentLevelXp)
   }
 
-  // 添加技能经验值
   function addSkillXp(skillId: string, xp: number): void {
     const previousLevel = getLevelFromXp(getSkillXp(skillId))
     const newXp = getSkillXp(skillId) + xp
     skillXpMap.value[skillId] = newXp
     const currentLevel = getLevelFromXp(newXp)
 
-    // 升级通知
     if (currentLevel > previousLevel) {
       const skillConfig = skillConfigMap[skillId]
       if (skillConfig) {
@@ -73,7 +65,6 @@ export const useSkillStore = defineStore('skill', () => {
     }
   }
 
-  // 获取技能完整信息
   function getSkill(skillId: string): Skill | undefined {
     const skillConfig = skillConfigMap[skillId]
     if (!skillConfig) return undefined
@@ -87,7 +78,6 @@ export const useSkillStore = defineStore('skill', () => {
     }
   }
 
-  // 获取所有技能列表
   const skillList = computed(() => {
     return Array.from(skillConfigs)
       .map((config) => getSkill(config.id))
@@ -96,20 +86,16 @@ export const useSkillStore = defineStore('skill', () => {
   })
 
   return {
-    // State
     skillXpMap,
 
-    // Getters
     skillList,
 
-    // Methods
     getSkill,
     getSkillLevel,
     addSkillXp,
   }
 })
 
-// 根据经验值计算等级
 function getLevelFromXp(xp: number): number {
   let left = 0
   let right = XP_TABLE.length - 1

@@ -12,7 +12,6 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
 
-    // 拖拽相关
     const tabsWidth = ref(360)
     const isDraggingTabs = ref(false)
     const parentElement = ref<HTMLElement | undefined>(undefined)
@@ -69,7 +68,6 @@ export default defineComponent({
           class="h-full grid grid-cols-[56px_minmax(0,1fr)] lg:grid-cols-[260px_minmax(0,1fr)_var(--tabs-width)] grid-rows-[auto_minmax(0,1fr)] gap-0.5"
           style={containerStyle.value}
         >
-          {/* Header */}
           <header class="col-span-full row-start-1 panel flex justify-between items-center px-8 py-4 lg:px-12">
             <div class="flex items-center gap-10">
               <h1 class="m-0 text-4xl font-bold tracking-wide text-gray-900 hidden lg:block">
@@ -79,19 +77,16 @@ export default defineComponent({
             </div>
           </header>
 
-          {/* Sidebar */}
           <div class="col-start-1 row-start-2 panel p-0.5">
             <LeftSidebar />
           </div>
 
-          {/* Content */}
           <div class="col-start-2 row-start-2 panel p-0 flex flex-col">
             <div class="flex-1 min-h-0 overflow-auto">
               <RouterView />
             </div>
           </div>
 
-          {/* Tabs container (hidden on mobile) */}
           <aside
             class="hidden lg:flex lg:col-start-3 lg:row-start-2 panel p-0 flex-row"
             style={{ width: `${tabsWidth.value}px` }}

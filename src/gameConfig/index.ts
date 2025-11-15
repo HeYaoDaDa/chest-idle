@@ -22,13 +22,12 @@ export type {
   DerivedValueConfig,
 } from './type'
 
-// Config maps
 export const skillConfigMap: Record<string, SkillConfig> = Object.create(null)
 export const slotConfigMap: Record<string, SlotConfig> = Object.create(null)
 export const statConfigMap: Record<string, StatConfig> = Object.create(null)
 export const itemConfigMap: Record<string, ItemConfig> = Object.create(null)
 export const actionConfigMap: Record<string, ActionConfig> = Object.create(null)
-// Config lists
+
 export const skillConfigs: SkillConfig[] = []
 export const slotConfigs: SlotConfig[] = []
 export const statConfigs: StatConfig[] = []
@@ -75,7 +74,7 @@ export function loadGameConfig() {
         break
     }
   }
-  // Sort configs
+
   skillConfigs.sort((a, b) => a.sort - b.sort)
   slotConfigs.sort((a, b) => a.sort - b.sort)
   statConfigs.sort((a, b) => a.sort - b.sort)

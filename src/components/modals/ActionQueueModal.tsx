@@ -41,7 +41,6 @@ export default defineComponent({
       return (
         <ModalBox onClose={closeModal}>
           <div class="flex flex-col gap-4 min-w-[min(420px,90vw)]">
-            {/* Header */}
             <div class="flex justify-between items-center pb-3 border-b-2 border-blue-100">
               <h3 class="text-lg font-bold text-gray-900">{t('ui.queue')}</h3>
               <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
@@ -49,7 +48,6 @@ export default defineComponent({
               </span>
             </div>
 
-            {/* Content */}
             <div class="max-h-96 overflow-y-auto">
               <ul class="flex flex-col gap-3 list-none p-0 m-0">
                 {actionQueueStore.currentActionDetail && (
@@ -191,8 +189,6 @@ export default defineComponent({
                 })}
               </ul>
             </div>
-
-            {/* footer close removed: use ESC/backdrop */}
           </div>
         </ModalBox>
       )

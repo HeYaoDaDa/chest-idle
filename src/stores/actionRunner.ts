@@ -60,49 +60,52 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       return 0
     } else {
       // 动作完成，计算完成次数
-      let actualCount = toFiniteForCompute(amount)
-      actualCount = Math.min(actualCount, Math.floor(elapsed / action.duration))
+      let computedAmount = toFiniteForCompute(amount)
+      computedAmount = Math.min(computedAmount, Math.floor(elapsed / action.duration))
       if (skill) {
-        actualCount = Math.min(actualCount, Math.ceil(skill.remainingXpForUpgrade / action.xp))
+        computedAmount = Math.min(
+          computedAmount,
+          Math.ceil(skill.remainingXpForUpgrade / action.xp),
+        )
       }
 
       // 执行动作效果
-      executeAction(action, actualCount)
+      computeAction(action, computedAmount)
 
-      const computedElapsedTime = action.duration * actualCount
+      const computedElapsedTime = action.duration * computedAmount
 
       // 计算剩余时间
       const remainedElapsed = elapsed - computedElapsedTime
 
-      actionQueueStore.completeCurrentAction(computedElapsedTime, actualCount)
+      actionQueueStore.completeCurrentAction(computedElapsedTime, computedAmount)
 
       return remainedElapsed
     }
   }
 
-  function executeAction(action: Action, actualCount: number): void {
+  function computeAction(action: Action, computedAmount: number): void {
     // 消耗材料
     if (action.ingredients) {
       const ingredients: [string, number][] = []
       for (const ingredient of action.ingredients) {
-        ingredients.push([ingredient.itemId, ingredient.count * actualCount])
+        ingredients.push([ingredient.itemId, ingredient.count * computedAmount])
       }
       inventoryStore.removeManyItems(ingredients)
     }
 
     // 增加经验
-    skillStore.addSkillXp(action.skillId, action.xp * actualCount)
+    skillStore.addSkillXp(action.skillId, action.xp * computedAmount)
 
     // 增加箱子点数并获得箱子
     const chestCount = chestPointStore.addChestPoints(
       action.chestId,
-      action.chestPoints * actualCount,
+      action.chestPoints * computedAmount,
     )
 
     // 计算奖励
     const rewards: [string, number][] = []
     for (const product of action.products) {
-      rewards.push([product.itemId, product.count * actualCount])
+      rewards.push([product.itemId, product.count * computedAmount])
     }
 
     // 添加箱子奖励

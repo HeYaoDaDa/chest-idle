@@ -2,6 +2,7 @@ import { defineComponent, computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useActionQueueStore } from '@/stores/actionQueue'
+import { isInfiniteAmount } from '@/utils/amount'
 import { formatDurationMs } from '@/utils/format'
 
 import ActionQueueModal from './modalBox/ActionQueueModal'
@@ -15,7 +16,11 @@ export default defineComponent({
 
     const runningActionDisplay = computed(() =>
       actionQueueStore.currentActionDetail
-        ? `${t(actionQueueStore.currentActionDetail.name)} · ${actionQueueStore.currentAction.amount === Infinity ? '∞' : actionQueueStore.currentAction.amount}`
+        ? `${t(actionQueueStore.currentActionDetail.name)} · ${
+            isInfiniteAmount(actionQueueStore.currentAction.amount)
+              ? '∞'
+              : actionQueueStore.currentAction.amount
+          }`
         : `${t('nothing')}...`,
     )
 

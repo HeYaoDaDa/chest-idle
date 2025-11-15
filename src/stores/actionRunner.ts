@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
 import i18n from '@/i18n'
+import { isInfiniteAmount, toFiniteForCompute, fromComputeResult } from '@/utils/amount'
 
 import { useActionQueueStore } from './actionQueue'
 import { useChestPointStore } from './chestPoint'
@@ -59,46 +60,49 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       return 0
     } else {
       // 动作完成，计算完成次数
-      let count = amount
-      count = Math.min(count, Math.floor(elapsed / action.duration))
+      let actualCount = toFiniteForCompute(amount)
+      actualCount = Math.min(actualCount, Math.floor(elapsed / action.duration))
       if (skill) {
-        count = Math.min(count, Math.ceil(skill.remainingXpForUpgrade / action.xp))
+        actualCount = Math.min(actualCount, Math.ceil(skill.remainingXpForUpgrade / action.xp))
       }
 
       // 执行动作效果
-      executeAction(action, count)
+      executeAction(action, actualCount)
 
-      const computedElapsedTime = action.duration * count
+      const computedElapsedTime = action.duration * actualCount
 
       // 计算剩余时间
       const remainedElapsed = elapsed - computedElapsedTime
 
-      actionQueueStore.completeCurrentAction(computedElapsedTime, count)
+      actionQueueStore.completeCurrentAction(computedElapsedTime, actualCount)
 
       return remainedElapsed
     }
   }
 
-  function executeAction(action: Action, count: number): void {
+  function executeAction(action: Action, actualCount: number): void {
     // 消耗材料
     if (action.ingredients) {
       const ingredients: [string, number][] = []
       for (const ingredient of action.ingredients) {
-        ingredients.push([ingredient.itemId, ingredient.count * count])
+        ingredients.push([ingredient.itemId, ingredient.count * actualCount])
       }
       inventoryStore.removeManyItems(ingredients)
     }
 
     // 增加经验
-    skillStore.addSkillXp(action.skillId, action.xp * count)
+    skillStore.addSkillXp(action.skillId, action.xp * actualCount)
 
     // 增加箱子点数并获得箱子
-    const chestCount = chestPointStore.addChestPoints(action.chestId, action.chestPoints * count)
+    const chestCount = chestPointStore.addChestPoints(
+      action.chestId,
+      action.chestPoints * actualCount,
+    )
 
     // 计算奖励
     const rewards: [string, number][] = []
     for (const product of action.products) {
-      rewards.push([product.itemId, product.count * count])
+      rewards.push([product.itemId, product.count * actualCount])
     }
 
     // 添加箱子奖励
@@ -140,7 +144,7 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
 
     // 检查材料是否足够
     const actualAmount = computeAmount(action, amount)
-    if (actualAmount <= 0) {
+    if (!isInfiniteAmount(actualAmount) && actualAmount <= 0) {
       notificationStore.warning('notification.notEnoughMaterials', {
         action: i18n.global.t(action.name),
       })
@@ -165,7 +169,9 @@ export const useActionRunnerStore = defineStore('actionRunner', () => {
       }
     }
 
-    return Math.min(amount, maxAmount)
+    const finiteAmount = toFiniteForCompute(amount)
+    const computed = Math.min(finiteAmount, maxAmount)
+    return fromComputeResult(computed)
   }
 
   return {

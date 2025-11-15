@@ -7,6 +7,7 @@ import { useActionStore } from '@/stores/action'
 import { useActionQueueStore } from '@/stores/actionQueue'
 import { useInventoryStore } from '@/stores/inventory'
 import { useSkillStore } from '@/stores/skill'
+import { INFINITE_AMOUNT } from '@/utils/constants'
 import { formatDurationMs, formatNumber } from '@/utils/format'
 
 export default defineComponent({
@@ -37,12 +38,12 @@ export default defineComponent({
     }
 
     function stringToNumber(str: string): number {
-      if (str === '∞') return Infinity
+      if (str === '∞') return INFINITE_AMOUNT
       const num = Number(str)
       if (!isNaN(num) && Number.isInteger(num)) {
         return num
       }
-      return Infinity
+      return INFINITE_AMOUNT
     }
 
     const skill = computed(() => {

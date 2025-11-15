@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 
 import ModalBox from '@/components/ModalBox'
 import { useActionQueueStore } from '@/stores/actionQueue'
+import { isInfiniteAmount } from '@/utils/amount'
 
 export default defineComponent({
   name: 'ActionQueueModal',
@@ -19,7 +20,7 @@ export default defineComponent({
 
     const runningActionAmountDisplay = computed(() =>
       actionQueueStore.currentAction
-        ? actionQueueStore.currentAction.amount === Infinity
+        ? isInfiniteAmount(actionQueueStore.currentAction.amount)
           ? '∞'
           : String(actionQueueStore.currentAction.amount)
         : '',
@@ -157,7 +158,7 @@ export default defineComponent({
                             {t(`action.${action.actionId}.name`)}
                           </span>
                           <span class="text-sm text-gray-500">
-                            ×{action.amount === Infinity ? '∞' : action.amount}
+                            ×{isInfiniteAmount(action.amount) ? '∞' : action.amount}
                           </span>
                         </div>
                       </div>

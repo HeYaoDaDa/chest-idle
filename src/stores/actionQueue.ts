@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
+import { isInfiniteAmount } from '@/utils/amount'
+import { INFINITE_AMOUNT } from '@/utils/constants'
+
 import { useActionStore } from './action'
 
 export const useActionQueueStore = defineStore('actionQueue', () => {
@@ -35,12 +38,12 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   // ============ 基础功能 ============
 
-  function startImmediately(actionId: string, amount: number = Infinity): void {
+  function startImmediately(actionId: string, amount: number = INFINITE_AMOUNT): void {
     actionQueue.value.unshift({ actionId, amount })
     actionStartDate.value = performance.now()
   }
 
-  function addAction(actionId: string, amount: number = Infinity): void {
+  function addAction(actionId: string, amount: number = INFINITE_AMOUNT): void {
     actionQueue.value.push({ actionId, amount })
     if (actionQueue.value.length === 1) {
       actionStartDate.value = performance.now()
@@ -114,10 +117,18 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
 
   function completeCurrentAction(elapsed: number, count: number): void {
     if (!actionStartDate.value) return
-    if (currentAction.value.amount > count) {
+    if (!currentAction.value) return
+    const actionItem = currentAction.value
+
+    // 若该条目标记为无限，则不应减少数量或移除，直接推进开始时间
+    if (isInfiniteAmount(actionItem.amount)) {
+      actionStartDate.value += elapsed
+      return
+    }
+    if (actionItem.amount > count) {
       actionStartDate.value += elapsed
       // 动作部分完成，减少数量并重置时间
-      currentAction.value.amount -= count
+      actionItem.amount -= count
     } else {
       // 动作完全完成，移除动作并重置时间
       actionQueue.value.shift()

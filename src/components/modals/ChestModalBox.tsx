@@ -10,10 +10,10 @@ import { formatNumber, formatPercent } from '@/utils/format'
 export default defineComponent({
   name: 'ChestModalBox',
   props: {
-    modelValue: { type: Boolean, required: true },
+    show: { type: Boolean, required: true },
     chestId: { type: String, default: undefined },
   },
-  emits: ['update:modelValue', 'close'],
+  emits: ['close'],
   setup(props, { emit }) {
     const { t, locale } = useI18n()
     const chestPointStore = useChestPointStore()
@@ -59,7 +59,6 @@ export default defineComponent({
     })
 
     const closeModal = () => {
-      emit('update:modelValue', false)
       emit('close')
     }
 
@@ -74,42 +73,38 @@ export default defineComponent({
     }
 
     return () =>
-      props.modelValue ? (
+      props.show ? (
         <ModalBox onClose={closeModal}>
-          <div class="flex flex-col gap-6 min-w-[min(460px,100%)]">
+          <div class="flex flex-col gap-4 min-w-[min(420px,100%)]">
             <div class="flex justify-between items-start gap-4">
               <div class="flex flex-col gap-2">
                 <span class="text-xs uppercase tracking-wider text-gray-500">{t('ui.chest')}</span>
-                <h2 class="text-3xl font-bold text-gray-900 leading-tight">
+                <h2 class="text-2xl font-bold text-gray-900 leading-tight">
                   {t(chest.value?.name ?? '')}
                 </h2>
-                <p class="text-gray-600 leading-relaxed">{t(chest.value?.description ?? '')}</p>
+                <p class="text-gray-600 text-sm leading-normal">
+                  {t(chest.value?.description ?? '')}
+                </p>
               </div>
-              <button
-                type="button"
-                class="w-8 h-8 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-full text-gray-600 text-2xl leading-none transition-colors"
-                onClick={closeModal}
-              >
-                ×
-              </button>
+              {/* top close removed: use ESC or backdrop to close */}
             </div>
 
             {/* Info List */}
-            <div class="flex flex-col gap-2">
-              <div class="flex justify-between items-center py-2">
+            <div class="flex flex-col gap-1">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.currentProgress')}</span>
                 <span class="text-sm text-gray-900">
                   {formatNumber(chestPoints.value, locale.value, 3)} /{' '}
                   {formatNumber(chest.value?.chest?.maxPoints || 0, locale.value, 3)}
                 </span>
               </div>
-              <div class="flex justify-between items-center py-2">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.progressPercentage')}</span>
                 <span class="text-sm text-gray-900">
                   {formatPercent(chestProgress.value * 100, locale.value, 3)}
                 </span>
               </div>
-              <div class="flex justify-between items-center py-2">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.remainingPoints')}</span>
                 <span class="text-sm text-gray-900">
                   {formatNumber(chestRemaining.value, locale.value, 3)}
@@ -127,7 +122,7 @@ export default defineComponent({
                 {lootWithProbability.value.map((loot, index) => (
                   <div
                     key={index}
-                    class="flex flex-col gap-1 p-3 bg-gray-50 border border-gray-200 rounded hover:bg-gray-100 hover:border-blue-300 transition-all"
+                    class="flex flex-col gap-1 p-2 bg-gray-50 border border-gray-200 rounded hover:bg-gray-100 hover:border-blue-300 transition-all"
                   >
                     <div class="flex justify-between items-center">
                       <span class="font-semibold text-gray-900 text-sm">
@@ -154,15 +149,7 @@ export default defineComponent({
                 ))}
               </div>
             </div>
-            <div class="pt-4 border-t border-gray-200 flex justify-end">
-              <button
-                type="button"
-                class="btn-primary py-3 px-6 rounded-full text-sm font-semibold transition-all hover:shadow-lg"
-                onClick={closeModal}
-              >
-                {t('ui.close')}
-              </button>
-            </div>
+            {/* footer close removed: use ESC/backdrop */}
           </div>
         </ModalBox>
       ) : null

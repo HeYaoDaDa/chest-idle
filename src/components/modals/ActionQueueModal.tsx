@@ -40,10 +40,10 @@ export default defineComponent({
       if (!props.show) return null
       return (
         <ModalBox onClose={closeModal}>
-          <div class="flex flex-col gap-6 min-w-[min(480px,90vw)]">
+          <div class="flex flex-col gap-4 min-w-[min(420px,90vw)]">
             {/* Header */}
-            <div class="flex justify-between items-center pb-4 border-b-2 border-blue-100">
-              <h3 class="text-2xl font-bold text-gray-900">{t('ui.queue')}</h3>
+            <div class="flex justify-between items-center pb-3 border-b-2 border-blue-100">
+              <h3 class="text-lg font-bold text-gray-900">{t('ui.queue')}</h3>
               <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
                 {unifiedLength.value} {t('ui.queuedItems')}
               </span>
@@ -53,7 +53,7 @@ export default defineComponent({
             <div class="max-h-96 overflow-y-auto">
               <ul class="flex flex-col gap-3 list-none p-0 m-0">
                 {actionQueueStore.currentActionDetail && (
-                  <li class="flex flex-wrap justify-between items-center gap-4 bg-blue-50 border border-blue-300 rounded-lg p-4 transition-all hover:bg-blue-100">
+                  <li class="flex flex-wrap justify-between items-center gap-4 bg-blue-50 border border-blue-300 rounded-lg p-3 transition-all hover:bg-blue-100">
                     <div class="flex items-center gap-4 flex-1 min-w-0">
                       <span class="flex items-center justify-center w-7 h-7 bg-blue-100 text-blue-600 rounded-full text-sm font-bold flex-shrink-0">
                         0
@@ -126,7 +126,7 @@ export default defineComponent({
                   return (
                     <li
                       key={index}
-                      class="flex justify-between items-center gap-4 bg-gray-50 border border-gray-200 rounded-lg p-4 transition-all hover:bg-gray-100 hover:border-blue-300"
+                      class="flex justify-between items-center gap-4 bg-gray-50 border border-gray-200 rounded-lg p-3 transition-all hover:bg-gray-100 hover:border-blue-300"
                     >
                       <div class="flex items-center gap-4 flex-1 min-w-0">
                         <span class="flex items-center justify-center w-7 h-7 bg-blue-100 text-blue-600 rounded-full text-sm font-bold flex-shrink-0">
@@ -192,15 +192,7 @@ export default defineComponent({
               </ul>
             </div>
 
-            <div class="pt-4 border-t border-gray-200 flex justify-end">
-              <button
-                type="button"
-                class="btn-primary py-3 px-6 rounded-full text-sm font-semibold transition-all hover:shadow-lg"
-                onClick={closeModal}
-              >
-                {t('ui.close')}
-              </button>
-            </div>
+            {/* footer close removed: use ESC/backdrop */}
           </div>
         </ModalBox>
       )

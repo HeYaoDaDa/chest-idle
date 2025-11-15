@@ -85,7 +85,7 @@ export default defineComponent({
 
       return (
         <ModalBox onClose={close}>
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-3">
             {/* Header */}
             <div class="flex flex-col gap-2">
               <h3 class="text-2xl font-bold text-gray-900">{itemName.value}</h3>
@@ -102,8 +102,8 @@ export default defineComponent({
             </div>
 
             {/* Content */}
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 leading-relaxed">{itemDescription.value}</p>
+            <div class="flex flex-col gap-3">
+              <p class="text-gray-700 text-sm leading-normal">{itemDescription.value}</p>
 
               {isInventoryMode.value && slotInfo.value && (
                 <div class="flex justify-between items-center p-3 bg-gray-50 rounded">

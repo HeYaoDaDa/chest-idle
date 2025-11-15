@@ -36,7 +36,7 @@ export default defineComponent({
             leaveToClass="opacity-0 translate-y-3 scale-98"
             appear
           >
-            <div class="relative max-h-[min(720px,90vh)] w-[min(520px,100%)] bg-white rounded-lg shadow-2xl overflow-auto p-4 lg:p-6">
+            <div class="relative max-h-[min(720px,90vh)] w-[min(480px,100%)] bg-white rounded-lg shadow-2xl overflow-auto p-3 lg:p-4">
               {slots.default?.()}
             </div>
           </Transition>

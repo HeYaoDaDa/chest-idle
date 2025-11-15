@@ -13,10 +13,10 @@ import { formatDurationMs, formatNumber } from '@/utils/format'
 export default defineComponent({
   name: 'ActionModalBox',
   props: {
-    modelValue: { type: Boolean, required: true },
+    show: { type: Boolean, required: true },
     actionId: { type: String, default: undefined },
   },
-  emits: ['update:modelValue'],
+  emits: ['close'],
   setup(props, { emit }) {
     const { t, locale } = useI18n()
     const inventoryStore = useInventoryStore()
@@ -118,7 +118,7 @@ export default defineComponent({
     })
 
     const closeModal = () => {
-      emit('update:modelValue', false)
+      emit('close')
       amountString.value = '∞'
     }
 
@@ -142,7 +142,7 @@ export default defineComponent({
     }
 
     watch(
-      () => props.modelValue,
+      () => props.show,
       (newValue) => {
         if (!newValue) {
           amountString.value = '∞'
@@ -151,75 +151,54 @@ export default defineComponent({
     )
 
     return () => {
-      if (!props.modelValue || !action.value) return null
+      if (!props.show || !action.value) return null
 
       return (
         <ModalBox onClose={closeModal}>
-          <div class="flex flex-col gap-6 min-w-[min(460px,100%)]">
+          <div class="flex flex-col gap-3 min-w-[min(420px,100%)]">
             {/* Header */}
             <div class="flex justify-between items-start gap-4">
               <div class="flex flex-col gap-2">
                 <span class="text-xs uppercase tracking-wider text-gray-500">
                   {skill.value ? t(skill.value.name) : ''}
                 </span>
-                <h2 class="text-3xl font-bold text-gray-900 leading-tight">
+                <h2 class="text-2xl font-bold text-gray-900 leading-tight">
                   {t(action.value.name)}
                 </h2>
-                <p class="text-gray-600 leading-relaxed">{t(action.value.description)}</p>
-                <button
-                  type="button"
-                  class="w-8 h-8 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-full text-gray-600 text-2xl leading-none transition-colors"
-                  onClick={closeModal}
-                >
-                  ×
-                </button>
+                <p class="text-gray-600 text-sm leading-normal">{t(action.value.description)}</p>
+                {/* top close removed: use ESC or backdrop to close */}
               </div>
 
-              <div class="flex justify-between items-start py-2">
-                <span class="text-sm font-medium text-gray-700">{t('ui.rewards')}</span>
-                <span class="text-sm text-gray-900 text-right">
-                  {hasProducts.value && action.value ? (
-                    action.value.products.map((product, idx) => (
-                      <span key={product.itemId}>
-                        {t(itemConfigMap[product.itemId].name)} ×
-                        {formatNumber(product.count, locale.value)}
-                        {idx < action.value!.products.length - 1 && '，'}
-                      </span>
-                    ))
-                  ) : (
-                    <span>{t('ui.noRewards')}</span>
-                  )}
-                </span>
-              </div>
+              {/* header rewards removed: show rewards only in the info list below */}
             </div>
             {/* Info List */}
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-1">
               <div
                 class={[
-                  'flex justify-between items-center py-2',
+                  'flex justify-between items-center py-1',
                   isLevelInsufficient.value ? 'text-red-600' : '',
                 ]}
               >
                 <span class="text-sm font-medium">{t('minLevelRequired')}</span>
                 <span class="text-sm">{action.value.minLevel}</span>
               </div>
-              <div class="flex justify-between items-center py-2">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('duration')}</span>
                 <span class="text-sm text-gray-900">{durationDisplay.value}</span>
               </div>
-              <div class="flex justify-between items-center py-2">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.xpPerCycle')}</span>
                 <span class="text-sm text-gray-900">
                   {formatNumber(xpPerCycle.value, locale.value)}
                 </span>
               </div>
-              <div class="flex justify-between items-center py-2">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.chestPoints')}</span>
                 <span class="text-sm text-gray-900">
                   {formatNumber(chestPointsPerCycle.value, locale.value, 3)}
                 </span>
               </div>
-              <div class="flex justify-between items-center py-2">
+              <div class="flex justify-between items-center py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.chest')}</span>
                 <span class="text-sm text-gray-900">
                   {t(itemConfigMap[action.value.chestId].name)}
@@ -248,7 +227,7 @@ export default defineComponent({
                 </span>
               </div>
 
-              <div class="flex justify-between items-start py-2">
+              <div class="flex justify-between items-start py-1">
                 <span class="text-sm font-medium text-gray-700">{t('ui.rewards')}</span>
                 <span class="text-sm text-gray-900 text-right">
                   {hasProducts.value && action.value ? (
@@ -266,7 +245,7 @@ export default defineComponent({
               </div>
             </div>
             {/* Actions */}
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-3">
               <label class="flex flex-col gap-2">
                 <span class="text-sm font-semibold text-gray-900">{t('ui.amount')}</span>
                 <div class="flex gap-2">

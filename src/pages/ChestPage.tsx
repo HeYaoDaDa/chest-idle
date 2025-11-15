@@ -62,10 +62,9 @@ export default defineComponent({
         </div>
 
         <ChestModalBox
-          modelValue={modalVisible.value}
-          onUpdate:modelValue={(val: boolean) => (modalVisible.value = val)}
-          chestId={selectedChestId.value ?? undefined}
+          show={modalVisible.value}
           onClose={closeModal}
+          chestId={selectedChestId.value ?? undefined}
         />
       </div>
     )

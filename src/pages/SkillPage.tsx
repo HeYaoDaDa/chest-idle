@@ -56,6 +56,11 @@ export default defineComponent({
       modalVisible.value = true
     }
 
+    const closeModal = () => {
+      modalVisible.value = false
+      selectedActionId.value = undefined
+    }
+
     watch(
       () => skillId.value,
       () => {
@@ -137,8 +142,8 @@ export default defineComponent({
           </div>
 
           <ActionModalBox
-            modelValue={modalVisible.value}
-            onUpdate:modelValue={(val: boolean) => (modalVisible.value = val)}
+            show={modalVisible.value}
+            onClose={closeModal}
             actionId={selectedActionId.value}
           />
         </div>

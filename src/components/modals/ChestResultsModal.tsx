@@ -27,9 +27,9 @@ export default defineComponent({
 
       return (
         <ModalBox onClose={close}>
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-3">
             <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">{t('ui.chestOpenResults')}</h3>
+              <h3 class="text-lg font-bold text-gray-900 mb-1">{t('ui.chestOpenResults')}</h3>
             </div>
 
             <div class="max-h-96 overflow-auto">
@@ -52,11 +52,7 @@ export default defineComponent({
               )}
             </div>
 
-            <div class="flex gap-2">
-              <button type="button" class="btn-primary flex-1" onClick={close}>
-                {t('ui.confirm')}
-              </button>
-            </div>
+            {/* confirm/close removed: use ESC or backdrop to close */}
           </div>
         </ModalBox>
       )

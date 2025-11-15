@@ -6,10 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chest Idle</title>
     <style>
+      /* Global layout reset to avoid unexpected scrollbars caused by
+         default browser margins and content-box sizing.
+         Keep `#app` at 100% so `h-full` classes expand correctly. */
       html,
       body,
       #app {
         height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Make all elements inherit box-sizing so padding/border are included
+         in layout height calculations and small utility paddings won't overflow. */
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
       }
     </style>
     <script type="module" crossorigin src="/assets/index-Cl9MTtN3.js"></script>

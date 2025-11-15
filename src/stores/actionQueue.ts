@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-import { isInfiniteAmount } from '@/utils/amount'
+import { isInfiniteAmount, decrementAmount } from '@/utils/amount'
 import { INFINITE_AMOUNT } from '@/utils/constants'
 
 import { useActionStore } from './action'
@@ -115,7 +115,7 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
     }
   }
 
-  function completeCurrentAction(elapsed: number, count: number): void {
+  function completeCurrentAction(elapsed: number, executionCount: number): void {
     if (!actionStartDate.value) return
     if (!currentAction.value) return
     const actionItem = currentAction.value
@@ -125,10 +125,10 @@ export const useActionQueueStore = defineStore('actionQueue', () => {
       actionStartDate.value += elapsed
       return
     }
-    if (actionItem.amount > count) {
+    if (actionItem.amount > executionCount) {
       actionStartDate.value += elapsed
       // 动作部分完成，减少数量并重置时间
-      actionItem.amount -= count
+      actionItem.amount = decrementAmount(actionItem.amount, executionCount)
     } else {
       // 动作完全完成，移除动作并重置时间
       actionQueue.value.shift()

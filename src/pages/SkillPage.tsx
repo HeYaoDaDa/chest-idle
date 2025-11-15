@@ -3,7 +3,7 @@ import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
-import ActionModalBox from '@/components/modalBox/ActionModalBox'
+import { ActionModalBox } from '@/components/modals'
 import { actionConfigListBySkill, getSkillTabActionConfigsMapBySkillId } from '@/gameConfig'
 import { useSkillStore } from '@/stores/skill'
 import { formatNumber } from '@/utils/format'

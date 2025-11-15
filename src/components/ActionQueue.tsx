@@ -5,7 +5,7 @@ import { useActionQueueStore } from '@/stores/actionQueue'
 import { isInfiniteAmount } from '@/utils/amount'
 import { formatDurationMs } from '@/utils/format'
 
-import ActionQueueModal from './modalBox/ActionQueueModal'
+import { ActionQueueModal } from './modals'
 
 export default defineComponent({
   name: 'ActionQueue',

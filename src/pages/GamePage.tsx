@@ -5,7 +5,7 @@ import { RouterView } from 'vue-router'
 import ActionQueue from '@/components/ActionQueue'
 import LeftSidebar from '@/components/LeftSidebar'
 
-import MyStuffPage from './MyStuffPage'
+import InventoryPage from './InventoryPage'
 
 export default defineComponent({
   name: 'GamePage',
@@ -103,7 +103,7 @@ export default defineComponent({
               <div class="w-0.5 h-10 bg-gray-400 rounded transition" />
             </div>
             <div class="flex-1 flex flex-col overflow-hidden">
-              <MyStuffPage />
+              <InventoryPage />
             </div>
           </aside>
         </div>

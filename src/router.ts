@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import ChestPage from '@/pages/ChestPage'
 import GamePage from '@/pages/GamePage'
 import LoadPage from '@/pages/LoadPage'
-import MyStuffPage from '@/pages/MyStuffPage'
+import InventoryPage from '@/pages/InventoryPage'
 import SkillPage from '@/pages/SkillPage'
 import { useAppStore } from '@/stores/app'
 
@@ -24,9 +24,9 @@ const router = createRouter({
       component: GamePage,
       children: [
         {
-          path: 'mystuff',
-          name: 'mystuff',
-          component: MyStuffPage,
+          path: 'inventory',
+          name: 'inventory',
+          component: InventoryPage,
         },
         {
           path: 'chests',

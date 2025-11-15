@@ -14,11 +14,11 @@ export default defineComponent({
       <div class="flex flex-col gap-0.5 p-0.5 overflow-y-auto h-full">
         {/* MyStuff link - 仅移动端显示 */}
         <RouterLink
-          to="/game/mystuff"
+          to="/game/inventory"
           activeClass="!bg-gradient-to-br !from-primary !to-blue-500 !text-white !shadow-lg"
           class="lg:hidden nav-link"
         >
-          <div class="text-xs text-center">{t('ui.myStuff').substring(0, 2)}</div>
+          <div class="text-xs text-center">{t('ui.inventory').substring(0, 2)}</div>
         </RouterLink>
 
         {/* Chests link */}

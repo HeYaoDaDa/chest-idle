@@ -1,7 +1,7 @@
 import { defineComponent, computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import ChestModalBox from '@/components/modalBox/ChestModalBox'
+import { ChestModalBox } from '@/components/modals'
 import { chestConfigs } from '@/gameConfig'
 import { useChestPointStore } from '@/stores/chestPoint'
 

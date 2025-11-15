@@ -82,8 +82,6 @@ export default {
     tailoring: { name: '裁缝', description: '裁缝。' },
     cooking: { name: '烹饪', description: '烹饪。' },
     brewing: { name: '酿造', description: '酿造。' },
-    alchemy: { name: '炼金', description: '炼金。' },
-    enhancing: { name: '强化', description: '强化。' },
     intelligence: { name: '智力', description: '智力。' },
     stamina: { name: '耐力', description: '耐力。' },
     defense: { name: '防御', description: '防御。' },
@@ -100,8 +98,6 @@ export default {
     tailoringTool: { name: '裁缝工具' },
     cookingTool: { name: '烹饪工具' },
     brewingTool: { name: '酿造工具' },
-    alchemyTool: { name: '炼金工具' },
-    enhancingTool: { name: '强化工具' },
   },
   property: {
     'mining.speed': {
@@ -127,12 +123,6 @@ export default {
     },
     'brewing.speed': {
       name: '酿造速度',
-    },
-    'alchemy.speed': {
-      name: '炼金速度',
-    },
-    'enhancing.speed': {
-      name: '强化速度',
     },
   },
   item: {

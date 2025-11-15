@@ -146,42 +146,6 @@
   {
     "type": "item",
     "category": "equipment",
-    "id": "copperAlchemistKit",
-    "sort": 10,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 0.5
-        }
-      ]
-    },
-    "name": "item.copperAlchemistKit.name",
-    "description": "item.copperAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "copperEnhancingTool",
-    "sort": 11,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 0.5
-        }
-      ]
-    },
-    "name": "item.copperEnhancingTool.name",
-    "description": "item.copperEnhancingTool.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
     "id": "ironPickaxe",
     "sort": 14,
     "equipment": {
@@ -322,42 +286,6 @@
     },
     "name": "item.ironBrewingKit.name",
     "description": "item.ironBrewingKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "ironAlchemistKit",
-    "sort": 22,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 1
-        }
-      ]
-    },
-    "name": "item.ironAlchemistKit.name",
-    "description": "item.ironAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "ironEnhancingTool",
-    "sort": 23,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 1
-        }
-      ]
-    },
-    "name": "item.ironEnhancingTool.name",
-    "description": "item.ironEnhancingTool.description"
   },
   {
     "type": "item",
@@ -506,42 +434,6 @@
   {
     "type": "item",
     "category": "equipment",
-    "id": "silverAlchemistKit",
-    "sort": 34,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 1.5
-        }
-      ]
-    },
-    "name": "item.silverAlchemistKit.name",
-    "description": "item.silverAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "silverEnhancingTool",
-    "sort": 35,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 1.5
-        }
-      ]
-    },
-    "name": "item.silverEnhancingTool.name",
-    "description": "item.silverEnhancingTool.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
     "id": "goldPickaxe",
     "sort": 38,
     "equipment": {
@@ -682,42 +574,6 @@
     },
     "name": "item.goldBrewingKit.name",
     "description": "item.goldBrewingKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "goldAlchemistKit",
-    "sort": 46,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 2
-        }
-      ]
-    },
-    "name": "item.goldAlchemistKit.name",
-    "description": "item.goldAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "goldEnhancingTool",
-    "sort": 47,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 2
-        }
-      ]
-    },
-    "name": "item.goldEnhancingTool.name",
-    "description": "item.goldEnhancingTool.description"
   },
   {
     "type": "item",
@@ -866,42 +722,6 @@
   {
     "type": "item",
     "category": "equipment",
-    "id": "orichalcumAlchemistKit",
-    "sort": 58,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 2.5
-        }
-      ]
-    },
-    "name": "item.orichalcumAlchemistKit.name",
-    "description": "item.orichalcumAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "orichalcumEnhancingTool",
-    "sort": 59,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 2.5
-        }
-      ]
-    },
-    "name": "item.orichalcumEnhancingTool.name",
-    "description": "item.orichalcumEnhancingTool.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
     "id": "darkIronPickaxe",
     "sort": 62,
     "equipment": {
@@ -1042,42 +862,6 @@
     },
     "name": "item.darkIronBrewingKit.name",
     "description": "item.darkIronBrewingKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "darkIronAlchemistKit",
-    "sort": 70,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 3
-        }
-      ]
-    },
-    "name": "item.darkIronAlchemistKit.name",
-    "description": "item.darkIronAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "darkIronEnhancingTool",
-    "sort": 71,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 3
-        }
-      ]
-    },
-    "name": "item.darkIronEnhancingTool.name",
-    "description": "item.darkIronEnhancingTool.description"
   },
   {
     "type": "item",
@@ -1226,42 +1010,6 @@
   {
     "type": "item",
     "category": "equipment",
-    "id": "mithrilAlchemistKit",
-    "sort": 82,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 3.5
-        }
-      ]
-    },
-    "name": "item.mithrilAlchemistKit.name",
-    "description": "item.mithrilAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "mithrilEnhancingTool",
-    "sort": 83,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 3.5
-        }
-      ]
-    },
-    "name": "item.mithrilEnhancingTool.name",
-    "description": "item.mithrilEnhancingTool.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
     "id": "adamantinePickaxe",
     "sort": 86,
     "equipment": {
@@ -1402,41 +1150,5 @@
     },
     "name": "item.adamantineBrewingKit.name",
     "description": "item.adamantineBrewingKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "adamantineAlchemistKit",
-    "sort": 94,
-    "equipment": {
-      "slotId": "alchemyTool",
-      "effects": [
-        {
-          "statId": "alchemySpeed",
-          "type": "flat",
-          "value": 4
-        }
-      ]
-    },
-    "name": "item.adamantineAlchemistKit.name",
-    "description": "item.adamantineAlchemistKit.description"
-  },
-  {
-    "type": "item",
-    "category": "equipment",
-    "id": "adamantineEnhancingTool",
-    "sort": 95,
-    "equipment": {
-      "slotId": "enhancingTool",
-      "effects": [
-        {
-          "statId": "enhancingSpeed",
-          "type": "flat",
-          "value": 4
-        }
-      ]
-    },
-    "name": "item.adamantineEnhancingTool.name",
-    "description": "item.adamantineEnhancingTool.description"
   }
 ]

@@ -57,20 +57,6 @@
   },
   {
     "type": "skill",
-    "id": "alchemy",
-    "sort": 8,
-    "name": "skill.alchemy.name",
-    "description": "skill.alchemy.description"
-  },
-  {
-    "type": "skill",
-    "id": "enhancing",
-    "sort": 9,
-    "name": "skill.enhancing.name",
-    "description": "skill.enhancing.description"
-  },
-  {
-    "type": "skill",
     "id": "intelligence",
     "sort": 10,
     "name": "skill.intelligence.name",

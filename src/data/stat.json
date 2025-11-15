@@ -54,19 +54,5 @@
     "sort": 7,
     "name": "stat.brewingSpeed.name",
     "description": "stat.brewingSpeed.description"
-  },
-  {
-    "type": "stat",
-    "id": "alchemySpeed",
-    "sort": 8,
-    "name": "stat.alchemySpeed.name",
-    "description": "stat.alchemySpeed.description"
-  },
-  {
-    "type": "stat",
-    "id": "enhancingSpeed",
-    "sort": 9,
-    "name": "stat.enhancingSpeed.name",
-    "description": "stat.enhancingSpeed.description"
   }
 ]

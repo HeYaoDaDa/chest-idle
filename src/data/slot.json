@@ -54,19 +54,5 @@
     "sort": 7,
     "name": "slot.brewingTool.name",
     "description": "slot.brewingTool.description"
-  },
-  {
-    "type": "slot",
-    "id": "alchemyTool",
-    "sort": 8,
-    "name": "slot.alchemyTool.name",
-    "description": "slot.alchemyTool.description"
-  },
-  {
-    "type": "slot",
-    "id": "enhancingTool",
-    "sort": 9,
-    "name": "slot.enhancingTool.name",
-    "description": "slot.enhancingTool.description"
   }
 ]

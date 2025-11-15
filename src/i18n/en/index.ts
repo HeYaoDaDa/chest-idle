@@ -82,8 +82,6 @@ export default {
     tailoring: { name: 'Tailoring', description: 'Tailoring.' },
     cooking: { name: 'Cooking', description: 'Cooking.' },
     brewing: { name: 'Brewing', description: 'Brewing.' },
-    alchemy: { name: 'Alchemy', description: 'Alchemy.' },
-    enhancing: { name: 'Enhancing', description: 'Enhancing.' },
     intelligence: { name: 'Intelligence', description: 'Intelligence.' },
     stamina: { name: 'Stamina', description: 'Stamina.' },
     defense: { name: 'Defense', description: 'Defense.' },
@@ -100,8 +98,6 @@ export default {
     tailoringTool: { name: 'Tailoring Tool' },
     cookingTool: { name: 'Cooking Tool' },
     brewingTool: { name: 'Brewing Tool' },
-    alchemyTool: { name: 'Alchemy Tool' },
-    enhancingTool: { name: 'Enhancing Tool' },
   },
   property: {
     'mining.speed': {
@@ -127,12 +123,6 @@ export default {
     },
     'brewing.speed': {
       name: 'Brewing Speed',
-    },
-    'alchemy.speed': {
-      name: 'Alchemy Speed',
-    },
-    'enhancing.speed': {
-      name: 'Enhancing Speed',
     },
   },
   item: {
